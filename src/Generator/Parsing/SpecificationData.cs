@@ -75,7 +75,21 @@ namespace Generator.Parsing
         string? Group);
 
 
-    public abstract record GLType();
+    public abstract record GLType()
+    {
+        public string HumanReadable()
+        {
+            switch (this)
+            {
+                case GLBaseType bt:
+                    return bt.OriginalString;
+                case GLPointerType pt:
+                    return $"{pt.BaseType.HumanReadable()}*";
+                default:
+                    throw new Exception();
+            }
+        }
+    }
 
     public record GLBaseType(
         string OriginalString,

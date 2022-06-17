@@ -58,6 +58,9 @@ namespace Generator.Process
 
         public static OutputData ProcessSpec(Specification spec, Documentation docs)
         {
+            Dictionary<string, (string paramName, string type, string group)[]> functionToMisplacedGroups = new Dictionary<string, (string, string, string)[]>();
+            HashSet<string> allMisplacedGroups = new HashSet<string>();
+
             // The first thing we do is process all of the functions defined into a dictionary of NativeFunctions.
             Dictionary<string, OverloadedFunction> allFunctions = new Dictionary<string, OverloadedFunction>(spec.Commands.Count);
             foreach (Command command in spec.Commands)
@@ -67,6 +70,13 @@ namespace Generator.Process
                 OverloadedFunction overloadedFunction = GenerateOverloads(nativeFunction, functionDocumentation);
 
                 allFunctions.Add(nativeFunction.EntryPoint, overloadedFunction);
+
+                functionToMisplacedGroups.Add(nativeFunction.EntryPoint, nativeFunction.misplacedGroups.ToArray());
+
+                foreach (var (_, _, group) in nativeFunction.misplacedGroups)
+                {
+                    allMisplacedGroups.Add(group);
+                }
             }
 
             Dictionary<OutputApi, Dictionary<string, EnumGroupMember>> allEnumsPerAPI = new Dictionary<OutputApi, Dictionary<string, EnumGroupMember>>();
@@ -117,6 +127,99 @@ namespace Generator.Process
                             allEnumsPerAPI.AddToNestedDict(OutputApi.GLCompat, @enum.Name, data);
                             break;
                     }
+                }
+            }
+
+            Console.WriteLine($"{functionToMisplacedGroups.Where(kvp => kvp.Value.Length > 0).Count()} functions with malplaced args");
+
+            /*int parameterCount = 0;
+            foreach (var (function, groups) in functionToMisplacedGroups)
+            {
+                if (groups.Length <= 0) continue;
+                Console.WriteLine($"{function}:");
+                foreach (var (param, type, group) in groups)
+                {
+                    if (group == "Boolean" && (type == "GLboolean" || type == "GLboolean*")) continue;
+
+                    Console.WriteLine($"  {type} {param}: {group}");
+                    parameterCount++;
+
+                    foreach (var enumGroup in allEnumGroups)
+                    {
+                        if (group == enumGroup.GroupName)
+                        {
+                            // We found a group that
+                            Console.WriteLine($"    {group} is an actual enum.");
+                            break;
+                        }
+                    }
+                }
+            }
+            Console.WriteLine($"Total {parameterCount} parameters");
+            */
+
+            Dictionary<string, List<(string, string, string)>> validEnumsButInvalidType = new Dictionary<string, List<(string, string, string)>>();
+            Dictionary<string, List<(string, string, string)>> invalidEnums = new Dictionary<string, List<(string, string, string)>>();
+
+            Console.WriteLine();
+            Console.WriteLine();
+
+            var groupNames = allEnumGroups.ToDictionary(s => s.GroupName, s => s);
+
+            foreach (var (function, groups) in functionToMisplacedGroups)
+            {
+                if (groups.Length <= 0) continue;
+                
+                List<(string, string, string)> valid = new List<(string, string, string)>();
+                List<(string, string, string)> invalid = new List<(string, string, string)>();
+                foreach (var (param, type, group) in groups)
+                {
+                    if (group == "Boolean" && (type == "GLboolean" || type == "GLboolean*")) continue;
+
+                    if (groupNames.ContainsKey(group))
+                    {
+                        valid.Add((param, type, group));
+                    }
+                    else
+                    {
+                        invalid.Add((param, type, group));
+                    }
+                }
+
+                if (valid.Count > 0)
+                {
+                    validEnumsButInvalidType.Add(function, valid);
+                    //Console.WriteLine($"{function}:");
+                    //foreach (var (param,type,group) in list)
+                    //{
+                    //    Console.WriteLine($"  {type} {param}: {group}");
+                    //}
+                }
+
+                if (invalid.Count > 0)
+                {
+                    invalidEnums.Add(function, invalid);
+                }
+            }
+
+            Console.WriteLine($"Valid enums but invalid type ({validEnumsButInvalidType.Count} functions):");
+            foreach (var (function, list) in validEnumsButInvalidType)
+            {
+                Console.WriteLine($"{function}:");
+                foreach (var (param, type, group) in list)
+                {
+                    Console.WriteLine($"  {type} {param}: {group}");
+                }
+            }
+
+            Console.WriteLine();
+            Console.WriteLine($"Invalid groups ({invalidEnums.Count} functions):");
+            foreach (var (function, list) in invalidEnums)
+            {
+                Console.WriteLine($"{function}:");
+                foreach (var (param, type, group) in list)
+                {
+                    Console.WriteLine($"  {type} {param}: {group}");
                 }
             }
 
@@ -431,10 +534,19 @@ namespace Generator.Process
 
             HashSet<string> referencedEnumGroups = new HashSet<string>();
 
+            HashSet<(string ParameterName, string parameterType, string Group)> misplacedGroups = new HashSet<(string, string, string)>();
+
+            List<string> list;
+
             List<Parameter> parameters = new List<Parameter>();
             foreach (GLParameter parameter in command.Parameters)
             {
-                BaseCSType type = MakeCSType(parameter.Type.Type, parameter.Type.Handle, parameter.Type.Group);
+                list = new List<string>();
+                BaseCSType type = MakeCSType(parameter.Type.Type, parameter.Type.Handle, parameter.Type.Group, list);
+                if (list.Count > 0)
+                {
+                    misplacedGroups.Add((parameter.Name, parameter.Type.Type.HumanReadable(), list[0]));
+                }
                 parameters.Add(new Parameter(type, NameMangler.MangleParameterName(parameter.Name), parameter.Length));
                 if (parameter.Type.Group != null)
                 {
@@ -442,21 +554,49 @@ namespace Generator.Process
                 }
             }
 
-            BaseCSType returnType = MakeCSType(command.ReturnType.Type, command.ReturnType.Handle, command.ReturnType.Group);
+            list = new List<string>();
+            BaseCSType returnType = MakeCSType(command.ReturnType.Type, command.ReturnType.Handle, command.ReturnType.Group, list);
+            if (list.Count > 0)
+            {
+                misplacedGroups.Add(("return value", command.ReturnType.Type.HumanReadable(), list[0]));
+            }
             if (command.ReturnType.Group != null)
             {
                 referencedEnumGroups.Add(command.ReturnType.Group);
             }
 
-            return new NativeFunction(command.EntryPoint, functionName, parameters, returnType, referencedEnumGroups.ToArray());
+            return new NativeFunction(command.EntryPoint, functionName, parameters, returnType, referencedEnumGroups.ToArray(), misplacedGroups);
         }
 
-        public static BaseCSType MakeCSType(GLType type, HandleType? handle, string? group)
+        public static BaseCSType MakeCSType(GLType type, HandleType? handle, string? group, List<string> misplacedGroups)
         {
+            if (group != null && type is not GLBaseType)
+            {
+                var tempType = type;
+                while (tempType is GLPointerType pt)
+                {
+                    tempType = pt.BaseType;
+                }
+
+                if (tempType is GLBaseType bt && bt.Type == PrimitiveType.Enum)
+                {
+
+                }
+                else
+                {
+                    misplacedGroups.Add(group);
+                }
+            }
+
+            if (group != null && type is GLBaseType glType && glType.Type != PrimitiveType.Enum)
+            {
+                misplacedGroups.Add(group);
+            }
+
             switch (type)
             {
                 case GLPointerType pt:
-                    return new CSPointer(MakeCSType(pt.BaseType, handle, group), pt.Constant);
+                    return new CSPointer(MakeCSType(pt.BaseType, handle, group, misplacedGroups), pt.Constant);
 
                 case GLBaseType bt when handle != null:
                     return new CSStruct(handle.Value.ToString(), bt.Constant, new CSPrimitive("int", bt.Constant));

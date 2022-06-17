@@ -35,7 +35,8 @@ namespace Generator.Writing
         string FunctionName,
         List<Parameter> Parameters,
         BaseCSType ReturnType,
-        string[] ReferencedEnumGroups);
+        string[] ReferencedEnumGroups,
+        HashSet<(string Parameter, string Type, string Group)> misplacedGroups);
 
     public record Overload(
         Overload? NestedOverload,
