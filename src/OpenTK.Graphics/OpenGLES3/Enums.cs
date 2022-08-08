@@ -1194,6 +1194,32 @@ namespace OpenTK.Graphics.OpenGLES3
         ColorAttachment13Ext = 36077,
         ColorAttachment14Ext = 36078,
         ColorAttachment15Ext = 36079,
+        ShadingRate1x1PixelsExt = 38566,
+        ShadingRate1x2PixelsExt = 38567,
+        ShadingRate2x1PixelsExt = 38568,
+        ShadingRate2x2PixelsExt = 38569,
+        ShadingRate1x4PixelsExt = 38570,
+        ShadingRate4x1PixelsExt = 38571,
+        ShadingRate4x2PixelsExt = 38572,
+        ShadingRate2x4PixelsExt = 38573,
+        ShadingRate4x4PixelsExt = 38574,
+        ShadingRateExt = 38608,
+        ShadingRateAttachmentExt = 38609,
+        FragmentShadingRateCombinerOpKeepExt = 38610,
+        FragmentShadingRateCombinerOpReplaceExt = 38611,
+        FragmentShadingRateCombinerOpMinExt = 38612,
+        FragmentShadingRateCombinerOpMaxExt = 38613,
+        FragmentShadingRateCombinerOpMulExt = 38614,
+        MinFragmentShadingRateAttachmentTexelWidthExt = 38615,
+        MaxFragmentShadingRateAttachmentTexelWidthExt = 38616,
+        MinFragmentShadingRateAttachmentTexelHeightExt = 38617,
+        MaxFragmentShadingRateAttachmentTexelHeightExt = 38618,
+        MaxFragmentShadingRateAttachmentTexelAspectRatioExt = 38619,
+        MaxFragmentShadingRateAttachmentLayersExt = 38620,
+        FragmentShadingRateWithShaderDepthStencilWritesSupportedExt = 38621,
+        FragmentShadingRateWithSampleMaskSupportedExt = 38622,
+        FragmentShadingRateAttachmentWithDefaultFramebufferSupportedExt = 38623,
+        FragmentShadingRateNonTrivialCombinersSupportedExt = 36719,
         GeometryShaderExt = 36313,
         GeometryShaderBitExt = 4,
         GeometryLinkedVerticesOutExt = 35094,
@@ -2494,6 +2520,16 @@ namespace OpenTK.Graphics.OpenGLES3
         SubgroupFeaturePartitionedBitNv = 256,
     }
     [Flags]
+    public enum FragmentShaderDestMaskATI : uint
+    {
+        None = 0,
+    }
+    [Flags]
+    public enum FragmentShaderDestModMaskATI : uint
+    {
+        None = 0,
+    }
+    [Flags]
     public enum PathFontStyle : uint
     {
         None = 0,
@@ -2695,6 +2731,19 @@ namespace OpenTK.Graphics.OpenGLES3
         ConstantAlpha = 32771,
         OneMinusConstantAlpha = 32772,
     }
+    public enum FragmentShaderGenericSourceATI : uint
+    {
+        Zero = 0,
+        One = 1,
+    }
+    public enum FragmentShaderValueRepATI : uint
+    {
+        Alpha = 6406,
+        None = 0,
+        Red = 6403,
+        Green = 6404,
+        Blue = 6405,
+    }
     public enum SyncBehaviorFlags : uint
     {
         None = 0,
@@ -2760,12 +2809,8 @@ namespace OpenTK.Graphics.OpenGLES3
         ColorAttachment30 = 36094,
         ColorAttachment31 = 36095,
     }
-    public enum PixelTexGenMode : uint
+    public enum PixelTexGenModeSGIX : uint
     {
-        Rgb = 6407,
-        Rgba = 6408,
-        Luminance = 6409,
-        LuminanceAlpha = 6410,
         None = 0,
     }
     public enum ReadBufferMode : uint
@@ -3157,6 +3202,17 @@ namespace OpenTK.Graphics.OpenGLES3
         FragmentShaderFramebufferFetchMrtArm = 36710,
         BlendEquationExt = 32777,
         MaxColorAttachmentsExt = 36063,
+        ShadingRateExt = 38608,
+        MinFragmentShadingRateAttachmentTexelWidthExt = 38615,
+        MaxFragmentShadingRateAttachmentTexelWidthExt = 38616,
+        MinFragmentShadingRateAttachmentTexelHeightExt = 38617,
+        MaxFragmentShadingRateAttachmentTexelHeightExt = 38618,
+        MaxFragmentShadingRateAttachmentTexelAspectRatioExt = 38619,
+        MaxFragmentShadingRateAttachmentLayersExt = 38620,
+        FragmentShadingRateWithShaderDepthStencilWritesSupportedExt = 38621,
+        FragmentShadingRateWithSampleMaskSupportedExt = 38622,
+        FragmentShadingRateAttachmentWithDefaultFramebufferSupportedExt = 38623,
+        FragmentShadingRateNonTrivialCombinersSupportedExt = 36719,
         NumDeviceUuidsExt = 38294,
         DeviceUuidExt = 38295,
         DriverUuidExt = 38296,
@@ -3435,6 +3491,12 @@ namespace OpenTK.Graphics.OpenGLES3
         Float = 5126,
         UnsignedShort4444 = 32819,
         UnsignedShort5551 = 32820,
+        UnsignedShort565 = 33635,
+        UnsignedInt2101010Rev = 33640,
+        UnsignedShort4444RevExt = 33637,
+        UnsignedShort1555RevExt = 33638,
+        UnsignedInt2101010RevExt = 33640,
+        UnsignedShort4444RevImg = 33637,
     }
     public enum VertexAttribType : uint
     {
@@ -3450,6 +3512,7 @@ namespace OpenTK.Graphics.OpenGLES3
         UnsignedInt10f11f11fRev = 35899,
         HalfFloat = 5131,
         Int2101010Rev = 36255,
+        UnsignedInt2101010RevExt = 33640,
     }
     public enum VertexAttribPointerType : uint
     {
@@ -3465,6 +3528,7 @@ namespace OpenTK.Graphics.OpenGLES3
         UnsignedInt10f11f11fRev = 35899,
         HalfFloat = 5131,
         Int2101010Rev = 36255,
+        UnsignedInt2101010RevExt = 33640,
         Int64Nv = 5134,
         UnsignedInt64Nv = 5135,
     }
@@ -3542,7 +3606,10 @@ namespace OpenTK.Graphics.OpenGLES3
         Green = 6404,
         Blue = 6405,
         StencilIndex = 6401,
+        BgraExt = 32993,
         RedExt = 6403,
+        BgraImg = 32993,
+        BgrExt = 32992,
     }
     public enum AttributeType : uint
     {
@@ -4135,6 +4202,13 @@ namespace OpenTK.Graphics.OpenGLES3
         Alpha = 6406,
         Rgb = 6407,
     }
+    public enum PixelTexGenMode : uint
+    {
+        Rgb = 6407,
+        Rgba = 6408,
+        Luminance = 6409,
+        LuminanceAlpha = 6410,
+    }
     public enum PolygonMode : uint
     {
     }
@@ -4507,6 +4581,7 @@ namespace OpenTK.Graphics.OpenGLES3
         ColorAttachment29 = 36093,
         ColorAttachment30 = 36094,
         ColorAttachment31 = 36095,
+        ShadingRateAttachmentExt = 38609,
     }
     public enum VertexBufferObjectParameter : uint
     {
@@ -4602,6 +4677,41 @@ namespace OpenTK.Graphics.OpenGLES3
         PrimitivesGenerated = 35975,
     }
     public enum TextureUnit : uint
+    {
+        Texture0 = 33984,
+        Texture1 = 33985,
+        Texture2 = 33986,
+        Texture3 = 33987,
+        Texture4 = 33988,
+        Texture5 = 33989,
+        Texture6 = 33990,
+        Texture7 = 33991,
+        Texture8 = 33992,
+        Texture9 = 33993,
+        Texture10 = 33994,
+        Texture11 = 33995,
+        Texture12 = 33996,
+        Texture13 = 33997,
+        Texture14 = 33998,
+        Texture15 = 33999,
+        Texture16 = 34000,
+        Texture17 = 34001,
+        Texture18 = 34002,
+        Texture19 = 34003,
+        Texture20 = 34004,
+        Texture21 = 34005,
+        Texture22 = 34006,
+        Texture23 = 34007,
+        Texture24 = 34008,
+        Texture25 = 34009,
+        Texture26 = 34010,
+        Texture27 = 34011,
+        Texture28 = 34012,
+        Texture29 = 34013,
+        Texture30 = 34014,
+        Texture31 = 34015,
+    }
+    public enum FragmentShaderTextureSourceATI : uint
     {
         Texture0 = 33984,
         Texture1 = 33985,
@@ -5073,9 +5183,22 @@ namespace OpenTK.Graphics.OpenGLES3
         ShadingRate4x2PixelsQcom = 38572,
         ShadingRate4x4PixelsQcom = 38574,
     }
+    public enum ShadingRate : uint
+    {
+        ShadingRate1x1PixelsExt = 38566,
+        ShadingRate1x2PixelsExt = 38567,
+        ShadingRate2x1PixelsExt = 38568,
+        ShadingRate2x2PixelsExt = 38569,
+        ShadingRate1x4PixelsExt = 38570,
+        ShadingRate4x1PixelsExt = 38571,
+        ShadingRate4x2PixelsExt = 38572,
+        ShadingRate2x4PixelsExt = 38573,
+        ShadingRate4x4PixelsExt = 38574,
+    }
     public enum TexStorageAttribs : uint
     {
         SurfaceCompressionExt = 38592,
+        SurfaceCompressionFixedRateNoneExt = 38593,
         SurfaceCompressionFixedRateDefaultExt = 38594,
         SurfaceCompressionFixedRate1bpcExt = 38596,
         SurfaceCompressionFixedRate2bpcExt = 38597,
@@ -5090,9 +5213,13 @@ namespace OpenTK.Graphics.OpenGLES3
         SurfaceCompressionFixedRate11bpcExt = 38606,
         SurfaceCompressionFixedRate12bpcExt = 38607,
     }
-    public enum TexStorageAttribss : uint
+    public enum ShadingRateCombinerOp : uint
     {
-        SurfaceCompressionFixedRateNoneExt = 38593,
+        FragmentShadingRateCombinerOpKeepExt = 38610,
+        FragmentShadingRateCombinerOpReplaceExt = 38611,
+        FragmentShadingRateCombinerOpMinExt = 38612,
+        FragmentShadingRateCombinerOpMaxExt = 38613,
+        FragmentShadingRateCombinerOpMulExt = 38614,
     }
 #pragma warning restore CA1069 // Enums values should not be duplicated
 }

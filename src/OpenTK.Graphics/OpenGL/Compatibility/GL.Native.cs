@@ -24925,69 +24925,69 @@ namespace OpenTK.Graphics.OpenGL.Compatibility
                 _SampleMapATI_fnptr(dst, interp, swizzle);
             }
             
-            private static delegate* unmanaged<FragmentOpATI, uint, uint, uint, uint, uint, uint, void> _ColorFragmentOp1ATI_fnptr = &ColorFragmentOp1ATI_Lazy;
+            private static delegate* unmanaged<FragmentOp1ATI, uint, uint, uint, uint, uint, uint, void> _ColorFragmentOp1ATI_fnptr = &ColorFragmentOp1ATI_Lazy;
             /// <summary> <b>[requires: GL_ATI_fragment_shader]</b>  </summary>
             /// <remarks><see href="" /></remarks>
-            public static void ColorFragmentOp1ATI(FragmentOpATI op, uint dst, uint dstMask, uint dstMod, uint arg1, uint arg1Rep, uint arg1Mod) => _ColorFragmentOp1ATI_fnptr(op, dst, dstMask, dstMod, arg1, arg1Rep, arg1Mod);
+            public static void ColorFragmentOp1ATI(FragmentOp1ATI op, uint dst, uint dstMask, uint dstMod, uint arg1, uint arg1Rep, uint arg1Mod) => _ColorFragmentOp1ATI_fnptr(op, dst, dstMask, dstMod, arg1, arg1Rep, arg1Mod);
             [UnmanagedCallersOnly]
-            private static void ColorFragmentOp1ATI_Lazy(FragmentOpATI op, uint dst, uint dstMask, uint dstMod, uint arg1, uint arg1Rep, uint arg1Mod)
+            private static void ColorFragmentOp1ATI_Lazy(FragmentOp1ATI op, uint dst, uint dstMask, uint dstMod, uint arg1, uint arg1Rep, uint arg1Mod)
             {
-                _ColorFragmentOp1ATI_fnptr = (delegate* unmanaged<FragmentOpATI, uint, uint, uint, uint, uint, uint, void>)GLLoader.BindingsContext.GetProcAddress("glColorFragmentOp1ATI");
+                _ColorFragmentOp1ATI_fnptr = (delegate* unmanaged<FragmentOp1ATI, uint, uint, uint, uint, uint, uint, void>)GLLoader.BindingsContext.GetProcAddress("glColorFragmentOp1ATI");
                 _ColorFragmentOp1ATI_fnptr(op, dst, dstMask, dstMod, arg1, arg1Rep, arg1Mod);
             }
             
-            private static delegate* unmanaged<FragmentOpATI, uint, uint, uint, uint, uint, uint, uint, uint, uint, void> _ColorFragmentOp2ATI_fnptr = &ColorFragmentOp2ATI_Lazy;
+            private static delegate* unmanaged<FragmentOp2ATI, uint, uint, uint, uint, uint, uint, uint, uint, uint, void> _ColorFragmentOp2ATI_fnptr = &ColorFragmentOp2ATI_Lazy;
             /// <summary> <b>[requires: GL_ATI_fragment_shader]</b>  </summary>
             /// <remarks><see href="" /></remarks>
-            public static void ColorFragmentOp2ATI(FragmentOpATI op, uint dst, uint dstMask, uint dstMod, uint arg1, uint arg1Rep, uint arg1Mod, uint arg2, uint arg2Rep, uint arg2Mod) => _ColorFragmentOp2ATI_fnptr(op, dst, dstMask, dstMod, arg1, arg1Rep, arg1Mod, arg2, arg2Rep, arg2Mod);
+            public static void ColorFragmentOp2ATI(FragmentOp2ATI op, uint dst, uint dstMask, uint dstMod, uint arg1, uint arg1Rep, uint arg1Mod, uint arg2, uint arg2Rep, uint arg2Mod) => _ColorFragmentOp2ATI_fnptr(op, dst, dstMask, dstMod, arg1, arg1Rep, arg1Mod, arg2, arg2Rep, arg2Mod);
             [UnmanagedCallersOnly]
-            private static void ColorFragmentOp2ATI_Lazy(FragmentOpATI op, uint dst, uint dstMask, uint dstMod, uint arg1, uint arg1Rep, uint arg1Mod, uint arg2, uint arg2Rep, uint arg2Mod)
+            private static void ColorFragmentOp2ATI_Lazy(FragmentOp2ATI op, uint dst, uint dstMask, uint dstMod, uint arg1, uint arg1Rep, uint arg1Mod, uint arg2, uint arg2Rep, uint arg2Mod)
             {
-                _ColorFragmentOp2ATI_fnptr = (delegate* unmanaged<FragmentOpATI, uint, uint, uint, uint, uint, uint, uint, uint, uint, void>)GLLoader.BindingsContext.GetProcAddress("glColorFragmentOp2ATI");
+                _ColorFragmentOp2ATI_fnptr = (delegate* unmanaged<FragmentOp2ATI, uint, uint, uint, uint, uint, uint, uint, uint, uint, void>)GLLoader.BindingsContext.GetProcAddress("glColorFragmentOp2ATI");
                 _ColorFragmentOp2ATI_fnptr(op, dst, dstMask, dstMod, arg1, arg1Rep, arg1Mod, arg2, arg2Rep, arg2Mod);
             }
             
-            private static delegate* unmanaged<FragmentOpATI, uint, uint, uint, uint, uint, uint, uint, uint, uint, uint, uint, uint, void> _ColorFragmentOp3ATI_fnptr = &ColorFragmentOp3ATI_Lazy;
+            private static delegate* unmanaged<FragmentOp3ATI, uint, uint, uint, uint, uint, uint, uint, uint, uint, uint, uint, uint, void> _ColorFragmentOp3ATI_fnptr = &ColorFragmentOp3ATI_Lazy;
             /// <summary> <b>[requires: GL_ATI_fragment_shader]</b>  </summary>
             /// <remarks><see href="" /></remarks>
-            public static void ColorFragmentOp3ATI(FragmentOpATI op, uint dst, uint dstMask, uint dstMod, uint arg1, uint arg1Rep, uint arg1Mod, uint arg2, uint arg2Rep, uint arg2Mod, uint arg3, uint arg3Rep, uint arg3Mod) => _ColorFragmentOp3ATI_fnptr(op, dst, dstMask, dstMod, arg1, arg1Rep, arg1Mod, arg2, arg2Rep, arg2Mod, arg3, arg3Rep, arg3Mod);
+            public static void ColorFragmentOp3ATI(FragmentOp3ATI op, uint dst, uint dstMask, uint dstMod, uint arg1, uint arg1Rep, uint arg1Mod, uint arg2, uint arg2Rep, uint arg2Mod, uint arg3, uint arg3Rep, uint arg3Mod) => _ColorFragmentOp3ATI_fnptr(op, dst, dstMask, dstMod, arg1, arg1Rep, arg1Mod, arg2, arg2Rep, arg2Mod, arg3, arg3Rep, arg3Mod);
             [UnmanagedCallersOnly]
-            private static void ColorFragmentOp3ATI_Lazy(FragmentOpATI op, uint dst, uint dstMask, uint dstMod, uint arg1, uint arg1Rep, uint arg1Mod, uint arg2, uint arg2Rep, uint arg2Mod, uint arg3, uint arg3Rep, uint arg3Mod)
+            private static void ColorFragmentOp3ATI_Lazy(FragmentOp3ATI op, uint dst, uint dstMask, uint dstMod, uint arg1, uint arg1Rep, uint arg1Mod, uint arg2, uint arg2Rep, uint arg2Mod, uint arg3, uint arg3Rep, uint arg3Mod)
             {
-                _ColorFragmentOp3ATI_fnptr = (delegate* unmanaged<FragmentOpATI, uint, uint, uint, uint, uint, uint, uint, uint, uint, uint, uint, uint, void>)GLLoader.BindingsContext.GetProcAddress("glColorFragmentOp3ATI");
+                _ColorFragmentOp3ATI_fnptr = (delegate* unmanaged<FragmentOp3ATI, uint, uint, uint, uint, uint, uint, uint, uint, uint, uint, uint, uint, void>)GLLoader.BindingsContext.GetProcAddress("glColorFragmentOp3ATI");
                 _ColorFragmentOp3ATI_fnptr(op, dst, dstMask, dstMod, arg1, arg1Rep, arg1Mod, arg2, arg2Rep, arg2Mod, arg3, arg3Rep, arg3Mod);
             }
             
-            private static delegate* unmanaged<FragmentOpATI, uint, uint, uint, uint, uint, void> _AlphaFragmentOp1ATI_fnptr = &AlphaFragmentOp1ATI_Lazy;
+            private static delegate* unmanaged<FragmentOp1ATI, uint, uint, uint, uint, uint, void> _AlphaFragmentOp1ATI_fnptr = &AlphaFragmentOp1ATI_Lazy;
             /// <summary> <b>[requires: GL_ATI_fragment_shader]</b>  </summary>
             /// <remarks><see href="" /></remarks>
-            public static void AlphaFragmentOp1ATI(FragmentOpATI op, uint dst, uint dstMod, uint arg1, uint arg1Rep, uint arg1Mod) => _AlphaFragmentOp1ATI_fnptr(op, dst, dstMod, arg1, arg1Rep, arg1Mod);
+            public static void AlphaFragmentOp1ATI(FragmentOp1ATI op, uint dst, uint dstMod, uint arg1, uint arg1Rep, uint arg1Mod) => _AlphaFragmentOp1ATI_fnptr(op, dst, dstMod, arg1, arg1Rep, arg1Mod);
             [UnmanagedCallersOnly]
-            private static void AlphaFragmentOp1ATI_Lazy(FragmentOpATI op, uint dst, uint dstMod, uint arg1, uint arg1Rep, uint arg1Mod)
+            private static void AlphaFragmentOp1ATI_Lazy(FragmentOp1ATI op, uint dst, uint dstMod, uint arg1, uint arg1Rep, uint arg1Mod)
             {
-                _AlphaFragmentOp1ATI_fnptr = (delegate* unmanaged<FragmentOpATI, uint, uint, uint, uint, uint, void>)GLLoader.BindingsContext.GetProcAddress("glAlphaFragmentOp1ATI");
+                _AlphaFragmentOp1ATI_fnptr = (delegate* unmanaged<FragmentOp1ATI, uint, uint, uint, uint, uint, void>)GLLoader.BindingsContext.GetProcAddress("glAlphaFragmentOp1ATI");
                 _AlphaFragmentOp1ATI_fnptr(op, dst, dstMod, arg1, arg1Rep, arg1Mod);
             }
             
-            private static delegate* unmanaged<FragmentOpATI, uint, uint, uint, uint, uint, uint, uint, uint, void> _AlphaFragmentOp2ATI_fnptr = &AlphaFragmentOp2ATI_Lazy;
+            private static delegate* unmanaged<FragmentOp2ATI, uint, uint, uint, uint, uint, uint, uint, uint, void> _AlphaFragmentOp2ATI_fnptr = &AlphaFragmentOp2ATI_Lazy;
             /// <summary> <b>[requires: GL_ATI_fragment_shader]</b>  </summary>
             /// <remarks><see href="" /></remarks>
-            public static void AlphaFragmentOp2ATI(FragmentOpATI op, uint dst, uint dstMod, uint arg1, uint arg1Rep, uint arg1Mod, uint arg2, uint arg2Rep, uint arg2Mod) => _AlphaFragmentOp2ATI_fnptr(op, dst, dstMod, arg1, arg1Rep, arg1Mod, arg2, arg2Rep, arg2Mod);
+            public static void AlphaFragmentOp2ATI(FragmentOp2ATI op, uint dst, uint dstMod, uint arg1, uint arg1Rep, uint arg1Mod, uint arg2, uint arg2Rep, uint arg2Mod) => _AlphaFragmentOp2ATI_fnptr(op, dst, dstMod, arg1, arg1Rep, arg1Mod, arg2, arg2Rep, arg2Mod);
             [UnmanagedCallersOnly]
-            private static void AlphaFragmentOp2ATI_Lazy(FragmentOpATI op, uint dst, uint dstMod, uint arg1, uint arg1Rep, uint arg1Mod, uint arg2, uint arg2Rep, uint arg2Mod)
+            private static void AlphaFragmentOp2ATI_Lazy(FragmentOp2ATI op, uint dst, uint dstMod, uint arg1, uint arg1Rep, uint arg1Mod, uint arg2, uint arg2Rep, uint arg2Mod)
             {
-                _AlphaFragmentOp2ATI_fnptr = (delegate* unmanaged<FragmentOpATI, uint, uint, uint, uint, uint, uint, uint, uint, void>)GLLoader.BindingsContext.GetProcAddress("glAlphaFragmentOp2ATI");
+                _AlphaFragmentOp2ATI_fnptr = (delegate* unmanaged<FragmentOp2ATI, uint, uint, uint, uint, uint, uint, uint, uint, void>)GLLoader.BindingsContext.GetProcAddress("glAlphaFragmentOp2ATI");
                 _AlphaFragmentOp2ATI_fnptr(op, dst, dstMod, arg1, arg1Rep, arg1Mod, arg2, arg2Rep, arg2Mod);
             }
             
-            private static delegate* unmanaged<FragmentOpATI, uint, uint, uint, uint, uint, uint, uint, uint, uint, uint, uint, void> _AlphaFragmentOp3ATI_fnptr = &AlphaFragmentOp3ATI_Lazy;
+            private static delegate* unmanaged<FragmentOp3ATI, uint, uint, uint, uint, uint, uint, uint, uint, uint, uint, uint, void> _AlphaFragmentOp3ATI_fnptr = &AlphaFragmentOp3ATI_Lazy;
             /// <summary> <b>[requires: GL_ATI_fragment_shader]</b>  </summary>
             /// <remarks><see href="" /></remarks>
-            public static void AlphaFragmentOp3ATI(FragmentOpATI op, uint dst, uint dstMod, uint arg1, uint arg1Rep, uint arg1Mod, uint arg2, uint arg2Rep, uint arg2Mod, uint arg3, uint arg3Rep, uint arg3Mod) => _AlphaFragmentOp3ATI_fnptr(op, dst, dstMod, arg1, arg1Rep, arg1Mod, arg2, arg2Rep, arg2Mod, arg3, arg3Rep, arg3Mod);
+            public static void AlphaFragmentOp3ATI(FragmentOp3ATI op, uint dst, uint dstMod, uint arg1, uint arg1Rep, uint arg1Mod, uint arg2, uint arg2Rep, uint arg2Mod, uint arg3, uint arg3Rep, uint arg3Mod) => _AlphaFragmentOp3ATI_fnptr(op, dst, dstMod, arg1, arg1Rep, arg1Mod, arg2, arg2Rep, arg2Mod, arg3, arg3Rep, arg3Mod);
             [UnmanagedCallersOnly]
-            private static void AlphaFragmentOp3ATI_Lazy(FragmentOpATI op, uint dst, uint dstMod, uint arg1, uint arg1Rep, uint arg1Mod, uint arg2, uint arg2Rep, uint arg2Mod, uint arg3, uint arg3Rep, uint arg3Mod)
+            private static void AlphaFragmentOp3ATI_Lazy(FragmentOp3ATI op, uint dst, uint dstMod, uint arg1, uint arg1Rep, uint arg1Mod, uint arg2, uint arg2Rep, uint arg2Mod, uint arg3, uint arg3Rep, uint arg3Mod)
             {
-                _AlphaFragmentOp3ATI_fnptr = (delegate* unmanaged<FragmentOpATI, uint, uint, uint, uint, uint, uint, uint, uint, uint, uint, uint, void>)GLLoader.BindingsContext.GetProcAddress("glAlphaFragmentOp3ATI");
+                _AlphaFragmentOp3ATI_fnptr = (delegate* unmanaged<FragmentOp3ATI, uint, uint, uint, uint, uint, uint, uint, uint, uint, uint, uint, void>)GLLoader.BindingsContext.GetProcAddress("glAlphaFragmentOp3ATI");
                 _AlphaFragmentOp3ATI_fnptr(op, dst, dstMod, arg1, arg1Rep, arg1Mod, arg2, arg2Rep, arg2Mod, arg3, arg3Rep, arg3Mod);
             }
             

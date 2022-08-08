@@ -223,6 +223,22 @@ namespace Generator.Process
                 }
             }
 
+            Console.WriteLine();
+
+            HashSet<string> temp = new HashSet<string>();
+            foreach (var (_, list) in invalidEnums)
+            {
+                foreach (var (_, _, group) in list)
+                {
+                    temp.Add(group);
+                }
+            }
+
+            foreach (var group in temp)
+            {
+                Console.WriteLine(group);
+            }
+
             // Now that we have all of the functions and enums ready in dictionaries
             // we can start building all of the API versions.
 

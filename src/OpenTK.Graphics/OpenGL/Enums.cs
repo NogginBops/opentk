@@ -5157,6 +5157,7 @@ namespace OpenTK.Graphics.OpenGL
     [Flags]
     public enum FragmentShaderDestMaskATI : uint
     {
+        None = 0,
         RedBitAti = 1,
         GreenBitAti = 2,
         BlueBitAti = 4,
@@ -5164,6 +5165,7 @@ namespace OpenTK.Graphics.OpenGL
     [Flags]
     public enum FragmentShaderDestModMaskATI : uint
     {
+        None = 0,
         _2xBitAti = 1,
         _4xBitAti = 2,
         _8xBitAti = 4,
@@ -5175,6 +5177,7 @@ namespace OpenTK.Graphics.OpenGL
     [Flags]
     public enum FragmentShaderColorModMaskATI : uint
     {
+        _2xBitAti = 1,
         CompBitAti = 2,
         NegateBitAti = 4,
         BiasBitAti = 8,
@@ -5417,6 +5420,87 @@ namespace OpenTK.Graphics.OpenGL
         OneMinusSrc1Color = 35066,
         OneMinusSrc1Alpha = 35067,
     }
+    public enum FragmentShaderGenericSourceATI : uint
+    {
+        Zero = 0,
+        One = 1,
+        PrimaryColor = 34167,
+        PrimaryColorArb = 34167,
+        Reg0Ati = 35105,
+        Reg1Ati = 35106,
+        Reg2Ati = 35107,
+        Reg3Ati = 35108,
+        Reg4Ati = 35109,
+        Reg5Ati = 35110,
+        Reg6Ati = 35111,
+        Reg7Ati = 35112,
+        Reg8Ati = 35113,
+        Reg9Ati = 35114,
+        Reg10Ati = 35115,
+        Reg11Ati = 35116,
+        Reg12Ati = 35117,
+        Reg13Ati = 35118,
+        Reg14Ati = 35119,
+        Reg15Ati = 35120,
+        Reg16Ati = 35121,
+        Reg17Ati = 35122,
+        Reg18Ati = 35123,
+        Reg19Ati = 35124,
+        Reg20Ati = 35125,
+        Reg21Ati = 35126,
+        Reg22Ati = 35127,
+        Reg23Ati = 35128,
+        Reg24Ati = 35129,
+        Reg25Ati = 35130,
+        Reg26Ati = 35131,
+        Reg27Ati = 35132,
+        Reg28Ati = 35133,
+        Reg29Ati = 35134,
+        Reg30Ati = 35135,
+        Reg31Ati = 35136,
+        Con0Ati = 35137,
+        Con1Ati = 35138,
+        Con2Ati = 35139,
+        Con3Ati = 35140,
+        Con4Ati = 35141,
+        Con5Ati = 35142,
+        Con6Ati = 35143,
+        Con7Ati = 35144,
+        Con8Ati = 35145,
+        Con9Ati = 35146,
+        Con10Ati = 35147,
+        Con11Ati = 35148,
+        Con12Ati = 35149,
+        Con13Ati = 35150,
+        Con14Ati = 35151,
+        Con15Ati = 35152,
+        Con16Ati = 35153,
+        Con17Ati = 35154,
+        Con18Ati = 35155,
+        Con19Ati = 35156,
+        Con20Ati = 35157,
+        Con21Ati = 35158,
+        Con22Ati = 35159,
+        Con23Ati = 35160,
+        Con24Ati = 35161,
+        Con25Ati = 35162,
+        Con26Ati = 35163,
+        Con27Ati = 35164,
+        Con28Ati = 35165,
+        Con29Ati = 35166,
+        Con30Ati = 35167,
+        Con31Ati = 35168,
+        SecondaryInterpolatorAti = 35181,
+        PrimaryColorExt = 34167,
+    }
+    public enum FragmentShaderValueRepATI : uint
+    {
+        None = 0,
+        Red = 6403,
+        Green = 6404,
+        Blue = 6405,
+        Alpha = 6406,
+    }
     public enum SyncBehaviorFlags : uint
     {
         None = 0,
@@ -5498,13 +5582,9 @@ namespace OpenTK.Graphics.OpenGL
         ColorAttachment30 = 36094,
         ColorAttachment31 = 36095,
     }
-    public enum PixelTexGenMode : uint
+    public enum PixelTexGenModeSGIX : uint
     {
         None = 0,
-        Rgb = 6407,
-        Rgba = 6408,
-        Luminance = 6409,
-        LuminanceAlpha = 6410,
     }
     public enum ReadBufferMode : uint
     {
@@ -6180,6 +6260,7 @@ namespace OpenTK.Graphics.OpenGL
         MaxVertexAttribBindings = 33498,
         TextureBindingCubeMapArb = 34068,
         TextureBindingRectangleArb = 34038,
+        FragmentShaderAti = 35104,
         BlendColorExt = 32773,
         BlendEquationExt = 32777,
         PackCmykHintExt = 32782,
@@ -7070,6 +7151,13 @@ namespace OpenTK.Graphics.OpenGL
         UnsignedShort5551 = 32820,
         UnsignedInt8888 = 32821,
         UnsignedInt1010102 = 32822,
+        UnsignedByte233Rev = 33634,
+        UnsignedShort565 = 33635,
+        UnsignedShort565Rev = 33636,
+        UnsignedShort4444Rev = 33637,
+        UnsignedShort1555Rev = 33638,
+        UnsignedInt8888Rev = 33639,
+        UnsignedInt2101010Rev = 33640,
         UnsignedByte332Ext = 32818,
         UnsignedShort4444Ext = 32819,
         UnsignedShort5551Ext = 32820,
@@ -7198,6 +7286,8 @@ namespace OpenTK.Graphics.OpenGL
         Rg = 33319,
         RgInteger = 33320,
         AbgrExt = 32768,
+        BgrExt = 32992,
+        BgraExt = 32993,
         CmykExt = 32780,
         CmykaExt = 32781,
         Ycrcb422Sgix = 33211,
@@ -7995,6 +8085,13 @@ namespace OpenTK.Graphics.OpenGL
         Alpha = 6406,
         Rgb = 6407,
     }
+    public enum PixelTexGenMode : uint
+    {
+        Rgb = 6407,
+        Rgba = 6408,
+        Luminance = 6409,
+        LuminanceAlpha = 6410,
+    }
     public enum PolygonMode : uint
     {
         Point = 6912,
@@ -8720,9 +8817,6 @@ namespace OpenTK.Graphics.OpenGL
     {
         ListPrioritySgix = 33154,
     }
-    public enum PixelTexGenModeSGIX : uint
-    {
-    }
     public enum FfdTargetSGIX : uint
     {
         GeometryDeformationSgix = 33172,
@@ -8953,6 +9047,7 @@ namespace OpenTK.Graphics.OpenGL
     }
     public enum LightTextureModeEXT : uint
     {
+        FragmentDepth = 33874,
         FragmentDepthExt = 33874,
         FragmentMaterialExt = 33609,
         FragmentNormalExt = 33610,
@@ -8996,6 +9091,14 @@ namespace OpenTK.Graphics.OpenGL
         ResampleZeroFillSgix = 33844,
         ResampleDecimateSgix = 33840,
     }
+    public enum FogCoordSrc : uint
+    {
+        FogCoordinate = 33873,
+        FragmentDepth = 33874,
+        FogCoord = 33873,
+        FogCoordinateExt = 33873,
+        FragmentDepthExt = 33874,
+    }
     public enum TextureUnit : uint
     {
         Texture0 = 33984,
@@ -9030,6 +9133,73 @@ namespace OpenTK.Graphics.OpenGL
         Texture29 = 34013,
         Texture30 = 34014,
         Texture31 = 34015,
+    }
+    public enum FragmentShaderTextureSourceATI : uint
+    {
+        Texture0 = 33984,
+        Texture1 = 33985,
+        Texture2 = 33986,
+        Texture3 = 33987,
+        Texture4 = 33988,
+        Texture5 = 33989,
+        Texture6 = 33990,
+        Texture7 = 33991,
+        Texture8 = 33992,
+        Texture9 = 33993,
+        Texture10 = 33994,
+        Texture11 = 33995,
+        Texture12 = 33996,
+        Texture13 = 33997,
+        Texture14 = 33998,
+        Texture15 = 33999,
+        Texture16 = 34000,
+        Texture17 = 34001,
+        Texture18 = 34002,
+        Texture19 = 34003,
+        Texture20 = 34004,
+        Texture21 = 34005,
+        Texture22 = 34006,
+        Texture23 = 34007,
+        Texture24 = 34008,
+        Texture25 = 34009,
+        Texture26 = 34010,
+        Texture27 = 34011,
+        Texture28 = 34012,
+        Texture29 = 34013,
+        Texture30 = 34014,
+        Texture31 = 34015,
+        Reg0Ati = 35105,
+        Reg1Ati = 35106,
+        Reg2Ati = 35107,
+        Reg3Ati = 35108,
+        Reg4Ati = 35109,
+        Reg5Ati = 35110,
+        Reg6Ati = 35111,
+        Reg7Ati = 35112,
+        Reg8Ati = 35113,
+        Reg9Ati = 35114,
+        Reg10Ati = 35115,
+        Reg11Ati = 35116,
+        Reg12Ati = 35117,
+        Reg13Ati = 35118,
+        Reg14Ati = 35119,
+        Reg15Ati = 35120,
+        Reg16Ati = 35121,
+        Reg17Ati = 35122,
+        Reg18Ati = 35123,
+        Reg19Ati = 35124,
+        Reg20Ati = 35125,
+        Reg21Ati = 35126,
+        Reg22Ati = 35127,
+        Reg23Ati = 35128,
+        Reg24Ati = 35129,
+        Reg25Ati = 35130,
+        Reg26Ati = 35131,
+        Reg27Ati = 35132,
+        Reg28Ati = 35133,
+        Reg29Ati = 35134,
+        Reg30Ati = 35135,
+        Reg31Ati = 35136,
     }
     public enum CombinerRegisterNV : uint
     {
@@ -9452,14 +9622,90 @@ namespace OpenTK.Graphics.OpenGL
         ClampFragmentColorArb = 35099,
         ClampReadColorArb = 35100,
     }
-    public enum FragmentOpATI : uint
+    public enum FragmentShaderRegATI : uint
+    {
+        Reg0Ati = 35105,
+        Reg1Ati = 35106,
+        Reg2Ati = 35107,
+        Reg3Ati = 35108,
+        Reg4Ati = 35109,
+        Reg5Ati = 35110,
+        Reg6Ati = 35111,
+        Reg7Ati = 35112,
+        Reg8Ati = 35113,
+        Reg9Ati = 35114,
+        Reg10Ati = 35115,
+        Reg11Ati = 35116,
+        Reg12Ati = 35117,
+        Reg13Ati = 35118,
+        Reg14Ati = 35119,
+        Reg15Ati = 35120,
+        Reg16Ati = 35121,
+        Reg17Ati = 35122,
+        Reg18Ati = 35123,
+        Reg19Ati = 35124,
+        Reg20Ati = 35125,
+        Reg21Ati = 35126,
+        Reg22Ati = 35127,
+        Reg23Ati = 35128,
+        Reg24Ati = 35129,
+        Reg25Ati = 35130,
+        Reg26Ati = 35131,
+        Reg27Ati = 35132,
+        Reg28Ati = 35133,
+        Reg29Ati = 35134,
+        Reg30Ati = 35135,
+        Reg31Ati = 35136,
+    }
+    public enum FragmentShaderConATI : uint
+    {
+        Con0Ati = 35137,
+        Con1Ati = 35138,
+        Con2Ati = 35139,
+        Con3Ati = 35140,
+        Con4Ati = 35141,
+        Con5Ati = 35142,
+        Con6Ati = 35143,
+        Con7Ati = 35144,
+        Con8Ati = 35145,
+        Con9Ati = 35146,
+        Con10Ati = 35147,
+        Con11Ati = 35148,
+        Con12Ati = 35149,
+        Con13Ati = 35150,
+        Con14Ati = 35151,
+        Con15Ati = 35152,
+        Con16Ati = 35153,
+        Con17Ati = 35154,
+        Con18Ati = 35155,
+        Con19Ati = 35156,
+        Con20Ati = 35157,
+        Con21Ati = 35158,
+        Con22Ati = 35159,
+        Con23Ati = 35160,
+        Con24Ati = 35161,
+        Con25Ati = 35162,
+        Con26Ati = 35163,
+        Con27Ati = 35164,
+        Con28Ati = 35165,
+        Con29Ati = 35166,
+        Con30Ati = 35167,
+        Con31Ati = 35168,
+    }
+    public enum FragmentOp1ATI : uint
     {
         MovAti = 35169,
+    }
+    public enum FragmentOp2ATI : uint
+    {
         AddAti = 35171,
         MulAti = 35172,
         SubAti = 35173,
         Dot3Ati = 35174,
         Dot4Ati = 35175,
+    }
+    public enum FragmentOp3ATI : uint
+    {
         MadAti = 35176,
         LerpAti = 35177,
         CndAti = 35178,

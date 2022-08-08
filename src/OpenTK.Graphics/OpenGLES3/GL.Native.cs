@@ -6035,6 +6035,50 @@ namespace OpenTK.Graphics.OpenGLES3
                 _NamedBufferStorageExternalEXT_fnptr(buffer, offset, size, clientBuffer, flags);
             }
             
+            private static delegate* unmanaged<int, int, int*, ShadingRate*, void> _GetFragmentShadingRatesEXT_fnptr = &GetFragmentShadingRatesEXT_Lazy;
+            /// <summary> <b>[requires: GL_EXT_fragment_shading_rate]</b>  </summary>
+            /// <remarks><see href="" /></remarks>
+            public static void GetFragmentShadingRatesEXT(int samples, int maxCount, int* count, ShadingRate* shadingRates) => _GetFragmentShadingRatesEXT_fnptr(samples, maxCount, count, shadingRates);
+            [UnmanagedCallersOnly]
+            private static void GetFragmentShadingRatesEXT_Lazy(int samples, int maxCount, int* count, ShadingRate* shadingRates)
+            {
+                _GetFragmentShadingRatesEXT_fnptr = (delegate* unmanaged<int, int, int*, ShadingRate*, void>)GLLoader.BindingsContext.GetProcAddress("glGetFragmentShadingRatesEXT");
+                _GetFragmentShadingRatesEXT_fnptr(samples, maxCount, count, shadingRates);
+            }
+            
+            private static delegate* unmanaged<ShadingRate, void> _ShadingRateEXT_fnptr = &ShadingRateEXT_Lazy;
+            /// <summary> <b>[requires: GL_EXT_fragment_shading_rate]</b>  </summary>
+            /// <remarks><see href="" /></remarks>
+            public static void ShadingRateEXT(ShadingRate rate) => _ShadingRateEXT_fnptr(rate);
+            [UnmanagedCallersOnly]
+            private static void ShadingRateEXT_Lazy(ShadingRate rate)
+            {
+                _ShadingRateEXT_fnptr = (delegate* unmanaged<ShadingRate, void>)GLLoader.BindingsContext.GetProcAddress("glShadingRateEXT");
+                _ShadingRateEXT_fnptr(rate);
+            }
+            
+            private static delegate* unmanaged<ShadingRateCombinerOp, ShadingRateCombinerOp, void> _ShadingRateCombinerOpsEXT_fnptr = &ShadingRateCombinerOpsEXT_Lazy;
+            /// <summary> <b>[requires: GL_EXT_fragment_shading_rate]</b>  </summary>
+            /// <remarks><see href="" /></remarks>
+            public static void ShadingRateCombinerOpsEXT(ShadingRateCombinerOp combinerOp0, ShadingRateCombinerOp combinerOp1) => _ShadingRateCombinerOpsEXT_fnptr(combinerOp0, combinerOp1);
+            [UnmanagedCallersOnly]
+            private static void ShadingRateCombinerOpsEXT_Lazy(ShadingRateCombinerOp combinerOp0, ShadingRateCombinerOp combinerOp1)
+            {
+                _ShadingRateCombinerOpsEXT_fnptr = (delegate* unmanaged<ShadingRateCombinerOp, ShadingRateCombinerOp, void>)GLLoader.BindingsContext.GetProcAddress("glShadingRateCombinerOpsEXT");
+                _ShadingRateCombinerOpsEXT_fnptr(combinerOp0, combinerOp1);
+            }
+            
+            private static delegate* unmanaged<FramebufferTarget, FramebufferAttachment, TextureHandle, int, int, int, int, void> _FramebufferShadingRateEXT_fnptr = &FramebufferShadingRateEXT_Lazy;
+            /// <summary> <b>[requires: GL_EXT_fragment_shading_rate]</b>  </summary>
+            /// <remarks><see href="" /></remarks>
+            public static void FramebufferShadingRateEXT(FramebufferTarget target, FramebufferAttachment attachment, TextureHandle texture, int baseLayer, int numLayers, int texelWidth, int texelHeight) => _FramebufferShadingRateEXT_fnptr(target, attachment, texture, baseLayer, numLayers, texelWidth, texelHeight);
+            [UnmanagedCallersOnly]
+            private static void FramebufferShadingRateEXT_Lazy(FramebufferTarget target, FramebufferAttachment attachment, TextureHandle texture, int baseLayer, int numLayers, int texelWidth, int texelHeight)
+            {
+                _FramebufferShadingRateEXT_fnptr = (delegate* unmanaged<FramebufferTarget, FramebufferAttachment, TextureHandle, int, int, int, int, void>)GLLoader.BindingsContext.GetProcAddress("glFramebufferShadingRateEXT");
+                _FramebufferShadingRateEXT_fnptr(target, attachment, texture, baseLayer, numLayers, texelWidth, texelHeight);
+            }
+            
             private static delegate* unmanaged<FramebufferTarget, FramebufferAttachment, TextureHandle, int, void> _FramebufferTextureEXT_fnptr = &FramebufferTextureEXT_Lazy;
             /// <summary> <b>[requires: GL_EXT_geometry_shader]</b>  </summary>
             /// <remarks><see href="" /></remarks>
