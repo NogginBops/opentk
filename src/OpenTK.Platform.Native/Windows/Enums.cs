@@ -1,6 +1,10 @@
-﻿using System;
+﻿using Microsoft.VisualBasic;
+using System;
 using System.Collections.Generic;
+using System.Dynamic;
 using System.Linq;
+using System.Runtime.Intrinsics.X86;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -2410,6 +2414,261 @@ namespace OpenTK.Platform.Native.Windows
         /// depending on whether you use the Unicode or ANSI functions.
         /// </summary>
         SZ = 1,
+    }
+
+    [Flags]
+    internal enum FormatMessage : uint
+    {
+        /// <summary>
+        /// The function allocates a buffer large enough to hold the formatted message,
+        /// and places a pointer to the allocated buffer at the address specified by lpBuffer.
+        /// The lpBuffer parameter is a pointer to an LPTSTR;
+        /// you must cast the pointer to an LPTSTR (for example, (LPTSTR)&lpBuffer).
+        /// The nSize parameter specifies the minimum number of TCHARs to allocate for an output message buffer.
+        /// The caller should use the LocalFree function to free the buffer when it is no longer needed.
+        /// 
+        /// If the length of the formatted message exceeds 128K bytes,
+        /// then FormatMessage will fail and a subsequent call to GetLastError will return ERROR_MORE_DATA.
+        ///
+        /// In previous versions of Windows, this value was not available for use when compiling Windows Store apps.
+        /// As of Windows 10 this value can be used.
+        ///
+        /// Windows Server 2003 and Windows XP:  
+        ///
+        /// If the length of the formatted message exceeds 128K bytes,
+        /// then FormatMessage will not automatically fail with an error of ERROR_MORE_DATA.
+        /// </summary>
+        AllocateBuffer = 0x00000100,
+
+        /// <summary>
+        /// The Arguments parameter is not a va_list structure, but is a pointer to an array of values that represent the arguments.
+        /// This flag cannot be used with 64-bit integer values. If you are using a 64-bit integer, you must use the va_list structure.
+        /// </summary>
+        ArgumentArray = 0x00002000,
+
+        /// <summary>
+        /// The lpSource parameter is a module handle containing the message-table resource(s) to search.
+        /// If this lpSource handle is NULL, the current process's application image file will be searched.
+        /// This flag cannot be used with FORMAT_MESSAGE_FROM_STRING.
+        /// 
+        /// If the module has no message table resource, the function fails with ERROR_RESOURCE_TYPE_NOT_FOUND.
+        /// </summary>
+        FromHModule = 0x00000800,
+
+        /// <summary>
+        /// The lpSource parameter is a pointer to a null-terminated string that contains a message definition.
+        /// The message definition may contain insert sequences,
+        /// just as the message text in a message table resource may.
+        /// This flag cannot be used with FORMAT_MESSAGE_FROM_HMODULE or FORMAT_MESSAGE_FROM_SYSTEM.
+        /// </summary>
+        FromString = 0x00000400,
+
+        /// <summary>
+        /// The function should search the system message-table resource(s) for the requested message.
+        /// If this flag is specified with FORMAT_MESSAGE_FROM_HMODULE,
+        /// the function searches the system message table if the message is not found in the module specified by lpSource.
+        /// This flag cannot be used with FORMAT_MESSAGE_FROM_STRING.
+        /// 
+        /// If this flag is specified, an application can pass the result of the GetLastError function to retrieve the message text for a system-defined error.
+        /// </summary>
+        FromSystem = 0x00001000,
+
+        /// <summary>
+        /// Insert sequences in the message definition such as %1 are to be ignored and passed through to the output buffer unchanged.
+        /// This flag is useful for fetching a message for later formatting.
+        /// If this flag is set, the Arguments parameter is ignored.
+        /// </summary>
+        IgnoreInserts = 0x00000200,
+    }
+
+    internal enum HIDUsagePage : ushort
+    {
+        /// <summary>
+        /// Generic Desktop Controls
+        /// </summary>
+        Generic = 0x01,
+
+        /// <summary>
+        /// VR Controls
+        /// </summary>
+        VR = 0x03,
+
+        /// <summary>
+        /// Game Controls
+        /// </summary>
+        Game = 0x05,
+
+        /// <summary>
+        /// LEDs
+        /// </summary>
+        LED = 0x08,
+
+        /// <summary>
+        /// Button
+        /// </summary>
+        Button = 0x09,
+
+        /// <summary>
+        /// Haptics
+        /// </summary>
+        Haptics = 0x0E,
+    }
+
+    internal enum HIDUsageGeneric : ushort
+    {
+        Pointer = 0x01,
+        Mouse = 0x02,
+        Joystick = 0x04,
+        Gamepad = 0x05,
+        Keyboard = 0x06,
+        Keypad = 0x07,
+        MultiAxisController = 0x08,
+    }
+
+    [Flags]
+    internal enum RIDEV : uint
+    {
+        /// <summary>
+        /// If set, this removes the top level collection from the inclusion list. This tells the operating system to stop reading from a device which matches the top level collection.
+        /// </summary>
+        Remove = 0x00000001,
+
+        /// <summary>
+        /// If set, this specifies the top level collections to exclude when reading a complete usage page. This flag only affects a TLC whose usage page is already specified with RIDEV_PAGEONLY.
+        /// </summary>
+        Exclude = 0x00000010,
+
+        /// <summary>
+        /// If set, this specifies all devices whose top level collection is from the specified usUsagePage. Note that usUsage must be zero. To exclude a particular top level collection, use RIDEV_EXCLUDE.
+        /// </summary>
+        PageOnly = 0x00000020,
+
+        /// <summary>
+        /// If set, this prevents any devices specified by usUsagePage or usUsage from generating legacy messages. This is only for the mouse and keyboard. See Remarks.
+        /// </summary>
+        NoLegacy = 0x00000030,
+
+        /// <summary>
+        /// If set, this enables the caller to receive the input even when the caller is not in the foreground. Note that hwndTarget must be specified.
+        /// </summary>
+        InputSink = 0x00000100,
+
+        /// <summary>
+        /// If set, the mouse button click does not activate the other window. RIDEV_CAPTUREMOUSE can be specified only if RIDEV_NOLEGACY is specified for a mouse device.
+        /// </summary>
+        CaptureMouse = 0x00000200,
+
+        /// <summary>
+        /// If set, the application-defined keyboard device hotkeys are not handled. However, the system hotkeys; for example, ALT+TAB and CTRL+ALT+DEL, are still handled. By default, all keyboard hotkeys are handled. RIDEV_NOHOTKEYS can be specified even if RIDEV_NOLEGACY is not specified and hwndTarget is NULL.
+        /// </summary>
+        NoHotkeys = 0x00000200,
+
+        /// <summary>
+        /// If set, the application command keys are handled. RIDEV_APPKEYS can be specified only if RIDEV_NOLEGACY is specified for a keyboard device.
+        /// </summary>
+        AppKeys = 0x00000400,
+
+        /// <summary>
+        /// If set, this enables the caller to receive input in the background only if the foreground application does not process it. In other words, if the foreground application is not registered for raw input, then the background application that is registered will receive the input.
+        ///
+        /// Windows XP: This flag is not supported until Windows Vista
+        /// </summary>
+        ExInputSink = 0x00001000,
+
+        /// <summary>
+        /// If set, this enables the caller to receive WM_INPUT_DEVICE_CHANGE notifications for device arrival and device removal.
+        ///
+        /// Windows XP: This flag is not supported until Windows Vista
+        /// </summary>
+        DevNotify = 0x00002000,
+    }
+
+    internal enum RID : uint
+    {
+        /// <summary>
+        /// Get the header information from the RAWINPUT structure.
+        /// </summary>
+        Header = 0x10000005,
+
+        /// <summary>
+        /// Get the raw data from the RAWINPUT structure.
+        /// </summary>
+        Input = 0x10000003,
+    }
+
+    internal enum RIM : uint
+    {
+        /// <summary>
+        /// Raw input comes from the mouse.
+        /// </summary>
+        TypeMouse = 0,
+
+        /// <summary>
+        /// Raw input comes from the keyboard.
+        /// </summary>
+        TypeKeyboard = 1,
+
+        /// <summary>
+        /// Raw input comes from some device that is not a keyboard or a mouse.
+        /// </summary>
+        TypeHID = 2,
+    }
+
+    internal enum RIDI : uint
+    {
+        /// <summary>
+        /// pData is a PHIDP_PREPARSED_DATA pointer to a buffer for a top-level collection's preparsed data.
+        /// </summary>
+        PreParsedData = 0x20000005,
+
+        /// <summary>
+        /// pData points to a string that contains the device interface name.
+        /// If this device is opened with Shared Access Mode then you can call CreateFile with this name to open a HID collection and use returned handle for calling ReadFile to read input reports and WriteFile to send output reports.
+        /// 
+        /// For more information, see Opening HID Collections and Handling HID Reports.
+        ///
+        /// For this uiCommand only, the value in pcbSize is the character count (not the byte count).
+        /// </summary>
+        DeviceName = 0x20000007,
+
+        /// <summary>
+        /// pData points to an RID_DEVICE_INFO structure.
+        /// </summary>
+        DeviceInfo = 0x2000000b,
+    }
+
+    internal enum GIDC : ulong
+    {
+        /// <summary>
+        /// A new device has been added to the system.
+        ///
+        /// You can call GetRawInputDeviceInfo to get more information regarding the device.
+        /// </summary>
+        Arrival = 1,
+
+        /// <summary>
+        /// A device has been removed from the system.
+        /// </summary>
+        Removal = 2,
+    }
+
+    [Flags]
+    internal enum RID_MOUSE_DEVICE_PROPERTIES : uint
+    {
+        /// <summary>
+        /// HID mouse
+        /// </summary>
+        MOUSE_HID_HARDWARE = 0x0080,
+
+        /// <summary>
+        /// HID wheel mouse
+        /// </summary>
+        WHEELMOUSE_HID_HARDWARE = 0x0100,
+
+        /// <summary>
+        /// Mouse with horizontal wheel
+        /// </summary>
+        HORIZONTAL_WHEEL_PRESENT = 0x8000,
     }
 
     /// <summary>

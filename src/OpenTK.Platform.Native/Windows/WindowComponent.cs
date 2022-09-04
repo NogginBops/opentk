@@ -455,6 +455,53 @@ namespace OpenTK.Platform.Native.Windows
 
                         return Win32.DefWindowProc(hWnd, uMsg, wParam, lParam);
                     }
+                case WM.INPUT:
+                    {
+                        //Console.WriteLine("WM_INPUT");
+
+                        uint size = 0;
+                        unsafe
+                        {
+                            uint ret;
+                            ret = Win32.GetRawInputData(lParam, RID.Header, null, ref size, (uint)sizeof(Win32.RAWINPUTHEADER));
+                            if (ret != 0)
+                            {
+                                throw new Win32Exception();
+                            }
+
+                            byte[] bytes = new byte[size];
+                            uint oldSize = size;
+                            ret = Win32.GetRawInputData(lParam, RID.Header, bytes, ref size, (uint)sizeof(Win32.RAWINPUTDEVICE));
+
+                            ref Win32.RAWINPUTHEADER raw = ref MemoryMarshal.Cast<byte, Win32.RAWINPUTHEADER>(new Span<byte>(bytes))[0];
+
+                            //Console.WriteLine($"Header: RIM:{raw.dwType}, size:{raw.dwSize}, hDevice: {raw.hDevice}, wParam: {raw.wParam}");
+                        }
+
+                        return IntPtr.Zero;
+                    }
+                case WM.INPUT_DEVICE_CHANGE:
+                    {
+                        GIDC gidc = (GIDC)wParam.ToUInt64();
+
+                        Console.WriteLine("WM_INPUT_DEVICE_CHANGE");
+
+                        switch (gidc)
+                        {
+                            case GIDC.Arrival:
+                                {
+                                    Console.WriteLine("Connected!");
+                                    break;
+                                }
+                            case GIDC.Removal:
+                                {
+                                    Console.WriteLine("Disconnected!");
+                                    break;
+                                }
+                        }
+
+                        return Win32.DefWindowProc(hWnd, uMsg, wParam, lParam);
+                    }
                 default:
                     {
                         //Console.WriteLine(uMsg);

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
+using System.Reflection.Metadata;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
@@ -781,5 +782,125 @@ namespace OpenTK.Platform.Native.Windows
 
         [DllImport("user32.dll", SetLastError = true)]
         internal static extern bool TrackMouseEvent(ref TRACKMOUSEEVENT lpEventTrack);
+
+        internal struct RAWINPUTDEVICE
+        {
+            public HIDUsagePage usUsagePage;
+            public ushort usUsage;
+            public RIDEV dwFlags;
+            public IntPtr /* HWND */ hwndTarget;
+        }
+
+        internal static bool RegisterRawInputDevices(
+            Span<RAWINPUTDEVICE> pRawInputDevices,
+            uint uiNumDevices,
+            uint cbSize)
+        {
+            fixed (RAWINPUTDEVICE* pRawInputDevicesPtr = pRawInputDevices)
+            {
+                return RegisterRawInputDevices(pRawInputDevicesPtr, uiNumDevices, cbSize);
+            }
+        }
+
+        [DllImport("user32.dll", SetLastError = true)]
+        internal static extern bool RegisterRawInputDevices(
+            RAWINPUTDEVICE* pRawInputDevices,
+            uint uiNumDevices,
+            uint cbSize);
+
+        internal struct RAWINPUTHEADER
+        {
+            public RIM dwType;
+            public uint dwSize;
+            public IntPtr /* HANDLE */ hDevice;
+            public UIntPtr /* WPARAM */ wParam;
+        }
+
+        [DllImport("user32.dll", SetLastError = true)]
+        internal static extern uint GetRawInputData(
+            IntPtr /* HRAWINPUT */ hRawInput,
+            RID uiCommand,
+            byte[]? pData,
+            ref uint pcbSize,
+            uint cbSizeHeader);
+
+        [DllImport("user32.dll", SetLastError = true)]
+        internal static extern uint GetRawInputData(
+            IntPtr /* HRAWINPUT */ hRawInput,
+            RID uiCommand,
+            ref RAWINPUTHEADER pData,
+            ref uint pcbSize,
+            uint cbSizeHeader);
+
+        internal struct RAWINPUTDEVICELIST
+        {
+            public IntPtr /* HANDLE */ hDevice;
+            public RIM dwType;
+        }
+
+        [DllImport("user32.dll", SetLastError = true)]
+        internal static extern uint GetRawInputDeviceList(
+                [Out] RAWINPUTDEVICELIST[]? pRawInputDeviceList,
+                ref uint puiNumDevices,
+                uint cbSize);
+
+        [DllImport("user32.dll", CharSet = CharSet.Auto, SetLastError = true)]
+        internal static extern uint GetRawInputDeviceInfo(
+            IntPtr /* HANDLE */ hDevice,
+            RIDI uiCommand,
+            [In, Out] StringBuilder? pData,
+            ref uint pcbSize);
+
+        [DllImport("user32.dll", CharSet = CharSet.Auto, SetLastError = true)]
+        internal static extern uint GetRawInputDeviceInfo(
+            IntPtr /* HANDLE */ hDevice,
+            RIDI uiCommand,
+            out RID_DEVICE_INFO pData,
+            ref uint pcbSize);
+
+
+        // Size = 8 + 6 * sizeof(uint)?
+        [StructLayout(LayoutKind.Explicit)]
+        internal struct RID_DEVICE_INFO
+        {
+            [FieldOffset(0)]
+            public uint cbSize;
+            [FieldOffset(4)]
+            public RIM dwType;
+
+            [FieldOffset(8)]
+            public RID_DEVICE_INFO_MOUSE mouse;
+            [FieldOffset(8)]
+            public RID_DEVICE_INFO_KEYBOARD keyboard;
+            [FieldOffset(8)]
+            public RID_DEVICE_INFO_HID hid;
+        }
+
+        internal struct RID_DEVICE_INFO_MOUSE
+        {
+            public RID_MOUSE_DEVICE_PROPERTIES dwId;
+            public uint dwNumberOfButtons;
+            public uint dwSampleRate;
+            public int /* BOOL */ fHasHorizontalWheel;
+        }
+
+        internal struct RID_DEVICE_INFO_KEYBOARD
+        {
+            public uint dwType;
+            public uint dwSubType;
+            public uint dwKeyboardMode;
+            public uint dwNumberOfFunctionKeys;
+            public uint dwNumberOfIndicators;
+            public uint dwNumberOfKeysTotal;
+        }
+
+        internal struct RID_DEVICE_INFO_HID
+        {
+            public uint dwVendorId;
+            public uint dwProductId;
+            public uint dwVersionNumber;
+            public HIDUsagePage usUsagePage;
+            public ushort usUsage;
+        }
     }
 }

@@ -24,6 +24,7 @@ namespace OpenTK.Core.Platform
         private IIconComponent? _iconComponent;
         private IKeyboardComponent? _keyboardComponent;
         private IMouseComponent? _mouseComponent;
+        private IJoystickComponent? _joystickComponent;
         private IOpenGLComponent? _openGLComponent;
         private ISurfaceComponent? _surfaceComponent;
         private IWindowComponent? _windowComponent;
@@ -67,6 +68,11 @@ namespace OpenTK.Core.Platform
                     names.Add(_mouseComponent.Name);
                 }
 
+                if (_joystickComponent is not null)
+                {
+                    names.Add(_joystickComponent.Name);
+                }
+
                 if (_openGLComponent is not null)
                 {
                     names.Add(_openGLComponent.Name);
@@ -92,6 +98,7 @@ namespace OpenTK.Core.Platform
                                          (_iconComponent is not null ? PalComponents.WindowIcon : 0) |
                                          (_keyboardComponent is not null ? PalComponents.KeyboardInput : 0) |
                                          (_mouseComponent is not null ? PalComponents.MouseCursor : 0) |
+                                         (_joystickComponent is not null ? PalComponents.JoystickInput : 0) |
                                          (_openGLComponent is not null ? PalComponents.OpenGL : 0) |
                                          (_surfaceComponent is not null ? PalComponents.Surface : 0) |
                                          (_windowComponent is not null ? PalComponents.Window : 0);
@@ -107,7 +114,7 @@ namespace OpenTK.Core.Platform
         {
             get => which switch
             {
-                PalComponents.ControllerInput => throw new NotImplementedException(),
+                PalComponents.JoystickInput => _joystickComponent,
                 PalComponents.Display => _displayComponent,
                 PalComponents.KeyboardInput => _keyboardComponent,
                 PalComponents.MiceInput => _mouseComponent,
@@ -137,6 +144,10 @@ namespace OpenTK.Core.Platform
                 if ((which & PalComponents.MiceInput) != 0)
                 {
                     _mouseComponent = value as IMouseComponent;
+                }
+                if ((which & PalComponents.JoystickInput) != 0)
+                {
+                    _joystickComponent = value as IJoystickComponent;
                 }
                 if ((which & PalComponents.MouseCursor) != 0)
                 {
@@ -181,6 +192,7 @@ namespace OpenTK.Core.Platform
             _iconComponent?.Initialize(which & PalComponents.WindowIcon);
             _keyboardComponent?.Initialize(which & PalComponents.KeyboardInput);
             _mouseComponent?.Initialize(which & PalComponents.MiceInput);
+            _joystickComponent?.Initialize(which & PalComponents.JoystickInput);
             _surfaceComponent?.Initialize(which & PalComponents.Surface);
             _windowComponent?.Initialize(which & PalComponents.Window);
             _openGLComponent?.Initialize(which & PalComponents.OpenGL);

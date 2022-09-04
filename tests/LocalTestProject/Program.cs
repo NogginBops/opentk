@@ -22,6 +22,8 @@ namespace LocalTestProject
 
         static DisplayHandle PrimaryDisplayHandle;
 
+        static IJoystickComponent joystickComp = new JoystickComponent();
+
         static IMouseComponent mouseComp = new MouseComponent();
         static ICursorComponent cursorComp = new CursorComponent();
         static IIconComponent iconComp = new IconComponent();
@@ -48,6 +50,8 @@ namespace LocalTestProject
 
             iconComp.Initialize(PalComponents.WindowIcon);
             cursorComp.Initialize(PalComponents.MouseCursor);
+
+            joystickComp.Initialize(PalComponents.JoystickInput);
 
             Console.WriteLine($"Current Keyboard Layout name: {keyboardComp.GetActiveKeyboardLayout()}");
 

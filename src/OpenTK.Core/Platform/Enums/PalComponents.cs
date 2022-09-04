@@ -79,8 +79,8 @@ namespace OpenTK.Core.Platform
         KeyboardInput = 1 << 8,
 
         /// <summary>
-        /// Abstraction layer provides the controller input component.
+        /// Abstraction layer provides the joystick input component.
         /// </summary>
-        ControllerInput = 1 << 9,
+        JoystickInput = 1 << 9,
     }
 }
