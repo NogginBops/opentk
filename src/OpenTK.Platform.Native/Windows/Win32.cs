@@ -923,5 +923,24 @@ namespace OpenTK.Platform.Native.Windows
             IntPtr /* HANDLE */ HidDeviceObject,
             [Out] StringBuilder? Buffer,
             ulong BufferLength);
+
+        //internal struct RAWINPUT
+        //{
+        //    [FieldOffset(0)]
+        //    RAWINPUTHEADER header;
+        //    //union {
+        //    RAWMOUSE mouse;
+        //    RAWKEYBOARD keyboard;
+        //    RAWHID hid;
+        //    //}
+        //}
+
+        internal struct RAWHID
+        {
+            public uint dwSizeHid;
+            public uint dwCount;
+            // FIXME: This is not really here!
+            public fixed byte bRawData[1];
+        }
     }
 }

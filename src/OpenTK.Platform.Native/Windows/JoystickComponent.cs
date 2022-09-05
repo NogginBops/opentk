@@ -112,7 +112,7 @@ namespace OpenTK.Platform.Native.Windows
                 // We only care about devices that we have in our dictionary.
                 if (DeviceDict.TryGetValue(hDevice, out HDevice? device))
                 {
-                    // FIXME: Here the lParam handle is no longer valid, so we cannot query anything about it.
+                    // The lParam handle is no longer valid, so we cannot query anything about it.
 
                     // This device is no longer connected.
                     DeviceDict.Remove(hDevice);
@@ -244,8 +244,6 @@ namespace OpenTK.Platform.Native.Windows
             {
                 throw new PalException(this, "Invalid JoystickHandle, are you trying to query a disconnected joystick?");
             }
-
-            // FIXME: Verify that this is still a valid handle?
 
             string deviceName = GetDeviceNameFromHandle(device.Device);
             TryGetHidNameFromDeviceName(deviceName, out string? hidName);

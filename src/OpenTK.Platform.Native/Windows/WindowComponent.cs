@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
@@ -94,7 +95,7 @@ namespace OpenTK.Platform.Native.Windows
         }
 
         /// <inheritdoc/>
-        public bool CanSetIcon => throw new NotImplementedException();
+        public bool CanSetIcon => true;
 
         /// <inheritdoc/>
         public bool CanGetDisplay => throw new NotImplementedException();
@@ -475,7 +476,7 @@ namespace OpenTK.Platform.Native.Windows
 
                             ref Win32.RAWINPUTHEADER raw = ref MemoryMarshal.Cast<byte, Win32.RAWINPUTHEADER>(new Span<byte>(bytes))[0];
 
-                            //Console.WriteLine($"Header: RIM:{raw.dwType}, size:{raw.dwSize}, hDevice: {raw.hDevice}, wParam: {raw.wParam}");
+                            Console.WriteLine($"Header: RIM:{raw.dwType}, size:{raw.dwSize}, hDevice: {raw.hDevice}, wParam: {raw.wParam}");
                         }
 
                         return IntPtr.Zero;
