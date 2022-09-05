@@ -486,19 +486,14 @@ namespace OpenTK.Platform.Native.Windows
 
                         Console.WriteLine("WM_INPUT_DEVICE_CHANGE");
 
-                        switch (gidc)
+                        bool connected = gidc switch
                         {
-                            case GIDC.Arrival:
-                                {
-                                    Console.WriteLine("Connected!");
-                                    break;
-                                }
-                            case GIDC.Removal:
-                                {
-                                    Console.WriteLine("Disconnected!");
-                                    break;
-                                }
-                        }
+                            GIDC.Arrival => true,
+                            GIDC.Removal => false,
+                            _ => throw new Exception($"Unknown GIDC value '{gidc}'"),
+                        };
+
+                        JoystickComponent.JoysticksChanged(connected, lParam);
 
                         return Win32.DefWindowProc(hWnd, uMsg, wParam, lParam);
                     }

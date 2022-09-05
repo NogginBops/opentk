@@ -20,5 +20,7 @@ namespace OpenTK.Core.Platform
         KeyDown,
         KeyUp,
         TextInput,
+
+        JoystickConnected,
     }
 }

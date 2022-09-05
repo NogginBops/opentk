@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
+using System.IO;
 using System.Linq;
 using System.Reflection.Metadata;
 using System.Runtime.InteropServices;
@@ -902,5 +903,25 @@ namespace OpenTK.Platform.Native.Windows
             public HIDUsagePage usUsagePage;
             public ushort usUsage;
         }
+
+        [DllImport("kernel32.dll", SetLastError = true)]
+        internal static extern IntPtr /* HANDLE */ CreateFile(
+            string lpFileName,
+            FileAccess dwDesiredAccess,
+            FileShare dwShareMode,
+            IntPtr lpSecurityAttributes,
+            FileMode dwCreationDisposition,
+            FileAttributes dwFlagsAndAttributes,
+            IntPtr /* HANDLE */ hTemplateFile);
+
+        [DllImport("kernel32.dll", SetLastError = true)]
+        internal static extern bool CloseHandle(IntPtr /* HANDLE */ hObject);
+
+        [DllImport("hid.dll", CharSet = CharSet.Auto, SetLastError = true)]
+        [return: MarshalAs(UnmanagedType.I1)]
+        internal static extern bool HidD_GetProductString(
+            IntPtr /* HANDLE */ HidDeviceObject,
+            [Out] StringBuilder? Buffer,
+            ulong BufferLength);
     }
 }

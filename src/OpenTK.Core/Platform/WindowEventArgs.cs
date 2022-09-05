@@ -89,4 +89,17 @@ namespace OpenTK.Core.Platform
             Window = window;
         }
     }
+
+    public class JoystickConnectedEventArgs : WindowEventArgs
+    {
+        public bool Connected { get; private set; }
+
+        public JoystickHandle Joystick { get; private set; }
+
+        public JoystickConnectedEventArgs(bool connected, JoystickHandle joystick)
+        {
+            Connected = connected;
+            Joystick = joystick;
+        }
+    }
 }

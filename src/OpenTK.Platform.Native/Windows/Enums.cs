@@ -2652,6 +2652,7 @@ namespace OpenTK.Platform.Native.Windows
         Removal = 2,
     }
 
+    // FIXME: Proper name
     [Flags]
     internal enum RID_MOUSE_DEVICE_PROPERTIES : uint
     {

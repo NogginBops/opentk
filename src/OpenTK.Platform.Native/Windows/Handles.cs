@@ -128,6 +128,25 @@ namespace OpenTK.Platform.Native.Windows
         public int DpiY { get; set; }
     }
 
+    internal class HDevice : JoystickHandle
+    {
+        public IntPtr Device { get; set; }
+
+        public string DeviceName { get; set; }
+
+        // FIXME: Should we cache these?
+        public string PublicName { get; set; }
+
+        // Type of controller? layout?
+
+        public HDevice(IntPtr device, string deviceName, string publicName)
+        {
+            Device = device;
+            DeviceName = deviceName;
+            PublicName = publicName;
+        }
+    }
+
     internal class Win32EventQueue : IEventQueue<PlatformEventType, WindowEventArgs>
     {
         public event QueueEventHandler<PlatformEventType, WindowEventArgs> EventRaised;

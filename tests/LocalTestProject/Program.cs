@@ -298,37 +298,20 @@ namespace LocalTestProject
 
                 return;
             }
-
-            return;
-
-            if (enabled_sRGB == false)
+            else if (type == PlatformEventType.JoystickConnected)
             {
-                Console.WriteLine("Enabled sRGB");
-                GL.Enable(EnableCap.FramebufferSrgb);
-                enabled_sRGB = true;
-            }
-            else
-            {
-                Console.WriteLine("Disabled sRGB");
-                GL.Disable(EnableCap.FramebufferSrgb);
-                enabled_sRGB = false;
-            }
+                JoystickConnectedEventArgs connectedArgs = (JoystickConnectedEventArgs)args;
 
-            if (is_ibeam)
-            {
-                //cursorComp.Load(CursorHandle, SystemCursorType.TextBeam);
+                if (connectedArgs.Connected)
+                {
+                    string name = joystickComp.GetJoystickName(connectedArgs.Joystick);
+                    Console.WriteLine($"Connected! '{name}'");
+                }
+                else
+                {
+                    Console.WriteLine($"Disconnected joystick!");
+                }
             }
-            else
-            {
-                //cursorComp.Load(CursorHandle, SystemCursorType.Default);
-            }
-            //windowComp.SetCursor(handle, CursorHandle);
-
-            is_ibeam = !is_ibeam;
-
-            cursorComp.GetSize(ImageCursorHandle, out int width, out int height);
-            cursorComp.GetHotspot(ImageCursorHandle, out int x, out int y);
-            cursorComp.SetHotspot(ImageCursorHandle, (x + 1) % width, y);
         }
 
         static BufferHandle buffer;
