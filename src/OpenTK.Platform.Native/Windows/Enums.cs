@@ -2672,6 +2672,52 @@ namespace OpenTK.Platform.Native.Windows
         HORIZONTAL_WHEEL_PRESENT = 0x8000,
     }
 
+    public enum HIDPStatus : uint
+    {
+        // These values are taken from: https://github.com/tpn/winsdk-10/blob/9b69fd26ac0c7d0b83d378dba01080e93349c2ed/Include/10.0.16299.0/shared/hidpi.h#L1801
+
+        HIDP_STATUS_SUCCESS = 0 << 28 | 0x11 << 16 | 0,
+
+        HIDP_STATUS_NULL = unchecked((uint)0x8 << 28 | 0x11 << 16 | 1),
+
+        /// <summary>
+        /// The specified preparsed data is invalid.
+        /// </summary>
+        HIDP_STATUS_INVALID_PREPARSED_DATA = unchecked((uint)0xC << 28 | 0x11 << 16 | 1),
+
+        HIDP_STATUS_INVALID_REPORT_TYPE = unchecked((uint)0xC << 28 | 0x11 << 16 | 2),
+
+        HIDP_STATUS_INVALID_REPORT_LENGTH = unchecked((uint)0xC << 28 | 0x11 << 16 | 3),
+
+        HIDP_STATUS_USAGE_NOT_FOUND = unchecked((uint)0xC << 28 | 0x11 << 16 | 4),
+
+        HIDP_STATUS_VALUE_OUT_OF_RANGE = unchecked((uint)0xC << 28 | 0x11 << 16 | 5),
+
+        HIDP_STATUS_BAD_LOG_PHY_VALUES = unchecked((uint)0xC << 28 | 0x11 << 16 | 6),
+
+        HIDP_STATUS_BUFFER_TOO_SMALL = unchecked((uint)0xC << 28 | 0x11 << 16 | 7),
+
+        HIDP_STATUS_INTERNAL_ERROR = unchecked((uint)0xC << 28 | 0x11 << 16 | 8),
+
+        HIDP_STATUS_I8042_TRANS_UNKNOWN = unchecked((uint)0xC << 28 | 0x11 << 16 | 9),
+
+        HIDP_STATUS_INCOMPATIBLE_REPORT_ID = unchecked((uint)0xC << 28 | 0x11 << 16 | 0xA),
+
+        HIDP_STATUS_NOT_VALUE_ARRAY = unchecked((uint)0xC << 28 | 0x11 << 16 | 0xB),
+
+        HIDP_STATUS_IS_VALUE_ARRAY = unchecked((uint)0xC << 28 | 0x11 << 16 | 0xC),
+
+        HIDP_STATUS_DATA_INDEX_NOT_FOUND = unchecked((uint)0xC << 28 | 0x11 << 16 | 0xD),
+
+        HIDP_STATUS_DATA_INDEX_OUT_OF_RANGE = unchecked((uint)0xC << 28 | 0x11 << 16 | 0xE),
+
+        HIDP_STATUS_BUTTON_NOT_PRESSED = unchecked((uint)0xC << 28 | 0x11 << 16 | 0xF),
+
+        HIDP_STATUS_REPORT_DOES_NOT_EXIST = unchecked((uint)0xC << 28 | 0x11 << 16 | 0x10),
+
+        HIDP_STATUS_NOT_IMPLEMENTED = unchecked((uint)0xC << 28 | 0x11 << 16 | 0x20),
+    }
+
     /// <summary>
     /// Windows Messages
     /// Defined in winuser.h from Windows SDK v6.1

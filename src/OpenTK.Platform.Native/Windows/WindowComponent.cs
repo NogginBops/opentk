@@ -472,13 +472,64 @@ namespace OpenTK.Platform.Native.Windows
 
                             byte[] bytes = new byte[size];
                             uint oldSize = size;
-                            ret = Win32.GetRawInputData(lParam, RID.Header, bytes, ref size, (uint)sizeof(Win32.RAWINPUTDEVICE));
+                            ret = Win32.GetRawInputData(lParam, RID.Header, bytes, ref size, (uint)sizeof(Win32.RAWINPUTHEADER));
+                            if (ret == unchecked((uint)-1))
+                            {
+                                throw new Win32Exception();
+                            }
 
                             ref Win32.RAWINPUTHEADER raw = ref MemoryMarshal.Cast<byte, Win32.RAWINPUTHEADER>(new Span<byte>(bytes))[0];
 
-                            Console.WriteLine($"Header: RIM:{raw.dwType}, size:{raw.dwSize}, hDevice: {raw.hDevice}, wParam: {raw.wParam}");
+                            // FIXME!! We can't call GetDeviceNameFromHandle for some reason.
+                            // The handle is not valid when disconnecting? But it is valid enough above??
+                            // To workaround this we just look the device up in the dictionary and get the cached name.
+                            string hidName = JoystickComponent.DeviceDict[raw.hDevice].PublicName;
+
+                            size = 0;
+                            ret = Win32.GetRawInputDeviceInfo(raw.hDevice, RIDI.PreParsedData, (Span<byte>)null, ref size);
+                            if (ret == unchecked((uint)-1))
+                            {
+                                throw new Win32Exception();
+                            }
+
+                            byte[] preparsedData = new byte[size];
+
+                            ret = Win32.GetRawInputDeviceInfo(raw.hDevice, RIDI.PreParsedData, (Span<byte>)preparsedData, ref size);
+                            if (ret == unchecked((uint)-1))
+                            {
+                                throw new Win32Exception();
+                            }
+
+                            HIDPStatus status = Win32.HidP_GetCaps(preparsedData, out Win32.HIDP_CAPS caps);
+                            if (status != HIDPStatus.HIDP_STATUS_SUCCESS)
+                            {
+                                throw new PlatformException($"HidP_GetCaps failed with: {status}");
+                            }
+
+                            Console.WriteLine($"{hidName} Header: RIM:{raw.dwType}, size:{raw.dwSize}, hDevice: {raw.hDevice}, wParam: {raw.wParam}");
+
+                            Console.WriteLine($"Input report: {caps.InputReportByteLength}, Output report: {caps.OutputReportByteLength}, Feature report: {caps.FeatureReportByteLength} Link Collection nodes: {caps.NumberLinkCollectionNodes}");
+                            Console.WriteLine($"Input Buttons: {caps.NumberInputButtonCaps}, Value Caps: {caps.NumberInputValueCaps}, Indices: {caps.NumberInputDataIndices}");
+                            Console.WriteLine($"Output Buttons: {caps.NumberOutputButtonCaps}, Value Caps: {caps.NumberOutputValueCaps}, Indices: {caps.NumberOutputDataIndices}");
+                            Console.WriteLine($"Feature Buttons: {caps.NumberFeatureButtonCaps}, Value Caps: {caps.NumberFeatureValueCaps}, Indices: {caps.NumberFeatureDataIndices}");
+
+                            ref Win32.RAWHID hid = ref MemoryMarshal.Cast<byte, Win32.RAWHID>(new Span<byte>(bytes))[0];
+
+                            fixed (byte* rawDataPtr = hid.bRawData)
+                            {
+                                Span<byte> hidData = new Span<byte>(rawDataPtr, (int)(hid.dwSizeHid * hid.dwCount));
+
+                                /*foreach (var b in hidData)
+                                {
+                                    Console.Write($"{b:X2}");
+                                }
+                                Console.WriteLine();*/
+                            }
                         }
 
+                        // MSDN told us to call this function.
+                        // https://docs.microsoft.com/en-us/windows/win32/inputdev/wm-input
+                        IntPtr result = Win32.DefWindowProc(hWnd, uMsg, wParam, lParam);
                         return IntPtr.Zero;
                     }
                 case WM.INPUT_DEVICE_CHANGE:

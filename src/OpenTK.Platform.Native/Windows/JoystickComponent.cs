@@ -15,7 +15,8 @@ namespace OpenTK.Platform.Native.Windows
 
         public PalComponents Provides => PalComponents.JoystickInput;
 
-        private static Dictionary<IntPtr, HDevice> DeviceDict = new Dictionary<IntPtr, HDevice>();
+        // FIXME: Make private?
+        internal static Dictionary<IntPtr, HDevice> DeviceDict = new Dictionary<IntPtr, HDevice>();
 
         private static StringBuilder deviceName = new StringBuilder();
         private static StringBuilder hidNameBuilder = new StringBuilder(4093);
@@ -24,7 +25,7 @@ namespace OpenTK.Platform.Native.Windows
             uint result;
             uint size = 0;
 
-            result = Win32.GetRawInputDeviceInfo(hDevice, RIDI.DeviceName, null, ref size);
+            result = Win32.GetRawInputDeviceInfo(hDevice, RIDI.DeviceName, (StringBuilder?)null, ref size);
             if (result == unchecked((uint)-1))
             {
                 throw new Win32Exception();
@@ -204,20 +205,20 @@ namespace OpenTK.Platform.Native.Windows
                     dwFlags = RIDEV.DevNotify,
                     hwndTarget = WindowComponent.HelperHWnd,
                 },
-                new Win32.RAWINPUTDEVICE()
-                {
-                    usUsagePage = HIDUsagePage.Generic,
-                    usUsage = (ushort)HIDUsageGeneric.Mouse,
-                    dwFlags = RIDEV.DevNotify,
-                    hwndTarget = WindowComponent.HelperHWnd,
-                },
-                new Win32.RAWINPUTDEVICE()
-                {
-                    usUsagePage = HIDUsagePage.Generic,
-                    usUsage = (ushort)HIDUsageGeneric.Keyboard,
-                    dwFlags = RIDEV.DevNotify,
-                    hwndTarget = WindowComponent.HelperHWnd,
-                }
+                //new Win32.RAWINPUTDEVICE()
+                //{
+                //    usUsagePage = HIDUsagePage.Generic,
+                //    usUsage = (ushort)HIDUsageGeneric.Mouse,
+                //    dwFlags = RIDEV.DevNotify,
+                //    hwndTarget = WindowComponent.HelperHWnd,
+                //},
+                //new Win32.RAWINPUTDEVICE()
+                //{
+                //    usUsagePage = HIDUsagePage.Generic,
+                //    usUsage = (ushort)HIDUsageGeneric.Keyboard,
+                //    dwFlags = RIDEV.DevNotify,
+                //    hwndTarget = WindowComponent.HelperHWnd,
+                //}
             };
 
             bool success;

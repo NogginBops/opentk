@@ -45,7 +45,7 @@ namespace OpenTK.Platform.Native.Windows
         internal const int S_OK = 0x0;
         internal const int E_INVALIDARG = unchecked((int)0x80070057);
         internal const int E_ACCESSDENIED = unchecked((int)0x80070005);
-        
+
         // LRESULT WNDPROC(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
         internal delegate IntPtr WNDPROC(IntPtr hWnd, WM uMsg, UIntPtr wParam, IntPtr lParam);
 
@@ -821,7 +821,7 @@ namespace OpenTK.Platform.Native.Windows
         internal static extern uint GetRawInputData(
             IntPtr /* HRAWINPUT */ hRawInput,
             RID uiCommand,
-            byte[]? pData,
+            [Out] byte[]? pData,
             ref uint pcbSize,
             uint cbSizeHeader);
 
@@ -852,11 +852,30 @@ namespace OpenTK.Platform.Native.Windows
             [In, Out] StringBuilder? pData,
             ref uint pcbSize);
 
-        [DllImport("user32.dll", CharSet = CharSet.Auto, SetLastError = true)]
+        [DllImport("user32.dll", SetLastError = true)]
         internal static extern uint GetRawInputDeviceInfo(
             IntPtr /* HANDLE */ hDevice,
             RIDI uiCommand,
             out RID_DEVICE_INFO pData,
+            ref uint pcbSize);
+
+        internal static uint GetRawInputDeviceInfo(
+            IntPtr /* HANDLE */ hDevice,
+            RIDI uiCommand,
+            Span<byte> pData,
+            ref uint pcbSize)
+        {
+            fixed (byte* pDataPtr = pData)
+            {
+                return GetRawInputDeviceInfo(hDevice, uiCommand, pDataPtr, ref pcbSize);
+            }
+        }
+
+        [DllImport("user32.dll", CharSet = CharSet.Auto, SetLastError = true)]
+        internal static extern uint GetRawInputDeviceInfo(
+            IntPtr /* HANDLE */ hDevice,
+            RIDI uiCommand,
+            byte* pData,
             ref uint pcbSize);
 
 
@@ -941,6 +960,31 @@ namespace OpenTK.Platform.Native.Windows
             public uint dwCount;
             // FIXME: This is not really here!
             public fixed byte bRawData[1];
+        }
+
+        [DllImport("hid.dll")]
+        internal static extern HIDPStatus HidP_GetCaps(
+            byte[] /* PHIDP_PREPARSED_DATA */ PreparsedData,
+            out HIDP_CAPS Capabilities);
+
+        internal struct HIDP_CAPS
+        {
+            public ushort Usage;
+            public HIDUsagePage UsagePage;
+            public ushort InputReportByteLength;
+            public ushort OutputReportByteLength;
+            public ushort FeatureReportByteLength;
+            public fixed ushort Reserved[17];
+            public ushort NumberLinkCollectionNodes;
+            public ushort NumberInputButtonCaps;
+            public ushort NumberInputValueCaps;
+            public ushort NumberInputDataIndices;
+            public ushort NumberOutputButtonCaps;
+            public ushort NumberOutputValueCaps;
+            public ushort NumberOutputDataIndices;
+            public ushort NumberFeatureButtonCaps;
+            public ushort NumberFeatureValueCaps;
+            public ushort NumberFeatureDataIndices;
         }
     }
 }
