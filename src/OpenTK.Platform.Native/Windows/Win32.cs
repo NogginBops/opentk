@@ -3,10 +3,13 @@ using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using System.IO;
 using System.Linq;
+using System.Net.NetworkInformation;
 using System.Reflection.Metadata;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
+using static OpenTK.Platform.Native.Windows.Win32;
 
 #nullable enable
 
@@ -962,11 +965,6 @@ namespace OpenTK.Platform.Native.Windows
             public fixed byte bRawData[1];
         }
 
-        [DllImport("hid.dll")]
-        internal static extern HIDPStatus HidP_GetCaps(
-            byte[] /* PHIDP_PREPARSED_DATA */ PreparsedData,
-            out HIDP_CAPS Capabilities);
-
         internal struct HIDP_CAPS
         {
             public ushort Usage;
@@ -986,5 +984,72 @@ namespace OpenTK.Platform.Native.Windows
             public ushort NumberFeatureValueCaps;
             public ushort NumberFeatureDataIndices;
         }
+
+        [DllImport("hid.dll")]
+        internal static extern HIDPStatus HidP_GetCaps(
+            byte[] /* PHIDP_PREPARSED_DATA */ PreparsedData,
+            out HIDP_CAPS Capabilities);
+
+        [StructLayout(LayoutKind.Explicit, Size = 72, Pack = 1)]
+        internal struct HIDP_VALUE_CAPS
+        {
+            [FieldOffset(0)] public HIDUsagePage UsagePage;
+            [FieldOffset(2)] public byte ReportID;
+            [FieldOffset(3)] public bool IsAlias;
+            [FieldOffset(4)] public ushort BitField;
+            [FieldOffset(6)] public ushort LinkCollection;
+            [FieldOffset(8)] public ushort LinkUsage;
+            [FieldOffset(10)] public ushort LinkUsagePage;
+            [FieldOffset(12)] public bool IsRange;
+            [FieldOffset(13)] public bool IsStringRange;
+            [FieldOffset(14)] public bool IsDesignatorRange;
+            [FieldOffset(15)] public bool IsAbsolute;
+            [FieldOffset(16)] public bool HasNull;
+            [FieldOffset(17)] public byte Reserved;
+            [FieldOffset(18)] public ushort BitSize;
+            [FieldOffset(20)] public ushort ReportCount;
+            [FieldOffset(22)] public fixed ushort Reserved2[5];
+            [FieldOffset(32)] public uint UnitsExp;
+            [FieldOffset(36)] public uint Units;
+            [FieldOffset(40)] public int LogicalMin;
+            [FieldOffset(44)] public int LogicalMax;
+            [FieldOffset(48)] public int PhysicalMin;
+            [FieldOffset(52)] public int PhysicalMax;
+            [FieldOffset(56)] public _Range Range;
+            [FieldOffset(56)] public _NotRange NotRange;
+            
+            [StructLayout(LayoutKind.Sequential, Size = 16, Pack = 1)]
+            internal struct _Range
+            {
+                public ushort UsageMin;
+                public ushort UsageMax;
+                public ushort StringMin;
+                public ushort StringMax;
+                public ushort DesignatorMin;
+                public ushort DesignatorMax;
+                public ushort DataIndexMin;
+                public ushort DataIndexMax;
+            }
+
+            [StructLayout(LayoutKind.Sequential, Size = 16, Pack = 1)]
+            internal struct _NotRange
+            {
+                public ushort Usage;
+                public ushort Reserved1;
+                public ushort StringIndex;
+                public ushort Reserved2;
+                public ushort DesignatorIndex;
+                public ushort Reserved3;
+                public ushort DataIndex;
+                public ushort Reserved4;
+            }
+        }
+
+        [DllImport("hid.dll")]
+        internal static extern HIDPStatus HidP_GetValueCaps(
+            HIDPReportType ReportType,
+            [Out] HIDP_VALUE_CAPS[] ValueCaps,
+            ref ushort ValueCapsLength,
+            byte[] /* PHIDP_PREPARSED_DATA */ PreparsedData);
     }
 }

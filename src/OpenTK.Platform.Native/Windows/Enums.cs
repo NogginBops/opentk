@@ -2718,6 +2718,24 @@ namespace OpenTK.Platform.Native.Windows
         HIDP_STATUS_NOT_IMPLEMENTED = unchecked((uint)0xC << 28 | 0x11 << 16 | 0x20),
     }
 
+    public enum HIDPReportType : int
+    {
+        /// <summary>
+        /// Indicates an input report.
+        /// </summary>
+        Input = 0,
+
+        /// <summary>
+        /// Indicates an output report.
+        /// </summary>
+        Output = 1,
+
+        /// <summary>
+        /// Indicates a feature report.
+        /// </summary>
+        Feature = 2,
+    }
+
     /// <summary>
     /// Windows Messages
     /// Defined in winuser.h from Windows SDK v6.1

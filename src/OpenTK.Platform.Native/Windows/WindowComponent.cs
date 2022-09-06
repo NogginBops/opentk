@@ -513,6 +513,35 @@ namespace OpenTK.Platform.Native.Windows
                             Console.WriteLine($"Output Buttons: {caps.NumberOutputButtonCaps}, Value Caps: {caps.NumberOutputValueCaps}, Indices: {caps.NumberOutputDataIndices}");
                             Console.WriteLine($"Feature Buttons: {caps.NumberFeatureButtonCaps}, Value Caps: {caps.NumberFeatureValueCaps}, Indices: {caps.NumberFeatureDataIndices}");
 
+                            Win32.HIDP_VALUE_CAPS[] valueCaps = new Win32.HIDP_VALUE_CAPS[caps.NumberInputValueCaps];
+
+                            status = Win32.HidP_GetValueCaps(HIDPReportType.Input, valueCaps, ref caps.NumberInputValueCaps, preparsedData);
+                            if (status != HIDPStatus.HIDP_STATUS_SUCCESS)
+                            {
+                                throw new PlatformException($"HidP_GetValueCaps failed with: {status}");
+                            }
+
+                            for (int i = 0; i < caps.NumberInputValueCaps; i++)
+                            {
+                                Console.WriteLine($"Value cap {i}:");
+                                Console.WriteLine(ValueCapsString(valueCaps[i]));
+                                Console.WriteLine();
+
+                                static string ValueCapsString(Win32.HIDP_VALUE_CAPS caps)
+                                {
+                                    StringBuilder sb = new StringBuilder();
+
+                                    sb.AppendLine($"ReportID: {caps.ReportID}, IsAlias: {caps.IsAlias}, BitField: {caps.BitField}");
+                                    sb.AppendLine($"LinkCollection: {caps.LinkCollection}, LinkUsage: {caps.LinkUsage}, LinkUsagePage: {caps.LinkUsagePage}");
+                                    sb.AppendLine($"IsRange: {caps.IsRange}, IsStringRange: {caps.IsStringRange}, IsDesignatorRange: {caps.IsDesignatorRange}, IsAbsolute: {caps.IsAbsolute}");
+                                    sb.AppendLine($"HasNull: {caps.HasNull}, BitSize: {caps.BitSize}, ReportCount: {caps.ReportCount}");
+                                    sb.AppendLine($"UnitsExp: {caps.UnitsExp}, Units: {caps.Units}");
+                                    sb.AppendLine($"LogicalMin: {caps.LogicalMin}, LogicalMin: {caps.LogicalMax}, PhysicalMin: {caps.PhysicalMin}, PhysicalMax: {caps.LogicalMax}");
+
+                                    return sb.ToString();
+                                }
+                            }
+
                             ref Win32.RAWHID hid = ref MemoryMarshal.Cast<byte, Win32.RAWHID>(new Span<byte>(bytes))[0];
 
                             fixed (byte* rawDataPtr = hid.bRawData)
