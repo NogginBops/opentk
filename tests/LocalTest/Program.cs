@@ -16,6 +16,7 @@ namespace LocalTest
         {
             Random rand = new Random();
 
+            /*
             while (true)
             {
                 Color4<Hsla> hsla1 = NextColor();
@@ -31,7 +32,7 @@ namespace LocalTest
                 }
             }
             return;
-
+            */
 
             Color4<Hsla> NextColor()
             {

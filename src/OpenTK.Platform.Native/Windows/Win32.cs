@@ -1,12 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
+using System.Diagnostics.Contracts;
 using System.Linq;
 using System.Reflection;
 using System.Reflection.Metadata;
 using System.Runtime.InteropServices;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
+using static OpenTK.Platform.Native.X11.XkbNamesRec;
 
 #nullable enable
 
@@ -1203,6 +1206,135 @@ namespace OpenTK.Platform.Native.Windows
             IntPtr /* HWND */ hwnd,
             CDS dwflags,
             IntPtr lParam);
+
+        [DllImport("user32.dll", SetLastError = true)]
+        internal static extern bool RegisterTouchWindow(IntPtr /* HWND */ hwnd, ulong ulFlags);
+
+        [DllImport("user32.dll", SetLastError = true)]
+        internal static extern bool UnregisterTouchWindow(IntPtr /* HWND */ hwnd);
+
+        [DllImport("user32.dll", SetLastError = true)]
+        internal static extern bool RegisterPointerDeviceNotifications(IntPtr /* HWND */ window, bool notifyRange);
+
+        internal struct TOUCHINPUT
+        {
+            public int x;
+            public int y;
+            public IntPtr /* HANDLE */ hSource;
+            public uint dwID;
+            public TOUCHEVENTF dwFlags;
+            public TOUCHINPUTMASKF dwMask;
+            public uint dwTime;
+            public UIntPtr dwExtraInfo;
+            public uint cxContact;
+            public uint cyContact;
+        }
+
+        [DllImport("user32.dll", SetLastError = true)]
+        internal static extern bool GetTouchInputInfo(IntPtr /* HTOUCHINPUT */ hTouchInput, uint cInputs, out TOUCHINPUT pInputs, int cbSize);
+
+        internal struct POINTER_INFO
+        {
+            public POINTER_INPUT_TYPE pointerType;
+            public uint pointerId;
+            public uint frameId;
+            public POINTER_FLAGS pointerFlags;
+            public IntPtr /* HANDLE */ sourceDevice;
+            public IntPtr /* HWND */ hwndTarget;
+            public POINT ptPixelLocation;
+            public POINT ptHimetricLocation;
+            public POINT ptPixelLocationRaw;
+            public POINT ptHimetricLocationRaw;
+            public uint dwTime;
+            public uint historyCount;
+            public int InputData;
+            public uint dwKeyStates;
+            public ulong PerformanceCount;
+            public POINTER_BUTTON_CHANGE_TYPE ButtonChangeType;
+        }
+
+        internal struct POINTER_PEN_INFO
+        {
+            public POINTER_INFO pointerInfo;
+            public PEN_FLAGS penFlags;
+            public PEN_MASK penMask;
+            public uint pressure;
+            public uint rotation;
+            public int tiltX;
+            public int tiltY;
+        }
+
+        [Flags]
+        internal enum POINTER_MESSAGE_FLAG : uint
+        {
+            /// <summary>
+            /// New pointer
+            /// </summary>
+            NEW = 0x00000001,
+            /// <summary>
+            /// Pointer has not departed
+            /// </summary>
+            INRANGE = 0x00000002,
+            /// <summary>
+            /// Pointer is in contact
+            /// </summary>
+            INCONTACT = 0x00000004,
+            /// <summary>
+            /// Primary action
+            /// </summary>
+            FIRSTBUTTON = 0x00000010,
+            /// <summary>
+            /// Secondary action
+            /// </summary>
+            SECONDBUTTON = 0x00000020,
+            /// <summary>
+            /// Third button
+            /// </summary>
+            THIRDBUTTON = 0x00000040,
+            /// <summary>
+            /// Fourth button
+            /// </summary>
+            FOURTHBUTTON = 0x00000080,
+            /// <summary>
+            /// Fifth button
+            /// </summary>
+            FIFTHBUTTON = 0x00000100,
+            /// <summary>
+            /// Pointer is primary
+            /// </summary>
+            PRIMARY = 0x00002000,
+            /// <summary>
+            /// Pointer is considered unlikely to be accidental
+            /// </summary>
+            CONFIDENCE = 0x00004000,
+            /// <summary>
+            /// Pointer is departing in an abnormal manner
+            /// </summary>
+            CANCELED = 0x00008000,
+        }
+
+        internal static uint GET_POINTERID_WPARAM(UIntPtr wParam) => (uint)(wParam.ToUInt64() & LoWordMask);
+        internal static bool IS_POINTER_FLAG_SET_WPARAM(UIntPtr wParam, POINTER_MESSAGE_FLAG flag) => (((POINTER_MESSAGE_FLAG)(uint)((wParam.ToUInt64() >> 16) & LoWordMask)) & flag) == flag;
+        internal static bool IS_POINTER_NEW_WPARAM(UIntPtr wParam) => IS_POINTER_FLAG_SET_WPARAM(wParam, POINTER_MESSAGE_FLAG.NEW);
+        internal static bool IS_POINTER_INRANGE_WPARAM(UIntPtr wParam) => IS_POINTER_FLAG_SET_WPARAM(wParam, POINTER_MESSAGE_FLAG.INRANGE);
+        internal static bool IS_POINTER_INCONTACT_WPARAM(UIntPtr wParam) => IS_POINTER_FLAG_SET_WPARAM(wParam, POINTER_MESSAGE_FLAG.INCONTACT);
+        internal static bool IS_POINTER_FIRSTBUTTON_WPARAM(UIntPtr wParam) => IS_POINTER_FLAG_SET_WPARAM(wParam, POINTER_MESSAGE_FLAG.FIRSTBUTTON);
+        internal static bool IS_POINTER_SECONDBUTTON_WPARAM(UIntPtr wParam) => IS_POINTER_FLAG_SET_WPARAM(wParam, POINTER_MESSAGE_FLAG.SECONDBUTTON);
+        internal static bool IS_POINTER_THIRDBUTTON_WPARAM(UIntPtr wParam) => IS_POINTER_FLAG_SET_WPARAM(wParam, POINTER_MESSAGE_FLAG.THIRDBUTTON);
+        internal static bool IS_POINTER_FOURTHBUTTON_WPARAM(UIntPtr wParam) => IS_POINTER_FLAG_SET_WPARAM(wParam, POINTER_MESSAGE_FLAG.FOURTHBUTTON);
+        internal static bool IS_POINTER_FIFTHBUTTON_WPARAM(UIntPtr wParam) => IS_POINTER_FLAG_SET_WPARAM(wParam, POINTER_MESSAGE_FLAG.FIFTHBUTTON);
+        internal static bool IS_POINTER_PRIMARY_WPARAM(UIntPtr wParam) => IS_POINTER_FLAG_SET_WPARAM(wParam, POINTER_MESSAGE_FLAG.PRIMARY);
+        internal static bool HAS_POINTER_CONFIDENCE_WPARAM(UIntPtr wParam) => IS_POINTER_FLAG_SET_WPARAM(wParam, POINTER_MESSAGE_FLAG.CONFIDENCE);
+        internal static bool IS_POINTER_CANCELED_WPARAM(UIntPtr wParam) => IS_POINTER_FLAG_SET_WPARAM(wParam, POINTER_MESSAGE_FLAG.CANCELED);
+
+        [DllImport("user32.dll", SetLastError = true)]
+        internal static extern bool GetPointerType(uint pointerId, out POINTER_INPUT_TYPE pointerType);
+
+        [DllImport("user32.dll", SetLastError = true)]
+        internal static extern bool GetPointerPenInfo(uint pointerId, out POINTER_PEN_INFO penInfo);
+
+        [DllImport("user32.dll", SetLastError = true)]
+        internal static extern bool EnableMouseInPointer(bool fEnable);
     }
 
 #pragma warning restore CS0649 // Field 'field' is never assigned to, and will always have its default value 'value'

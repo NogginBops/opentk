@@ -635,6 +635,10 @@ namespace OpenTK.Backends.Tests
 
                 ImGuiController.RecreateFontDeviceTexture();
             }
+            else if (args is PointerUpdateEventArgs penUpdate)
+            {
+                Console.WriteLine(penUpdate.State);
+            }
         }
 
         internal static IPalComponent? GetComponent(PalComponents component)

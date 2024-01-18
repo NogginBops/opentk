@@ -56,5 +56,8 @@ namespace OpenTK.Core.Platform
         DisplayConnectionChanged,
 
         PowerStateChange,
+
+        // FIXME: Pen range?
+        PointerRange,
     }
 }

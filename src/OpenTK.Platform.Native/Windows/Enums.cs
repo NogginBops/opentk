@@ -1991,6 +1991,61 @@ namespace OpenTK.Platform.Native.Windows
         Query = 0x40000000,
     }
 
+    [Flags]
+    internal enum TOUCHEVENTF : uint
+    {
+        /// <summary>
+        /// Movement has occurred. Cannot be combined with TOUCHEVENTF_DOWN.
+        /// </summary>
+        MOVE = 0x0001,
+        /// <summary>
+        /// The corresponding touch point was established through a new contact.Cannot be combined with TOUCHEVENTF_MOVE or TOUCHEVENTF_UP.
+        /// </summary>
+        DOWN = 0x0002,
+        /// <summary>
+        /// A touch point was removed.
+        /// </summary>
+        UP = 0x0004,
+        /// <summary>
+        /// A touch point is in range.This flag is used to enable touch hover support on compatible hardware.Applications that do not want support for hover can ignore this flag.
+        /// </summary>
+        INRANGE = 0x0008,
+        /// <summary>
+        /// Indicates that this TOUCHINPUT structure corresponds to a primary contact point. See the following text for more information on primary touch points.
+        /// </summary>
+        PRIMARY = 0x0010,
+        /// <summary>
+        /// When received using GetTouchInputInfo, this input was not coalesced.
+        /// </summary>
+        NOCOALESCE = 0x0020,
+        /// <summary>
+        /// The touch event was triggered by a stylus device.
+        /// </summary>
+        PEN = 0x0040,
+        /// <summary>
+        /// The touch event was triggered by the user's palm.
+        /// </summary>
+        PALM = 0x0080,
+    }
+
+    [Flags]
+    internal enum TOUCHINPUTMASKF : uint
+    {
+        /// <summary>
+        /// cxContact and cyContact are valid. See the following text for more information on primary touch points.
+        /// </summary>
+        CONTACTAREA = 0x0004,
+        /// <summary>
+        /// dwExtraInfo is valid.
+        /// </summary>
+        EXTRAINFO = 0x0002,
+        /// <summary>
+        /// The system time was set in the TOUCHINPUT structure.
+        /// </summary>
+        TIMEFROMSYSTEM = 0x0001,
+    }
+
+
     internal enum SIZE
     {
         /// <summary>
@@ -2203,6 +2258,225 @@ namespace OpenTK.Platform.Native.Windows
         MAIN = 0,
         OVERLAY = 1,
         UNDERLAY = 0xFF, // -1
+    }
+
+    internal enum POINTER_INPUT_TYPE
+    {
+        POINTER = 1,
+        TOUCH = 2,
+        PEN = 3,
+        MOUSE = 4,
+        TOUCHPAD = 5
+    };
+
+    [Flags]
+    internal enum POINTER_FLAGS
+    {
+        /// <summary>
+        /// Default
+        /// </summary>
+        NONE = 0x00000000,
+
+        /// <summary>
+        /// Indicates the arrival of a new pointer.
+        /// </summary>
+        NEW = 0x00000001,
+
+        /// <summary>
+        /// Indicates that this pointer continues to exist.When this flag is not set, it indicates the pointer has left detection range.
+        /// 
+        /// This flag is typically not set only when a hovering pointer leaves detection range (UPDATE is set) or when a pointer in contact with a window surface leaves detection range(UP is set).
+        /// </summary>
+        INRANGE = 0x00000002,
+
+        /// <summary>
+        /// Indicates that this pointer is in contact with the digitizer surface. When this flag is not set, it indicates a hovering pointer.
+        /// </summary>
+        INCONTACT = 0x00000004,
+
+        /// <summary>
+        /// Indicates a primary action, analogous to a left mouse button down.
+        /// 
+        /// A touch pointer has this flag set when it is in contact with the digitizer surface.
+        /// 
+        /// A pen pointer has this flag set when it is in contact with the digitizer surface with no buttons pressed.
+        ///
+        /// A mouse pointer has this flag set when the left mouse button is down.
+        /// </summary>
+        FIRSTBUTTON = 0x00000010,
+
+        /// <summary>
+        /// Indicates a secondary action, analogous to a right mouse button down.
+        ///
+        /// A touch pointer does not use this flag.
+        ///
+        /// A pen pointer has this flag set when it is in contact with the digitizer surface with the pen barrel button pressed.
+        ///
+        /// A mouse pointer has this flag set when the right mouse button is down.
+        /// </summary>
+        SECONDBUTTON = 0x00000020,
+
+        /// <summary>
+        /// Analogous to a mouse wheel button down.
+        ///
+        /// A touch pointer does not use this flag.
+        ///
+        /// A pen pointer does not use this flag.
+        ///
+        /// A mouse pointer has this flag set when the mouse wheel button is down.
+        /// </summary>
+        THIRDBUTTON = 0x00000040,
+
+        /// <summary>
+        /// Analogous to a first extended mouse (XButton1) button down.
+        ///
+        /// A touch pointer does not use this flag.
+        ///
+        /// A pen pointer does not use this flag.
+        ///
+        /// A mouse pointer has this flag set when the first extended mouse (XBUTTON1) button is down.
+        /// </summary>
+        FOURTHBUTTON = 0x00000080,
+
+        /// <summary>
+        /// Analogous to a second extended mouse (XButton2) button down.
+        ///
+        /// A touch pointer does not use this flag.
+        ///
+        /// A pen pointer does not use this flag.
+        ///
+        /// A mouse pointer has this flag set when the second extended mouse (XBUTTON2) button is down.
+        /// </summary>
+        FIFTHBUTTON = 0x00000100,
+
+        /// <summary>
+        /// Indicates that this pointer has been designated as the primary pointer.
+        /// A primary pointer is a single pointer that can perform actions beyond those available to non-primary pointers.
+        /// For example, when a primary pointer makes contact with a window s surface, it may provide the window an opportunity to activate by sending it a WM_POINTERACTIVATE message.
+        ///
+        /// The primary pointer is identified from all current user interactions on the system (mouse, touch, pen, and so on).
+        /// As such, the primary pointer might not be associated with your app.The first contact in a multi-touch interaction is set as the primary pointer.
+        /// Once a primary pointer is identified, all contacts must be lifted before a new contact can be identified as a primary pointer.
+        /// For apps that don't process pointer input, only the primary pointer's events are promoted to mouse events.
+        /// </summary>
+        PRIMARY = 0x00002000,
+
+        /// <summary>
+        /// Confidence is a suggestion from the source device about whether the pointer represents an intended or accidental interaction,
+        /// which is especially relevant for PT_TOUCH pointers where an accidental interaction(such as with the palm of the hand) can trigger input.
+        /// The presence of this flag indicates that the source device has high confidence that this input is part of an intended interaction.
+        /// </summary>
+        CONFIDENCE = 0x000004000,
+
+        /// <summary>
+        /// Indicates that the pointer is departing in an abnormal manner, such as when the system receives invalid input for the pointer or when a device with active pointers departs abruptly.
+        /// If the application receiving the input is in a position to do so, it should treat the interaction as not completed and reverse any effects of the concerned pointer.
+        /// </summary>
+        CANCELED = 0x000008000,
+
+        /// <summary>
+        /// Indicates that this pointer transitioned to a down state; that is, it made contact with the digitizer surface.
+        /// </summary>
+        DOWN = 0x00010000,
+
+        /// <summary>
+        /// Indicates that this is a simple update that does not include pointer state changes.
+        /// </summary>
+        UPDATE = 0x00020000,
+
+        /// <summary>
+        /// Indicates that this pointer transitioned to an up state; that is, contact with the digitizer surface ended.
+        /// </summary>
+        UP = 0x00040000,
+
+        /// <summary>
+        /// Indicates input associated with a pointer wheel.
+        /// For mouse pointers, this is equivalent to the action of the mouse scroll wheel(WM_MOUSEHWHEEL).
+        /// </summary>
+        WHEEL = 0x00080000,
+
+        /// <summary>
+        /// Indicates input associated with a pointer h - wheel.For mouse pointers, this is equivalent to the action of the mouse horizontal scroll wheel(WM_MOUSEHWHEEL).
+        /// </summary>
+        HWHEEL = 0x00100000,
+
+        /// <summary>
+        /// Indicates that this pointer was captured by(associated with) another element and the original element has lost capture(see WM_POINTERCAPTURECHANGED).
+        /// </summary>
+        CAPTURECHANGED = 0x00200000,
+
+        /// <summary>
+        /// Indicates that this pointer has an associated transform.
+        /// </summary>
+        HASTRANSFORM = 0x00400000,
+    }
+
+    internal enum POINTER_BUTTON_CHANGE_TYPE
+    {
+        NONE,
+        FIRSTBUTTON_DOWN,
+        FIRSTBUTTON_UP,
+        SECONDBUTTON_DOWN,
+        SECONDBUTTON_UP,
+        THIRDBUTTON_DOWN,
+        THIRDBUTTON_UP,
+        FOURTHBUTTON_DOWN,
+        FOURTHBUTTON_UP,
+        FIFTHBUTTON_DOWN,
+        FIFTHBUTTON_UP
+    }
+
+    [Flags]
+    internal enum PEN_FLAGS
+    {
+        /// <summary>
+        /// There is no pen flag. This is the default.
+        /// </summary>
+        NONE = 0x00000000,
+
+        /// <summary>
+        /// The barrel button is pressed.
+        /// </summary>
+        BARREL = 0x00000001,
+
+        /// <summary>
+        /// The pen is inverted.
+        /// </summary>
+        INVERTED = 0x00000002,
+
+        /// <summary>
+        /// The eraser button is pressed.
+        /// </summary>
+        ERASER = 0x00000004,
+    }
+
+    [Flags]
+    internal enum PEN_MASK
+    {
+        /// <summary>
+        /// Default. None of the optional fields are valid.
+        /// </summary>
+        NONE = 0x00000000,
+
+        /// <summary>
+        /// pressure of the POINTER_PEN_INFO structure is valid.
+        /// </summary>
+        PRESSURE = 0x00000001,
+
+        /// <summary>
+        /// rotation of the POINTER_PEN_INFO structure is valid.
+        /// </summary>
+        ROTATION = 0x00000002,
+
+        /// <summary>
+        /// tiltX of the POINTER_PEN_INFO structure is valid.
+        /// </summary>
+        TILT_X = 0x00000004,
+
+        /// <summary>
+        /// tiltY of the POINTER_PEN_INFO structure is valid.
+        /// </summary>
+        TILT_Y = 0x00000008,
     }
 
     internal enum IDC : int
@@ -5346,6 +5620,16 @@ namespace OpenTK.Platform.Native.Windows
         INITMENUPOPUP = 0x0117,
 
         /// <summary>
+        /// Passes information about a gesture.
+        /// </summary>
+        GESTURE = 0x0119,
+
+        /// <summary>
+        /// Gives you a chance to set the gesture configuration.
+        /// </summary>
+        GESTURENOTIFY = 0x011A,
+
+        /// <summary>
         /// The WM_MENUSELECT message is sent to a menu's owner window when the user selects a menu item.
         /// </summary>
         MENUSELECT = 0x011F,
@@ -5645,6 +5929,137 @@ namespace OpenTK.Platform.Native.Windows
         /// Sent to an application when a window is activated. A window receives this message through its WindowProc function.
         /// </summary>
         IME_SETCONTEXT = 0x0281,
+
+        /// <summary>
+        /// Sent to a window when there is a change in the settings of a monitor that has a digitizer attached to it.
+        /// This message contains information regarding the scaling of the display mode.
+        /// </summary>
+        POINTERDEVICECHANGE = 0x238,
+
+        /// <summary>
+        /// Sent to a window when a pointer device is detected within range of an input digitizer.
+        /// This message contains information regarding the device and its proximity.
+        /// </summary>
+        POINTERDEVICEINRANGE = 0x239,
+
+        /// <summary>
+        /// Sent to a window when a pointer device has departed the range of an input digitizer.
+        /// This message contains information regarding the device and its proximity.
+        /// </summary>
+        POINTERDEVICEOUTOFRANGE = 0x23A,
+
+        /// <summary>
+        /// Notifies the window when one or more touch points, such as a finger or pen, touches a touch-sensitive digitizer surface.
+        /// </summary>
+        TOUCH = 0x0240,
+
+        /// <summary>
+        /// Posted to provide an update on a pointer that made contact over the non-client area of a window or when a hovering uncaptured contact moves over the non-client area of a window.
+        /// While the pointer is hovering, the message targets whichever window the pointer happens to be over.
+        /// While the pointer is in contact with the surface, the pointer is implicitly captured to the window over which the pointer made contact and that window continues to receive input for the pointer until it breaks contact.
+        /// 
+        /// If a window has captured this pointer, this message is not posted. Instead, a WM_POINTERUPDATE is posted to the window that has captured this pointer.
+        /// </summary>
+        NCPOINTERUPDATE       = 0x0241,
+
+        /// <summary>
+        /// Posted when a pointer makes contact over the non-client area of a window.
+        /// The message targets the window over which the pointer makes contact.
+        /// The pointer is implicitly captured to the window so that the window continues to receive input for the pointer until it breaks contact.
+        ///
+        /// If a window has captured this pointer, this message is not posted. Instead, a WM_POINTERDOWN is posted to the window that has captured this pointer.
+        /// </summary>
+        NCPOINTERDOWN         = 0x0242,
+
+        /// <summary>
+        /// Posted when a pointer that made contact over the non-client area of a window breaks contact.
+        /// The message targets the window over which the pointer makes contact and the pointer is, at that point,
+        /// implicitly captured to the window so that the window continues to receive input for the pointer until it breaks contact, including the WM_NCPOINTERUP notification.
+        /// 
+        /// If a window has captured this pointer, this message is not posted. Instead, a WM_POINTERUP is posted to the window that has captured this pointer.
+        /// </summary>
+        NCPOINTERUP           = 0x0243,
+
+        /// <summary>
+        /// Posted to provide an update on a pointer that made contact over the client area of a window or on a hovering uncaptured pointer over the client area of a window.
+        /// While the pointer is hovering, the message targets whichever window the pointer happens to be over.
+        /// While the pointer is in contact with the surface, the pointer is implicitly captured to the window over which the pointer made contact and that window continues to receive input for the pointer until it breaks contact.
+        /// </summary>
+        POINTERUPDATE = 0x0245,
+
+        /// <summary>
+        /// Posted when a pointer makes contact over the client area of a window.
+        /// This input message targets the window over which the pointer makes contact,
+        /// and the pointer is implicitly captured to the window so that the window continues to receive input for the pointer until it breaks contact.
+        /// </summary>
+        POINTERDOWN = 0x0246,
+
+        /// <summary>
+        /// Posted when a pointer that made contact over the client area of a window breaks contact.
+        /// This input message targets the window over which the pointer makes contact and the pointer is,
+        /// at that point, implicitly captured to the window so that the window continues to receive input messages including the WM_POINTERUP notification for the pointer until it breaks contact.
+        /// </summary>
+        POINTERUP = 0x0247,
+
+        /// <summary>
+        /// Sent to a window when a new pointer enters detection range over the window (hover) or when an existing pointer moves within the boundaries of the window.
+        /// </summary>
+        POINTERENTER = 0x0249,
+
+        /// <summary>
+        /// Sent to a window when a pointer leaves detection range over the window (hover) or when a pointer moves outside the boundaries of the window.
+        /// </summary>
+        POINTERLEAVE = 0x024A,
+
+        /// <summary>
+        /// Sent to an inactive window when a primary pointer generates a WM_POINTERDOWN over the window.
+        /// As long as the message remains unhandled, it travels up the parent window chain until it is reaches the top-level window.
+        /// Applications can respond to this message to specify whether they wish to be activated.
+        /// </summary>
+        POINTERACTIVATE = 0x024B,
+
+        /// <summary>
+        /// Sent to a window that is losing capture of an input pointer.
+        /// </summary>
+        POINTERCAPTURECHANGED = 0x024C,
+
+        /// <summary>
+        /// Sent to a window on a touch down in order to determine the most probable touch target.
+        /// </summary>
+        TOUCHHITTESTING = 0x024D,
+
+        /// <summary>
+        /// Posted to the window with foreground keyboard focus when a scroll wheel is rotated.
+        /// </summary>
+        POINTERWHEEL = 0x024E,
+
+        /// <summary>
+        /// Posted to the window with foreground keyboard focus when a horizontal scroll wheel is rotated.
+        /// </summary>
+        POINTERHWHEEL = 0x024F,
+
+        /// <summary>
+        /// Sent to a window, when pointer input is first detected, in order to determine the most probable input target for Direct Manipulation.
+        /// </summary>
+        DM_POINTERHITTEST = 0x0250,
+
+        /// <summary>
+        /// Sent when ongoing pointer input, for an existing pointer ID, transitions from one process to another across content configured for cross-process chaining (AddContentWithCrossProcessChaining).
+        /// 
+        /// This message is sent to the process not currently receiving pointer input.
+        /// </summary>
+        POINTERROUTEDTO       = 0x0251,
+
+        /// <summary>
+        /// Occurs on the process receiving input when the pointer input is routed to another process.
+        /// </summary>
+        POINTERROUTEDAWAY = 0x0252,
+
+        /// <summary>
+        /// Sent to all processes (configured for cross-process chaining through AddContentWithCrossProcessChaining and not currently handling pointer input) ever associated with a specific pointer ID,
+        /// when a WM_POINTERUP message is received on the current process.
+        /// </summary>
+        POINTERROUTEDRELEASED = 0x0253,
 
         /// <summary>
         /// Sent to an application to notify it of changes to the IME window. A window receives this message through its WindowProc function.

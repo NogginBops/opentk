@@ -525,6 +525,73 @@ namespace OpenTK.Core.Platform
         }
     }
 
+    [Flags]
+    public enum PenButtons
+    {
+        Primary,
+        Barrel,
+        // FIXME: Are these ever used by a pen?
+        ThirdButton,
+        XButton1,
+        XButton2,
+    }
+
+    public struct PenState
+    {
+        public Vector2 Position;
+        public float Pressure;
+        public float Angle;
+        public Vector2 Tilt;
+
+        public PenButtons PressedButtons;
+
+        public override string ToString()
+        {
+            return $"Pos: {Position}, Pressure {Pressure}, Angle: {Angle}, Tilt: {Tilt}, Buttons: {PressedButtons}";
+        }
+    }
+
+    // FIXME: Info about which pointer?
+    // FIXME: Point of entry?
+    public class PointerEnterEventArgs : WindowEventArgs
+    {
+        public bool Entered { get; private set; }
+
+        public PointerEnterEventArgs(WindowHandle window, bool entered) : base(window)
+        {
+            Entered = entered;
+        }
+    }
+
+    public class PointerDownEventArgs : WindowEventArgs
+    {
+        public bool IsDown { get; private set; }
+
+        public PenState State { get; private set; }
+
+        // FIXME: Info about the state of the pen
+        // FIXME: Info about the buttons pressed?
+
+        public PointerDownEventArgs(WindowHandle window, bool isDown, PenState state) : base(window)
+        {
+            IsDown = isDown;
+            State = state;
+        }
+    }
+
+    public class PointerUpdateEventArgs : WindowEventArgs
+    {
+        // FIXME: Is this client or screen?
+        public PenState State { get; private set; }
+
+        // FIXME: Info about the state of the pen?
+
+        public PointerUpdateEventArgs(WindowHandle window, PenState state) : base(window)
+        {
+            State = state;
+        }
+    }
+
     // FIXME: This is not a window event
 
     /// <summary>
@@ -612,6 +679,17 @@ namespace OpenTK.Core.Platform
         public PowerStateChangeEventArgs(bool goingToSleep)
         {
             GoingToSleep = goingToSleep;
+        }
+    }
+
+    // FIXME: Info about which pointer device?
+    public class PointerRangeEventArgs : EventArgs
+    {
+        public bool InRange { get; private set; }
+
+        public PointerRangeEventArgs(bool inRange)
+        {
+            InRange = inRange;
         }
     }
 }

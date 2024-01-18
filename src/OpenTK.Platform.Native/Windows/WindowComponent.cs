@@ -135,9 +135,15 @@ namespace OpenTK.Platform.Native.Windows
             // - 2023-06-28 Noggin_bops
             IntPtr devNotifHandle = Win32.RegisterDeviceNotification(HelperHWnd, dbh, DEVICE_NOTIFY.DEVICE_NOTIFY_WINDOW_HANDLE);
             IntPtr resumeSuspendNotifHandle = Win32.RegisterSuspendResumeNotification(HelperHWnd, DEVICE_NOTIFY.DEVICE_NOTIFY_WINDOW_HANDLE);
-
+            
             // Register for WM_CLIPBOARDUPDATE
             bool success = Win32.AddClipboardFormatListener(HelperHWnd);
+            if (success == false)
+            {
+                throw new Win32Exception();
+            }
+
+            success = Win32.RegisterPointerDeviceNotifications(HelperHWnd, true);
             if (success == false)
             {
                 throw new Win32Exception();
@@ -189,6 +195,14 @@ namespace OpenTK.Platform.Native.Windows
 
                         return (IntPtr)1;
                     }
+                    case WM.POINTERDEVICECHANGE:
+                    case WM.POINTERDEVICEINRANGE:
+                    case WM.POINTERDEVICEOUTOFRANGE:
+                        {
+                            // FIXME: Check if we even have a working pen component.
+                            // FIXME: Maybe send the window handle to the pen component?
+                            return PenComponent.HandlePointerEvent(hWnd, uMsg, wParam, lParam);
+                        }
                     default:
                     {
                         return Win32.DefWindowProc(hWnd, uMsg, wParam, lParam);
@@ -639,6 +653,47 @@ namespace OpenTK.Platform.Native.Windows
                         EventQueue.Raise(h, PlatformEventType.Scroll, new ScrollEventArgs(h, new Vector2(delta, 0), new Vector2(delta * chars, 0)));
 
                         return Win32.DefWindowProc(hWnd, uMsg, wParam, lParam);
+                    }
+                case WM.TOUCH:
+                    {
+                        ushort numberOfTouchPoints = (ushort)(Win32.LoWordMask & wParam.ToUInt64());
+                        //Console.WriteLine($"Touch! {numberOfTouchPoints} 0x{lParam:X8}");
+
+                        bool success = Win32.GetTouchInputInfo(lParam, numberOfTouchPoints, out Win32.TOUCHINPUT touchInput, Unsafe.SizeOf<Win32.TOUCHINPUT>());
+                        if (success == false)
+                        {
+                            throw new Win32Exception();
+                        }
+
+                        //Console.WriteLine($"{touchInput.x/100},{touchInput.y/100} {touchInput.dwFlags} {touchInput.dwMask}");
+
+                        if (touchInput.dwMask.HasFlag(TOUCHINPUTMASKF.CONTACTAREA))
+                        {
+                            //Console.WriteLine($"Contact size: {touchInput.cxContact/100}x{touchInput.cyContact/100} (area: {(touchInput.cxContact/100) * (touchInput.cyContact/100)})");
+                        }
+
+                        return Win32.DefWindowProc(hWnd, uMsg, wParam, lParam);
+                    }
+                case WM.GESTURE: // FIXME: Maybe we need to register for gestures?
+                    {
+                        Console.WriteLine("Gesture!");
+
+                        return Win32.DefWindowProc(hWnd, uMsg, wParam, lParam);
+                    }
+                    // FIXME: These are registered for the helper window....
+                case WM.POINTERDEVICEINRANGE:
+                case WM.POINTERDEVICEOUTOFRANGE:
+
+                case WM.POINTERACTIVATE:
+                case WM.POINTERENTER:
+                case WM.POINTERLEAVE:
+                case WM.POINTERDOWN:
+                case WM.POINTERUPDATE:
+                case WM.POINTERUP:
+                    {
+                        // FIXME: Check if we even have a working pen component.
+                        // FIXME: Maybe send the window handle to the pen component?
+                        return PenComponent.HandlePointerEvent(hWnd, uMsg, wParam, lParam);
                     }
                 case WM.NCHITTEST:
                     {
@@ -1095,6 +1150,13 @@ namespace OpenTK.Platform.Native.Windows
             SetCursor(hwnd, hcursor);
 
             HWndDict.Add(hwnd.HWnd, hwnd);
+
+            // FIXME: Make this optional?
+            bool success = Win32.RegisterTouchWindow(hwnd.HWnd, 0);
+            if (success == false)
+            {
+                throw new Win32Exception();
+            }
 
             return hwnd;
         }
