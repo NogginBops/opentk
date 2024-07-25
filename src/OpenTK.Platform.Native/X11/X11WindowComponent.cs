@@ -244,6 +244,10 @@ namespace OpenTK.Platform.Native.X11
             WindowMode.ExclusiveFullscreen,
         };
 
+        private static readonly char[] s_FileDropSeparatorChars = new char[] {
+            '\n', '\r'
+        };
+
         /// <inheritdoc />
         public IReadOnlyList<PlatformEventType> SupportedEvents { get => throw new NotImplementedException(); }
 
@@ -548,7 +552,7 @@ namespace OpenTK.Platform.Native.X11
 
                                             // FIXME: Handle the different formats!
                                             List<string> files = new List<string>();
-                                            string[] lines = fullString.Split('\n', StringSplitOptions.RemoveEmptyEntries);
+                                            string[] lines = fullString.Split(s_FileDropSeparatorChars, StringSplitOptions.RemoveEmptyEntries);
                                             for (int i = 0; i < lines.Length; i++)
                                             {
                                                 if (lines[i].StartsWith("#")) continue;
