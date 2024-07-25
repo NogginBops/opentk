@@ -463,6 +463,47 @@ namespace OpenTK.Platform.Native.X11
             info.TotalPhysicalMemory = (long)sysInfo.totalram;
             info.AvailablePhysicalMemory = (long)sysInfo.freeram;
 
+            // 'struct sysinfo.freeram' does not represent the amount of available
+            // ram to linux applications correctly. Like the application 'free' we
+            // need to parse '/proc/meminfo' in order to get accurate information.
+            // If we can open this file, we should use that instead.
+            // - mixed 2024-07-25
+            try
+            {
+                using StreamReader reader = new StreamReader(File.OpenRead("/proc/meminfo"));
+
+                string line;
+                bool okay = false;
+                while ((line = reader.ReadLine()) != null)
+                {
+                    if (line.StartsWith("MemAvailable:"))
+                    {
+                        string[] tokens = line.Split(' ', StringSplitOptions.RemoveEmptyEntries);
+
+                        if (long.TryParse(tokens[1], out long availableKb))
+                        {
+                            // Linux uses POT data sizes.
+                            info.AvailablePhysicalMemory = availableKb * 1024;
+                        }
+                        else
+                        {
+                            Logger?.LogError("Could not parse 'MemAvailable' in '/proc/meminfo'.");
+                        }
+                        okay = true;
+                        break;
+                    }
+                }
+
+                if (!okay)
+                {
+                    Logger?.LogWarning("'/proc/meminfo' did not have 'MemAvailable' field to interpret for memory detailed info.");
+                }
+            }
+            catch (Exception ex)
+            {
+                Logger?.LogError($"Could not parse '/proc/meminfo' for detailed info: {ex}");
+            }
+
             return info;
         }
     }
