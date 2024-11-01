@@ -1234,7 +1234,8 @@ namespace OpenTK.Platform.Native.X11
                             else
                             {
                                 if (property.atom != X11.Atoms[KnownAtoms.WM_NAME] &&
-                                    property.atom != X11.Atoms[KnownAtoms._NET_WM_NAME])
+                                    property.atom != X11.Atoms[KnownAtoms._NET_WM_NAME] &&
+                                    property.atom != X11.Atoms[KnownAtoms._GTK_EDGE_CONSTRAINTS])
                                 {
                                     Logger?.LogInfo($"PropertyNotify: {XGetAtomName(X11.Display, property.atom)}");
                                 }
@@ -1283,6 +1284,8 @@ namespace OpenTK.Platform.Native.X11
                         break;
                 }
             }
+
+            X11JoystickComponent.PollForUpdates(Logger);
 
             if (CursorCapturingWindow != null && CursorCapturingWindow.CaptureMode == CursorCaptureMode.Locked)
             {

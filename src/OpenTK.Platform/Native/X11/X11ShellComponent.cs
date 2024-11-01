@@ -448,11 +448,11 @@ namespace OpenTK.Platform.Native.X11
         /// <inheritdoc />
         public unsafe SystemMemoryInfo GetSystemMemoryInformation()
         {
-            int result = Sysinfo.sysinfo(out Sysinfo.sysinfo_struct sysInfo);
+            int result = Linux.sysinfo(out Linux.sysinfo_struct sysInfo);
             if (result < 0)
             {
                 int error = Marshal.GetLastPInvokeError();
-                string? errorStr = Marshal.PtrToStringUTF8((IntPtr)Sysinfo.strerror(error));
+                string? errorStr = Marshal.PtrToStringUTF8((IntPtr)Linux.strerror(error));
 
                 Logger?.LogError($"sysinfo() failed: '{errorStr}' (0x{error:X})");
                 return default;

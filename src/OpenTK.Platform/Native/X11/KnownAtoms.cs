@@ -138,6 +138,11 @@ namespace OpenTK.Platform.Native.X11
 
         EDID,
 
+        // We use this atom so we can ignore debug prints
+        // when we get PropertyNotify events updating this property.
+        // -Noggin_bops 2024-10-29
+        _GTK_EDGE_CONSTRAINTS,
+
         /// <summary>
         /// This is not a valid known atom name, however it is used for internal verification.
         /// </summary>
