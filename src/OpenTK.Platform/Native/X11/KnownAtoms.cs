@@ -146,7 +146,7 @@ namespace OpenTK.Platform.Native.X11
 
         // We use this atom so we can ignore debug prints
         // when we get PropertyNotify events updating this property.
-        // - Noggin_bops 2024-11-03
+        // -Noggin_bops 2024-10-29
         _GTK_EDGE_CONSTRAINTS,
 
         /// <summary>

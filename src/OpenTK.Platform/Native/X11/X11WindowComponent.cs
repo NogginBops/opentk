@@ -1504,6 +1504,8 @@ namespace OpenTK.Platform.Native.X11
                 }
             }
 
+            X11JoystickComponent.PollForUpdates(Logger);
+
             if (CursorCapturingWindow != null && CursorCapturingWindow.CaptureMode == CursorCaptureMode.Locked)
             {
                 GetClientSize(CursorCapturingWindow, out Vector2i clientSize);

@@ -57,19 +57,6 @@ namespace OpenTK.Platform.Native.Windows
 
         internal const int LOCALE_NAME_MAX_LENGTH = 85;
 
-        // Usefull extension methods for dealing with span string buffers.
-        internal static Span<char> SliceAtFirstNull(this Span<char> span)
-        {
-            int index = span.IndexOf("\0");
-            return index == -1 ? span : span.Slice(0, index);
-        }
-
-        internal static ReadOnlySpan<char> SliceAtFirstNull(this ReadOnlySpan<char> span)
-        {
-            int index = span.IndexOf("\0");
-            return index == -1 ? span : span.Slice(0, index);
-        }
-
         [DllImport("kernel32.dll", SetLastError = false)]
         internal static extern uint GetLastError();
 

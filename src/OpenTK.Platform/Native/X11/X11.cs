@@ -95,6 +95,20 @@ namespace OpenTK.Platform.Native.X11
             }
         }
 
+        // FIXME: Better name!
+        internal static unsafe bool FileDescriptorHasReadData(int fd)
+        {
+            const short POLLIN = 0x0001;
+
+            // FIXME: Add POLLPRI?
+            pollfd pollfd = new pollfd(){
+                fd = fd,
+                events = POLLIN,
+            };
+
+            return Poll(&pollfd, 1, 0);
+        }
+
         internal static unsafe bool WaitForXEvents()
         {
             const short POLLIN = 0x0001;
