@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.Runtime.InteropServices;
 using System.Text;
 using OpenTK.Core.Utility;
@@ -17,9 +18,14 @@ namespace OpenTK.Platform.Native.X11
         internal static UdevPtr Udev;
         internal static UdevMonitorPtr Monitor;
 
+        private static List<XJoystickHandle> _connectedJoystickHandles = new();
+        private static List<XJoystickHandle> _openedJoystickHandles = new();
+
+        /// <inheritdoc/>
         public void Initialize(ToolkitOptions options)
         {
             // FIXME: check if udev is available...?
+
             Udev  = udev_new();
 
             Monitor = udev_monitor_new_from_netlink(Udev, "udev"u8);
@@ -32,16 +38,23 @@ namespace OpenTK.Platform.Native.X11
 
             // FIXME: check result..
             int result = udev_enumerate_scan_devices(udevEnum);
+            // TODO: Fixed?
+            if (result < 0) throw new Exception("Scanning devices failed.");
+
             UdevListEntryPtr list = udev_enumerate_get_list_entry(udevEnum);
+
+            Span<byte> potentialJoystickName = stackalloc byte[128];
+
             for (UdevListEntryPtr entry = list; entry.Value != 0; entry = udev_list_entry_get_next(entry))
             {
                 string? name = udev_list_entry_get_name(entry);
                 string? value = udev_list_entry_get_value(entry);
 
-                Logger?.LogInfo($"{name} {value}");
+                Logger?.LogInfo($"{name}, {value}");
                 if (name == null)
                     continue;
                 
+                // Gets a device from the system path. Is not always a joystick.
                 UdevDevicePtr device = udev_device_new_from_syspath(Udev, name);
                 if (device.Value != 0)
                 {
@@ -58,6 +71,43 @@ namespace OpenTK.Platform.Native.X11
                         Logger?.LogInfo("ID_INPUT_JOYSTICK");
 
                         // FIXME: We only really care about these devices..
+
+                        int fd = Linux.open(devnode, Linux.file_flags.O_RDONLY | Linux.file_flags.O_CLOEXEC, 0);
+                        if (fd < 0)
+                        {
+                            // FIXME: Do we need to unref the device?
+                            Logger?.LogWarning($"Failed to open file: '{devnode}'");
+                            continue;
+                        }
+
+                        if (Linux.fstat(fd, out Linux.stat_t st) == -1)
+                        {
+                            Linux.close(fd);
+                            continue;
+                        }
+
+                        // FIXME: EVIOCGNAME only seems to work the second time a joystick is added to the system.
+                        // The first time this call fails.
+                        // JSIOCGNAME doesn't seem to work at all...?
+                        // - Noggin_bops 2024-10-30
+                        if (Linux.ioctl(fd, Linux.EVIOCGNAME(potentialJoystickName.Length), potentialJoystickName) <= 0)
+                        {
+                            Linux.close(fd);
+                            // continue;
+                        }
+
+                        // while (Linux.ioctl(fd, Linux.EVIOCGNAME(potentialJoystickName.Length), potentialJoystickName) <= 0);
+
+                        Logger?.LogInfo(name);
+
+                        _connectedJoystickHandles.Add(new XJoystickHandle() { JoystickPtr = device, JoystickName = Encoding.UTF8.GetString(potentialJoystickName.SliceAtFirstNull())});
+
+                    } else
+                    {
+
+                        udev_device_unref(device);
+                        continue;
+
                     }
 
                     val = udev_device_get_property_value(device, "ID_INPUT_MOUSE"u8);
@@ -72,7 +122,7 @@ namespace OpenTK.Platform.Native.X11
                         Logger?.LogInfo($"Class: {cls}");
                     }
 
-                    udev_device_unref(device);
+                    // udev_device_unref(device);
                 }
             }
             udevEnum = udev_enumerate_unref(udevEnum);
@@ -110,6 +160,16 @@ namespace OpenTK.Platform.Native.X11
                     if (IsJSJoystick(devnode))
                     {
                         continue;
+                    }
+
+                    var isJoystick = udev_device_get_property_value(device, "ID_INPUT_JOYSTICK"u8);
+                    if (isJoystick.SequenceEqual("1"u8))
+                    {
+
+                        // This is a joystick.
+                        logger?.LogInfo($"A joystick {devnode} has been added");
+                        _connectedJoystickHandles.Add( new XJoystickHandle() { JoystickPtr = device } );
+
                     }
 
                     ushort vendor = 0;
@@ -176,57 +236,120 @@ namespace OpenTK.Platform.Native.X11
                 }
                 else if(action.SequenceEqual("remove"u8))
                 {
-                    logger?.LogInfo("Removed input device.");
+                    
+                    var potentialJoystick = udev_device_get_property_value(device, "ID_INPUT_JOYSTICK"u8);
+
+                    if (potentialJoystick.SequenceEqual("1"u8))
+                    {
+
+                        foreach (XJoystickHandle handle in _connectedJoystickHandles)
+                        {
+
+                            string? handleDevNode = Marshal.PtrToStringAnsi(udev_device_get_devnode(handle.JoystickPtr));
+                            string? deviceDevNode = Marshal.PtrToStringAnsi(udev_device_get_devnode(device));
+
+                            if (handleDevNode == deviceDevNode)
+                            {
+
+                                logger?.LogInfo($"A joystick {handleDevNode} has been removed.");
+                                udev_device_unref(handle.JoystickPtr);
+                                _connectedJoystickHandles.Remove(handle);
+                                break;
+
+                            }
+
+                        }
+
+                    }
+                    
                 }
             }
         }
 
-        public float LeftDeadzone => 0;
+        // FIXME: These are copied over from Windows' JoystickComponent.
+        // Should they be different?
 
-        public float RightDeadzone => 0;
+        /// <inheritdoc/>
+        public float LeftDeadzone => 7849 / 32767.0f;
 
-        public float TriggerThreshold => 0;
+        /// <inheritdoc/>
+        public float RightDeadzone => 8689 / 32767.0f;
 
+        /// <inheritdoc/>
+        public float TriggerThreshold => 30 / 255.0f;
+
+        /// <inheritdoc/>
         public bool IsConnected(int index)
         {
-            throw new NotImplementedException();
+
+            Console.WriteLine(_connectedJoystickHandles.Count);
+
+            return _connectedJoystickHandles.Count > index;
+
         }
 
+        /// <inheritdoc/>
         public JoystickHandle Open(int index)
         {
-            throw new NotImplementedException();
+
+            _connectedJoystickHandles[index].FD = Linux.open(udev_device_get_devnode(_connectedJoystickHandles[index].JoystickPtr), 
+                                                             Linux.file_flags.O_RDONLY | Linux.file_flags.O_CLOEXEC, 0);
+            _openedJoystickHandles.Add(_connectedJoystickHandles[index]);
+            return _connectedJoystickHandles[index];
+
         }
 
+        /// <inheritdoc/>
         public void Close(JoystickHandle handle)
         {
-            throw new NotImplementedException();
+
+            // TODO: What should this do? The handle is still inside _connectedJoystickHandles.
+            Linux.close(((XJoystickHandle)handle).FD);
+            _openedJoystickHandles.Remove((XJoystickHandle)handle);
+
         }
 
+        /// <inheritdoc/>
         public Guid GetGuid(JoystickHandle handle)
         {
             throw new NotImplementedException();
         }
 
+        /// <inheritdoc/>
         public string GetName(JoystickHandle handle)
         {
-            throw new NotImplementedException();
+            return ((XJoystickHandle)handle).JoystickName;
         }
 
+        /// <inheritdoc/>
         public float GetAxis(JoystickHandle handle, JoystickAxis axis)
         {
+
+            int fd = Linux.open(udev_device_get_devnode(((XJoystickHandle)handle).JoystickPtr), Linux.file_flags.O_RDONLY | Linux.file_flags.O_CLOEXEC, 0);
+
+            // read
+            
+
+            Linux.close(fd);
+
+            // return axis info
+
             throw new NotImplementedException();
         }
 
+        /// <inheritdoc/>
         public bool GetButton(JoystickHandle handle, JoystickButton button)
         {
             throw new NotImplementedException();
         }
 
+        /// <inheritdoc/>
         public bool SetVibration(JoystickHandle handle, float lowFreqIntensity, float highFreqIntensity)
         {
             throw new NotImplementedException();
         }
 
+        /// <inheritdoc/>
         public bool TryGetBatteryInfo(JoystickHandle handle, out GamepadBatteryInfo batteryInfo)
         {
             throw new NotImplementedException();
