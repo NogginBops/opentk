@@ -44,23 +44,11 @@ class Program
         // Joystick init
         Toolkit.Joystick.Initialize(options);
 
-        if (Toolkit.Joystick.IsConnected(0))
-        {
-
-            JoystickHandle handle = Toolkit.Joystick.Open(0);
-            Console.WriteLine($"The joystick {Toolkit.Joystick.GetName(handle)} has been connected.");
-
-        } else
-        {
-
-            Console.WriteLine("No joystick connected at index 0");
-
-        }
 
         while (_isRunning)
         {
 
-            Toolkit.Window.ProcessEvents(false);
+            // Toolkit.Window.ProcessEvents(false);
 
             // Drawing
             // Console.WriteLine(Toolkit.Joystick.IsConnected(0));

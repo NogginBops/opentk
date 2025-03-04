@@ -1,4 +1,5 @@
 using System;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using Microsoft.VisualBasic;
 
@@ -111,6 +112,11 @@ namespace OpenTK.Platform.Native.X11
             [DllImport("libc")]
             static extern int open(byte* pathname, file_flags flags, mode_t mode);
         }
+
+        
+
+        [DllImport("libc")]
+        internal static unsafe extern long read(int fd, void* buff, long count);
 
         [DllImport("libc")]
         internal static extern int open(IntPtr pathname, file_flags flags, mode_t mode);

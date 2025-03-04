@@ -58,12 +58,18 @@ namespace OpenTK.Platform.Native.X11
                 UdevDevicePtr device = udev_device_new_from_syspath(Udev, name);
                 if (device.Value != 0)
                 {
-                    IntPtr devnode = udev_device_get_devnode(device);
-                    if (devnode == IntPtr.Zero)
+                    IntPtr devnodePtr = udev_device_get_devnode(device);
+                    string? devnodeString = Marshal.PtrToStringAnsi(devnodePtr);
+                    if (devnodePtr == IntPtr.Zero)
                     {
                         udev_device_unref(device);
                         continue;
                     }
+
+                    if (devnodeString == null) continue;
+
+                    // Filter out joydev inputs. We only need evdev inputs.
+                    if (IsJSJoystick(Marshal.PtrToStringAnsi(devnodePtr))) continue;
 
                     // Figure out if this is a joystick?
                     var val = udev_device_get_property_value(device, "ID_INPUT_JOYSTICK"u8);
@@ -72,11 +78,11 @@ namespace OpenTK.Platform.Native.X11
 
                         // FIXME: We only really care about these devices..
 
-                        int fd = Linux.open(devnode, Linux.file_flags.O_RDONLY | Linux.file_flags.O_CLOEXEC, 0);
+                        int fd = Linux.open(devnodePtr, Linux.file_flags.O_RDONLY | Linux.file_flags.O_CLOEXEC, 0);
                         if (fd < 0)
                         {
                             // FIXME: Do we need to unref the device?
-                            Logger?.LogWarning($"Failed to open file: '{devnode}'");
+                            Logger?.LogWarning($"Failed to open file: '{devnodePtr}'");
                             continue;
                         }
 
@@ -100,7 +106,26 @@ namespace OpenTK.Platform.Native.X11
 
                         Logger?.LogInfo(name);
 
-                        _connectedJoystickHandles.Add(new XJoystickHandle() { JoystickPtr = device, JoystickName = Encoding.UTF8.GetString(potentialJoystickName.SliceAtFirstNull())});
+                        XJoystickHandle handle = new XJoystickHandle() { JoystickPtr = device, JoystickName = Encoding.UTF8.GetString(potentialJoystickName.SliceAtFirstNull()) };
+
+                        if (_connectedJoystickHandles.Count == 0) _connectedJoystickHandles.Add(handle);
+
+                        foreach (XJoystickHandle h in _connectedJoystickHandles)
+                        {
+
+                            string? hName = Marshal.PtrToStringAnsi(udev_device_get_devnode(h.JoystickPtr));
+                            string? currName = Marshal.PtrToStringAnsi(udev_device_get_devnode(handle.JoystickPtr));
+
+                            Console.WriteLine($"{hName}, {currName}");
+
+                            if (hName != currName)
+                            {
+                                _connectedJoystickHandles.Add(handle);
+                                continue;
+                            }
+
+                        }
+                        // if (!_connectedJoystickHandles.Contains(handle)) _connectedJoystickHandles.Add(handle);
 
                     } else
                     {
@@ -214,8 +239,10 @@ namespace OpenTK.Platform.Native.X11
                     // The first time this call fails.
                     // JSIOCGNAME doesn't seem to work at all...?
                     // - Noggin_bops 2024-10-30
-                    if (Linux.ioctl(fd, Linux.EVIOCGNAME(joystickName.Length), joystickName) <= 0)
+                    int err = Linux.ioctl(fd, Linux.EVIOCGNAME(joystickName.Length), joystickName);
+                    if (err <= 0)
                     {
+                        //Console.WriteLine($"EVIOCGNAME errored with int {err}");
                         Linux.close(fd);
                         continue;
                     }
@@ -226,13 +253,6 @@ namespace OpenTK.Platform.Native.X11
 
                     logger?.LogInfo($"Added input device '{name}'. devnode: {devnode}, vendor: 0x{vendor:X4}, model: 0x{model:X4}, version: 0x{version:X4}");
 
-                    static bool IsJSJoystick(ReadOnlySpan<char> path)
-                    {
-                        int index = path.LastIndexOf('/');
-                        if (index != -1)
-                            path = path.Slice(index + 1);
-                        return path.StartsWith("js") && int.TryParse(path.Slice(2), out _);
-                    }
                 }
                 else if(action.SequenceEqual("remove"u8))
                 {
@@ -251,7 +271,7 @@ namespace OpenTK.Platform.Native.X11
                             if (handleDevNode == deviceDevNode)
                             {
 
-                                logger?.LogInfo($"A joystick {handleDevNode} has been removed.");
+                                logger?.LogInfo($"A joystick {handle.JoystickName} has been removed.");
                                 udev_device_unref(handle.JoystickPtr);
                                 _connectedJoystickHandles.Remove(handle);
                                 break;
@@ -264,6 +284,14 @@ namespace OpenTK.Platform.Native.X11
                     
                 }
             }
+        }
+
+        private static bool IsJSJoystick(ReadOnlySpan<char> path)
+        {
+            int index = path.LastIndexOf('/');
+            if (index != -1)
+                path = path.Slice(index + 1);
+            return path.StartsWith("js") && int.TryParse(path.Slice(2), out _);
         }
 
         // FIXME: These are copied over from Windows' JoystickComponent.
@@ -282,7 +310,14 @@ namespace OpenTK.Platform.Native.X11
         public bool IsConnected(int index)
         {
 
-            Console.WriteLine(_connectedJoystickHandles.Count);
+            foreach (XJoystickHandle handle in _connectedJoystickHandles)
+            {
+
+                // Console.WriteLine(Marshal.PtrToStringAnsi(udev_device_get_devnode(handle.JoystickPtr)));
+
+            }
+
+            // Console.WriteLine(_connectedJoystickHandles.Count);
 
             return _connectedJoystickHandles.Count > index;
 
@@ -325,12 +360,12 @@ namespace OpenTK.Platform.Native.X11
         public float GetAxis(JoystickHandle handle, JoystickAxis axis)
         {
 
-            int fd = Linux.open(udev_device_get_devnode(((XJoystickHandle)handle).JoystickPtr), Linux.file_flags.O_RDONLY | Linux.file_flags.O_CLOEXEC, 0);
+            // int fd = Linux.open(udev_device_get_devnode(((XJoystickHandle)handle).JoystickPtr), Linux.file_flags.O_RDONLY | Linux.file_flags.O_CLOEXEC, 0);
 
             // read
             
 
-            Linux.close(fd);
+            // Linux.close(fd);
 
             // return axis info
 
