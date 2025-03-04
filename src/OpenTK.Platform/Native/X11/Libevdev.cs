@@ -2,6 +2,7 @@
 
 using System.Data;
 using System.Net.Http.Headers;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 namespace OpenTK.Platform.Native.X11
@@ -75,13 +76,13 @@ namespace OpenTK.Platform.Native.X11
         }
 
         internal static ulong EVIOCGVERSION => _IOR('E', 0x01, sizeof(int)); // driver version
-        internal static ulong EVIOCGID => _IOR('E', 0x02, Marshal.SizeOf<input_id>()); // device ID
+        internal static ulong EVIOCGID => _IOR('E', 0x02, Unsafe.SizeOf<input_id>()); // device ID
         internal static ulong EVIOCGREP => _IOR('E', 0x03, sizeof(uint) * 2); // get repeat settings
         internal static ulong EVIOCSREP => _IOW('E', 0x03, sizeof(uint) * 2); // set repeat settings
         internal static ulong EVIOCGKEYCODE => _IOR('E', 0x04, sizeof(uint) * 2); // get keycode TODO: Do we really need this?
-        internal static ulong EVIOGKEYCODE_V2 => _IOR('E', 0x04, Marshal.SizeOf<input_keymap_entry>()); // TODO: do we really need this?
+        internal static ulong EVIOGKEYCODE_V2 => _IOR('E', 0x04, Unsafe.SizeOf<input_keymap_entry>()); // TODO: do we really need this?
         internal static ulong EVIOCSKEYCODE => _IOW('E', 0x04, sizeof(uint) * 2); // set keycode TODO: Do we really need this?
-        internal static ulong EVIOCSKEYCODE_V2 => _IOW('E', 0x04, Marshal.SizeOf<input_keymap_entry>()); // TODO: do we really need this?
+        internal static ulong EVIOCSKEYCODE_V2 => _IOW('E', 0x04, Unsafe.SizeOf<input_keymap_entry>()); // TODO: do we really need this?
         internal static ulong EVIOCGNAME(int len) => _IOC(_IOC_READ, 'E', 0x06, len); // get device name
         internal static ulong EVIOCGPHYS(int len) => _IOC(_IOC_READ, 'E', 0x07, len); // get physical location
         internal static ulong EVIOCGUNIQ(int len) => _IOC(_IOC_READ, 'E', 0x08, len); // get uuid
@@ -95,17 +96,17 @@ namespace OpenTK.Platform.Native.X11
         internal static ulong EVIOCGSW(int len) => _IOC(_IOC_READ, 'E', 0x1b, len); // get all switch states
 
         internal static ulong EVIOGCBIT(int ev, int len) => _IOC(_IOC_READ, 'E', 0x20 + ev, len); // get event bits
-        internal static ulong EVIOCGABS(int abs) => _IOR('E', 0x40 + abs, Marshal.SizeOf<input_absinfo>()); // get abs value/limit
-        internal static ulong EVIOCSABS(int abs) => _IOW('E', 0xc0 + abs, Marshal.SizeOf<input_absinfo>()); // set abs value/limit
+        internal static ulong EVIOCGABS(int abs) => _IOR('E', 0x40 + abs, Unsafe.SizeOf<input_absinfo>()); // get abs value/limit
+        internal static ulong EVIOCSABS(int abs) => _IOW('E', 0xc0 + abs, Unsafe.SizeOf<input_absinfo>()); // set abs value/limit
 
-        internal static ulong EVIOCSFF => _IOW('E', 0x80, Marshal.SizeOf<ff_effect>()); // send a force effect to a force feedback device
+        internal static ulong EVIOCSFF => _IOW('E', 0x80, Unsafe.SizeOf<ff_effect>()); // send a force effect to a force feedback device
         internal static ulong EVIOCRMFF => _IOW('E', 0x81, sizeof(int)); // erase a force effect
         internal static ulong EVOCGEFFECTS => _IOR('E', 0x84, sizeof(int)); // report number of effects playable at the same time
 
         internal static ulong EVIOGRAB => _IOW('E', 0x90, sizeof(int)); // grab/release device
         internal static ulong EVIOCREMOVE => _IOW('E', 0x91, sizeof(int)); // revoke device access
-        internal static ulong EVIOCGMASK => _IOR('E', 0x92, Marshal.SizeOf<input_mask>()); // get event masks
-        internal static ulong EVIOCSMASK => _IOW('E', 0x93, Marshal.SizeOf<input_mask>()); // set event masks
+        internal static ulong EVIOCGMASK => _IOR('E', 0x92, Unsafe.SizeOf<input_mask>()); // get event masks
+        internal static ulong EVIOCSMASK => _IOW('E', 0x93, Unsafe.SizeOf<input_mask>()); // set event masks
         internal static ulong EVIOCSCLOCKID => _IOW('E', 0xa0, sizeof(int)); // set clockid for timestamps
 
         const int ID_BUS            = 0;
