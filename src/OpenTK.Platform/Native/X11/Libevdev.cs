@@ -7,7 +7,7 @@ using System.Runtime.InteropServices;
 namespace OpenTK.Platform.Native.X11
 {
 
-    internal static class Libevdev
+    internal unsafe static class Libevdev
     {
 
         // FIXME: These values could potentially be different on different platforms...
@@ -204,7 +204,7 @@ namespace OpenTK.Platform.Native.X11
             ushort phase;
             ff_envelope envelope;
             uint custom_len;
-            // short 
+            short* custom_data;
         }
 
         struct ff_rumble_effect
