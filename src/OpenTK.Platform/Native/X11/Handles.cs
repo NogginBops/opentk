@@ -7,6 +7,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using OpenTK.Platform.Native.Windows;
 
 namespace OpenTK.Platform.Native.X11
 {
@@ -168,4 +169,20 @@ namespace OpenTK.Platform.Native.X11
             ImageCursor,
         }
     }
+
+    internal class XJoystickHandle : JoystickHandle
+    {
+
+        public string JoystickName;
+        public UdevDevicePtr JoystickPtr;
+        public int FD;
+
+        public XJoystickHandle() 
+        {
+            JoystickPtr = new UdevDevicePtr() { Value = IntPtr.Zero };
+            JoystickName = string.Empty;
+        }
+
+    }
+
 }
