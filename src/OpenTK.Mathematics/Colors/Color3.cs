@@ -13,6 +13,13 @@ namespace OpenTK.Mathematics
     }
 
     /// <summary>
+    /// CIE XYZ colorspace.
+    /// </summary>
+    public sealed class Xyz : IColorSpace3
+    {
+    }
+
+    /// <summary>
     /// Red, green, blue colorspace.
     /// </summary>
     public sealed class Rgb : IColorSpace3
@@ -32,6 +39,80 @@ namespace OpenTK.Mathematics
     public sealed class Hsl : IColorSpace3
     {
     }
+
+    /// <summary>
+    /// CIE L*a*b* color space, lightness, green-red, blue-yellow.
+    /// See <see href="https://en.wikipedia.org/wiki/CIELAB_color_space"/>.
+    /// </summary>
+    public sealed class Lab : IColorSpace3
+    {
+    }
+
+    /// <summary>
+    /// CIE LCh ab (based on CIE L*a*b*) color space, lightness, chroma, hue.
+    /// See <see href="https://en.wikipedia.org/wiki/CIELAB_color_space#Cylindrical_model"/>.
+    /// </summary>
+    public sealed class Lchab : IColorSpace3
+    {
+    }
+
+    /// <summary>
+    /// CIE L*u*v* color space, lightness, u*, v*.
+    /// See <see href="https://en.wikipedia.org/wiki/CIELAB_color_space"/>.
+    /// </summary>
+    public sealed class Luv : IColorSpace3
+    {
+    }
+
+    /// <summary>
+    /// CIE LCh uv (based on CIE L*u*v*) color space, lightness, chroma, hue.
+    /// See <see href="https://en.wikipedia.org/wiki/CIELAB_color_space#Cylindrical_model"/>.
+    /// </summary>
+    public sealed class Lchuv : IColorSpace3
+    {
+    }
+
+    /// <summary>
+    /// OkLab color space,
+    /// See <see href="https://en.wikipedia.org/wiki/Oklab_color_space"/>.
+    /// </summary>
+    public sealed class OkLab : IColorSpace3
+    {
+    }
+
+    /// <summary>
+    /// OkLch color space,
+    /// See <see href="https://en.wikipedia.org/wiki/Oklab_color_space"/>.
+    /// </summary>
+    public sealed class OkLch : IColorSpace3
+    {
+    }
+
+    /// <summary>
+    /// CIE LMS color space, long, medium, short.
+    /// See <see href="https://en.wikipedia.org/wiki/LMS_color_space"/>.
+    /// </summary>
+    public sealed class LMS : IColorSpace3
+    {
+    }
+
+    /// <summary>
+    /// CIE CAM02 Uniform Color Space using lightness, a, b correlates.
+    /// See <see href="https://en.wikipedia.org/wiki/CIECAM02#Color_spaces"/>.
+    /// </summary>
+    public sealed class CAM02Jab : IColorSpace3
+    {
+    }
+
+    /// <summary>
+    /// A CIE CAM02 color space using the lightness, chroma, hue correlates.
+    /// See <see href="https://en.wikipedia.org/wiki/CIECAM02"/>.
+    /// </summary>
+    public sealed class CAM02JCh : IColorSpace3
+    {
+    }
+
+    // FIXME: CAM16?
 
     /// <summary>
     /// To provide type-safety between different color spaces and allow extension by users to include additional and future color spaces, colors are marked with a special _phantom_ type parameter that indicates their color space.
@@ -72,6 +153,17 @@ namespace OpenTK.Mathematics
             X = x;
             Y = y;
             Z = z;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Color3{T}"/> struct.
+        /// </summary>
+        /// <param name="xyz">The vector containing the elements of the color.</param>
+        public Color3(Vector3 xyz)
+        {
+            X = xyz.X;
+            Y = xyz.Y;
+            Z = xyz.Z;
         }
 
         /// <summary>
