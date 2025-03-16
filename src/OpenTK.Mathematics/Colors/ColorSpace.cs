@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http.Headers;
 using System.Text;
@@ -7,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace OpenTK.Mathematics
 {
+    // FIXME: Rename, cleaup, and generally figure out where to put stuff...
     public struct RGBColorSpace
     {
 #pragma warning disable SA1307 // Accessible fields should begin with upper-case letter
