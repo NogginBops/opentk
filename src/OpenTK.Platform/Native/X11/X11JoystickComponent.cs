@@ -334,6 +334,7 @@ namespace OpenTK.Platform.Native.X11
             XJoystickHandle xjoystick = handle.As<XJoystickHandle>(this);
 
             AbsoluteAxis absAxis;
+            float min_value = -1;
             switch (axis)
             {
                 case JoystickAxis.LeftXAxis:
@@ -350,9 +351,11 @@ namespace OpenTK.Platform.Native.X11
                     break;
                 case JoystickAxis.LeftTrigger:
                     absAxis = AbsoluteAxis.Z;
+                    min_value = 0;
                     break;
                 case JoystickAxis.RightTrigger:
                     absAxis = AbsoluteAxis.RZ;
+                    min_value = 0;
                     break;
                 // FIXME:
                 default:
@@ -361,16 +364,9 @@ namespace OpenTK.Platform.Native.X11
 
             input_absinfo* abs_info = libevdev_get_abs_info(xjoystick.Device, absAxis);
 
-            float value;
-            if (abs_info->value >= 0)
-            {
-                value = abs_info->value / (float)abs_info->maximum;
-            }
-            else
-            {
-                value = -abs_info->value / (float)abs_info->minimum;
-            }
-            return value;
+            // FIXME: Does the [-32768, 32767] min/max range work well for value=0?
+            float value = (abs_info->value - abs_info->minimum) / (float)(abs_info->maximum - abs_info->minimum);
+            return float.Lerp(min_value, 1, value);
         }
 
         /// <inheritdoc/>

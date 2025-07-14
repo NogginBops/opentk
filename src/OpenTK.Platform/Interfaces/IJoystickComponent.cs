@@ -60,11 +60,17 @@ namespace OpenTK.Platform
 
         public Guid GetGuid(JoystickHandle handle);
 
+        /// <summary>
+        /// Gets a human readable name for the joystick.
+        /// </summary>
+        /// <param name="handle">The joystick to get the name of.</param>
+        /// <returns>The human readable name of the joystick.</returns>
         public string GetName(JoystickHandle handle);
 
         /// <summary>
         /// Gets the value of a specific joystick axis.
         /// This value is in the range [-1, 1] for analog sticks, and [0, 1] for triggers.
+        /// FIXME: Document what direction negative and positive directions go...
         /// </summary>
         /// <param name="handle">A handle to a joystick.</param>
         /// <param name="axis">The joystick axis to get.</param>
