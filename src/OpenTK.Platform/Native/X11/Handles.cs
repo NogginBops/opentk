@@ -182,4 +182,19 @@ namespace OpenTK.Platform.Native.X11
             ImageCursor,
         }
     }
+
+    internal class XJoystickHandle : JoystickHandle
+    {
+        public LibEvdevPtr Device { get; set; }
+
+        public short FFEffectID { get; set; } = -1;
+
+        public float LowFreqIntensity { get; set; } = 0;
+        public float HighFreqIntensity { get; set; } = 0; 
+
+        public XJoystickHandle(LibEvdevPtr device)
+        {
+            Device = device;
+        }
+    }
 }

@@ -1,6 +1,8 @@
 using System;
+using System.Dynamic;
 using System.Reflection.PortableExecutable;
 using System.Runtime.InteropServices;
+using OpenTK.Core;
 
 namespace OpenTK.Platform.Native.X11
 {
@@ -58,6 +60,7 @@ namespace OpenTK.Platform.Native.X11
         [DllImport(UDEV, CallingConvention = CallingConvention.Cdecl)]
         internal static extern UdevPtr udev_unref(UdevPtr udev);
 
+        
         // udev_monitor
 
         [DllImport(UDEV, CallingConvention = CallingConvention.Cdecl)]
@@ -205,8 +208,25 @@ namespace OpenTK.Platform.Native.X11
             static extern UdevDevicePtr udev_device_new_from_syspath(UdevPtr udev, byte* syspath);
         }
     
-        [DllImport(UDEV, CallingConvention = CallingConvention.Cdecl)]
-        internal static unsafe extern IntPtr /* const char* */ udev_device_get_devnode(UdevDevicePtr udev_device);
+        internal static unsafe string? udev_device_get_devnode(UdevDevicePtr udev_device)
+        {
+            IntPtr strPtr = udev_device_get_devnode(udev_device);
+            string? str = Marshal.PtrToStringUTF8(strPtr);
+            return str;
+
+            [DllImport(UDEV, CallingConvention = CallingConvention.Cdecl)]
+            static unsafe extern IntPtr /* const char* */ udev_device_get_devnode(UdevDevicePtr udev_device);
+        }
+
+        internal static unsafe string? udev_device_get_devtype(UdevDevicePtr udev_device)
+        {
+            IntPtr strPtr = udev_device_get_devtype(udev_device);
+            string? str = Marshal.PtrToStringUTF8(strPtr);
+            return str;
+
+            [DllImport(UDEV, CallingConvention = CallingConvention.Cdecl)]
+            static unsafe extern IntPtr /* const char* */ udev_device_get_devtype(UdevDevicePtr udev_device);
+        }
 
         internal static unsafe ReadOnlySpan<byte> udev_device_get_property_value(UdevDevicePtr udev_device, ReadOnlySpan<byte> key)
         {
@@ -220,7 +240,7 @@ namespace OpenTK.Platform.Native.X11
                 return ReadOnlySpan<byte>.Empty;
             else
                 return new ReadOnlySpan<byte>(retPtr, strlen(retPtr));
-            
+
             [DllImport(UDEV, CallingConvention = CallingConvention.Cdecl)]
             static extern byte* udev_device_get_property_value(UdevDevicePtr udev_device, byte* key);
         }

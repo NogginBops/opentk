@@ -118,87 +118,14 @@ namespace OpenTK.Platform.Native.X11
         [DllImport("libc")]
         internal static extern int close(int fd);
 
-        // FIXME: These values could potentially be different on different platforms...
-        // - Noggin_bops 2024-10-30
-        const int _IOC_NRBITS = 8;
-        const int _IOC_TYPEBITS = 8;
-        const int _IOC_SIZEBITS = 14;
-        const int _IOC_DIRBITS = 2;
-        const int _IOC_NRMASK = (1 << _IOC_NRBITS) - 1;
-        const int _IOC_TYPEMASK = (1 << _IOC_TYPEBITS) - 1;
-        const int _IOC_SIZEMASK = (1 << _IOC_SIZEBITS) - 1;
-        const int _IOC_DIRMASK = (1 << _IOC_DIRBITS) - 1;
-        const int _IOC_NRSHIFT = 0;
-        const int _IOC_TYPESHIFT = _IOC_NRSHIFT + _IOC_NRBITS;
-        const int _IOC_SIZESHIFT = _IOC_TYPESHIFT + _IOC_TYPEBITS;
-        const int _IOC_DIRSHIFT = _IOC_SIZESHIFT + _IOC_SIZEBITS;
-
-        const int _IOC_NONE = 0;
-        const int _IOC_WRITE = 1;
-        const int _IOC_READ = 2;
-
-        internal static ulong _IOC(int dir, int type, int nr, int size)
-        {
-            return (((ulong)dir) << _IOC_DIRSHIFT) | (((ulong)type) << _IOC_TYPESHIFT) | (((ulong)nr) << _IOC_NRSHIFT) | (((ulong)size) << _IOC_SIZESHIFT);
-        }
-
-        internal static ulong _IOR(int type, int nr, int size) => _IOC(_IOC_READ, type, nr, size);
-        internal static ulong _IOW(int type, int nr, int size) => _IOC(_IOC_WRITE, type, nr, size);
-
-        internal unsafe struct js_corr {
-            public fixed int coef[8];
-            public short prec;
-            public ushort type;
-        };
-
-        const int ABS_MAX = 0x3f;
-        const int ABS_CNT = ABS_MAX + 1;
-
-        const int KEY_MAX = 0x2ff;
-        const int KEY_CNT = KEY_MAX + 1;
-
-        const int BTN_MISC = 0x100;
-
-        /* get driver version */
-        internal static ulong JSIOCGVERSION => _IOR('j', 0x01, sizeof(uint));
-        /* get number of axes */
-        internal static ulong JSIOCGAXES => _IOR('j', 0x11, sizeof(byte));
-        /* get number of buttons */
-        internal static ulong JSIOCGBUTTONS => _IOR('j', 0x12, sizeof(byte));
-        /* get identifier string */
-        internal static ulong JSIOCGNAME(int len) => _IOC(_IOC_READ, 'j', 0x13, len);
-        /* set correction values */
-        internal static unsafe ulong JSIOCSCORR => _IOW('j', 0x21, sizeof(js_corr));
-        /* get correction values */
-        internal static unsafe ulong JSIOCGCORR => _IOR('j', 0x22, sizeof(js_corr));
-        /* set axis mapping */
-        internal static ulong JSIOCSAXMAP => _IOW('j', 0x31, sizeof(byte) * ABS_CNT);
-        /* get axis mapping */
-        internal static ulong JSIOCGAXMAP => _IOR('j', 0x32, sizeof(byte) * ABS_CNT);
-        /* set button mapping */
-        internal static ulong JSIOCSBTNMAP => _IOW('j', 0x33, sizeof(ushort) * (KEY_MAX - BTN_MISC + 1));
-        /* get button mapping */
-        internal static ulong JSIOCGBTNMAP => _IOR('j', 0x34, sizeof(ushort) * (KEY_MAX - BTN_MISC + 1));
-
-
-        internal static ulong EVIOCGNAME(int len) => _IOC(_IOC_READ, 'E', 0x06, len);
-
-        
-        [DllImport("libc", CallingConvention = CallingConvention.Cdecl)]
-        internal static unsafe extern int ioctl(int fd, ulong op, byte* data);
-
-        internal static unsafe int ioctl(int fd, ulong op, Span<byte> data)
-        {
-            fixed(byte* dataPtr = data)
-            {
-                return ioctl(fd, op, dataPtr);
-            }
-        }
+        [DllImport("libc")]
+        internal static unsafe extern nint write(int fd, void* data, nuint size);
 
         // FIXME: This struct is very likely to break on 32 vs 64 bit
         // and it might break between different linux distros....
         // - Noggin_bops 2024-10-30
-        internal struct stat_t {
+        internal struct stat_t
+        {
             /* ID of device containing file */
             public long /* dev_t */ st_dev;
             /* inode number */

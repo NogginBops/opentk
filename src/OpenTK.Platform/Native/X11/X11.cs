@@ -98,12 +98,10 @@ namespace OpenTK.Platform.Native.X11
         // FIXME: Better name!
         internal static unsafe bool FileDescriptorHasReadData(int fd)
         {
-            const short POLLIN = 0x0001;
-
             // FIXME: Add POLLPRI?
-            pollfd pollfd = new pollfd(){
+            Libc.pollfd pollfd = new Libc.pollfd(){
                 fd = fd,
-                events = POLLIN,
+                events = Libc.poll_event.POLLIN,
             };
 
             return Poll(&pollfd, 1, 0);
@@ -111,11 +109,9 @@ namespace OpenTK.Platform.Native.X11
 
         internal static unsafe bool WaitForXEvents()
         {
-            const short POLLIN = 0x0001;
-            
             Libc.pollfd fd = new Libc.pollfd(){
                 fd = LibX11.XConnectionNumber(X11.Display),
-                events = POLLIN,
+                events = Libc.poll_event.POLLIN,
             };
 
             while (LibX11.XPending(X11.Display) == 0)

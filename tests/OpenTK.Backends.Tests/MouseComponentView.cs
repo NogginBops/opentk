@@ -92,7 +92,7 @@ namespace OpenTK.Backends.Tests
         {
             base.Paint(deltaTime);
 
-            ImGui.SeparatorText("Common properties");
+            ImGui.SeparatorText("Component properties");
 
             ImGuiUtils.ReadonlyCheckbox("Can Set Mouse Position", canSetMousePosition);
             ImGuiUtils.ReadonlyCheckbox("Supports Raw Mouse Motion", supportsRawMouseMotion);

@@ -133,6 +133,13 @@ namespace OpenTK.Platform.Native
                 "libgio-2.0.so.0",
             },
 
+            ["evdev"] = new string[]
+            {
+                "libevdev.so",
+                "libevdev.so.2",
+                "libevdev.so.1",
+            },
+
             ["SDL2"] = new string[]
             {
                 "libSDL2-2.0.so",
