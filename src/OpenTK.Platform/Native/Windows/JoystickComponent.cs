@@ -208,10 +208,10 @@ namespace OpenTK.Platform.Native.Windows
                     case JoystickAxis.LeftYAxis:
                         value = (state.Gamepad.sThumbLY + 0.5f) / 32767.5f;
                         break;
-                    case JoystickAxis.RightYAxis:
+                    case JoystickAxis.RightXAxis:
                         value = (state.Gamepad.sThumbRX + 0.5f) / 32767.5f;
                         break;
-                    case JoystickAxis.RightXAxis:
+                    case JoystickAxis.RightYAxis:
                         value = (state.Gamepad.sThumbRY + 0.5f) / 32767.5f;
                         break;
                     case JoystickAxis.LeftTrigger:
