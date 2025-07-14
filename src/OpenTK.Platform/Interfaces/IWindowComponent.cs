@@ -575,6 +575,36 @@ namespace OpenTK.Platform
         void FramebufferToClient(WindowHandle handle, Vector2 framebuffer, out Vector2 client);
 
         /// <summary>
+        /// Converts screen coordianates to framebuffer coordinates.
+        /// </summary>
+        /// <remarks>
+        /// This is equivalent to calling <see cref="ScreenToClient(WindowHandle, Vector2, out Vector2)"/> followed by <see cref="ClientToFramebuffer(WindowHandle, Vector2, out Vector2)"/>.
+        /// </remarks>
+        /// <param name="handle">Handle of the window whose coordinate system to use.</param>
+        /// <param name="screen">The screen coordinate.</param>
+        /// <param name="framebuffer">The framebuffer coordinate.</param>
+        void ScreenToFramebuffer(WindowHandle handle, Vector2 screen, out Vector2 framebuffer)
+        {
+            ScreenToClient(handle, screen, out Vector2 client);
+            ClientToFramebuffer(handle, client, out framebuffer);
+        }
+
+        /// <summary>
+        /// Converts framebuffer coordianates to screen coordinates.
+        /// </summary>
+        /// <remarks>
+        /// This is equivalent to calling <see cref="FramebufferToClient(WindowHandle, Vector2, out Vector2)"/> followed by <see cref="ClientToScreen(WindowHandle, Vector2, out Vector2)"/>.
+        /// </remarks>
+        /// <param name="handle">Handle of the window whose coordinate system to use.</param>
+        /// <param name="screen">The screen coordinate.</param>
+        /// <param name="framebuffer">The framebuffer coordinate.</param>
+        void FramebufferToScreen(WindowHandle handle, Vector2 framebuffer, out Vector2 screen)
+        {
+            FramebufferToClient(handle, framebuffer, out Vector2 client);
+            ClientToScreen(handle, client, out screen);
+        }
+
+        /// <summary>
         /// Returns the current scale factor of this window.
         /// </summary>
         /// <param name="handle">The window handle.</param>
