@@ -101,7 +101,79 @@ namespace OpenTK.Backends.Tests
             
             draw_list.AddText((p + new Vector2(WIDTH / 2 - strSize.X / 2, HEIGHT/2 + - strSize.Y/2)).ToNumerics(), ImGui.GetColorU32(ImGuiCol.Text), str);
 
-            ImGui.Dummy(new Vector2(WIDTH, HEIGHT + ImGui.GetTextLineHeightWithSpacing()).ToNumerics());
+            ImGui.Dummy(new Vector2(WIDTH, HEIGHT).ToNumerics());
+        }
+
+        private void DrawJoystickState(JoystickHandle joystick)
+        {
+            Guid guid = Toolkit.Joystick.GetGuid(joystick);
+            string name = Toolkit.Joystick.GetName(joystick);
+            if (ImGui.BeginChild($"##{guid}", new System.Numerics.Vector2(), ImGuiChildFlags.Borders | ImGuiChildFlags.AutoResizeY, ImGuiWindowFlags.HorizontalScrollbar | ImGuiWindowFlags.AlwaysHorizontalScrollbar))
+            {
+                ImGui.SeparatorText($"{name} ({guid})");
+
+                float leftX = Toolkit.Joystick.GetAxis(joystick, JoystickAxis.LeftXAxis);
+                float leftY = Toolkit.Joystick.GetAxis(joystick, JoystickAxis.LeftYAxis);
+
+                float rightX = Toolkit.Joystick.GetAxis(joystick, JoystickAxis.RightXAxis);
+                float rightY = Toolkit.Joystick.GetAxis(joystick, JoystickAxis.RightYAxis);
+
+                float leftTrigger = Toolkit.Joystick.GetAxis(joystick, JoystickAxis.LeftTrigger);
+                float rightTrigger = Toolkit.Joystick.GetAxis(joystick, JoystickAxis.RightTrigger);
+
+                Toolkit.Joystick.SetVibration(joystick, leftTrigger, rightTrigger);
+
+                if (ImGui.BeginChild("##axes", new System.Numerics.Vector2(), ImGuiChildFlags.AutoResizeX | ImGuiChildFlags.AutoResizeY, ImGuiWindowFlags.NoScrollbar))
+                {
+                    DrawTrigger(leftTrigger);
+                    ImGui.SameLine();
+                    DrawAxis(leftX, leftY, LeftDeadzone ?? 0);
+                    ImGui.SameLine();
+                    DrawAxis(rightX, rightY, RightDeadzone ?? 0);
+                    ImGui.SameLine();
+                    DrawTrigger(rightTrigger);
+                }
+                ImGui.EndChild();
+
+                ImGui.SameLine();
+
+                if (ImGui.BeginChild("##buttons", new System.Numerics.Vector2(), ImGuiChildFlags.AutoResizeX | ImGuiChildFlags.AutoResizeY, ImGuiWindowFlags.NoScrollbar))
+                {
+                    DrawButton("A", Toolkit.Joystick.GetButton(joystick, JoystickButton.A), new Color3<Rgb>(0, 0.65f, 0).ToHsv());
+                    ImGui.SameLine();
+                    DrawButton("B", Toolkit.Joystick.GetButton(joystick, JoystickButton.B), new Color3<Rgb>(0.65f, 0, 0).ToHsv());
+                    ImGui.SameLine();
+                    DrawButton("X", Toolkit.Joystick.GetButton(joystick, JoystickButton.X), new Color3<Rgb>(0.3f, 0.3f, 0.65f).ToHsv());
+                    ImGui.SameLine();
+                    DrawButton("Y", Toolkit.Joystick.GetButton(joystick, JoystickButton.Y), new Color3<Rgb>(0.65f, 0.65f, 0.0f).ToHsv());
+                    ImGui.SameLine();
+                    DrawButton("LB", Toolkit.Joystick.GetButton(joystick, JoystickButton.LeftShoulder), new Color3<Hsv>(0, 0, 0.5f));
+                    ImGui.SameLine();
+                    DrawButton("RB", Toolkit.Joystick.GetButton(joystick, JoystickButton.RightShoulder), new Color3<Hsv>(0, 0, 0.5f));
+                    ImGui.SameLine();
+                    DrawButton("LThumb", Toolkit.Joystick.GetButton(joystick, JoystickButton.LeftThumb), new Color3<Hsv>(0, 0, 0.5f));
+                    ImGui.SameLine();
+                    DrawButton("RThumb", Toolkit.Joystick.GetButton(joystick, JoystickButton.RightThumb), new Color3<Hsv>(0, 0, 0.5f));
+
+                    DrawButton("Start", Toolkit.Joystick.GetButton(joystick, JoystickButton.Start), new Color3<Hsv>(0, 0, 0.5f));
+                    ImGui.SameLine();
+                    DrawButton("Back", Toolkit.Joystick.GetButton(joystick, JoystickButton.Back), new Color3<Hsv>(0, 0, 0.5f));
+                    ImGui.SameLine();
+                    ImGui.Dummy(new Vector2(50, 50 + ImGui.GetTextLineHeightWithSpacing()).ToNumerics());
+                    ImGui.SameLine();
+                    ImGui.Dummy(new Vector2(50, 50 + ImGui.GetTextLineHeightWithSpacing()).ToNumerics());
+                    ImGui.SameLine();
+                    DrawButton("D-Up", Toolkit.Joystick.GetButton(joystick, JoystickButton.DPadUp), new Color3<Hsv>(0, 0, 0.5f));
+                    ImGui.SameLine();
+                    DrawButton("D-Down", Toolkit.Joystick.GetButton(joystick, JoystickButton.DPadDown), new Color3<Hsv>(0, 0, 0.5f));
+                    ImGui.SameLine();
+                    DrawButton("D-Left", Toolkit.Joystick.GetButton(joystick, JoystickButton.DPadLeft), new Color3<Hsv>(0, 0, 0.5f));
+                    ImGui.SameLine();
+                    DrawButton("D-Right", Toolkit.Joystick.GetButton(joystick, JoystickButton.DPadRight), new Color3<Hsv>(0, 0, 0.5f));
+                }
+                ImGui.EndChild();
+            }
+            ImGui.EndChild();
         }
 
         public override void Paint(double deltaTime)
@@ -115,62 +187,21 @@ namespace OpenTK.Backends.Tests
 
             ImGui.SeparatorText("Joysticks");
 
-            JoystickHandle handle = Toolkit.Joystick.Open(0);
+            if (ImGui.BeginChild("##controller-container", new System.Numerics.Vector2(ImGui.GetContentRegionAvail().X, Math.Max(200, ImGui.GetContentRegionAvail().Y))))
+            {
+                for (int i = 0; i < 16; i++)
+                {
+                    if (Toolkit.Joystick.IsConnected(i))
+                    {
+                        JoystickHandle handle = Toolkit.Joystick.Open(i);
 
-            ImGui.Text($"Joystick 0: {Toolkit.Joystick.GetName(handle)}");
+                        DrawJoystickState(handle);
 
-            ImGui.SeparatorText("Axes:");
-
-            float leftX = Toolkit.Joystick.GetAxis(handle, JoystickAxis.LeftXAxis);
-            float leftY = Toolkit.Joystick.GetAxis(handle, JoystickAxis.LeftYAxis);
-
-            float rightX = Toolkit.Joystick.GetAxis(handle, JoystickAxis.RightXAxis);
-            float rightY = Toolkit.Joystick.GetAxis(handle, JoystickAxis.RightYAxis);
-
-            float leftTrigger = Toolkit.Joystick.GetAxis(handle, JoystickAxis.LeftTrigger);
-            float rightTrigger = Toolkit.Joystick.GetAxis(handle, JoystickAxis.RightTrigger);
-
-            DrawTrigger(leftTrigger);
-            ImGui.SameLine();
-            DrawAxis(leftX, leftY, LeftDeadzone ?? 0);
-            ImGui.SameLine();
-            DrawAxis(rightX, rightY, RightDeadzone ?? 0);
-            ImGui.SameLine();
-            DrawTrigger(rightTrigger);
-
-            ImGui.SeparatorText("Buttons:");
-
-            DrawButton("A", Toolkit.Joystick.GetButton(handle, JoystickButton.A), new Color3<Rgb>(0, 0.65f, 0).ToHsv());
-            ImGui.SameLine();
-            DrawButton("B", Toolkit.Joystick.GetButton(handle, JoystickButton.B), new Color3<Rgb>(0.65f, 0, 0).ToHsv());
-            ImGui.SameLine();
-            DrawButton("X", Toolkit.Joystick.GetButton(handle, JoystickButton.X), new Color3<Rgb>(0.3f, 0.3f, 0.65f).ToHsv());
-            ImGui.SameLine();
-            DrawButton("Y", Toolkit.Joystick.GetButton(handle, JoystickButton.Y), new Color3<Rgb>(0.65f, 0.65f, 0.0f).ToHsv());
-            
-            DrawButton("LB", Toolkit.Joystick.GetButton(handle, JoystickButton.LeftShoulder), new Color3<Hsv>(0, 0, 0.5f));
-            ImGui.SameLine();
-            DrawButton("RB", Toolkit.Joystick.GetButton(handle, JoystickButton.RightShoulder), new Color3<Hsv>(0, 0, 0.5f));
-            ImGui.SameLine();
-            DrawButton("LThumb", Toolkit.Joystick.GetButton(handle, JoystickButton.LeftThumb), new Color3<Hsv>(0, 0, 0.5f));
-            ImGui.SameLine();
-            DrawButton("RThumb", Toolkit.Joystick.GetButton(handle, JoystickButton.RightThumb), new Color3<Hsv>(0, 0, 0.5f));
-            
-            DrawButton("Start", Toolkit.Joystick.GetButton(handle, JoystickButton.Start), new Color3<Hsv>(0, 0, 0.5f));
-            ImGui.SameLine();
-            DrawButton("Back", Toolkit.Joystick.GetButton(handle, JoystickButton.Back), new Color3<Hsv>(0, 0, 0.5f));
-            
-            DrawButton("D-Up", Toolkit.Joystick.GetButton(handle, JoystickButton.DPadUp), new Color3<Hsv>(0, 0, 0.5f));
-            ImGui.SameLine();
-            DrawButton("D-Down", Toolkit.Joystick.GetButton(handle, JoystickButton.DPadDown), new Color3<Hsv>(0, 0, 0.5f));
-            ImGui.SameLine();
-            DrawButton("D-Left", Toolkit.Joystick.GetButton(handle, JoystickButton.DPadLeft), new Color3<Hsv>(0, 0, 0.5f));
-            ImGui.SameLine();
-            DrawButton("D-Right", Toolkit.Joystick.GetButton(handle, JoystickButton.DPadRight), new Color3<Hsv>(0, 0, 0.5f));
-
-            Toolkit.Joystick.SetVibration(handle, leftTrigger, rightTrigger);
-
-            Toolkit.Joystick.Close(handle);
+                        Toolkit.Joystick.Close(handle);
+                    }
+                }
+            }
+            ImGui.EndChild();
         }
     }
 }

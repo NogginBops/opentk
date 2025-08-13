@@ -186,15 +186,19 @@ namespace OpenTK.Platform.Native.X11
     internal class XJoystickHandle : JoystickHandle
     {
         public LibEvdevPtr Device { get; set; }
+        public Guid Guid { get; set; }
+        public string Name { get; set; }
 
         public short FFEffectID { get; set; } = -1;
 
         public float LowFreqIntensity { get; set; } = 0;
-        public float HighFreqIntensity { get; set; } = 0; 
+        public float HighFreqIntensity { get; set; } = 0;
 
-        public XJoystickHandle(LibEvdevPtr device)
+        public XJoystickHandle(LibEvdevPtr device, string name, Guid guid)
         {
             Device = device;
+            Name = name;
+            Guid = guid;
         }
     }
 }

@@ -46,7 +46,7 @@ namespace OpenTK.Platform.Native.X11
                 return 0;
 
             int length = 0;
-            while(str[length++] != 0);
+            while (str[length++] != 0) ;
 
             return length - 1;
         }
@@ -56,11 +56,11 @@ namespace OpenTK.Platform.Native.X11
 
         [DllImport(UDEV, CallingConvention = CallingConvention.Cdecl)]
         internal static extern UdevPtr udev_ref(UdevPtr udev);
- 
+
         [DllImport(UDEV, CallingConvention = CallingConvention.Cdecl)]
         internal static extern UdevPtr udev_unref(UdevPtr udev);
 
-        
+
         // udev_monitor
 
         [DllImport(UDEV, CallingConvention = CallingConvention.Cdecl)]
@@ -126,7 +126,7 @@ namespace OpenTK.Platform.Native.X11
 
         // udev_enumerate
 
-        [DllImport(UDEV, CallingConvention = CallingConvention.Cdecl)]  
+        [DllImport(UDEV, CallingConvention = CallingConvention.Cdecl)]
         internal static extern UdevEnumeratePtr udev_enumerate_ref(UdevEnumeratePtr udev_enumerate);
 
         [DllImport(UDEV, CallingConvention = CallingConvention.Cdecl)]
@@ -187,7 +187,7 @@ namespace OpenTK.Platform.Native.X11
             [DllImport(UDEV, CallingConvention = CallingConvention.Cdecl)]
             static extern byte* udev_list_entry_get_value(UdevListEntryPtr list_entry);
         }
-    
+
         // udev_device
 
         [DllImport(UDEV, CallingConvention = CallingConvention.Cdecl)]
@@ -207,7 +207,27 @@ namespace OpenTK.Platform.Native.X11
             [DllImport(UDEV, CallingConvention = CallingConvention.Cdecl)]
             static extern UdevDevicePtr udev_device_new_from_syspath(UdevPtr udev, byte* syspath);
         }
-    
+
+        internal static unsafe string? udev_device_get_subsystem(UdevDevicePtr udev_device)
+        {
+            IntPtr strPtr = udev_device_get_subsystem(udev_device);
+            string? str = Marshal.PtrToStringUTF8(strPtr);
+            return str;
+
+            [DllImport(UDEV, CallingConvention = CallingConvention.Cdecl)]
+            static unsafe extern IntPtr /* const char* */ udev_device_get_subsystem(UdevDevicePtr udev_device);
+        }
+
+        internal static unsafe string? udev_device_get_devpath(UdevDevicePtr udev_device)
+        {
+            IntPtr strPtr = udev_device_get_devpath(udev_device);
+            string? str = Marshal.PtrToStringUTF8(strPtr);
+            return str;
+
+            [DllImport(UDEV, CallingConvention = CallingConvention.Cdecl)]
+            static unsafe extern IntPtr /* const char* */ udev_device_get_devpath(UdevDevicePtr udev_device);
+        }
+
         internal static unsafe string? udev_device_get_devnode(UdevDevicePtr udev_device)
         {
             IntPtr strPtr = udev_device_get_devnode(udev_device);
@@ -228,6 +248,26 @@ namespace OpenTK.Platform.Native.X11
             static unsafe extern IntPtr /* const char* */ udev_device_get_devtype(UdevDevicePtr udev_device);
         }
 
+        internal static unsafe string? udev_device_get_syspath(UdevDevicePtr udev_device)
+        {
+            IntPtr strPtr = udev_device_get_syspath(udev_device);
+            string? str = Marshal.PtrToStringUTF8(strPtr);
+            return str;
+
+            [DllImport(UDEV, CallingConvention = CallingConvention.Cdecl)]
+            static unsafe extern IntPtr /* const char* */ udev_device_get_syspath(UdevDevicePtr udev_device);
+        }
+
+        internal static unsafe string? udev_device_get_sysname(UdevDevicePtr udev_device)
+        {
+            IntPtr strPtr = udev_device_get_sysname(udev_device);
+            string? str = Marshal.PtrToStringUTF8(strPtr);
+            return str;
+
+            [DllImport(UDEV, CallingConvention = CallingConvention.Cdecl)]
+            static unsafe extern IntPtr /* const char* */ udev_device_get_sysname(UdevDevicePtr udev_device);
+        }
+
         internal static unsafe ReadOnlySpan<byte> udev_device_get_property_value(UdevDevicePtr udev_device, ReadOnlySpan<byte> key)
         {
             byte* retPtr;
@@ -244,7 +284,7 @@ namespace OpenTK.Platform.Native.X11
             [DllImport(UDEV, CallingConvention = CallingConvention.Cdecl)]
             static extern byte* udev_device_get_property_value(UdevDevicePtr udev_device, byte* key);
         }
-    
+
         internal static unsafe ReadOnlySpan<byte> udev_device_get_action(UdevDevicePtr udev_device)
         {
             byte* ret = udev_device_get_action(udev_device);
@@ -257,5 +297,11 @@ namespace OpenTK.Platform.Native.X11
             [DllImport(UDEV, CallingConvention = CallingConvention.Cdecl)]
             static extern byte* udev_device_get_action(UdevDevicePtr udev_device);
         }
+
+        [DllImport(UDEV, CallingConvention = CallingConvention.Cdecl)]
+        internal static extern UdevDevicePtr udev_device_get_parent(UdevDevicePtr udev_device);
+
+        [DllImport(UDEV, CallingConvention = CallingConvention.Cdecl)]
+        internal static extern UdevDevicePtr udev_device_get_parent_with_subsystem_devtype(UdevDevicePtr udev_device, [MarshalAs(UnmanagedType.LPUTF8Str)] string? subsystem, [MarshalAs(UnmanagedType.LPUTF8Str)] string? devtype);
     }
 }

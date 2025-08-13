@@ -39,6 +39,7 @@ namespace OpenTK.Platform.Native.X11
             UdevEnumeratePtr udevEnum = udev_enumerate_new(Udev);
 
             udev_enumerate_add_match_subsystem(udevEnum, "input"u8);
+            udev_enumerate_add_match_subsystem(udevEnum, "power_supply"u8);
 
             // FIXME: check result..
             int result = udev_enumerate_scan_devices(udevEnum);
@@ -55,6 +56,7 @@ namespace OpenTK.Platform.Native.X11
                 UdevDevicePtr device = udev_device_new_from_syspath(Udev, name);
                 if (device.Value != 0)
                 {
+                    string? devpath = udev_device_get_devpath(device);
                     string? devnode = udev_device_get_devnode(device);
                     string? devtype = udev_device_get_devtype(device);
                     if (devnode == null)
@@ -115,11 +117,29 @@ namespace OpenTK.Platform.Native.X11
                     int evdev_version = libevdev_get_id_version(dev);
                     int evdev_driver_version = libevdev_get_driver_version(dev);
 
+                    Guid guid = IJoystickComponent.CreateSDLCompatibleJoystickGUID((ushort)evdev_bustype, (ushort)evdev_vendor, (ushort)evdev_product, (ushort)evdev_version);
+
                     Logger?.LogDebug($"Added input device '{evdev_name}' {evdev_phys} {evdev_uniq} model: 0x{model:X4}, prod: 0x{evdev_product}, vendor: 0x{evdev_vendor:X4}, version: 0x{evdev_version:X4}, bustype: {evdev_bustype}, driver version: 0x{evdev_driver_version:X4}");
 
-                    XJoystickHandle handle = new XJoystickHandle(dev);
+                    XJoystickHandle handle = new XJoystickHandle(dev, evdev_name, guid);
 
                     JoystickHandles.Add(handle);
+
+                    UdevDevicePtr powerSupply = device;
+                    do
+                    {
+                        string? powerSupplyDevpath = udev_device_get_devpath(powerSupply);
+                        string? powerSupplyDevnode = udev_device_get_devnode(powerSupply);
+                        string? powerSupplyDevtype = udev_device_get_devtype(powerSupply);
+                        string? subsystem = udev_device_get_subsystem(powerSupply);
+                        string? syspath = udev_device_get_syspath(powerSupply);
+                        string? sysname = udev_device_get_sysname(powerSupply);
+
+                        Logger?.LogDebug($"Parent! {powerSupplyDevpath} {powerSupplyDevnode} {powerSupplyDevtype} {subsystem} {syspath} {sysname}");
+
+                        powerSupply = udev_device_get_parent(powerSupply);
+                    }
+                    while (powerSupply.Value != 0 && false);
 
                     udev_device_unref(device);
                 }
@@ -316,7 +336,7 @@ namespace OpenTK.Platform.Native.X11
         {
             XJoystickHandle xjoystick = handle.As<XJoystickHandle>(this);
 
-            throw new NotImplementedException();
+            return xjoystick.Guid;
         }
 
         /// <inheritdoc/>
@@ -324,8 +344,7 @@ namespace OpenTK.Platform.Native.X11
         {
             XJoystickHandle xjoystick = handle.As<XJoystickHandle>(this);
 
-            string name = libevdev_get_name(xjoystick.Device);
-            return name;
+            return xjoystick.Name;
         }
 
         /// <inheritdoc/>
@@ -364,9 +383,16 @@ namespace OpenTK.Platform.Native.X11
 
             input_absinfo* abs_info = libevdev_get_abs_info(xjoystick.Device, absAxis);
 
-            // FIXME: Does the [-32768, 32767] min/max range work well for value=0?
-            float value = (abs_info->value - abs_info->minimum) / (float)(abs_info->maximum - abs_info->minimum);
-            return float.Lerp(min_value, 1, value);
+            if (abs_info != null)
+            {
+                // FIXME: Does the [-32768, 32767] min/max range work well for value=0?
+                float value = (abs_info->value - abs_info->minimum) / (float)(abs_info->maximum - abs_info->minimum);
+                return float.Lerp(min_value, 1, value);
+            }
+            else
+            {
+                return 0;
+            }
         }
 
         /// <inheritdoc/>
@@ -410,22 +436,30 @@ namespace OpenTK.Platform.Native.X11
                 case JoystickButton.DPadUp:
                     {
                         input_absinfo* absInfo = libevdev_get_abs_info(xjoystick.Device, AbsoluteAxis.HAT0Y);
-                        return absInfo->value < 0;
+                        if (absInfo != null)
+                            return absInfo->value < 0;
+                        else return false;
                     }
                 case JoystickButton.DPadDown:
                     {
                         input_absinfo* absInfo = libevdev_get_abs_info(xjoystick.Device, AbsoluteAxis.HAT0Y);
-                        return absInfo->value > 0;
+                        if (absInfo != null)
+                            return absInfo->value < 0;
+                        else return false;
                     }
                 case JoystickButton.DPadLeft:
                     {
                         input_absinfo* absInfo = libevdev_get_abs_info(xjoystick.Device, AbsoluteAxis.HAT0X);
-                        return absInfo->value < 0;
+                        if (absInfo != null)
+                            return absInfo->value < 0;
+                        else return false;
                     }
                 case JoystickButton.DPadRight:
                     {
                         input_absinfo* absInfo = libevdev_get_abs_info(xjoystick.Device, AbsoluteAxis.HAT0X);
-                        return absInfo->value > 0;
+                        if (absInfo != null)
+                            return absInfo->value < 0;
+                        else return false;
                     }
                     // FIXME: These are reported as absolute axis, but we think of them like buttons?
                     return false;
