@@ -36,6 +36,8 @@ namespace OpenTK.Platform
         private static IGamepadComponent? _gamepadComponent;
         private static IDialogComponent? _dialogComponent;
         private static IVulkanComponent? _vulkanComponent;
+        private static IEventComponent? _eventComponent;
+        private static EventComponentProxy? _eventComponentProxy = new EventComponentProxy();
 
         /// <summary>
         /// Interface for creating, interacting with, and deleting windows.
@@ -162,6 +164,11 @@ namespace OpenTK.Platform
         }
 
         /// <summary>
+        /// Interface for processing platform events.
+        /// </summary>
+        public static IEventComponent Event => Initialized ? _eventComponent! : _eventComponentProxy;
+
+        /// <summary>
         /// Initialize OpenTK with the given settings.
         /// This function must be called before trying to use the OpenTK API.
         /// </summary>
@@ -197,6 +204,16 @@ namespace OpenTK.Platform
                 try { _vulkanComponent = PlatformComponents.CreateVulkanComponent(); } catch (NotSupportedException) { }
             }
 
+            try
+            {
+                _eventComponent = PlatformComponents.CreateEventComponent();
+            }
+            catch (NotSupportedException)
+            {
+                // FIXME: we probably shouldn't pretend there is a window component.
+                _eventComponent = new FallbackEventComponent(_windowComponent!);
+            }
+
             if (_windowComponent != null)
                 _windowComponent.Logger = options.Logger;
             if (_surfaceComponent != null)
@@ -225,6 +242,8 @@ namespace OpenTK.Platform
                 _dialogComponent.Logger = options.Logger;
             if (_vulkanComponent != null)
                 _vulkanComponent.Logger = options.Logger;
+            if (_eventComponent != null)
+                _eventComponent.Logger = options.Logger;
 
             _windowComponent?.Initialize(options);
             _surfaceComponent?.Initialize(options);
@@ -240,6 +259,15 @@ namespace OpenTK.Platform
             _gamepadComponent?.Initialize(options);
             _dialogComponent?.Initialize(options);
             _vulkanComponent?.Initialize(options);
+            _eventComponent?.Initialize(options);
+
+            // Transfer event handlers to the new event component.
+            if (_eventComponent != null)
+            {
+                _eventComponentProxy!.TransferSubscribers(_eventComponent);
+                _eventComponentProxy.Dispose();
+                _eventComponentProxy = null;
+            }
 
             Initialized = true;
         }
@@ -273,6 +301,7 @@ namespace OpenTK.Platform
             _openGLComponent?.Uninitialize();
             _surfaceComponent?.Uninitialize();
             _windowComponent?.Uninitialize();
+            _eventComponent?.Uninitialize();
 
             _vulkanComponent = null;
             _dialogComponent = null;
@@ -287,10 +316,12 @@ namespace OpenTK.Platform
             _openGLComponent = null;
             _surfaceComponent = null;
             _windowComponent = null;
+            _eventComponent = null;
 
             Initialized = false;
             EnableOpenGL = false;
             EnableVulkan = false;
+            _eventComponentProxy = new EventComponentProxy();
         }
 
         [DoesNotReturn]

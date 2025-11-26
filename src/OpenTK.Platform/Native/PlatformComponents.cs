@@ -285,5 +285,11 @@ namespace OpenTK.Platform.Native
         {
             return GetPlatformComponent<IVulkanComponent>(PalComponents.Vulkan);
         }
+
+        /// <inheritdoc cref="GetPlatformComponent{TComp}(PalComponents)"/>
+        public static IEventComponent? CreateEventComponent()
+        {
+            return GetPlatformComponent<IEventComponent>(PalComponents.Event);
+        }
     }
 }

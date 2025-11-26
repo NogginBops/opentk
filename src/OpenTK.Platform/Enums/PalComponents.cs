@@ -107,5 +107,10 @@ namespace OpenTK.Platform
         /// Abstraction layer provides the dialog component.
         /// </summary>
         Dialog = 1 << 14,
+
+        /// <summary>
+        /// Abstraction layer provides the event component.
+        /// </summary>
+        Event = 1 << 15,
     }
 }
