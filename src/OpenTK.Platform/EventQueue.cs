@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Concurrent;
-using System.Collections.Generic;
 
 #nullable  enable
 
@@ -15,8 +14,17 @@ namespace OpenTK.Platform
     public delegate void PlatformEventHandler(PalHandle? handle, PlatformEventType type, EventArgs args);
 
     /// <summary>
+    /// An event handler delegate for platform events.
+    /// </summary>
+    /// <param name="handle">The associated platform handle</param>
+    /// <param name="args">Information associated with the event, if any.</param>
+    // FIXME: Temporary working name for the type matching based event system.
+    public delegate void PlatformEventHandlerEx(PalHandle? handle, EventArgs args);
+
+    /// <summary>
     /// Event queue for interacting with platform events.
     /// </summary>
+    [Obsolete("The EventQueue API will likely be removed by the next preview. Port to Toolkit.Event instead.")]
     public class EventQueue : IDisposable
     {
         /// <summary>

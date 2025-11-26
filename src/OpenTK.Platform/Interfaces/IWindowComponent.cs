@@ -80,6 +80,7 @@ namespace OpenTK.Platform
         /// Processes platform events and sends them to the <see cref="EventQueue"/>.
         /// </summary>
         /// <param name="waitForEvents">Specifies if this function should wait for events or return immediately if there are no events.</param>
+        [Obsolete("Users should use Toolkit.Event.ProcessEvents() instead. Implementors should implement IEventComponent instead.")]
         void ProcessEvents(bool waitForEvents);
 
         /// <summary>
@@ -92,6 +93,7 @@ namespace OpenTK.Platform
         /// This function is allowed to be called from any thread.
         /// </remarks>
         /// <param name="event"></param>
+        [Obsolete("Users should use Toolkit.Event.PostUserEvent() instead. Implementors should implement IEventComponent instead.")]
         void PostUserEvent(EventArgs @event);
 
         /// <summary>
