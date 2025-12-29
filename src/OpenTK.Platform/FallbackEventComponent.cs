@@ -37,12 +37,6 @@ namespace OpenTK.Platform
             EventQueue.EventRaised -= OnEventRaised;
         }
 
-        /// <inheritdoc />
-        public IDisposable Subscribe(IEventObserver observer)
-        {
-            return new Unsubscriber(this, observer);
-        }
-
         private void OnEventRaised(PalHandle? handle, PlatformEventType type, EventArgs args)
         {
             EventRaised?.Invoke(handle, type, args);
@@ -59,21 +53,6 @@ namespace OpenTK.Platform
         public void ProcessEvents(bool waitForEvents)
         {
             windowComponent.ProcessEvents(waitForEvents);
-        }
-
-        private class Unsubscriber : IDisposable
-        {
-            private readonly FallbackEventComponent _self;
-            private readonly IEventObserver _observer;
-
-            public Unsubscriber(FallbackEventComponent self, IEventObserver observer)
-            {
-                self.EventRaisedEx += observer.OnEventRaised;
-                _self = self;
-                _observer = observer;
-            }
-
-            public void Dispose() => _self.EventRaisedEx -= _observer.OnEventRaised;
         }
     }
 }

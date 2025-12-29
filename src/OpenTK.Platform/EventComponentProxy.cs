@@ -9,7 +9,7 @@ namespace OpenTK.Platform
     /// <summary>
     /// Provides temporary services before the true event component is
     /// </summary>
-    internal class EventComponentProxy : IEventComponent, IDisposable
+    internal class EventComponentProxy : IEventComponent
     {
         // FIXME: is this pattern actually called the proxy pattern, or is my lack of education failing me - mixed.
 
@@ -20,7 +20,6 @@ namespace OpenTK.Platform
         public event PlatformEventHandler? EventRaised;
         public event PlatformEventHandlerEx? EventRaisedEx;
 
-        private readonly List<Unsubscriber> _unsubscribers = new List<Unsubscriber>();
         private bool _isDisposed = false;
 
         public void Initialize(ToolkitOptions options)
@@ -32,20 +31,6 @@ namespace OpenTK.Platform
         public void Uninitialize()
         {
             Debug.Fail("EventComponentProxy.Uninitialize() should never have been called.");
-        }
-
-
-        public IDisposable Subscribe(IEventObserver observer)
-        {
-            AssertNotDisposed();
-
-            Unsubscriber unsubscriber = new Unsubscriber(new WeakReference<EventComponentProxy>(this), observer);
-            lock (_unsubscribers)
-            {
-                _unsubscribers.Add(unsubscriber);
-            }
-
-            return unsubscriber;
         }
 
         public void PostUserEvent(EventArgs @event)
@@ -70,36 +55,7 @@ namespace OpenTK.Platform
 
                 if (EventRaisedEx != null)
                     component.EventRaisedEx += EventRaisedEx;
-
-                lock (_unsubscribers)
-                {
-                    foreach (Unsubscriber unsubscriber in _unsubscribers)
-                    {
-                        unsubscriber.ActualUnsubscriber = component.Subscribe(unsubscriber.Observer);
-                    }
-                }
             }
-        }
-
-        private void Unsubscribe(Unsubscriber unsubscriber)
-        {
-            if (_isDisposed)
-                return;
-
-            lock (_unsubscribers)
-            {
-                _unsubscribers.Remove(unsubscriber);
-            }
-        }
-
-        public void Dispose()
-        {
-            // TODO: does this function need to be thread safe?
-
-            if (_isDisposed) return;
-            _isDisposed = true;
-
-            _unsubscribers.Clear();
         }
 
         [DoesNotReturn]
@@ -112,22 +68,6 @@ namespace OpenTK.Platform
         {
             if (_isDisposed)
                 throw new InvalidOperationException("The event queue proxy was disposed.");
-        }
-
-        private class Unsubscriber(WeakReference<EventComponentProxy> proxyHandle, IEventObserver observer) : IDisposable
-        {
-            public IEventObserver Observer { get; } = observer;
-            public IDisposable? ActualUnsubscriber = null;
-
-            public void Dispose()
-            {
-                if (proxyHandle.TryGetTarget(out EventComponentProxy? proxy))
-                {
-                    proxy.Unsubscribe(this);
-                }
-
-                ActualUnsubscriber?.Dispose();
-            }
         }
     }
 }

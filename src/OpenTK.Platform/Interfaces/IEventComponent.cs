@@ -2,16 +2,6 @@ using System;
 
 namespace OpenTK.Platform
 {
-    // From: mixed
-    // To: NogginBops
-    // Do you have a preference for events vs the observer pattern? This pattern might be a bit
-    // easier to manage down the line with the high level window API like the one in current
-    // OpenTK.
-    public interface IEventObserver
-    {
-        void OnEventRaised(PalHandle? handler, EventArgs args);
-    }
-
     /// <summary>
     /// Provides event
     /// </summary>
@@ -34,16 +24,6 @@ namespace OpenTK.Platform
         /// This event is thread safe.
         /// </remarks>
         event PlatformEventHandlerEx? EventRaisedEx;
-
-        /// <summary>
-        /// Subscribe to the platform event queue with an observer object.
-        /// </summary>
-        /// <param name="observer">The observer object to post events to.</param>
-        /// <returns>An unsubscription object.</returns>
-        /// <remarks>
-        /// This method is thread safe.
-        /// </remarks>
-        IDisposable Subscribe(IEventObserver observer);
 
         /// <summary>
         /// Posts a user defined event to the event queue.

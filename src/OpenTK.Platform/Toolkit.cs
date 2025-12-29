@@ -265,7 +265,6 @@ namespace OpenTK.Platform
             if (_eventComponent != null)
             {
                 _eventComponentProxy!.TransferSubscribers(_eventComponent);
-                _eventComponentProxy.Dispose();
                 _eventComponentProxy = null;
             }
 
