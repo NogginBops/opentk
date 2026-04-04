@@ -1,15 +1,10 @@
-﻿using OpenTK.Mathematics;
-using OpenTK.Platform;
-using OpenTK.Platform.Native;
-using OpenTK.Platform.Native.Windows;
+﻿using OpenTK.Platform.Native;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
-using System.Runtime.CompilerServices;
-using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading.Tasks;
+using System.Threading;
+using OpenTK.Core.Utility;
 
 namespace OpenTK.Platform
 {
@@ -248,6 +243,7 @@ namespace OpenTK.Platform
             _gamepadComponent?.Initialize(options);
             _dialogComponent?.Initialize(options);
             _vulkanComponent?.Initialize(options);
+            Ext.Initialize(options);
 
             Initialized = true;
         }
@@ -268,6 +264,7 @@ namespace OpenTK.Platform
         /// </remarks>
         public static void Uninit()
         {
+            Ext.Uninitialize();
             _vulkanComponent?.Uninitialize();
             _dialogComponent?.Uninitialize();
             _joystickComponent?.Uninitialize();
@@ -348,6 +345,200 @@ namespace OpenTK.Platform
             public static void ProcessEvents(bool waitForEvents)
             {
                 Toolkit.Window.ProcessEvents(waitForEvents);
+            }
+        }
+
+        /// <summary>
+        /// PAL2 Extension Registry.
+        /// </summary>
+        public static class Ext
+        {
+            private static bool _isInit = false;
+            private static ILogger? _logger;
+            private static readonly object _lockObject = new object();
+            private static readonly List<IPalExtension> _extensions = new List<IPalExtension>();
+            private static readonly Dictionary<string, IPalExtension> _byName = new Dictionary<string, IPalExtension>();
+            private static readonly Dictionary<int, IPalExtension> _byAtom = new Dictionary<int, IPalExtension>();
+
+            /// <summary>
+            /// List of extensions currently available in the registry.
+            /// </summary>
+            public static IReadOnlyList<IPalExtension> Available { get; }
+
+            static Ext()
+            {
+                Available = _extensions.AsReadOnly();
+            }
+
+            /// <summary>
+            /// Register a new extension.
+            /// </summary>
+            /// <typeparam name="T">Type of the new extension to register.</typeparam>
+            public static void RegisterExtension<[DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.Interfaces)]T>() where T : class, IPalExtension, new() => RegisterExtension(new T());
+
+            /// <summary>
+            /// Register a new extension.
+            /// </summary>
+            /// <typeparam name="T">Type of the new extension to register.</typeparam>
+            public static void RegisterExtension<[DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.Interfaces)] T>( T extension) where T : class, IPalExtension
+            {
+                lock (_lockObject)
+                {
+                    if (_isInit)
+                    {
+                        extension.Logger = _logger;
+                        extension.Initialize();
+                    }
+
+                    _byName.Add(extension.Name, extension);
+                    _byAtom.Add(Atom<T>.Id, extension);
+                    _extensions.Add(extension);
+
+                    // For this extension system to work, we must browse the type hierarchy and find ancestor
+                    // interfaces and their type atoms.
+                    // Otherwise, we cannot require extensions by their ancestor interface.
+
+                    // What are the NativeAOT caveats here? Users may be forced to use strings as keys. - mixed.
+
+                    Type type = typeof(T);
+                    foreach (Type iface in type.GetInterfaces().Where(x => x == typeof(IPalExtension)))
+                    {
+                        _byAtom.Add(Atom.Get(iface).Id, extension);
+                    }
+
+                    _logger?.LogDebug($"Extension {extension.Name} has been registered.");
+                }
+            }
+
+            internal static void Initialize(ToolkitOptions options)
+            {
+                if (_isInit)
+                    return;
+
+                _logger = options.Logger;
+
+                _isInit = true;
+                foreach (IPalExtension extension in _extensions)
+                {
+                    extension.Logger = _logger;
+                    extension.Initialize();
+                }
+            }
+
+            internal static void Uninitialize()
+            {
+                foreach (IPalExtension extension in _extensions)
+                {
+                    extension.Uninitialize();
+                }
+
+                _extensions.Clear();
+                _byAtom.Clear();
+                _byName.Clear();
+
+                _isInit = false;
+            }
+
+            /// <summary>
+            /// Require an extension.
+            /// </summary>
+            /// <typeparam name="T">Type of the extension class or its extension interface.</typeparam>
+            /// <returns>The extension instance.</returns>
+            public static T Require<T>() where T : IPalExtension
+            {
+                return (T)_byAtom[Atom<T>.Id];
+            }
+
+            /// <summary>
+            /// Require an extension.
+            /// </summary>
+            /// <param name="name">Name of the extension.</param>
+            /// <returns>The extension instance.</returns>
+            public static IPalExtension Require(string name)
+            {
+                return _byName[name];
+            }
+
+            /// <summary>
+            /// Require an extension.
+            /// </summary>
+            /// <param name="name">Name of the extension.</param>
+            /// <typeparam name="T">Type of the extension class or its extension interface.</typeparam>
+            /// <returns>The extension instance.</returns>
+            public static T Require<T>(string name) where T : IPalExtension
+            {
+                return (T)_byName[name];
+            }
+
+            /// <summary>
+            /// Check if an extension is available.
+            /// </summary>
+            /// <typeparam name="T">Type of the extension class or its extension interface.</typeparam>
+            /// <returns>The extension instance.</returns>
+            public static bool IsAvailable<T>() where T : IPalExtension
+            {
+                return _byAtom.ContainsKey(Atom<T>.Id);
+            }
+
+            /// <summary>
+            /// Check if an extension is available.
+            /// </summary>
+            /// <param name="name">Name of the extension.</param>
+            /// <returns>The extension instance.</returns>
+            public static bool IsAvailable(string name)
+            {
+                return _byName.ContainsKey(name);
+            }
+
+            // This whole section of code is a micro optimization. It accelerates type lookup without depending
+            // on behavior of Type.GetHashCode() or Type.Equals by abusing generics.
+            // Feel free to take this out if you think this is too complex.
+
+            private struct Atom
+            {
+                public int Id { get; }
+                public Type Type { get; }
+
+                private Atom(Type type)
+                {
+                    Type = type;
+                    Id = TakeAtom();
+                }
+
+                private static int _atoms = 0;
+                private static readonly object _lockObject = new object();
+                private static readonly Dictionary<int, Atom> _byId = new Dictionary<int, Atom>();
+                private static readonly Dictionary<Type, Atom> _byType = new Dictionary<Type, Atom>();
+
+                private int TakeAtom() => Interlocked.Increment(ref _atoms);
+
+                public static Atom? Get(int id) => _byId.GetValueOrDefault(id);
+                public static Atom Get(Type type)
+                {
+                    if (_byType.TryGetValue(type, out Atom atom))
+                        return atom;
+
+                    // Type is not registered, try to acquire lock.
+                    lock (_lockObject)
+                    {
+                        // Maybe somebody else registered this type whilst acquiring the lock.
+                        if (_byType.TryGetValue(type, out atom))
+                            return atom;
+
+                        // Register the type if applicable and leave.
+                        atom = new Atom(type);
+                        _byId.Add(atom.Id, atom);
+                        _byType.Add(type, atom);
+                        return atom;
+                    }
+                }
+            }
+
+            private struct Atom<T> where T : IPalExtension
+            {
+                public static Atom Value { get; } = Atom.Get(typeof(T));
+                public static int Id => Value.Id;
+                public static Type Type => Value.Type;
             }
         }
     }
