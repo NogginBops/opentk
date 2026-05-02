@@ -836,8 +836,7 @@ namespace GeneratorBase.Overloading
         {
             Parameter[] parameters = overload.InputParameters.ToArray();
             NameTable nameTable = overload.NameTable.New();
-            List<(Parameter VPtr, Parameter IPtr)>
-                parameterNames = new List<(Parameter VPtr, Parameter IPtr)>();
+            List<(Parameter VPtr, Parameter IPtr)> parameterNames = new List<(Parameter VPtr, Parameter IPtr)>();
 
             for (int i = 0; i < parameters.Length; i++)
             {
@@ -852,7 +851,6 @@ namespace GeneratorBase.Overloading
                 parameters[i] = parameter with { StrongType = CSPrimitive.IntPtr(false), StrongLength = null };
                 parameterNames.Add((parameter, parameters[i]));
             }
-
 
             if (parameterNames.Count == 0)
             {
@@ -1793,6 +1791,63 @@ namespace GeneratorBase.Overloading
             public string? WriteEpilogue(IndentedTextWriter writer, NameTable nameTable, string? returnName)
             {
                 return OutParameter.Name;
+            }
+        }
+    }
+
+    public class ObjectPtrLabelOverloader : IOverloader
+    {
+        public bool TryGenerateOverloads(Overload overload, [NotNullWhen(true)] out List<Overload>? newOverloads)
+        {
+            if (overload.NativeFunction.Name.StartsWith("ObjectPtrLabel") == false)
+            {
+                newOverloads = default;
+                return false;
+            }
+
+            Parameter[] intptrParameters = overload.InputParameters.ToArray();
+            NameTable intptrNameTable = overload.NameTable.New();
+
+            intptrNameTable.Rename(intptrParameters[0], intptrParameters[0].Name + "_intptr");
+            intptrParameters[0] = intptrParameters[0] with { StrongType = CSPrimitive.IntPtr(true) };
+
+            var intptrOverload = overload with
+            {
+                NestedOverload = overload,
+                InputParameters = intptrParameters,
+                MarshalLayerToNested = new ObjectPtrLabelOverloadLayer(overload.InputParameters[0], intptrParameters[0]),
+                NameTable = intptrNameTable,
+            };
+
+            Parameter[] syncParameters = intptrOverload.InputParameters.ToArray();
+            NameTable syncNameTable = intptrOverload.NameTable.New();
+
+            syncNameTable.Rename(syncParameters[0], syncParameters[0].Name + "_sync");
+            // FIXME: const?
+            syncParameters[0] = syncParameters[0] with { StrongType = new CSStructPrimitive("GLSync", true, CSPrimitive.IntPtr(true)) };
+
+            newOverloads = [
+                intptrOverload,
+                intptrOverload with {
+                    NestedOverload = intptrOverload,
+                    InputParameters = syncParameters,
+                    MarshalLayerToNested = new ObjectPtrLabelOverloadLayer(intptrOverload.InputParameters[0], syncParameters[0]),
+                    NameTable = syncNameTable,
+                }
+            ];
+            return true;
+        }
+
+        private record ObjectPtrLabelOverloadLayer(Parameter oldParameter, Parameter newParameter) : IOverloadLayer
+        {
+            public void WritePrologue(IndentedTextWriter writer, NameTable nameTable)
+            {
+                writer.WriteLine($"{oldParameter.StrongType!.ToCSString()} {nameTable[oldParameter]} = ({oldParameter.StrongType!.ToCSString()}){nameTable[newParameter]};");
+            }
+
+            public string? WriteEpilogue(IndentedTextWriter writer, NameTable nameTable, string? returnName)
+            {
+                return returnName;
             }
         }
     }

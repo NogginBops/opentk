@@ -88,6 +88,10 @@ namespace LocalTest
 
             Color4<Rgba> color = new Color4<Hsva>(Time / CycleTime, 1, 1, 1).ToRgba();
 
+            var a = GL.FenceSync(SyncCondition.SyncGpuCommandsComplete, SyncBehaviorFlags.None);
+            GL.ObjectPtrLabel()
+            GL.ObjectPtrLabel(a, -1, "test");
+
             GL.ClearColor(color);
             GL.Clear(ClearBufferMask.ColorBufferBit | ClearBufferMask.DepthBufferBit);
             

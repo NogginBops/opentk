@@ -462,6 +462,7 @@ namespace GLGenerator.Parsing
             HandleType? handle = className switch
             {
                 null => null,
+                "any" => HandleType.AnyHandle,
                 "program" => HandleType.ProgramHandle,
                 "program pipeline" => HandleType.ProgramPipelineHandle,
                 "texture" => HandleType.TextureHandle,

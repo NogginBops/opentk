@@ -493,7 +493,7 @@ void main()
 
         public static void LabelObject(ObjectIdentifier objLabelIdent, int glObject, string name)
         {
-            if (KHRDebugAvailable) GL.ObjectLabel(objLabelIdent, (uint)glObject, name.Length, name);
+            if (KHRDebugAvailable) GL.ObjectLabel(objLabelIdent, glObject, name.Length, name);
         }
 
         static bool IsExtensionSupported(string name)

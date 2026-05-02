@@ -801,6 +801,7 @@ namespace GLGenerator.Process
                 new MathTypeOverloader(),
                 new FunctionPtrToDelegateOverloader(),
                 new PointerToOffsetOverloader(),
+                new ObjectPtrLabelOverloader(),
                 new VoidPtrToIntPtrOverloader(),
                 new GenCreateAndDeleteOverloader(
                     GenCreateAndDeleteOverloader.PluralNameToSingularNameOpenGL,

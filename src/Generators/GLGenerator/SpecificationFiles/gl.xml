@@ -19772,27 +19772,27 @@ typedef unsigned int GLhandleARB;
         <command>
             <proto>void <name>glObjectLabel</name></proto>
             <param group="ObjectIdentifier"><ptype>GLenum</ptype> <name>identifier</name></param>
-            <param><ptype>GLuint</ptype> <name>name</name></param>
+            <param class="any"><ptype>GLuint</ptype> <name>name</name></param>
             <param><ptype>GLsizei</ptype> <name>length</name></param>
             <param len="COMPSIZE(label,length)">const <ptype>GLchar</ptype> *<name>label</name></param>
         </command>
         <command>
             <proto>void <name>glObjectLabelKHR</name></proto>
             <param group="ObjectIdentifier"><ptype>GLenum</ptype> <name>identifier</name></param>
-            <param><ptype>GLuint</ptype> <name>name</name></param>
+            <param class="any"><ptype>GLuint</ptype> <name>name</name></param>
             <param><ptype>GLsizei</ptype> <name>length</name></param>
             <param>const <ptype>GLchar</ptype> *<name>label</name></param>
             <alias name="glObjectLabel"/>
         </command>
         <command>
             <proto>void <name>glObjectPtrLabel</name></proto>
-            <param>const void *<name>ptr</name></param>
+            <param class="sync">const void *<name>ptr</name></param>
             <param><ptype>GLsizei</ptype> <name>length</name></param>
             <param len="COMPSIZE(label,length)">const <ptype>GLchar</ptype> *<name>label</name></param>
         </command>
         <command>
             <proto>void <name>glObjectPtrLabelKHR</name></proto>
-            <param>const void *<name>ptr</name></param>
+            <param class="sync">const void *<name>ptr</name></param>
             <param><ptype>GLsizei</ptype> <name>length</name></param>
             <param>const <ptype>GLchar</ptype> *<name>label</name></param>
             <alias name="glObjectPtrLabel"/>

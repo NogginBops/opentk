@@ -78,6 +78,7 @@ namespace GLGenerator.Parsing
 
     internal enum HandleType
     {
+        AnyHandle,
         ProgramHandle,
         ProgramPipelineHandle,
         TextureHandle,

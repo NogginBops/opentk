@@ -3845,7 +3845,7 @@ namespace OpenTK.Graphics.OpenGL.Compatibility
         /// <param name="length"> The length of the label to be used for the object. </param>
         /// <param name="label"> The address of a string containing the label to assign to the object. </param>
         /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/glObjectLabel.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/KHR/KHR_debug.txt"/></remarks>
-        public static void ObjectLabel(ObjectIdentifier identifier, uint name, int length, byte* label) => GLPointers.glObjectLabel_Lazy((uint)identifier, name, length, label);
+        public static void ObjectLabel(ObjectIdentifier identifier, int name, int length, byte* label) => GLPointers.glObjectLabel_Lazy((uint)identifier, name, length, label);
         
         /// <summary> <b>[requires: v4.3 | GL_KHR_debug]</b> <b>[entry point: <c>glObjectPtrLabel</c>]</b><br/> Label a sync object identified by a pointer. </summary>
         /// <param name="ptr"> A pointer identifying a sync object. </param>
@@ -14637,11 +14637,11 @@ namespace OpenTK.Graphics.OpenGL.Compatibility
             /// <param name="length"> The length of the label to be used for the object. </param>
             /// <param name="label"> The address of a string containing the label to assign to the object. </param>
             /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/glObjectLabel.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/KHR/KHR_debug.txt"/></remarks>
-            public static void ObjectLabel(ObjectIdentifier identifier, uint name, int length, byte* label) => GLPointers.glObjectLabel_Lazy((uint)identifier, name, length, label);
+            public static void ObjectLabel(ObjectIdentifier identifier, int name, int length, byte* label) => GLPointers.glObjectLabel_Lazy((uint)identifier, name, length, label);
             
             /// <summary> <b>[requires: GL_KHR_debug]</b> <b>[entry point: <c>glObjectLabelKHR</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/KHR/KHR_debug.txt"/></remarks>
-            public static void ObjectLabelKHR(ObjectIdentifier identifier, uint name, int length, byte* label) => GLPointers.glObjectLabelKHR_Lazy((uint)identifier, name, length, label);
+            public static void ObjectLabelKHR(ObjectIdentifier identifier, int name, int length, byte* label) => GLPointers.glObjectLabelKHR_Lazy((uint)identifier, name, length, label);
             
             /// <summary> <b>[requires: v4.3 | GL_KHR_debug]</b> <b>[entry point: <c>glObjectPtrLabel</c>]</b><br/> Label a sync object identified by a pointer. </summary>
             /// <param name="ptr"> A pointer identifying a sync object. </param>

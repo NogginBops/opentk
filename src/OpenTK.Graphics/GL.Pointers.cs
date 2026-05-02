@@ -18690,22 +18690,22 @@ namespace OpenTK.Graphics.OpenGL
         }
         
         /// <summary><b>[entry point: <c>glObjectLabel</c>]</b></summary>
-        public static delegate* unmanaged<uint, uint, int, byte*, void> _glObjectLabel_fnptr;
+        public static delegate* unmanaged<uint, int, int, byte*, void> _glObjectLabel_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glObjectLabel_Lazy(uint identifier, uint name, int length, byte* label)
+        internal static void glObjectLabel_Lazy(uint identifier, int name, int length, byte* label)
         {
             if (_glObjectLabel_fnptr == null)
-                _glObjectLabel_fnptr = (delegate* unmanaged<uint, uint, int, byte*, void>)GLLoader.BindingsContext.GetProcAddress("glObjectLabel");
+                _glObjectLabel_fnptr = (delegate* unmanaged<uint, int, int, byte*, void>)GLLoader.BindingsContext.GetProcAddress("glObjectLabel");
             _glObjectLabel_fnptr(identifier, name, length, label);
         }
         
         /// <summary><b>[entry point: <c>glObjectLabelKHR</c>]</b></summary>
-        public static delegate* unmanaged<uint, uint, int, byte*, void> _glObjectLabelKHR_fnptr;
+        public static delegate* unmanaged<uint, int, int, byte*, void> _glObjectLabelKHR_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glObjectLabelKHR_Lazy(uint identifier, uint name, int length, byte* label)
+        internal static void glObjectLabelKHR_Lazy(uint identifier, int name, int length, byte* label)
         {
             if (_glObjectLabelKHR_fnptr == null)
-                _glObjectLabelKHR_fnptr = (delegate* unmanaged<uint, uint, int, byte*, void>)GLLoader.BindingsContext.GetProcAddress("glObjectLabelKHR");
+                _glObjectLabelKHR_fnptr = (delegate* unmanaged<uint, int, int, byte*, void>)GLLoader.BindingsContext.GetProcAddress("glObjectLabelKHR");
             _glObjectLabelKHR_fnptr(identifier, name, length, label);
         }
         

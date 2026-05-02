@@ -1129,11 +1129,11 @@ namespace OpenTK.Graphics.OpenGLES1
             
             /// <summary> <b>[requires: GL_KHR_debug]</b> <b>[entry point: <c>glObjectLabel</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/KHR/KHR_debug.txt"/></remarks>
-            public static void ObjectLabel(ObjectIdentifier identifier, uint name, int length, byte* label) => GLPointers.glObjectLabel_Lazy((uint)identifier, name, length, label);
+            public static void ObjectLabel(ObjectIdentifier identifier, int name, int length, byte* label) => GLPointers.glObjectLabel_Lazy((uint)identifier, name, length, label);
             
             /// <summary> <b>[requires: GL_KHR_debug]</b> <b>[entry point: <c>glObjectLabelKHR</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/KHR/KHR_debug.txt"/></remarks>
-            public static void ObjectLabelKHR(ObjectIdentifier identifier, uint name, int length, byte* label) => GLPointers.glObjectLabelKHR_Lazy((uint)identifier, name, length, label);
+            public static void ObjectLabelKHR(ObjectIdentifier identifier, int name, int length, byte* label) => GLPointers.glObjectLabelKHR_Lazy((uint)identifier, name, length, label);
             
             /// <summary> <b>[requires: GL_KHR_debug]</b> <b>[entry point: <c>glObjectPtrLabel</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/KHR/KHR_debug.txt"/></remarks>

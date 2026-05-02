@@ -3346,8 +3346,8 @@ namespace OpenTK.Graphics.OpenGLES2
                 InvalidateSubFramebuffer(target, numAttachments, attachments_ptr, x, y, width, height);
             }
         }
-        /// <inheritdoc cref="ObjectLabel(ObjectIdentifier, uint, int, byte*)"/>
-        public static unsafe void ObjectLabel(ObjectIdentifier identifier, uint name, int length, string label)
+        /// <inheritdoc cref="ObjectLabel(ObjectIdentifier, int, int, byte*)"/>
+        public static unsafe void ObjectLabel(ObjectIdentifier identifier, int name, int length, string label)
         {
             byte* label_ptr = (byte*)Marshal.StringToCoTaskMemUTF8(label);
             ObjectLabel(identifier, name, length, label_ptr);
@@ -3357,42 +3357,18 @@ namespace OpenTK.Graphics.OpenGLES2
         public static unsafe void ObjectPtrLabel(IntPtr ptr, int length, string label)
         {
             byte* label_ptr = (byte*)Marshal.StringToCoTaskMemUTF8(label);
-            void* ptr_vptr = (void*)ptr;
-            ObjectPtrLabel(ptr_vptr, length, label_ptr);
+            void* ptr_intptr = (void*)ptr;
+            ObjectPtrLabel(ptr_intptr, length, label_ptr);
             Marshal.FreeCoTaskMem((IntPtr)label_ptr);
         }
         /// <inheritdoc cref="ObjectPtrLabel(void*, int, byte*)"/>
-        public static unsafe void ObjectPtrLabel<T1>(ReadOnlySpan<T1> ptr, int length, string label)
-            where T1 : unmanaged
+        public static unsafe void ObjectPtrLabel(GLSync ptr, int length, string label)
         {
-            fixed (void* ptr_ptr = ptr)
-            {
-                byte* label_ptr = (byte*)Marshal.StringToCoTaskMemUTF8(label);
-                ObjectPtrLabel(ptr_ptr, length, label_ptr);
-                Marshal.FreeCoTaskMem((IntPtr)label_ptr);
-            }
-        }
-        /// <inheritdoc cref="ObjectPtrLabel(void*, int, byte*)"/>
-        public static unsafe void ObjectPtrLabel<T1>(T1[] ptr, int length, string label)
-            where T1 : unmanaged
-        {
-            fixed (void* ptr_ptr = ptr)
-            {
-                byte* label_ptr = (byte*)Marshal.StringToCoTaskMemUTF8(label);
-                ObjectPtrLabel(ptr_ptr, length, label_ptr);
-                Marshal.FreeCoTaskMem((IntPtr)label_ptr);
-            }
-        }
-        /// <inheritdoc cref="ObjectPtrLabel(void*, int, byte*)"/>
-        public static unsafe void ObjectPtrLabel<T1>(ref readonly T1 ptr, int length, string label)
-            where T1 : unmanaged
-        {
-            fixed (void* ptr_ptr = &ptr)
-            {
-                byte* label_ptr = (byte*)Marshal.StringToCoTaskMemUTF8(label);
-                ObjectPtrLabel(ptr_ptr, length, label_ptr);
-                Marshal.FreeCoTaskMem((IntPtr)label_ptr);
-            }
+            byte* label_ptr = (byte*)Marshal.StringToCoTaskMemUTF8(label);
+            IntPtr ptr_sync = (IntPtr)ptr;
+            void* ptr_intptr = (void*)ptr_sync;
+            ObjectPtrLabel(ptr_intptr, length, label_ptr);
+            Marshal.FreeCoTaskMem((IntPtr)label_ptr);
         }
         /// <inheritdoc cref="ProgramBinary(int, All, void*, int)"/>
         public static unsafe void ProgramBinary(int program, All binaryFormat, IntPtr binary, int length)
@@ -9448,15 +9424,15 @@ namespace OpenTK.Graphics.OpenGLES2
             {
                 GetPointerv(pname, parameters);
             }
-            /// <inheritdoc cref="ObjectLabel(ObjectIdentifier, uint, int, byte*)"/>
-            public static unsafe void ObjectLabel(ObjectIdentifier identifier, uint name, int length, string label)
+            /// <inheritdoc cref="ObjectLabel(ObjectIdentifier, int, int, byte*)"/>
+            public static unsafe void ObjectLabel(ObjectIdentifier identifier, int name, int length, string label)
             {
                 byte* label_ptr = (byte*)Marshal.StringToCoTaskMemUTF8(label);
                 ObjectLabel(identifier, name, length, label_ptr);
                 Marshal.FreeCoTaskMem((IntPtr)label_ptr);
             }
-            /// <inheritdoc cref="ObjectLabelKHR(ObjectIdentifier, uint, int, byte*)"/>
-            public static unsafe void ObjectLabelKHR(ObjectIdentifier identifier, uint name, int length, string label)
+            /// <inheritdoc cref="ObjectLabelKHR(ObjectIdentifier, int, int, byte*)"/>
+            public static unsafe void ObjectLabelKHR(ObjectIdentifier identifier, int name, int length, string label)
             {
                 byte* label_ptr = (byte*)Marshal.StringToCoTaskMemUTF8(label);
                 ObjectLabelKHR(identifier, name, length, label_ptr);
@@ -9466,83 +9442,35 @@ namespace OpenTK.Graphics.OpenGLES2
             public static unsafe void ObjectPtrLabel(IntPtr ptr, int length, string label)
             {
                 byte* label_ptr = (byte*)Marshal.StringToCoTaskMemUTF8(label);
-                void* ptr_vptr = (void*)ptr;
-                ObjectPtrLabel(ptr_vptr, length, label_ptr);
+                void* ptr_intptr = (void*)ptr;
+                ObjectPtrLabel(ptr_intptr, length, label_ptr);
                 Marshal.FreeCoTaskMem((IntPtr)label_ptr);
             }
             /// <inheritdoc cref="ObjectPtrLabel(void*, int, byte*)"/>
-            public static unsafe void ObjectPtrLabel<T1>(ReadOnlySpan<T1> ptr, int length, string label)
-                where T1 : unmanaged
+            public static unsafe void ObjectPtrLabel(GLSync ptr, int length, string label)
             {
-                fixed (void* ptr_ptr = ptr)
-                {
-                    byte* label_ptr = (byte*)Marshal.StringToCoTaskMemUTF8(label);
-                    ObjectPtrLabel(ptr_ptr, length, label_ptr);
-                    Marshal.FreeCoTaskMem((IntPtr)label_ptr);
-                }
-            }
-            /// <inheritdoc cref="ObjectPtrLabel(void*, int, byte*)"/>
-            public static unsafe void ObjectPtrLabel<T1>(T1[] ptr, int length, string label)
-                where T1 : unmanaged
-            {
-                fixed (void* ptr_ptr = ptr)
-                {
-                    byte* label_ptr = (byte*)Marshal.StringToCoTaskMemUTF8(label);
-                    ObjectPtrLabel(ptr_ptr, length, label_ptr);
-                    Marshal.FreeCoTaskMem((IntPtr)label_ptr);
-                }
-            }
-            /// <inheritdoc cref="ObjectPtrLabel(void*, int, byte*)"/>
-            public static unsafe void ObjectPtrLabel<T1>(ref readonly T1 ptr, int length, string label)
-                where T1 : unmanaged
-            {
-                fixed (void* ptr_ptr = &ptr)
-                {
-                    byte* label_ptr = (byte*)Marshal.StringToCoTaskMemUTF8(label);
-                    ObjectPtrLabel(ptr_ptr, length, label_ptr);
-                    Marshal.FreeCoTaskMem((IntPtr)label_ptr);
-                }
+                byte* label_ptr = (byte*)Marshal.StringToCoTaskMemUTF8(label);
+                IntPtr ptr_sync = (IntPtr)ptr;
+                void* ptr_intptr = (void*)ptr_sync;
+                ObjectPtrLabel(ptr_intptr, length, label_ptr);
+                Marshal.FreeCoTaskMem((IntPtr)label_ptr);
             }
             /// <inheritdoc cref="ObjectPtrLabelKHR(void*, int, byte*)"/>
             public static unsafe void ObjectPtrLabelKHR(IntPtr ptr, int length, string label)
             {
                 byte* label_ptr = (byte*)Marshal.StringToCoTaskMemUTF8(label);
-                void* ptr_vptr = (void*)ptr;
-                ObjectPtrLabelKHR(ptr_vptr, length, label_ptr);
+                void* ptr_intptr = (void*)ptr;
+                ObjectPtrLabelKHR(ptr_intptr, length, label_ptr);
                 Marshal.FreeCoTaskMem((IntPtr)label_ptr);
             }
             /// <inheritdoc cref="ObjectPtrLabelKHR(void*, int, byte*)"/>
-            public static unsafe void ObjectPtrLabelKHR<T1>(ReadOnlySpan<T1> ptr, int length, string label)
-                where T1 : unmanaged
+            public static unsafe void ObjectPtrLabelKHR(GLSync ptr, int length, string label)
             {
-                fixed (void* ptr_ptr = ptr)
-                {
-                    byte* label_ptr = (byte*)Marshal.StringToCoTaskMemUTF8(label);
-                    ObjectPtrLabelKHR(ptr_ptr, length, label_ptr);
-                    Marshal.FreeCoTaskMem((IntPtr)label_ptr);
-                }
-            }
-            /// <inheritdoc cref="ObjectPtrLabelKHR(void*, int, byte*)"/>
-            public static unsafe void ObjectPtrLabelKHR<T1>(T1[] ptr, int length, string label)
-                where T1 : unmanaged
-            {
-                fixed (void* ptr_ptr = ptr)
-                {
-                    byte* label_ptr = (byte*)Marshal.StringToCoTaskMemUTF8(label);
-                    ObjectPtrLabelKHR(ptr_ptr, length, label_ptr);
-                    Marshal.FreeCoTaskMem((IntPtr)label_ptr);
-                }
-            }
-            /// <inheritdoc cref="ObjectPtrLabelKHR(void*, int, byte*)"/>
-            public static unsafe void ObjectPtrLabelKHR<T1>(ref readonly T1 ptr, int length, string label)
-                where T1 : unmanaged
-            {
-                fixed (void* ptr_ptr = &ptr)
-                {
-                    byte* label_ptr = (byte*)Marshal.StringToCoTaskMemUTF8(label);
-                    ObjectPtrLabelKHR(ptr_ptr, length, label_ptr);
-                    Marshal.FreeCoTaskMem((IntPtr)label_ptr);
-                }
+                byte* label_ptr = (byte*)Marshal.StringToCoTaskMemUTF8(label);
+                IntPtr ptr_sync = (IntPtr)ptr;
+                void* ptr_intptr = (void*)ptr_sync;
+                ObjectPtrLabelKHR(ptr_intptr, length, label_ptr);
+                Marshal.FreeCoTaskMem((IntPtr)label_ptr);
             }
             /// <inheritdoc cref="PushDebugGroup(DebugSource, uint, int, byte*)"/>
             public static unsafe void PushDebugGroup(DebugSource source, uint id, int length, string message)
