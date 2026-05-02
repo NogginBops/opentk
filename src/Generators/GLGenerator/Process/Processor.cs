@@ -327,7 +327,7 @@ namespace GLGenerator.Process
                 }
             }
 
-            List<Namespace> outputNamespaces = new List<Namespace>();
+            List<OutputApiData> outputNamespaces = new List<OutputApiData>();
 
             foreach (var (api, functions, enums) in spec.APIs)
             {
@@ -366,7 +366,7 @@ namespace GLGenerator.Process
                     outputNamespaces.Add(CreateOutputAPI(OutputApi.GLCompat, file));
                 }
 
-                Namespace CreateOutputAPI(OutputApi outAPI, ApiFile glFile)
+                OutputApiData CreateOutputAPI(OutputApi outAPI, ApiFile glFile)
                 {
                     // Function processing
 
@@ -673,7 +673,7 @@ namespace GLGenerator.Process
                         FunctionsUsingEnumGroup = null,
                     });
 
-                    return new Namespace(outAPI, sortedVendorFunctions, finalGroups, documentation);
+                    return new OutputApiData(outAPI, sortedVendorFunctions, finalGroups, documentation);
                 }
             }
 
@@ -689,37 +689,37 @@ namespace GLGenerator.Process
 
             return new OutputData(pointers, outputNamespaces);
 
-            ApiPointers CreatePointersList(ApiFile file, List<Namespace> namespaces)
+            ApiPointers CreatePointersList(ApiFile file, List<OutputApiData> namespaces)
             {
                 SortedList<string, Function> allFunctions = new SortedList<string, Function>();
-                foreach (Namespace @namespace in namespaces)
+                foreach (OutputApiData @namespace in namespaces)
                 {
                     bool addFunctions = false;
                     switch (file)
                     {
                         case ApiFile.GL:
-                            if (@namespace.Name == OutputApi.GL ||
-                                @namespace.Name == OutputApi.GLCompat ||
-                                @namespace.Name == OutputApi.GLES1 ||
-                                @namespace.Name == OutputApi.GLES2)
+                            if (@namespace.Api == OutputApi.GL ||
+                                @namespace.Api == OutputApi.GLCompat ||
+                                @namespace.Api == OutputApi.GLES1 ||
+                                @namespace.Api == OutputApi.GLES2)
                             {
                                 addFunctions = true;
                             }
                             break;
                         case ApiFile.WGL:
-                            if (@namespace.Name == OutputApi.WGL)
+                            if (@namespace.Api == OutputApi.WGL)
                             {
                                 addFunctions = true;
                             }
                             break;
                         case ApiFile.GLX:
-                            if (@namespace.Name == OutputApi.GLX)
+                            if (@namespace.Api == OutputApi.GLX)
                             {
                                 addFunctions = true;
                             }
                             break;
                         case ApiFile.EGL:
-                            if (@namespace.Name == OutputApi.EGL)
+                            if (@namespace.Api == OutputApi.EGL)
                             {
                                 addFunctions = true;
                             }

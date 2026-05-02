@@ -254,7 +254,7 @@ namespace ALGenerator.Process
                 }
             }
 
-            List<Namespace> outputNamespaces = new List<Namespace>();
+            List<OutputApiData> outputNamespaces = new List<OutputApiData>();
 
             foreach (var (api, functions, enums) in spec.APIs)
             {
@@ -278,7 +278,7 @@ namespace ALGenerator.Process
 
                 outputNamespaces.Add(CreateOutputAPI(outAPI, file));
 
-                Namespace CreateOutputAPI(OutputApi outAPI, ApiFile alFile)
+                OutputApiData CreateOutputAPI(OutputApi outAPI, ApiFile alFile)
                 {
                     // Function processing
 
@@ -610,7 +610,7 @@ namespace ALGenerator.Process
                         FunctionsUsingEnumGroup = null,
                     });
 
-                    return new Namespace(outAPI, sortedVendorFunctions, finalGroups, documentation);
+                    return new OutputApiData(outAPI, sortedVendorFunctions, finalGroups, documentation);
                 }
             }
 
@@ -623,22 +623,22 @@ namespace ALGenerator.Process
 
             return new OutputData(pointers, outputNamespaces, docs.EnumDocs);
 
-            ApiPointers CreatePointersList(ApiFile file, List<Namespace> namespaces)
+            ApiPointers CreatePointersList(ApiFile file, List<OutputApiData> namespaces)
             {
                 SortedList<string, Function> allFunctions = new SortedList<string, Function>();
-                foreach (Namespace @namespace in namespaces)
+                foreach (OutputApiData @namespace in namespaces)
                 {
                     bool addFunctions = false;
                     switch (file)
                     {
                         case ApiFile.AL:
-                            if (@namespace.Name == OutputApi.AL)
+                            if (@namespace.Api == OutputApi.AL)
                             {
                                 addFunctions = true;
                             }
                             break;
                         case ApiFile.ALC:
-                            if (@namespace.Name == OutputApi.ALC)
+                            if (@namespace.Api == OutputApi.ALC)
                             {
                                 addFunctions = true;
                             }

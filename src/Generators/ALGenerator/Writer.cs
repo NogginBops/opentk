@@ -46,20 +46,20 @@ namespace ALGenerator
                 WriteFunctionPointers(outputProjectPath, strings, pointers.Functions);
             }
 
-            foreach (Namespace @namespace in data.Namespaces)
+            foreach (OutputApiData @namespace in data.Namespaces)
             {
                 WriteNamespace(outputProjectPath, @namespace, data.EnumMemberDocumentation);
             }
         }
 
-        public static void WriteNamespace(string outputProjectPath, Namespace @namespace, Dictionary<string, EnumMemberDocumentation> enumMemberDocumentation)
+        public static void WriteNamespace(string outputProjectPath, OutputApiData @namespace, Dictionary<string, EnumMemberDocumentation> enumMemberDocumentation)
         {
             // FIXME: Fix function pointers so we can merge this.
-            FileStrings strings = @namespace.Name switch
+            FileStrings strings = @namespace.Api switch
             {
                 OutputApi.AL => new FileStrings("AL", "AL", "OpenAL", "ALLoader", "ALLoader", "ALGetProcAddress"),
                 OutputApi.ALC => new FileStrings("ALC", "ALC", "OpenAL.ALC", "ALCLoader", "ALLoader", "ALCGetProcAddress"),
-                _ => throw new Exception($"This is not a valid output API ({@namespace.Name})"),
+                _ => throw new Exception($"This is not a valid output API ({@namespace.Api})"),
             };
 
             string directoryPath = Path.Combine(outputProjectPath, Path.Combine(strings.Namespace.Split('.')));
@@ -68,7 +68,7 @@ namespace ALGenerator
             WriteNativeFunctions(directoryPath, strings, @namespace.VendorFunctions, @namespace.FunctionDocumentation);
             WriteOverloads(directoryPath, strings, @namespace.VendorFunctions);
 
-            WriteEnums(directoryPath, strings, @namespace.EnumGroups, enumMemberDocumentation);
+            WriteEnums(directoryPath, strings, @namespace.Enums, enumMemberDocumentation);
         }
 
         // FIXME: Maybe we should nest this 

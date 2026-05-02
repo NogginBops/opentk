@@ -46,6 +46,14 @@ namespace GeneratorBase
         }
     }
 
+    // FIXME: Add vulkan stuff to this...
+    // FIXME: Better name?
+    public record OutputApiData(
+        OutputApi Api,
+        List<VendorFunctions> VendorFunctions,
+        List<EnumType> Enums,
+        Dictionary<Function, FunctionDocumentation> FunctionDocumentation);
+
     public record Feature
     {
         public required string Name { get; set; }
