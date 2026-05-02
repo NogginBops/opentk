@@ -6,6 +6,7 @@ using OpenTK.Mathematics;
 
 namespace OpenTK.Audio.OpenAL
 {
+#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
     public static unsafe partial class ReverbPresets
     {
         public static readonly ReverbProperties Generic = new ReverbProperties
@@ -3060,4 +3061,5 @@ namespace OpenTK.Audio.OpenAL
         );
         
     }
+#pragma warning restore CS1591 // Missing XML comment for publicly visible type or member
 }

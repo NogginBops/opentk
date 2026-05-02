@@ -1,17 +1,23 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Reflection;
 using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace OpenTK.Graphics
 {
+    /// <summary>
+    /// Used to load the GLX bindings.
+    /// </summary>
     public static class GLXLoader
     {
+        /// <summary>
+        /// The bindings context for GLX.
+        /// </summary>
         public static class BindingsContext
         {
+            /// <summary>
+            /// Obtain a pointer to an OpenGL or GLX function.
+            /// </summary>
+            /// <param name="procName">Specifies the name of the OpenGL or GLX function whose address is to be returned.</param>
+            /// <returns>Returns the address of the function specified in <paramref name="procName"/>, or null.</returns>
             public static unsafe IntPtr GetProcAddress(string procName)
             {
                 if (NativeLibrary.TryGetExport(GLXHandle, procName, out IntPtr ret))

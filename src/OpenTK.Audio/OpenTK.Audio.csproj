@@ -9,6 +9,7 @@
     <PackageIcon>images/opentk-blue-hexagon.png</PackageIcon>
     <PackageReadmeFile>docs/README.md</PackageReadmeFile>
     <Description>OpenAL bindings for dotnet.</Description>
+    <Nullable>enable</Nullable>
   </PropertyGroup>
 
   <ItemGroup>

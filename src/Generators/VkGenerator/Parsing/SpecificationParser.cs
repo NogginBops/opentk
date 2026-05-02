@@ -49,7 +49,7 @@ namespace VkGenerator.Parsing
     // Define the types of the macros?
     public record Define(string Name, BaseCSType Type, bool IsConstant, ulong ConstValue, List<DefineArgument> Arguments, string? Implementation)
     {
-        public VersionInfo VersionInfo;
+        public VersionInfo? VersionInfo;
     }
     public record DefineArgument(string Name, BaseCSType Type);
 

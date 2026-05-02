@@ -408,7 +408,7 @@ namespace GeneratorBase
                 case ExternSyncType.Maybe:
                     return "maybe";
                 case ExternSyncType.Subtype:
-                    return Subtype;
+                    return Subtype!;
                 case ExternSyncType.SubtypeMaybe:
                     return $"maybe {Subtype}";
                 default:

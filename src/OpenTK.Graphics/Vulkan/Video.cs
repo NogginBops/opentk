@@ -2179,7 +2179,7 @@ namespace OpenTK.Graphics.Vulkan
                 get => (uint)((_bitfield0 >> 1) & 0x1u);
                 set => _bitfield0 = (_bitfield0 & ~(0x1u << 1)) | ((((uint)value) & 0x1u) << 1);
             }
-            /// <summary>A picture that is marked as "used for long-term reference", derived binary value from clause 8.2.5.1 Sequence of operations for decoded reference picture marking process</summary>
+            /// <summary>A picture that is marked as &quot;used for long-term reference&quot;, derived binary value from clause 8.2.5.1 Sequence of operations for decoded reference picture marking process</summary>
             public uint used_for_long_term_reference
             {
                 get => (uint)((_bitfield0 >> 2) & 0x1u);
@@ -2217,13 +2217,13 @@ namespace OpenTK.Graphics.Vulkan
         /// <summary><b>[requires: vulkan_video_codec_h264std_encode]</b> </summary>
         public unsafe struct StdVideoEncodeH264WeightTableFlags
         {
-            /// <summary>each bit n represents the nth entry in reference list l0, n <= num_ref_idx_l0_active_minus1</summary>
+            /// <summary>each bit n represents the nth entry in reference list l0, n &lt;= num_ref_idx_l0_active_minus1</summary>
             public uint luma_weight_l0_flag;
-            /// <summary>each bit n represents the nth entry in reference list l0, n <= num_ref_idx_l0_active_minus1</summary>
+            /// <summary>each bit n represents the nth entry in reference list l0, n &lt;= num_ref_idx_l0_active_minus1</summary>
             public uint chroma_weight_l0_flag;
-            /// <summary>each bit n represents the nth entry in reference list l1, n <= num_ref_idx_l1_active_minus1</summary>
+            /// <summary>each bit n represents the nth entry in reference list l1, n &lt;= num_ref_idx_l1_active_minus1</summary>
             public uint luma_weight_l1_flag;
-            /// <summary>each bit n represents the nth entry in reference list l1, n <= num_ref_idx_l1_active_minus1</summary>
+            /// <summary>each bit n represents the nth entry in reference list l1, n &lt;= num_ref_idx_l1_active_minus1</summary>
             public uint chroma_weight_l1_flag;
             public StdVideoEncodeH264WeightTableFlags() { }
             public StdVideoEncodeH264WeightTableFlags(uint luma_weight_l0_flag, uint chroma_weight_l0_flag, uint luma_weight_l1_flag, uint chroma_weight_l1_flag)
@@ -2367,7 +2367,7 @@ namespace OpenTK.Graphics.Vulkan
         public unsafe struct StdVideoEncodeH264ReferenceInfoFlags
         {
             private uint _bitfield0;
-            /// <summary>A picture that is marked as "used for long-term reference", derived binary value from clause 8.2.5.1 Sequence of operations for decoded reference picture marking process</summary>
+            /// <summary>A picture that is marked as &quot;used for long-term reference&quot;, derived binary value from clause 8.2.5.1 Sequence of operations for decoded reference picture marking process</summary>
             public uint used_for_long_term_reference
             {
                 get => (uint)((_bitfield0 >> 0) & 0x1u);
@@ -3887,13 +3887,13 @@ namespace OpenTK.Graphics.Vulkan
         public unsafe struct StdVideoDecodeH265ReferenceInfoFlags
         {
             private uint _bitfield0;
-            /// <summary>A picture that is marked as "used for long-term reference", derived binary value from clause 8.3.2 Decoding process for reference picture set</summary>
+            /// <summary>A picture that is marked as &quot;used for long-term reference&quot;, derived binary value from clause 8.3.2 Decoding process for reference picture set</summary>
             public uint used_for_long_term_reference
             {
                 get => (uint)((_bitfield0 >> 0) & 0x1u);
                 set => _bitfield0 = (_bitfield0 & ~(0x1u << 0)) | ((((uint)value) & 0x1u) << 0);
             }
-            /// <summary>A picture that is marked as "unused for reference", derived binary value from clause 8.3.2 Decoding process for reference picture set</summary>
+            /// <summary>A picture that is marked as &quot;unused for reference&quot;, derived binary value from clause 8.3.2 Decoding process for reference picture set</summary>
             public uint unused_for_reference
             {
                 get => (uint)((_bitfield0 >> 1) & 0x1u);
@@ -3926,13 +3926,13 @@ namespace OpenTK.Graphics.Vulkan
         /// <summary><b>[requires: vulkan_video_codec_h265std_encode]</b> </summary>
         public unsafe struct StdVideoEncodeH265WeightTableFlags
         {
-            /// <summary>each bit n represents the nth entry in reference list l0, n <= num_ref_idx_l0_active_minus1</summary>
+            /// <summary>each bit n represents the nth entry in reference list l0, n &lt;= num_ref_idx_l0_active_minus1</summary>
             public ushort luma_weight_l0_flag;
-            /// <summary>each bit n represents the nth entry in reference list l0, n <= num_ref_idx_l0_active_minus1</summary>
+            /// <summary>each bit n represents the nth entry in reference list l0, n &lt;= num_ref_idx_l0_active_minus1</summary>
             public ushort chroma_weight_l0_flag;
-            /// <summary>each bit n represents the nth entry in reference list l1, n <= num_ref_idx_l1_active_minus1</summary>
+            /// <summary>each bit n represents the nth entry in reference list l1, n &lt;= num_ref_idx_l1_active_minus1</summary>
             public ushort luma_weight_l1_flag;
-            /// <summary>each bit n represents the nth entry in reference list l1, n <= num_ref_idx_l1_active_minus1</summary>
+            /// <summary>each bit n represents the nth entry in reference list l1, n &lt;= num_ref_idx_l1_active_minus1</summary>
             public ushort chroma_weight_l1_flag;
             public StdVideoEncodeH265WeightTableFlags() { }
             public StdVideoEncodeH265WeightTableFlags(ushort luma_weight_l0_flag, ushort chroma_weight_l0_flag, ushort luma_weight_l1_flag, ushort chroma_weight_l1_flag)
@@ -4202,7 +4202,7 @@ namespace OpenTK.Graphics.Vulkan
                 get => (uint)((_bitfield0 >> 1) & 0x1u);
                 set => _bitfield0 = (_bitfield0 & ~(0x1u << 1)) | ((((uint)value) & 0x1u) << 1);
             }
-            /// <summary>A picture that is marked as "used for long-term reference", derived binary value from clause 8.3.2 Decoding process for reference picture set</summary>
+            /// <summary>A picture that is marked as &quot;used for long-term reference&quot;, derived binary value from clause 8.3.2 Decoding process for reference picture set</summary>
             public uint used_for_long_term_reference
             {
                 get => (uint)((_bitfield0 >> 2) & 0x1u);
@@ -4304,13 +4304,13 @@ namespace OpenTK.Graphics.Vulkan
         public unsafe struct StdVideoEncodeH265ReferenceInfoFlags
         {
             private uint _bitfield0;
-            /// <summary>A picture that is marked as "used for long-term reference", derived binary value from clause 8.3.2 Decoding process for reference picture set</summary>
+            /// <summary>A picture that is marked as &quot;used for long-term reference&quot;, derived binary value from clause 8.3.2 Decoding process for reference picture set</summary>
             public uint used_for_long_term_reference
             {
                 get => (uint)((_bitfield0 >> 0) & 0x1u);
                 set => _bitfield0 = (_bitfield0 & ~(0x1u << 0)) | ((((uint)value) & 0x1u) << 0);
             }
-            /// <summary>A picture that is marked as "unused for reference", derived binary value from clause 8.3.2 Decoding process for reference picture set</summary>
+            /// <summary>A picture that is marked as &quot;unused for reference&quot;, derived binary value from clause 8.3.2 Decoding process for reference picture set</summary>
             public uint unused_for_reference
             {
                 get => (uint)((_bitfield0 >> 1) & 0x1u);

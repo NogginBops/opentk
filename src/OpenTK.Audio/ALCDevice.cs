@@ -26,7 +26,7 @@ namespace OpenTK.Audio.OpenAL
             Handle = handle;
         }
 
-        public override bool Equals(object obj)
+        public override bool Equals(object? obj)
         {
             return obj is ALCDevice device && Equals(device);
         }

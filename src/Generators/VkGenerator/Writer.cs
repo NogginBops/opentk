@@ -1072,7 +1072,7 @@ namespace VkGenerator
                         }
                         if (string.IsNullOrEmpty(member.Comment) == false)
                         {
-                            writer.Write(member.Comment);
+                            writer.Write(NameMangler.XmlEscapeCharacters(member.Comment));
                         }
                         writer.WriteLine("</summary>");
                     }

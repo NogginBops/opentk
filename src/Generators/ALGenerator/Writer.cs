@@ -376,7 +376,7 @@ namespace ALGenerator
 
             writer.WriteLine($"/// <inheritdoc cref=\"{nativeFunctionName}({parameterTypes})\"/>");
 
-            string parameterString = string.Join(", ", overload.InputParameters.Select(p => $"{p.StrongType.ToCSString()} {p.Name}"));
+            string parameterString = string.Join(", ", overload.InputParameters.Select(p => $"{p.StrongType!.ToCSString()} {p.Name}"));
 
             string genericTypes = overload.GenericTypes.Length <= 0 ? "" : $"<{string.Join(", ", overload.GenericTypes)}>";
             writer.WriteLine($"public static unsafe {overload.ReturnType.ToCSString()} {overload.OverloadName}{genericTypes}({parameterString})");
@@ -585,6 +585,9 @@ namespace ALGenerator
                 Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) ?? throw new NullReferenceException(),
                 "..", "..", "..", "..", "..", AudioNamespace);
 
+
+            //
+
             string directoryPath = Path.Combine(outputProjectPath, "OpenAL");
 
             using StreamWriter stream = File.CreateText(Path.Combine(directoryPath, $"EFXPresets.cs"));
@@ -599,6 +602,8 @@ namespace ALGenerator
             writer.WriteLine($"namespace {AudioNamespace}.OpenAL");
             using (writer.CsScope())
             {
+                writer.WriteLineNoTabs("#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member");
+
                 // FIXME: Better class name?
                 writer.WriteLine($"public static unsafe partial class ReverbPresets");
                 using (writer.CsScope())
@@ -637,6 +642,8 @@ namespace ALGenerator
                         writer.WriteLine();
                     }
                 }
+
+                writer.WriteLineNoTabs("#pragma warning restore CS1591 // Missing XML comment for publicly visible type or member");
             }
         }
     }

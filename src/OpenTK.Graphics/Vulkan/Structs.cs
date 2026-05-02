@@ -9592,9 +9592,9 @@ namespace OpenTK.Graphics.Vulkan
         public void* pNext;
         /// <summary>Rectangle within the presentable image to read pixel data from when presenting to the display.</summary>
         public VkRect2D srcRect;
-        /// <summary>Rectangle within the current display mode's visible region to display srcRectangle in.</summary>
+        /// <summary>Rectangle within the current display mode&apos;s visible region to display srcRectangle in.</summary>
         public VkRect2D dstRect;
-        /// <summary>For smart displays, use buffered mode.  If the display properties member "persistentMode" is VK_FALSE, this member must always be VK_FALSE.</summary>
+        /// <summary>For smart displays, use buffered mode.  If the display properties member &quot;persistentMode&quot; is VK_FALSE, this member must always be VK_FALSE.</summary>
         public int persistent;
         public VkDisplayPresentInfoKHR() { }
         public VkDisplayPresentInfoKHR(VkStructureType sType, void* pNext, VkRect2D srcRect, VkRect2D dstRect, int persistent)
@@ -9638,9 +9638,9 @@ namespace OpenTK.Graphics.Vulkan
         public VkExtent2D physicalResolution;
         /// <summary>one or more bits from VkSurfaceTransformFlagsKHR</summary>
         public VkSurfaceTransformFlagBitsKHR supportedTransforms;
-        /// <summary>VK_TRUE if the overlay plane's z-order can be changed on this display.</summary>
+        /// <summary>VK_TRUE if the overlay plane&apos;s z-order can be changed on this display.</summary>
         public int planeReorderPossible;
-        /// <summary>VK_TRUE if this is a "smart" display that supports self-refresh/internal buffering.</summary>
+        /// <summary>VK_TRUE if this is a &quot;smart&quot; display that supports self-refresh/internal buffering.</summary>
         public int persistentContent;
         public VkDisplayPropertiesKHR() { }
         public VkDisplayPropertiesKHR(VkDisplayKHR display, byte* displayName, VkExtent2D physicalDimensions, VkExtent2D physicalResolution, VkSurfaceTransformFlagBitsKHR supportedTransforms, int planeReorderPossible, int persistentContent)
@@ -11978,13 +11978,13 @@ namespace OpenTK.Graphics.Vulkan
         public VkStructureType sType = VkStructureType.StructureTypeHdrMetadataExt;
         /// <summary></summary>
         public void* pNext;
-        /// <summary>Display primary's Red</summary>
+        /// <summary>Display primary&apos;s Red</summary>
         public VkXYColorEXT displayPrimaryRed;
-        /// <summary>Display primary's Green</summary>
+        /// <summary>Display primary&apos;s Green</summary>
         public VkXYColorEXT displayPrimaryGreen;
-        /// <summary>Display primary's Blue</summary>
+        /// <summary>Display primary&apos;s Blue</summary>
         public VkXYColorEXT displayPrimaryBlue;
-        /// <summary>Display primary's Blue</summary>
+        /// <summary>Display primary&apos;s Blue</summary>
         public VkXYColorEXT whitePoint;
         /// <summary>Display maximum luminance</summary>
         public float maxLuminance;
@@ -14631,7 +14631,7 @@ namespace OpenTK.Graphics.Vulkan
         public layerNameInlineArray1 layerName;
         /// <summary>version of the layer specification implemented</summary>
         public uint specVersion;
-        /// <summary>build or release version of the layer's library</summary>
+        /// <summary>build or release version of the layer&apos;s library</summary>
         public uint implementationVersion;
         [InlineArray(256)]
         public struct descriptionInlineArray1
@@ -31720,7 +31720,7 @@ namespace OpenTK.Graphics.Vulkan
     {
         /// <summary>Number of rectangles in pRectangles</summary>
         public uint rectangleCount;
-        /// <summary>Array of rectangles that have changed in a swapchain's image(s)</summary>
+        /// <summary>Array of rectangles that have changed in a swapchain&apos;s image(s)</summary>
         public VkRectLayerKHR* pRectangles;
         public VkPresentRegionKHR() { }
         public VkPresentRegionKHR(uint rectangleCount, VkRectLayerKHR* pRectangles)
@@ -31817,7 +31817,7 @@ namespace OpenTK.Graphics.Vulkan
         public ulong timeDomainId;
         /// <summary>Present stages to collect timing information for</summary>
         public VkPresentStageFlagBitsEXT presentStageQueries;
-        /// <summary>Target stage-local time domain's stage</summary>
+        /// <summary>Target stage-local time domain&apos;s stage</summary>
         public VkPresentStageFlagBitsEXT targetTimeDomainPresentStage;
         public VkPresentTimingInfoEXT() { }
         public VkPresentTimingInfoEXT(VkStructureType sType, void* pNext, VkPresentTimingInfoFlagBitsEXT flags, ulong targetTime, ulong timeDomainId, VkPresentStageFlagBitsEXT presentStageQueries, VkPresentStageFlagBitsEXT targetTimeDomainPresentStage)
@@ -32861,7 +32861,7 @@ namespace OpenTK.Graphics.Vulkan
         public VkOffset2D offset;
         /// <summary>Dimensions of a rectangle that has not changed, in pixels of a presentation images</summary>
         public VkExtent2D extent;
-        /// <summary>Layer of a swapchain's image(s), for stereoscopic-3D images</summary>
+        /// <summary>Layer of a swapchain&apos;s image(s), for stereoscopic-3D images</summary>
         public uint layer;
         public VkRectLayerKHR() { }
         public VkRectLayerKHR(VkOffset2D offset, VkExtent2D extent, uint layer)
@@ -36512,7 +36512,7 @@ namespace OpenTK.Graphics.Vulkan
         public uint maxImageArrayLayers;
         /// <summary>1 or more bits representing the transforms supported</summary>
         public VkSurfaceTransformFlagBitsKHR supportedTransforms;
-        /// <summary>The surface's current transform relative to the device's natural orientation</summary>
+        /// <summary>The surface&apos;s current transform relative to the device&apos;s natural orientation</summary>
         public VkSurfaceTransformFlagBitsKHR currentTransform;
         /// <summary>1 or more bits representing the alpha compositing modes supported</summary>
         public VkCompositeAlphaFlagBitsKHR supportedCompositeAlpha;
@@ -36592,7 +36592,7 @@ namespace OpenTK.Graphics.Vulkan
         public uint maxImageArrayLayers;
         /// <summary>1 or more bits representing the transforms supported</summary>
         public VkSurfaceTransformFlagBitsKHR supportedTransforms;
-        /// <summary>The surface's current transform relative to the device's natural orientation</summary>
+        /// <summary>The surface&apos;s current transform relative to the device&apos;s natural orientation</summary>
         public VkSurfaceTransformFlagBitsKHR currentTransform;
         /// <summary>1 or more bits representing the alpha compositing modes supported</summary>
         public VkCompositeAlphaFlagBitsKHR supportedCompositeAlpha;
@@ -36965,7 +36965,7 @@ namespace OpenTK.Graphics.Vulkan
         public void* pNext;
         /// <summary></summary>
         public VkSwapchainCreateFlagBitsKHR flags;
-        /// <summary>[extern sync: always] The swapchain's target surface</summary>
+        /// <summary>[extern sync: always] The swapchain&apos;s target surface</summary>
         public VkSurfaceKHR surface;
         /// <summary>Minimum number of presentation images the application needs</summary>
         public uint minImageCount;
@@ -36985,7 +36985,7 @@ namespace OpenTK.Graphics.Vulkan
         public uint queueFamilyIndexCount;
         /// <summary>Array of queue family indices having access to the images in case of concurrent sharing mode</summary>
         public uint* pQueueFamilyIndices;
-        /// <summary>The transform, relative to the device's natural orientation, applied to the image content prior to presentation</summary>
+        /// <summary>The transform, relative to the device&apos;s natural orientation, applied to the image content prior to presentation</summary>
         public VkSurfaceTransformFlagBitsKHR preTransform;
         /// <summary>The alpha blending mode used when compositing this surface with other surfaces in the window system</summary>
         public VkCompositeAlphaFlagBitsKHR compositeAlpha;
