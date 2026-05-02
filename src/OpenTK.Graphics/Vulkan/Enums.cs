@@ -86,8 +86,8 @@ namespace OpenTK.Graphics.Vulkan
         AccelerationStructureTypeTopLevelNv = 0,
     }
     /// <summary><b>[requires: v1.0]</b> 
-    /// <br/><b>[deprecated by: v1.3]</b> see: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#deprecation-sync2" />
-    /// <br/><b>[deprecated by: VK_KHR_synchronization2]</b> see: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#deprecation-sync2" />
+    /// <br/><b>[deprecated by: v1.3]</b> See: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#deprecation-sync2" /><br/>
+    /// <br/><b>[deprecated by: VK_KHR_synchronization2]</b> See: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#deprecation-sync2" /><br/>
     /// </summary>
     /// <remarks><see href="https://registry.khronos.org/vulkan/specs/latest/man/html/VkAccessFlagBits.html" /></remarks>
     [Flags]
@@ -401,8 +401,8 @@ namespace OpenTK.Graphics.Vulkan
         AntiLagStagePresentAmd = 1,
     }
     /// <summary><b>[requires: v1.0]</b> 
-    /// <br/><b>[deprecated by: v1.2]</b> see: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#legacy-renderpass2" />
-    /// <br/><b>[deprecated by: VK_KHR_create_renderpass2]</b> see: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#legacy-renderpass2" />
+    /// <br/><b>[deprecated by: v1.2]</b> See: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#legacy-renderpass2" /><br/>
+    /// <br/><b>[deprecated by: VK_KHR_create_renderpass2]</b> See: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#legacy-renderpass2" /><br/>
     /// </summary>
     /// <remarks><see href="https://registry.khronos.org/vulkan/specs/latest/man/html/VkAttachmentDescriptionFlagBits.html" /></remarks>
     [Flags]
@@ -665,8 +665,8 @@ namespace OpenTK.Graphics.Vulkan
         BufferCreateVideoProfileIndependentBitKhr = 64,
     }
     /// <summary><b>[requires: v1.0]</b> 
-    /// <br/><b>[deprecated by: v1.4]</b> see: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#legacy-flagbits" />
-    /// <br/><b>[deprecated by: VK_KHR_maintenance5]</b> see: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#legacy-flagbits" />
+    /// <br/><b>[deprecated by: v1.4]</b> See: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#legacy-flagbits" /><br/>
+    /// <br/><b>[deprecated by: VK_KHR_maintenance5]</b> See: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#legacy-flagbits" /><br/>
     /// </summary>
     /// <remarks><see href="https://registry.khronos.org/vulkan/specs/latest/man/html/VkBufferUsageFlagBits.html" /></remarks>
     [Flags]
@@ -1766,7 +1766,7 @@ namespace OpenTK.Graphics.Vulkan
         DepthClampModeViewportRangeExt = 0,
     }
     /// <summary><b>[requires: v1.2]</b> 
-    /// <br/><b>[deprecated by: VK_EXT_descriptor_heap]</b> see: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#legacy-descriptor-sets" />
+    /// <br/><b>[deprecated by: VK_EXT_descriptor_heap]</b> See: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#legacy-descriptor-sets" /><br/>
     /// </summary>
     /// <remarks><see href="https://registry.khronos.org/vulkan/specs/latest/man/html/VkDescriptorBindingFlagBits.html" /></remarks>
     [Flags]
@@ -1823,7 +1823,7 @@ namespace OpenTK.Graphics.Vulkan
         DescriptorMappingSourceShaderRecordDataExt = 9,
     }
     /// <summary><b>[requires: v1.0]</b> 
-    /// <br/><b>[deprecated by: VK_EXT_descriptor_heap]</b> see: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#legacy-descriptor-sets" />
+    /// <br/><b>[deprecated by: VK_EXT_descriptor_heap]</b> See: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#legacy-descriptor-sets" /><br/>
     /// </summary>
     /// <remarks><see href="https://registry.khronos.org/vulkan/specs/latest/man/html/VkDescriptorPoolCreateFlagBits.html" /></remarks>
     [Flags]
@@ -1845,7 +1845,7 @@ namespace OpenTK.Graphics.Vulkan
         DescriptorPoolCreateUpdateAfterBindBitExt = 2,
     }
     /// <summary><b>[requires: v1.0]</b> 
-    /// <br/><b>[deprecated by: VK_EXT_descriptor_heap]</b> see: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#legacy-descriptor-sets" />
+    /// <br/><b>[deprecated by: VK_EXT_descriptor_heap]</b> See: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#legacy-descriptor-sets" /><br/>
     /// Used by <see cref="Vk.ResetDescriptorPool"/></summary>
     /// <remarks><see href="https://registry.khronos.org/vulkan/specs/latest/man/html/VkDescriptorPoolResetFlags.html" /></remarks>
     [Flags]
@@ -1853,7 +1853,7 @@ namespace OpenTK.Graphics.Vulkan
     {
     }
     /// <summary><b>[requires: v1.0]</b> 
-    /// <br/><b>[deprecated by: VK_EXT_descriptor_heap]</b> see: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#legacy-descriptor-sets" />
+    /// <br/><b>[deprecated by: VK_EXT_descriptor_heap]</b> See: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#legacy-descriptor-sets" /><br/>
     /// </summary>
     /// <remarks><see href="https://registry.khronos.org/vulkan/specs/latest/man/html/VkDescriptorSetLayoutCreateFlagBits.html" /></remarks>
     [Flags]
@@ -3513,8 +3513,8 @@ namespace OpenTK.Graphics.Vulkan
         FormatX8D24UnormPack32 = 125,
     }
     /// <summary><b>[requires: v1.0]</b> 
-    /// <br/><b>[deprecated by: v1.3]</b> see: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#legacy-flagbits" />
-    /// <br/><b>[deprecated by: VK_KHR_format_feature_flags2]</b> see: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#legacy-flagbits" />
+    /// <br/><b>[deprecated by: v1.3]</b> See: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#legacy-flagbits" /><br/>
+    /// <br/><b>[deprecated by: VK_KHR_format_feature_flags2]</b> See: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#legacy-flagbits" /><br/>
     /// </summary>
     /// <remarks><see href="https://registry.khronos.org/vulkan/specs/latest/man/html/VkFormatFeatureFlagBits.html" /></remarks>
     [Flags]
@@ -3849,8 +3849,8 @@ namespace OpenTK.Graphics.Vulkan
         FrameBoundaryFrameEndBitExt = 1,
     }
     /// <summary><b>[requires: v1.0]</b> 
-    /// <br/><b>[deprecated by: v1.4]</b> see: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#legacy-dynamicrendering" />
-    /// <br/><b>[deprecated by: VK_KHR_dynamic_rendering_local_read]</b> see: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#legacy-dynamicrendering" />
+    /// <br/><b>[deprecated by: v1.4]</b> See: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#legacy-dynamicrendering" /><br/>
+    /// <br/><b>[deprecated by: VK_KHR_dynamic_rendering_local_read]</b> See: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#legacy-dynamicrendering" /><br/>
     /// </summary>
     /// <remarks><see href="https://registry.khronos.org/vulkan/specs/latest/man/html/VkFramebufferCreateFlagBits.html" /></remarks>
     [Flags]
@@ -5448,8 +5448,8 @@ namespace OpenTK.Graphics.Vulkan
     {
     }
     /// <summary><b>[requires: v1.0]</b> 
-    /// <br/><b>[deprecated by: v1.4]</b> see: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#legacy-flagbits" />
-    /// <br/><b>[deprecated by: VK_KHR_maintenance5]</b> see: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#legacy-flagbits" />
+    /// <br/><b>[deprecated by: v1.4]</b> See: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#legacy-flagbits" /><br/>
+    /// <br/><b>[deprecated by: VK_KHR_maintenance5]</b> See: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#legacy-flagbits" /><br/>
     /// </summary>
     /// <remarks><see href="https://registry.khronos.org/vulkan/specs/latest/man/html/VkPipelineCreateFlagBits.html" /></remarks>
     [Flags]
@@ -5722,7 +5722,7 @@ namespace OpenTK.Graphics.Vulkan
     {
     }
     /// <summary><b>[requires: v1.0 | VK_EXT_graphics_pipeline_library]</b> 
-    /// <br/><b>[deprecated by: VK_EXT_descriptor_heap]</b> see: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#legacy-descriptor-sets" />
+    /// <br/><b>[deprecated by: VK_EXT_descriptor_heap]</b> See: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#legacy-descriptor-sets" /><br/>
     /// </summary>
     /// <remarks><see href="https://registry.khronos.org/vulkan/specs/latest/man/html/VkPipelineLayoutCreateFlagBits.html" /></remarks>
     [Flags]
@@ -5827,8 +5827,8 @@ namespace OpenTK.Graphics.Vulkan
         PipelineShaderStageCreateRequireFullSubgroupsBitExt = 2,
     }
     /// <summary><b>[requires: v1.0]</b> 
-    /// <br/><b>[deprecated by: v1.3]</b> see: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#deprecation-sync2" />
-    /// <br/><b>[deprecated by: VK_KHR_synchronization2]</b> see: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#deprecation-sync2" />
+    /// <br/><b>[deprecated by: v1.3]</b> See: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#deprecation-sync2" /><br/>
+    /// <br/><b>[deprecated by: VK_KHR_synchronization2]</b> See: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#deprecation-sync2" /><br/>
     /// Used by <see cref="Vk.CmdPipelineBarrier"/>, <see cref="Vk.CmdPipelineBarrier"/>, <see cref="Vk.CmdResetEvent"/>, ...</summary>
     /// <remarks><see href="https://registry.khronos.org/vulkan/specs/latest/man/html/VkPipelineStageFlagBits.html" /></remarks>
     [Flags]
@@ -6564,8 +6564,8 @@ namespace OpenTK.Graphics.Vulkan
     {
     }
     /// <summary><b>[requires: v1.0]</b> 
-    /// <br/><b>[deprecated by: v1.2]</b> see: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#legacy-renderpass2" />
-    /// <br/><b>[deprecated by: VK_KHR_create_renderpass2]</b> see: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#legacy-renderpass2" />
+    /// <br/><b>[deprecated by: v1.2]</b> See: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#legacy-renderpass2" /><br/>
+    /// <br/><b>[deprecated by: VK_KHR_create_renderpass2]</b> See: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#legacy-renderpass2" /><br/>
     /// </summary>
     /// <remarks><see href="https://registry.khronos.org/vulkan/specs/latest/man/html/VkRenderPassCreateFlagBits.html" /></remarks>
     [Flags]
@@ -10295,8 +10295,8 @@ namespace OpenTK.Graphics.Vulkan
     {
     }
     /// <summary><b>[requires: v1.0]</b> 
-    /// <br/><b>[deprecated by: v1.4]</b> see: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#legacy-dynamicrendering" />
-    /// <br/><b>[deprecated by: VK_KHR_dynamic_rendering_local_read]</b> see: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#legacy-dynamicrendering" />
+    /// <br/><b>[deprecated by: v1.4]</b> See: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#legacy-dynamicrendering" /><br/>
+    /// <br/><b>[deprecated by: VK_KHR_dynamic_rendering_local_read]</b> See: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#legacy-dynamicrendering" /><br/>
     /// Used by <see cref="Vk.CmdBeginRenderPass"/>, <see cref="Vk.CmdNextSubpass"/></summary>
     /// <remarks><see href="https://registry.khronos.org/vulkan/specs/latest/man/html/VkSubpassContents.html" /></remarks>
     public enum VkSubpassContents : int
@@ -10311,8 +10311,8 @@ namespace OpenTK.Graphics.Vulkan
         SubpassContentsSecondaryCommandBuffers = 1,
     }
     /// <summary><b>[requires: v1.0]</b> 
-    /// <br/><b>[deprecated by: v1.2]</b> see: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#legacy-renderpass2" />
-    /// <br/><b>[deprecated by: VK_KHR_create_renderpass2]</b> see: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#legacy-renderpass2" />
+    /// <br/><b>[deprecated by: v1.2]</b> See: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#legacy-renderpass2" /><br/>
+    /// <br/><b>[deprecated by: VK_KHR_create_renderpass2]</b> See: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#legacy-renderpass2" /><br/>
     /// </summary>
     /// <remarks><see href="https://registry.khronos.org/vulkan/specs/latest/man/html/VkSubpassDescriptionFlagBits.html" /></remarks>
     [Flags]

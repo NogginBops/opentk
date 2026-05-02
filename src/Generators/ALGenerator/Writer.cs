@@ -450,9 +450,7 @@ namespace ALGenerator
         private static void WriteDocumentation(IndentedTextWriter writer, Function function, FunctionDocumentation documentation)
         {
             writer.Write("/// <summary> ");
-            writer.Write($"<b>[requires: {string.Join(" | ", documentation.AddedIn)}]</b> ");
-            if (documentation.RemovedIn?.Count > 0)
-                writer.Write($"<b>[removed in: {string.Join(" | ", documentation.RemovedIn)}]</b> ");
+            writer.WriteVersionInfo(documentation.VersionInfo);
             writer.Write($"<b>[entry point: <c>{function.EntryPoint}</c>]</b><br/>");
             writer.WriteLine($" {documentation.Purpose} </summary>");
 
@@ -470,7 +468,7 @@ namespace ALGenerator
 
             if (documentation.RefPagesLinks.Count > 0)
             {
-                writer.WriteLine($"/// <remarks>{string.Join("<br/>", documentation.RefPagesLinks.Select(url => url.DisplayString != null ? $"<see href=\"{url.Url}\">{url.DisplayString}</see>" : $"<see href=\"{url.Url}\"/>"))}</remarks>");
+                writer.WriteLine($"/// <remarks>{string.Join("<br/>", documentation.RefPagesLinks.Select(url => url.ToSeeXmlTag()))}</remarks>");
             }
         }
 
@@ -478,7 +476,7 @@ namespace ALGenerator
         {
             if (documentation != null)
             {
-                if (documentation.PropertyInfo != null || documentation.Comment != null || documentation.Comment2 != null)
+                if (documentation.PropertyInfo != null || documentation.Comment != null)
                 {
                     writer.WriteLine($"/// <summary>");
                     if (documentation.PropertyInfo != null)
@@ -494,10 +492,7 @@ namespace ALGenerator
                         writer.WriteLine($"</b><br/>");
                     }
 
-                    if (documentation.Comment != null)
-                        writer.WriteLine($"/// {documentation.Comment}");
-
-                    foreach (var line in documentation.Comment2?.Split("\n").Select(s => s.TrimEnd()) ?? [])
+                    foreach (var line in documentation.Comment?.Split("\n").Select(s => s.TrimEnd()) ?? [])
                     {
                         writer.WriteLine($"/// {line}");
                     }

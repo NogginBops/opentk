@@ -99,7 +99,7 @@ namespace OpenTK.Graphics.OpenGLES2
         /// <summary> <b>[requires: v3.0 | GL_MESA_sampler_objects]</b> <b>[entry point: <c>glBindSampler</c>]</b><br/> Bind a named sampler to a texturing target. </summary>
         /// <param name="unit"> Specifies the index of the texture unit to which the sampler is bound. </param>
         /// <param name="sampler"> Specifies the name of a sampler. </param>
-        /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/es3.0/html/glBindSampler.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/MESA/MESA_sampler_objects.txt"/></remarks>
+        /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/es3.0/html/glBindSampler.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/MESA/MESA_sampler_objects.txt">MESA_sampler_objects.txt</see></remarks>
         public static void BindSampler(uint unit, int sampler) => GLPointers.glBindSampler_Lazy(unit, sampler);
         
         /// <summary> <b>[requires: v2.0]</b> <b>[entry point: <c>glBindTexture</c>]</b><br/> Bind a named texture to a texturing target. </summary>
@@ -451,7 +451,7 @@ namespace OpenTK.Graphics.OpenGLES2
         /// <summary> <b>[requires: v3.2 | GL_KHR_debug]</b> <b>[entry point: <c>glDebugMessageCallback</c>]</b><br/> Specify a callback to receive debugging messages from the GL. </summary>
         /// <param name="callback"> The address of a callback function that will be called when a debug message is generated. </param>
         /// <param name="userParam"> A user supplied pointer that will be passed on each invocation of callback. </param>
-        /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/es3.0/html/glDebugMessageCallback.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/KHR/KHR_debug.txt"/></remarks>
+        /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/es3.0/html/glDebugMessageCallback.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/KHR/KHR_debug.txt">KHR_debug.txt</see></remarks>
         public static void DebugMessageCallback(IntPtr callback, void* userParam) => GLPointers.glDebugMessageCallback_Lazy(callback, userParam);
         
         /// <summary> <b>[requires: v3.2 | GL_KHR_debug]</b> <b>[entry point: <c>glDebugMessageControl</c>]</b><br/> Control the reporting of debug messages in a debug context. </summary>
@@ -461,7 +461,7 @@ namespace OpenTK.Graphics.OpenGLES2
         /// <param name="count"> The length of the array ids. </param>
         /// <param name="ids"> The address of an array of unsigned integers contianing the ids of the messages to enable or disable. </param>
         /// <param name="enabled"> A Boolean flag determining whether the selected messages should be enabled or disabled. </param>
-        /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/es3.0/html/glDebugMessageControl.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/KHR/KHR_debug.txt"/></remarks>
+        /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/es3.0/html/glDebugMessageControl.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/KHR/KHR_debug.txt">KHR_debug.txt</see></remarks>
         public static void DebugMessageControl(DebugSource source, DebugType type, DebugSeverity severity, int count, uint* ids, bool enabled) => GLPointers.glDebugMessageControl_Lazy((uint)source, (uint)type, (uint)severity, count, ids, (byte)(enabled ? 1 : 0));
         
         /// <summary> <b>[requires: v3.2 | GL_KHR_debug]</b> <b>[entry point: <c>glDebugMessageInsert</c>]</b><br/> Inject an application-supplied message into the debug message queue. </summary>
@@ -471,7 +471,7 @@ namespace OpenTK.Graphics.OpenGLES2
         /// <param name="severity"> The severity of the debug messages to insert. </param>
         /// <param name="length"> The length string contained in the character array whose address is given by message. </param>
         /// <param name="buf"> The address of a character array containing the message to insert. </param>
-        /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/es3.0/html/glDebugMessageInsert.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/KHR/KHR_debug.txt"/></remarks>
+        /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/es3.0/html/glDebugMessageInsert.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/KHR/KHR_debug.txt">KHR_debug.txt</see></remarks>
         public static void DebugMessageInsert(DebugSource source, DebugType type, uint id, DebugSeverity severity, int length, byte* buf) => GLPointers.glDebugMessageInsert_Lazy((uint)source, (uint)type, id, (uint)severity, length, buf);
         
         /// <summary> <b>[requires: v2.0]</b> <b>[entry point: <c>glDeleteBuffers</c>]</b><br/> Delete named buffer objects. </summary>
@@ -512,7 +512,7 @@ namespace OpenTK.Graphics.OpenGLES2
         /// <summary> <b>[requires: v3.0 | GL_MESA_sampler_objects]</b> <b>[entry point: <c>glDeleteSamplers</c>]</b><br/> Delete named sampler objects. </summary>
         /// <param name="count"> Specifies the number of sampler objects to be deleted. </param>
         /// <param name="samplers"> Specifies an array of sampler objects to be deleted. </param>
-        /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/es3.0/html/glDeleteSamplers.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/MESA/MESA_sampler_objects.txt"/></remarks>
+        /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/es3.0/html/glDeleteSamplers.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/MESA/MESA_sampler_objects.txt">MESA_sampler_objects.txt</see></remarks>
         public static void DeleteSamplers(int count, int* samplers) => GLPointers.glDeleteSamplers_Lazy(count, samplers);
         
         /// <summary> <b>[requires: v2.0]</b> <b>[entry point: <c>glDeleteShader</c>]</b><br/> Deletes a shader object. </summary>
@@ -814,7 +814,7 @@ namespace OpenTK.Graphics.OpenGLES2
         /// <summary> <b>[requires: v3.0 | GL_MESA_sampler_objects]</b> <b>[entry point: <c>glGenSamplers</c>]</b><br/> Generate sampler object names. </summary>
         /// <param name="count"> Specifies the number of sampler object names to generate. </param>
         /// <param name="samplers"> Specifies an array in which the generated sampler object names are stored. </param>
-        /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/es3.0/html/glGenSamplers.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/MESA/MESA_sampler_objects.txt"/></remarks>
+        /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/es3.0/html/glGenSamplers.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/MESA/MESA_sampler_objects.txt">MESA_sampler_objects.txt</see></remarks>
         public static void GenSamplers(int count, int* samplers) => GLPointers.glGenSamplers_Lazy(count, samplers);
         
         /// <summary> <b>[requires: v2.0]</b> <b>[entry point: <c>glGenTextures</c>]</b><br/> Generate texture names. </summary>
@@ -940,7 +940,7 @@ namespace OpenTK.Graphics.OpenGLES2
         /// <param name="severities"> The address of an array of variables to receive the severites of the retrieved messages. </param>
         /// <param name="lengths"> The address of an array of variables to receive the lengths of the received messages. </param>
         /// <param name="messageLog"> The address of an array of characters that will receive the messages. </param>
-        /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/es3.0/html/glGetDebugMessageLog.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/KHR/KHR_debug.txt"/></remarks>
+        /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/es3.0/html/glGetDebugMessageLog.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/KHR/KHR_debug.txt">KHR_debug.txt</see></remarks>
         public static uint GetDebugMessageLog(uint count, int bufSize, DebugSource* sources, DebugType* types, uint* ids, DebugSeverity* severities, int* lengths, byte* messageLog) => GLPointers.glGetDebugMessageLog_Lazy(count, bufSize, (uint*)sources, (uint*)types, ids, (uint*)severities, lengths, messageLog);
         
         /// <summary> <b>[requires: v2.0]</b> <b>[entry point: <c>glGetError</c>]</b><br/> Return error information. </summary>
@@ -975,7 +975,7 @@ namespace OpenTK.Graphics.OpenGLES2
         public static void GetFramebufferParameteriv(FramebufferTarget target, FramebufferAttachmentParameterName pname, int* @params) => GLPointers.glGetFramebufferParameteriv_Lazy((uint)target, (uint)pname, @params);
         
         /// <summary> <b>[requires: v3.2 | GL_KHR_robustness]</b> <b>[entry point: <c>glGetGraphicsResetStatus</c>]</b><br/> Check if the rendering context has not been lost due to software or hardware issues. </summary>
-        /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/es3.0/html/glGetGraphicsResetStatus.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/KHR/KHR_robustness.txt"/></remarks>
+        /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/es3.0/html/glGetGraphicsResetStatus.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/KHR/KHR_robustness.txt">KHR_robustness.txt</see></remarks>
         public static GraphicsResetStatus GetGraphicsResetStatus() => (GraphicsResetStatus) GLPointers.glGetGraphicsResetStatus_Lazy();
         
         /// <summary> <b>[requires: v3.0]</b> <b>[entry point: <c>glGetInteger64i_v</c>]</b><br/> Return the value or values of a selected parameter. </summary>
@@ -1025,7 +1025,7 @@ namespace OpenTK.Graphics.OpenGLES2
         /// <param name="location">Specifies the location of the uniform variable to be queried.</param>
         /// <param name="bufSize">Specifies the size of the buffer params. </param>
         /// <param name="params">Returns the value of the specified uniform variable.</param>
-        /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/es3.0/html/glGetUniform.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/KHR/KHR_robustness.txt"/></remarks>
+        /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/es3.0/html/glGetUniform.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/KHR/KHR_robustness.txt">KHR_robustness.txt</see></remarks>
         public static void GetnUniformfv(int program, int location, int bufSize, float* @params) => GLPointers.glGetnUniformfv_Lazy(program, location, bufSize, @params);
         
         /// <summary> <b>[requires: v3.2 | GL_KHR_robustness]</b> <b>[entry point: <c>glGetnUniformiv</c>]</b><br/> Returns the value of a uniform variable. </summary>
@@ -1033,7 +1033,7 @@ namespace OpenTK.Graphics.OpenGLES2
         /// <param name="location">Specifies the location of the uniform variable to be queried.</param>
         /// <param name="bufSize">Specifies the size of the buffer params. </param>
         /// <param name="params">Returns the value of the specified uniform variable.</param>
-        /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/es3.0/html/glGetUniform.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/KHR/KHR_robustness.txt"/></remarks>
+        /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/es3.0/html/glGetUniform.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/KHR/KHR_robustness.txt">KHR_robustness.txt</see></remarks>
         public static void GetnUniformiv(int program, int location, int bufSize, int* @params) => GLPointers.glGetnUniformiv_Lazy(program, location, bufSize, @params);
         
         /// <summary> <b>[requires: v3.2 | GL_KHR_robustness]</b> <b>[entry point: <c>glGetnUniformuiv</c>]</b><br/> Returns the value of a uniform variable. </summary>
@@ -1041,7 +1041,7 @@ namespace OpenTK.Graphics.OpenGLES2
         /// <param name="location">Specifies the location of the uniform variable to be queried.</param>
         /// <param name="bufSize">Specifies the size of the buffer params. </param>
         /// <param name="params">Returns the value of the specified uniform variable.</param>
-        /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/es3.0/html/glGetUniform.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/KHR/KHR_robustness.txt"/></remarks>
+        /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/es3.0/html/glGetUniform.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/KHR/KHR_robustness.txt">KHR_robustness.txt</see></remarks>
         public static void GetnUniformuiv(int program, int location, int bufSize, uint* @params) => GLPointers.glGetnUniformuiv_Lazy(program, location, bufSize, @params);
         
         /// <summary> <b>[requires: v3.2 | GL_KHR_debug]</b> <b>[entry point: <c>glGetObjectLabel</c>]</b><br/> Retrieve the label of a named object identified within a namespace. </summary>
@@ -1050,7 +1050,7 @@ namespace OpenTK.Graphics.OpenGLES2
         /// <param name="bufSize">!!missing documentation!!</param>
         /// <param name="length"> The address of a variable to receive the length of the object label. </param>
         /// <param name="label"> The address of a string that will receive the object label. </param>
-        /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/es3.0/html/glGetObjectLabel.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/KHR/KHR_debug.txt"/></remarks>
+        /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/es3.0/html/glGetObjectLabel.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/KHR/KHR_debug.txt">KHR_debug.txt</see></remarks>
         public static void GetObjectLabel(ObjectIdentifier identifier, uint name, int bufSize, int* length, byte* label) => GLPointers.glGetObjectLabel_Lazy((uint)identifier, name, bufSize, length, label);
         
         /// <summary> <b>[requires: v3.2 | GL_KHR_debug]</b> <b>[entry point: <c>glGetObjectPtrLabel</c>]</b><br/> Retrieve the label of a sync object identified by a pointer. </summary>
@@ -1058,13 +1058,13 @@ namespace OpenTK.Graphics.OpenGLES2
         /// <param name="bufSize">!!missing documentation!!</param>
         /// <param name="length"> The address of a variable to receive the length of the object label. </param>
         /// <param name="label"> The address of a string that will receive the object label. </param>
-        /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/es3.0/html/glGetObjectPtrLabel.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/KHR/KHR_debug.txt"/></remarks>
+        /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/es3.0/html/glGetObjectPtrLabel.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/KHR/KHR_debug.txt">KHR_debug.txt</see></remarks>
         public static void GetObjectPtrLabel(void* ptr, int bufSize, int* length, byte* label) => GLPointers.glGetObjectPtrLabel_Lazy(ptr, bufSize, length, label);
         
         /// <summary> <b>[requires: v3.2 | GL_KHR_debug]</b> <b>[entry point: <c>glGetPointerv</c>]</b><br/> Return the address of the specified pointer. </summary>
         /// <param name="pname"> Specifies the pointer to be returned. Must be one of GL_DEBUG_CALLBACK_FUNCTION or GL_DEBUG_CALLBACK_USER_PARAM. </param>
         /// <param name="params"> Returns the pointer value specified by pname. </param>
-        /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/es3.0/html/glGetPointerv.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/KHR/KHR_debug.txt"/></remarks>
+        /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/es3.0/html/glGetPointerv.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/KHR/KHR_debug.txt">KHR_debug.txt</see></remarks>
         public static void GetPointerv(GetPointervPName pname, void** @params) => GLPointers.glGetPointerv_Lazy((uint)pname, @params);
         
         /// <summary> <b>[requires: v3.0]</b> <b>[entry point: <c>glGetProgramBinary</c>]</b><br/> Return a binary representation of a program object&apos;s compiled and linked executable source. </summary>
@@ -1175,7 +1175,7 @@ namespace OpenTK.Graphics.OpenGLES2
         /// <param name="sampler"> Specifies name of the sampler object from which to retrieve parameters. </param>
         /// <param name="pname"> Specifies the symbolic name of a sampler parameter. GL_TEXTURE_MAG_FILTER, GL_TEXTURE_MIN_FILTER, GL_TEXTURE_MIN_LOD, GL_TEXTURE_MAX_LOD, GL_TEXTURE_WRAP_S, GL_TEXTURE_WRAP_T, GL_TEXTURE_WRAP_R, GL_TEXTURE_COMPARE_MODE, GL_TEXTURE_COMPARE_FUNC, and GL_TEXTURE_BORDER_COLOR are accepted. </param>
         /// <param name="params"> Returns the sampler parameters. </param>
-        /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/es3.0/html/glGetSamplerParameter.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/MESA/MESA_sampler_objects.txt"/></remarks>
+        /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/es3.0/html/glGetSamplerParameter.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/MESA/MESA_sampler_objects.txt">MESA_sampler_objects.txt</see></remarks>
         public static void GetSamplerParameterfv(int sampler, SamplerParameterF pname, float* @params) => GLPointers.glGetSamplerParameterfv_Lazy(sampler, (uint)pname, @params);
         
         /// <summary> <b>[requires: v3.2]</b> <b>[entry point: <c>glGetSamplerParameterIiv</c>]</b><br/> Return sampler parameter values. </summary>
@@ -1196,7 +1196,7 @@ namespace OpenTK.Graphics.OpenGLES2
         /// <param name="sampler"> Specifies name of the sampler object from which to retrieve parameters. </param>
         /// <param name="pname"> Specifies the symbolic name of a sampler parameter. GL_TEXTURE_MAG_FILTER, GL_TEXTURE_MIN_FILTER, GL_TEXTURE_MIN_LOD, GL_TEXTURE_MAX_LOD, GL_TEXTURE_WRAP_S, GL_TEXTURE_WRAP_T, GL_TEXTURE_WRAP_R, GL_TEXTURE_COMPARE_MODE, GL_TEXTURE_COMPARE_FUNC, and GL_TEXTURE_BORDER_COLOR are accepted. </param>
         /// <param name="params"> Returns the sampler parameters. </param>
-        /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/es3.0/html/glGetSamplerParameter.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/MESA/MESA_sampler_objects.txt"/></remarks>
+        /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/es3.0/html/glGetSamplerParameter.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/MESA/MESA_sampler_objects.txt">MESA_sampler_objects.txt</see></remarks>
         public static void GetSamplerParameteriv(int sampler, SamplerParameterI pname, int* @params) => GLPointers.glGetSamplerParameteriv_Lazy(sampler, (uint)pname, @params);
         
         /// <summary> <b>[requires: v2.0]</b> <b>[entry point: <c>glGetShaderInfoLog</c>]</b><br/> Returns the information log for a shader object. </summary>
@@ -1448,7 +1448,7 @@ namespace OpenTK.Graphics.OpenGLES2
         
         /// <summary> <b>[requires: v3.0 | GL_MESA_sampler_objects]</b> <b>[entry point: <c>glIsSampler</c>]</b><br/> Determine if a name corresponds to a sampler object. </summary>
         /// <param name="sampler"> Specifies a value that may be the name of a sampler object. </param>
-        /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/es3.0/html/glIsSampler.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/MESA/MESA_sampler_objects.txt"/></remarks>
+        /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/es3.0/html/glIsSampler.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/MESA/MESA_sampler_objects.txt">MESA_sampler_objects.txt</see></remarks>
         public static bool IsSampler(int sampler) => GLPointers.glIsSampler_Lazy(sampler) != 0;
         
         /// <summary> <b>[requires: v2.0]</b> <b>[entry point: <c>glIsShader</c>]</b><br/> Determines if a name corresponds to a shader object. </summary>
@@ -1514,14 +1514,14 @@ namespace OpenTK.Graphics.OpenGLES2
         /// <param name="name"> The name of the object to label. </param>
         /// <param name="length"> The length of the label to be used for the object. </param>
         /// <param name="label"> The address of a string containing the label to assign to the object. </param>
-        /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/es3.0/html/glObjectLabel.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/KHR/KHR_debug.txt"/></remarks>
+        /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/es3.0/html/glObjectLabel.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/KHR/KHR_debug.txt">KHR_debug.txt</see></remarks>
         public static void ObjectLabel(ObjectIdentifier identifier, int name, int length, byte* label) => GLPointers.glObjectLabel_Lazy((uint)identifier, name, length, label);
         
         /// <summary> <b>[requires: v3.2 | GL_KHR_debug]</b> <b>[entry point: <c>glObjectPtrLabel</c>]</b><br/> Label a sync object identified by a pointer. </summary>
         /// <param name="ptr"> A pointer identifying a sync object. </param>
         /// <param name="length"> The length of the label to be used for the object. </param>
         /// <param name="label"> The address of a string containing the label to assign to the object. </param>
-        /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/es3.0/html/glObjectPtrLabel.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/KHR/KHR_debug.txt"/></remarks>
+        /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/es3.0/html/glObjectPtrLabel.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/KHR/KHR_debug.txt">KHR_debug.txt</see></remarks>
         public static void ObjectPtrLabel(void* ptr, int length, byte* label) => GLPointers.glObjectPtrLabel_Lazy(ptr, length, label);
         
         /// <summary> <b>[requires: v3.2]</b> <b>[entry point: <c>glPatchParameteri</c>]</b><br/> Specifies the parameters for patch primitives. </summary>
@@ -1547,7 +1547,7 @@ namespace OpenTK.Graphics.OpenGLES2
         public static void PolygonOffset(float factor, float units) => GLPointers.glPolygonOffset_Lazy(factor, units);
         
         /// <summary> <b>[requires: v3.2 | GL_KHR_debug]</b> <b>[entry point: <c>glPopDebugGroup</c>]</b><br/> Pop the active debug group. </summary>
-        /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/es3.0/html/glPopDebugGroup.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/KHR/KHR_debug.txt"/></remarks>
+        /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/es3.0/html/glPopDebugGroup.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/KHR/KHR_debug.txt">KHR_debug.txt</see></remarks>
         public static void PopDebugGroup() => GLPointers.glPopDebugGroup_Lazy();
         
         /// <summary> <b>[requires: v3.2]</b> <b>[entry point: <c>glPrimitiveBoundingBox</c>]</b><br/> Set the bounding box for a primitive. </summary>
@@ -1861,7 +1861,7 @@ namespace OpenTK.Graphics.OpenGLES2
         /// <param name="id"> The identifier of the message. </param>
         /// <param name="length"> The length of the message to be sent to the debug output stream. </param>
         /// <param name="message"> The a string containing the message to be sent to the debug output stream. </param>
-        /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/es3.0/html/glPushDebugGroup.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/KHR/KHR_debug.txt"/></remarks>
+        /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/es3.0/html/glPushDebugGroup.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/KHR/KHR_debug.txt">KHR_debug.txt</see></remarks>
         public static void PushDebugGroup(DebugSource source, uint id, int length, byte* message) => GLPointers.glPushDebugGroup_Lazy((uint)source, id, length, message);
         
         /// <summary> <b>[requires: v3.0]</b> <b>[entry point: <c>glReadBuffer</c>]</b><br/> Select a color buffer source for pixels. </summary>
@@ -1878,7 +1878,7 @@ namespace OpenTK.Graphics.OpenGLES2
         /// <param name="type"> Specifies the data type of the pixel data. Must be one of GL_UNSIGNED_BYTE, GL_UNSIGNED_INT, GL_UNSIGNED_INT_2_10_10_10_REV, GL_INT, or GL_FLOAT. An implementation-chosen type will also be accepted. This can be queried with glGet and GL_IMPLEMENTATION_COLOR_READ_TYPE. </param>
         /// <param name="bufSize"> Specifies the size of the buffer data for glReadnPixels function. </param>
         /// <param name="data"> Returns the pixel data. </param>
-        /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/es3.0/html/glReadPixels.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/KHR/KHR_robustness.txt"/></remarks>
+        /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/es3.0/html/glReadPixels.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/KHR/KHR_robustness.txt">KHR_robustness.txt</see></remarks>
         public static void ReadnPixels(int x, int y, int width, int height, PixelFormat format, PixelType type, int bufSize, void* data) => GLPointers.glReadnPixels_Lazy(x, y, width, height, (uint)format, (uint)type, bufSize, data);
         
         /// <summary> <b>[requires: v2.0]</b> <b>[entry point: <c>glReadPixels</c>]</b><br/> Read a block of pixels from the frame buffer. </summary>
@@ -1933,21 +1933,21 @@ namespace OpenTK.Graphics.OpenGLES2
         /// <param name="sampler"> Specifies the sampler object whose parameter to modify. </param>
         /// <param name="pname"> Specifies the symbolic name of a single-valued sampler parameter. pname can be one of the following: GL_TEXTURE_WRAP_S, GL_TEXTURE_WRAP_T, GL_TEXTURE_WRAP_R, GL_TEXTURE_MIN_FILTER, GL_TEXTURE_MAG_FILTER, GL_TEXTURE_MIN_LOD, GL_TEXTURE_MAX_LOD, GL_TEXTURE_COMPARE_MODE, GL_TEXTURE_COMPARE_FUNC. </param>
         /// <param name="param"> For the scalar commands, specifies the value of pname. </param>
-        /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/es3.0/html/glSamplerParameter.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/MESA/MESA_sampler_objects.txt"/></remarks>
+        /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/es3.0/html/glSamplerParameter.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/MESA/MESA_sampler_objects.txt">MESA_sampler_objects.txt</see></remarks>
         public static void SamplerParameterf(int sampler, SamplerParameterF pname, float param) => GLPointers.glSamplerParameterf_Lazy(sampler, (uint)pname, param);
         
         /// <summary> <b>[requires: v3.0 | GL_MESA_sampler_objects]</b> <b>[entry point: <c>glSamplerParameterfv</c>]</b><br/> Set sampler parameters. </summary>
         /// <param name="sampler"> Specifies the sampler object whose parameter to modify. </param>
         /// <param name="pname"> Specifies the symbolic name of a single-valued sampler parameter. pname can be one of the following: GL_TEXTURE_WRAP_S, GL_TEXTURE_WRAP_T, GL_TEXTURE_WRAP_R, GL_TEXTURE_MIN_FILTER, GL_TEXTURE_MAG_FILTER, GL_TEXTURE_MIN_LOD, GL_TEXTURE_MAX_LOD, GL_TEXTURE_COMPARE_MODE, GL_TEXTURE_COMPARE_FUNC. </param>
         /// <param name="param"> For the vector commands (glSamplerParameter*v), specifies a pointer to an array where the value or values of pname are stored. </param>
-        /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/es3.0/html/glSamplerParameter.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/MESA/MESA_sampler_objects.txt"/></remarks>
+        /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/es3.0/html/glSamplerParameter.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/MESA/MESA_sampler_objects.txt">MESA_sampler_objects.txt</see></remarks>
         public static void SamplerParameterfv(int sampler, SamplerParameterF pname, float* param) => GLPointers.glSamplerParameterfv_Lazy(sampler, (uint)pname, param);
         
         /// <summary> <b>[requires: v3.0 | GL_MESA_sampler_objects]</b> <b>[entry point: <c>glSamplerParameteri</c>]</b><br/> Set sampler parameters. </summary>
         /// <param name="sampler"> Specifies the sampler object whose parameter to modify. </param>
         /// <param name="pname"> Specifies the symbolic name of a single-valued sampler parameter. pname can be one of the following: GL_TEXTURE_WRAP_S, GL_TEXTURE_WRAP_T, GL_TEXTURE_WRAP_R, GL_TEXTURE_MIN_FILTER, GL_TEXTURE_MAG_FILTER, GL_TEXTURE_MIN_LOD, GL_TEXTURE_MAX_LOD, GL_TEXTURE_COMPARE_MODE, GL_TEXTURE_COMPARE_FUNC. </param>
         /// <param name="param"> For the scalar commands, specifies the value of pname. </param>
-        /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/es3.0/html/glSamplerParameter.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/MESA/MESA_sampler_objects.txt"/></remarks>
+        /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/es3.0/html/glSamplerParameter.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/MESA/MESA_sampler_objects.txt">MESA_sampler_objects.txt</see></remarks>
         public static void SamplerParameteri(int sampler, SamplerParameterI pname, int param) => GLPointers.glSamplerParameteri_Lazy(sampler, (uint)pname, param);
         
         /// <summary> <b>[requires: v3.2]</b> <b>[entry point: <c>glSamplerParameterIiv</c>]</b><br/> Set sampler parameters. </summary>
@@ -1968,7 +1968,7 @@ namespace OpenTK.Graphics.OpenGLES2
         /// <param name="sampler"> Specifies the sampler object whose parameter to modify. </param>
         /// <param name="pname"> Specifies the symbolic name of a single-valued sampler parameter. pname can be one of the following: GL_TEXTURE_WRAP_S, GL_TEXTURE_WRAP_T, GL_TEXTURE_WRAP_R, GL_TEXTURE_MIN_FILTER, GL_TEXTURE_MAG_FILTER, GL_TEXTURE_MIN_LOD, GL_TEXTURE_MAX_LOD, GL_TEXTURE_COMPARE_MODE, GL_TEXTURE_COMPARE_FUNC. </param>
         /// <param name="param"> For the vector commands (glSamplerParameter*v), specifies a pointer to an array where the value or values of pname are stored. </param>
-        /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/es3.0/html/glSamplerParameter.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/MESA/MESA_sampler_objects.txt"/></remarks>
+        /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/es3.0/html/glSamplerParameter.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/MESA/MESA_sampler_objects.txt">MESA_sampler_objects.txt</see></remarks>
         public static void SamplerParameteriv(int sampler, SamplerParameterI pname, int* param) => GLPointers.glSamplerParameteriv_Lazy(sampler, (uint)pname, param);
         
         /// <summary> <b>[requires: v2.0]</b> <b>[entry point: <c>glScissor</c>]</b><br/> Define the scissor box. </summary>
@@ -2635,55 +2635,55 @@ namespace OpenTK.Graphics.OpenGLES2
         public static unsafe partial class AMD
         {
             /// <summary> <b>[requires: GL_AMD_performance_monitor]</b> <b>[entry point: <c>glBeginPerfMonitorAMD</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/AMD/AMD_performance_monitor.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/AMD/AMD_performance_monitor.txt">AMD_performance_monitor.txt</see></remarks>
             public static void BeginPerfMonitorAMD(uint monitor) => GLPointers.glBeginPerfMonitorAMD_Lazy(monitor);
             
             /// <summary> <b>[requires: GL_AMD_performance_monitor]</b> <b>[entry point: <c>glDeletePerfMonitorsAMD</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/AMD/AMD_performance_monitor.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/AMD/AMD_performance_monitor.txt">AMD_performance_monitor.txt</see></remarks>
             public static void DeletePerfMonitorsAMD(int n, uint* monitors) => GLPointers.glDeletePerfMonitorsAMD_Lazy(n, monitors);
             
             /// <summary> <b>[requires: GL_AMD_performance_monitor]</b> <b>[entry point: <c>glEndPerfMonitorAMD</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/AMD/AMD_performance_monitor.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/AMD/AMD_performance_monitor.txt">AMD_performance_monitor.txt</see></remarks>
             public static void EndPerfMonitorAMD(uint monitor) => GLPointers.glEndPerfMonitorAMD_Lazy(monitor);
             
             /// <summary> <b>[requires: GL_AMD_performance_monitor]</b> <b>[entry point: <c>glGenPerfMonitorsAMD</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/AMD/AMD_performance_monitor.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/AMD/AMD_performance_monitor.txt">AMD_performance_monitor.txt</see></remarks>
             public static void GenPerfMonitorsAMD(int n, uint* monitors) => GLPointers.glGenPerfMonitorsAMD_Lazy(n, monitors);
             
             /// <summary> <b>[requires: GL_AMD_performance_monitor]</b> <b>[entry point: <c>glGetPerfMonitorCounterDataAMD</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/AMD/AMD_performance_monitor.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/AMD/AMD_performance_monitor.txt">AMD_performance_monitor.txt</see></remarks>
             public static void GetPerfMonitorCounterDataAMD(uint monitor, All pname, int dataSize, uint* data, int* bytesWritten) => GLPointers.glGetPerfMonitorCounterDataAMD_Lazy(monitor, (uint)pname, dataSize, data, bytesWritten);
             
             /// <summary> <b>[requires: GL_AMD_performance_monitor]</b> <b>[entry point: <c>glGetPerfMonitorCounterInfoAMD</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/AMD/AMD_performance_monitor.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/AMD/AMD_performance_monitor.txt">AMD_performance_monitor.txt</see></remarks>
             public static void GetPerfMonitorCounterInfoAMD(uint group, uint counter, All pname, void* data) => GLPointers.glGetPerfMonitorCounterInfoAMD_Lazy(group, counter, (uint)pname, data);
             
             /// <summary> <b>[requires: GL_AMD_performance_monitor]</b> <b>[entry point: <c>glGetPerfMonitorCountersAMD</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/AMD/AMD_performance_monitor.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/AMD/AMD_performance_monitor.txt">AMD_performance_monitor.txt</see></remarks>
             public static void GetPerfMonitorCountersAMD(uint group, int* numCounters, int* maxActiveCounters, int counterSize, uint* counters) => GLPointers.glGetPerfMonitorCountersAMD_Lazy(group, numCounters, maxActiveCounters, counterSize, counters);
             
             /// <summary> <b>[requires: GL_AMD_performance_monitor]</b> <b>[entry point: <c>glGetPerfMonitorCounterStringAMD</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/AMD/AMD_performance_monitor.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/AMD/AMD_performance_monitor.txt">AMD_performance_monitor.txt</see></remarks>
             public static void GetPerfMonitorCounterStringAMD(uint group, uint counter, int bufSize, int* length, byte* counterString) => GLPointers.glGetPerfMonitorCounterStringAMD_Lazy(group, counter, bufSize, length, counterString);
             
             /// <summary> <b>[requires: GL_AMD_performance_monitor]</b> <b>[entry point: <c>glGetPerfMonitorGroupsAMD</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/AMD/AMD_performance_monitor.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/AMD/AMD_performance_monitor.txt">AMD_performance_monitor.txt</see></remarks>
             public static void GetPerfMonitorGroupsAMD(int* numGroups, int groupsSize, uint* groups) => GLPointers.glGetPerfMonitorGroupsAMD_Lazy(numGroups, groupsSize, groups);
             
             /// <summary> <b>[requires: GL_AMD_performance_monitor]</b> <b>[entry point: <c>glGetPerfMonitorGroupStringAMD</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/AMD/AMD_performance_monitor.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/AMD/AMD_performance_monitor.txt">AMD_performance_monitor.txt</see></remarks>
             public static void GetPerfMonitorGroupStringAMD(uint group, int bufSize, int* length, byte* groupString) => GLPointers.glGetPerfMonitorGroupStringAMD_Lazy(group, bufSize, length, groupString);
             
             /// <summary> <b>[requires: GL_AMD_framebuffer_multisample_advanced]</b> <b>[entry point: <c>glNamedRenderbufferStorageMultisampleAdvancedAMD</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/AMD/AMD_framebuffer_multisample_advanced.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/AMD/AMD_framebuffer_multisample_advanced.txt">AMD_framebuffer_multisample_advanced.txt</see></remarks>
             public static void NamedRenderbufferStorageMultisampleAdvancedAMD(int renderbuffer, int samples, int storageSamples, InternalFormat internalformat, int width, int height) => GLPointers.glNamedRenderbufferStorageMultisampleAdvancedAMD_Lazy(renderbuffer, samples, storageSamples, (uint)internalformat, width, height);
             
             /// <summary> <b>[requires: GL_AMD_framebuffer_multisample_advanced]</b> <b>[entry point: <c>glRenderbufferStorageMultisampleAdvancedAMD</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/AMD/AMD_framebuffer_multisample_advanced.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/AMD/AMD_framebuffer_multisample_advanced.txt">AMD_framebuffer_multisample_advanced.txt</see></remarks>
             public static void RenderbufferStorageMultisampleAdvancedAMD(RenderbufferTarget target, int samples, int storageSamples, InternalFormat internalformat, int width, int height) => GLPointers.glRenderbufferStorageMultisampleAdvancedAMD_Lazy((uint)target, samples, storageSamples, (uint)internalformat, width, height);
             
             /// <summary> <b>[requires: GL_AMD_performance_monitor]</b> <b>[entry point: <c>glSelectPerfMonitorCountersAMD</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/AMD/AMD_performance_monitor.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/AMD/AMD_performance_monitor.txt">AMD_performance_monitor.txt</see></remarks>
             public static void SelectPerfMonitorCountersAMD(uint monitor, bool enable, uint group, int numCounters, uint* counterList) => GLPointers.glSelectPerfMonitorCountersAMD_Lazy(monitor, (byte)(enable ? 1 : 0), group, numCounters, counterList);
             
         }
@@ -2691,27 +2691,27 @@ namespace OpenTK.Graphics.OpenGLES2
         public static unsafe partial class ANGLE
         {
             /// <summary> <b>[requires: GL_ANGLE_framebuffer_blit]</b> <b>[entry point: <c>glBlitFramebufferANGLE</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://chromium.googlesource.com/angle/angle/+/refs/heads/main/extensions/ANGLE_framebuffer_blit.txt"/></remarks>
+            /// <remarks><see href="https://chromium.googlesource.com/angle/angle/+/refs/heads/main/extensions/ANGLE_framebuffer_blit.txt">ANGLE_framebuffer_blit.txt</see></remarks>
             public static void BlitFramebufferANGLE(int srcX0, int srcY0, int srcX1, int srcY1, int dstX0, int dstY0, int dstX1, int dstY1, ClearBufferMask mask, BlitFramebufferFilter filter) => GLPointers.glBlitFramebufferANGLE_Lazy(srcX0, srcY0, srcX1, srcY1, dstX0, dstY0, dstX1, dstY1, (uint)mask, (uint)filter);
             
             /// <summary> <b>[requires: GL_ANGLE_instanced_arrays]</b> <b>[entry point: <c>glDrawArraysInstancedANGLE</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://chromium.googlesource.com/angle/angle/+/refs/heads/main/extensions/ANGLE_instanced_arrays.txt"/></remarks>
+            /// <remarks><see href="https://chromium.googlesource.com/angle/angle/+/refs/heads/main/extensions/ANGLE_instanced_arrays.txt">ANGLE_instanced_arrays.txt</see></remarks>
             public static void DrawArraysInstancedANGLE(PrimitiveType mode, int first, int count, int primcount) => GLPointers.glDrawArraysInstancedANGLE_Lazy((uint)mode, first, count, primcount);
             
             /// <summary> <b>[requires: GL_ANGLE_instanced_arrays]</b> <b>[entry point: <c>glDrawElementsInstancedANGLE</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://chromium.googlesource.com/angle/angle/+/refs/heads/main/extensions/ANGLE_instanced_arrays.txt"/></remarks>
+            /// <remarks><see href="https://chromium.googlesource.com/angle/angle/+/refs/heads/main/extensions/ANGLE_instanced_arrays.txt">ANGLE_instanced_arrays.txt</see></remarks>
             public static void DrawElementsInstancedANGLE(PrimitiveType mode, int count, DrawElementsType type, void* indices, int primcount) => GLPointers.glDrawElementsInstancedANGLE_Lazy((uint)mode, count, (uint)type, indices, primcount);
             
             /// <summary> <b>[requires: GL_ANGLE_translated_shader_source]</b> <b>[entry point: <c>glGetTranslatedShaderSourceANGLE</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://chromium.googlesource.com/angle/angle/+/refs/heads/main/extensions/ANGLE_translated_shader_source.txt"/></remarks>
+            /// <remarks><see href="https://chromium.googlesource.com/angle/angle/+/refs/heads/main/extensions/ANGLE_translated_shader_source.txt">ANGLE_translated_shader_source.txt</see></remarks>
             public static void GetTranslatedShaderSourceANGLE(int shader, int bufSize, int* length, byte* source) => GLPointers.glGetTranslatedShaderSourceANGLE_Lazy(shader, bufSize, length, source);
             
             /// <summary> <b>[requires: GL_ANGLE_framebuffer_multisample]</b> <b>[entry point: <c>glRenderbufferStorageMultisampleANGLE</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://chromium.googlesource.com/angle/angle/+/refs/heads/main/extensions/ANGLE_framebuffer_multisample.txt"/></remarks>
+            /// <remarks><see href="https://chromium.googlesource.com/angle/angle/+/refs/heads/main/extensions/ANGLE_framebuffer_multisample.txt">ANGLE_framebuffer_multisample.txt</see></remarks>
             public static void RenderbufferStorageMultisampleANGLE(RenderbufferTarget target, int samples, InternalFormat internalformat, int width, int height) => GLPointers.glRenderbufferStorageMultisampleANGLE_Lazy((uint)target, samples, (uint)internalformat, width, height);
             
             /// <summary> <b>[requires: GL_ANGLE_instanced_arrays]</b> <b>[entry point: <c>glVertexAttribDivisorANGLE</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://chromium.googlesource.com/angle/angle/+/refs/heads/main/extensions/ANGLE_instanced_arrays.txt"/></remarks>
+            /// <remarks><see href="https://chromium.googlesource.com/angle/angle/+/refs/heads/main/extensions/ANGLE_instanced_arrays.txt">ANGLE_instanced_arrays.txt</see></remarks>
             public static void VertexAttribDivisorANGLE(uint index, uint divisor) => GLPointers.glVertexAttribDivisorANGLE_Lazy(index, divisor);
             
         }
@@ -2719,43 +2719,43 @@ namespace OpenTK.Graphics.OpenGLES2
         public static unsafe partial class APPLE
         {
             /// <summary> <b>[requires: GL_APPLE_sync]</b> <b>[entry point: <c>glClientWaitSyncAPPLE</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/APPLE/APPLE_sync.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/APPLE/APPLE_sync.txt">APPLE_sync.txt</see></remarks>
             public static SyncStatus ClientWaitSyncAPPLE(GLSync sync, SyncObjectMask flags, ulong timeout) => (SyncStatus) GLPointers.glClientWaitSyncAPPLE_Lazy((IntPtr)sync, (uint)flags, timeout);
             
             /// <summary> <b>[requires: GL_APPLE_copy_texture_levels]</b> <b>[entry point: <c>glCopyTextureLevelsAPPLE</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/APPLE/APPLE_copy_texture_levels.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/APPLE/APPLE_copy_texture_levels.txt">APPLE_copy_texture_levels.txt</see></remarks>
             public static void CopyTextureLevelsAPPLE(int destinationTexture, int sourceTexture, int sourceBaseLevel, int sourceLevelCount) => GLPointers.glCopyTextureLevelsAPPLE_Lazy(destinationTexture, sourceTexture, sourceBaseLevel, sourceLevelCount);
             
             /// <summary> <b>[requires: GL_APPLE_sync]</b> <b>[entry point: <c>glDeleteSyncAPPLE</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/APPLE/APPLE_sync.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/APPLE/APPLE_sync.txt">APPLE_sync.txt</see></remarks>
             public static void DeleteSyncAPPLE(GLSync sync) => GLPointers.glDeleteSyncAPPLE_Lazy((IntPtr)sync);
             
             /// <summary> <b>[requires: GL_APPLE_sync]</b> <b>[entry point: <c>glFenceSyncAPPLE</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/APPLE/APPLE_sync.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/APPLE/APPLE_sync.txt">APPLE_sync.txt</see></remarks>
             public static GLSync FenceSyncAPPLE(SyncCondition condition, SyncBehaviorFlags flags) => (GLSync) GLPointers.glFenceSyncAPPLE_Lazy((uint)condition, (uint)flags);
             
             /// <summary> <b>[requires: GL_APPLE_sync]</b> <b>[entry point: <c>glGetInteger64vAPPLE</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/APPLE/APPLE_sync.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/APPLE/APPLE_sync.txt">APPLE_sync.txt</see></remarks>
             public static void GetInteger64vAPPLE(GetPName pname, long* @params) => GLPointers.glGetInteger64vAPPLE_Lazy((uint)pname, @params);
             
             /// <summary> <b>[requires: GL_APPLE_sync]</b> <b>[entry point: <c>glGetSyncivAPPLE</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/APPLE/APPLE_sync.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/APPLE/APPLE_sync.txt">APPLE_sync.txt</see></remarks>
             public static void GetSyncivAPPLE(GLSync sync, SyncParameterName pname, int count, int* length, int* values) => GLPointers.glGetSyncivAPPLE_Lazy((IntPtr)sync, (uint)pname, count, length, values);
             
             /// <summary> <b>[requires: GL_APPLE_sync]</b> <b>[entry point: <c>glIsSyncAPPLE</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/APPLE/APPLE_sync.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/APPLE/APPLE_sync.txt">APPLE_sync.txt</see></remarks>
             public static bool IsSyncAPPLE(GLSync sync) => GLPointers.glIsSyncAPPLE_Lazy((IntPtr)sync) != 0;
             
             /// <summary> <b>[requires: GL_APPLE_framebuffer_multisample]</b> <b>[entry point: <c>glRenderbufferStorageMultisampleAPPLE</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/APPLE/APPLE_framebuffer_multisample.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/APPLE/APPLE_framebuffer_multisample.txt">APPLE_framebuffer_multisample.txt</see></remarks>
             public static void RenderbufferStorageMultisampleAPPLE(RenderbufferTarget target, int samples, InternalFormat internalformat, int width, int height) => GLPointers.glRenderbufferStorageMultisampleAPPLE_Lazy((uint)target, samples, (uint)internalformat, width, height);
             
             /// <summary> <b>[requires: GL_APPLE_framebuffer_multisample]</b> <b>[entry point: <c>glResolveMultisampleFramebufferAPPLE</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/APPLE/APPLE_framebuffer_multisample.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/APPLE/APPLE_framebuffer_multisample.txt">APPLE_framebuffer_multisample.txt</see></remarks>
             public static void ResolveMultisampleFramebufferAPPLE() => GLPointers.glResolveMultisampleFramebufferAPPLE_Lazy();
             
             /// <summary> <b>[requires: GL_APPLE_sync]</b> <b>[entry point: <c>glWaitSyncAPPLE</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/APPLE/APPLE_sync.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/APPLE/APPLE_sync.txt">APPLE_sync.txt</see></remarks>
             public static void WaitSyncAPPLE(GLSync sync, SyncBehaviorFlags flags, ulong timeout) => GLPointers.glWaitSyncAPPLE_Lazy((IntPtr)sync, (uint)flags, timeout);
             
         }
@@ -2763,7 +2763,7 @@ namespace OpenTK.Graphics.OpenGLES2
         public static unsafe partial class ARM
         {
             /// <summary> <b>[requires: GL_ARM_shader_core_properties]</b> <b>[entry point: <c>glMaxActiveShaderCoresARM</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/ARM/ARM_shader_core_properties.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/ARM/ARM_shader_core_properties.txt">ARM_shader_core_properties.txt</see></remarks>
             public static void MaxActiveShaderCoresARM(uint count) => GLPointers.glMaxActiveShaderCoresARM_Lazy(count);
             
         }
@@ -2771,743 +2771,743 @@ namespace OpenTK.Graphics.OpenGLES2
         public static unsafe partial class EXT
         {
             /// <summary> <b>[requires: GL_EXT_win32_keyed_mutex]</b> <b>[entry point: <c>glAcquireKeyedMutexWin32EXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_win32_keyed_mutex.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_win32_keyed_mutex.txt">EXT_win32_keyed_mutex.txt</see></remarks>
             public static bool AcquireKeyedMutexWin32EXT(uint memory, ulong key, uint timeout) => GLPointers.glAcquireKeyedMutexWin32EXT_Lazy(memory, key, timeout) != 0;
             
             /// <summary> <b>[requires: GL_EXT_separate_shader_objects]</b> <b>[entry point: <c>glActiveProgramEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_separate_shader_objects.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_separate_shader_objects.txt">EXT_separate_shader_objects.txt</see></remarks>
             public static void ActiveProgramEXT(int program) => GLPointers.glActiveProgramEXT_Lazy(program);
             
             /// <summary> <b>[requires: GL_EXT_separate_shader_objects]</b> <b>[entry point: <c>glActiveShaderProgramEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_separate_shader_objects.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_separate_shader_objects.txt">EXT_separate_shader_objects.txt</see></remarks>
             public static void ActiveShaderProgramEXT(int pipeline, int program) => GLPointers.glActiveShaderProgramEXT_Lazy(pipeline, program);
             
             /// <summary> <b>[requires: GL_EXT_disjoint_timer_query | GL_EXT_occlusion_query_boolean]</b> <b>[entry point: <c>glBeginQueryEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_disjoint_timer_query.txt"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_occlusion_query_boolean.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_disjoint_timer_query.txt">EXT_disjoint_timer_query.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_occlusion_query_boolean.txt">EXT_occlusion_query_boolean.txt</see></remarks>
             public static void BeginQueryEXT(QueryTarget target, int id) => GLPointers.glBeginQueryEXT_Lazy((uint)target, id);
             
             /// <summary> <b>[requires: GL_EXT_blend_func_extended]</b> <b>[entry point: <c>glBindFragDataLocationEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_blend_func_extended.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_blend_func_extended.txt">EXT_blend_func_extended.txt</see></remarks>
             public static void BindFragDataLocationEXT(int program, uint color, byte* name) => GLPointers.glBindFragDataLocationEXT_Lazy(program, color, name);
             
             /// <summary> <b>[requires: GL_EXT_blend_func_extended]</b> <b>[entry point: <c>glBindFragDataLocationIndexedEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_blend_func_extended.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_blend_func_extended.txt">EXT_blend_func_extended.txt</see></remarks>
             public static void BindFragDataLocationIndexedEXT(int program, uint colorNumber, uint index, byte* name) => GLPointers.glBindFragDataLocationIndexedEXT_Lazy(program, colorNumber, index, name);
             
             /// <summary> <b>[requires: GL_EXT_separate_shader_objects]</b> <b>[entry point: <c>glBindProgramPipelineEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_separate_shader_objects.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_separate_shader_objects.txt">EXT_separate_shader_objects.txt</see></remarks>
             public static void BindProgramPipelineEXT(int pipeline) => GLPointers.glBindProgramPipelineEXT_Lazy(pipeline);
             
             /// <summary> <b>[requires: GL_EXT_blend_minmax]</b> <b>[entry point: <c>glBlendEquationEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_blend_minmax.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_blend_minmax.txt">EXT_blend_minmax.txt</see></remarks>
             public static void BlendEquationEXT(BlendEquationMode mode) => GLPointers.glBlendEquationEXT_Lazy((uint)mode);
             
             /// <summary> <b>[requires: GL_EXT_draw_buffers_indexed]</b> <b>[entry point: <c>glBlendEquationiEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_draw_buffers_indexed.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_draw_buffers_indexed.txt">EXT_draw_buffers_indexed.txt</see></remarks>
             public static void BlendEquationiEXT(uint buf, BlendEquationMode mode) => GLPointers.glBlendEquationiEXT_Lazy(buf, (uint)mode);
             
             /// <summary> <b>[requires: GL_EXT_draw_buffers_indexed]</b> <b>[entry point: <c>glBlendEquationSeparateiEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_draw_buffers_indexed.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_draw_buffers_indexed.txt">EXT_draw_buffers_indexed.txt</see></remarks>
             public static void BlendEquationSeparateiEXT(uint buf, BlendEquationMode modeRGB, BlendEquationMode modeAlpha) => GLPointers.glBlendEquationSeparateiEXT_Lazy(buf, (uint)modeRGB, (uint)modeAlpha);
             
             /// <summary> <b>[requires: GL_EXT_draw_buffers_indexed]</b> <b>[entry point: <c>glBlendFunciEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_draw_buffers_indexed.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_draw_buffers_indexed.txt">EXT_draw_buffers_indexed.txt</see></remarks>
             public static void BlendFunciEXT(uint buf, BlendingFactor src, BlendingFactor dst) => GLPointers.glBlendFunciEXT_Lazy(buf, (uint)src, (uint)dst);
             
             /// <summary> <b>[requires: GL_EXT_draw_buffers_indexed]</b> <b>[entry point: <c>glBlendFuncSeparateiEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_draw_buffers_indexed.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_draw_buffers_indexed.txt">EXT_draw_buffers_indexed.txt</see></remarks>
             public static void BlendFuncSeparateiEXT(uint buf, BlendingFactor srcRGB, BlendingFactor dstRGB, BlendingFactor srcAlpha, BlendingFactor dstAlpha) => GLPointers.glBlendFuncSeparateiEXT_Lazy(buf, (uint)srcRGB, (uint)dstRGB, (uint)srcAlpha, (uint)dstAlpha);
             
             /// <summary> <b>[requires: GL_EXT_framebuffer_blit_layers]</b> <b>[entry point: <c>glBlitFramebufferLayerEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_framebuffer_blit_layers.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_framebuffer_blit_layers.txt">EXT_framebuffer_blit_layers.txt</see></remarks>
             public static void BlitFramebufferLayerEXT(int srcX0, int srcY0, int srcX1, int srcY1, int srcLayer, int dstX0, int dstY0, int dstX1, int dstY1, int dstLayer, ClearBufferMask mask, BlitFramebufferFilter filter) => GLPointers.glBlitFramebufferLayerEXT_Lazy(srcX0, srcY0, srcX1, srcY1, srcLayer, dstX0, dstY0, dstX1, dstY1, dstLayer, (uint)mask, (uint)filter);
             
             /// <summary> <b>[requires: GL_EXT_framebuffer_blit_layers]</b> <b>[entry point: <c>glBlitFramebufferLayersEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_framebuffer_blit_layers.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_framebuffer_blit_layers.txt">EXT_framebuffer_blit_layers.txt</see></remarks>
             public static void BlitFramebufferLayersEXT(int srcX0, int srcY0, int srcX1, int srcY1, int dstX0, int dstY0, int dstX1, int dstY1, ClearBufferMask mask, BlitFramebufferFilter filter) => GLPointers.glBlitFramebufferLayersEXT_Lazy(srcX0, srcY0, srcX1, srcY1, dstX0, dstY0, dstX1, dstY1, (uint)mask, (uint)filter);
             
             /// <summary> <b>[requires: GL_EXT_buffer_storage]</b> <b>[entry point: <c>glBufferStorageEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_buffer_storage.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_buffer_storage.txt">EXT_buffer_storage.txt</see></remarks>
             public static void BufferStorageEXT(BufferStorageTarget target, nint size, void* data, BufferStorageMask flags) => GLPointers.glBufferStorageEXT_Lazy((uint)target, size, data, (uint)flags);
             
             /// <summary> <b>[requires: GL_EXT_external_buffer]</b> <b>[entry point: <c>glBufferStorageExternalEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_external_buffer.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_external_buffer.txt">EXT_external_buffer.txt</see></remarks>
             public static void BufferStorageExternalEXT(All target, IntPtr offset, nint size, void* clientBuffer, BufferStorageMask flags) => GLPointers.glBufferStorageExternalEXT_Lazy((uint)target, offset, size, clientBuffer, (uint)flags);
             
             /// <summary> <b>[requires: GL_EXT_memory_object]</b> <b>[entry point: <c>glBufferStorageMemEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_memory_object.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_memory_object.txt">EXT_memory_object.txt</see></remarks>
             public static void BufferStorageMemEXT(BufferTarget target, nint size, uint memory, ulong offset) => GLPointers.glBufferStorageMemEXT_Lazy((uint)target, size, memory, offset);
             
             /// <summary> <b>[requires: GL_EXT_shader_pixel_local_storage2]</b> <b>[entry point: <c>glClearPixelLocalStorageuiEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_shader_pixel_local_storage2.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_shader_pixel_local_storage2.txt">EXT_shader_pixel_local_storage2.txt</see></remarks>
             public static void ClearPixelLocalStorageuiEXT(int offset, int n, uint* values) => GLPointers.glClearPixelLocalStorageuiEXT_Lazy(offset, n, values);
             
             /// <summary> <b>[requires: GL_EXT_clear_texture]</b> <b>[entry point: <c>glClearTexImageEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_clear_texture.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_clear_texture.txt">EXT_clear_texture.txt</see></remarks>
             public static void ClearTexImageEXT(int texture, int level, PixelFormat format, PixelType type, void* data) => GLPointers.glClearTexImageEXT_Lazy(texture, level, (uint)format, (uint)type, data);
             
             /// <summary> <b>[requires: GL_EXT_clear_texture]</b> <b>[entry point: <c>glClearTexSubImageEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_clear_texture.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_clear_texture.txt">EXT_clear_texture.txt</see></remarks>
             public static void ClearTexSubImageEXT(int texture, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, PixelFormat format, PixelType type, void* data) => GLPointers.glClearTexSubImageEXT_Lazy(texture, level, xoffset, yoffset, zoffset, width, height, depth, (uint)format, (uint)type, data);
             
             /// <summary> <b>[requires: GL_EXT_clip_control]</b> <b>[entry point: <c>glClipControlEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_clip_control.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_clip_control.txt">EXT_clip_control.txt</see></remarks>
             public static void ClipControlEXT(All origin, All depth) => GLPointers.glClipControlEXT_Lazy((uint)origin, (uint)depth);
             
             /// <summary> <b>[requires: GL_EXT_draw_buffers_indexed]</b> <b>[entry point: <c>glColorMaskiEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_draw_buffers_indexed.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_draw_buffers_indexed.txt">EXT_draw_buffers_indexed.txt</see></remarks>
             public static void ColorMaskiEXT(uint index, bool r, bool g, bool b, bool a) => GLPointers.glColorMaskiEXT_Lazy(index, (byte)(r ? 1 : 0), (byte)(g ? 1 : 0), (byte)(b ? 1 : 0), (byte)(a ? 1 : 0));
             
             /// <summary> <b>[requires: GL_EXT_copy_image]</b> <b>[entry point: <c>glCopyImageSubDataEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_copy_image.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_copy_image.txt">EXT_copy_image.txt</see></remarks>
             public static void CopyImageSubDataEXT(uint srcName, CopyBufferSubDataTarget srcTarget, int srcLevel, int srcX, int srcY, int srcZ, uint dstName, CopyBufferSubDataTarget dstTarget, int dstLevel, int dstX, int dstY, int dstZ, int srcWidth, int srcHeight, int srcDepth) => GLPointers.glCopyImageSubDataEXT_Lazy(srcName, (uint)srcTarget, srcLevel, srcX, srcY, srcZ, dstName, (uint)dstTarget, dstLevel, dstX, dstY, dstZ, srcWidth, srcHeight, srcDepth);
             
             /// <summary> <b>[requires: GL_EXT_memory_object]</b> <b>[entry point: <c>glCreateMemoryObjectsEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_memory_object.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_memory_object.txt">EXT_memory_object.txt</see></remarks>
             public static void CreateMemoryObjectsEXT(int n, uint* memoryObjects) => GLPointers.glCreateMemoryObjectsEXT_Lazy(n, memoryObjects);
             
             /// <summary> <b>[requires: GL_EXT_separate_shader_objects]</b> <b>[entry point: <c>glCreateShaderProgramEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_separate_shader_objects.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_separate_shader_objects.txt">EXT_separate_shader_objects.txt</see></remarks>
             public static int CreateShaderProgramEXT(ShaderType type, byte* @string) => GLPointers.glCreateShaderProgramEXT_Lazy((uint)type, @string);
             
             /// <summary> <b>[requires: GL_EXT_separate_shader_objects]</b> <b>[entry point: <c>glCreateShaderProgramvEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_separate_shader_objects.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_separate_shader_objects.txt">EXT_separate_shader_objects.txt</see></remarks>
             public static int CreateShaderProgramvEXT(ShaderType type, int count, byte** strings) => GLPointers.glCreateShaderProgramvEXT_Lazy((uint)type, count, strings);
             
             /// <summary> <b>[requires: GL_EXT_memory_object]</b> <b>[entry point: <c>glDeleteMemoryObjectsEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_memory_object.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_memory_object.txt">EXT_memory_object.txt</see></remarks>
             public static void DeleteMemoryObjectsEXT(int n, uint* memoryObjects) => GLPointers.glDeleteMemoryObjectsEXT_Lazy(n, memoryObjects);
             
             /// <summary> <b>[requires: GL_EXT_separate_shader_objects]</b> <b>[entry point: <c>glDeleteProgramPipelinesEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_separate_shader_objects.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_separate_shader_objects.txt">EXT_separate_shader_objects.txt</see></remarks>
             public static void DeleteProgramPipelinesEXT(int n, int* pipelines) => GLPointers.glDeleteProgramPipelinesEXT_Lazy(n, pipelines);
             
             /// <summary> <b>[requires: GL_EXT_disjoint_timer_query | GL_EXT_occlusion_query_boolean]</b> <b>[entry point: <c>glDeleteQueriesEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_disjoint_timer_query.txt"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_occlusion_query_boolean.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_disjoint_timer_query.txt">EXT_disjoint_timer_query.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_occlusion_query_boolean.txt">EXT_occlusion_query_boolean.txt</see></remarks>
             public static void DeleteQueriesEXT(int n, int* ids) => GLPointers.glDeleteQueriesEXT_Lazy(n, ids);
             
             /// <summary> <b>[requires: GL_EXT_semaphore]</b> <b>[entry point: <c>glDeleteSemaphoresEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_semaphore.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_semaphore.txt">EXT_semaphore.txt</see></remarks>
             public static void DeleteSemaphoresEXT(int n, uint* semaphores) => GLPointers.glDeleteSemaphoresEXT_Lazy(n, semaphores);
             
             /// <summary> <b>[requires: GL_EXT_draw_buffers_indexed]</b> <b>[entry point: <c>glDisableiEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_draw_buffers_indexed.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_draw_buffers_indexed.txt">EXT_draw_buffers_indexed.txt</see></remarks>
             public static void DisableiEXT(EnableCap target, uint index) => GLPointers.glDisableiEXT_Lazy((uint)target, index);
             
             /// <summary> <b>[requires: GL_EXT_discard_framebuffer]</b> <b>[entry point: <c>glDiscardFramebufferEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_discard_framebuffer.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_discard_framebuffer.txt">EXT_discard_framebuffer.txt</see></remarks>
             public static void DiscardFramebufferEXT(FramebufferTarget target, int numAttachments, InvalidateFramebufferAttachment* attachments) => GLPointers.glDiscardFramebufferEXT_Lazy((uint)target, numAttachments, (uint*)attachments);
             
             /// <summary> <b>[requires: GL_EXT_base_instance]</b> <b>[entry point: <c>glDrawArraysInstancedBaseInstanceEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_base_instance.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_base_instance.txt">EXT_base_instance.txt</see></remarks>
             public static void DrawArraysInstancedBaseInstanceEXT(PrimitiveType mode, int first, int count, int instancecount, uint baseinstance) => GLPointers.glDrawArraysInstancedBaseInstanceEXT_Lazy((uint)mode, first, count, instancecount, baseinstance);
             
             /// <summary> <b>[requires: GL_EXT_draw_instanced | GL_EXT_instanced_arrays]</b> <b>[entry point: <c>glDrawArraysInstancedEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_draw_instanced.txt"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_instanced_arrays.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_draw_instanced.txt">EXT_draw_instanced.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_instanced_arrays.txt">EXT_instanced_arrays.txt</see></remarks>
             public static void DrawArraysInstancedEXT(PrimitiveType mode, int start, int count, int primcount) => GLPointers.glDrawArraysInstancedEXT_Lazy((uint)mode, start, count, primcount);
             
             /// <summary> <b>[requires: GL_EXT_draw_buffers]</b> <b>[entry point: <c>glDrawBuffersEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_draw_buffers.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_draw_buffers.txt">EXT_draw_buffers.txt</see></remarks>
             public static void DrawBuffersEXT(int n, All* bufs) => GLPointers.glDrawBuffersEXT_Lazy(n, (uint*)bufs);
             
             /// <summary> <b>[requires: GL_EXT_multiview_draw_buffers]</b> <b>[entry point: <c>glDrawBuffersIndexedEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_multiview_draw_buffers.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_multiview_draw_buffers.txt">EXT_multiview_draw_buffers.txt</see></remarks>
             public static void DrawBuffersIndexedEXT(int n, All* location, int* indices) => GLPointers.glDrawBuffersIndexedEXT_Lazy(n, (uint*)location, indices);
             
             /// <summary> <b>[requires: GL_EXT_draw_elements_base_vertex]</b> <b>[entry point: <c>glDrawElementsBaseVertexEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_draw_elements_base_vertex.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_draw_elements_base_vertex.txt">EXT_draw_elements_base_vertex.txt</see></remarks>
             public static void DrawElementsBaseVertexEXT(PrimitiveType mode, int count, DrawElementsType type, void* indices, int basevertex) => GLPointers.glDrawElementsBaseVertexEXT_Lazy((uint)mode, count, (uint)type, indices, basevertex);
             
             /// <summary> <b>[requires: GL_EXT_base_instance]</b> <b>[entry point: <c>glDrawElementsInstancedBaseInstanceEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_base_instance.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_base_instance.txt">EXT_base_instance.txt</see></remarks>
             public static void DrawElementsInstancedBaseInstanceEXT(PrimitiveType mode, int count, DrawElementsType type, void* indices, int instancecount, uint baseinstance) => GLPointers.glDrawElementsInstancedBaseInstanceEXT_Lazy((uint)mode, count, (uint)type, indices, instancecount, baseinstance);
             
             /// <summary> <b>[requires: GL_EXT_base_instance]</b> <b>[entry point: <c>glDrawElementsInstancedBaseVertexBaseInstanceEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_base_instance.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_base_instance.txt">EXT_base_instance.txt</see></remarks>
             public static void DrawElementsInstancedBaseVertexBaseInstanceEXT(PrimitiveType mode, int count, DrawElementsType type, void* indices, int instancecount, int basevertex, uint baseinstance) => GLPointers.glDrawElementsInstancedBaseVertexBaseInstanceEXT_Lazy((uint)mode, count, (uint)type, indices, instancecount, basevertex, baseinstance);
             
             /// <summary> <b>[requires: GL_EXT_draw_elements_base_vertex]</b> <b>[entry point: <c>glDrawElementsInstancedBaseVertexEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_draw_elements_base_vertex.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_draw_elements_base_vertex.txt">EXT_draw_elements_base_vertex.txt</see></remarks>
             public static void DrawElementsInstancedBaseVertexEXT(PrimitiveType mode, int count, DrawElementsType type, void* indices, int instancecount, int basevertex) => GLPointers.glDrawElementsInstancedBaseVertexEXT_Lazy((uint)mode, count, (uint)type, indices, instancecount, basevertex);
             
             /// <summary> <b>[requires: GL_EXT_draw_instanced | GL_EXT_instanced_arrays]</b> <b>[entry point: <c>glDrawElementsInstancedEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_draw_instanced.txt"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_instanced_arrays.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_draw_instanced.txt">EXT_draw_instanced.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_instanced_arrays.txt">EXT_instanced_arrays.txt</see></remarks>
             public static void DrawElementsInstancedEXT(PrimitiveType mode, int count, DrawElementsType type, void* indices, int primcount) => GLPointers.glDrawElementsInstancedEXT_Lazy((uint)mode, count, (uint)type, indices, primcount);
             
             /// <summary> <b>[requires: GL_EXT_draw_elements_base_vertex]</b> <b>[entry point: <c>glDrawRangeElementsBaseVertexEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_draw_elements_base_vertex.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_draw_elements_base_vertex.txt">EXT_draw_elements_base_vertex.txt</see></remarks>
             public static void DrawRangeElementsBaseVertexEXT(PrimitiveType mode, uint start, uint end, int count, DrawElementsType type, void* indices, int basevertex) => GLPointers.glDrawRangeElementsBaseVertexEXT_Lazy((uint)mode, start, end, count, (uint)type, indices, basevertex);
             
             /// <summary> <b>[requires: GL_EXT_draw_transform_feedback]</b> <b>[entry point: <c>glDrawTransformFeedbackEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_draw_transform_feedback.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_draw_transform_feedback.txt">EXT_draw_transform_feedback.txt</see></remarks>
             public static void DrawTransformFeedbackEXT(PrimitiveType mode, int id) => GLPointers.glDrawTransformFeedbackEXT_Lazy((uint)mode, id);
             
             /// <summary> <b>[requires: GL_EXT_draw_transform_feedback]</b> <b>[entry point: <c>glDrawTransformFeedbackInstancedEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_draw_transform_feedback.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_draw_transform_feedback.txt">EXT_draw_transform_feedback.txt</see></remarks>
             public static void DrawTransformFeedbackInstancedEXT(PrimitiveType mode, int id, int instancecount) => GLPointers.glDrawTransformFeedbackInstancedEXT_Lazy((uint)mode, id, instancecount);
             
             /// <summary> <b>[requires: GL_EXT_EGL_image_storage]</b> <b>[entry point: <c>glEGLImageTargetTexStorageEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_EGL_image_storage.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_EGL_image_storage.txt">EXT_EGL_image_storage.txt</see></remarks>
             public static void EGLImageTargetTexStorageEXT(All target, void* image, int* attrib_list) => GLPointers.glEGLImageTargetTexStorageEXT_Lazy((uint)target, image, attrib_list);
             
             /// <summary> <b>[requires: GL_EXT_EGL_image_storage]</b> <b>[entry point: <c>glEGLImageTargetTextureStorageEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_EGL_image_storage.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_EGL_image_storage.txt">EXT_EGL_image_storage.txt</see></remarks>
             public static void EGLImageTargetTextureStorageEXT(int texture, void* image, int* attrib_list) => GLPointers.glEGLImageTargetTextureStorageEXT_Lazy(texture, image, attrib_list);
             
             /// <summary> <b>[requires: GL_EXT_draw_buffers_indexed]</b> <b>[entry point: <c>glEnableiEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_draw_buffers_indexed.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_draw_buffers_indexed.txt">EXT_draw_buffers_indexed.txt</see></remarks>
             public static void EnableiEXT(EnableCap target, uint index) => GLPointers.glEnableiEXT_Lazy((uint)target, index);
             
             /// <summary> <b>[requires: GL_EXT_disjoint_timer_query | GL_EXT_occlusion_query_boolean]</b> <b>[entry point: <c>glEndQueryEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_disjoint_timer_query.txt"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_occlusion_query_boolean.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_disjoint_timer_query.txt">EXT_disjoint_timer_query.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_occlusion_query_boolean.txt">EXT_occlusion_query_boolean.txt</see></remarks>
             public static void EndQueryEXT(QueryTarget target) => GLPointers.glEndQueryEXT_Lazy((uint)target);
             
             /// <summary> <b>[requires: GL_EXT_map_buffer_range]</b> <b>[entry point: <c>glFlushMappedBufferRangeEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_map_buffer_range.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_map_buffer_range.txt">EXT_map_buffer_range.txt</see></remarks>
             public static void FlushMappedBufferRangeEXT(BufferTarget target, IntPtr offset, nint length) => GLPointers.glFlushMappedBufferRangeEXT_Lazy((uint)target, offset, length);
             
             /// <summary> <b>[requires: GL_EXT_shader_framebuffer_fetch_non_coherent]</b> <b>[entry point: <c>glFramebufferFetchBarrierEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_shader_framebuffer_fetch_non_coherent.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_shader_framebuffer_fetch_non_coherent.txt">EXT_shader_framebuffer_fetch_non_coherent.txt</see></remarks>
             public static void FramebufferFetchBarrierEXT() => GLPointers.glFramebufferFetchBarrierEXT_Lazy();
             
             /// <summary> <b>[requires: GL_EXT_shader_pixel_local_storage2]</b> <b>[entry point: <c>glFramebufferPixelLocalStorageSizeEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_shader_pixel_local_storage2.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_shader_pixel_local_storage2.txt">EXT_shader_pixel_local_storage2.txt</see></remarks>
             public static void FramebufferPixelLocalStorageSizeEXT(uint target, int size) => GLPointers.glFramebufferPixelLocalStorageSizeEXT_Lazy(target, size);
             
             /// <summary> <b>[requires: GL_EXT_fragment_shading_rate]</b> <b>[entry point: <c>glFramebufferShadingRateEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_fragment_shading_rate.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_fragment_shading_rate.txt">EXT_fragment_shading_rate.txt</see></remarks>
             public static void FramebufferShadingRateEXT(FramebufferTarget target, FramebufferAttachment attachment, int texture, int baseLayer, int numLayers, int texelWidth, int texelHeight) => GLPointers.glFramebufferShadingRateEXT_Lazy((uint)target, (uint)attachment, texture, baseLayer, numLayers, texelWidth, texelHeight);
             
             /// <summary> <b>[requires: GL_EXT_multisampled_render_to_texture]</b> <b>[entry point: <c>glFramebufferTexture2DMultisampleEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_multisampled_render_to_texture.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_multisampled_render_to_texture.txt">EXT_multisampled_render_to_texture.txt</see></remarks>
             public static void FramebufferTexture2DMultisampleEXT(FramebufferTarget target, FramebufferAttachment attachment, TextureTarget textarget, int texture, int level, int samples) => GLPointers.glFramebufferTexture2DMultisampleEXT_Lazy((uint)target, (uint)attachment, (uint)textarget, texture, level, samples);
             
             /// <summary> <b>[requires: GL_EXT_geometry_shader]</b> <b>[entry point: <c>glFramebufferTextureEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_geometry_shader.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_geometry_shader.txt">EXT_geometry_shader.txt</see></remarks>
             public static void FramebufferTextureEXT(FramebufferTarget target, FramebufferAttachment attachment, int texture, int level) => GLPointers.glFramebufferTextureEXT_Lazy((uint)target, (uint)attachment, texture, level);
             
             /// <summary> <b>[requires: GL_EXT_separate_shader_objects]</b> <b>[entry point: <c>glGenProgramPipelinesEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_separate_shader_objects.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_separate_shader_objects.txt">EXT_separate_shader_objects.txt</see></remarks>
             public static void GenProgramPipelinesEXT(int n, int* pipelines) => GLPointers.glGenProgramPipelinesEXT_Lazy(n, pipelines);
             
             /// <summary> <b>[requires: GL_EXT_disjoint_timer_query | GL_EXT_occlusion_query_boolean]</b> <b>[entry point: <c>glGenQueriesEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_disjoint_timer_query.txt"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_occlusion_query_boolean.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_disjoint_timer_query.txt">EXT_disjoint_timer_query.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_occlusion_query_boolean.txt">EXT_occlusion_query_boolean.txt</see></remarks>
             public static void GenQueriesEXT(int n, int* ids) => GLPointers.glGenQueriesEXT_Lazy(n, ids);
             
             /// <summary> <b>[requires: GL_EXT_semaphore]</b> <b>[entry point: <c>glGenSemaphoresEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_semaphore.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_semaphore.txt">EXT_semaphore.txt</see></remarks>
             public static void GenSemaphoresEXT(int n, uint* semaphores) => GLPointers.glGenSemaphoresEXT_Lazy(n, semaphores);
             
             /// <summary> <b>[requires: GL_EXT_blend_func_extended]</b> <b>[entry point: <c>glGetFragDataIndexEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_blend_func_extended.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_blend_func_extended.txt">EXT_blend_func_extended.txt</see></remarks>
             public static int GetFragDataIndexEXT(int program, byte* name) => GLPointers.glGetFragDataIndexEXT_Lazy(program, name);
             
             /// <summary> <b>[requires: GL_EXT_fragment_shading_rate]</b> <b>[entry point: <c>glGetFragmentShadingRatesEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_fragment_shading_rate.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_fragment_shading_rate.txt">EXT_fragment_shading_rate.txt</see></remarks>
             public static void GetFragmentShadingRatesEXT(int samples, int maxCount, int* count, ShadingRate* shadingRates) => GLPointers.glGetFragmentShadingRatesEXT_Lazy(samples, maxCount, count, (uint*)shadingRates);
             
             /// <summary> <b>[requires: GL_EXT_shader_pixel_local_storage2]</b> <b>[entry point: <c>glGetFramebufferPixelLocalStorageSizeEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_shader_pixel_local_storage2.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_shader_pixel_local_storage2.txt">EXT_shader_pixel_local_storage2.txt</see></remarks>
             public static int GetFramebufferPixelLocalStorageSizeEXT(FramebufferTarget target) => GLPointers.glGetFramebufferPixelLocalStorageSizeEXT_Lazy((uint)target);
             
             /// <summary> <b>[requires: GL_EXT_robustness]</b> <b>[entry point: <c>glGetGraphicsResetStatusEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_robustness.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_robustness.txt">EXT_robustness.txt</see></remarks>
             public static GraphicsResetStatus GetGraphicsResetStatusEXT() => (GraphicsResetStatus) GLPointers.glGetGraphicsResetStatusEXT_Lazy();
             
             /// <summary> <b>[requires: GL_EXT_disjoint_timer_query]</b> <b>[entry point: <c>glGetInteger64vEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_disjoint_timer_query.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_disjoint_timer_query.txt">EXT_disjoint_timer_query.txt</see></remarks>
             public static void GetInteger64vEXT(GetPName pname, long* data) => GLPointers.glGetInteger64vEXT_Lazy((uint)pname, data);
             
             /// <summary> <b>[requires: GL_EXT_multiview_draw_buffers]</b> <b>[entry point: <c>glGetIntegeri_vEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_multiview_draw_buffers.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_multiview_draw_buffers.txt">EXT_multiview_draw_buffers.txt</see></remarks>
             public static void GetIntegeri_vEXT(GetPName target, uint index, int* data) => GLPointers.glGetIntegeri_vEXT_Lazy((uint)target, index, data);
             
             /// <summary> <b>[requires: GL_EXT_memory_object]</b> <b>[entry point: <c>glGetMemoryObjectParameterivEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_memory_object.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_memory_object.txt">EXT_memory_object.txt</see></remarks>
             public static void GetMemoryObjectParameterivEXT(uint memoryObject, MemoryObjectParameterName pname, int* @params) => GLPointers.glGetMemoryObjectParameterivEXT_Lazy(memoryObject, (uint)pname, @params);
             
             /// <summary> <b>[requires: GL_EXT_robustness]</b> <b>[entry point: <c>glGetnUniformfvEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_robustness.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_robustness.txt">EXT_robustness.txt</see></remarks>
             public static void GetnUniformfvEXT(int program, int location, int bufSize, float* @params) => GLPointers.glGetnUniformfvEXT_Lazy(program, location, bufSize, @params);
             
             /// <summary> <b>[requires: GL_EXT_robustness]</b> <b>[entry point: <c>glGetnUniformivEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_robustness.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_robustness.txt">EXT_robustness.txt</see></remarks>
             public static void GetnUniformivEXT(int program, int location, int bufSize, int* @params) => GLPointers.glGetnUniformivEXT_Lazy(program, location, bufSize, @params);
             
             /// <summary> <b>[requires: GL_EXT_debug_label]</b> <b>[entry point: <c>glGetObjectLabelEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_debug_label.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_debug_label.txt">EXT_debug_label.txt</see></remarks>
             public static void GetObjectLabelEXT(All type, uint @object, int bufSize, int* length, byte* label) => GLPointers.glGetObjectLabelEXT_Lazy((uint)type, @object, bufSize, length, label);
             
             /// <summary> <b>[requires: GL_EXT_separate_shader_objects]</b> <b>[entry point: <c>glGetProgramPipelineInfoLogEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_separate_shader_objects.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_separate_shader_objects.txt">EXT_separate_shader_objects.txt</see></remarks>
             public static void GetProgramPipelineInfoLogEXT(int pipeline, int bufSize, int* length, byte* infoLog) => GLPointers.glGetProgramPipelineInfoLogEXT_Lazy(pipeline, bufSize, length, infoLog);
             
             /// <summary> <b>[requires: GL_EXT_separate_shader_objects]</b> <b>[entry point: <c>glGetProgramPipelineivEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_separate_shader_objects.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_separate_shader_objects.txt">EXT_separate_shader_objects.txt</see></remarks>
             public static void GetProgramPipelineivEXT(int pipeline, PipelineParameterName pname, int* @params) => GLPointers.glGetProgramPipelineivEXT_Lazy(pipeline, (uint)pname, @params);
             
             /// <summary> <b>[requires: GL_EXT_blend_func_extended]</b> <b>[entry point: <c>glGetProgramResourceLocationIndexEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_blend_func_extended.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_blend_func_extended.txt">EXT_blend_func_extended.txt</see></remarks>
             public static int GetProgramResourceLocationIndexEXT(int program, ProgramInterface programInterface, byte* name) => GLPointers.glGetProgramResourceLocationIndexEXT_Lazy(program, (uint)programInterface, name);
             
             /// <summary> <b>[requires: GL_EXT_disjoint_timer_query | GL_EXT_occlusion_query_boolean]</b> <b>[entry point: <c>glGetQueryivEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_disjoint_timer_query.txt"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_occlusion_query_boolean.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_disjoint_timer_query.txt">EXT_disjoint_timer_query.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_occlusion_query_boolean.txt">EXT_occlusion_query_boolean.txt</see></remarks>
             public static void GetQueryivEXT(QueryTarget target, QueryParameterName pname, int* @params) => GLPointers.glGetQueryivEXT_Lazy((uint)target, (uint)pname, @params);
             
             /// <summary> <b>[requires: GL_EXT_disjoint_timer_query]</b> <b>[entry point: <c>glGetQueryObjecti64vEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_disjoint_timer_query.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_disjoint_timer_query.txt">EXT_disjoint_timer_query.txt</see></remarks>
             public static void GetQueryObjecti64vEXT(int id, QueryObjectParameterName pname, long* @params) => GLPointers.glGetQueryObjecti64vEXT_Lazy(id, (uint)pname, @params);
             
             /// <summary> <b>[requires: GL_EXT_disjoint_timer_query]</b> <b>[entry point: <c>glGetQueryObjectivEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_disjoint_timer_query.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_disjoint_timer_query.txt">EXT_disjoint_timer_query.txt</see></remarks>
             public static void GetQueryObjectivEXT(int id, QueryObjectParameterName pname, int* @params) => GLPointers.glGetQueryObjectivEXT_Lazy(id, (uint)pname, @params);
             
             /// <summary> <b>[requires: GL_EXT_disjoint_timer_query]</b> <b>[entry point: <c>glGetQueryObjectui64vEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_disjoint_timer_query.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_disjoint_timer_query.txt">EXT_disjoint_timer_query.txt</see></remarks>
             public static void GetQueryObjectui64vEXT(int id, QueryObjectParameterName pname, ulong* @params) => GLPointers.glGetQueryObjectui64vEXT_Lazy(id, (uint)pname, @params);
             
             /// <summary> <b>[requires: GL_EXT_disjoint_timer_query | GL_EXT_occlusion_query_boolean]</b> <b>[entry point: <c>glGetQueryObjectuivEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_disjoint_timer_query.txt"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_occlusion_query_boolean.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_disjoint_timer_query.txt">EXT_disjoint_timer_query.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_occlusion_query_boolean.txt">EXT_occlusion_query_boolean.txt</see></remarks>
             public static void GetQueryObjectuivEXT(int id, QueryObjectParameterName pname, uint* @params) => GLPointers.glGetQueryObjectuivEXT_Lazy(id, (uint)pname, @params);
             
             /// <summary> <b>[requires: GL_EXT_texture_border_clamp]</b> <b>[entry point: <c>glGetSamplerParameterIivEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_texture_border_clamp.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_texture_border_clamp.txt">EXT_texture_border_clamp.txt</see></remarks>
             public static void GetSamplerParameterIivEXT(int sampler, SamplerParameterI pname, int* @params) => GLPointers.glGetSamplerParameterIivEXT_Lazy(sampler, (uint)pname, @params);
             
             /// <summary> <b>[requires: GL_EXT_texture_border_clamp]</b> <b>[entry point: <c>glGetSamplerParameterIuivEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_texture_border_clamp.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_texture_border_clamp.txt">EXT_texture_border_clamp.txt</see></remarks>
             public static void GetSamplerParameterIuivEXT(int sampler, SamplerParameterI pname, uint* @params) => GLPointers.glGetSamplerParameterIuivEXT_Lazy(sampler, (uint)pname, @params);
             
             /// <summary> <b>[requires: GL_EXT_semaphore]</b> <b>[entry point: <c>glGetSemaphoreParameterui64vEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_semaphore.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_semaphore.txt">EXT_semaphore.txt</see></remarks>
             public static void GetSemaphoreParameterui64vEXT(uint semaphore, SemaphoreParameterName pname, ulong* @params) => GLPointers.glGetSemaphoreParameterui64vEXT_Lazy(semaphore, (uint)pname, @params);
             
             /// <summary> <b>[requires: GL_EXT_texture_border_clamp]</b> <b>[entry point: <c>glGetTexParameterIivEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_texture_border_clamp.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_texture_border_clamp.txt">EXT_texture_border_clamp.txt</see></remarks>
             public static void GetTexParameterIivEXT(TextureTarget target, GetTextureParameter pname, int* @params) => GLPointers.glGetTexParameterIivEXT_Lazy((uint)target, (uint)pname, @params);
             
             /// <summary> <b>[requires: GL_EXT_texture_border_clamp]</b> <b>[entry point: <c>glGetTexParameterIuivEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_texture_border_clamp.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_texture_border_clamp.txt">EXT_texture_border_clamp.txt</see></remarks>
             public static void GetTexParameterIuivEXT(TextureTarget target, GetTextureParameter pname, uint* @params) => GLPointers.glGetTexParameterIuivEXT_Lazy((uint)target, (uint)pname, @params);
             
             /// <summary> <b>[requires: GL_EXT_memory_object | GL_EXT_semaphore]</b> <b>[entry point: <c>glGetUnsignedBytei_vEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_memory_object.txt"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_semaphore.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_memory_object.txt">EXT_memory_object.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_semaphore.txt">EXT_semaphore.txt</see></remarks>
             public static void GetUnsignedBytei_vEXT(All target, uint index, byte* data) => GLPointers.glGetUnsignedBytei_vEXT_Lazy((uint)target, index, data);
             
             /// <summary> <b>[requires: GL_EXT_memory_object | GL_EXT_semaphore]</b> <b>[entry point: <c>glGetUnsignedBytevEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_memory_object.txt"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_semaphore.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_memory_object.txt">EXT_memory_object.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_semaphore.txt">EXT_semaphore.txt</see></remarks>
             public static void GetUnsignedBytevEXT(GetPName pname, byte* data) => GLPointers.glGetUnsignedBytevEXT_Lazy((uint)pname, data);
             
             /// <summary> <b>[requires: GL_EXT_memory_object_fd]</b> <b>[entry point: <c>glImportMemoryFdEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_memory_object_fd.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_memory_object_fd.txt">EXT_memory_object_fd.txt</see></remarks>
             public static void ImportMemoryFdEXT(uint memory, ulong size, ExternalHandleType handleType, int fd) => GLPointers.glImportMemoryFdEXT_Lazy(memory, size, (uint)handleType, fd);
             
             /// <summary> <b>[requires: GL_EXT_memory_object_win32]</b> <b>[entry point: <c>glImportMemoryWin32HandleEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_memory_object_win32.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_memory_object_win32.txt">EXT_memory_object_win32.txt</see></remarks>
             public static void ImportMemoryWin32HandleEXT(uint memory, ulong size, ExternalHandleType handleType, void* handle) => GLPointers.glImportMemoryWin32HandleEXT_Lazy(memory, size, (uint)handleType, handle);
             
             /// <summary> <b>[requires: GL_EXT_memory_object_win32]</b> <b>[entry point: <c>glImportMemoryWin32NameEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_memory_object_win32.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_memory_object_win32.txt">EXT_memory_object_win32.txt</see></remarks>
             public static void ImportMemoryWin32NameEXT(uint memory, ulong size, ExternalHandleType handleType, void* name) => GLPointers.glImportMemoryWin32NameEXT_Lazy(memory, size, (uint)handleType, name);
             
             /// <summary> <b>[requires: GL_EXT_semaphore_fd]</b> <b>[entry point: <c>glImportSemaphoreFdEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_semaphore_fd.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_semaphore_fd.txt">EXT_semaphore_fd.txt</see></remarks>
             public static void ImportSemaphoreFdEXT(uint semaphore, ExternalHandleType handleType, int fd) => GLPointers.glImportSemaphoreFdEXT_Lazy(semaphore, (uint)handleType, fd);
             
             /// <summary> <b>[requires: GL_EXT_semaphore_win32]</b> <b>[entry point: <c>glImportSemaphoreWin32HandleEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_semaphore_win32.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_semaphore_win32.txt">EXT_semaphore_win32.txt</see></remarks>
             public static void ImportSemaphoreWin32HandleEXT(uint semaphore, ExternalHandleType handleType, void* handle) => GLPointers.glImportSemaphoreWin32HandleEXT_Lazy(semaphore, (uint)handleType, handle);
             
             /// <summary> <b>[requires: GL_EXT_semaphore_win32]</b> <b>[entry point: <c>glImportSemaphoreWin32NameEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_semaphore_win32.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_semaphore_win32.txt">EXT_semaphore_win32.txt</see></remarks>
             public static void ImportSemaphoreWin32NameEXT(uint semaphore, ExternalHandleType handleType, void* name) => GLPointers.glImportSemaphoreWin32NameEXT_Lazy(semaphore, (uint)handleType, name);
             
             /// <summary> <b>[requires: GL_EXT_debug_marker]</b> <b>[entry point: <c>glInsertEventMarkerEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_debug_marker.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_debug_marker.txt">EXT_debug_marker.txt</see></remarks>
             public static void InsertEventMarkerEXT(int length, byte* marker) => GLPointers.glInsertEventMarkerEXT_Lazy(length, marker);
             
             /// <summary> <b>[requires: GL_EXT_draw_buffers_indexed]</b> <b>[entry point: <c>glIsEnablediEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_draw_buffers_indexed.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_draw_buffers_indexed.txt">EXT_draw_buffers_indexed.txt</see></remarks>
             public static bool IsEnablediEXT(EnableCap target, uint index) => GLPointers.glIsEnablediEXT_Lazy((uint)target, index) != 0;
             
             /// <summary> <b>[requires: GL_EXT_memory_object]</b> <b>[entry point: <c>glIsMemoryObjectEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_memory_object.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_memory_object.txt">EXT_memory_object.txt</see></remarks>
             public static bool IsMemoryObjectEXT(uint memoryObject) => GLPointers.glIsMemoryObjectEXT_Lazy(memoryObject) != 0;
             
             /// <summary> <b>[requires: GL_EXT_separate_shader_objects]</b> <b>[entry point: <c>glIsProgramPipelineEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_separate_shader_objects.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_separate_shader_objects.txt">EXT_separate_shader_objects.txt</see></remarks>
             public static bool IsProgramPipelineEXT(int pipeline) => GLPointers.glIsProgramPipelineEXT_Lazy(pipeline) != 0;
             
             /// <summary> <b>[requires: GL_EXT_disjoint_timer_query | GL_EXT_occlusion_query_boolean]</b> <b>[entry point: <c>glIsQueryEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_disjoint_timer_query.txt"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_occlusion_query_boolean.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_disjoint_timer_query.txt">EXT_disjoint_timer_query.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_occlusion_query_boolean.txt">EXT_occlusion_query_boolean.txt</see></remarks>
             public static bool IsQueryEXT(int id) => GLPointers.glIsQueryEXT_Lazy(id) != 0;
             
             /// <summary> <b>[requires: GL_EXT_semaphore]</b> <b>[entry point: <c>glIsSemaphoreEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_semaphore.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_semaphore.txt">EXT_semaphore.txt</see></remarks>
             public static bool IsSemaphoreEXT(uint semaphore) => GLPointers.glIsSemaphoreEXT_Lazy(semaphore) != 0;
             
             /// <summary> <b>[requires: GL_EXT_debug_label]</b> <b>[entry point: <c>glLabelObjectEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_debug_label.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_debug_label.txt">EXT_debug_label.txt</see></remarks>
             public static void LabelObjectEXT(All type, uint @object, int length, byte* label) => GLPointers.glLabelObjectEXT_Lazy((uint)type, @object, length, label);
             
             /// <summary> <b>[requires: GL_EXT_map_buffer_range]</b> <b>[entry point: <c>glMapBufferRangeEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_map_buffer_range.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_map_buffer_range.txt">EXT_map_buffer_range.txt</see></remarks>
             public static void* MapBufferRangeEXT(BufferTarget target, IntPtr offset, nint length, MapBufferAccessMask access) => GLPointers.glMapBufferRangeEXT_Lazy((uint)target, offset, length, (uint)access);
             
             /// <summary> <b>[requires: GL_EXT_memory_object]</b> <b>[entry point: <c>glMemoryObjectParameterivEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_memory_object.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_memory_object.txt">EXT_memory_object.txt</see></remarks>
             public static void MemoryObjectParameterivEXT(uint memoryObject, MemoryObjectParameterName pname, int* @params) => GLPointers.glMemoryObjectParameterivEXT_Lazy(memoryObject, (uint)pname, @params);
             
             /// <summary> <b>[requires: GL_EXT_multi_draw_arrays]</b> <b>[entry point: <c>glMultiDrawArraysEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_multi_draw_arrays.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_multi_draw_arrays.txt">EXT_multi_draw_arrays.txt</see></remarks>
             public static void MultiDrawArraysEXT(PrimitiveType mode, int* first, int* count, int primcount) => GLPointers.glMultiDrawArraysEXT_Lazy((uint)mode, first, count, primcount);
             
             /// <summary> <b>[requires: GL_EXT_multi_draw_indirect]</b> <b>[entry point: <c>glMultiDrawArraysIndirectEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_multi_draw_indirect.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_multi_draw_indirect.txt">EXT_multi_draw_indirect.txt</see></remarks>
             public static void MultiDrawArraysIndirectEXT(PrimitiveType mode, void* indirect, int drawcount, int stride) => GLPointers.glMultiDrawArraysIndirectEXT_Lazy((uint)mode, indirect, drawcount, stride);
             
             /// <summary> <b>[requires: GL_EXT_draw_elements_base_vertex | GL_OES_draw_elements_base_vertex]</b> <b>[entry point: <c>glMultiDrawElementsBaseVertexEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/OES/EXT_draw_elements_base_vertex.txt"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/OES/OES_draw_elements_base_vertex.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/OES/EXT_draw_elements_base_vertex.txt">EXT_draw_elements_base_vertex.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/OES/OES_draw_elements_base_vertex.txt">OES_draw_elements_base_vertex.txt</see></remarks>
             public static void MultiDrawElementsBaseVertexEXT(PrimitiveType mode, int* count, DrawElementsType type, void** indices, int drawcount, int* basevertex) => GLPointers.glMultiDrawElementsBaseVertexEXT_Lazy((uint)mode, count, (uint)type, indices, drawcount, basevertex);
             
             /// <summary> <b>[requires: GL_EXT_multi_draw_arrays]</b> <b>[entry point: <c>glMultiDrawElementsEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_multi_draw_arrays.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_multi_draw_arrays.txt">EXT_multi_draw_arrays.txt</see></remarks>
             public static void MultiDrawElementsEXT(PrimitiveType mode, int* count, DrawElementsType type, void** indices, int primcount) => GLPointers.glMultiDrawElementsEXT_Lazy((uint)mode, count, (uint)type, indices, primcount);
             
             /// <summary> <b>[requires: GL_EXT_multi_draw_indirect]</b> <b>[entry point: <c>glMultiDrawElementsIndirectEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_multi_draw_indirect.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_multi_draw_indirect.txt">EXT_multi_draw_indirect.txt</see></remarks>
             public static void MultiDrawElementsIndirectEXT(PrimitiveType mode, DrawElementsType type, void* indirect, int drawcount, int stride) => GLPointers.glMultiDrawElementsIndirectEXT_Lazy((uint)mode, (uint)type, indirect, drawcount, stride);
             
             /// <summary> <b>[requires: GL_EXT_external_buffer]</b> <b>[entry point: <c>glNamedBufferStorageExternalEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_external_buffer.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_external_buffer.txt">EXT_external_buffer.txt</see></remarks>
             public static void NamedBufferStorageExternalEXT(int buffer, IntPtr offset, nint size, void* clientBuffer, BufferStorageMask flags) => GLPointers.glNamedBufferStorageExternalEXT_Lazy(buffer, offset, size, clientBuffer, (uint)flags);
             
             /// <summary> <b>[requires: GL_EXT_memory_object]</b> <b>[entry point: <c>glNamedBufferStorageMemEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_memory_object.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_memory_object.txt">EXT_memory_object.txt</see></remarks>
             public static void NamedBufferStorageMemEXT(int buffer, nint size, uint memory, ulong offset) => GLPointers.glNamedBufferStorageMemEXT_Lazy(buffer, size, memory, offset);
             
             /// <summary> <b>[requires: GL_EXT_tessellation_shader]</b> <b>[entry point: <c>glPatchParameteriEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_tessellation_shader.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_tessellation_shader.txt">EXT_tessellation_shader.txt</see></remarks>
             public static void PatchParameteriEXT(PatchParameterName pname, int value) => GLPointers.glPatchParameteriEXT_Lazy((uint)pname, value);
             
             /// <summary> <b>[requires: GL_EXT_polygon_offset_clamp]</b> <b>[entry point: <c>glPolygonOffsetClampEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_polygon_offset_clamp.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_polygon_offset_clamp.txt">EXT_polygon_offset_clamp.txt</see></remarks>
             public static void PolygonOffsetClampEXT(float factor, float units, float clamp) => GLPointers.glPolygonOffsetClampEXT_Lazy(factor, units, clamp);
             
             /// <summary> <b>[requires: GL_EXT_debug_marker]</b> <b>[entry point: <c>glPopGroupMarkerEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_debug_marker.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_debug_marker.txt">EXT_debug_marker.txt</see></remarks>
             public static void PopGroupMarkerEXT() => GLPointers.glPopGroupMarkerEXT_Lazy();
             
             /// <summary> <b>[requires: GL_EXT_primitive_bounding_box]</b> <b>[entry point: <c>glPrimitiveBoundingBoxEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_primitive_bounding_box.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_primitive_bounding_box.txt">EXT_primitive_bounding_box.txt</see></remarks>
             public static void PrimitiveBoundingBoxEXT(float minX, float minY, float minZ, float minW, float maxX, float maxY, float maxZ, float maxW) => GLPointers.glPrimitiveBoundingBoxEXT_Lazy(minX, minY, minZ, minW, maxX, maxY, maxZ, maxW);
             
             /// <summary> <b>[requires: GL_EXT_separate_shader_objects]</b> <b>[entry point: <c>glProgramParameteriEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_separate_shader_objects.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_separate_shader_objects.txt">EXT_separate_shader_objects.txt</see></remarks>
             public static void ProgramParameteriEXT(int program, ProgramParameterPName pname, int value) => GLPointers.glProgramParameteriEXT_Lazy(program, (uint)pname, value);
             
             /// <summary> <b>[requires: GL_EXT_separate_shader_objects]</b> <b>[entry point: <c>glProgramUniform1fEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_separate_shader_objects.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_separate_shader_objects.txt">EXT_separate_shader_objects.txt</see></remarks>
             public static void ProgramUniform1fEXT(int program, int location, float v0) => GLPointers.glProgramUniform1fEXT_Lazy(program, location, v0);
             
             /// <summary> <b>[requires: GL_EXT_separate_shader_objects]</b> <b>[entry point: <c>glProgramUniform1fvEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_separate_shader_objects.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_separate_shader_objects.txt">EXT_separate_shader_objects.txt</see></remarks>
             public static void ProgramUniform1fvEXT(int program, int location, int count, float* value) => GLPointers.glProgramUniform1fvEXT_Lazy(program, location, count, value);
             
             /// <summary> <b>[requires: GL_EXT_separate_shader_objects]</b> <b>[entry point: <c>glProgramUniform1iEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_separate_shader_objects.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_separate_shader_objects.txt">EXT_separate_shader_objects.txt</see></remarks>
             public static void ProgramUniform1iEXT(int program, int location, int v0) => GLPointers.glProgramUniform1iEXT_Lazy(program, location, v0);
             
             /// <summary> <b>[requires: GL_EXT_separate_shader_objects]</b> <b>[entry point: <c>glProgramUniform1ivEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_separate_shader_objects.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_separate_shader_objects.txt">EXT_separate_shader_objects.txt</see></remarks>
             public static void ProgramUniform1ivEXT(int program, int location, int count, int* value) => GLPointers.glProgramUniform1ivEXT_Lazy(program, location, count, value);
             
             /// <summary> <b>[requires: GL_EXT_separate_shader_objects]</b> <b>[entry point: <c>glProgramUniform1uiEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_separate_shader_objects.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_separate_shader_objects.txt">EXT_separate_shader_objects.txt</see></remarks>
             public static void ProgramUniform1uiEXT(int program, int location, uint v0) => GLPointers.glProgramUniform1uiEXT_Lazy(program, location, v0);
             
             /// <summary> <b>[requires: GL_EXT_separate_shader_objects]</b> <b>[entry point: <c>glProgramUniform1uivEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_separate_shader_objects.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_separate_shader_objects.txt">EXT_separate_shader_objects.txt</see></remarks>
             public static void ProgramUniform1uivEXT(int program, int location, int count, uint* value) => GLPointers.glProgramUniform1uivEXT_Lazy(program, location, count, value);
             
             /// <summary> <b>[requires: GL_EXT_separate_shader_objects]</b> <b>[entry point: <c>glProgramUniform2fEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_separate_shader_objects.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_separate_shader_objects.txt">EXT_separate_shader_objects.txt</see></remarks>
             public static void ProgramUniform2fEXT(int program, int location, float v0, float v1) => GLPointers.glProgramUniform2fEXT_Lazy(program, location, v0, v1);
             
             /// <summary> <b>[requires: GL_EXT_separate_shader_objects]</b> <b>[entry point: <c>glProgramUniform2fvEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_separate_shader_objects.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_separate_shader_objects.txt">EXT_separate_shader_objects.txt</see></remarks>
             public static void ProgramUniform2fvEXT(int program, int location, int count, float* value) => GLPointers.glProgramUniform2fvEXT_Lazy(program, location, count, value);
             
             /// <summary> <b>[requires: GL_EXT_separate_shader_objects]</b> <b>[entry point: <c>glProgramUniform2iEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_separate_shader_objects.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_separate_shader_objects.txt">EXT_separate_shader_objects.txt</see></remarks>
             public static void ProgramUniform2iEXT(int program, int location, int v0, int v1) => GLPointers.glProgramUniform2iEXT_Lazy(program, location, v0, v1);
             
             /// <summary> <b>[requires: GL_EXT_separate_shader_objects]</b> <b>[entry point: <c>glProgramUniform2ivEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_separate_shader_objects.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_separate_shader_objects.txt">EXT_separate_shader_objects.txt</see></remarks>
             public static void ProgramUniform2ivEXT(int program, int location, int count, int* value) => GLPointers.glProgramUniform2ivEXT_Lazy(program, location, count, value);
             
             /// <summary> <b>[requires: GL_EXT_separate_shader_objects]</b> <b>[entry point: <c>glProgramUniform2uiEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_separate_shader_objects.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_separate_shader_objects.txt">EXT_separate_shader_objects.txt</see></remarks>
             public static void ProgramUniform2uiEXT(int program, int location, uint v0, uint v1) => GLPointers.glProgramUniform2uiEXT_Lazy(program, location, v0, v1);
             
             /// <summary> <b>[requires: GL_EXT_separate_shader_objects]</b> <b>[entry point: <c>glProgramUniform2uivEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_separate_shader_objects.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_separate_shader_objects.txt">EXT_separate_shader_objects.txt</see></remarks>
             public static void ProgramUniform2uivEXT(int program, int location, int count, uint* value) => GLPointers.glProgramUniform2uivEXT_Lazy(program, location, count, value);
             
             /// <summary> <b>[requires: GL_EXT_separate_shader_objects]</b> <b>[entry point: <c>glProgramUniform3fEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_separate_shader_objects.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_separate_shader_objects.txt">EXT_separate_shader_objects.txt</see></remarks>
             public static void ProgramUniform3fEXT(int program, int location, float v0, float v1, float v2) => GLPointers.glProgramUniform3fEXT_Lazy(program, location, v0, v1, v2);
             
             /// <summary> <b>[requires: GL_EXT_separate_shader_objects]</b> <b>[entry point: <c>glProgramUniform3fvEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_separate_shader_objects.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_separate_shader_objects.txt">EXT_separate_shader_objects.txt</see></remarks>
             public static void ProgramUniform3fvEXT(int program, int location, int count, float* value) => GLPointers.glProgramUniform3fvEXT_Lazy(program, location, count, value);
             
             /// <summary> <b>[requires: GL_EXT_separate_shader_objects]</b> <b>[entry point: <c>glProgramUniform3iEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_separate_shader_objects.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_separate_shader_objects.txt">EXT_separate_shader_objects.txt</see></remarks>
             public static void ProgramUniform3iEXT(int program, int location, int v0, int v1, int v2) => GLPointers.glProgramUniform3iEXT_Lazy(program, location, v0, v1, v2);
             
             /// <summary> <b>[requires: GL_EXT_separate_shader_objects]</b> <b>[entry point: <c>glProgramUniform3ivEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_separate_shader_objects.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_separate_shader_objects.txt">EXT_separate_shader_objects.txt</see></remarks>
             public static void ProgramUniform3ivEXT(int program, int location, int count, int* value) => GLPointers.glProgramUniform3ivEXT_Lazy(program, location, count, value);
             
             /// <summary> <b>[requires: GL_EXT_separate_shader_objects]</b> <b>[entry point: <c>glProgramUniform3uiEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_separate_shader_objects.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_separate_shader_objects.txt">EXT_separate_shader_objects.txt</see></remarks>
             public static void ProgramUniform3uiEXT(int program, int location, uint v0, uint v1, uint v2) => GLPointers.glProgramUniform3uiEXT_Lazy(program, location, v0, v1, v2);
             
             /// <summary> <b>[requires: GL_EXT_separate_shader_objects]</b> <b>[entry point: <c>glProgramUniform3uivEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_separate_shader_objects.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_separate_shader_objects.txt">EXT_separate_shader_objects.txt</see></remarks>
             public static void ProgramUniform3uivEXT(int program, int location, int count, uint* value) => GLPointers.glProgramUniform3uivEXT_Lazy(program, location, count, value);
             
             /// <summary> <b>[requires: GL_EXT_separate_shader_objects]</b> <b>[entry point: <c>glProgramUniform4fEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_separate_shader_objects.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_separate_shader_objects.txt">EXT_separate_shader_objects.txt</see></remarks>
             public static void ProgramUniform4fEXT(int program, int location, float v0, float v1, float v2, float v3) => GLPointers.glProgramUniform4fEXT_Lazy(program, location, v0, v1, v2, v3);
             
             /// <summary> <b>[requires: GL_EXT_separate_shader_objects]</b> <b>[entry point: <c>glProgramUniform4fvEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_separate_shader_objects.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_separate_shader_objects.txt">EXT_separate_shader_objects.txt</see></remarks>
             public static void ProgramUniform4fvEXT(int program, int location, int count, float* value) => GLPointers.glProgramUniform4fvEXT_Lazy(program, location, count, value);
             
             /// <summary> <b>[requires: GL_EXT_separate_shader_objects]</b> <b>[entry point: <c>glProgramUniform4iEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_separate_shader_objects.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_separate_shader_objects.txt">EXT_separate_shader_objects.txt</see></remarks>
             public static void ProgramUniform4iEXT(int program, int location, int v0, int v1, int v2, int v3) => GLPointers.glProgramUniform4iEXT_Lazy(program, location, v0, v1, v2, v3);
             
             /// <summary> <b>[requires: GL_EXT_separate_shader_objects]</b> <b>[entry point: <c>glProgramUniform4ivEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_separate_shader_objects.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_separate_shader_objects.txt">EXT_separate_shader_objects.txt</see></remarks>
             public static void ProgramUniform4ivEXT(int program, int location, int count, int* value) => GLPointers.glProgramUniform4ivEXT_Lazy(program, location, count, value);
             
             /// <summary> <b>[requires: GL_EXT_separate_shader_objects]</b> <b>[entry point: <c>glProgramUniform4uiEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_separate_shader_objects.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_separate_shader_objects.txt">EXT_separate_shader_objects.txt</see></remarks>
             public static void ProgramUniform4uiEXT(int program, int location, uint v0, uint v1, uint v2, uint v3) => GLPointers.glProgramUniform4uiEXT_Lazy(program, location, v0, v1, v2, v3);
             
             /// <summary> <b>[requires: GL_EXT_separate_shader_objects]</b> <b>[entry point: <c>glProgramUniform4uivEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_separate_shader_objects.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_separate_shader_objects.txt">EXT_separate_shader_objects.txt</see></remarks>
             public static void ProgramUniform4uivEXT(int program, int location, int count, uint* value) => GLPointers.glProgramUniform4uivEXT_Lazy(program, location, count, value);
             
             /// <summary> <b>[requires: GL_EXT_separate_shader_objects]</b> <b>[entry point: <c>glProgramUniformMatrix2fvEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_separate_shader_objects.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_separate_shader_objects.txt">EXT_separate_shader_objects.txt</see></remarks>
             public static void ProgramUniformMatrix2fvEXT(int program, int location, int count, bool transpose, float* value) => GLPointers.glProgramUniformMatrix2fvEXT_Lazy(program, location, count, (byte)(transpose ? 1 : 0), value);
             
             /// <summary> <b>[requires: GL_EXT_separate_shader_objects]</b> <b>[entry point: <c>glProgramUniformMatrix2x3fvEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_separate_shader_objects.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_separate_shader_objects.txt">EXT_separate_shader_objects.txt</see></remarks>
             public static void ProgramUniformMatrix2x3fvEXT(int program, int location, int count, bool transpose, float* value) => GLPointers.glProgramUniformMatrix2x3fvEXT_Lazy(program, location, count, (byte)(transpose ? 1 : 0), value);
             
             /// <summary> <b>[requires: GL_EXT_separate_shader_objects]</b> <b>[entry point: <c>glProgramUniformMatrix2x4fvEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_separate_shader_objects.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_separate_shader_objects.txt">EXT_separate_shader_objects.txt</see></remarks>
             public static void ProgramUniformMatrix2x4fvEXT(int program, int location, int count, bool transpose, float* value) => GLPointers.glProgramUniformMatrix2x4fvEXT_Lazy(program, location, count, (byte)(transpose ? 1 : 0), value);
             
             /// <summary> <b>[requires: GL_EXT_separate_shader_objects]</b> <b>[entry point: <c>glProgramUniformMatrix3fvEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_separate_shader_objects.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_separate_shader_objects.txt">EXT_separate_shader_objects.txt</see></remarks>
             public static void ProgramUniformMatrix3fvEXT(int program, int location, int count, bool transpose, float* value) => GLPointers.glProgramUniformMatrix3fvEXT_Lazy(program, location, count, (byte)(transpose ? 1 : 0), value);
             
             /// <summary> <b>[requires: GL_EXT_separate_shader_objects]</b> <b>[entry point: <c>glProgramUniformMatrix3x2fvEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_separate_shader_objects.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_separate_shader_objects.txt">EXT_separate_shader_objects.txt</see></remarks>
             public static void ProgramUniformMatrix3x2fvEXT(int program, int location, int count, bool transpose, float* value) => GLPointers.glProgramUniformMatrix3x2fvEXT_Lazy(program, location, count, (byte)(transpose ? 1 : 0), value);
             
             /// <summary> <b>[requires: GL_EXT_separate_shader_objects]</b> <b>[entry point: <c>glProgramUniformMatrix3x4fvEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_separate_shader_objects.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_separate_shader_objects.txt">EXT_separate_shader_objects.txt</see></remarks>
             public static void ProgramUniformMatrix3x4fvEXT(int program, int location, int count, bool transpose, float* value) => GLPointers.glProgramUniformMatrix3x4fvEXT_Lazy(program, location, count, (byte)(transpose ? 1 : 0), value);
             
             /// <summary> <b>[requires: GL_EXT_separate_shader_objects]</b> <b>[entry point: <c>glProgramUniformMatrix4fvEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_separate_shader_objects.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_separate_shader_objects.txt">EXT_separate_shader_objects.txt</see></remarks>
             public static void ProgramUniformMatrix4fvEXT(int program, int location, int count, bool transpose, float* value) => GLPointers.glProgramUniformMatrix4fvEXT_Lazy(program, location, count, (byte)(transpose ? 1 : 0), value);
             
             /// <summary> <b>[requires: GL_EXT_separate_shader_objects]</b> <b>[entry point: <c>glProgramUniformMatrix4x2fvEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_separate_shader_objects.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_separate_shader_objects.txt">EXT_separate_shader_objects.txt</see></remarks>
             public static void ProgramUniformMatrix4x2fvEXT(int program, int location, int count, bool transpose, float* value) => GLPointers.glProgramUniformMatrix4x2fvEXT_Lazy(program, location, count, (byte)(transpose ? 1 : 0), value);
             
             /// <summary> <b>[requires: GL_EXT_separate_shader_objects]</b> <b>[entry point: <c>glProgramUniformMatrix4x3fvEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_separate_shader_objects.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_separate_shader_objects.txt">EXT_separate_shader_objects.txt</see></remarks>
             public static void ProgramUniformMatrix4x3fvEXT(int program, int location, int count, bool transpose, float* value) => GLPointers.glProgramUniformMatrix4x3fvEXT_Lazy(program, location, count, (byte)(transpose ? 1 : 0), value);
             
             /// <summary> <b>[requires: GL_EXT_debug_marker]</b> <b>[entry point: <c>glPushGroupMarkerEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_debug_marker.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_debug_marker.txt">EXT_debug_marker.txt</see></remarks>
             public static void PushGroupMarkerEXT(int length, byte* marker) => GLPointers.glPushGroupMarkerEXT_Lazy(length, marker);
             
             /// <summary> <b>[requires: GL_EXT_disjoint_timer_query]</b> <b>[entry point: <c>glQueryCounterEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_disjoint_timer_query.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_disjoint_timer_query.txt">EXT_disjoint_timer_query.txt</see></remarks>
             public static void QueryCounterEXT(int id, QueryCounterTarget target) => GLPointers.glQueryCounterEXT_Lazy(id, (uint)target);
             
             /// <summary> <b>[requires: GL_EXT_raster_multisample | GL_NV_framebuffer_mixed_samples]</b> <b>[entry point: <c>glRasterSamplesEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/EXT_raster_multisample.txt"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_framebuffer_mixed_samples.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/EXT_raster_multisample.txt">EXT_raster_multisample.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_framebuffer_mixed_samples.txt">NV_framebuffer_mixed_samples.txt</see></remarks>
             public static void RasterSamplesEXT(uint samples, bool fixedsamplelocations) => GLPointers.glRasterSamplesEXT_Lazy(samples, (byte)(fixedsamplelocations ? 1 : 0));
             
             /// <summary> <b>[requires: GL_EXT_multiview_draw_buffers]</b> <b>[entry point: <c>glReadBufferIndexedEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_multiview_draw_buffers.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_multiview_draw_buffers.txt">EXT_multiview_draw_buffers.txt</see></remarks>
             public static void ReadBufferIndexedEXT(ReadBufferMode src, int index) => GLPointers.glReadBufferIndexedEXT_Lazy((uint)src, index);
             
             /// <summary> <b>[requires: GL_EXT_robustness]</b> <b>[entry point: <c>glReadnPixelsEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_robustness.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_robustness.txt">EXT_robustness.txt</see></remarks>
             public static void ReadnPixelsEXT(int x, int y, int width, int height, PixelFormat format, PixelType type, int bufSize, void* data) => GLPointers.glReadnPixelsEXT_Lazy(x, y, width, height, (uint)format, (uint)type, bufSize, data);
             
             /// <summary> <b>[requires: GL_EXT_win32_keyed_mutex]</b> <b>[entry point: <c>glReleaseKeyedMutexWin32EXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_win32_keyed_mutex.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_win32_keyed_mutex.txt">EXT_win32_keyed_mutex.txt</see></remarks>
             public static bool ReleaseKeyedMutexWin32EXT(uint memory, ulong key) => GLPointers.glReleaseKeyedMutexWin32EXT_Lazy(memory, key) != 0;
             
             /// <summary> <b>[requires: GL_EXT_multisampled_render_to_texture]</b> <b>[entry point: <c>glRenderbufferStorageMultisampleEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_multisampled_render_to_texture.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_multisampled_render_to_texture.txt">EXT_multisampled_render_to_texture.txt</see></remarks>
             public static void RenderbufferStorageMultisampleEXT(RenderbufferTarget target, int samples, InternalFormat internalformat, int width, int height) => GLPointers.glRenderbufferStorageMultisampleEXT_Lazy((uint)target, samples, (uint)internalformat, width, height);
             
             /// <summary> <b>[requires: GL_EXT_texture_border_clamp]</b> <b>[entry point: <c>glSamplerParameterIivEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_texture_border_clamp.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_texture_border_clamp.txt">EXT_texture_border_clamp.txt</see></remarks>
             public static void SamplerParameterIivEXT(int sampler, SamplerParameterI pname, int* param) => GLPointers.glSamplerParameterIivEXT_Lazy(sampler, (uint)pname, param);
             
             /// <summary> <b>[requires: GL_EXT_texture_border_clamp]</b> <b>[entry point: <c>glSamplerParameterIuivEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_texture_border_clamp.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_texture_border_clamp.txt">EXT_texture_border_clamp.txt</see></remarks>
             public static void SamplerParameterIuivEXT(int sampler, SamplerParameterI pname, uint* param) => GLPointers.glSamplerParameterIuivEXT_Lazy(sampler, (uint)pname, param);
             
             /// <summary> <b>[requires: GL_EXT_semaphore]</b> <b>[entry point: <c>glSemaphoreParameterui64vEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_semaphore.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_semaphore.txt">EXT_semaphore.txt</see></remarks>
             public static void SemaphoreParameterui64vEXT(uint semaphore, SemaphoreParameterName pname, ulong* @params) => GLPointers.glSemaphoreParameterui64vEXT_Lazy(semaphore, (uint)pname, @params);
             
             /// <summary> <b>[requires: GL_EXT_fragment_shading_rate]</b> <b>[entry point: <c>glShadingRateCombinerOpsEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_fragment_shading_rate.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_fragment_shading_rate.txt">EXT_fragment_shading_rate.txt</see></remarks>
             public static void ShadingRateCombinerOpsEXT(ShadingRateCombinerOp combinerOp0, ShadingRateCombinerOp combinerOp1) => GLPointers.glShadingRateCombinerOpsEXT_Lazy((uint)combinerOp0, (uint)combinerOp1);
             
             /// <summary> <b>[requires: GL_EXT_fragment_shading_rate]</b> <b>[entry point: <c>glShadingRateEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_fragment_shading_rate.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_fragment_shading_rate.txt">EXT_fragment_shading_rate.txt</see></remarks>
             public static void ShadingRateEXT(ShadingRate rate) => GLPointers.glShadingRateEXT_Lazy((uint)rate);
             
             /// <summary> <b>[requires: GL_EXT_semaphore]</b> <b>[entry point: <c>glSignalSemaphoreEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_semaphore.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_semaphore.txt">EXT_semaphore.txt</see></remarks>
             public static void SignalSemaphoreEXT(uint semaphore, uint numBufferBarriers, int* buffers, uint numTextureBarriers, int* textures, TextureLayout* dstLayouts) => GLPointers.glSignalSemaphoreEXT_Lazy(semaphore, numBufferBarriers, buffers, numTextureBarriers, textures, (uint*)dstLayouts);
             
             /// <summary> <b>[requires: GL_EXT_texture_buffer]</b> <b>[entry point: <c>glTexBufferEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_texture_buffer.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_texture_buffer.txt">EXT_texture_buffer.txt</see></remarks>
             public static void TexBufferEXT(TextureTarget target, SizedInternalFormat internalformat, int buffer) => GLPointers.glTexBufferEXT_Lazy((uint)target, (uint)internalformat, buffer);
             
             /// <summary> <b>[requires: GL_EXT_texture_buffer]</b> <b>[entry point: <c>glTexBufferRangeEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_texture_buffer.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_texture_buffer.txt">EXT_texture_buffer.txt</see></remarks>
             public static void TexBufferRangeEXT(TextureTarget target, SizedInternalFormat internalformat, int buffer, IntPtr offset, nint size) => GLPointers.glTexBufferRangeEXT_Lazy((uint)target, (uint)internalformat, buffer, offset, size);
             
             /// <summary> <b>[requires: GL_EXT_sparse_texture]</b> <b>[entry point: <c>glTexPageCommitmentEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_sparse_texture.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_sparse_texture.txt">EXT_sparse_texture.txt</see></remarks>
             public static void TexPageCommitmentEXT(TextureTarget target, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, bool commit) => GLPointers.glTexPageCommitmentEXT_Lazy((uint)target, level, xoffset, yoffset, zoffset, width, height, depth, (byte)(commit ? 1 : 0));
             
             /// <summary> <b>[requires: GL_EXT_texture_border_clamp]</b> <b>[entry point: <c>glTexParameterIivEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_texture_border_clamp.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_texture_border_clamp.txt">EXT_texture_border_clamp.txt</see></remarks>
             public static void TexParameterIivEXT(TextureTarget target, TextureParameterName pname, int* @params) => GLPointers.glTexParameterIivEXT_Lazy((uint)target, (uint)pname, @params);
             
             /// <summary> <b>[requires: GL_EXT_texture_border_clamp]</b> <b>[entry point: <c>glTexParameterIuivEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_texture_border_clamp.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_texture_border_clamp.txt">EXT_texture_border_clamp.txt</see></remarks>
             public static void TexParameterIuivEXT(TextureTarget target, TextureParameterName pname, uint* @params) => GLPointers.glTexParameterIuivEXT_Lazy((uint)target, (uint)pname, @params);
             
             /// <summary> <b>[requires: GL_EXT_texture_storage]</b> <b>[entry point: <c>glTexStorage1DEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_texture_storage.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_texture_storage.txt">EXT_texture_storage.txt</see></remarks>
             public static void TexStorage1DEXT(TextureTarget target, int levels, SizedInternalFormat internalformat, int width) => GLPointers.glTexStorage1DEXT_Lazy((uint)target, levels, (uint)internalformat, width);
             
             /// <summary> <b>[requires: GL_EXT_texture_storage]</b> <b>[entry point: <c>glTexStorage2DEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_texture_storage.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_texture_storage.txt">EXT_texture_storage.txt</see></remarks>
             public static void TexStorage2DEXT(TextureTarget target, int levels, SizedInternalFormat internalformat, int width, int height) => GLPointers.glTexStorage2DEXT_Lazy((uint)target, levels, (uint)internalformat, width, height);
             
             /// <summary> <b>[requires: GL_EXT_texture_storage]</b> <b>[entry point: <c>glTexStorage3DEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_texture_storage.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_texture_storage.txt">EXT_texture_storage.txt</see></remarks>
             public static void TexStorage3DEXT(TextureTarget target, int levels, SizedInternalFormat internalformat, int width, int height, int depth) => GLPointers.glTexStorage3DEXT_Lazy((uint)target, levels, (uint)internalformat, width, height, depth);
             
             /// <summary> <b>[requires: GL_EXT_texture_storage_compression]</b> <b>[entry point: <c>glTexStorageAttribs2DEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_texture_storage_compression.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_texture_storage_compression.txt">EXT_texture_storage_compression.txt</see></remarks>
             public static void TexStorageAttribs2DEXT(TextureTarget target, int levels, SizedInternalFormat internalformat, int width, int height, TexStorageAttribs* attrib_list) => GLPointers.glTexStorageAttribs2DEXT_Lazy((uint)target, levels, (uint)internalformat, width, height, (int*)attrib_list);
             
             /// <summary> <b>[requires: GL_EXT_texture_storage_compression]</b> <b>[entry point: <c>glTexStorageAttribs3DEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_texture_storage_compression.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_texture_storage_compression.txt">EXT_texture_storage_compression.txt</see></remarks>
             public static void TexStorageAttribs3DEXT(TextureTarget target, int levels, SizedInternalFormat internalformat, int width, int height, int depth, TexStorageAttribs* attrib_list) => GLPointers.glTexStorageAttribs3DEXT_Lazy((uint)target, levels, (uint)internalformat, width, height, depth, (int*)attrib_list);
             
             /// <summary> <b>[requires: GL_EXT_memory_object]</b> <b>[entry point: <c>glTexStorageMem1DEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_memory_object.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_memory_object.txt">EXT_memory_object.txt</see></remarks>
             public static void TexStorageMem1DEXT(TextureTarget target, int levels, SizedInternalFormat internalFormat, int width, uint memory, ulong offset) => GLPointers.glTexStorageMem1DEXT_Lazy((uint)target, levels, (uint)internalFormat, width, memory, offset);
             
             /// <summary> <b>[requires: GL_EXT_memory_object]</b> <b>[entry point: <c>glTexStorageMem2DEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_memory_object.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_memory_object.txt">EXT_memory_object.txt</see></remarks>
             public static void TexStorageMem2DEXT(TextureTarget target, int levels, SizedInternalFormat internalFormat, int width, int height, uint memory, ulong offset) => GLPointers.glTexStorageMem2DEXT_Lazy((uint)target, levels, (uint)internalFormat, width, height, memory, offset);
             
             /// <summary> <b>[requires: GL_EXT_memory_object]</b> <b>[entry point: <c>glTexStorageMem2DMultisampleEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_memory_object.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_memory_object.txt">EXT_memory_object.txt</see></remarks>
             public static void TexStorageMem2DMultisampleEXT(TextureTarget target, int samples, SizedInternalFormat internalFormat, int width, int height, bool fixedSampleLocations, uint memory, ulong offset) => GLPointers.glTexStorageMem2DMultisampleEXT_Lazy((uint)target, samples, (uint)internalFormat, width, height, (byte)(fixedSampleLocations ? 1 : 0), memory, offset);
             
             /// <summary> <b>[requires: GL_EXT_memory_object]</b> <b>[entry point: <c>glTexStorageMem3DEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_memory_object.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_memory_object.txt">EXT_memory_object.txt</see></remarks>
             public static void TexStorageMem3DEXT(TextureTarget target, int levels, SizedInternalFormat internalFormat, int width, int height, int depth, uint memory, ulong offset) => GLPointers.glTexStorageMem3DEXT_Lazy((uint)target, levels, (uint)internalFormat, width, height, depth, memory, offset);
             
             /// <summary> <b>[requires: GL_EXT_memory_object]</b> <b>[entry point: <c>glTexStorageMem3DMultisampleEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_memory_object.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_memory_object.txt">EXT_memory_object.txt</see></remarks>
             public static void TexStorageMem3DMultisampleEXT(TextureTarget target, int samples, SizedInternalFormat internalFormat, int width, int height, int depth, bool fixedSampleLocations, uint memory, ulong offset) => GLPointers.glTexStorageMem3DMultisampleEXT_Lazy((uint)target, samples, (uint)internalFormat, width, height, depth, (byte)(fixedSampleLocations ? 1 : 0), memory, offset);
             
             /// <summary> <b>[requires: GL_EXT_texture_storage]</b> <b>[entry point: <c>glTextureStorage1DEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_texture_storage.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_texture_storage.txt">EXT_texture_storage.txt</see></remarks>
             public static void TextureStorage1DEXT(int texture, TextureTarget target, int levels, SizedInternalFormat internalformat, int width) => GLPointers.glTextureStorage1DEXT_Lazy(texture, (uint)target, levels, (uint)internalformat, width);
             
             /// <summary> <b>[requires: GL_EXT_texture_storage]</b> <b>[entry point: <c>glTextureStorage2DEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_texture_storage.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_texture_storage.txt">EXT_texture_storage.txt</see></remarks>
             public static void TextureStorage2DEXT(int texture, All target, int levels, SizedInternalFormat internalformat, int width, int height) => GLPointers.glTextureStorage2DEXT_Lazy(texture, (uint)target, levels, (uint)internalformat, width, height);
             
             /// <summary> <b>[requires: GL_EXT_texture_storage]</b> <b>[entry point: <c>glTextureStorage3DEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_texture_storage.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_texture_storage.txt">EXT_texture_storage.txt</see></remarks>
             public static void TextureStorage3DEXT(int texture, All target, int levels, SizedInternalFormat internalformat, int width, int height, int depth) => GLPointers.glTextureStorage3DEXT_Lazy(texture, (uint)target, levels, (uint)internalformat, width, height, depth);
             
             /// <summary> <b>[requires: GL_EXT_memory_object]</b> <b>[entry point: <c>glTextureStorageMem1DEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_memory_object.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_memory_object.txt">EXT_memory_object.txt</see></remarks>
             public static void TextureStorageMem1DEXT(int texture, int levels, SizedInternalFormat internalFormat, int width, uint memory, ulong offset) => GLPointers.glTextureStorageMem1DEXT_Lazy(texture, levels, (uint)internalFormat, width, memory, offset);
             
             /// <summary> <b>[requires: GL_EXT_memory_object]</b> <b>[entry point: <c>glTextureStorageMem2DEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_memory_object.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_memory_object.txt">EXT_memory_object.txt</see></remarks>
             public static void TextureStorageMem2DEXT(int texture, int levels, SizedInternalFormat internalFormat, int width, int height, uint memory, ulong offset) => GLPointers.glTextureStorageMem2DEXT_Lazy(texture, levels, (uint)internalFormat, width, height, memory, offset);
             
             /// <summary> <b>[requires: GL_EXT_memory_object]</b> <b>[entry point: <c>glTextureStorageMem2DMultisampleEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_memory_object.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_memory_object.txt">EXT_memory_object.txt</see></remarks>
             public static void TextureStorageMem2DMultisampleEXT(int texture, int samples, SizedInternalFormat internalFormat, int width, int height, bool fixedSampleLocations, uint memory, ulong offset) => GLPointers.glTextureStorageMem2DMultisampleEXT_Lazy(texture, samples, (uint)internalFormat, width, height, (byte)(fixedSampleLocations ? 1 : 0), memory, offset);
             
             /// <summary> <b>[requires: GL_EXT_memory_object]</b> <b>[entry point: <c>glTextureStorageMem3DEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_memory_object.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_memory_object.txt">EXT_memory_object.txt</see></remarks>
             public static void TextureStorageMem3DEXT(int texture, int levels, SizedInternalFormat internalFormat, int width, int height, int depth, uint memory, ulong offset) => GLPointers.glTextureStorageMem3DEXT_Lazy(texture, levels, (uint)internalFormat, width, height, depth, memory, offset);
             
             /// <summary> <b>[requires: GL_EXT_memory_object]</b> <b>[entry point: <c>glTextureStorageMem3DMultisampleEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_memory_object.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_memory_object.txt">EXT_memory_object.txt</see></remarks>
             public static void TextureStorageMem3DMultisampleEXT(int texture, int samples, SizedInternalFormat internalFormat, int width, int height, int depth, bool fixedSampleLocations, uint memory, ulong offset) => GLPointers.glTextureStorageMem3DMultisampleEXT_Lazy(texture, samples, (uint)internalFormat, width, height, depth, (byte)(fixedSampleLocations ? 1 : 0), memory, offset);
             
             /// <summary> <b>[requires: GL_EXT_texture_view]</b> <b>[entry point: <c>glTextureViewEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_texture_view.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_texture_view.txt">EXT_texture_view.txt</see></remarks>
             public static void TextureViewEXT(int texture, TextureTarget target, int origtexture, SizedInternalFormat internalformat, uint minlevel, uint numlevels, uint minlayer, uint numlayers) => GLPointers.glTextureViewEXT_Lazy(texture, (uint)target, origtexture, (uint)internalformat, minlevel, numlevels, minlayer, numlayers);
             
             /// <summary> <b>[requires: GL_EXT_separate_shader_objects]</b> <b>[entry point: <c>glUseProgramStagesEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_separate_shader_objects.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_separate_shader_objects.txt">EXT_separate_shader_objects.txt</see></remarks>
             public static void UseProgramStagesEXT(int pipeline, UseProgramStageMask stages, int program) => GLPointers.glUseProgramStagesEXT_Lazy(pipeline, (uint)stages, program);
             
             /// <summary> <b>[requires: GL_EXT_separate_shader_objects]</b> <b>[entry point: <c>glUseShaderProgramEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_separate_shader_objects.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_separate_shader_objects.txt">EXT_separate_shader_objects.txt</see></remarks>
             public static void UseShaderProgramEXT(All type, int program) => GLPointers.glUseShaderProgramEXT_Lazy((uint)type, program);
             
             /// <summary> <b>[requires: GL_EXT_separate_shader_objects]</b> <b>[entry point: <c>glValidateProgramPipelineEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_separate_shader_objects.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_separate_shader_objects.txt">EXT_separate_shader_objects.txt</see></remarks>
             public static void ValidateProgramPipelineEXT(int pipeline) => GLPointers.glValidateProgramPipelineEXT_Lazy(pipeline);
             
             /// <summary> <b>[requires: GL_EXT_instanced_arrays]</b> <b>[entry point: <c>glVertexAttribDivisorEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_instanced_arrays.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_instanced_arrays.txt">EXT_instanced_arrays.txt</see></remarks>
             public static void VertexAttribDivisorEXT(uint index, uint divisor) => GLPointers.glVertexAttribDivisorEXT_Lazy(index, divisor);
             
             /// <summary> <b>[requires: GL_EXT_semaphore]</b> <b>[entry point: <c>glWaitSemaphoreEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_semaphore.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_semaphore.txt">EXT_semaphore.txt</see></remarks>
             public static void WaitSemaphoreEXT(uint semaphore, uint numBufferBarriers, int* buffers, uint numTextureBarriers, int* textures, TextureLayout* srcLayouts) => GLPointers.glWaitSemaphoreEXT_Lazy(semaphore, numBufferBarriers, buffers, numTextureBarriers, textures, (uint*)srcLayouts);
             
             /// <summary> <b>[requires: GL_EXT_window_rectangles]</b> <b>[entry point: <c>glWindowRectanglesEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_window_rectangles.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_window_rectangles.txt">EXT_window_rectangles.txt</see></remarks>
             public static void WindowRectanglesEXT(All mode, int count, int* box) => GLPointers.glWindowRectanglesEXT_Lazy((uint)mode, count, box);
             
         }
@@ -3515,43 +3515,43 @@ namespace OpenTK.Graphics.OpenGLES2
         public static unsafe partial class IMG
         {
             /// <summary> <b>[requires: GL_IMG_framebuffer_downsample]</b> <b>[entry point: <c>glFramebufferTexture2DDownsampleIMG</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/IMG/IMG_framebuffer_downsample.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/IMG/IMG_framebuffer_downsample.txt">IMG_framebuffer_downsample.txt</see></remarks>
             public static void FramebufferTexture2DDownsampleIMG(FramebufferTarget target, FramebufferAttachment attachment, TextureTarget textarget, int texture, int level, int xscale, int yscale) => GLPointers.glFramebufferTexture2DDownsampleIMG_Lazy((uint)target, (uint)attachment, (uint)textarget, texture, level, xscale, yscale);
             
             /// <summary> <b>[requires: GL_IMG_multisampled_render_to_texture]</b> <b>[entry point: <c>glFramebufferTexture2DMultisampleIMG</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/IMG/IMG_multisampled_render_to_texture.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/IMG/IMG_multisampled_render_to_texture.txt">IMG_multisampled_render_to_texture.txt</see></remarks>
             public static void FramebufferTexture2DMultisampleIMG(FramebufferTarget target, FramebufferAttachment attachment, TextureTarget textarget, int texture, int level, int samples) => GLPointers.glFramebufferTexture2DMultisampleIMG_Lazy((uint)target, (uint)attachment, (uint)textarget, texture, level, samples);
             
             /// <summary> <b>[requires: GL_IMG_framebuffer_downsample]</b> <b>[entry point: <c>glFramebufferTextureLayerDownsampleIMG</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/IMG/IMG_framebuffer_downsample.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/IMG/IMG_framebuffer_downsample.txt">IMG_framebuffer_downsample.txt</see></remarks>
             public static void FramebufferTextureLayerDownsampleIMG(FramebufferTarget target, FramebufferAttachment attachment, int texture, int level, int layer, int xscale, int yscale) => GLPointers.glFramebufferTextureLayerDownsampleIMG_Lazy((uint)target, (uint)attachment, texture, level, layer, xscale, yscale);
             
             /// <summary> <b>[requires: GL_IMG_bindless_texture]</b> <b>[entry point: <c>glGetTextureHandleIMG</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/IMG/IMG_bindless_texture.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/IMG/IMG_bindless_texture.txt">IMG_bindless_texture.txt</see></remarks>
             public static ulong GetTextureHandleIMG(int texture) => GLPointers.glGetTextureHandleIMG_Lazy(texture);
             
             /// <summary> <b>[requires: GL_IMG_bindless_texture]</b> <b>[entry point: <c>glGetTextureSamplerHandleIMG</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/IMG/IMG_bindless_texture.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/IMG/IMG_bindless_texture.txt">IMG_bindless_texture.txt</see></remarks>
             public static ulong GetTextureSamplerHandleIMG(int texture, int sampler) => GLPointers.glGetTextureSamplerHandleIMG_Lazy(texture, sampler);
             
             /// <summary> <b>[requires: GL_IMG_bindless_texture]</b> <b>[entry point: <c>glProgramUniformHandleui64IMG</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/IMG/IMG_bindless_texture.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/IMG/IMG_bindless_texture.txt">IMG_bindless_texture.txt</see></remarks>
             public static void ProgramUniformHandleui64IMG(int program, int location, ulong value) => GLPointers.glProgramUniformHandleui64IMG_Lazy(program, location, value);
             
             /// <summary> <b>[requires: GL_IMG_bindless_texture]</b> <b>[entry point: <c>glProgramUniformHandleui64vIMG</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/IMG/IMG_bindless_texture.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/IMG/IMG_bindless_texture.txt">IMG_bindless_texture.txt</see></remarks>
             public static void ProgramUniformHandleui64vIMG(int program, int location, int count, ulong* values) => GLPointers.glProgramUniformHandleui64vIMG_Lazy(program, location, count, values);
             
             /// <summary> <b>[requires: GL_IMG_multisampled_render_to_texture]</b> <b>[entry point: <c>glRenderbufferStorageMultisampleIMG</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/IMG/IMG_multisampled_render_to_texture.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/IMG/IMG_multisampled_render_to_texture.txt">IMG_multisampled_render_to_texture.txt</see></remarks>
             public static void RenderbufferStorageMultisampleIMG(RenderbufferTarget target, int samples, InternalFormat internalformat, int width, int height) => GLPointers.glRenderbufferStorageMultisampleIMG_Lazy((uint)target, samples, (uint)internalformat, width, height);
             
             /// <summary> <b>[requires: GL_IMG_bindless_texture]</b> <b>[entry point: <c>glUniformHandleui64IMG</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/IMG/IMG_bindless_texture.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/IMG/IMG_bindless_texture.txt">IMG_bindless_texture.txt</see></remarks>
             public static void UniformHandleui64IMG(int location, ulong value) => GLPointers.glUniformHandleui64IMG_Lazy(location, value);
             
             /// <summary> <b>[requires: GL_IMG_bindless_texture]</b> <b>[entry point: <c>glUniformHandleui64vIMG</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/IMG/IMG_bindless_texture.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/IMG/IMG_bindless_texture.txt">IMG_bindless_texture.txt</see></remarks>
             public static void UniformHandleui64vIMG(int location, int count, ulong* value) => GLPointers.glUniformHandleui64vIMG_Lazy(location, count, value);
             
         }
@@ -3559,47 +3559,47 @@ namespace OpenTK.Graphics.OpenGLES2
         public static unsafe partial class INTEL
         {
             /// <summary> <b>[requires: GL_INTEL_framebuffer_CMAA]</b> <b>[entry point: <c>glApplyFramebufferAttachmentCMAAINTEL</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/INTEL/INTEL_framebuffer_CMAA.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/INTEL/INTEL_framebuffer_CMAA.txt">INTEL_framebuffer_CMAA.txt</see></remarks>
             public static void ApplyFramebufferAttachmentCMAAINTEL() => GLPointers.glApplyFramebufferAttachmentCMAAINTEL_Lazy();
             
             /// <summary> <b>[requires: GL_INTEL_performance_query]</b> <b>[entry point: <c>glBeginPerfQueryINTEL</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/INTEL/INTEL_performance_query.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/INTEL/INTEL_performance_query.txt">INTEL_performance_query.txt</see></remarks>
             public static void BeginPerfQueryINTEL(int queryHandle) => GLPointers.glBeginPerfQueryINTEL_Lazy(queryHandle);
             
             /// <summary> <b>[requires: GL_INTEL_performance_query]</b> <b>[entry point: <c>glCreatePerfQueryINTEL</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/INTEL/INTEL_performance_query.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/INTEL/INTEL_performance_query.txt">INTEL_performance_query.txt</see></remarks>
             public static void CreatePerfQueryINTEL(uint queryId, int* queryHandle) => GLPointers.glCreatePerfQueryINTEL_Lazy(queryId, queryHandle);
             
             /// <summary> <b>[requires: GL_INTEL_performance_query]</b> <b>[entry point: <c>glDeletePerfQueryINTEL</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/INTEL/INTEL_performance_query.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/INTEL/INTEL_performance_query.txt">INTEL_performance_query.txt</see></remarks>
             public static void DeletePerfQueryINTEL(int queryHandle) => GLPointers.glDeletePerfQueryINTEL_Lazy(queryHandle);
             
             /// <summary> <b>[requires: GL_INTEL_performance_query]</b> <b>[entry point: <c>glEndPerfQueryINTEL</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/INTEL/INTEL_performance_query.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/INTEL/INTEL_performance_query.txt">INTEL_performance_query.txt</see></remarks>
             public static void EndPerfQueryINTEL(int queryHandle) => GLPointers.glEndPerfQueryINTEL_Lazy(queryHandle);
             
             /// <summary> <b>[requires: GL_INTEL_performance_query]</b> <b>[entry point: <c>glGetFirstPerfQueryIdINTEL</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/INTEL/INTEL_performance_query.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/INTEL/INTEL_performance_query.txt">INTEL_performance_query.txt</see></remarks>
             public static void GetFirstPerfQueryIdINTEL(uint* queryId) => GLPointers.glGetFirstPerfQueryIdINTEL_Lazy(queryId);
             
             /// <summary> <b>[requires: GL_INTEL_performance_query]</b> <b>[entry point: <c>glGetNextPerfQueryIdINTEL</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/INTEL/INTEL_performance_query.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/INTEL/INTEL_performance_query.txt">INTEL_performance_query.txt</see></remarks>
             public static void GetNextPerfQueryIdINTEL(uint queryId, uint* nextQueryId) => GLPointers.glGetNextPerfQueryIdINTEL_Lazy(queryId, nextQueryId);
             
             /// <summary> <b>[requires: GL_INTEL_performance_query]</b> <b>[entry point: <c>glGetPerfCounterInfoINTEL</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/INTEL/INTEL_performance_query.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/INTEL/INTEL_performance_query.txt">INTEL_performance_query.txt</see></remarks>
             public static void GetPerfCounterInfoINTEL(uint queryId, uint counterId, uint counterNameLength, byte* counterName, uint counterDescLength, byte* counterDesc, uint* counterOffset, uint* counterDataSize, uint* counterTypeEnum, uint* counterDataTypeEnum, ulong* rawCounterMaxValue) => GLPointers.glGetPerfCounterInfoINTEL_Lazy(queryId, counterId, counterNameLength, counterName, counterDescLength, counterDesc, counterOffset, counterDataSize, counterTypeEnum, counterDataTypeEnum, rawCounterMaxValue);
             
             /// <summary> <b>[requires: GL_INTEL_performance_query]</b> <b>[entry point: <c>glGetPerfQueryDataINTEL</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/INTEL/INTEL_performance_query.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/INTEL/INTEL_performance_query.txt">INTEL_performance_query.txt</see></remarks>
             public static void GetPerfQueryDataINTEL(int queryHandle, PerfQueryDataFlags flags, int dataSize, void* data, uint* bytesWritten) => GLPointers.glGetPerfQueryDataINTEL_Lazy(queryHandle, (uint)flags, dataSize, data, bytesWritten);
             
             /// <summary> <b>[requires: GL_INTEL_performance_query]</b> <b>[entry point: <c>glGetPerfQueryIdByNameINTEL</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/INTEL/INTEL_performance_query.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/INTEL/INTEL_performance_query.txt">INTEL_performance_query.txt</see></remarks>
             public static void GetPerfQueryIdByNameINTEL(byte* queryName, uint* queryId) => GLPointers.glGetPerfQueryIdByNameINTEL_Lazy(queryName, queryId);
             
             /// <summary> <b>[requires: GL_INTEL_performance_query]</b> <b>[entry point: <c>glGetPerfQueryInfoINTEL</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/INTEL/INTEL_performance_query.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/INTEL/INTEL_performance_query.txt">INTEL_performance_query.txt</see></remarks>
             public static void GetPerfQueryInfoINTEL(uint queryId, uint queryNameLength, byte* queryName, uint* dataSize, uint* noCounters, uint* noInstances, PerformanceQueryCapsMaskINTEL* capsMask) => GLPointers.glGetPerfQueryInfoINTEL_Lazy(queryId, queryNameLength, queryName, dataSize, noCounters, noInstances, (uint*)capsMask);
             
         }
@@ -3607,17 +3607,17 @@ namespace OpenTK.Graphics.OpenGLES2
         public static unsafe partial class KHR
         {
             /// <summary> <b>[requires: GL_KHR_blend_equation_advanced]</b> <b>[entry point: <c>glBlendBarrierKHR</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/KHR/KHR_blend_equation_advanced.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/KHR/KHR_blend_equation_advanced.txt">KHR_blend_equation_advanced.txt</see></remarks>
             public static void BlendBarrierKHR() => GLPointers.glBlendBarrierKHR_Lazy();
             
             /// <summary> <b>[requires: v3.2 | GL_KHR_debug]</b> <b>[entry point: <c>glDebugMessageCallback</c>]</b><br/> Specify a callback to receive debugging messages from the GL. </summary>
             /// <param name="callback"> The address of a callback function that will be called when a debug message is generated. </param>
             /// <param name="userParam"> A user supplied pointer that will be passed on each invocation of callback. </param>
-            /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/es3.0/html/glDebugMessageCallback.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/KHR/KHR_debug.txt"/></remarks>
+            /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/es3.0/html/glDebugMessageCallback.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/KHR/KHR_debug.txt">KHR_debug.txt</see></remarks>
             public static void DebugMessageCallback(IntPtr callback, void* userParam) => GLPointers.glDebugMessageCallback_Lazy(callback, userParam);
             
             /// <summary> <b>[requires: GL_KHR_debug]</b> <b>[entry point: <c>glDebugMessageCallbackKHR</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/KHR/KHR_debug.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/KHR/KHR_debug.txt">KHR_debug.txt</see></remarks>
             public static void DebugMessageCallbackKHR(IntPtr callback, void* userParam) => GLPointers.glDebugMessageCallbackKHR_Lazy(callback, userParam);
             
             /// <summary> <b>[requires: v3.2 | GL_KHR_debug]</b> <b>[entry point: <c>glDebugMessageControl</c>]</b><br/> Control the reporting of debug messages in a debug context. </summary>
@@ -3627,11 +3627,11 @@ namespace OpenTK.Graphics.OpenGLES2
             /// <param name="count"> The length of the array ids. </param>
             /// <param name="ids"> The address of an array of unsigned integers contianing the ids of the messages to enable or disable. </param>
             /// <param name="enabled"> A Boolean flag determining whether the selected messages should be enabled or disabled. </param>
-            /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/es3.0/html/glDebugMessageControl.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/KHR/KHR_debug.txt"/></remarks>
+            /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/es3.0/html/glDebugMessageControl.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/KHR/KHR_debug.txt">KHR_debug.txt</see></remarks>
             public static void DebugMessageControl(DebugSource source, DebugType type, DebugSeverity severity, int count, uint* ids, bool enabled) => GLPointers.glDebugMessageControl_Lazy((uint)source, (uint)type, (uint)severity, count, ids, (byte)(enabled ? 1 : 0));
             
             /// <summary> <b>[requires: GL_KHR_debug]</b> <b>[entry point: <c>glDebugMessageControlKHR</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/KHR/KHR_debug.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/KHR/KHR_debug.txt">KHR_debug.txt</see></remarks>
             public static void DebugMessageControlKHR(DebugSource source, DebugType type, DebugSeverity severity, int count, uint* ids, bool enabled) => GLPointers.glDebugMessageControlKHR_Lazy((uint)source, (uint)type, (uint)severity, count, ids, (byte)(enabled ? 1 : 0));
             
             /// <summary> <b>[requires: v3.2 | GL_KHR_debug]</b> <b>[entry point: <c>glDebugMessageInsert</c>]</b><br/> Inject an application-supplied message into the debug message queue. </summary>
@@ -3641,11 +3641,11 @@ namespace OpenTK.Graphics.OpenGLES2
             /// <param name="severity"> The severity of the debug messages to insert. </param>
             /// <param name="length"> The length string contained in the character array whose address is given by message. </param>
             /// <param name="buf"> The address of a character array containing the message to insert. </param>
-            /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/es3.0/html/glDebugMessageInsert.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/KHR/KHR_debug.txt"/></remarks>
+            /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/es3.0/html/glDebugMessageInsert.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/KHR/KHR_debug.txt">KHR_debug.txt</see></remarks>
             public static void DebugMessageInsert(DebugSource source, DebugType type, uint id, DebugSeverity severity, int length, byte* buf) => GLPointers.glDebugMessageInsert_Lazy((uint)source, (uint)type, id, (uint)severity, length, buf);
             
             /// <summary> <b>[requires: GL_KHR_debug]</b> <b>[entry point: <c>glDebugMessageInsertKHR</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/KHR/KHR_debug.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/KHR/KHR_debug.txt">KHR_debug.txt</see></remarks>
             public static void DebugMessageInsertKHR(DebugSource source, DebugType type, uint id, DebugSeverity severity, int length, byte* buf) => GLPointers.glDebugMessageInsertKHR_Lazy((uint)source, (uint)type, id, (uint)severity, length, buf);
             
             /// <summary> <b>[requires: v3.2 | GL_KHR_debug]</b> <b>[entry point: <c>glGetDebugMessageLog</c>]</b><br/> Retrieve messages from the debug message log. </summary>
@@ -3657,19 +3657,19 @@ namespace OpenTK.Graphics.OpenGLES2
             /// <param name="severities"> The address of an array of variables to receive the severites of the retrieved messages. </param>
             /// <param name="lengths"> The address of an array of variables to receive the lengths of the received messages. </param>
             /// <param name="messageLog"> The address of an array of characters that will receive the messages. </param>
-            /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/es3.0/html/glGetDebugMessageLog.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/KHR/KHR_debug.txt"/></remarks>
+            /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/es3.0/html/glGetDebugMessageLog.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/KHR/KHR_debug.txt">KHR_debug.txt</see></remarks>
             public static uint GetDebugMessageLog(uint count, int bufSize, DebugSource* sources, DebugType* types, uint* ids, DebugSeverity* severities, int* lengths, byte* messageLog) => GLPointers.glGetDebugMessageLog_Lazy(count, bufSize, (uint*)sources, (uint*)types, ids, (uint*)severities, lengths, messageLog);
             
             /// <summary> <b>[requires: GL_KHR_debug]</b> <b>[entry point: <c>glGetDebugMessageLogKHR</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/KHR/KHR_debug.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/KHR/KHR_debug.txt">KHR_debug.txt</see></remarks>
             public static uint GetDebugMessageLogKHR(uint count, int bufSize, DebugSource* sources, DebugType* types, uint* ids, DebugSeverity* severities, int* lengths, byte* messageLog) => GLPointers.glGetDebugMessageLogKHR_Lazy(count, bufSize, (uint*)sources, (uint*)types, ids, (uint*)severities, lengths, messageLog);
             
             /// <summary> <b>[requires: v3.2 | GL_KHR_robustness]</b> <b>[entry point: <c>glGetGraphicsResetStatus</c>]</b><br/> Check if the rendering context has not been lost due to software or hardware issues. </summary>
-            /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/es3.0/html/glGetGraphicsResetStatus.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/KHR/KHR_robustness.txt"/></remarks>
+            /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/es3.0/html/glGetGraphicsResetStatus.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/KHR/KHR_robustness.txt">KHR_robustness.txt</see></remarks>
             public static GraphicsResetStatus GetGraphicsResetStatus() => (GraphicsResetStatus) GLPointers.glGetGraphicsResetStatus_Lazy();
             
             /// <summary> <b>[requires: GL_KHR_robustness]</b> <b>[entry point: <c>glGetGraphicsResetStatusKHR</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/KHR/KHR_robustness.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/KHR/KHR_robustness.txt">KHR_robustness.txt</see></remarks>
             public static GraphicsResetStatus GetGraphicsResetStatusKHR() => (GraphicsResetStatus) GLPointers.glGetGraphicsResetStatusKHR_Lazy();
             
             /// <summary> <b>[requires: v3.2 | GL_KHR_robustness]</b> <b>[entry point: <c>glGetnUniformfv</c>]</b><br/> Returns the value of a uniform variable. </summary>
@@ -3677,11 +3677,11 @@ namespace OpenTK.Graphics.OpenGLES2
             /// <param name="location">Specifies the location of the uniform variable to be queried.</param>
             /// <param name="bufSize">Specifies the size of the buffer params. </param>
             /// <param name="params">Returns the value of the specified uniform variable.</param>
-            /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/es3.0/html/glGetUniform.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/KHR/KHR_robustness.txt"/></remarks>
+            /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/es3.0/html/glGetUniform.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/KHR/KHR_robustness.txt">KHR_robustness.txt</see></remarks>
             public static void GetnUniformfv(int program, int location, int bufSize, float* @params) => GLPointers.glGetnUniformfv_Lazy(program, location, bufSize, @params);
             
             /// <summary> <b>[requires: GL_KHR_robustness]</b> <b>[entry point: <c>glGetnUniformfvKHR</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/KHR/KHR_robustness.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/KHR/KHR_robustness.txt">KHR_robustness.txt</see></remarks>
             public static void GetnUniformfvKHR(int program, int location, int bufSize, float* @params) => GLPointers.glGetnUniformfvKHR_Lazy(program, location, bufSize, @params);
             
             /// <summary> <b>[requires: v3.2 | GL_KHR_robustness]</b> <b>[entry point: <c>glGetnUniformiv</c>]</b><br/> Returns the value of a uniform variable. </summary>
@@ -3689,11 +3689,11 @@ namespace OpenTK.Graphics.OpenGLES2
             /// <param name="location">Specifies the location of the uniform variable to be queried.</param>
             /// <param name="bufSize">Specifies the size of the buffer params. </param>
             /// <param name="params">Returns the value of the specified uniform variable.</param>
-            /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/es3.0/html/glGetUniform.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/KHR/KHR_robustness.txt"/></remarks>
+            /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/es3.0/html/glGetUniform.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/KHR/KHR_robustness.txt">KHR_robustness.txt</see></remarks>
             public static void GetnUniformiv(int program, int location, int bufSize, int* @params) => GLPointers.glGetnUniformiv_Lazy(program, location, bufSize, @params);
             
             /// <summary> <b>[requires: GL_KHR_robustness]</b> <b>[entry point: <c>glGetnUniformivKHR</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/KHR/KHR_robustness.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/KHR/KHR_robustness.txt">KHR_robustness.txt</see></remarks>
             public static void GetnUniformivKHR(int program, int location, int bufSize, int* @params) => GLPointers.glGetnUniformivKHR_Lazy(program, location, bufSize, @params);
             
             /// <summary> <b>[requires: v3.2 | GL_KHR_robustness]</b> <b>[entry point: <c>glGetnUniformuiv</c>]</b><br/> Returns the value of a uniform variable. </summary>
@@ -3701,11 +3701,11 @@ namespace OpenTK.Graphics.OpenGLES2
             /// <param name="location">Specifies the location of the uniform variable to be queried.</param>
             /// <param name="bufSize">Specifies the size of the buffer params. </param>
             /// <param name="params">Returns the value of the specified uniform variable.</param>
-            /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/es3.0/html/glGetUniform.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/KHR/KHR_robustness.txt"/></remarks>
+            /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/es3.0/html/glGetUniform.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/KHR/KHR_robustness.txt">KHR_robustness.txt</see></remarks>
             public static void GetnUniformuiv(int program, int location, int bufSize, uint* @params) => GLPointers.glGetnUniformuiv_Lazy(program, location, bufSize, @params);
             
             /// <summary> <b>[requires: GL_KHR_robustness]</b> <b>[entry point: <c>glGetnUniformuivKHR</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/KHR/KHR_robustness.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/KHR/KHR_robustness.txt">KHR_robustness.txt</see></remarks>
             public static void GetnUniformuivKHR(int program, int location, int bufSize, uint* @params) => GLPointers.glGetnUniformuivKHR_Lazy(program, location, bufSize, @params);
             
             /// <summary> <b>[requires: v3.2 | GL_KHR_debug]</b> <b>[entry point: <c>glGetObjectLabel</c>]</b><br/> Retrieve the label of a named object identified within a namespace. </summary>
@@ -3714,11 +3714,11 @@ namespace OpenTK.Graphics.OpenGLES2
             /// <param name="bufSize">!!missing documentation!!</param>
             /// <param name="length"> The address of a variable to receive the length of the object label. </param>
             /// <param name="label"> The address of a string that will receive the object label. </param>
-            /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/es3.0/html/glGetObjectLabel.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/KHR/KHR_debug.txt"/></remarks>
+            /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/es3.0/html/glGetObjectLabel.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/KHR/KHR_debug.txt">KHR_debug.txt</see></remarks>
             public static void GetObjectLabel(ObjectIdentifier identifier, uint name, int bufSize, int* length, byte* label) => GLPointers.glGetObjectLabel_Lazy((uint)identifier, name, bufSize, length, label);
             
             /// <summary> <b>[requires: GL_KHR_debug]</b> <b>[entry point: <c>glGetObjectLabelKHR</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/KHR/KHR_debug.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/KHR/KHR_debug.txt">KHR_debug.txt</see></remarks>
             public static void GetObjectLabelKHR(All identifier, uint name, int bufSize, int* length, byte* label) => GLPointers.glGetObjectLabelKHR_Lazy((uint)identifier, name, bufSize, length, label);
             
             /// <summary> <b>[requires: v3.2 | GL_KHR_debug]</b> <b>[entry point: <c>glGetObjectPtrLabel</c>]</b><br/> Retrieve the label of a sync object identified by a pointer. </summary>
@@ -3726,25 +3726,25 @@ namespace OpenTK.Graphics.OpenGLES2
             /// <param name="bufSize">!!missing documentation!!</param>
             /// <param name="length"> The address of a variable to receive the length of the object label. </param>
             /// <param name="label"> The address of a string that will receive the object label. </param>
-            /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/es3.0/html/glGetObjectPtrLabel.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/KHR/KHR_debug.txt"/></remarks>
+            /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/es3.0/html/glGetObjectPtrLabel.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/KHR/KHR_debug.txt">KHR_debug.txt</see></remarks>
             public static void GetObjectPtrLabel(void* ptr, int bufSize, int* length, byte* label) => GLPointers.glGetObjectPtrLabel_Lazy(ptr, bufSize, length, label);
             
             /// <summary> <b>[requires: GL_KHR_debug]</b> <b>[entry point: <c>glGetObjectPtrLabelKHR</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/KHR/KHR_debug.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/KHR/KHR_debug.txt">KHR_debug.txt</see></remarks>
             public static void GetObjectPtrLabelKHR(void* ptr, int bufSize, int* length, byte* label) => GLPointers.glGetObjectPtrLabelKHR_Lazy(ptr, bufSize, length, label);
             
             /// <summary> <b>[requires: v3.2 | GL_KHR_debug]</b> <b>[entry point: <c>glGetPointerv</c>]</b><br/> Return the address of the specified pointer. </summary>
             /// <param name="pname"> Specifies the pointer to be returned. Must be one of GL_DEBUG_CALLBACK_FUNCTION or GL_DEBUG_CALLBACK_USER_PARAM. </param>
             /// <param name="params"> Returns the pointer value specified by pname. </param>
-            /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/es3.0/html/glGetPointerv.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/KHR/KHR_debug.txt"/></remarks>
+            /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/es3.0/html/glGetPointerv.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/KHR/KHR_debug.txt">KHR_debug.txt</see></remarks>
             public static void GetPointerv(GetPointervPName pname, void** @params) => GLPointers.glGetPointerv_Lazy((uint)pname, @params);
             
             /// <summary> <b>[requires: GL_KHR_debug]</b> <b>[entry point: <c>glGetPointervKHR</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/KHR/KHR_debug.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/KHR/KHR_debug.txt">KHR_debug.txt</see></remarks>
             public static void GetPointervKHR(All pname, void** @params) => GLPointers.glGetPointervKHR_Lazy((uint)pname, @params);
             
             /// <summary> <b>[requires: GL_KHR_parallel_shader_compile]</b> <b>[entry point: <c>glMaxShaderCompilerThreadsKHR</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/KHR/KHR_parallel_shader_compile.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/KHR/KHR_parallel_shader_compile.txt">KHR_parallel_shader_compile.txt</see></remarks>
             public static void MaxShaderCompilerThreadsKHR(uint count) => GLPointers.glMaxShaderCompilerThreadsKHR_Lazy(count);
             
             /// <summary> <b>[requires: v3.2 | GL_KHR_debug]</b> <b>[entry point: <c>glObjectLabel</c>]</b><br/> Label a named object identified within a namespace. </summary>
@@ -3752,30 +3752,30 @@ namespace OpenTK.Graphics.OpenGLES2
             /// <param name="name"> The name of the object to label. </param>
             /// <param name="length"> The length of the label to be used for the object. </param>
             /// <param name="label"> The address of a string containing the label to assign to the object. </param>
-            /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/es3.0/html/glObjectLabel.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/KHR/KHR_debug.txt"/></remarks>
+            /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/es3.0/html/glObjectLabel.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/KHR/KHR_debug.txt">KHR_debug.txt</see></remarks>
             public static void ObjectLabel(ObjectIdentifier identifier, int name, int length, byte* label) => GLPointers.glObjectLabel_Lazy((uint)identifier, name, length, label);
             
             /// <summary> <b>[requires: GL_KHR_debug]</b> <b>[entry point: <c>glObjectLabelKHR</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/KHR/KHR_debug.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/KHR/KHR_debug.txt">KHR_debug.txt</see></remarks>
             public static void ObjectLabelKHR(ObjectIdentifier identifier, int name, int length, byte* label) => GLPointers.glObjectLabelKHR_Lazy((uint)identifier, name, length, label);
             
             /// <summary> <b>[requires: v3.2 | GL_KHR_debug]</b> <b>[entry point: <c>glObjectPtrLabel</c>]</b><br/> Label a sync object identified by a pointer. </summary>
             /// <param name="ptr"> A pointer identifying a sync object. </param>
             /// <param name="length"> The length of the label to be used for the object. </param>
             /// <param name="label"> The address of a string containing the label to assign to the object. </param>
-            /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/es3.0/html/glObjectPtrLabel.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/KHR/KHR_debug.txt"/></remarks>
+            /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/es3.0/html/glObjectPtrLabel.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/KHR/KHR_debug.txt">KHR_debug.txt</see></remarks>
             public static void ObjectPtrLabel(void* ptr, int length, byte* label) => GLPointers.glObjectPtrLabel_Lazy(ptr, length, label);
             
             /// <summary> <b>[requires: GL_KHR_debug]</b> <b>[entry point: <c>glObjectPtrLabelKHR</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/KHR/KHR_debug.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/KHR/KHR_debug.txt">KHR_debug.txt</see></remarks>
             public static void ObjectPtrLabelKHR(void* ptr, int length, byte* label) => GLPointers.glObjectPtrLabelKHR_Lazy(ptr, length, label);
             
             /// <summary> <b>[requires: v3.2 | GL_KHR_debug]</b> <b>[entry point: <c>glPopDebugGroup</c>]</b><br/> Pop the active debug group. </summary>
-            /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/es3.0/html/glPopDebugGroup.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/KHR/KHR_debug.txt"/></remarks>
+            /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/es3.0/html/glPopDebugGroup.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/KHR/KHR_debug.txt">KHR_debug.txt</see></remarks>
             public static void PopDebugGroup() => GLPointers.glPopDebugGroup_Lazy();
             
             /// <summary> <b>[requires: GL_KHR_debug]</b> <b>[entry point: <c>glPopDebugGroupKHR</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/KHR/KHR_debug.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/KHR/KHR_debug.txt">KHR_debug.txt</see></remarks>
             public static void PopDebugGroupKHR() => GLPointers.glPopDebugGroupKHR_Lazy();
             
             /// <summary> <b>[requires: v3.2 | GL_KHR_debug]</b> <b>[entry point: <c>glPushDebugGroup</c>]</b><br/> Push a named debug group into the command stream. </summary>
@@ -3783,11 +3783,11 @@ namespace OpenTK.Graphics.OpenGLES2
             /// <param name="id"> The identifier of the message. </param>
             /// <param name="length"> The length of the message to be sent to the debug output stream. </param>
             /// <param name="message"> The a string containing the message to be sent to the debug output stream. </param>
-            /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/es3.0/html/glPushDebugGroup.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/KHR/KHR_debug.txt"/></remarks>
+            /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/es3.0/html/glPushDebugGroup.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/KHR/KHR_debug.txt">KHR_debug.txt</see></remarks>
             public static void PushDebugGroup(DebugSource source, uint id, int length, byte* message) => GLPointers.glPushDebugGroup_Lazy((uint)source, id, length, message);
             
             /// <summary> <b>[requires: GL_KHR_debug]</b> <b>[entry point: <c>glPushDebugGroupKHR</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/KHR/KHR_debug.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/KHR/KHR_debug.txt">KHR_debug.txt</see></remarks>
             public static void PushDebugGroupKHR(DebugSource source, uint id, int length, byte* message) => GLPointers.glPushDebugGroupKHR_Lazy((uint)source, id, length, message);
             
             /// <summary> <b>[requires: v3.2 | GL_KHR_robustness]</b> <b>[entry point: <c>glReadnPixels</c>]</b><br/> Read a block of pixels from the frame buffer. </summary>
@@ -3799,11 +3799,11 @@ namespace OpenTK.Graphics.OpenGLES2
             /// <param name="type"> Specifies the data type of the pixel data. Must be one of GL_UNSIGNED_BYTE, GL_UNSIGNED_INT, GL_UNSIGNED_INT_2_10_10_10_REV, GL_INT, or GL_FLOAT. An implementation-chosen type will also be accepted. This can be queried with glGet and GL_IMPLEMENTATION_COLOR_READ_TYPE. </param>
             /// <param name="bufSize"> Specifies the size of the buffer data for glReadnPixels function. </param>
             /// <param name="data"> Returns the pixel data. </param>
-            /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/es3.0/html/glReadPixels.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/KHR/KHR_robustness.txt"/></remarks>
+            /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/es3.0/html/glReadPixels.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/KHR/KHR_robustness.txt">KHR_robustness.txt</see></remarks>
             public static void ReadnPixels(int x, int y, int width, int height, PixelFormat format, PixelType type, int bufSize, void* data) => GLPointers.glReadnPixels_Lazy(x, y, width, height, (uint)format, (uint)type, bufSize, data);
             
             /// <summary> <b>[requires: GL_KHR_robustness]</b> <b>[entry point: <c>glReadnPixelsKHR</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/KHR/KHR_robustness.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/KHR/KHR_robustness.txt">KHR_robustness.txt</see></remarks>
             public static void ReadnPixelsKHR(int x, int y, int width, int height, PixelFormat format, PixelType type, int bufSize, void* data) => GLPointers.glReadnPixelsKHR_Lazy(x, y, width, height, (uint)format, (uint)type, bufSize, data);
             
         }
@@ -3813,74 +3813,74 @@ namespace OpenTK.Graphics.OpenGLES2
             /// <summary> <b>[requires: v3.0 | GL_MESA_sampler_objects]</b> <b>[entry point: <c>glBindSampler</c>]</b><br/> Bind a named sampler to a texturing target. </summary>
             /// <param name="unit"> Specifies the index of the texture unit to which the sampler is bound. </param>
             /// <param name="sampler"> Specifies the name of a sampler. </param>
-            /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/es3.0/html/glBindSampler.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/MESA/MESA_sampler_objects.txt"/></remarks>
+            /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/es3.0/html/glBindSampler.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/MESA/MESA_sampler_objects.txt">MESA_sampler_objects.txt</see></remarks>
             public static void BindSampler(uint unit, int sampler) => GLPointers.glBindSampler_Lazy(unit, sampler);
             
             /// <summary> <b>[requires: v3.0 | GL_MESA_sampler_objects]</b> <b>[entry point: <c>glDeleteSamplers</c>]</b><br/> Delete named sampler objects. </summary>
             /// <param name="count"> Specifies the number of sampler objects to be deleted. </param>
             /// <param name="samplers"> Specifies an array of sampler objects to be deleted. </param>
-            /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/es3.0/html/glDeleteSamplers.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/MESA/MESA_sampler_objects.txt"/></remarks>
+            /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/es3.0/html/glDeleteSamplers.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/MESA/MESA_sampler_objects.txt">MESA_sampler_objects.txt</see></remarks>
             public static void DeleteSamplers(int count, int* samplers) => GLPointers.glDeleteSamplers_Lazy(count, samplers);
             
             /// <summary> <b>[requires: GL_MESA_framebuffer_flip_y]</b> <b>[entry point: <c>glFramebufferParameteriMESA</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/MESA/MESA_framebuffer_flip_y.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/MESA/MESA_framebuffer_flip_y.txt">MESA_framebuffer_flip_y.txt</see></remarks>
             public static void FramebufferParameteriMESA(FramebufferTarget target, FramebufferParameterName pname, int param) => GLPointers.glFramebufferParameteriMESA_Lazy((uint)target, (uint)pname, param);
             
             /// <summary> <b>[requires: v3.0 | GL_MESA_sampler_objects]</b> <b>[entry point: <c>glGenSamplers</c>]</b><br/> Generate sampler object names. </summary>
             /// <param name="count"> Specifies the number of sampler object names to generate. </param>
             /// <param name="samplers"> Specifies an array in which the generated sampler object names are stored. </param>
-            /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/es3.0/html/glGenSamplers.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/MESA/MESA_sampler_objects.txt"/></remarks>
+            /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/es3.0/html/glGenSamplers.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/MESA/MESA_sampler_objects.txt">MESA_sampler_objects.txt</see></remarks>
             public static void GenSamplers(int count, int* samplers) => GLPointers.glGenSamplers_Lazy(count, samplers);
             
             /// <summary> <b>[requires: GL_MESA_framebuffer_flip_y]</b> <b>[entry point: <c>glGetFramebufferParameterivMESA</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/MESA/MESA_framebuffer_flip_y.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/MESA/MESA_framebuffer_flip_y.txt">MESA_framebuffer_flip_y.txt</see></remarks>
             public static void GetFramebufferParameterivMESA(FramebufferTarget target, FramebufferAttachmentParameterName pname, int* @params) => GLPointers.glGetFramebufferParameterivMESA_Lazy((uint)target, (uint)pname, @params);
             
             /// <summary> <b>[requires: v3.0 | GL_MESA_sampler_objects]</b> <b>[entry point: <c>glGetSamplerParameterfv</c>]</b><br/> Return sampler parameter values. </summary>
             /// <param name="sampler"> Specifies name of the sampler object from which to retrieve parameters. </param>
             /// <param name="pname"> Specifies the symbolic name of a sampler parameter. GL_TEXTURE_MAG_FILTER, GL_TEXTURE_MIN_FILTER, GL_TEXTURE_MIN_LOD, GL_TEXTURE_MAX_LOD, GL_TEXTURE_WRAP_S, GL_TEXTURE_WRAP_T, GL_TEXTURE_WRAP_R, GL_TEXTURE_COMPARE_MODE, GL_TEXTURE_COMPARE_FUNC, and GL_TEXTURE_BORDER_COLOR are accepted. </param>
             /// <param name="params"> Returns the sampler parameters. </param>
-            /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/es3.0/html/glGetSamplerParameter.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/MESA/MESA_sampler_objects.txt"/></remarks>
+            /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/es3.0/html/glGetSamplerParameter.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/MESA/MESA_sampler_objects.txt">MESA_sampler_objects.txt</see></remarks>
             public static void GetSamplerParameterfv(int sampler, SamplerParameterF pname, float* @params) => GLPointers.glGetSamplerParameterfv_Lazy(sampler, (uint)pname, @params);
             
             /// <summary> <b>[requires: v3.0 | GL_MESA_sampler_objects]</b> <b>[entry point: <c>glGetSamplerParameteriv</c>]</b><br/> Return sampler parameter values. </summary>
             /// <param name="sampler"> Specifies name of the sampler object from which to retrieve parameters. </param>
             /// <param name="pname"> Specifies the symbolic name of a sampler parameter. GL_TEXTURE_MAG_FILTER, GL_TEXTURE_MIN_FILTER, GL_TEXTURE_MIN_LOD, GL_TEXTURE_MAX_LOD, GL_TEXTURE_WRAP_S, GL_TEXTURE_WRAP_T, GL_TEXTURE_WRAP_R, GL_TEXTURE_COMPARE_MODE, GL_TEXTURE_COMPARE_FUNC, and GL_TEXTURE_BORDER_COLOR are accepted. </param>
             /// <param name="params"> Returns the sampler parameters. </param>
-            /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/es3.0/html/glGetSamplerParameter.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/MESA/MESA_sampler_objects.txt"/></remarks>
+            /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/es3.0/html/glGetSamplerParameter.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/MESA/MESA_sampler_objects.txt">MESA_sampler_objects.txt</see></remarks>
             public static void GetSamplerParameteriv(int sampler, SamplerParameterI pname, int* @params) => GLPointers.glGetSamplerParameteriv_Lazy(sampler, (uint)pname, @params);
             
             /// <summary> <b>[requires: v3.0 | GL_MESA_sampler_objects]</b> <b>[entry point: <c>glIsSampler</c>]</b><br/> Determine if a name corresponds to a sampler object. </summary>
             /// <param name="sampler"> Specifies a value that may be the name of a sampler object. </param>
-            /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/es3.0/html/glIsSampler.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/MESA/MESA_sampler_objects.txt"/></remarks>
+            /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/es3.0/html/glIsSampler.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/MESA/MESA_sampler_objects.txt">MESA_sampler_objects.txt</see></remarks>
             public static bool IsSampler(int sampler) => GLPointers.glIsSampler_Lazy(sampler) != 0;
             
             /// <summary> <b>[requires: v3.0 | GL_MESA_sampler_objects]</b> <b>[entry point: <c>glSamplerParameterf</c>]</b><br/> Set sampler parameters. </summary>
             /// <param name="sampler"> Specifies the sampler object whose parameter to modify. </param>
             /// <param name="pname"> Specifies the symbolic name of a single-valued sampler parameter. pname can be one of the following: GL_TEXTURE_WRAP_S, GL_TEXTURE_WRAP_T, GL_TEXTURE_WRAP_R, GL_TEXTURE_MIN_FILTER, GL_TEXTURE_MAG_FILTER, GL_TEXTURE_MIN_LOD, GL_TEXTURE_MAX_LOD, GL_TEXTURE_COMPARE_MODE, GL_TEXTURE_COMPARE_FUNC. </param>
             /// <param name="param"> For the scalar commands, specifies the value of pname. </param>
-            /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/es3.0/html/glSamplerParameter.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/MESA/MESA_sampler_objects.txt"/></remarks>
+            /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/es3.0/html/glSamplerParameter.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/MESA/MESA_sampler_objects.txt">MESA_sampler_objects.txt</see></remarks>
             public static void SamplerParameterf(int sampler, SamplerParameterF pname, float param) => GLPointers.glSamplerParameterf_Lazy(sampler, (uint)pname, param);
             
             /// <summary> <b>[requires: v3.0 | GL_MESA_sampler_objects]</b> <b>[entry point: <c>glSamplerParameterfv</c>]</b><br/> Set sampler parameters. </summary>
             /// <param name="sampler"> Specifies the sampler object whose parameter to modify. </param>
             /// <param name="pname"> Specifies the symbolic name of a single-valued sampler parameter. pname can be one of the following: GL_TEXTURE_WRAP_S, GL_TEXTURE_WRAP_T, GL_TEXTURE_WRAP_R, GL_TEXTURE_MIN_FILTER, GL_TEXTURE_MAG_FILTER, GL_TEXTURE_MIN_LOD, GL_TEXTURE_MAX_LOD, GL_TEXTURE_COMPARE_MODE, GL_TEXTURE_COMPARE_FUNC. </param>
             /// <param name="param"> For the vector commands (glSamplerParameter*v), specifies a pointer to an array where the value or values of pname are stored. </param>
-            /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/es3.0/html/glSamplerParameter.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/MESA/MESA_sampler_objects.txt"/></remarks>
+            /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/es3.0/html/glSamplerParameter.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/MESA/MESA_sampler_objects.txt">MESA_sampler_objects.txt</see></remarks>
             public static void SamplerParameterfv(int sampler, SamplerParameterF pname, float* param) => GLPointers.glSamplerParameterfv_Lazy(sampler, (uint)pname, param);
             
             /// <summary> <b>[requires: v3.0 | GL_MESA_sampler_objects]</b> <b>[entry point: <c>glSamplerParameteri</c>]</b><br/> Set sampler parameters. </summary>
             /// <param name="sampler"> Specifies the sampler object whose parameter to modify. </param>
             /// <param name="pname"> Specifies the symbolic name of a single-valued sampler parameter. pname can be one of the following: GL_TEXTURE_WRAP_S, GL_TEXTURE_WRAP_T, GL_TEXTURE_WRAP_R, GL_TEXTURE_MIN_FILTER, GL_TEXTURE_MAG_FILTER, GL_TEXTURE_MIN_LOD, GL_TEXTURE_MAX_LOD, GL_TEXTURE_COMPARE_MODE, GL_TEXTURE_COMPARE_FUNC. </param>
             /// <param name="param"> For the scalar commands, specifies the value of pname. </param>
-            /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/es3.0/html/glSamplerParameter.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/MESA/MESA_sampler_objects.txt"/></remarks>
+            /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/es3.0/html/glSamplerParameter.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/MESA/MESA_sampler_objects.txt">MESA_sampler_objects.txt</see></remarks>
             public static void SamplerParameteri(int sampler, SamplerParameterI pname, int param) => GLPointers.glSamplerParameteri_Lazy(sampler, (uint)pname, param);
             
             /// <summary> <b>[requires: v3.0 | GL_MESA_sampler_objects]</b> <b>[entry point: <c>glSamplerParameteriv</c>]</b><br/> Set sampler parameters. </summary>
             /// <param name="sampler"> Specifies the sampler object whose parameter to modify. </param>
             /// <param name="pname"> Specifies the symbolic name of a single-valued sampler parameter. pname can be one of the following: GL_TEXTURE_WRAP_S, GL_TEXTURE_WRAP_T, GL_TEXTURE_WRAP_R, GL_TEXTURE_MIN_FILTER, GL_TEXTURE_MAG_FILTER, GL_TEXTURE_MIN_LOD, GL_TEXTURE_MAX_LOD, GL_TEXTURE_COMPARE_MODE, GL_TEXTURE_COMPARE_FUNC. </param>
             /// <param name="param"> For the vector commands (glSamplerParameter*v), specifies a pointer to an array where the value or values of pname are stored. </param>
-            /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/es3.0/html/glSamplerParameter.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/MESA/MESA_sampler_objects.txt"/></remarks>
+            /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/es3.0/html/glSamplerParameter.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/MESA/MESA_sampler_objects.txt">MESA_sampler_objects.txt</see></remarks>
             public static void SamplerParameteriv(int sampler, SamplerParameterI pname, int* param) => GLPointers.glSamplerParameteriv_Lazy(sampler, (uint)pname, param);
             
         }
@@ -3888,855 +3888,855 @@ namespace OpenTK.Graphics.OpenGLES2
         public static unsafe partial class NV
         {
             /// <summary> <b>[requires: GL_NV_conditional_render]</b> <b>[entry point: <c>glBeginConditionalRenderNV</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_conditional_render.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_conditional_render.txt">NV_conditional_render.txt</see></remarks>
             public static void BeginConditionalRenderNV(uint id, ConditionalRenderMode mode) => GLPointers.glBeginConditionalRenderNV_Lazy(id, (uint)mode);
             
             /// <summary> <b>[requires: GL_NV_shading_rate_image]</b> <b>[entry point: <c>glBindShadingRateImageNV</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_shading_rate_image.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_shading_rate_image.txt">NV_shading_rate_image.txt</see></remarks>
             public static void BindShadingRateImageNV(int texture) => GLPointers.glBindShadingRateImageNV_Lazy(texture);
             
             /// <summary> <b>[requires: GL_NV_blend_equation_advanced]</b> <b>[entry point: <c>glBlendBarrierNV</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_blend_equation_advanced.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_blend_equation_advanced.txt">NV_blend_equation_advanced.txt</see></remarks>
             public static void BlendBarrierNV() => GLPointers.glBlendBarrierNV_Lazy();
             
             /// <summary> <b>[requires: GL_NV_blend_equation_advanced]</b> <b>[entry point: <c>glBlendParameteriNV</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_blend_equation_advanced.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_blend_equation_advanced.txt">NV_blend_equation_advanced.txt</see></remarks>
             public static void BlendParameteriNV(All pname, int value) => GLPointers.glBlendParameteriNV_Lazy((uint)pname, value);
             
             /// <summary> <b>[requires: GL_NV_framebuffer_blit]</b> <b>[entry point: <c>glBlitFramebufferNV</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_framebuffer_blit.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_framebuffer_blit.txt">NV_framebuffer_blit.txt</see></remarks>
             public static void BlitFramebufferNV(int srcX0, int srcY0, int srcX1, int srcY1, int dstX0, int dstY0, int dstX1, int dstY1, ClearBufferMask mask, BlitFramebufferFilter filter) => GLPointers.glBlitFramebufferNV_Lazy(srcX0, srcY0, srcX1, srcY1, dstX0, dstY0, dstX1, dstY1, (uint)mask, (uint)filter);
             
             /// <summary> <b>[requires: GL_NV_memory_attachment]</b> <b>[entry point: <c>glBufferAttachMemoryNV</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_memory_attachment.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_memory_attachment.txt">NV_memory_attachment.txt</see></remarks>
             public static void BufferAttachMemoryNV(BufferTarget target, uint memory, ulong offset) => GLPointers.glBufferAttachMemoryNV_Lazy((uint)target, memory, offset);
             
             /// <summary> <b>[requires: GL_NV_memory_object_sparse]</b> <b>[entry point: <c>glBufferPageCommitmentMemNV</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_memory_object_sparse.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_memory_object_sparse.txt">NV_memory_object_sparse.txt</see></remarks>
             public static void BufferPageCommitmentMemNV(BufferStorageTarget target, IntPtr offset, nint size, uint memory, ulong memOffset, bool commit) => GLPointers.glBufferPageCommitmentMemNV_Lazy((uint)target, offset, size, memory, memOffset, (byte)(commit ? 1 : 0));
             
             /// <summary> <b>[requires: GL_NV_conservative_raster_pre_snap_triangles]</b> <b>[entry point: <c>glConservativeRasterParameteriNV</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_conservative_raster_pre_snap_triangles.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_conservative_raster_pre_snap_triangles.txt">NV_conservative_raster_pre_snap_triangles.txt</see></remarks>
             public static void ConservativeRasterParameteriNV(All pname, int param) => GLPointers.glConservativeRasterParameteriNV_Lazy((uint)pname, param);
             
             /// <summary> <b>[requires: GL_NV_copy_buffer]</b> <b>[entry point: <c>glCopyBufferSubDataNV</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_copy_buffer.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_copy_buffer.txt">NV_copy_buffer.txt</see></remarks>
             public static void CopyBufferSubDataNV(CopyBufferSubDataTarget readTarget, CopyBufferSubDataTarget writeTarget, IntPtr readOffset, IntPtr writeOffset, nint size) => GLPointers.glCopyBufferSubDataNV_Lazy((uint)readTarget, (uint)writeTarget, readOffset, writeOffset, size);
             
             /// <summary> <b>[requires: GL_NV_path_rendering]</b> <b>[entry point: <c>glCopyPathNV</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_path_rendering.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_path_rendering.txt">NV_path_rendering.txt</see></remarks>
             public static void CopyPathNV(uint resultPath, uint srcPath) => GLPointers.glCopyPathNV_Lazy(resultPath, srcPath);
             
             /// <summary> <b>[requires: GL_NV_coverage_sample]</b> <b>[entry point: <c>glCoverageMaskNV</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_coverage_sample.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_coverage_sample.txt">NV_coverage_sample.txt</see></remarks>
             public static void CoverageMaskNV(bool mask) => GLPointers.glCoverageMaskNV_Lazy((byte)(mask ? 1 : 0));
             
             /// <summary> <b>[requires: GL_NV_framebuffer_mixed_samples]</b> <b>[entry point: <c>glCoverageModulationNV</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_framebuffer_mixed_samples.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_framebuffer_mixed_samples.txt">NV_framebuffer_mixed_samples.txt</see></remarks>
             public static void CoverageModulationNV(All components) => GLPointers.glCoverageModulationNV_Lazy((uint)components);
             
             /// <summary> <b>[requires: GL_NV_framebuffer_mixed_samples]</b> <b>[entry point: <c>glCoverageModulationTableNV</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_framebuffer_mixed_samples.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_framebuffer_mixed_samples.txt">NV_framebuffer_mixed_samples.txt</see></remarks>
             public static void CoverageModulationTableNV(int n, float* v) => GLPointers.glCoverageModulationTableNV_Lazy(n, v);
             
             /// <summary> <b>[requires: GL_NV_coverage_sample]</b> <b>[entry point: <c>glCoverageOperationNV</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_coverage_sample.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_coverage_sample.txt">NV_coverage_sample.txt</see></remarks>
             public static void CoverageOperationNV(All operation) => GLPointers.glCoverageOperationNV_Lazy((uint)operation);
             
             /// <summary> <b>[requires: GL_NV_path_rendering]</b> <b>[entry point: <c>glCoverFillPathInstancedNV</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_path_rendering.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_path_rendering.txt">NV_path_rendering.txt</see></remarks>
             public static void CoverFillPathInstancedNV(int numPaths, PathElementType pathNameType, void* paths, uint pathBase, InstancedPathCoverMode coverMode, PathTransformType transformType, float* transformValues) => GLPointers.glCoverFillPathInstancedNV_Lazy(numPaths, (uint)pathNameType, paths, pathBase, (uint)coverMode, (uint)transformType, transformValues);
             
             /// <summary> <b>[requires: GL_NV_path_rendering]</b> <b>[entry point: <c>glCoverFillPathNV</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_path_rendering.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_path_rendering.txt">NV_path_rendering.txt</see></remarks>
             public static void CoverFillPathNV(uint path, PathCoverMode coverMode) => GLPointers.glCoverFillPathNV_Lazy(path, (uint)coverMode);
             
             /// <summary> <b>[requires: GL_NV_path_rendering]</b> <b>[entry point: <c>glCoverStrokePathInstancedNV</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_path_rendering.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_path_rendering.txt">NV_path_rendering.txt</see></remarks>
             public static void CoverStrokePathInstancedNV(int numPaths, PathElementType pathNameType, void* paths, uint pathBase, InstancedPathCoverMode coverMode, PathTransformType transformType, float* transformValues) => GLPointers.glCoverStrokePathInstancedNV_Lazy(numPaths, (uint)pathNameType, paths, pathBase, (uint)coverMode, (uint)transformType, transformValues);
             
             /// <summary> <b>[requires: GL_NV_path_rendering]</b> <b>[entry point: <c>glCoverStrokePathNV</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_path_rendering.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_path_rendering.txt">NV_path_rendering.txt</see></remarks>
             public static void CoverStrokePathNV(uint path, PathCoverMode coverMode) => GLPointers.glCoverStrokePathNV_Lazy(path, (uint)coverMode);
             
             /// <summary> <b>[requires: GL_NV_timeline_semaphore]</b> <b>[entry point: <c>glCreateSemaphoresNV</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_timeline_semaphore.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_timeline_semaphore.txt">NV_timeline_semaphore.txt</see></remarks>
             public static void CreateSemaphoresNV(int n, uint* semaphores) => GLPointers.glCreateSemaphoresNV_Lazy(n, semaphores);
             
             /// <summary> <b>[requires: GL_NV_fence]</b> <b>[entry point: <c>glDeleteFencesNV</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_fence.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_fence.txt">NV_fence.txt</see></remarks>
             public static void DeleteFencesNV(int n, uint* fences) => GLPointers.glDeleteFencesNV_Lazy(n, fences);
             
             /// <summary> <b>[requires: GL_NV_path_rendering]</b> <b>[entry point: <c>glDeletePathsNV</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_path_rendering.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_path_rendering.txt">NV_path_rendering.txt</see></remarks>
             public static void DeletePathsNV(uint path, int range) => GLPointers.glDeletePathsNV_Lazy(path, range);
             
             /// <summary> <b>[requires: GL_NV_viewport_array]</b> <b>[entry point: <c>glDepthRangeArrayfvNV</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_viewport_array.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_viewport_array.txt">NV_viewport_array.txt</see></remarks>
             public static void DepthRangeArrayfvNV(uint first, int count, float* v) => GLPointers.glDepthRangeArrayfvNV_Lazy(first, count, v);
             
             /// <summary> <b>[requires: GL_NV_viewport_array]</b> <b>[entry point: <c>glDepthRangeIndexedfNV</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_viewport_array.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_viewport_array.txt">NV_viewport_array.txt</see></remarks>
             public static void DepthRangeIndexedfNV(uint index, float n, float f) => GLPointers.glDepthRangeIndexedfNV_Lazy(index, n, f);
             
             /// <summary> <b>[requires: GL_NV_viewport_array]</b> <b>[entry point: <c>glDisableiNV</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_viewport_array.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_viewport_array.txt">NV_viewport_array.txt</see></remarks>
             public static void DisableiNV(EnableCap target, uint index) => GLPointers.glDisableiNV_Lazy((uint)target, index);
             
             /// <summary> <b>[requires: GL_NV_draw_instanced]</b> <b>[entry point: <c>glDrawArraysInstancedNV</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_draw_instanced.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_draw_instanced.txt">NV_draw_instanced.txt</see></remarks>
             public static void DrawArraysInstancedNV(PrimitiveType mode, int first, int count, int primcount) => GLPointers.glDrawArraysInstancedNV_Lazy((uint)mode, first, count, primcount);
             
             /// <summary> <b>[requires: GL_NV_draw_buffers]</b> <b>[entry point: <c>glDrawBuffersNV</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_draw_buffers.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_draw_buffers.txt">NV_draw_buffers.txt</see></remarks>
             public static void DrawBuffersNV(int n, All* bufs) => GLPointers.glDrawBuffersNV_Lazy(n, (uint*)bufs);
             
             /// <summary> <b>[requires: GL_NV_draw_instanced]</b> <b>[entry point: <c>glDrawElementsInstancedNV</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_draw_instanced.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_draw_instanced.txt">NV_draw_instanced.txt</see></remarks>
             public static void DrawElementsInstancedNV(PrimitiveType mode, int count, DrawElementsType type, void* indices, int primcount) => GLPointers.glDrawElementsInstancedNV_Lazy((uint)mode, count, (uint)type, indices, primcount);
             
             /// <summary> <b>[requires: GL_NV_mesh_shader]</b> <b>[entry point: <c>glDrawMeshTasksIndirectNV</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_mesh_shader.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_mesh_shader.txt">NV_mesh_shader.txt</see></remarks>
             public static void DrawMeshTasksIndirectNV(IntPtr indirect) => GLPointers.glDrawMeshTasksIndirectNV_Lazy(indirect);
             
             /// <summary> <b>[requires: GL_NV_mesh_shader]</b> <b>[entry point: <c>glDrawMeshTasksNV</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_mesh_shader.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_mesh_shader.txt">NV_mesh_shader.txt</see></remarks>
             public static void DrawMeshTasksNV(uint first, uint count) => GLPointers.glDrawMeshTasksNV_Lazy(first, count);
             
             /// <summary> <b>[requires: GL_NV_draw_vulkan_image]</b> <b>[entry point: <c>glDrawVkImageNV</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_draw_vulkan_image.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_draw_vulkan_image.txt">NV_draw_vulkan_image.txt</see></remarks>
             public static void DrawVkImageNV(ulong vkImage, int sampler, float x0, float y0, float x1, float y1, float z, float s0, float t0, float s1, float t1) => GLPointers.glDrawVkImageNV_Lazy(vkImage, sampler, x0, y0, x1, y1, z, s0, t0, s1, t1);
             
             /// <summary> <b>[requires: GL_NV_viewport_array]</b> <b>[entry point: <c>glEnableiNV</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_viewport_array.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_viewport_array.txt">NV_viewport_array.txt</see></remarks>
             public static void EnableiNV(EnableCap target, uint index) => GLPointers.glEnableiNV_Lazy((uint)target, index);
             
             /// <summary> <b>[requires: GL_NV_conditional_render]</b> <b>[entry point: <c>glEndConditionalRenderNV</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_conditional_render.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_conditional_render.txt">NV_conditional_render.txt</see></remarks>
             public static void EndConditionalRenderNV() => GLPointers.glEndConditionalRenderNV_Lazy();
             
             /// <summary> <b>[requires: GL_NV_fence]</b> <b>[entry point: <c>glFinishFenceNV</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_fence.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_fence.txt">NV_fence.txt</see></remarks>
             public static void FinishFenceNV(uint fence) => GLPointers.glFinishFenceNV_Lazy(fence);
             
             /// <summary> <b>[requires: GL_NV_fragment_coverage_to_color]</b> <b>[entry point: <c>glFragmentCoverageColorNV</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_fragment_coverage_to_color.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_fragment_coverage_to_color.txt">NV_fragment_coverage_to_color.txt</see></remarks>
             public static void FragmentCoverageColorNV(uint color) => GLPointers.glFragmentCoverageColorNV_Lazy(color);
             
             /// <summary> <b>[requires: GL_NV_sample_locations]</b> <b>[entry point: <c>glFramebufferSampleLocationsfvNV</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_sample_locations.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_sample_locations.txt">NV_sample_locations.txt</see></remarks>
             public static void FramebufferSampleLocationsfvNV(FramebufferTarget target, uint start, int count, float* v) => GLPointers.glFramebufferSampleLocationsfvNV_Lazy((uint)target, start, count, v);
             
             /// <summary> <b>[requires: GL_NV_fence]</b> <b>[entry point: <c>glGenFencesNV</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_fence.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_fence.txt">NV_fence.txt</see></remarks>
             public static void GenFencesNV(int n, uint* fences) => GLPointers.glGenFencesNV_Lazy(n, fences);
             
             /// <summary> <b>[requires: GL_NV_path_rendering]</b> <b>[entry point: <c>glGenPathsNV</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_path_rendering.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_path_rendering.txt">NV_path_rendering.txt</see></remarks>
             public static uint GenPathsNV(int range) => GLPointers.glGenPathsNV_Lazy(range);
             
             /// <summary> <b>[requires: GL_NV_framebuffer_mixed_samples]</b> <b>[entry point: <c>glGetCoverageModulationTableNV</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_framebuffer_mixed_samples.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_framebuffer_mixed_samples.txt">NV_framebuffer_mixed_samples.txt</see></remarks>
             public static void GetCoverageModulationTableNV(int bufSize, float* v) => GLPointers.glGetCoverageModulationTableNV_Lazy(bufSize, v);
             
             /// <summary> <b>[requires: GL_NV_fence]</b> <b>[entry point: <c>glGetFenceivNV</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_fence.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_fence.txt">NV_fence.txt</see></remarks>
             public static void GetFenceivNV(uint fence, FenceParameterNameNV pname, int* @params) => GLPointers.glGetFenceivNV_Lazy(fence, (uint)pname, @params);
             
             /// <summary> <b>[requires: GL_NV_viewport_array]</b> <b>[entry point: <c>glGetFloati_vNV</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_viewport_array.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_viewport_array.txt">NV_viewport_array.txt</see></remarks>
             public static void GetFloati_vNV(GetPName target, uint index, float* data) => GLPointers.glGetFloati_vNV_Lazy((uint)target, index, data);
             
             /// <summary> <b>[requires: GL_NV_bindless_texture]</b> <b>[entry point: <c>glGetImageHandleNV</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_bindless_texture.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_bindless_texture.txt">NV_bindless_texture.txt</see></remarks>
             public static ulong GetImageHandleNV(int texture, int level, bool layered, int layer, PixelFormat format) => GLPointers.glGetImageHandleNV_Lazy(texture, level, (byte)(layered ? 1 : 0), layer, (uint)format);
             
             /// <summary> <b>[requires: GL_NV_internalformat_sample_query]</b> <b>[entry point: <c>glGetInternalformatSampleivNV</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_internalformat_sample_query.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_internalformat_sample_query.txt">NV_internalformat_sample_query.txt</see></remarks>
             public static void GetInternalformatSampleivNV(TextureTarget target, InternalFormat internalformat, int samples, InternalFormatPName pname, int count, int* @params) => GLPointers.glGetInternalformatSampleivNV_Lazy((uint)target, (uint)internalformat, samples, (uint)pname, count, @params);
             
             /// <summary> <b>[requires: GL_NV_memory_attachment]</b> <b>[entry point: <c>glGetMemoryObjectDetachedResourcesuivNV</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_memory_attachment.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_memory_attachment.txt">NV_memory_attachment.txt</see></remarks>
             public static void GetMemoryObjectDetachedResourcesuivNV(uint memory, All pname, int first, int count, uint* @params) => GLPointers.glGetMemoryObjectDetachedResourcesuivNV_Lazy(memory, (uint)pname, first, count, @params);
             
             /// <summary> <b>[requires: GL_NV_path_rendering]</b> <b>[entry point: <c>glGetPathColorGenfvNV</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_path_rendering.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_path_rendering.txt">NV_path_rendering.txt</see></remarks>
             public static void GetPathColorGenfvNV(PathColor color, PathGenMode pname, float* value) => GLPointers.glGetPathColorGenfvNV_Lazy((uint)color, (uint)pname, value);
             
             /// <summary> <b>[requires: GL_NV_path_rendering]</b> <b>[entry point: <c>glGetPathColorGenivNV</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_path_rendering.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_path_rendering.txt">NV_path_rendering.txt</see></remarks>
             public static void GetPathColorGenivNV(PathColor color, PathGenMode pname, int* value) => GLPointers.glGetPathColorGenivNV_Lazy((uint)color, (uint)pname, value);
             
             /// <summary> <b>[requires: GL_NV_path_rendering]</b> <b>[entry point: <c>glGetPathCommandsNV</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_path_rendering.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_path_rendering.txt">NV_path_rendering.txt</see></remarks>
             public static void GetPathCommandsNV(uint path, byte* commands) => GLPointers.glGetPathCommandsNV_Lazy(path, commands);
             
             /// <summary> <b>[requires: GL_NV_path_rendering]</b> <b>[entry point: <c>glGetPathCoordsNV</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_path_rendering.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_path_rendering.txt">NV_path_rendering.txt</see></remarks>
             public static void GetPathCoordsNV(uint path, float* coords) => GLPointers.glGetPathCoordsNV_Lazy(path, coords);
             
             /// <summary> <b>[requires: GL_NV_path_rendering]</b> <b>[entry point: <c>glGetPathDashArrayNV</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_path_rendering.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_path_rendering.txt">NV_path_rendering.txt</see></remarks>
             public static void GetPathDashArrayNV(uint path, float* dashArray) => GLPointers.glGetPathDashArrayNV_Lazy(path, dashArray);
             
             /// <summary> <b>[requires: GL_NV_path_rendering]</b> <b>[entry point: <c>glGetPathLengthNV</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_path_rendering.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_path_rendering.txt">NV_path_rendering.txt</see></remarks>
             public static float GetPathLengthNV(uint path, int startSegment, int numSegments) => GLPointers.glGetPathLengthNV_Lazy(path, startSegment, numSegments);
             
             /// <summary> <b>[requires: GL_NV_path_rendering]</b> <b>[entry point: <c>glGetPathMetricRangeNV</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_path_rendering.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_path_rendering.txt">NV_path_rendering.txt</see></remarks>
             public static void GetPathMetricRangeNV(PathMetricMask metricQueryMask, uint firstPathName, int numPaths, int stride, float* metrics) => GLPointers.glGetPathMetricRangeNV_Lazy((uint)metricQueryMask, firstPathName, numPaths, stride, metrics);
             
             /// <summary> <b>[requires: GL_NV_path_rendering]</b> <b>[entry point: <c>glGetPathMetricsNV</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_path_rendering.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_path_rendering.txt">NV_path_rendering.txt</see></remarks>
             public static void GetPathMetricsNV(PathMetricMask metricQueryMask, int numPaths, PathElementType pathNameType, void* paths, uint pathBase, int stride, float* metrics) => GLPointers.glGetPathMetricsNV_Lazy((uint)metricQueryMask, numPaths, (uint)pathNameType, paths, pathBase, stride, metrics);
             
             /// <summary> <b>[requires: GL_NV_path_rendering]</b> <b>[entry point: <c>glGetPathParameterfvNV</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_path_rendering.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_path_rendering.txt">NV_path_rendering.txt</see></remarks>
             public static void GetPathParameterfvNV(uint path, PathParameter pname, float* value) => GLPointers.glGetPathParameterfvNV_Lazy(path, (uint)pname, value);
             
             /// <summary> <b>[requires: GL_NV_path_rendering]</b> <b>[entry point: <c>glGetPathParameterivNV</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_path_rendering.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_path_rendering.txt">NV_path_rendering.txt</see></remarks>
             public static void GetPathParameterivNV(uint path, PathParameter pname, int* value) => GLPointers.glGetPathParameterivNV_Lazy(path, (uint)pname, value);
             
             /// <summary> <b>[requires: GL_NV_path_rendering]</b> <b>[entry point: <c>glGetPathSpacingNV</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_path_rendering.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_path_rendering.txt">NV_path_rendering.txt</see></remarks>
             public static void GetPathSpacingNV(PathListMode pathListMode, int numPaths, PathElementType pathNameType, void* paths, uint pathBase, float advanceScale, float kerningScale, PathTransformType transformType, float* returnedSpacing) => GLPointers.glGetPathSpacingNV_Lazy((uint)pathListMode, numPaths, (uint)pathNameType, paths, pathBase, advanceScale, kerningScale, (uint)transformType, returnedSpacing);
             
             /// <summary> <b>[requires: GL_NV_path_rendering]</b> <b>[entry point: <c>glGetPathTexGenfvNV</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_path_rendering.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_path_rendering.txt">NV_path_rendering.txt</see></remarks>
             public static void GetPathTexGenfvNV(TextureUnit texCoordSet, PathGenMode pname, float* value) => GLPointers.glGetPathTexGenfvNV_Lazy((uint)texCoordSet, (uint)pname, value);
             
             /// <summary> <b>[requires: GL_NV_path_rendering]</b> <b>[entry point: <c>glGetPathTexGenivNV</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_path_rendering.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_path_rendering.txt">NV_path_rendering.txt</see></remarks>
             public static void GetPathTexGenivNV(TextureUnit texCoordSet, PathGenMode pname, int* value) => GLPointers.glGetPathTexGenivNV_Lazy((uint)texCoordSet, (uint)pname, value);
             
             /// <summary> <b>[requires: GL_NV_path_rendering]</b> <b>[entry point: <c>glGetProgramResourcefvNV</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_path_rendering.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_path_rendering.txt">NV_path_rendering.txt</see></remarks>
             public static void GetProgramResourcefvNV(int program, ProgramInterface programInterface, uint index, int propCount, All* props, int count, int* length, float* @params) => GLPointers.glGetProgramResourcefvNV_Lazy(program, (uint)programInterface, index, propCount, (uint*)props, count, length, @params);
             
             /// <summary> <b>[requires: GL_NV_timeline_semaphore]</b> <b>[entry point: <c>glGetSemaphoreParameterivNV</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_timeline_semaphore.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_timeline_semaphore.txt">NV_timeline_semaphore.txt</see></remarks>
             public static void GetSemaphoreParameterivNV(uint semaphore, SemaphoreParameterName pname, int* @params) => GLPointers.glGetSemaphoreParameterivNV_Lazy(semaphore, (uint)pname, @params);
             
             /// <summary> <b>[requires: GL_NV_shading_rate_image]</b> <b>[entry point: <c>glGetShadingRateImagePaletteNV</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_shading_rate_image.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_shading_rate_image.txt">NV_shading_rate_image.txt</see></remarks>
             public static void GetShadingRateImagePaletteNV(uint viewport, uint entry, All* rate) => GLPointers.glGetShadingRateImagePaletteNV_Lazy(viewport, entry, (uint*)rate);
             
             /// <summary> <b>[requires: GL_NV_shading_rate_image]</b> <b>[entry point: <c>glGetShadingRateSampleLocationivNV</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_shading_rate_image.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_shading_rate_image.txt">NV_shading_rate_image.txt</see></remarks>
             public static void GetShadingRateSampleLocationivNV(All rate, uint samples, uint index, int* location) => GLPointers.glGetShadingRateSampleLocationivNV_Lazy((uint)rate, samples, index, location);
             
             /// <summary> <b>[requires: GL_NV_bindless_texture]</b> <b>[entry point: <c>glGetTextureHandleNV</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_bindless_texture.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_bindless_texture.txt">NV_bindless_texture.txt</see></remarks>
             public static ulong GetTextureHandleNV(int texture) => GLPointers.glGetTextureHandleNV_Lazy(texture);
             
             /// <summary> <b>[requires: GL_NV_bindless_texture]</b> <b>[entry point: <c>glGetTextureSamplerHandleNV</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_bindless_texture.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_bindless_texture.txt">NV_bindless_texture.txt</see></remarks>
             public static ulong GetTextureSamplerHandleNV(int texture, int sampler) => GLPointers.glGetTextureSamplerHandleNV_Lazy(texture, sampler);
             
             /// <summary> <b>[requires: GL_NV_gpu_shader5]</b> <b>[entry point: <c>glGetUniformi64vNV</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_gpu_shader5.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_gpu_shader5.txt">NV_gpu_shader5.txt</see></remarks>
             public static void GetUniformi64vNV(int program, int location, long* @params) => GLPointers.glGetUniformi64vNV_Lazy(program, location, @params);
             
             /// <summary> <b>[requires: GL_NV_draw_vulkan_image]</b> <b>[entry point: <c>glGetVkProcAddrNV</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_draw_vulkan_image.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_draw_vulkan_image.txt">NV_draw_vulkan_image.txt</see></remarks>
             public static IntPtr GetVkProcAddrNV(byte* name) => GLPointers.glGetVkProcAddrNV_Lazy(name);
             
             /// <summary> <b>[requires: GL_NV_path_rendering]</b> <b>[entry point: <c>glInterpolatePathsNV</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_path_rendering.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_path_rendering.txt">NV_path_rendering.txt</see></remarks>
             public static void InterpolatePathsNV(uint resultPath, uint pathA, uint pathB, float weight) => GLPointers.glInterpolatePathsNV_Lazy(resultPath, pathA, pathB, weight);
             
             /// <summary> <b>[requires: GL_NV_viewport_array]</b> <b>[entry point: <c>glIsEnablediNV</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_viewport_array.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_viewport_array.txt">NV_viewport_array.txt</see></remarks>
             public static bool IsEnablediNV(EnableCap target, uint index) => GLPointers.glIsEnablediNV_Lazy((uint)target, index) != 0;
             
             /// <summary> <b>[requires: GL_NV_fence]</b> <b>[entry point: <c>glIsFenceNV</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_fence.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_fence.txt">NV_fence.txt</see></remarks>
             public static bool IsFenceNV(uint fence) => GLPointers.glIsFenceNV_Lazy(fence) != 0;
             
             /// <summary> <b>[requires: GL_NV_bindless_texture]</b> <b>[entry point: <c>glIsImageHandleResidentNV</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_bindless_texture.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_bindless_texture.txt">NV_bindless_texture.txt</see></remarks>
             public static bool IsImageHandleResidentNV(ulong handle) => GLPointers.glIsImageHandleResidentNV_Lazy(handle) != 0;
             
             /// <summary> <b>[requires: GL_NV_path_rendering]</b> <b>[entry point: <c>glIsPathNV</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_path_rendering.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_path_rendering.txt">NV_path_rendering.txt</see></remarks>
             public static bool IsPathNV(uint path) => GLPointers.glIsPathNV_Lazy(path) != 0;
             
             /// <summary> <b>[requires: GL_NV_path_rendering]</b> <b>[entry point: <c>glIsPointInFillPathNV</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_path_rendering.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_path_rendering.txt">NV_path_rendering.txt</see></remarks>
             public static bool IsPointInFillPathNV(uint path, uint mask, float x, float y) => GLPointers.glIsPointInFillPathNV_Lazy(path, mask, x, y) != 0;
             
             /// <summary> <b>[requires: GL_NV_path_rendering]</b> <b>[entry point: <c>glIsPointInStrokePathNV</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_path_rendering.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_path_rendering.txt">NV_path_rendering.txt</see></remarks>
             public static bool IsPointInStrokePathNV(uint path, float x, float y) => GLPointers.glIsPointInStrokePathNV_Lazy(path, x, y) != 0;
             
             /// <summary> <b>[requires: GL_NV_bindless_texture]</b> <b>[entry point: <c>glIsTextureHandleResidentNV</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_bindless_texture.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_bindless_texture.txt">NV_bindless_texture.txt</see></remarks>
             public static bool IsTextureHandleResidentNV(ulong handle) => GLPointers.glIsTextureHandleResidentNV_Lazy(handle) != 0;
             
             /// <summary> <b>[requires: GL_NV_bindless_texture]</b> <b>[entry point: <c>glMakeImageHandleNonResidentNV</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_bindless_texture.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_bindless_texture.txt">NV_bindless_texture.txt</see></remarks>
             public static void MakeImageHandleNonResidentNV(ulong handle) => GLPointers.glMakeImageHandleNonResidentNV_Lazy(handle);
             
             /// <summary> <b>[requires: GL_NV_bindless_texture]</b> <b>[entry point: <c>glMakeImageHandleResidentNV</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_bindless_texture.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_bindless_texture.txt">NV_bindless_texture.txt</see></remarks>
             public static void MakeImageHandleResidentNV(ulong handle, All access) => GLPointers.glMakeImageHandleResidentNV_Lazy(handle, (uint)access);
             
             /// <summary> <b>[requires: GL_NV_bindless_texture]</b> <b>[entry point: <c>glMakeTextureHandleNonResidentNV</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_bindless_texture.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_bindless_texture.txt">NV_bindless_texture.txt</see></remarks>
             public static void MakeTextureHandleNonResidentNV(ulong handle) => GLPointers.glMakeTextureHandleNonResidentNV_Lazy(handle);
             
             /// <summary> <b>[requires: GL_NV_bindless_texture]</b> <b>[entry point: <c>glMakeTextureHandleResidentNV</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_bindless_texture.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_bindless_texture.txt">NV_bindless_texture.txt</see></remarks>
             public static void MakeTextureHandleResidentNV(ulong handle) => GLPointers.glMakeTextureHandleResidentNV_Lazy(handle);
             
             /// <summary> <b>[requires: GL_NV_path_rendering]</b> <b>[entry point: <c>glMatrixFrustumEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_path_rendering.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_path_rendering.txt">NV_path_rendering.txt</see></remarks>
             public static void MatrixFrustumEXT(MatrixMode mode, double left, double right, double bottom, double top, double zNear, double zFar) => GLPointers.glMatrixFrustumEXT_Lazy((uint)mode, left, right, bottom, top, zNear, zFar);
             
             /// <summary> <b>[requires: GL_NV_path_rendering]</b> <b>[entry point: <c>glMatrixLoad3x2fNV</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_path_rendering.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_path_rendering.txt">NV_path_rendering.txt</see></remarks>
             public static void MatrixLoad3x2fNV(All matrixMode, float* m) => GLPointers.glMatrixLoad3x2fNV_Lazy((uint)matrixMode, m);
             
             /// <summary> <b>[requires: GL_NV_path_rendering]</b> <b>[entry point: <c>glMatrixLoad3x3fNV</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_path_rendering.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_path_rendering.txt">NV_path_rendering.txt</see></remarks>
             public static void MatrixLoad3x3fNV(All matrixMode, float* m) => GLPointers.glMatrixLoad3x3fNV_Lazy((uint)matrixMode, m);
             
             /// <summary> <b>[requires: GL_NV_path_rendering]</b> <b>[entry point: <c>glMatrixLoaddEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_path_rendering.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_path_rendering.txt">NV_path_rendering.txt</see></remarks>
             public static void MatrixLoaddEXT(MatrixMode mode, double* m) => GLPointers.glMatrixLoaddEXT_Lazy((uint)mode, m);
             
             /// <summary> <b>[requires: GL_NV_path_rendering]</b> <b>[entry point: <c>glMatrixLoadfEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_path_rendering.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_path_rendering.txt">NV_path_rendering.txt</see></remarks>
             public static void MatrixLoadfEXT(MatrixMode mode, float* m) => GLPointers.glMatrixLoadfEXT_Lazy((uint)mode, m);
             
             /// <summary> <b>[requires: GL_NV_path_rendering]</b> <b>[entry point: <c>glMatrixLoadIdentityEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_path_rendering.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_path_rendering.txt">NV_path_rendering.txt</see></remarks>
             public static void MatrixLoadIdentityEXT(MatrixMode mode) => GLPointers.glMatrixLoadIdentityEXT_Lazy((uint)mode);
             
             /// <summary> <b>[requires: GL_NV_path_rendering]</b> <b>[entry point: <c>glMatrixLoadTranspose3x3fNV</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_path_rendering.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_path_rendering.txt">NV_path_rendering.txt</see></remarks>
             public static void MatrixLoadTranspose3x3fNV(All matrixMode, float* m) => GLPointers.glMatrixLoadTranspose3x3fNV_Lazy((uint)matrixMode, m);
             
             /// <summary> <b>[requires: GL_NV_path_rendering]</b> <b>[entry point: <c>glMatrixLoadTransposedEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_path_rendering.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_path_rendering.txt">NV_path_rendering.txt</see></remarks>
             public static void MatrixLoadTransposedEXT(MatrixMode mode, double* m) => GLPointers.glMatrixLoadTransposedEXT_Lazy((uint)mode, m);
             
             /// <summary> <b>[requires: GL_NV_path_rendering]</b> <b>[entry point: <c>glMatrixLoadTransposefEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_path_rendering.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_path_rendering.txt">NV_path_rendering.txt</see></remarks>
             public static void MatrixLoadTransposefEXT(MatrixMode mode, float* m) => GLPointers.glMatrixLoadTransposefEXT_Lazy((uint)mode, m);
             
             /// <summary> <b>[requires: GL_NV_path_rendering]</b> <b>[entry point: <c>glMatrixMult3x2fNV</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_path_rendering.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_path_rendering.txt">NV_path_rendering.txt</see></remarks>
             public static void MatrixMult3x2fNV(All matrixMode, float* m) => GLPointers.glMatrixMult3x2fNV_Lazy((uint)matrixMode, m);
             
             /// <summary> <b>[requires: GL_NV_path_rendering]</b> <b>[entry point: <c>glMatrixMult3x3fNV</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_path_rendering.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_path_rendering.txt">NV_path_rendering.txt</see></remarks>
             public static void MatrixMult3x3fNV(All matrixMode, float* m) => GLPointers.glMatrixMult3x3fNV_Lazy((uint)matrixMode, m);
             
             /// <summary> <b>[requires: GL_NV_path_rendering]</b> <b>[entry point: <c>glMatrixMultdEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_path_rendering.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_path_rendering.txt">NV_path_rendering.txt</see></remarks>
             public static void MatrixMultdEXT(MatrixMode mode, double* m) => GLPointers.glMatrixMultdEXT_Lazy((uint)mode, m);
             
             /// <summary> <b>[requires: GL_NV_path_rendering]</b> <b>[entry point: <c>glMatrixMultfEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_path_rendering.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_path_rendering.txt">NV_path_rendering.txt</see></remarks>
             public static void MatrixMultfEXT(MatrixMode mode, float* m) => GLPointers.glMatrixMultfEXT_Lazy((uint)mode, m);
             
             /// <summary> <b>[requires: GL_NV_path_rendering]</b> <b>[entry point: <c>glMatrixMultTranspose3x3fNV</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_path_rendering.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_path_rendering.txt">NV_path_rendering.txt</see></remarks>
             public static void MatrixMultTranspose3x3fNV(All matrixMode, float* m) => GLPointers.glMatrixMultTranspose3x3fNV_Lazy((uint)matrixMode, m);
             
             /// <summary> <b>[requires: GL_NV_path_rendering]</b> <b>[entry point: <c>glMatrixMultTransposedEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_path_rendering.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_path_rendering.txt">NV_path_rendering.txt</see></remarks>
             public static void MatrixMultTransposedEXT(MatrixMode mode, double* m) => GLPointers.glMatrixMultTransposedEXT_Lazy((uint)mode, m);
             
             /// <summary> <b>[requires: GL_NV_path_rendering]</b> <b>[entry point: <c>glMatrixMultTransposefEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_path_rendering.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_path_rendering.txt">NV_path_rendering.txt</see></remarks>
             public static void MatrixMultTransposefEXT(MatrixMode mode, float* m) => GLPointers.glMatrixMultTransposefEXT_Lazy((uint)mode, m);
             
             /// <summary> <b>[requires: GL_NV_path_rendering]</b> <b>[entry point: <c>glMatrixOrthoEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_path_rendering.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_path_rendering.txt">NV_path_rendering.txt</see></remarks>
             public static void MatrixOrthoEXT(MatrixMode mode, double left, double right, double bottom, double top, double zNear, double zFar) => GLPointers.glMatrixOrthoEXT_Lazy((uint)mode, left, right, bottom, top, zNear, zFar);
             
             /// <summary> <b>[requires: GL_NV_path_rendering]</b> <b>[entry point: <c>glMatrixPopEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_path_rendering.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_path_rendering.txt">NV_path_rendering.txt</see></remarks>
             public static void MatrixPopEXT(MatrixMode mode) => GLPointers.glMatrixPopEXT_Lazy((uint)mode);
             
             /// <summary> <b>[requires: GL_NV_path_rendering]</b> <b>[entry point: <c>glMatrixPushEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_path_rendering.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_path_rendering.txt">NV_path_rendering.txt</see></remarks>
             public static void MatrixPushEXT(MatrixMode mode) => GLPointers.glMatrixPushEXT_Lazy((uint)mode);
             
             /// <summary> <b>[requires: GL_NV_path_rendering]</b> <b>[entry point: <c>glMatrixRotatedEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_path_rendering.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_path_rendering.txt">NV_path_rendering.txt</see></remarks>
             public static void MatrixRotatedEXT(MatrixMode mode, double angle, double x, double y, double z) => GLPointers.glMatrixRotatedEXT_Lazy((uint)mode, angle, x, y, z);
             
             /// <summary> <b>[requires: GL_NV_path_rendering]</b> <b>[entry point: <c>glMatrixRotatefEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_path_rendering.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_path_rendering.txt">NV_path_rendering.txt</see></remarks>
             public static void MatrixRotatefEXT(MatrixMode mode, float angle, float x, float y, float z) => GLPointers.glMatrixRotatefEXT_Lazy((uint)mode, angle, x, y, z);
             
             /// <summary> <b>[requires: GL_NV_path_rendering]</b> <b>[entry point: <c>glMatrixScaledEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_path_rendering.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_path_rendering.txt">NV_path_rendering.txt</see></remarks>
             public static void MatrixScaledEXT(MatrixMode mode, double x, double y, double z) => GLPointers.glMatrixScaledEXT_Lazy((uint)mode, x, y, z);
             
             /// <summary> <b>[requires: GL_NV_path_rendering]</b> <b>[entry point: <c>glMatrixScalefEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_path_rendering.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_path_rendering.txt">NV_path_rendering.txt</see></remarks>
             public static void MatrixScalefEXT(MatrixMode mode, float x, float y, float z) => GLPointers.glMatrixScalefEXT_Lazy((uint)mode, x, y, z);
             
             /// <summary> <b>[requires: GL_NV_path_rendering]</b> <b>[entry point: <c>glMatrixTranslatedEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_path_rendering.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_path_rendering.txt">NV_path_rendering.txt</see></remarks>
             public static void MatrixTranslatedEXT(MatrixMode mode, double x, double y, double z) => GLPointers.glMatrixTranslatedEXT_Lazy((uint)mode, x, y, z);
             
             /// <summary> <b>[requires: GL_NV_path_rendering]</b> <b>[entry point: <c>glMatrixTranslatefEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_path_rendering.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_path_rendering.txt">NV_path_rendering.txt</see></remarks>
             public static void MatrixTranslatefEXT(MatrixMode mode, float x, float y, float z) => GLPointers.glMatrixTranslatefEXT_Lazy((uint)mode, x, y, z);
             
             /// <summary> <b>[requires: GL_NV_mesh_shader]</b> <b>[entry point: <c>glMultiDrawMeshTasksIndirectCountNV</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_mesh_shader.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_mesh_shader.txt">NV_mesh_shader.txt</see></remarks>
             public static void MultiDrawMeshTasksIndirectCountNV(IntPtr indirect, IntPtr drawcount, int maxdrawcount, int stride) => GLPointers.glMultiDrawMeshTasksIndirectCountNV_Lazy(indirect, drawcount, maxdrawcount, stride);
             
             /// <summary> <b>[requires: GL_NV_mesh_shader]</b> <b>[entry point: <c>glMultiDrawMeshTasksIndirectNV</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_mesh_shader.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_mesh_shader.txt">NV_mesh_shader.txt</see></remarks>
             public static void MultiDrawMeshTasksIndirectNV(IntPtr indirect, int drawcount, int stride) => GLPointers.glMultiDrawMeshTasksIndirectNV_Lazy(indirect, drawcount, stride);
             
             /// <summary> <b>[requires: GL_NV_memory_attachment]</b> <b>[entry point: <c>glNamedBufferAttachMemoryNV</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_memory_attachment.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_memory_attachment.txt">NV_memory_attachment.txt</see></remarks>
             public static void NamedBufferAttachMemoryNV(int buffer, uint memory, ulong offset) => GLPointers.glNamedBufferAttachMemoryNV_Lazy(buffer, memory, offset);
             
             /// <summary> <b>[requires: GL_NV_memory_object_sparse]</b> <b>[entry point: <c>glNamedBufferPageCommitmentMemNV</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_memory_object_sparse.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_memory_object_sparse.txt">NV_memory_object_sparse.txt</see></remarks>
             public static void NamedBufferPageCommitmentMemNV(int buffer, IntPtr offset, nint size, uint memory, ulong memOffset, bool commit) => GLPointers.glNamedBufferPageCommitmentMemNV_Lazy(buffer, offset, size, memory, memOffset, (byte)(commit ? 1 : 0));
             
             /// <summary> <b>[requires: GL_NV_sample_locations]</b> <b>[entry point: <c>glNamedFramebufferSampleLocationsfvNV</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_sample_locations.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_sample_locations.txt">NV_sample_locations.txt</see></remarks>
             public static void NamedFramebufferSampleLocationsfvNV(int framebuffer, uint start, int count, float* v) => GLPointers.glNamedFramebufferSampleLocationsfvNV_Lazy(framebuffer, start, count, v);
             
             /// <summary> <b>[requires: GL_NV_path_rendering]</b> <b>[entry point: <c>glPathColorGenNV</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_path_rendering.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_path_rendering.txt">NV_path_rendering.txt</see></remarks>
             public static void PathColorGenNV(PathColor color, PathGenMode genMode, PathColorFormat colorFormat, float* coeffs) => GLPointers.glPathColorGenNV_Lazy((uint)color, (uint)genMode, (uint)colorFormat, coeffs);
             
             /// <summary> <b>[requires: GL_NV_path_rendering]</b> <b>[entry point: <c>glPathCommandsNV</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_path_rendering.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_path_rendering.txt">NV_path_rendering.txt</see></remarks>
             public static void PathCommandsNV(uint path, int numCommands, byte* commands, int numCoords, PathCoordType coordType, void* coords) => GLPointers.glPathCommandsNV_Lazy(path, numCommands, commands, numCoords, (uint)coordType, coords);
             
             /// <summary> <b>[requires: GL_NV_path_rendering]</b> <b>[entry point: <c>glPathCoordsNV</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_path_rendering.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_path_rendering.txt">NV_path_rendering.txt</see></remarks>
             public static void PathCoordsNV(uint path, int numCoords, PathCoordType coordType, void* coords) => GLPointers.glPathCoordsNV_Lazy(path, numCoords, (uint)coordType, coords);
             
             /// <summary> <b>[requires: GL_NV_path_rendering]</b> <b>[entry point: <c>glPathCoverDepthFuncNV</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_path_rendering.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_path_rendering.txt">NV_path_rendering.txt</see></remarks>
             public static void PathCoverDepthFuncNV(DepthFunction func) => GLPointers.glPathCoverDepthFuncNV_Lazy((uint)func);
             
             /// <summary> <b>[requires: GL_NV_path_rendering]</b> <b>[entry point: <c>glPathDashArrayNV</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_path_rendering.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_path_rendering.txt">NV_path_rendering.txt</see></remarks>
             public static void PathDashArrayNV(uint path, int dashCount, float* dashArray) => GLPointers.glPathDashArrayNV_Lazy(path, dashCount, dashArray);
             
             /// <summary> <b>[requires: GL_NV_path_rendering]</b> <b>[entry point: <c>glPathFogGenNV</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_path_rendering.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_path_rendering.txt">NV_path_rendering.txt</see></remarks>
             public static void PathFogGenNV(PathGenMode genMode) => GLPointers.glPathFogGenNV_Lazy((uint)genMode);
             
             /// <summary> <b>[requires: GL_NV_path_rendering]</b> <b>[entry point: <c>glPathGlyphIndexArrayNV</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_path_rendering.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_path_rendering.txt">NV_path_rendering.txt</see></remarks>
             public static All PathGlyphIndexArrayNV(uint firstPathName, All fontTarget, void* fontName, PathFontStyle fontStyle, uint firstGlyphIndex, int numGlyphs, uint pathParameterTemplate, float emScale) => (All) GLPointers.glPathGlyphIndexArrayNV_Lazy(firstPathName, (uint)fontTarget, fontName, (uint)fontStyle, firstGlyphIndex, numGlyphs, pathParameterTemplate, emScale);
             
             /// <summary> <b>[requires: GL_NV_path_rendering]</b> <b>[entry point: <c>glPathGlyphIndexRangeNV</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_path_rendering.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_path_rendering.txt">NV_path_rendering.txt</see></remarks>
             public static All PathGlyphIndexRangeNV(All fontTarget, void* fontName, PathFontStyle fontStyle, uint pathParameterTemplate, float emScale, uint* baseAndCount) => (All) GLPointers.glPathGlyphIndexRangeNV_Lazy((uint)fontTarget, fontName, (uint)fontStyle, pathParameterTemplate, emScale, baseAndCount);
             
             /// <summary> <b>[requires: GL_NV_path_rendering]</b> <b>[entry point: <c>glPathGlyphRangeNV</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_path_rendering.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_path_rendering.txt">NV_path_rendering.txt</see></remarks>
             public static void PathGlyphRangeNV(uint firstPathName, PathFontTarget fontTarget, void* fontName, PathFontStyle fontStyle, uint firstGlyph, int numGlyphs, PathHandleMissingGlyphs handleMissingGlyphs, uint pathParameterTemplate, float emScale) => GLPointers.glPathGlyphRangeNV_Lazy(firstPathName, (uint)fontTarget, fontName, (uint)fontStyle, firstGlyph, numGlyphs, (uint)handleMissingGlyphs, pathParameterTemplate, emScale);
             
             /// <summary> <b>[requires: GL_NV_path_rendering]</b> <b>[entry point: <c>glPathGlyphsNV</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_path_rendering.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_path_rendering.txt">NV_path_rendering.txt</see></remarks>
             public static void PathGlyphsNV(uint firstPathName, PathFontTarget fontTarget, void* fontName, PathFontStyle fontStyle, int numGlyphs, PathElementType type, void* charcodes, PathHandleMissingGlyphs handleMissingGlyphs, uint pathParameterTemplate, float emScale) => GLPointers.glPathGlyphsNV_Lazy(firstPathName, (uint)fontTarget, fontName, (uint)fontStyle, numGlyphs, (uint)type, charcodes, (uint)handleMissingGlyphs, pathParameterTemplate, emScale);
             
             /// <summary> <b>[requires: GL_NV_path_rendering]</b> <b>[entry point: <c>glPathMemoryGlyphIndexArrayNV</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_path_rendering.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_path_rendering.txt">NV_path_rendering.txt</see></remarks>
             public static All PathMemoryGlyphIndexArrayNV(uint firstPathName, All fontTarget, nint fontSize, void* fontData, int faceIndex, uint firstGlyphIndex, int numGlyphs, uint pathParameterTemplate, float emScale) => (All) GLPointers.glPathMemoryGlyphIndexArrayNV_Lazy(firstPathName, (uint)fontTarget, fontSize, fontData, faceIndex, firstGlyphIndex, numGlyphs, pathParameterTemplate, emScale);
             
             /// <summary> <b>[requires: GL_NV_path_rendering]</b> <b>[entry point: <c>glPathParameterfNV</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_path_rendering.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_path_rendering.txt">NV_path_rendering.txt</see></remarks>
             public static void PathParameterfNV(uint path, PathParameter pname, float value) => GLPointers.glPathParameterfNV_Lazy(path, (uint)pname, value);
             
             /// <summary> <b>[requires: GL_NV_path_rendering]</b> <b>[entry point: <c>glPathParameterfvNV</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_path_rendering.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_path_rendering.txt">NV_path_rendering.txt</see></remarks>
             public static void PathParameterfvNV(uint path, PathParameter pname, float* value) => GLPointers.glPathParameterfvNV_Lazy(path, (uint)pname, value);
             
             /// <summary> <b>[requires: GL_NV_path_rendering]</b> <b>[entry point: <c>glPathParameteriNV</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_path_rendering.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_path_rendering.txt">NV_path_rendering.txt</see></remarks>
             public static void PathParameteriNV(uint path, PathParameter pname, int value) => GLPointers.glPathParameteriNV_Lazy(path, (uint)pname, value);
             
             /// <summary> <b>[requires: GL_NV_path_rendering]</b> <b>[entry point: <c>glPathParameterivNV</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_path_rendering.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_path_rendering.txt">NV_path_rendering.txt</see></remarks>
             public static void PathParameterivNV(uint path, PathParameter pname, int* value) => GLPointers.glPathParameterivNV_Lazy(path, (uint)pname, value);
             
             /// <summary> <b>[requires: GL_NV_path_rendering]</b> <b>[entry point: <c>glPathStencilDepthOffsetNV</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_path_rendering.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_path_rendering.txt">NV_path_rendering.txt</see></remarks>
             public static void PathStencilDepthOffsetNV(float factor, float units) => GLPointers.glPathStencilDepthOffsetNV_Lazy(factor, units);
             
             /// <summary> <b>[requires: GL_NV_path_rendering]</b> <b>[entry point: <c>glPathStencilFuncNV</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_path_rendering.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_path_rendering.txt">NV_path_rendering.txt</see></remarks>
             public static void PathStencilFuncNV(StencilFunction func, int @ref, uint mask) => GLPointers.glPathStencilFuncNV_Lazy((uint)func, @ref, mask);
             
             /// <summary> <b>[requires: GL_NV_path_rendering]</b> <b>[entry point: <c>glPathStringNV</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_path_rendering.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_path_rendering.txt">NV_path_rendering.txt</see></remarks>
             public static void PathStringNV(uint path, PathStringFormat format, int length, void* pathString) => GLPointers.glPathStringNV_Lazy(path, (uint)format, length, pathString);
             
             /// <summary> <b>[requires: GL_NV_path_rendering]</b> <b>[entry point: <c>glPathSubCommandsNV</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_path_rendering.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_path_rendering.txt">NV_path_rendering.txt</see></remarks>
             public static void PathSubCommandsNV(uint path, int commandStart, int commandsToDelete, int numCommands, byte* commands, int numCoords, PathCoordType coordType, void* coords) => GLPointers.glPathSubCommandsNV_Lazy(path, commandStart, commandsToDelete, numCommands, commands, numCoords, (uint)coordType, coords);
             
             /// <summary> <b>[requires: GL_NV_path_rendering]</b> <b>[entry point: <c>glPathSubCoordsNV</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_path_rendering.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_path_rendering.txt">NV_path_rendering.txt</see></remarks>
             public static void PathSubCoordsNV(uint path, int coordStart, int numCoords, PathCoordType coordType, void* coords) => GLPointers.glPathSubCoordsNV_Lazy(path, coordStart, numCoords, (uint)coordType, coords);
             
             /// <summary> <b>[requires: GL_NV_path_rendering]</b> <b>[entry point: <c>glPathTexGenNV</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_path_rendering.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_path_rendering.txt">NV_path_rendering.txt</see></remarks>
             public static void PathTexGenNV(PathColor texCoordSet, PathGenMode genMode, int components, float* coeffs) => GLPointers.glPathTexGenNV_Lazy((uint)texCoordSet, (uint)genMode, components, coeffs);
             
             /// <summary> <b>[requires: GL_NV_path_rendering]</b> <b>[entry point: <c>glPointAlongPathNV</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_path_rendering.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_path_rendering.txt">NV_path_rendering.txt</see></remarks>
             public static bool PointAlongPathNV(uint path, int startSegment, int numSegments, float distance, float* x, float* y, float* tangentX, float* tangentY) => GLPointers.glPointAlongPathNV_Lazy(path, startSegment, numSegments, distance, x, y, tangentX, tangentY) != 0;
             
             /// <summary> <b>[requires: GL_NV_polygon_mode]</b> <b>[entry point: <c>glPolygonModeNV</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_polygon_mode.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_polygon_mode.txt">NV_polygon_mode.txt</see></remarks>
             public static void PolygonModeNV(TriangleFace face, PolygonMode mode) => GLPointers.glPolygonModeNV_Lazy((uint)face, (uint)mode);
             
             /// <summary> <b>[requires: GL_NV_path_rendering]</b> <b>[entry point: <c>glProgramPathFragmentInputGenNV</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_path_rendering.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_path_rendering.txt">NV_path_rendering.txt</see></remarks>
             public static void ProgramPathFragmentInputGenNV(int program, int location, All genMode, int components, float* coeffs) => GLPointers.glProgramPathFragmentInputGenNV_Lazy(program, location, (uint)genMode, components, coeffs);
             
             /// <summary> <b>[requires: GL_NV_gpu_shader5]</b> <b>[entry point: <c>glProgramUniform1i64NV</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_gpu_shader5.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_gpu_shader5.txt">NV_gpu_shader5.txt</see></remarks>
             public static void ProgramUniform1i64NV(int program, int location, long x) => GLPointers.glProgramUniform1i64NV_Lazy(program, location, x);
             
             /// <summary> <b>[requires: GL_NV_gpu_shader5]</b> <b>[entry point: <c>glProgramUniform1i64vNV</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_gpu_shader5.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_gpu_shader5.txt">NV_gpu_shader5.txt</see></remarks>
             public static void ProgramUniform1i64vNV(int program, int location, int count, long* value) => GLPointers.glProgramUniform1i64vNV_Lazy(program, location, count, value);
             
             /// <summary> <b>[requires: GL_NV_gpu_shader5]</b> <b>[entry point: <c>glProgramUniform1ui64NV</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_gpu_shader5.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_gpu_shader5.txt">NV_gpu_shader5.txt</see></remarks>
             public static void ProgramUniform1ui64NV(int program, int location, ulong x) => GLPointers.glProgramUniform1ui64NV_Lazy(program, location, x);
             
             /// <summary> <b>[requires: GL_NV_gpu_shader5]</b> <b>[entry point: <c>glProgramUniform1ui64vNV</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_gpu_shader5.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_gpu_shader5.txt">NV_gpu_shader5.txt</see></remarks>
             public static void ProgramUniform1ui64vNV(int program, int location, int count, ulong* value) => GLPointers.glProgramUniform1ui64vNV_Lazy(program, location, count, value);
             
             /// <summary> <b>[requires: GL_NV_gpu_shader5]</b> <b>[entry point: <c>glProgramUniform2i64NV</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_gpu_shader5.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_gpu_shader5.txt">NV_gpu_shader5.txt</see></remarks>
             public static void ProgramUniform2i64NV(int program, int location, long x, long y) => GLPointers.glProgramUniform2i64NV_Lazy(program, location, x, y);
             
             /// <summary> <b>[requires: GL_NV_gpu_shader5]</b> <b>[entry point: <c>glProgramUniform2i64vNV</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_gpu_shader5.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_gpu_shader5.txt">NV_gpu_shader5.txt</see></remarks>
             public static void ProgramUniform2i64vNV(int program, int location, int count, long* value) => GLPointers.glProgramUniform2i64vNV_Lazy(program, location, count, value);
             
             /// <summary> <b>[requires: GL_NV_gpu_shader5]</b> <b>[entry point: <c>glProgramUniform2ui64NV</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_gpu_shader5.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_gpu_shader5.txt">NV_gpu_shader5.txt</see></remarks>
             public static void ProgramUniform2ui64NV(int program, int location, ulong x, ulong y) => GLPointers.glProgramUniform2ui64NV_Lazy(program, location, x, y);
             
             /// <summary> <b>[requires: GL_NV_gpu_shader5]</b> <b>[entry point: <c>glProgramUniform2ui64vNV</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_gpu_shader5.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_gpu_shader5.txt">NV_gpu_shader5.txt</see></remarks>
             public static void ProgramUniform2ui64vNV(int program, int location, int count, ulong* value) => GLPointers.glProgramUniform2ui64vNV_Lazy(program, location, count, value);
             
             /// <summary> <b>[requires: GL_NV_gpu_shader5]</b> <b>[entry point: <c>glProgramUniform3i64NV</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_gpu_shader5.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_gpu_shader5.txt">NV_gpu_shader5.txt</see></remarks>
             public static void ProgramUniform3i64NV(int program, int location, long x, long y, long z) => GLPointers.glProgramUniform3i64NV_Lazy(program, location, x, y, z);
             
             /// <summary> <b>[requires: GL_NV_gpu_shader5]</b> <b>[entry point: <c>glProgramUniform3i64vNV</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_gpu_shader5.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_gpu_shader5.txt">NV_gpu_shader5.txt</see></remarks>
             public static void ProgramUniform3i64vNV(int program, int location, int count, long* value) => GLPointers.glProgramUniform3i64vNV_Lazy(program, location, count, value);
             
             /// <summary> <b>[requires: GL_NV_gpu_shader5]</b> <b>[entry point: <c>glProgramUniform3ui64NV</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_gpu_shader5.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_gpu_shader5.txt">NV_gpu_shader5.txt</see></remarks>
             public static void ProgramUniform3ui64NV(int program, int location, ulong x, ulong y, ulong z) => GLPointers.glProgramUniform3ui64NV_Lazy(program, location, x, y, z);
             
             /// <summary> <b>[requires: GL_NV_gpu_shader5]</b> <b>[entry point: <c>glProgramUniform3ui64vNV</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_gpu_shader5.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_gpu_shader5.txt">NV_gpu_shader5.txt</see></remarks>
             public static void ProgramUniform3ui64vNV(int program, int location, int count, ulong* value) => GLPointers.glProgramUniform3ui64vNV_Lazy(program, location, count, value);
             
             /// <summary> <b>[requires: GL_NV_gpu_shader5]</b> <b>[entry point: <c>glProgramUniform4i64NV</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_gpu_shader5.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_gpu_shader5.txt">NV_gpu_shader5.txt</see></remarks>
             public static void ProgramUniform4i64NV(int program, int location, long x, long y, long z, long w) => GLPointers.glProgramUniform4i64NV_Lazy(program, location, x, y, z, w);
             
             /// <summary> <b>[requires: GL_NV_gpu_shader5]</b> <b>[entry point: <c>glProgramUniform4i64vNV</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_gpu_shader5.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_gpu_shader5.txt">NV_gpu_shader5.txt</see></remarks>
             public static void ProgramUniform4i64vNV(int program, int location, int count, long* value) => GLPointers.glProgramUniform4i64vNV_Lazy(program, location, count, value);
             
             /// <summary> <b>[requires: GL_NV_gpu_shader5]</b> <b>[entry point: <c>glProgramUniform4ui64NV</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_gpu_shader5.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_gpu_shader5.txt">NV_gpu_shader5.txt</see></remarks>
             public static void ProgramUniform4ui64NV(int program, int location, ulong x, ulong y, ulong z, ulong w) => GLPointers.glProgramUniform4ui64NV_Lazy(program, location, x, y, z, w);
             
             /// <summary> <b>[requires: GL_NV_gpu_shader5]</b> <b>[entry point: <c>glProgramUniform4ui64vNV</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_gpu_shader5.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_gpu_shader5.txt">NV_gpu_shader5.txt</see></remarks>
             public static void ProgramUniform4ui64vNV(int program, int location, int count, ulong* value) => GLPointers.glProgramUniform4ui64vNV_Lazy(program, location, count, value);
             
             /// <summary> <b>[requires: GL_NV_bindless_texture]</b> <b>[entry point: <c>glProgramUniformHandleui64NV</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_bindless_texture.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_bindless_texture.txt">NV_bindless_texture.txt</see></remarks>
             public static void ProgramUniformHandleui64NV(int program, int location, ulong value) => GLPointers.glProgramUniformHandleui64NV_Lazy(program, location, value);
             
             /// <summary> <b>[requires: GL_NV_bindless_texture]</b> <b>[entry point: <c>glProgramUniformHandleui64vNV</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_bindless_texture.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_bindless_texture.txt">NV_bindless_texture.txt</see></remarks>
             public static void ProgramUniformHandleui64vNV(int program, int location, int count, ulong* values) => GLPointers.glProgramUniformHandleui64vNV_Lazy(program, location, count, values);
             
             /// <summary> <b>[requires: GL_EXT_raster_multisample | GL_NV_framebuffer_mixed_samples]</b> <b>[entry point: <c>glRasterSamplesEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/EXT_raster_multisample.txt"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_framebuffer_mixed_samples.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/EXT_raster_multisample.txt">EXT_raster_multisample.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_framebuffer_mixed_samples.txt">NV_framebuffer_mixed_samples.txt</see></remarks>
             public static void RasterSamplesEXT(uint samples, bool fixedsamplelocations) => GLPointers.glRasterSamplesEXT_Lazy(samples, (byte)(fixedsamplelocations ? 1 : 0));
             
             /// <summary> <b>[requires: GL_NV_read_buffer]</b> <b>[entry point: <c>glReadBufferNV</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_read_buffer.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_read_buffer.txt">NV_read_buffer.txt</see></remarks>
             public static void ReadBufferNV(All mode) => GLPointers.glReadBufferNV_Lazy((uint)mode);
             
             /// <summary> <b>[requires: GL_NV_framebuffer_multisample]</b> <b>[entry point: <c>glRenderbufferStorageMultisampleNV</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_framebuffer_multisample.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_framebuffer_multisample.txt">NV_framebuffer_multisample.txt</see></remarks>
             public static void RenderbufferStorageMultisampleNV(RenderbufferTarget target, int samples, InternalFormat internalformat, int width, int height) => GLPointers.glRenderbufferStorageMultisampleNV_Lazy((uint)target, samples, (uint)internalformat, width, height);
             
             /// <summary> <b>[requires: GL_NV_memory_attachment]</b> <b>[entry point: <c>glResetMemoryObjectParameterNV</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_memory_attachment.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_memory_attachment.txt">NV_memory_attachment.txt</see></remarks>
             public static void ResetMemoryObjectParameterNV(uint memory, All pname) => GLPointers.glResetMemoryObjectParameterNV_Lazy(memory, (uint)pname);
             
             /// <summary> <b>[requires: GL_NV_sample_locations]</b> <b>[entry point: <c>glResolveDepthValuesNV</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_sample_locations.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_sample_locations.txt">NV_sample_locations.txt</see></remarks>
             public static void ResolveDepthValuesNV() => GLPointers.glResolveDepthValuesNV_Lazy();
             
             /// <summary> <b>[requires: GL_NV_viewport_array]</b> <b>[entry point: <c>glScissorArrayvNV</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_viewport_array.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_viewport_array.txt">NV_viewport_array.txt</see></remarks>
             public static void ScissorArrayvNV(uint first, int count, int* v) => GLPointers.glScissorArrayvNV_Lazy(first, count, v);
             
             /// <summary> <b>[requires: GL_NV_scissor_exclusive]</b> <b>[entry point: <c>glScissorExclusiveArrayvNV</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_scissor_exclusive.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_scissor_exclusive.txt">NV_scissor_exclusive.txt</see></remarks>
             public static void ScissorExclusiveArrayvNV(uint first, int count, int* v) => GLPointers.glScissorExclusiveArrayvNV_Lazy(first, count, v);
             
             /// <summary> <b>[requires: GL_NV_scissor_exclusive]</b> <b>[entry point: <c>glScissorExclusiveNV</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_scissor_exclusive.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_scissor_exclusive.txt">NV_scissor_exclusive.txt</see></remarks>
             public static void ScissorExclusiveNV(int x, int y, int width, int height) => GLPointers.glScissorExclusiveNV_Lazy(x, y, width, height);
             
             /// <summary> <b>[requires: GL_NV_viewport_array]</b> <b>[entry point: <c>glScissorIndexedNV</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_viewport_array.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_viewport_array.txt">NV_viewport_array.txt</see></remarks>
             public static void ScissorIndexedNV(uint index, int left, int bottom, int width, int height) => GLPointers.glScissorIndexedNV_Lazy(index, left, bottom, width, height);
             
             /// <summary> <b>[requires: GL_NV_viewport_array]</b> <b>[entry point: <c>glScissorIndexedvNV</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_viewport_array.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_viewport_array.txt">NV_viewport_array.txt</see></remarks>
             public static void ScissorIndexedvNV(uint index, int* v) => GLPointers.glScissorIndexedvNV_Lazy(index, v);
             
             /// <summary> <b>[requires: GL_NV_timeline_semaphore]</b> <b>[entry point: <c>glSemaphoreParameterivNV</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_timeline_semaphore.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_timeline_semaphore.txt">NV_timeline_semaphore.txt</see></remarks>
             public static void SemaphoreParameterivNV(uint semaphore, SemaphoreParameterName pname, int* @params) => GLPointers.glSemaphoreParameterivNV_Lazy(semaphore, (uint)pname, @params);
             
             /// <summary> <b>[requires: GL_NV_fence]</b> <b>[entry point: <c>glSetFenceNV</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_fence.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_fence.txt">NV_fence.txt</see></remarks>
             public static void SetFenceNV(uint fence, FenceConditionNV condition) => GLPointers.glSetFenceNV_Lazy(fence, (uint)condition);
             
             /// <summary> <b>[requires: GL_NV_shading_rate_image]</b> <b>[entry point: <c>glShadingRateImageBarrierNV</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_shading_rate_image.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_shading_rate_image.txt">NV_shading_rate_image.txt</see></remarks>
             public static void ShadingRateImageBarrierNV(bool synchronize) => GLPointers.glShadingRateImageBarrierNV_Lazy((byte)(synchronize ? 1 : 0));
             
             /// <summary> <b>[requires: GL_NV_shading_rate_image]</b> <b>[entry point: <c>glShadingRateImagePaletteNV</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_shading_rate_image.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_shading_rate_image.txt">NV_shading_rate_image.txt</see></remarks>
             public static void ShadingRateImagePaletteNV(uint viewport, uint first, int count, All* rates) => GLPointers.glShadingRateImagePaletteNV_Lazy(viewport, first, count, (uint*)rates);
             
             /// <summary> <b>[requires: GL_NV_shading_rate_image]</b> <b>[entry point: <c>glShadingRateSampleOrderCustomNV</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_shading_rate_image.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_shading_rate_image.txt">NV_shading_rate_image.txt</see></remarks>
             public static void ShadingRateSampleOrderCustomNV(All rate, uint samples, int* locations) => GLPointers.glShadingRateSampleOrderCustomNV_Lazy((uint)rate, samples, locations);
             
             /// <summary> <b>[requires: GL_NV_shading_rate_image]</b> <b>[entry point: <c>glShadingRateSampleOrderNV</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_shading_rate_image.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_shading_rate_image.txt">NV_shading_rate_image.txt</see></remarks>
             public static void ShadingRateSampleOrderNV(All order) => GLPointers.glShadingRateSampleOrderNV_Lazy((uint)order);
             
             /// <summary> <b>[requires: GL_NV_draw_vulkan_image]</b> <b>[entry point: <c>glSignalVkFenceNV</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_draw_vulkan_image.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_draw_vulkan_image.txt">NV_draw_vulkan_image.txt</see></remarks>
             public static void SignalVkFenceNV(ulong vkFence) => GLPointers.glSignalVkFenceNV_Lazy(vkFence);
             
             /// <summary> <b>[requires: GL_NV_draw_vulkan_image]</b> <b>[entry point: <c>glSignalVkSemaphoreNV</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_draw_vulkan_image.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_draw_vulkan_image.txt">NV_draw_vulkan_image.txt</see></remarks>
             public static void SignalVkSemaphoreNV(ulong vkSemaphore) => GLPointers.glSignalVkSemaphoreNV_Lazy(vkSemaphore);
             
             /// <summary> <b>[requires: GL_NV_path_rendering]</b> <b>[entry point: <c>glStencilFillPathInstancedNV</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_path_rendering.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_path_rendering.txt">NV_path_rendering.txt</see></remarks>
             public static void StencilFillPathInstancedNV(int numPaths, PathElementType pathNameType, void* paths, uint pathBase, PathFillMode fillMode, uint mask, PathTransformType transformType, float* transformValues) => GLPointers.glStencilFillPathInstancedNV_Lazy(numPaths, (uint)pathNameType, paths, pathBase, (uint)fillMode, mask, (uint)transformType, transformValues);
             
             /// <summary> <b>[requires: GL_NV_path_rendering]</b> <b>[entry point: <c>glStencilFillPathNV</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_path_rendering.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_path_rendering.txt">NV_path_rendering.txt</see></remarks>
             public static void StencilFillPathNV(uint path, PathFillMode fillMode, uint mask) => GLPointers.glStencilFillPathNV_Lazy(path, (uint)fillMode, mask);
             
             /// <summary> <b>[requires: GL_NV_path_rendering]</b> <b>[entry point: <c>glStencilStrokePathInstancedNV</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_path_rendering.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_path_rendering.txt">NV_path_rendering.txt</see></remarks>
             public static void StencilStrokePathInstancedNV(int numPaths, PathElementType pathNameType, void* paths, uint pathBase, int reference, uint mask, PathTransformType transformType, float* transformValues) => GLPointers.glStencilStrokePathInstancedNV_Lazy(numPaths, (uint)pathNameType, paths, pathBase, reference, mask, (uint)transformType, transformValues);
             
             /// <summary> <b>[requires: GL_NV_path_rendering]</b> <b>[entry point: <c>glStencilStrokePathNV</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_path_rendering.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_path_rendering.txt">NV_path_rendering.txt</see></remarks>
             public static void StencilStrokePathNV(uint path, int reference, uint mask) => GLPointers.glStencilStrokePathNV_Lazy(path, reference, mask);
             
             /// <summary> <b>[requires: GL_NV_path_rendering]</b> <b>[entry point: <c>glStencilThenCoverFillPathInstancedNV</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_path_rendering.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_path_rendering.txt">NV_path_rendering.txt</see></remarks>
             public static void StencilThenCoverFillPathInstancedNV(int numPaths, PathElementType pathNameType, void* paths, uint pathBase, PathFillMode fillMode, uint mask, InstancedPathCoverMode coverMode, PathTransformType transformType, float* transformValues) => GLPointers.glStencilThenCoverFillPathInstancedNV_Lazy(numPaths, (uint)pathNameType, paths, pathBase, (uint)fillMode, mask, (uint)coverMode, (uint)transformType, transformValues);
             
             /// <summary> <b>[requires: GL_NV_path_rendering]</b> <b>[entry point: <c>glStencilThenCoverFillPathNV</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_path_rendering.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_path_rendering.txt">NV_path_rendering.txt</see></remarks>
             public static void StencilThenCoverFillPathNV(uint path, PathFillMode fillMode, uint mask, PathCoverMode coverMode) => GLPointers.glStencilThenCoverFillPathNV_Lazy(path, (uint)fillMode, mask, (uint)coverMode);
             
             /// <summary> <b>[requires: GL_NV_path_rendering]</b> <b>[entry point: <c>glStencilThenCoverStrokePathInstancedNV</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_path_rendering.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_path_rendering.txt">NV_path_rendering.txt</see></remarks>
             public static void StencilThenCoverStrokePathInstancedNV(int numPaths, PathElementType pathNameType, void* paths, uint pathBase, int reference, uint mask, InstancedPathCoverMode coverMode, PathTransformType transformType, float* transformValues) => GLPointers.glStencilThenCoverStrokePathInstancedNV_Lazy(numPaths, (uint)pathNameType, paths, pathBase, reference, mask, (uint)coverMode, (uint)transformType, transformValues);
             
             /// <summary> <b>[requires: GL_NV_path_rendering]</b> <b>[entry point: <c>glStencilThenCoverStrokePathNV</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_path_rendering.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_path_rendering.txt">NV_path_rendering.txt</see></remarks>
             public static void StencilThenCoverStrokePathNV(uint path, int reference, uint mask, PathCoverMode coverMode) => GLPointers.glStencilThenCoverStrokePathNV_Lazy(path, reference, mask, (uint)coverMode);
             
             /// <summary> <b>[requires: GL_NV_conservative_raster]</b> <b>[entry point: <c>glSubpixelPrecisionBiasNV</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_conservative_raster.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_conservative_raster.txt">NV_conservative_raster.txt</see></remarks>
             public static void SubpixelPrecisionBiasNV(uint xbits, uint ybits) => GLPointers.glSubpixelPrecisionBiasNV_Lazy(xbits, ybits);
             
             /// <summary> <b>[requires: GL_NV_fence]</b> <b>[entry point: <c>glTestFenceNV</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_fence.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_fence.txt">NV_fence.txt</see></remarks>
             public static bool TestFenceNV(uint fence) => GLPointers.glTestFenceNV_Lazy(fence) != 0;
             
             /// <summary> <b>[requires: GL_NV_memory_attachment]</b> <b>[entry point: <c>glTexAttachMemoryNV</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_memory_attachment.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_memory_attachment.txt">NV_memory_attachment.txt</see></remarks>
             public static void TexAttachMemoryNV(TextureTarget target, uint memory, ulong offset) => GLPointers.glTexAttachMemoryNV_Lazy((uint)target, memory, offset);
             
             /// <summary> <b>[requires: GL_NV_memory_object_sparse]</b> <b>[entry point: <c>glTexPageCommitmentMemNV</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_memory_object_sparse.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_memory_object_sparse.txt">NV_memory_object_sparse.txt</see></remarks>
             public static void TexPageCommitmentMemNV(TextureTarget target, int layer, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, uint memory, ulong offset, bool commit) => GLPointers.glTexPageCommitmentMemNV_Lazy((uint)target, layer, level, xoffset, yoffset, zoffset, width, height, depth, memory, offset, (byte)(commit ? 1 : 0));
             
             /// <summary> <b>[requires: GL_NV_memory_attachment]</b> <b>[entry point: <c>glTextureAttachMemoryNV</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_memory_attachment.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_memory_attachment.txt">NV_memory_attachment.txt</see></remarks>
             public static void TextureAttachMemoryNV(int texture, uint memory, ulong offset) => GLPointers.glTextureAttachMemoryNV_Lazy(texture, memory, offset);
             
             /// <summary> <b>[requires: GL_NV_memory_object_sparse]</b> <b>[entry point: <c>glTexturePageCommitmentMemNV</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_memory_object_sparse.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_memory_object_sparse.txt">NV_memory_object_sparse.txt</see></remarks>
             public static void TexturePageCommitmentMemNV(int texture, int layer, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, uint memory, ulong offset, bool commit) => GLPointers.glTexturePageCommitmentMemNV_Lazy(texture, layer, level, xoffset, yoffset, zoffset, width, height, depth, memory, offset, (byte)(commit ? 1 : 0));
             
             /// <summary> <b>[requires: GL_NV_path_rendering]</b> <b>[entry point: <c>glTransformPathNV</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_path_rendering.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_path_rendering.txt">NV_path_rendering.txt</see></remarks>
             public static void TransformPathNV(uint resultPath, uint srcPath, PathTransformType transformType, float* transformValues) => GLPointers.glTransformPathNV_Lazy(resultPath, srcPath, (uint)transformType, transformValues);
             
             /// <summary> <b>[requires: GL_NV_gpu_shader5]</b> <b>[entry point: <c>glUniform1i64NV</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_gpu_shader5.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_gpu_shader5.txt">NV_gpu_shader5.txt</see></remarks>
             public static void Uniform1i64NV(int location, long x) => GLPointers.glUniform1i64NV_Lazy(location, x);
             
             /// <summary> <b>[requires: GL_NV_gpu_shader5]</b> <b>[entry point: <c>glUniform1i64vNV</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_gpu_shader5.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_gpu_shader5.txt">NV_gpu_shader5.txt</see></remarks>
             public static void Uniform1i64vNV(int location, int count, long* value) => GLPointers.glUniform1i64vNV_Lazy(location, count, value);
             
             /// <summary> <b>[requires: GL_NV_gpu_shader5]</b> <b>[entry point: <c>glUniform1ui64NV</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_gpu_shader5.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_gpu_shader5.txt">NV_gpu_shader5.txt</see></remarks>
             public static void Uniform1ui64NV(int location, ulong x) => GLPointers.glUniform1ui64NV_Lazy(location, x);
             
             /// <summary> <b>[requires: GL_NV_gpu_shader5]</b> <b>[entry point: <c>glUniform1ui64vNV</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_gpu_shader5.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_gpu_shader5.txt">NV_gpu_shader5.txt</see></remarks>
             public static void Uniform1ui64vNV(int location, int count, ulong* value) => GLPointers.glUniform1ui64vNV_Lazy(location, count, value);
             
             /// <summary> <b>[requires: GL_NV_gpu_shader5]</b> <b>[entry point: <c>glUniform2i64NV</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_gpu_shader5.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_gpu_shader5.txt">NV_gpu_shader5.txt</see></remarks>
             public static void Uniform2i64NV(int location, long x, long y) => GLPointers.glUniform2i64NV_Lazy(location, x, y);
             
             /// <summary> <b>[requires: GL_NV_gpu_shader5]</b> <b>[entry point: <c>glUniform2i64vNV</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_gpu_shader5.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_gpu_shader5.txt">NV_gpu_shader5.txt</see></remarks>
             public static void Uniform2i64vNV(int location, int count, long* value) => GLPointers.glUniform2i64vNV_Lazy(location, count, value);
             
             /// <summary> <b>[requires: GL_NV_gpu_shader5]</b> <b>[entry point: <c>glUniform2ui64NV</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_gpu_shader5.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_gpu_shader5.txt">NV_gpu_shader5.txt</see></remarks>
             public static void Uniform2ui64NV(int location, ulong x, ulong y) => GLPointers.glUniform2ui64NV_Lazy(location, x, y);
             
             /// <summary> <b>[requires: GL_NV_gpu_shader5]</b> <b>[entry point: <c>glUniform2ui64vNV</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_gpu_shader5.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_gpu_shader5.txt">NV_gpu_shader5.txt</see></remarks>
             public static void Uniform2ui64vNV(int location, int count, ulong* value) => GLPointers.glUniform2ui64vNV_Lazy(location, count, value);
             
             /// <summary> <b>[requires: GL_NV_gpu_shader5]</b> <b>[entry point: <c>glUniform3i64NV</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_gpu_shader5.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_gpu_shader5.txt">NV_gpu_shader5.txt</see></remarks>
             public static void Uniform3i64NV(int location, long x, long y, long z) => GLPointers.glUniform3i64NV_Lazy(location, x, y, z);
             
             /// <summary> <b>[requires: GL_NV_gpu_shader5]</b> <b>[entry point: <c>glUniform3i64vNV</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_gpu_shader5.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_gpu_shader5.txt">NV_gpu_shader5.txt</see></remarks>
             public static void Uniform3i64vNV(int location, int count, long* value) => GLPointers.glUniform3i64vNV_Lazy(location, count, value);
             
             /// <summary> <b>[requires: GL_NV_gpu_shader5]</b> <b>[entry point: <c>glUniform3ui64NV</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_gpu_shader5.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_gpu_shader5.txt">NV_gpu_shader5.txt</see></remarks>
             public static void Uniform3ui64NV(int location, ulong x, ulong y, ulong z) => GLPointers.glUniform3ui64NV_Lazy(location, x, y, z);
             
             /// <summary> <b>[requires: GL_NV_gpu_shader5]</b> <b>[entry point: <c>glUniform3ui64vNV</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_gpu_shader5.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_gpu_shader5.txt">NV_gpu_shader5.txt</see></remarks>
             public static void Uniform3ui64vNV(int location, int count, ulong* value) => GLPointers.glUniform3ui64vNV_Lazy(location, count, value);
             
             /// <summary> <b>[requires: GL_NV_gpu_shader5]</b> <b>[entry point: <c>glUniform4i64NV</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_gpu_shader5.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_gpu_shader5.txt">NV_gpu_shader5.txt</see></remarks>
             public static void Uniform4i64NV(int location, long x, long y, long z, long w) => GLPointers.glUniform4i64NV_Lazy(location, x, y, z, w);
             
             /// <summary> <b>[requires: GL_NV_gpu_shader5]</b> <b>[entry point: <c>glUniform4i64vNV</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_gpu_shader5.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_gpu_shader5.txt">NV_gpu_shader5.txt</see></remarks>
             public static void Uniform4i64vNV(int location, int count, long* value) => GLPointers.glUniform4i64vNV_Lazy(location, count, value);
             
             /// <summary> <b>[requires: GL_NV_gpu_shader5]</b> <b>[entry point: <c>glUniform4ui64NV</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_gpu_shader5.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_gpu_shader5.txt">NV_gpu_shader5.txt</see></remarks>
             public static void Uniform4ui64NV(int location, ulong x, ulong y, ulong z, ulong w) => GLPointers.glUniform4ui64NV_Lazy(location, x, y, z, w);
             
             /// <summary> <b>[requires: GL_NV_gpu_shader5]</b> <b>[entry point: <c>glUniform4ui64vNV</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_gpu_shader5.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_gpu_shader5.txt">NV_gpu_shader5.txt</see></remarks>
             public static void Uniform4ui64vNV(int location, int count, ulong* value) => GLPointers.glUniform4ui64vNV_Lazy(location, count, value);
             
             /// <summary> <b>[requires: GL_NV_bindless_texture]</b> <b>[entry point: <c>glUniformHandleui64NV</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_bindless_texture.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_bindless_texture.txt">NV_bindless_texture.txt</see></remarks>
             public static void UniformHandleui64NV(int location, ulong value) => GLPointers.glUniformHandleui64NV_Lazy(location, value);
             
             /// <summary> <b>[requires: GL_NV_bindless_texture]</b> <b>[entry point: <c>glUniformHandleui64vNV</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_bindless_texture.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_bindless_texture.txt">NV_bindless_texture.txt</see></remarks>
             public static void UniformHandleui64vNV(int location, int count, ulong* value) => GLPointers.glUniformHandleui64vNV_Lazy(location, count, value);
             
             /// <summary> <b>[requires: GL_NV_non_square_matrices]</b> <b>[entry point: <c>glUniformMatrix2x3fvNV</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_non_square_matrices.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_non_square_matrices.txt">NV_non_square_matrices.txt</see></remarks>
             public static void UniformMatrix2x3fvNV(int location, int count, bool transpose, float* value) => GLPointers.glUniformMatrix2x3fvNV_Lazy(location, count, (byte)(transpose ? 1 : 0), value);
             
             /// <summary> <b>[requires: GL_NV_non_square_matrices]</b> <b>[entry point: <c>glUniformMatrix2x4fvNV</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_non_square_matrices.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_non_square_matrices.txt">NV_non_square_matrices.txt</see></remarks>
             public static void UniformMatrix2x4fvNV(int location, int count, bool transpose, float* value) => GLPointers.glUniformMatrix2x4fvNV_Lazy(location, count, (byte)(transpose ? 1 : 0), value);
             
             /// <summary> <b>[requires: GL_NV_non_square_matrices]</b> <b>[entry point: <c>glUniformMatrix3x2fvNV</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_non_square_matrices.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_non_square_matrices.txt">NV_non_square_matrices.txt</see></remarks>
             public static void UniformMatrix3x2fvNV(int location, int count, bool transpose, float* value) => GLPointers.glUniformMatrix3x2fvNV_Lazy(location, count, (byte)(transpose ? 1 : 0), value);
             
             /// <summary> <b>[requires: GL_NV_non_square_matrices]</b> <b>[entry point: <c>glUniformMatrix3x4fvNV</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_non_square_matrices.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_non_square_matrices.txt">NV_non_square_matrices.txt</see></remarks>
             public static void UniformMatrix3x4fvNV(int location, int count, bool transpose, float* value) => GLPointers.glUniformMatrix3x4fvNV_Lazy(location, count, (byte)(transpose ? 1 : 0), value);
             
             /// <summary> <b>[requires: GL_NV_non_square_matrices]</b> <b>[entry point: <c>glUniformMatrix4x2fvNV</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_non_square_matrices.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_non_square_matrices.txt">NV_non_square_matrices.txt</see></remarks>
             public static void UniformMatrix4x2fvNV(int location, int count, bool transpose, float* value) => GLPointers.glUniformMatrix4x2fvNV_Lazy(location, count, (byte)(transpose ? 1 : 0), value);
             
             /// <summary> <b>[requires: GL_NV_non_square_matrices]</b> <b>[entry point: <c>glUniformMatrix4x3fvNV</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_non_square_matrices.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_non_square_matrices.txt">NV_non_square_matrices.txt</see></remarks>
             public static void UniformMatrix4x3fvNV(int location, int count, bool transpose, float* value) => GLPointers.glUniformMatrix4x3fvNV_Lazy(location, count, (byte)(transpose ? 1 : 0), value);
             
             /// <summary> <b>[requires: GL_NV_instanced_arrays]</b> <b>[entry point: <c>glVertexAttribDivisorNV</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_instanced_arrays.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_instanced_arrays.txt">NV_instanced_arrays.txt</see></remarks>
             public static void VertexAttribDivisorNV(uint index, uint divisor) => GLPointers.glVertexAttribDivisorNV_Lazy(index, divisor);
             
             /// <summary> <b>[requires: GL_NV_viewport_array]</b> <b>[entry point: <c>glViewportArrayvNV</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_viewport_array.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_viewport_array.txt">NV_viewport_array.txt</see></remarks>
             public static void ViewportArrayvNV(uint first, int count, float* v) => GLPointers.glViewportArrayvNV_Lazy(first, count, v);
             
             /// <summary> <b>[requires: GL_NV_viewport_array]</b> <b>[entry point: <c>glViewportIndexedfNV</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_viewport_array.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_viewport_array.txt">NV_viewport_array.txt</see></remarks>
             public static void ViewportIndexedfNV(uint index, float x, float y, float w, float h) => GLPointers.glViewportIndexedfNV_Lazy(index, x, y, w, h);
             
             /// <summary> <b>[requires: GL_NV_viewport_array]</b> <b>[entry point: <c>glViewportIndexedfvNV</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_viewport_array.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_viewport_array.txt">NV_viewport_array.txt</see></remarks>
             public static void ViewportIndexedfvNV(uint index, float* v) => GLPointers.glViewportIndexedfvNV_Lazy(index, v);
             
             /// <summary> <b>[requires: GL_NV_clip_space_w_scaling]</b> <b>[entry point: <c>glViewportPositionWScaleNV</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_clip_space_w_scaling.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_clip_space_w_scaling.txt">NV_clip_space_w_scaling.txt</see></remarks>
             public static void ViewportPositionWScaleNV(uint index, float xcoeff, float ycoeff) => GLPointers.glViewportPositionWScaleNV_Lazy(index, xcoeff, ycoeff);
             
             /// <summary> <b>[requires: GL_NV_viewport_swizzle]</b> <b>[entry point: <c>glViewportSwizzleNV</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_viewport_swizzle.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_viewport_swizzle.txt">NV_viewport_swizzle.txt</see></remarks>
             public static void ViewportSwizzleNV(uint index, All swizzlex, All swizzley, All swizzlez, All swizzlew) => GLPointers.glViewportSwizzleNV_Lazy(index, (uint)swizzlex, (uint)swizzley, (uint)swizzlez, (uint)swizzlew);
             
             /// <summary> <b>[requires: GL_NV_draw_vulkan_image]</b> <b>[entry point: <c>glWaitVkSemaphoreNV</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_draw_vulkan_image.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_draw_vulkan_image.txt">NV_draw_vulkan_image.txt</see></remarks>
             public static void WaitVkSemaphoreNV(ulong vkSemaphore) => GLPointers.glWaitVkSemaphoreNV_Lazy(vkSemaphore);
             
             /// <summary> <b>[requires: GL_NV_path_rendering]</b> <b>[entry point: <c>glWeightPathsNV</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_path_rendering.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_path_rendering.txt">NV_path_rendering.txt</see></remarks>
             public static void WeightPathsNV(uint resultPath, int numPaths, uint* paths, float* weights) => GLPointers.glWeightPathsNV_Lazy(resultPath, numPaths, paths, weights);
             
         }
@@ -4744,223 +4744,223 @@ namespace OpenTK.Graphics.OpenGLES2
         public static unsafe partial class OES
         {
             /// <summary> <b>[requires: GL_OES_vertex_array_object]</b> <b>[entry point: <c>glBindVertexArrayOES</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/OES/OES_vertex_array_object.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/OES/OES_vertex_array_object.txt">OES_vertex_array_object.txt</see></remarks>
             public static void BindVertexArrayOES(int array) => GLPointers.glBindVertexArrayOES_Lazy(array);
             
             /// <summary> <b>[requires: GL_OES_draw_buffers_indexed]</b> <b>[entry point: <c>glBlendEquationiOES</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/OES/OES_draw_buffers_indexed.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/OES/OES_draw_buffers_indexed.txt">OES_draw_buffers_indexed.txt</see></remarks>
             public static void BlendEquationiOES(uint buf, BlendEquationMode mode) => GLPointers.glBlendEquationiOES_Lazy(buf, (uint)mode);
             
             /// <summary> <b>[requires: GL_OES_draw_buffers_indexed]</b> <b>[entry point: <c>glBlendEquationSeparateiOES</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/OES/OES_draw_buffers_indexed.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/OES/OES_draw_buffers_indexed.txt">OES_draw_buffers_indexed.txt</see></remarks>
             public static void BlendEquationSeparateiOES(uint buf, BlendEquationMode modeRGB, BlendEquationMode modeAlpha) => GLPointers.glBlendEquationSeparateiOES_Lazy(buf, (uint)modeRGB, (uint)modeAlpha);
             
             /// <summary> <b>[requires: GL_OES_draw_buffers_indexed]</b> <b>[entry point: <c>glBlendFunciOES</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/OES/OES_draw_buffers_indexed.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/OES/OES_draw_buffers_indexed.txt">OES_draw_buffers_indexed.txt</see></remarks>
             public static void BlendFunciOES(uint buf, BlendingFactor src, BlendingFactor dst) => GLPointers.glBlendFunciOES_Lazy(buf, (uint)src, (uint)dst);
             
             /// <summary> <b>[requires: GL_OES_draw_buffers_indexed]</b> <b>[entry point: <c>glBlendFuncSeparateiOES</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/OES/OES_draw_buffers_indexed.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/OES/OES_draw_buffers_indexed.txt">OES_draw_buffers_indexed.txt</see></remarks>
             public static void BlendFuncSeparateiOES(uint buf, BlendingFactor srcRGB, BlendingFactor dstRGB, BlendingFactor srcAlpha, BlendingFactor dstAlpha) => GLPointers.glBlendFuncSeparateiOES_Lazy(buf, (uint)srcRGB, (uint)dstRGB, (uint)srcAlpha, (uint)dstAlpha);
             
             /// <summary> <b>[requires: GL_OES_draw_buffers_indexed]</b> <b>[entry point: <c>glColorMaskiOES</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/OES/OES_draw_buffers_indexed.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/OES/OES_draw_buffers_indexed.txt">OES_draw_buffers_indexed.txt</see></remarks>
             public static void ColorMaskiOES(uint index, bool r, bool g, bool b, bool a) => GLPointers.glColorMaskiOES_Lazy(index, (byte)(r ? 1 : 0), (byte)(g ? 1 : 0), (byte)(b ? 1 : 0), (byte)(a ? 1 : 0));
             
             /// <summary> <b>[requires: GL_OES_texture_3D]</b> <b>[entry point: <c>glCompressedTexImage3DOES</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/OES/OES_texture_3D.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/OES/OES_texture_3D.txt">OES_texture_3D.txt</see></remarks>
             public static void CompressedTexImage3DOES(TextureTarget target, int level, InternalFormat internalformat, int width, int height, int depth, int border, int imageSize, void* data) => GLPointers.glCompressedTexImage3DOES_Lazy((uint)target, level, (uint)internalformat, width, height, depth, border, imageSize, data);
             
             /// <summary> <b>[requires: GL_OES_texture_3D]</b> <b>[entry point: <c>glCompressedTexSubImage3DOES</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/OES/OES_texture_3D.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/OES/OES_texture_3D.txt">OES_texture_3D.txt</see></remarks>
             public static void CompressedTexSubImage3DOES(TextureTarget target, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, InternalFormat format, int imageSize, void* data) => GLPointers.glCompressedTexSubImage3DOES_Lazy((uint)target, level, xoffset, yoffset, zoffset, width, height, depth, (uint)format, imageSize, data);
             
             /// <summary> <b>[requires: GL_OES_copy_image]</b> <b>[entry point: <c>glCopyImageSubDataOES</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/OES/OES_copy_image.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/OES/OES_copy_image.txt">OES_copy_image.txt</see></remarks>
             public static void CopyImageSubDataOES(uint srcName, CopyBufferSubDataTarget srcTarget, int srcLevel, int srcX, int srcY, int srcZ, uint dstName, CopyBufferSubDataTarget dstTarget, int dstLevel, int dstX, int dstY, int dstZ, int srcWidth, int srcHeight, int srcDepth) => GLPointers.glCopyImageSubDataOES_Lazy(srcName, (uint)srcTarget, srcLevel, srcX, srcY, srcZ, dstName, (uint)dstTarget, dstLevel, dstX, dstY, dstZ, srcWidth, srcHeight, srcDepth);
             
             /// <summary> <b>[requires: GL_OES_texture_3D]</b> <b>[entry point: <c>glCopyTexSubImage3DOES</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/OES/OES_texture_3D.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/OES/OES_texture_3D.txt">OES_texture_3D.txt</see></remarks>
             public static void CopyTexSubImage3DOES(TextureTarget target, int level, int xoffset, int yoffset, int zoffset, int x, int y, int width, int height) => GLPointers.glCopyTexSubImage3DOES_Lazy((uint)target, level, xoffset, yoffset, zoffset, x, y, width, height);
             
             /// <summary> <b>[requires: GL_OES_vertex_array_object]</b> <b>[entry point: <c>glDeleteVertexArraysOES</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/OES/OES_vertex_array_object.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/OES/OES_vertex_array_object.txt">OES_vertex_array_object.txt</see></remarks>
             public static void DeleteVertexArraysOES(int n, int* arrays) => GLPointers.glDeleteVertexArraysOES_Lazy(n, arrays);
             
             /// <summary> <b>[requires: GL_OES_viewport_array]</b> <b>[entry point: <c>glDepthRangeArrayfvOES</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/OES/OES_viewport_array.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/OES/OES_viewport_array.txt">OES_viewport_array.txt</see></remarks>
             public static void DepthRangeArrayfvOES(uint first, int count, float* v) => GLPointers.glDepthRangeArrayfvOES_Lazy(first, count, v);
             
             /// <summary> <b>[requires: GL_OES_viewport_array]</b> <b>[entry point: <c>glDepthRangeIndexedfOES</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/OES/OES_viewport_array.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/OES/OES_viewport_array.txt">OES_viewport_array.txt</see></remarks>
             public static void DepthRangeIndexedfOES(uint index, float n, float f) => GLPointers.glDepthRangeIndexedfOES_Lazy(index, n, f);
             
             /// <summary> <b>[requires: GL_OES_draw_buffers_indexed | GL_OES_viewport_array]</b> <b>[entry point: <c>glDisableiOES</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/OES/OES_draw_buffers_indexed.txt"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/OES/OES_viewport_array.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/OES/OES_draw_buffers_indexed.txt">OES_draw_buffers_indexed.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/OES/OES_viewport_array.txt">OES_viewport_array.txt</see></remarks>
             public static void DisableiOES(EnableCap target, uint index) => GLPointers.glDisableiOES_Lazy((uint)target, index);
             
             /// <summary> <b>[requires: GL_OES_draw_elements_base_vertex]</b> <b>[entry point: <c>glDrawElementsBaseVertexOES</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/OES/OES_draw_elements_base_vertex.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/OES/OES_draw_elements_base_vertex.txt">OES_draw_elements_base_vertex.txt</see></remarks>
             public static void DrawElementsBaseVertexOES(PrimitiveType mode, int count, DrawElementsType type, void* indices, int basevertex) => GLPointers.glDrawElementsBaseVertexOES_Lazy((uint)mode, count, (uint)type, indices, basevertex);
             
             /// <summary> <b>[requires: GL_OES_draw_elements_base_vertex]</b> <b>[entry point: <c>glDrawElementsInstancedBaseVertexOES</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/OES/OES_draw_elements_base_vertex.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/OES/OES_draw_elements_base_vertex.txt">OES_draw_elements_base_vertex.txt</see></remarks>
             public static void DrawElementsInstancedBaseVertexOES(PrimitiveType mode, int count, DrawElementsType type, void* indices, int instancecount, int basevertex) => GLPointers.glDrawElementsInstancedBaseVertexOES_Lazy((uint)mode, count, (uint)type, indices, instancecount, basevertex);
             
             /// <summary> <b>[requires: GL_OES_draw_elements_base_vertex]</b> <b>[entry point: <c>glDrawRangeElementsBaseVertexOES</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/OES/OES_draw_elements_base_vertex.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/OES/OES_draw_elements_base_vertex.txt">OES_draw_elements_base_vertex.txt</see></remarks>
             public static void DrawRangeElementsBaseVertexOES(PrimitiveType mode, uint start, uint end, int count, DrawElementsType type, void* indices, int basevertex) => GLPointers.glDrawRangeElementsBaseVertexOES_Lazy((uint)mode, start, end, count, (uint)type, indices, basevertex);
             
             /// <summary> <b>[requires: GL_OES_EGL_image]</b> <b>[entry point: <c>glEGLImageTargetRenderbufferStorageOES</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/OES/OES_EGL_image.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/OES/OES_EGL_image.txt">OES_EGL_image.txt</see></remarks>
             public static void EGLImageTargetRenderbufferStorageOES(All target, void* image) => GLPointers.glEGLImageTargetRenderbufferStorageOES_Lazy((uint)target, image);
             
             /// <summary> <b>[requires: GL_OES_EGL_image]</b> <b>[entry point: <c>glEGLImageTargetTexture2DOES</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/OES/OES_EGL_image.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/OES/OES_EGL_image.txt">OES_EGL_image.txt</see></remarks>
             public static void EGLImageTargetTexture2DOES(All target, void* image) => GLPointers.glEGLImageTargetTexture2DOES_Lazy((uint)target, image);
             
             /// <summary> <b>[requires: GL_OES_draw_buffers_indexed | GL_OES_viewport_array]</b> <b>[entry point: <c>glEnableiOES</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/OES/OES_draw_buffers_indexed.txt"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/OES/OES_viewport_array.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/OES/OES_draw_buffers_indexed.txt">OES_draw_buffers_indexed.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/OES/OES_viewport_array.txt">OES_viewport_array.txt</see></remarks>
             public static void EnableiOES(EnableCap target, uint index) => GLPointers.glEnableiOES_Lazy((uint)target, index);
             
             /// <summary> <b>[requires: GL_OES_texture_3D]</b> <b>[entry point: <c>glFramebufferTexture3DOES</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/OES/OES_texture_3D.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/OES/OES_texture_3D.txt">OES_texture_3D.txt</see></remarks>
             public static void FramebufferTexture3DOES(FramebufferTarget target, FramebufferAttachment attachment, TextureTarget textarget, int texture, int level, int zoffset) => GLPointers.glFramebufferTexture3DOES_Lazy((uint)target, (uint)attachment, (uint)textarget, texture, level, zoffset);
             
             /// <summary> <b>[requires: GL_OES_geometry_shader]</b> <b>[entry point: <c>glFramebufferTextureOES</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/OES/OES_geometry_shader.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/OES/OES_geometry_shader.txt">OES_geometry_shader.txt</see></remarks>
             public static void FramebufferTextureOES(FramebufferTarget target, FramebufferAttachment attachment, int texture, int level) => GLPointers.glFramebufferTextureOES_Lazy((uint)target, (uint)attachment, texture, level);
             
             /// <summary> <b>[requires: GL_OES_vertex_array_object]</b> <b>[entry point: <c>glGenVertexArraysOES</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/OES/OES_vertex_array_object.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/OES/OES_vertex_array_object.txt">OES_vertex_array_object.txt</see></remarks>
             public static void GenVertexArraysOES(int n, int* arrays) => GLPointers.glGenVertexArraysOES_Lazy(n, arrays);
             
             /// <summary> <b>[requires: GL_OES_mapbuffer]</b> <b>[entry point: <c>glGetBufferPointervOES</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/OES/OES_mapbuffer.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/OES/OES_mapbuffer.txt">OES_mapbuffer.txt</see></remarks>
             public static void GetBufferPointervOES(BufferTarget target, BufferPointerNameARB pname, void** @params) => GLPointers.glGetBufferPointervOES_Lazy((uint)target, (uint)pname, @params);
             
             /// <summary> <b>[requires: GL_OES_viewport_array]</b> <b>[entry point: <c>glGetFloati_vOES</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/OES/OES_viewport_array.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/OES/OES_viewport_array.txt">OES_viewport_array.txt</see></remarks>
             public static void GetFloati_vOES(GetPName target, uint index, float* data) => GLPointers.glGetFloati_vOES_Lazy((uint)target, index, data);
             
             /// <summary> <b>[requires: GL_OES_get_program_binary]</b> <b>[entry point: <c>glGetProgramBinaryOES</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/OES/OES_get_program_binary.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/OES/OES_get_program_binary.txt">OES_get_program_binary.txt</see></remarks>
             public static void GetProgramBinaryOES(int program, int bufSize, int* length, All* binaryFormat, void* binary) => GLPointers.glGetProgramBinaryOES_Lazy(program, bufSize, length, (uint*)binaryFormat, binary);
             
             /// <summary> <b>[requires: GL_OES_texture_border_clamp]</b> <b>[entry point: <c>glGetSamplerParameterIivOES</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/OES/OES_texture_border_clamp.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/OES/OES_texture_border_clamp.txt">OES_texture_border_clamp.txt</see></remarks>
             public static void GetSamplerParameterIivOES(int sampler, SamplerParameterI pname, int* @params) => GLPointers.glGetSamplerParameterIivOES_Lazy(sampler, (uint)pname, @params);
             
             /// <summary> <b>[requires: GL_OES_texture_border_clamp]</b> <b>[entry point: <c>glGetSamplerParameterIuivOES</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/OES/OES_texture_border_clamp.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/OES/OES_texture_border_clamp.txt">OES_texture_border_clamp.txt</see></remarks>
             public static void GetSamplerParameterIuivOES(int sampler, SamplerParameterI pname, uint* @params) => GLPointers.glGetSamplerParameterIuivOES_Lazy(sampler, (uint)pname, @params);
             
             /// <summary> <b>[requires: GL_OES_texture_border_clamp]</b> <b>[entry point: <c>glGetTexParameterIivOES</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/OES/OES_texture_border_clamp.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/OES/OES_texture_border_clamp.txt">OES_texture_border_clamp.txt</see></remarks>
             public static void GetTexParameterIivOES(TextureTarget target, GetTextureParameter pname, int* @params) => GLPointers.glGetTexParameterIivOES_Lazy((uint)target, (uint)pname, @params);
             
             /// <summary> <b>[requires: GL_OES_texture_border_clamp]</b> <b>[entry point: <c>glGetTexParameterIuivOES</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/OES/OES_texture_border_clamp.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/OES/OES_texture_border_clamp.txt">OES_texture_border_clamp.txt</see></remarks>
             public static void GetTexParameterIuivOES(TextureTarget target, GetTextureParameter pname, uint* @params) => GLPointers.glGetTexParameterIuivOES_Lazy((uint)target, (uint)pname, @params);
             
             /// <summary> <b>[requires: GL_OES_draw_buffers_indexed | GL_OES_viewport_array]</b> <b>[entry point: <c>glIsEnablediOES</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/OES/OES_draw_buffers_indexed.txt"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/OES/OES_viewport_array.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/OES/OES_draw_buffers_indexed.txt">OES_draw_buffers_indexed.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/OES/OES_viewport_array.txt">OES_viewport_array.txt</see></remarks>
             public static bool IsEnablediOES(EnableCap target, uint index) => GLPointers.glIsEnablediOES_Lazy((uint)target, index) != 0;
             
             /// <summary> <b>[requires: GL_OES_vertex_array_object]</b> <b>[entry point: <c>glIsVertexArrayOES</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/OES/OES_vertex_array_object.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/OES/OES_vertex_array_object.txt">OES_vertex_array_object.txt</see></remarks>
             public static bool IsVertexArrayOES(int array) => GLPointers.glIsVertexArrayOES_Lazy(array) != 0;
             
             /// <summary> <b>[requires: GL_OES_mapbuffer]</b> <b>[entry point: <c>glMapBufferOES</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/OES/OES_mapbuffer.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/OES/OES_mapbuffer.txt">OES_mapbuffer.txt</see></remarks>
             public static void* MapBufferOES(BufferTarget target, BufferAccess access) => GLPointers.glMapBufferOES_Lazy((uint)target, (uint)access);
             
             /// <summary> <b>[requires: GL_OES_sample_shading]</b> <b>[entry point: <c>glMinSampleShadingOES</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/OES/OES_sample_shading.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/OES/OES_sample_shading.txt">OES_sample_shading.txt</see></remarks>
             public static void MinSampleShadingOES(float value) => GLPointers.glMinSampleShadingOES_Lazy(value);
             
             /// <summary> <b>[requires: GL_EXT_draw_elements_base_vertex | GL_OES_draw_elements_base_vertex]</b> <b>[entry point: <c>glMultiDrawElementsBaseVertexEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/OES/EXT_draw_elements_base_vertex.txt"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/OES/OES_draw_elements_base_vertex.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/OES/EXT_draw_elements_base_vertex.txt">EXT_draw_elements_base_vertex.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/OES/OES_draw_elements_base_vertex.txt">OES_draw_elements_base_vertex.txt</see></remarks>
             public static void MultiDrawElementsBaseVertexEXT(PrimitiveType mode, int* count, DrawElementsType type, void** indices, int drawcount, int* basevertex) => GLPointers.glMultiDrawElementsBaseVertexEXT_Lazy((uint)mode, count, (uint)type, indices, drawcount, basevertex);
             
             /// <summary> <b>[requires: GL_OES_tessellation_shader]</b> <b>[entry point: <c>glPatchParameteriOES</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/OES/OES_tessellation_shader.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/OES/OES_tessellation_shader.txt">OES_tessellation_shader.txt</see></remarks>
             public static void PatchParameteriOES(PatchParameterName pname, int value) => GLPointers.glPatchParameteriOES_Lazy((uint)pname, value);
             
             /// <summary> <b>[requires: GL_OES_primitive_bounding_box]</b> <b>[entry point: <c>glPrimitiveBoundingBoxOES</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/OES/OES_primitive_bounding_box.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/OES/OES_primitive_bounding_box.txt">OES_primitive_bounding_box.txt</see></remarks>
             public static void PrimitiveBoundingBoxOES(float minX, float minY, float minZ, float minW, float maxX, float maxY, float maxZ, float maxW) => GLPointers.glPrimitiveBoundingBoxOES_Lazy(minX, minY, minZ, minW, maxX, maxY, maxZ, maxW);
             
             /// <summary> <b>[requires: GL_OES_get_program_binary]</b> <b>[entry point: <c>glProgramBinaryOES</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/OES/OES_get_program_binary.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/OES/OES_get_program_binary.txt">OES_get_program_binary.txt</see></remarks>
             public static void ProgramBinaryOES(int program, All binaryFormat, void* binary, int length) => GLPointers.glProgramBinaryOES_Lazy(program, (uint)binaryFormat, binary, length);
             
             /// <summary> <b>[requires: GL_OES_texture_border_clamp]</b> <b>[entry point: <c>glSamplerParameterIivOES</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/OES/OES_texture_border_clamp.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/OES/OES_texture_border_clamp.txt">OES_texture_border_clamp.txt</see></remarks>
             public static void SamplerParameterIivOES(int sampler, SamplerParameterI pname, int* param) => GLPointers.glSamplerParameterIivOES_Lazy(sampler, (uint)pname, param);
             
             /// <summary> <b>[requires: GL_OES_texture_border_clamp]</b> <b>[entry point: <c>glSamplerParameterIuivOES</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/OES/OES_texture_border_clamp.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/OES/OES_texture_border_clamp.txt">OES_texture_border_clamp.txt</see></remarks>
             public static void SamplerParameterIuivOES(int sampler, SamplerParameterI pname, uint* param) => GLPointers.glSamplerParameterIuivOES_Lazy(sampler, (uint)pname, param);
             
             /// <summary> <b>[requires: GL_OES_viewport_array]</b> <b>[entry point: <c>glScissorArrayvOES</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/OES/OES_viewport_array.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/OES/OES_viewport_array.txt">OES_viewport_array.txt</see></remarks>
             public static void ScissorArrayvOES(uint first, int count, int* v) => GLPointers.glScissorArrayvOES_Lazy(first, count, v);
             
             /// <summary> <b>[requires: GL_OES_viewport_array]</b> <b>[entry point: <c>glScissorIndexedOES</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/OES/OES_viewport_array.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/OES/OES_viewport_array.txt">OES_viewport_array.txt</see></remarks>
             public static void ScissorIndexedOES(uint index, int left, int bottom, int width, int height) => GLPointers.glScissorIndexedOES_Lazy(index, left, bottom, width, height);
             
             /// <summary> <b>[requires: GL_OES_viewport_array]</b> <b>[entry point: <c>glScissorIndexedvOES</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/OES/OES_viewport_array.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/OES/OES_viewport_array.txt">OES_viewport_array.txt</see></remarks>
             public static void ScissorIndexedvOES(uint index, int* v) => GLPointers.glScissorIndexedvOES_Lazy(index, v);
             
             /// <summary> <b>[requires: GL_OES_texture_buffer]</b> <b>[entry point: <c>glTexBufferOES</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/OES/OES_texture_buffer.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/OES/OES_texture_buffer.txt">OES_texture_buffer.txt</see></remarks>
             public static void TexBufferOES(TextureTarget target, SizedInternalFormat internalformat, int buffer) => GLPointers.glTexBufferOES_Lazy((uint)target, (uint)internalformat, buffer);
             
             /// <summary> <b>[requires: GL_OES_texture_buffer]</b> <b>[entry point: <c>glTexBufferRangeOES</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/OES/OES_texture_buffer.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/OES/OES_texture_buffer.txt">OES_texture_buffer.txt</see></remarks>
             public static void TexBufferRangeOES(TextureTarget target, SizedInternalFormat internalformat, int buffer, IntPtr offset, nint size) => GLPointers.glTexBufferRangeOES_Lazy((uint)target, (uint)internalformat, buffer, offset, size);
             
             /// <summary> <b>[requires: GL_OES_texture_3D]</b> <b>[entry point: <c>glTexImage3DOES</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/OES/OES_texture_3D.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/OES/OES_texture_3D.txt">OES_texture_3D.txt</see></remarks>
             public static void TexImage3DOES(TextureTarget target, int level, InternalFormat internalformat, int width, int height, int depth, int border, PixelFormat format, PixelType type, void* pixels) => GLPointers.glTexImage3DOES_Lazy((uint)target, level, (uint)internalformat, width, height, depth, border, (uint)format, (uint)type, pixels);
             
             /// <summary> <b>[requires: GL_OES_texture_border_clamp]</b> <b>[entry point: <c>glTexParameterIivOES</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/OES/OES_texture_border_clamp.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/OES/OES_texture_border_clamp.txt">OES_texture_border_clamp.txt</see></remarks>
             public static void TexParameterIivOES(TextureTarget target, TextureParameterName pname, int* @params) => GLPointers.glTexParameterIivOES_Lazy((uint)target, (uint)pname, @params);
             
             /// <summary> <b>[requires: GL_OES_texture_border_clamp]</b> <b>[entry point: <c>glTexParameterIuivOES</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/OES/OES_texture_border_clamp.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/OES/OES_texture_border_clamp.txt">OES_texture_border_clamp.txt</see></remarks>
             public static void TexParameterIuivOES(TextureTarget target, TextureParameterName pname, uint* @params) => GLPointers.glTexParameterIuivOES_Lazy((uint)target, (uint)pname, @params);
             
             /// <summary> <b>[requires: GL_OES_texture_storage_multisample_2d_array]</b> <b>[entry point: <c>glTexStorage3DMultisampleOES</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/OES/OES_texture_storage_multisample_2d_array.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/OES/OES_texture_storage_multisample_2d_array.txt">OES_texture_storage_multisample_2d_array.txt</see></remarks>
             public static void TexStorage3DMultisampleOES(TextureTarget target, int samples, SizedInternalFormat internalformat, int width, int height, int depth, bool fixedsamplelocations) => GLPointers.glTexStorage3DMultisampleOES_Lazy((uint)target, samples, (uint)internalformat, width, height, depth, (byte)(fixedsamplelocations ? 1 : 0));
             
             /// <summary> <b>[requires: GL_OES_texture_3D]</b> <b>[entry point: <c>glTexSubImage3DOES</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/OES/OES_texture_3D.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/OES/OES_texture_3D.txt">OES_texture_3D.txt</see></remarks>
             public static void TexSubImage3DOES(TextureTarget target, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, PixelFormat format, PixelType type, void* pixels) => GLPointers.glTexSubImage3DOES_Lazy((uint)target, level, xoffset, yoffset, zoffset, width, height, depth, (uint)format, (uint)type, pixels);
             
             /// <summary> <b>[requires: GL_OES_texture_view]</b> <b>[entry point: <c>glTextureViewOES</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/OES/OES_texture_view.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/OES/OES_texture_view.txt">OES_texture_view.txt</see></remarks>
             public static void TextureViewOES(int texture, TextureTarget target, int origtexture, SizedInternalFormat internalformat, uint minlevel, uint numlevels, uint minlayer, uint numlayers) => GLPointers.glTextureViewOES_Lazy(texture, (uint)target, origtexture, (uint)internalformat, minlevel, numlevels, minlayer, numlayers);
             
             /// <summary> <b>[requires: GL_OES_mapbuffer]</b> <b>[entry point: <c>glUnmapBufferOES</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/OES/OES_mapbuffer.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/OES/OES_mapbuffer.txt">OES_mapbuffer.txt</see></remarks>
             public static bool UnmapBufferOES(All target) => GLPointers.glUnmapBufferOES_Lazy((uint)target) != 0;
             
             /// <summary> <b>[requires: GL_OES_viewport_array]</b> <b>[entry point: <c>glViewportArrayvOES</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/OES/OES_viewport_array.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/OES/OES_viewport_array.txt">OES_viewport_array.txt</see></remarks>
             public static void ViewportArrayvOES(uint first, int count, float* v) => GLPointers.glViewportArrayvOES_Lazy(first, count, v);
             
             /// <summary> <b>[requires: GL_OES_viewport_array]</b> <b>[entry point: <c>glViewportIndexedfOES</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/OES/OES_viewport_array.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/OES/OES_viewport_array.txt">OES_viewport_array.txt</see></remarks>
             public static void ViewportIndexedfOES(uint index, float x, float y, float w, float h) => GLPointers.glViewportIndexedfOES_Lazy(index, x, y, w, h);
             
             /// <summary> <b>[requires: GL_OES_viewport_array]</b> <b>[entry point: <c>glViewportIndexedfvOES</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/OES/OES_viewport_array.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/OES/OES_viewport_array.txt">OES_viewport_array.txt</see></remarks>
             public static void ViewportIndexedfvOES(uint index, float* v) => GLPointers.glViewportIndexedfvOES_Lazy(index, v);
             
         }
@@ -4968,15 +4968,15 @@ namespace OpenTK.Graphics.OpenGLES2
         public static unsafe partial class OVR
         {
             /// <summary> <b>[requires: GL_OVR_multiview_multisampled_render_to_texture]</b> <b>[entry point: <c>glFramebufferTextureMultisampleMultiviewOVR</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/OVR/OVR_multiview_multisampled_render_to_texture.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/OVR/OVR_multiview_multisampled_render_to_texture.txt">OVR_multiview_multisampled_render_to_texture.txt</see></remarks>
             public static void FramebufferTextureMultisampleMultiviewOVR(FramebufferTarget target, FramebufferAttachment attachment, int texture, int level, int samples, int baseViewIndex, int numViews) => GLPointers.glFramebufferTextureMultisampleMultiviewOVR_Lazy((uint)target, (uint)attachment, texture, level, samples, baseViewIndex, numViews);
             
             /// <summary> <b>[requires: GL_OVR_multiview]</b> <b>[entry point: <c>glFramebufferTextureMultiviewOVR</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/OVR/OVR_multiview.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/OVR/OVR_multiview.txt">OVR_multiview.txt</see></remarks>
             public static void FramebufferTextureMultiviewOVR(FramebufferTarget target, FramebufferAttachment attachment, int texture, int level, int baseViewIndex, int numViews) => GLPointers.glFramebufferTextureMultiviewOVR_Lazy((uint)target, (uint)attachment, texture, level, baseViewIndex, numViews);
             
             /// <summary> <b>[requires: GL_OVR_multiview]</b> <b>[entry point: <c>glNamedFramebufferTextureMultiviewOVR</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/OVR/OVR_multiview.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/OVR/OVR_multiview.txt">OVR_multiview.txt</see></remarks>
             public static void NamedFramebufferTextureMultiviewOVR(int framebuffer, FramebufferAttachment attachment, int texture, int level, int baseViewIndex, int numViews) => GLPointers.glNamedFramebufferTextureMultiviewOVR_Lazy(framebuffer, (uint)attachment, texture, level, baseViewIndex, numViews);
             
         }
@@ -4984,111 +4984,111 @@ namespace OpenTK.Graphics.OpenGLES2
         public static unsafe partial class QCOM
         {
             /// <summary> <b>[requires: GL_QCOM_alpha_test]</b> <b>[entry point: <c>glAlphaFuncQCOM</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/QCOM/QCOM_alpha_test.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/QCOM/QCOM_alpha_test.txt">QCOM_alpha_test.txt</see></remarks>
             public static void AlphaFuncQCOM(All func, float @ref) => GLPointers.glAlphaFuncQCOM_Lazy((uint)func, @ref);
             
             /// <summary> <b>[requires: GL_QCOM_driver_control]</b> <b>[entry point: <c>glDisableDriverControlQCOM</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/QCOM/QCOM_driver_control.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/QCOM/QCOM_driver_control.txt">QCOM_driver_control.txt</see></remarks>
             public static void DisableDriverControlQCOM(uint driverControl) => GLPointers.glDisableDriverControlQCOM_Lazy(driverControl);
             
             /// <summary> <b>[requires: GL_QCOM_driver_control]</b> <b>[entry point: <c>glEnableDriverControlQCOM</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/QCOM/QCOM_driver_control.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/QCOM/QCOM_driver_control.txt">QCOM_driver_control.txt</see></remarks>
             public static void EnableDriverControlQCOM(uint driverControl) => GLPointers.glEnableDriverControlQCOM_Lazy(driverControl);
             
             /// <summary> <b>[requires: GL_QCOM_tiled_rendering]</b> <b>[entry point: <c>glEndTilingQCOM</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/QCOM/QCOM_tiled_rendering.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/QCOM/QCOM_tiled_rendering.txt">QCOM_tiled_rendering.txt</see></remarks>
             public static void EndTilingQCOM(BufferBitQCOM preserveMask) => GLPointers.glEndTilingQCOM_Lazy((uint)preserveMask);
             
             /// <summary> <b>[requires: GL_QCOM_extended_get]</b> <b>[entry point: <c>glExtGetBufferPointervQCOM</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/QCOM/QCOM_extended_get.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/QCOM/QCOM_extended_get.txt">QCOM_extended_get.txt</see></remarks>
             public static void ExtGetBufferPointervQCOM(All target, void** @params) => GLPointers.glExtGetBufferPointervQCOM_Lazy((uint)target, @params);
             
             /// <summary> <b>[requires: GL_QCOM_extended_get]</b> <b>[entry point: <c>glExtGetBuffersQCOM</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/QCOM/QCOM_extended_get.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/QCOM/QCOM_extended_get.txt">QCOM_extended_get.txt</see></remarks>
             public static void ExtGetBuffersQCOM(int* buffers, int maxBuffers, int* numBuffers) => GLPointers.glExtGetBuffersQCOM_Lazy(buffers, maxBuffers, numBuffers);
             
             /// <summary> <b>[requires: GL_QCOM_extended_get]</b> <b>[entry point: <c>glExtGetFramebuffersQCOM</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/QCOM/QCOM_extended_get.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/QCOM/QCOM_extended_get.txt">QCOM_extended_get.txt</see></remarks>
             public static void ExtGetFramebuffersQCOM(int* framebuffers, int maxFramebuffers, int* numFramebuffers) => GLPointers.glExtGetFramebuffersQCOM_Lazy(framebuffers, maxFramebuffers, numFramebuffers);
             
             /// <summary> <b>[requires: GL_QCOM_extended_get2]</b> <b>[entry point: <c>glExtGetProgramBinarySourceQCOM</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/QCOM/QCOM_extended_get2.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/QCOM/QCOM_extended_get2.txt">QCOM_extended_get2.txt</see></remarks>
             public static void ExtGetProgramBinarySourceQCOM(int program, ShaderType shadertype, byte* source, int* length) => GLPointers.glExtGetProgramBinarySourceQCOM_Lazy(program, (uint)shadertype, source, length);
             
             /// <summary> <b>[requires: GL_QCOM_extended_get2]</b> <b>[entry point: <c>glExtGetProgramsQCOM</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/QCOM/QCOM_extended_get2.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/QCOM/QCOM_extended_get2.txt">QCOM_extended_get2.txt</see></remarks>
             public static void ExtGetProgramsQCOM(int* programs, int maxPrograms, int* numPrograms) => GLPointers.glExtGetProgramsQCOM_Lazy(programs, maxPrograms, numPrograms);
             
             /// <summary> <b>[requires: GL_QCOM_extended_get]</b> <b>[entry point: <c>glExtGetRenderbuffersQCOM</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/QCOM/QCOM_extended_get.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/QCOM/QCOM_extended_get.txt">QCOM_extended_get.txt</see></remarks>
             public static void ExtGetRenderbuffersQCOM(int* renderbuffers, int maxRenderbuffers, int* numRenderbuffers) => GLPointers.glExtGetRenderbuffersQCOM_Lazy(renderbuffers, maxRenderbuffers, numRenderbuffers);
             
             /// <summary> <b>[requires: GL_QCOM_extended_get2]</b> <b>[entry point: <c>glExtGetShadersQCOM</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/QCOM/QCOM_extended_get2.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/QCOM/QCOM_extended_get2.txt">QCOM_extended_get2.txt</see></remarks>
             public static void ExtGetShadersQCOM(int* shaders, int maxShaders, int* numShaders) => GLPointers.glExtGetShadersQCOM_Lazy(shaders, maxShaders, numShaders);
             
             /// <summary> <b>[requires: GL_QCOM_extended_get]</b> <b>[entry point: <c>glExtGetTexLevelParameterivQCOM</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/QCOM/QCOM_extended_get.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/QCOM/QCOM_extended_get.txt">QCOM_extended_get.txt</see></remarks>
             public static void ExtGetTexLevelParameterivQCOM(int texture, All face, int level, All pname, int* @params) => GLPointers.glExtGetTexLevelParameterivQCOM_Lazy(texture, (uint)face, level, (uint)pname, @params);
             
             /// <summary> <b>[requires: GL_QCOM_extended_get]</b> <b>[entry point: <c>glExtGetTexSubImageQCOM</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/QCOM/QCOM_extended_get.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/QCOM/QCOM_extended_get.txt">QCOM_extended_get.txt</see></remarks>
             public static void ExtGetTexSubImageQCOM(All target, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, PixelFormat format, PixelType type, void* texels) => GLPointers.glExtGetTexSubImageQCOM_Lazy((uint)target, level, xoffset, yoffset, zoffset, width, height, depth, (uint)format, (uint)type, texels);
             
             /// <summary> <b>[requires: GL_QCOM_extended_get]</b> <b>[entry point: <c>glExtGetTexturesQCOM</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/QCOM/QCOM_extended_get.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/QCOM/QCOM_extended_get.txt">QCOM_extended_get.txt</see></remarks>
             public static void ExtGetTexturesQCOM(int* textures, int maxTextures, int* numTextures) => GLPointers.glExtGetTexturesQCOM_Lazy(textures, maxTextures, numTextures);
             
             /// <summary> <b>[requires: GL_QCOM_extended_get2]</b> <b>[entry point: <c>glExtIsProgramBinaryQCOM</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/QCOM/QCOM_extended_get2.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/QCOM/QCOM_extended_get2.txt">QCOM_extended_get2.txt</see></remarks>
             public static bool ExtIsProgramBinaryQCOM(int program) => GLPointers.glExtIsProgramBinaryQCOM_Lazy(program) != 0;
             
             /// <summary> <b>[requires: GL_QCOM_frame_extrapolation]</b> <b>[entry point: <c>glExtrapolateTex2DQCOM</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/QCOM/QCOM_frame_extrapolation.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/QCOM/QCOM_frame_extrapolation.txt">QCOM_frame_extrapolation.txt</see></remarks>
             public static void ExtrapolateTex2DQCOM(int src1, int src2, int output, float scaleFactor) => GLPointers.glExtrapolateTex2DQCOM_Lazy(src1, src2, output, scaleFactor);
             
             /// <summary> <b>[requires: GL_QCOM_extended_get]</b> <b>[entry point: <c>glExtTexObjectStateOverrideiQCOM</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/QCOM/QCOM_extended_get.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/QCOM/QCOM_extended_get.txt">QCOM_extended_get.txt</see></remarks>
             public static void ExtTexObjectStateOverrideiQCOM(All target, All pname, int param) => GLPointers.glExtTexObjectStateOverrideiQCOM_Lazy((uint)target, (uint)pname, param);
             
             /// <summary> <b>[requires: GL_QCOM_shader_framebuffer_fetch_noncoherent]</b> <b>[entry point: <c>glFramebufferFetchBarrierQCOM</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/QCOM/QCOM_shader_framebuffer_fetch_noncoherent.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/QCOM/QCOM_shader_framebuffer_fetch_noncoherent.txt">QCOM_shader_framebuffer_fetch_noncoherent.txt</see></remarks>
             public static void FramebufferFetchBarrierQCOM() => GLPointers.glFramebufferFetchBarrierQCOM_Lazy();
             
             /// <summary> <b>[requires: GL_QCOM_framebuffer_foveated]</b> <b>[entry point: <c>glFramebufferFoveationConfigQCOM</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/QCOM/QCOM_framebuffer_foveated.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/QCOM/QCOM_framebuffer_foveated.txt">QCOM_framebuffer_foveated.txt</see></remarks>
             public static void FramebufferFoveationConfigQCOM(int framebuffer, uint numLayers, uint focalPointsPerLayer, uint requestedFeatures, uint* providedFeatures) => GLPointers.glFramebufferFoveationConfigQCOM_Lazy(framebuffer, numLayers, focalPointsPerLayer, requestedFeatures, providedFeatures);
             
             /// <summary> <b>[requires: GL_QCOM_framebuffer_foveated]</b> <b>[entry point: <c>glFramebufferFoveationParametersQCOM</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/QCOM/QCOM_framebuffer_foveated.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/QCOM/QCOM_framebuffer_foveated.txt">QCOM_framebuffer_foveated.txt</see></remarks>
             public static void FramebufferFoveationParametersQCOM(int framebuffer, uint layer, uint focalPoint, float focalX, float focalY, float gainX, float gainY, float foveaArea) => GLPointers.glFramebufferFoveationParametersQCOM_Lazy(framebuffer, layer, focalPoint, focalX, focalY, gainX, gainY, foveaArea);
             
             /// <summary> <b>[requires: GL_QCOM_driver_control]</b> <b>[entry point: <c>glGetDriverControlsQCOM</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/QCOM/QCOM_driver_control.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/QCOM/QCOM_driver_control.txt">QCOM_driver_control.txt</see></remarks>
             public static void GetDriverControlsQCOM(int* num, int size, uint* driverControls) => GLPointers.glGetDriverControlsQCOM_Lazy(num, size, driverControls);
             
             /// <summary> <b>[requires: GL_QCOM_driver_control]</b> <b>[entry point: <c>glGetDriverControlStringQCOM</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/QCOM/QCOM_driver_control.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/QCOM/QCOM_driver_control.txt">QCOM_driver_control.txt</see></remarks>
             public static void GetDriverControlStringQCOM(uint driverControl, int bufSize, int* length, byte* driverControlString) => GLPointers.glGetDriverControlStringQCOM_Lazy(driverControl, bufSize, length, driverControlString);
             
             /// <summary> <b>[requires: GL_QCOM_shading_rate]</b> <b>[entry point: <c>glShadingRateQCOM</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/QCOM/QCOM_shading_rate.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/QCOM/QCOM_shading_rate.txt">QCOM_shading_rate.txt</see></remarks>
             public static void ShadingRateQCOM(ShadingRateQCOM rate) => GLPointers.glShadingRateQCOM_Lazy((uint)rate);
             
             /// <summary> <b>[requires: GL_QCOM_tiled_rendering]</b> <b>[entry point: <c>glStartTilingQCOM</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/QCOM/QCOM_tiled_rendering.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/QCOM/QCOM_tiled_rendering.txt">QCOM_tiled_rendering.txt</see></remarks>
             public static void StartTilingQCOM(uint x, uint y, uint width, uint height, BufferBitQCOM preserveMask) => GLPointers.glStartTilingQCOM_Lazy(x, y, width, height, (uint)preserveMask);
             
             /// <summary> <b>[requires: GL_QCOM_motion_estimation]</b> <b>[entry point: <c>glTexEstimateMotionQCOM</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/QCOM/QCOM_motion_estimation.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/QCOM/QCOM_motion_estimation.txt">QCOM_motion_estimation.txt</see></remarks>
             public static void TexEstimateMotionQCOM(int @ref, int target, int output) => GLPointers.glTexEstimateMotionQCOM_Lazy(@ref, target, output);
             
             /// <summary> <b>[requires: GL_QCOM_motion_estimation]</b> <b>[entry point: <c>glTexEstimateMotionRegionsQCOM</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/QCOM/QCOM_motion_estimation.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/QCOM/QCOM_motion_estimation.txt">QCOM_motion_estimation.txt</see></remarks>
             public static void TexEstimateMotionRegionsQCOM(int @ref, int target, int output, int mask) => GLPointers.glTexEstimateMotionRegionsQCOM_Lazy(@ref, target, output, mask);
             
             /// <summary> <b>[requires: GL_QCOM_texture_foveated]</b> <b>[entry point: <c>glTextureFoveationParametersQCOM</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/QCOM/QCOM_texture_foveated.txt"/></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/QCOM/QCOM_texture_foveated.txt">QCOM_texture_foveated.txt</see></remarks>
             public static void TextureFoveationParametersQCOM(int texture, uint layer, uint focalPoint, float focalX, float focalY, float gainX, float gainY, float foveaArea) => GLPointers.glTextureFoveationParametersQCOM_Lazy(texture, layer, focalPoint, focalX, focalY, gainX, gainY, foveaArea);
             
         }

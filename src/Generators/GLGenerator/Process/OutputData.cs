@@ -21,7 +21,7 @@ namespace GLGenerator.Process
         List<EnumType> EnumGroups,
         Dictionary<Function, FunctionDocumentation> Documentation);
 
-    internal record FunctionDocumentation(
+    internal record FunctionDocumentationOld(
         string Name,
         string Purpose,
         ParameterDocumentation[] Parameters,

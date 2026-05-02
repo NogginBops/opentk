@@ -16,7 +16,7 @@ namespace GLGenerator.Process
     {
         internal record FunctionData(
             Function NativeFunction,
-            Dictionary<OutputApi, CommandDocumentation> Documentation,
+            Dictionary<OutputApi, FunctionDocumentation> Documentation,
             Overload[] Overloads,
             bool ChangeNativeName);
 
@@ -50,7 +50,7 @@ namespace GLGenerator.Process
             Dictionary<string, FunctionData> allFunctions = new Dictionary<string, FunctionData>(spec.Functions.Count);
             foreach (Function function in spec.Functions)
             {
-                Dictionary<OutputApi, CommandDocumentation> functionDocumentation = MakeDocumentationForNativeFunction(function, docs);
+                Dictionary<OutputApi, FunctionDocumentation> functionDocumentation = MakeDocumentationForNativeFunction(function, docs);
                 FunctionData overloadedFunction = GenerateOverloads(function, functionDocumentation);
 
                 allEntryPoints.Add(function);
@@ -465,31 +465,7 @@ namespace GLGenerator.Process
                         {
                             FunctionReference func = functions.Find(f => f.EntryPoint == function.NativeFunction.EntryPoint) ?? throw new Exception($"Could not find function {function.NativeFunction.EntryPoint}!");
 
-                            List<string> addedIn = new List<string>();
-                            if (func.VersionInfo.Version != null)
-                            {
-                                addedIn.Add($"v{func.VersionInfo.Version.Major}.{func.VersionInfo.Version.Minor}");
-                            }
-
-                            foreach (var extension in func.VersionInfo.Extensions)
-                            {
-                                addedIn.Add(extension.Name);
-                            }
-
-                            List<string> removedIn = new List<string>();
-                            if (func.VersionInfo.RemovedBy.Count > 0)
-                            {
-                                // FIXME: We only handle one RemovedBy entry for now.
-                                Debug.Assert(func.VersionInfo.RemovedBy.Count == 1);
-
-                                // In OpenAL only feature versions can remove so we can use the version straight.
-                                // - Noggin_bops 2025-08-11
-                                Version removedInV = func.VersionInfo.RemovedBy[0].Version!;
-
-                                removedIn.Add($"v{removedInV.Major}.{removedInV.Minor}");
-                            }
-
-                            List<string> extensionURLs = [];
+                            List<Link> extensionURLs = [];
                             foreach (var extension in func.VersionInfo.Extensions)
                             {
                                 string ext = NameMangler.MaybeRemoveStart(extension.Name, "GL_");
@@ -514,47 +490,32 @@ namespace GLGenerator.Process
 
                                     url = $"https://registry.khronos.org/{apiString}/extensions/{vendor}/{ext}.txt";
                                 }
-                                extensionURLs.Add(url);
+                                extensionURLs.Add(new Link(url, $"{ext}.txt"));
                             }
 
-                            if (function.Documentation.TryGetValue(outAPI, out CommandDocumentation? commandDocumentation))
+                            if (function.Documentation.TryGetValue(outAPI, out FunctionDocumentation? commandDocumentation))
                             {
-                                documentation[function.NativeFunction] = new FunctionDocumentation(
-                                    commandDocumentation.Name,
-                                    commandDocumentation.Purpose,
-                                    commandDocumentation.Parameters,
-                                    [commandDocumentation.RefPagesLink, .. extensionURLs],
-                                    addedIn,
-                                    removedIn
-                                    );
+                                documentation[function.NativeFunction] = commandDocumentation with {
+                                    VersionInfo = func.VersionInfo,
+                                    RefPagesLinks = [.. commandDocumentation.RefPagesLinks, .. extensionURLs]
+                                };
                             }
                             else
                             {
+                                // Extensions don't have documentation, so we don't warn about them.
                                 if (vendor == "")
                                 {
                                     Logger.Warning($"{function.NativeFunction.EntryPoint} doesn't have any documentation for {api}");
+                                }
 
-                                    documentation[function.NativeFunction] = new FunctionDocumentation(
-                                        function.NativeFunction.EntryPoint,
-                                        "",
-                                        Array.Empty<ParameterDocumentation>(),
-                                        // TODO: Is it possible to get the functionRef spec file and link to it here?
-                                        extensionURLs,
-                                        addedIn,
-                                        removedIn);
-                                }
-                                else
+                                documentation[function.NativeFunction] = new FunctionDocumentation()
                                 {
-                                    // Extensions don't have documentation (yet?)
-                                    documentation[function.NativeFunction] = new FunctionDocumentation(
-                                        function.NativeFunction.EntryPoint,
-                                        "",
-                                        Array.Empty<ParameterDocumentation>(),
-                                        // TODO: Is it possible to get the extension spec file and link to it here?
-                                        extensionURLs,
-                                        addedIn,
-                                        removedIn);
-                                }
+                                    FunctionName = function.NativeFunction.EntryPoint,
+                                    Purpose = "",
+                                    Parameters = [],
+                                    RefPagesLinks = extensionURLs,
+                                    VersionInfo = func.VersionInfo,
+                                };
                             }
                         }
                     }
@@ -784,13 +745,13 @@ namespace GLGenerator.Process
             }
         }
 
-        internal static Dictionary<OutputApi, CommandDocumentation> MakeDocumentationForNativeFunction(Function function, Documentation documentation)
+        internal static Dictionary<OutputApi, FunctionDocumentation> MakeDocumentationForNativeFunction(Function function, Documentation documentation)
         {
-            Dictionary<OutputApi, CommandDocumentation> commandDocs = new Dictionary<OutputApi, CommandDocumentation>();
+            Dictionary<OutputApi, FunctionDocumentation> commandDocs = new Dictionary<OutputApi, FunctionDocumentation>();
 
             foreach (var (version, versionDocumentation) in documentation.VersionDocumentation)
             {
-                if (versionDocumentation.Commands.TryGetValue(function.EntryPoint, out CommandDocumentation? commandDoc))
+                if (versionDocumentation.TryGetValue(function.EntryPoint, out FunctionDocumentation? commandDoc))
                 {
                     if (function.Parameters.Count != commandDoc.Parameters.Length)
                     {
@@ -799,9 +760,9 @@ namespace GLGenerator.Process
 
                     for (int i = 0; i < Math.Min(function.Parameters.Count, commandDoc.Parameters.Length); i++)
                     {
-                        if (function.Parameters[i].OriginalName != commandDoc.Parameters[i].Name)
+                        if (function.Parameters[i].OriginalName != commandDoc.Parameters[i].ParameterName)
                         {
-                            Logger.Warning($"[{version}][{function.EntryPoint}] Function parameter '{function.Parameters[i].OriginalName}' doesn't have the same name in the documentation. ('{commandDoc.Parameters[i].Name}')");
+                            Logger.Warning($"[{version}][{function.EntryPoint}] Function parameter '{function.Parameters[i].OriginalName}' doesn't have the same name in the documentation. ('{commandDoc.Parameters[i].ParameterName}')");
                         }
                     }
 
@@ -835,7 +796,7 @@ namespace GLGenerator.Process
             ];
 
         // Maybe we can do the return type overloading in a post processing step?
-        internal static FunctionData GenerateOverloads(Function nativeFunction, Dictionary<OutputApi, CommandDocumentation> functionDocumentation)
+        internal static FunctionData GenerateOverloads(Function nativeFunction, Dictionary<OutputApi, FunctionDocumentation> functionDocumentation)
         {
             List<Overload> overloads = new List<Overload>
             {

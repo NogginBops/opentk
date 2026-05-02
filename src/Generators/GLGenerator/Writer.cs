@@ -467,9 +467,7 @@ namespace GLGenerator
         private static void WriteDocumentation(IndentedTextWriter writer, Function function, FunctionDocumentation documentation)
         {
             writer.Write("/// <summary> ");
-            writer.Write($"<b>[requires: {string.Join(" | ", documentation.AddedIn)}]</b> ");
-            if (documentation.RemovedIn?.Count > 0)
-                writer.Write($"<b>[removed in: {string.Join(" | ", documentation.RemovedIn)}]</b> ");
+            writer.WriteVersionInfo(documentation.VersionInfo);
             writer.Write($"<b>[entry point: <c>{function.EntryPoint}</c>]</b><br/>");
             writer.WriteLine($" {documentation.Purpose} </summary>");
 
@@ -487,7 +485,7 @@ namespace GLGenerator
 
             if (documentation.RefPagesLinks.Count > 0)
             {
-                writer.WriteLine($"/// <remarks>{string.Join("<br/>", documentation.RefPagesLinks.Select(url => $"<see href=\"{url}\"/>"))}</remarks>");
+                writer.WriteLine($"/// <remarks>{string.Join("<br/>", documentation.RefPagesLinks.Select(url => url.ToSeeXmlTag()))}</remarks>");
             }
         }
 

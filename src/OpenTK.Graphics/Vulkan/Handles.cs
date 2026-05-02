@@ -75,7 +75,7 @@ namespace OpenTK.Graphics.Vulkan
         public static explicit operator VkBufferCollectionFUCHSIA(ulong handle) => new VkBufferCollectionFUCHSIA(handle);
     }
     /// <summary><b>[requires: v1.0]</b> 
-    /// <br/><b>[deprecated by: VK_EXT_descriptor_heap]</b> see: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#legacy-resource-objects" />
+    /// <br/><b>[deprecated by: VK_EXT_descriptor_heap]</b> See: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#legacy-resource-objects" /><br/>
     /// Used by <see cref="Vk.CreateBufferView"/>, <see cref="Vk.DestroyBufferView"/></summary>
     /// <remarks><see href="https://registry.khronos.org/vulkan/specs/1.3-extensions/man/html/VkBufferView.html" /></remarks>
     [DebuggerDisplay("VkBufferView\\{{Handle}\\}")]
@@ -264,7 +264,7 @@ namespace OpenTK.Graphics.Vulkan
         public static explicit operator VkDeferredOperationKHR(ulong handle) => new VkDeferredOperationKHR(handle);
     }
     /// <summary><b>[requires: v1.0]</b> 
-    /// <br/><b>[deprecated by: VK_EXT_descriptor_heap]</b> see: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#legacy-descriptor-sets" />
+    /// <br/><b>[deprecated by: VK_EXT_descriptor_heap]</b> See: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#legacy-descriptor-sets" /><br/>
     /// Used by <see cref="Vk.CreateDescriptorPool"/>, <see cref="Vk.DestroyDescriptorPool"/>, <see cref="Vk.FreeDescriptorSets"/>, ...</summary>
     /// <remarks><see href="https://registry.khronos.org/vulkan/specs/1.3-extensions/man/html/VkDescriptorPool.html" /></remarks>
     [DebuggerDisplay("VkDescriptorPool\\{{Handle}\\}")]
@@ -283,7 +283,7 @@ namespace OpenTK.Graphics.Vulkan
         public static explicit operator VkDescriptorPool(ulong handle) => new VkDescriptorPool(handle);
     }
     /// <summary><b>[requires: v1.0]</b> 
-    /// <br/><b>[deprecated by: VK_EXT_descriptor_heap]</b> see: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#legacy-descriptor-sets" />
+    /// <br/><b>[deprecated by: VK_EXT_descriptor_heap]</b> See: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#legacy-descriptor-sets" /><br/>
     /// Used by <see cref="Vk.AllocateDescriptorSets"/>, <see cref="Vk.CmdBindDescriptorSets"/>, <see cref="Vk.FreeDescriptorSets"/>, ...</summary>
     /// <remarks><see href="https://registry.khronos.org/vulkan/specs/1.3-extensions/man/html/VkDescriptorSet.html" /></remarks>
     [DebuggerDisplay("VkDescriptorSet\\{{Handle}\\}")]
@@ -302,7 +302,7 @@ namespace OpenTK.Graphics.Vulkan
         public static explicit operator VkDescriptorSet(ulong handle) => new VkDescriptorSet(handle);
     }
     /// <summary><b>[requires: v1.0]</b> 
-    /// <br/><b>[deprecated by: VK_EXT_descriptor_heap]</b> see: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#legacy-descriptor-sets" />
+    /// <br/><b>[deprecated by: VK_EXT_descriptor_heap]</b> See: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#legacy-descriptor-sets" /><br/>
     /// Used by <see cref="Vk.CreateDescriptorSetLayout"/>, <see cref="Vk.DestroyDescriptorSetLayout"/>, <see cref="Vk.GetDescriptorSetLayoutBindingOffsetEXT"/>, ...</summary>
     /// <remarks><see href="https://registry.khronos.org/vulkan/specs/1.3-extensions/man/html/VkDescriptorSetLayout.html" /></remarks>
     [DebuggerDisplay("VkDescriptorSetLayout\\{{Handle}\\}")]
@@ -474,8 +474,8 @@ namespace OpenTK.Graphics.Vulkan
         public static explicit operator VkFence(ulong handle) => new VkFence(handle);
     }
     /// <summary><b>[requires: v1.0]</b> 
-    /// <br/><b>[deprecated by: v1.4]</b> see: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#legacy-dynamicrendering" />
-    /// <br/><b>[deprecated by: VK_KHR_dynamic_rendering_local_read]</b> see: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#legacy-dynamicrendering" />
+    /// <br/><b>[deprecated by: v1.4]</b> See: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#legacy-dynamicrendering" /><br/>
+    /// <br/><b>[deprecated by: VK_KHR_dynamic_rendering_local_read]</b> See: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#legacy-dynamicrendering" /><br/>
     /// Used by <see cref="Vk.CreateFramebuffer"/>, <see cref="Vk.DestroyFramebuffer"/>, <see cref="Vk.GetFramebufferTilePropertiesQCOM"/></summary>
     /// <remarks><see href="https://registry.khronos.org/vulkan/specs/1.3-extensions/man/html/VkFramebuffer.html" /></remarks>
     [DebuggerDisplay("VkFramebuffer\\{{Handle}\\}")]
@@ -715,7 +715,7 @@ namespace OpenTK.Graphics.Vulkan
         public static explicit operator VkPipelineCache(ulong handle) => new VkPipelineCache(handle);
     }
     /// <summary><b>[requires: v1.0]</b> 
-    /// <br/><b>[deprecated by: VK_EXT_descriptor_heap]</b> see: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#legacy-descriptor-sets" />
+    /// <br/><b>[deprecated by: VK_EXT_descriptor_heap]</b> See: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#legacy-descriptor-sets" /><br/>
     /// Used by <see cref="Vk.CmdBindDescriptorBufferEmbeddedSamplersEXT"/>, <see cref="Vk.CmdBindDescriptorSets"/>, <see cref="Vk.CmdPushConstants"/>, ...</summary>
     /// <remarks><see href="https://registry.khronos.org/vulkan/specs/1.3-extensions/man/html/VkPipelineLayout.html" /></remarks>
     [DebuggerDisplay("VkPipelineLayout\\{{Handle}\\}")]
@@ -802,8 +802,8 @@ namespace OpenTK.Graphics.Vulkan
         public static explicit operator VkQueue(nint handle) => new VkQueue(handle);
     }
     /// <summary><b>[requires: v1.0]</b> 
-    /// <br/><b>[deprecated by: v1.4]</b> see: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#legacy-dynamicrendering" />
-    /// <br/><b>[deprecated by: VK_KHR_dynamic_rendering_local_read]</b> see: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#legacy-dynamicrendering" />
+    /// <br/><b>[deprecated by: v1.4]</b> See: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#legacy-dynamicrendering" /><br/>
+    /// <br/><b>[deprecated by: VK_KHR_dynamic_rendering_local_read]</b> See: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#legacy-dynamicrendering" /><br/>
     /// Used by <see cref="Vk.CreateRenderPass"/>, <see cref="Vk.CreateRenderPass2"/>, <see cref="Vk.CreateRenderPass2KHR"/>, ...</summary>
     /// <remarks><see href="https://registry.khronos.org/vulkan/specs/1.3-extensions/man/html/VkRenderPass.html" /></remarks>
     [DebuggerDisplay("VkRenderPass\\{{Handle}\\}")]
@@ -822,7 +822,7 @@ namespace OpenTK.Graphics.Vulkan
         public static explicit operator VkRenderPass(ulong handle) => new VkRenderPass(handle);
     }
     /// <summary><b>[requires: v1.0]</b> 
-    /// <br/><b>[deprecated by: VK_EXT_descriptor_heap]</b> see: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#legacy-resource-objects" />
+    /// <br/><b>[deprecated by: VK_EXT_descriptor_heap]</b> See: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#legacy-resource-objects" /><br/>
     /// Used by <see cref="Vk.CreateSampler"/>, <see cref="Vk.DestroySampler"/></summary>
     /// <remarks><see href="https://registry.khronos.org/vulkan/specs/1.3-extensions/man/html/VkSampler.html" /></remarks>
     [DebuggerDisplay("VkSampler\\{{Handle}\\}")]

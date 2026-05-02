@@ -476,22 +476,22 @@ namespace OpenTK.Audio.OpenAL
             _alDistanceModelDirect_fnptr(context, distanceModel);
         }
         
-        /// <summary><b>[entry point: <c>alDopperFactor</c>]</b></summary>
-        public static delegate* unmanaged<float, void> _alDopperFactor_fnptr = &alDopperFactor_Lazy;
+        /// <summary><b>[entry point: <c>alDopplerFactor</c>]</b></summary>
+        public static delegate* unmanaged<float, void> _alDopplerFactor_fnptr = &alDopplerFactor_Lazy;
         [UnmanagedCallersOnly]
-        private static void alDopperFactor_Lazy(float value)
+        private static void alDopplerFactor_Lazy(float value)
         {
-            _alDopperFactor_fnptr = (delegate* unmanaged<float, void>)ALLoader.ALGetProcAddress("alDopperFactor");
-            _alDopperFactor_fnptr(value);
+            _alDopplerFactor_fnptr = (delegate* unmanaged<float, void>)ALLoader.ALGetProcAddress("alDopplerFactor");
+            _alDopplerFactor_fnptr(value);
         }
         
-        /// <summary><b>[entry point: <c>alDopperFactorDirect</c>]</b></summary>
-        public static delegate* unmanaged<IntPtr, float, void> _alDopperFactorDirect_fnptr = &alDopperFactorDirect_Lazy;
+        /// <summary><b>[entry point: <c>alDopplerFactorDirect</c>]</b></summary>
+        public static delegate* unmanaged<IntPtr, float, void> _alDopplerFactorDirect_fnptr = &alDopplerFactorDirect_Lazy;
         [UnmanagedCallersOnly]
-        private static void alDopperFactorDirect_Lazy(IntPtr context, float value)
+        private static void alDopplerFactorDirect_Lazy(IntPtr context, float value)
         {
-            _alDopperFactorDirect_fnptr = (delegate* unmanaged<IntPtr, float, void>)ALLoader.ALGetProcAddress("alDopperFactorDirect");
-            _alDopperFactorDirect_fnptr(context, value);
+            _alDopplerFactorDirect_fnptr = (delegate* unmanaged<IntPtr, float, void>)ALLoader.ALGetProcAddress("alDopplerFactorDirect");
+            _alDopplerFactorDirect_fnptr(context, value);
         }
         
         /// <summary><b>[entry point: <c>alEffectf</c>]</b></summary>

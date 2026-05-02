@@ -1,4 +1,5 @@
-﻿using GeneratorBase.Utility;
+﻿using GeneratorBase;
+using GeneratorBase.Utility;
 using GeneratorBase.Utility.Extensions;
 using GLGenerator.Process;
 using System;
@@ -17,11 +18,11 @@ namespace GLGenerator.Parsing
     {
         public static Documentation Parse(DocumentationSource source)
         {
-            Dictionary<OutputApi, VersionDocumentation> versionDocumentation = new Dictionary<OutputApi, VersionDocumentation>();
+            Dictionary<OutputApi, Dictionary<string, FunctionDocumentation>> versionDocumentation = new Dictionary<OutputApi, Dictionary<string, FunctionDocumentation>>();
 
             foreach (var folder in source.Folders)
             {
-                Dictionary<string, CommandDocumentation> docFolder = new Dictionary<string, CommandDocumentation>();
+                Dictionary<string, FunctionDocumentation> docFolder = new Dictionary<string, FunctionDocumentation>();
 
                 //Logger.Info($"Documentation {folder.Folder}:\n\n");
 
@@ -47,8 +48,7 @@ namespace GLGenerator.Parsing
                     XmlParserContext context = new XmlParserContext(null, xmlns, "", XmlSpace.Default);
                     XmlReader reader = XmlReader.Create(file, settings, context);
                     // https://stackoverflow.com/questions/3504227/prevent-xmltextreader-from-expanding-entities
-                    PropertyInfo? propertyInfo = reader.GetType().GetProperty("DisableUndeclaredEntityCheck", BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic);
-                    propertyInfo!.SetValue(reader, true);
+                    System.Reflection.PropertyInfo? propertyInfo = reader.GetType().GetProperty("DisableUndeclaredEntityCheck", BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic);                    propertyInfo!.SetValue(reader, true);
                     XDocument xml = XDocument.Load(reader);
 
                     string refPagesLink = "https://www.khronos.org/registry/OpenGL-Refpages/";
@@ -71,33 +71,33 @@ namespace GLGenerator.Parsing
                             throw new Exception("API not supported for documentation.");
                     }
 
-                    CommandDocumentation[] documentation = ParseFile(xml.Root!, refPagesLink);
+                    FunctionDocumentation[] documentation = ParseFile(xml.Root!, refPagesLink);
 
                     foreach (var commandDoc in documentation)
                     {
-                        docFolder.Add(commandDoc.Name, commandDoc);
+                        docFolder.Add(commandDoc.FunctionName, commandDoc);
                     }
                 }
 
-                versionDocumentation.Add(api, new VersionDocumentation(docFolder));
+                versionDocumentation.Add(api, new Dictionary<string, FunctionDocumentation>(docFolder));
             }
 
             // Merge in gl4 documentation into glcompat
             var compatDocs = versionDocumentation[OutputApi.GLCompat];
-            foreach (var (name, commandDocumentation) in versionDocumentation[OutputApi.GL].Commands)
+            foreach (var (name, commandDocumentation) in versionDocumentation[OutputApi.GL])
             {
-                compatDocs.Commands[name] = commandDocumentation;
+                compatDocs[name] = commandDocumentation;
             }
 
             return new Documentation(versionDocumentation);
         }
 
 
-        private static CommandDocumentation[] ParseFile(XElement root, string refPagesLink)
+        private static FunctionDocumentation[] ParseFile(XElement root, string refPagesLink)
         {
             // FIXME:
 
-            List<CommandDocumentation> documentation = new List<CommandDocumentation>();
+            List<FunctionDocumentation> documentation = new List<FunctionDocumentation>();
 
             XElement namediv = root.ElementIgnoreNamespace("refnamediv");
             string purpose = namediv.ElementIgnoreNamespace("refpurpose").Value;
@@ -147,7 +147,15 @@ namespace GLGenerator.Parsing
                     parameters.Add(new ParameterDocumentation(parameterName, desc ?? "!!missing documentation!!"));
                 }
 
-                documentation.Add(new CommandDocumentation(function.Value, purpose, parameters.ToArray(), refPagesLink));
+                documentation.Add(new FunctionDocumentation()
+                {
+                    FunctionName = function.Value,
+                    Purpose = purpose,
+                    Parameters = parameters.ToArray(),
+                    RefPagesLinks = [new Link(refPagesLink)],
+                    // FIXME
+                    VersionInfo = default,
+                });
             }
 
             return documentation.ToArray();

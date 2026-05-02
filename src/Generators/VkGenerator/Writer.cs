@@ -83,7 +83,7 @@ namespace VkGenerator
                     writer.Write("/// <summary>");
                     if (define.VersionInfo != null)
                     {
-                        WriteVersionInfo(writer, define.VersionInfo);
+                        writer.WriteVersionInfo(define.VersionInfo);
                     }
                     else
                     {
@@ -146,7 +146,7 @@ namespace VkGenerator
                     writer.Write("/// <summary>");
                     if (@enum.VersionInfo != null)
                     {
-                        WriteVersionInfo(writer, @enum.VersionInfo);
+                        writer.WriteVersionInfo(@enum.VersionInfo);
                     }
                     else
                     {
@@ -329,7 +329,7 @@ namespace VkGenerator
                     writer.Write("/// <summary>");
                     if (@struct.VersionInfo != null)
                     {
-                        WriteVersionInfo(writer, @struct.VersionInfo);
+                        writer.WriteVersionInfo(@struct.VersionInfo);
                     }
                     else
                     {
@@ -415,7 +415,7 @@ namespace VkGenerator
                     writer.Write("/// <summary>");
                     if (handle.VersionInfo != null)
                     {
-                        WriteVersionInfo(writer, handle.VersionInfo);
+                        writer.WriteVersionInfo(handle.VersionInfo);
                     }
                     else
                     {
@@ -991,7 +991,7 @@ namespace VkGenerator
                                     writer.Write("/// <summary>");
                                     if (@enum.VersionInfo != null)
                                     {
-                                        WriteVersionInfo(writer, @enum.VersionInfo);
+                                        writer.WriteVersionInfo(@enum.VersionInfo);
                                     }
                                     else
                                     {
@@ -1021,7 +1021,7 @@ namespace VkGenerator
                                     writer.Write("/// <summary>");
                                     if (@struct.VersionInfo != null)
                                     {
-                                        WriteVersionInfo(writer, @struct.VersionInfo);
+                                        writer.WriteVersionInfo(@struct.VersionInfo);
                                     }
                                     else
                                     {
@@ -1263,7 +1263,7 @@ namespace VkGenerator
             }
         }
 
-        private static void WriteVersionInfo(IndentedTextWriter writer, VersionInfo versionInfo)
+        /*private static void WriteVersionInfo(IndentedTextWriter writer, VersionInfo versionInfo)
         {
             List<string> strs = [.. versionInfo.Extensions.Select(e => e.Name)];
             if (versionInfo.Version != null)
@@ -1278,7 +1278,7 @@ namespace VkGenerator
                 foreach (DeprecationReason deprecation in versionInfo.DeprecatedBy)
                 {
                     string v = deprecation.Version != null ? $"v{deprecation.Version}" : deprecation.Extension ?? throw new Exception();
-                    string explanationLink = deprecation.ExplanationLink != null ? $"see: <see href=\"https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#{deprecation.ExplanationLink}\" />" : "";
+                    string explanationLink = deprecation.ExplanationLink != null ? $"see: <see href=\"{deprecation.ExplanationLink}\" />" : "";
                     writer.WriteLine($"/// <br/><b>[deprecated by: {v}]</b> {explanationLink}");
                 }
                 writer.Write("/// ");
@@ -1287,6 +1287,6 @@ namespace VkGenerator
             // We don't have to deal with this in the Vulkan generator yet.
             // - Noggin_bops 2025-08-08
             Debug.Assert(versionInfo.RemovedBy.Count == 0);
-        }
+        }*/
     }
 }

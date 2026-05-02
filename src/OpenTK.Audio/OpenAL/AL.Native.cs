@@ -63,10 +63,10 @@ namespace OpenTK.Audio.OpenAL
         [OverloadResolutionPriority(-1)]
         public static void DistanceModel(DistanceModel distanceModel) => ALPointers._alDistanceModel_fnptr((int)distanceModel);
         
-        /// <summary> <b>[requires: v1.0]</b> <b>[entry point: <c>alDopperFactor</c>]</b><br/>  </summary>
+        /// <summary> <b>[requires: v1.0]</b> <b>[entry point: <c>alDopplerFactor</c>]</b><br/>  </summary>
         /// <remarks><see href="https://docs.google.com/viewer?url=https://raw.githubusercontent.com/Raulshc/OpenAL-EXT-Repository/master/Specification/spec%201.1/OpenAL1-1Spec.pdf">OpenAL 1.1 specification</see></remarks>
         [OverloadResolutionPriority(-1)]
-        public static void DopperFactor(float value) => ALPointers._alDopperFactor_fnptr(value);
+        public static void DopplerFactor(float value) => ALPointers._alDopplerFactor_fnptr(value);
         
         /// <summary> <b>[requires: v1.0]</b> <b>[entry point: <c>alEnable</c>]</b><br/>  </summary>
         /// <remarks><see href="https://docs.google.com/viewer?url=https://raw.githubusercontent.com/Raulshc/OpenAL-EXT-Repository/master/Specification/spec%201.1/OpenAL1-1Spec.pdf">OpenAL 1.1 specification</see></remarks>
@@ -585,10 +585,10 @@ namespace OpenTK.Audio.OpenAL
             [OverloadResolutionPriority(-1)]
             public static void DistanceModelDirect(ALCContext context, DistanceModel distanceModel) => ALPointers._alDistanceModelDirect_fnptr((IntPtr)context, (int)distanceModel);
             
-            /// <summary> <b>[requires: AL_EXT_direct_context]</b> <b>[entry point: <c>alDopperFactorDirect</c>]</b><br/>  </summary>
+            /// <summary> <b>[requires: AL_EXT_direct_context]</b> <b>[entry point: <c>alDopplerFactorDirect</c>]</b><br/>  </summary>
             /// <remarks><see href="https://raw.githubusercontent.com/Raulshc/OpenAL-EXT-Repository/refs/heads/master/AL%20Extensions/AL_EXT_direct_context.txt">AL_EXT_direct_context.txt</see></remarks>
             [OverloadResolutionPriority(-1)]
-            public static void DopperFactorDirect(ALCContext context, float value) => ALPointers._alDopperFactorDirect_fnptr((IntPtr)context, value);
+            public static void DopplerFactorDirect(ALCContext context, float value) => ALPointers._alDopplerFactorDirect_fnptr((IntPtr)context, value);
             
             /// <summary> <b>[requires: AL_EXT_direct_context]</b> <b>[entry point: <c>EAXGetBufferModeDirect</c>]</b><br/>  </summary>
             /// <remarks><see href="https://raw.githubusercontent.com/Raulshc/OpenAL-EXT-Repository/refs/heads/master/AL%20Extensions/AL_EXT_direct_context.txt">AL_EXT_direct_context.txt</see></remarks>

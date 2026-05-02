@@ -31,14 +31,14 @@ namespace ALGenerator.Process
         List<EnumType> EnumGroups,
         Dictionary<Function, FunctionDocumentation> FunctionDocumentation);
 
-    internal record FunctionDocumentation(
+    /*internal record FunctionDocumentation(
         string Name,
         string Purpose,
         ParameterDocumentation[] Parameters,
         List<Link> RefPagesLinks,
         List<string> AddedIn,
         List<string>? RemovedIn
-        );
+        );*/
 
     internal enum OutputApi
     {

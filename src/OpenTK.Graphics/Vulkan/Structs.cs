@@ -161,7 +161,7 @@ namespace OpenTK.Graphics.Vulkan
         }
     }
     /// <summary><b>[requires: VK_EXT_descriptor_buffer]</b> 
-    /// <br/><b>[deprecated by: VK_EXT_descriptor_heap]</b> see: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#legacy-descriptor-sets" />
+    /// <br/><b>[deprecated by: VK_EXT_descriptor_heap]</b> See: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#legacy-descriptor-sets" /><br/>
     /// Used by <see cref="Vk.GetAccelerationStructureOpaqueCaptureDescriptorDataEXT"/></summary>
     /// <remarks><see href="https://registry.khronos.org/vulkan/specs/1.3-extensions/man/html/VkAccelerationStructureCaptureDescriptorDataInfoEXT.html" /></remarks>
     public unsafe struct VkAccelerationStructureCaptureDescriptorDataInfoEXT
@@ -211,7 +211,7 @@ namespace OpenTK.Graphics.Vulkan
         }
     }
     /// <summary><b>[requires: VK_KHR_acceleration_structure]</b> 
-    /// <br/><b>[deprecated by: VK_KHR_device_address_commands]</b> see: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#legacy-buffer-commands" />
+    /// <br/><b>[deprecated by: VK_KHR_device_address_commands]</b> See: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#legacy-buffer-commands" /><br/>
     /// Used by <see cref="Vk.CreateAccelerationStructureKHR"/></summary>
     /// <remarks><see href="https://registry.khronos.org/vulkan/specs/1.3-extensions/man/html/VkAccelerationStructureCreateInfoKHR.html" /></remarks>
     public unsafe struct VkAccelerationStructureCreateInfoKHR
@@ -1278,8 +1278,8 @@ namespace OpenTK.Graphics.Vulkan
         }
     }
     /// <summary><b>[requires: v1.0]</b> 
-    /// <br/><b>[deprecated by: v1.2]</b> see: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#legacy-renderpass2" />
-    /// <br/><b>[deprecated by: VK_KHR_create_renderpass2]</b> see: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#legacy-renderpass2" />
+    /// <br/><b>[deprecated by: v1.2]</b> See: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#legacy-renderpass2" /><br/>
+    /// <br/><b>[deprecated by: VK_KHR_create_renderpass2]</b> See: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#legacy-renderpass2" /><br/>
     /// </summary>
     /// <remarks><see href="https://registry.khronos.org/vulkan/specs/1.3-extensions/man/html/VkAttachmentDescription.html" /></remarks>
     public unsafe struct VkAttachmentDescription
@@ -1317,8 +1317,8 @@ namespace OpenTK.Graphics.Vulkan
         }
     }
     /// <summary><b>[requires: v1.2]</b> 
-    /// <br/><b>[deprecated by: v1.4]</b> see: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#legacy-dynamicrendering" />
-    /// <br/><b>[deprecated by: VK_KHR_dynamic_rendering_local_read]</b> see: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#legacy-dynamicrendering" />
+    /// <br/><b>[deprecated by: v1.4]</b> See: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#legacy-dynamicrendering" /><br/>
+    /// <br/><b>[deprecated by: VK_KHR_dynamic_rendering_local_read]</b> See: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#legacy-dynamicrendering" /><br/>
     /// </summary>
     /// <remarks><see href="https://registry.khronos.org/vulkan/specs/1.3-extensions/man/html/VkAttachmentDescription2.html" /></remarks>
     public unsafe struct VkAttachmentDescription2
@@ -1404,8 +1404,8 @@ namespace OpenTK.Graphics.Vulkan
         }
     }
     /// <summary><b>[requires: v1.2]</b> 
-    /// <br/><b>[deprecated by: v1.4]</b> see: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#legacy-dynamicrendering" />
-    /// <br/><b>[deprecated by: VK_KHR_dynamic_rendering_local_read]</b> see: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#legacy-dynamicrendering" />
+    /// <br/><b>[deprecated by: v1.4]</b> See: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#legacy-dynamicrendering" /><br/>
+    /// <br/><b>[deprecated by: VK_KHR_dynamic_rendering_local_read]</b> See: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#legacy-dynamicrendering" /><br/>
     /// </summary>
     /// <remarks><see href="https://registry.khronos.org/vulkan/specs/1.3-extensions/man/html/VkAttachmentDescriptionStencilLayout.html" /></remarks>
     public unsafe struct VkAttachmentDescriptionStencilLayout
@@ -1467,8 +1467,8 @@ namespace OpenTK.Graphics.Vulkan
         }
     }
     /// <summary><b>[requires: v1.0]</b> 
-    /// <br/><b>[deprecated by: v1.2]</b> see: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#legacy-renderpass2" />
-    /// <br/><b>[deprecated by: VK_KHR_create_renderpass2]</b> see: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#legacy-renderpass2" />
+    /// <br/><b>[deprecated by: v1.2]</b> See: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#legacy-renderpass2" /><br/>
+    /// <br/><b>[deprecated by: VK_KHR_create_renderpass2]</b> See: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#legacy-renderpass2" /><br/>
     /// </summary>
     /// <remarks><see href="https://registry.khronos.org/vulkan/specs/1.3-extensions/man/html/VkAttachmentReference.html" /></remarks>
     public unsafe struct VkAttachmentReference
@@ -1485,8 +1485,8 @@ namespace OpenTK.Graphics.Vulkan
         }
     }
     /// <summary><b>[requires: v1.2]</b> 
-    /// <br/><b>[deprecated by: v1.4]</b> see: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#legacy-dynamicrendering" />
-    /// <br/><b>[deprecated by: VK_KHR_dynamic_rendering_local_read]</b> see: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#legacy-dynamicrendering" />
+    /// <br/><b>[deprecated by: v1.4]</b> See: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#legacy-dynamicrendering" /><br/>
+    /// <br/><b>[deprecated by: VK_KHR_dynamic_rendering_local_read]</b> See: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#legacy-dynamicrendering" /><br/>
     /// </summary>
     /// <remarks><see href="https://registry.khronos.org/vulkan/specs/1.3-extensions/man/html/VkAttachmentReference2.html" /></remarks>
     public unsafe struct VkAttachmentReference2
@@ -1620,8 +1620,8 @@ namespace OpenTK.Graphics.Vulkan
         }
     }
     /// <summary><b>[requires: VK_EXT_sample_locations]</b> 
-    /// <br/><b>[deprecated by: v1.4]</b> see: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#legacy-dynamicrendering" />
-    /// <br/><b>[deprecated by: VK_KHR_dynamic_rendering_local_read]</b> see: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#legacy-dynamicrendering" />
+    /// <br/><b>[deprecated by: v1.4]</b> See: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#legacy-dynamicrendering" /><br/>
+    /// <br/><b>[deprecated by: VK_KHR_dynamic_rendering_local_read]</b> See: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#legacy-dynamicrendering" /><br/>
     /// </summary>
     /// <remarks><see href="https://registry.khronos.org/vulkan/specs/1.3-extensions/man/html/VkAttachmentSampleLocationsEXT.html" /></remarks>
     public unsafe struct VkAttachmentSampleLocationsEXT
@@ -2499,7 +2499,7 @@ namespace OpenTK.Graphics.Vulkan
         }
     }
     /// <summary><b>[requires: VK_EXT_descriptor_buffer]</b> 
-    /// <br/><b>[deprecated by: VK_EXT_descriptor_heap]</b> see: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#legacy-descriptor-sets" />
+    /// <br/><b>[deprecated by: VK_EXT_descriptor_heap]</b> See: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#legacy-descriptor-sets" /><br/>
     /// Used by <see cref="Vk.GetBufferOpaqueCaptureDescriptorDataEXT"/></summary>
     /// <remarks><see href="https://registry.khronos.org/vulkan/specs/1.3-extensions/man/html/VkBufferCaptureDescriptorDataInfoEXT.html" /></remarks>
     public unsafe struct VkBufferCaptureDescriptorDataInfoEXT
@@ -2699,7 +2699,7 @@ namespace OpenTK.Graphics.Vulkan
         }
     }
     /// <summary><b>[requires: v1.3]</b> 
-    /// <br/><b>[deprecated by: VK_KHR_device_address_commands]</b> see: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#legacy-buffer-commands" />
+    /// <br/><b>[deprecated by: VK_KHR_device_address_commands]</b> See: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#legacy-buffer-commands" /><br/>
     /// </summary>
     /// <remarks><see href="https://registry.khronos.org/vulkan/specs/1.3-extensions/man/html/VkBufferCopy2.html" /></remarks>
     public unsafe struct VkBufferCopy2
@@ -2881,7 +2881,7 @@ namespace OpenTK.Graphics.Vulkan
         }
     }
     /// <summary><b>[requires: v1.3]</b> 
-    /// <br/><b>[deprecated by: VK_KHR_device_address_commands]</b> see: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#legacy-buffer-commands" />
+    /// <br/><b>[deprecated by: VK_KHR_device_address_commands]</b> See: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#legacy-buffer-commands" /><br/>
     /// </summary>
     /// <remarks><see href="https://registry.khronos.org/vulkan/specs/1.3-extensions/man/html/VkBufferImageCopy2.html" /></remarks>
     public unsafe struct VkBufferImageCopy2
@@ -2949,8 +2949,8 @@ namespace OpenTK.Graphics.Vulkan
         }
     }
     /// <summary><b>[requires: v1.0]</b> 
-    /// <br/><b>[deprecated by: v1.3]</b> see: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#deprecation-sync2" />
-    /// <br/><b>[deprecated by: VK_KHR_synchronization2]</b> see: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#deprecation-sync2" />
+    /// <br/><b>[deprecated by: v1.3]</b> See: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#deprecation-sync2" /><br/>
+    /// <br/><b>[deprecated by: VK_KHR_synchronization2]</b> See: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#deprecation-sync2" /><br/>
     /// Used by <see cref="Vk.CmdPipelineBarrier"/>, <see cref="Vk.CmdWaitEvents"/></summary>
     /// <remarks><see href="https://registry.khronos.org/vulkan/specs/1.3-extensions/man/html/VkBufferMemoryBarrier.html" /></remarks>
     public unsafe struct VkBufferMemoryBarrier
@@ -2988,7 +2988,7 @@ namespace OpenTK.Graphics.Vulkan
         }
     }
     /// <summary><b>[requires: v1.3]</b> 
-    /// <br/><b>[deprecated by: VK_KHR_device_address_commands]</b> see: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#legacy-buffer-commands" />
+    /// <br/><b>[deprecated by: VK_KHR_device_address_commands]</b> See: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#legacy-buffer-commands" /><br/>
     /// </summary>
     /// <remarks><see href="https://registry.khronos.org/vulkan/specs/1.3-extensions/man/html/VkBufferMemoryBarrier2.html" /></remarks>
     public unsafe struct VkBufferMemoryBarrier2
@@ -4358,7 +4358,7 @@ namespace OpenTK.Graphics.Vulkan
         }
     }
     /// <summary><b>[requires: VK_EXT_conditional_rendering]</b> 
-    /// <br/><b>[deprecated by: VK_KHR_device_address_commands]</b> see: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#legacy-buffer-commands" />
+    /// <br/><b>[deprecated by: VK_KHR_device_address_commands]</b> See: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#legacy-buffer-commands" /><br/>
     /// Used by <see cref="Vk.CmdBeginConditionalRenderingEXT"/></summary>
     /// <remarks><see href="https://registry.khronos.org/vulkan/specs/1.3-extensions/man/html/VkConditionalRenderingBeginInfoEXT.html" /></remarks>
     public unsafe struct VkConditionalRenderingBeginInfoEXT
@@ -4684,7 +4684,7 @@ namespace OpenTK.Graphics.Vulkan
         }
     }
     /// <summary><b>[requires: v1.3]</b> 
-    /// <br/><b>[deprecated by: VK_KHR_device_address_commands]</b> see: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#legacy-buffer-commands" />
+    /// <br/><b>[deprecated by: VK_KHR_device_address_commands]</b> See: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#legacy-buffer-commands" /><br/>
     /// Used by <see cref="Vk.CmdCopyBuffer2"/>, <see cref="Vk.CmdCopyBuffer2KHR"/></summary>
     /// <remarks><see href="https://registry.khronos.org/vulkan/specs/1.3-extensions/man/html/VkCopyBufferInfo2.html" /></remarks>
     public unsafe struct VkCopyBufferInfo2
@@ -4740,7 +4740,7 @@ namespace OpenTK.Graphics.Vulkan
         }
     }
     /// <summary><b>[requires: v1.3]</b> 
-    /// <br/><b>[deprecated by: VK_KHR_device_address_commands]</b> see: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#legacy-buffer-commands" />
+    /// <br/><b>[deprecated by: VK_KHR_device_address_commands]</b> See: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#legacy-buffer-commands" /><br/>
     /// Used by <see cref="Vk.CmdCopyBufferToImage2"/>, <see cref="Vk.CmdCopyBufferToImage2KHR"/></summary>
     /// <remarks><see href="https://registry.khronos.org/vulkan/specs/1.3-extensions/man/html/VkCopyBufferToImageInfo2.html" /></remarks>
     public unsafe struct VkCopyBufferToImageInfo2
@@ -4820,7 +4820,7 @@ namespace OpenTK.Graphics.Vulkan
         }
     }
     /// <summary><b>[requires: v1.0]</b> 
-    /// <br/><b>[deprecated by: VK_EXT_descriptor_heap]</b> see: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#legacy-descriptor-sets" />
+    /// <br/><b>[deprecated by: VK_EXT_descriptor_heap]</b> See: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#legacy-descriptor-sets" /><br/>
     /// Used by <see cref="Vk.UpdateDescriptorSets"/></summary>
     /// <remarks><see href="https://registry.khronos.org/vulkan/specs/1.3-extensions/man/html/VkCopyDescriptorSet.html" /></remarks>
     public unsafe struct VkCopyDescriptorSet
@@ -4969,7 +4969,7 @@ namespace OpenTK.Graphics.Vulkan
         }
     }
     /// <summary><b>[requires: v1.3]</b> 
-    /// <br/><b>[deprecated by: VK_KHR_device_address_commands]</b> see: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#legacy-buffer-commands" />
+    /// <br/><b>[deprecated by: VK_KHR_device_address_commands]</b> See: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#legacy-buffer-commands" /><br/>
     /// Used by <see cref="Vk.CmdCopyImageToBuffer2"/>, <see cref="Vk.CmdCopyImageToBuffer2KHR"/></summary>
     /// <remarks><see href="https://registry.khronos.org/vulkan/specs/1.3-extensions/man/html/VkCopyImageToBufferInfo2.html" /></remarks>
     public unsafe struct VkCopyImageToBufferInfo2
@@ -6820,7 +6820,7 @@ namespace OpenTK.Graphics.Vulkan
         }
     }
     /// <summary><b>[requires: VK_EXT_descriptor_buffer]</b> 
-    /// <br/><b>[deprecated by: VK_EXT_descriptor_heap]</b> see: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#legacy-descriptor-sets" />
+    /// <br/><b>[deprecated by: VK_EXT_descriptor_heap]</b> See: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#legacy-descriptor-sets" /><br/>
     /// </summary>
     /// <remarks><see href="https://registry.khronos.org/vulkan/specs/1.3-extensions/man/html/VkDescriptorAddressInfoEXT.html" /></remarks>
     public unsafe struct VkDescriptorAddressInfoEXT
@@ -6846,7 +6846,7 @@ namespace OpenTK.Graphics.Vulkan
         }
     }
     /// <summary><b>[requires: VK_EXT_descriptor_buffer]</b> 
-    /// <br/><b>[deprecated by: VK_EXT_descriptor_heap]</b> see: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#legacy-descriptor-sets" />
+    /// <br/><b>[deprecated by: VK_EXT_descriptor_heap]</b> See: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#legacy-descriptor-sets" /><br/>
     /// Used by <see cref="Vk.CmdBindDescriptorBuffersEXT"/></summary>
     /// <remarks><see href="https://registry.khronos.org/vulkan/specs/1.3-extensions/man/html/VkDescriptorBufferBindingInfoEXT.html" /></remarks>
     public unsafe struct VkDescriptorBufferBindingInfoEXT
@@ -6869,7 +6869,7 @@ namespace OpenTK.Graphics.Vulkan
         }
     }
     /// <summary><b>[requires: VK_EXT_descriptor_buffer]</b> 
-    /// <br/><b>[deprecated by: VK_EXT_descriptor_heap]</b> see: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#legacy-descriptor-sets" />
+    /// <br/><b>[deprecated by: VK_EXT_descriptor_heap]</b> See: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#legacy-descriptor-sets" /><br/>
     /// </summary>
     /// <remarks><see href="https://registry.khronos.org/vulkan/specs/1.3-extensions/man/html/VkDescriptorBufferBindingPushDescriptorBufferHandleEXT.html" /></remarks>
     public unsafe struct VkDescriptorBufferBindingPushDescriptorBufferHandleEXT
@@ -6889,7 +6889,7 @@ namespace OpenTK.Graphics.Vulkan
         }
     }
     /// <summary><b>[requires: v1.0]</b> 
-    /// <br/><b>[deprecated by: VK_EXT_descriptor_heap]</b> see: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#legacy-descriptor-sets" />
+    /// <br/><b>[deprecated by: VK_EXT_descriptor_heap]</b> See: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#legacy-descriptor-sets" /><br/>
     /// </summary>
     /// <remarks><see href="https://registry.khronos.org/vulkan/specs/1.3-extensions/man/html/VkDescriptorBufferInfo.html" /></remarks>
     public unsafe struct VkDescriptorBufferInfo
@@ -6909,7 +6909,7 @@ namespace OpenTK.Graphics.Vulkan
         }
     }
     /// <summary><b>[requires: VK_EXT_descriptor_buffer]</b> 
-    /// <br/><b>[deprecated by: VK_EXT_descriptor_heap]</b> see: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#legacy-descriptor-sets" />
+    /// <br/><b>[deprecated by: VK_EXT_descriptor_heap]</b> See: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#legacy-descriptor-sets" /><br/>
     /// </summary>
     /// <remarks><see href="https://registry.khronos.org/vulkan/specs/1.3-extensions/man/html/VkDescriptorDataEXT.html" /></remarks>
     [StructLayout(LayoutKind.Explicit)]
@@ -6948,7 +6948,7 @@ namespace OpenTK.Graphics.Vulkan
         public VkDescriptorDataEXT() { }
     }
     /// <summary><b>[requires: VK_EXT_descriptor_buffer]</b> 
-    /// <br/><b>[deprecated by: VK_EXT_descriptor_heap]</b> see: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#legacy-descriptor-sets" />
+    /// <br/><b>[deprecated by: VK_EXT_descriptor_heap]</b> See: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#legacy-descriptor-sets" /><br/>
     /// Used by <see cref="Vk.GetDescriptorEXT"/></summary>
     /// <remarks><see href="https://registry.khronos.org/vulkan/specs/1.3-extensions/man/html/VkDescriptorGetInfoEXT.html" /></remarks>
     public unsafe struct VkDescriptorGetInfoEXT
@@ -6989,7 +6989,7 @@ namespace OpenTK.Graphics.Vulkan
         }
     }
     /// <summary><b>[requires: v1.0]</b> 
-    /// <br/><b>[deprecated by: VK_EXT_descriptor_heap]</b> see: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#legacy-descriptor-sets" />
+    /// <br/><b>[deprecated by: VK_EXT_descriptor_heap]</b> See: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#legacy-descriptor-sets" /><br/>
     /// </summary>
     /// <remarks><see href="https://registry.khronos.org/vulkan/specs/1.3-extensions/man/html/VkDescriptorImageInfo.html" /></remarks>
     public unsafe struct VkDescriptorImageInfo
@@ -7265,7 +7265,7 @@ namespace OpenTK.Graphics.Vulkan
         }
     }
     /// <summary><b>[requires: v1.0]</b> 
-    /// <br/><b>[deprecated by: VK_EXT_descriptor_heap]</b> see: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#legacy-descriptor-sets" />
+    /// <br/><b>[deprecated by: VK_EXT_descriptor_heap]</b> See: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#legacy-descriptor-sets" /><br/>
     /// Used by <see cref="Vk.CreateDescriptorPool"/></summary>
     /// <remarks><see href="https://registry.khronos.org/vulkan/specs/1.3-extensions/man/html/VkDescriptorPoolCreateInfo.html" /></remarks>
     public unsafe struct VkDescriptorPoolCreateInfo
@@ -7294,7 +7294,7 @@ namespace OpenTK.Graphics.Vulkan
         }
     }
     /// <summary><b>[requires: v1.3]</b> 
-    /// <br/><b>[deprecated by: VK_EXT_descriptor_heap]</b> see: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#legacy-descriptor-sets" />
+    /// <br/><b>[deprecated by: VK_EXT_descriptor_heap]</b> See: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#legacy-descriptor-sets" /><br/>
     /// </summary>
     /// <remarks><see href="https://registry.khronos.org/vulkan/specs/1.3-extensions/man/html/VkDescriptorPoolInlineUniformBlockCreateInfo.html" /></remarks>
     public unsafe struct VkDescriptorPoolInlineUniformBlockCreateInfo
@@ -7332,7 +7332,7 @@ namespace OpenTK.Graphics.Vulkan
         }
     }
     /// <summary><b>[requires: v1.0]</b> 
-    /// <br/><b>[deprecated by: VK_EXT_descriptor_heap]</b> see: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#legacy-descriptor-sets" />
+    /// <br/><b>[deprecated by: VK_EXT_descriptor_heap]</b> See: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#legacy-descriptor-sets" /><br/>
     /// </summary>
     /// <remarks><see href="https://registry.khronos.org/vulkan/specs/1.3-extensions/man/html/VkDescriptorPoolSize.html" /></remarks>
     public unsafe struct VkDescriptorPoolSize
@@ -7349,7 +7349,7 @@ namespace OpenTK.Graphics.Vulkan
         }
     }
     /// <summary><b>[requires: v1.0]</b> 
-    /// <br/><b>[deprecated by: VK_EXT_descriptor_heap]</b> see: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#legacy-descriptor-sets" />
+    /// <br/><b>[deprecated by: VK_EXT_descriptor_heap]</b> See: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#legacy-descriptor-sets" /><br/>
     /// Used by <see cref="Vk.AllocateDescriptorSets"/></summary>
     /// <remarks><see href="https://registry.khronos.org/vulkan/specs/1.3-extensions/man/html/VkDescriptorSetAllocateInfo.html" /></remarks>
     public unsafe struct VkDescriptorSetAllocateInfo
@@ -7429,7 +7429,7 @@ namespace OpenTK.Graphics.Vulkan
         }
     }
     /// <summary><b>[requires: v1.0]</b> 
-    /// <br/><b>[deprecated by: VK_EXT_descriptor_heap]</b> see: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#legacy-descriptor-sets" />
+    /// <br/><b>[deprecated by: VK_EXT_descriptor_heap]</b> See: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#legacy-descriptor-sets" /><br/>
     /// </summary>
     /// <remarks><see href="https://registry.khronos.org/vulkan/specs/1.3-extensions/man/html/VkDescriptorSetLayoutBinding.html" /></remarks>
     public unsafe struct VkDescriptorSetLayoutBinding
@@ -7455,7 +7455,7 @@ namespace OpenTK.Graphics.Vulkan
         }
     }
     /// <summary><b>[requires: v1.2]</b> 
-    /// <br/><b>[deprecated by: VK_EXT_descriptor_heap]</b> see: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#legacy-descriptor-sets" />
+    /// <br/><b>[deprecated by: VK_EXT_descriptor_heap]</b> See: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#legacy-descriptor-sets" /><br/>
     /// </summary>
     /// <remarks><see href="https://registry.khronos.org/vulkan/specs/1.3-extensions/man/html/VkDescriptorSetLayoutBindingFlagsCreateInfo.html" /></remarks>
     public unsafe struct VkDescriptorSetLayoutBindingFlagsCreateInfo
@@ -7499,7 +7499,7 @@ namespace OpenTK.Graphics.Vulkan
         }
     }
     /// <summary><b>[requires: v1.0]</b> 
-    /// <br/><b>[deprecated by: VK_EXT_descriptor_heap]</b> see: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#legacy-descriptor-sets" />
+    /// <br/><b>[deprecated by: VK_EXT_descriptor_heap]</b> See: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#legacy-descriptor-sets" /><br/>
     /// Used by <see cref="Vk.CreateDescriptorSetLayout"/>, <see cref="Vk.GetDescriptorSetLayoutSupport"/>, <see cref="Vk.GetDescriptorSetLayoutSupportKHR"/></summary>
     /// <remarks><see href="https://registry.khronos.org/vulkan/specs/1.3-extensions/man/html/VkDescriptorSetLayoutCreateInfo.html" /></remarks>
     public unsafe struct VkDescriptorSetLayoutCreateInfo
@@ -7582,7 +7582,7 @@ namespace OpenTK.Graphics.Vulkan
         }
     }
     /// <summary><b>[requires: v1.2]</b> 
-    /// <br/><b>[deprecated by: VK_EXT_descriptor_heap]</b> see: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#legacy-descriptor-sets" />
+    /// <br/><b>[deprecated by: VK_EXT_descriptor_heap]</b> See: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#legacy-descriptor-sets" /><br/>
     /// </summary>
     /// <remarks><see href="https://registry.khronos.org/vulkan/specs/1.3-extensions/man/html/VkDescriptorSetVariableDescriptorCountAllocateInfo.html" /></remarks>
     public unsafe struct VkDescriptorSetVariableDescriptorCountAllocateInfo
@@ -11233,8 +11233,8 @@ namespace OpenTK.Graphics.Vulkan
         }
     }
     /// <summary><b>[requires: VK_KHR_fragment_shading_rate]</b> 
-    /// <br/><b>[deprecated by: v1.4]</b> see: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#legacy-dynamicrendering" />
-    /// <br/><b>[deprecated by: VK_KHR_dynamic_rendering_local_read]</b> see: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#legacy-dynamicrendering" />
+    /// <br/><b>[deprecated by: v1.4]</b> See: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#legacy-dynamicrendering" /><br/>
+    /// <br/><b>[deprecated by: VK_KHR_dynamic_rendering_local_read]</b> See: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#legacy-dynamicrendering" /><br/>
     /// </summary>
     /// <remarks><see href="https://registry.khronos.org/vulkan/specs/1.3-extensions/man/html/VkFragmentShadingRateAttachmentInfoKHR.html" /></remarks>
     public unsafe struct VkFragmentShadingRateAttachmentInfoKHR
@@ -11320,8 +11320,8 @@ namespace OpenTK.Graphics.Vulkan
         }
     }
     /// <summary><b>[requires: v1.2]</b> 
-    /// <br/><b>[deprecated by: v1.4]</b> see: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#legacy-dynamicrendering" />
-    /// <br/><b>[deprecated by: VK_KHR_dynamic_rendering_local_read]</b> see: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#legacy-dynamicrendering" />
+    /// <br/><b>[deprecated by: v1.4]</b> See: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#legacy-dynamicrendering" /><br/>
+    /// <br/><b>[deprecated by: VK_KHR_dynamic_rendering_local_read]</b> See: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#legacy-dynamicrendering" /><br/>
     /// </summary>
     /// <remarks><see href="https://registry.khronos.org/vulkan/specs/1.3-extensions/man/html/VkFramebufferAttachmentImageInfo.html" /></remarks>
     public unsafe struct VkFramebufferAttachmentImageInfo
@@ -11395,8 +11395,8 @@ namespace OpenTK.Graphics.Vulkan
         }
     }
     /// <summary><b>[requires: v1.2]</b> 
-    /// <br/><b>[deprecated by: v1.4]</b> see: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#legacy-dynamicrendering" />
-    /// <br/><b>[deprecated by: VK_KHR_dynamic_rendering_local_read]</b> see: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#legacy-dynamicrendering" />
+    /// <br/><b>[deprecated by: v1.4]</b> See: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#legacy-dynamicrendering" /><br/>
+    /// <br/><b>[deprecated by: VK_KHR_dynamic_rendering_local_read]</b> See: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#legacy-dynamicrendering" /><br/>
     /// </summary>
     /// <remarks><see href="https://registry.khronos.org/vulkan/specs/1.3-extensions/man/html/VkFramebufferAttachmentsCreateInfo.html" /></remarks>
     public unsafe struct VkFramebufferAttachmentsCreateInfo
@@ -11440,8 +11440,8 @@ namespace OpenTK.Graphics.Vulkan
         }
     }
     /// <summary><b>[requires: v1.0]</b> 
-    /// <br/><b>[deprecated by: v1.4]</b> see: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#legacy-dynamicrendering" />
-    /// <br/><b>[deprecated by: VK_KHR_dynamic_rendering_local_read]</b> see: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#legacy-dynamicrendering" />
+    /// <br/><b>[deprecated by: v1.4]</b> See: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#legacy-dynamicrendering" /><br/>
+    /// <br/><b>[deprecated by: VK_KHR_dynamic_rendering_local_read]</b> See: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#legacy-dynamicrendering" /><br/>
     /// Used by <see cref="Vk.CreateFramebuffer"/></summary>
     /// <remarks><see href="https://registry.khronos.org/vulkan/specs/1.3-extensions/man/html/VkFramebufferCreateInfo.html" /></remarks>
     public unsafe struct VkFramebufferCreateInfo
@@ -12273,7 +12273,7 @@ namespace OpenTK.Graphics.Vulkan
         public VkImageBlit2KHR() { }
     }
     /// <summary><b>[requires: VK_EXT_descriptor_buffer]</b> 
-    /// <br/><b>[deprecated by: VK_EXT_descriptor_heap]</b> see: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#legacy-descriptor-sets" />
+    /// <br/><b>[deprecated by: VK_EXT_descriptor_heap]</b> See: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#legacy-descriptor-sets" /><br/>
     /// Used by <see cref="Vk.GetImageOpaqueCaptureDescriptorDataEXT"/></summary>
     /// <remarks><see href="https://registry.khronos.org/vulkan/specs/1.3-extensions/man/html/VkImageCaptureDescriptorDataInfoEXT.html" /></remarks>
     public unsafe struct VkImageCaptureDescriptorDataInfoEXT
@@ -12722,8 +12722,8 @@ namespace OpenTK.Graphics.Vulkan
         }
     }
     /// <summary><b>[requires: v1.0]</b> 
-    /// <br/><b>[deprecated by: v1.3]</b> see: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#deprecation-sync2" />
-    /// <br/><b>[deprecated by: VK_KHR_synchronization2]</b> see: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#deprecation-sync2" />
+    /// <br/><b>[deprecated by: v1.3]</b> See: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#deprecation-sync2" /><br/>
+    /// <br/><b>[deprecated by: VK_KHR_synchronization2]</b> See: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#deprecation-sync2" /><br/>
     /// Used by <see cref="Vk.CmdPipelineBarrier"/>, <see cref="Vk.CmdWaitEvents"/></summary>
     /// <remarks><see href="https://registry.khronos.org/vulkan/specs/1.3-extensions/man/html/VkImageMemoryBarrier.html" /></remarks>
     public unsafe struct VkImageMemoryBarrier
@@ -13343,7 +13343,7 @@ namespace OpenTK.Graphics.Vulkan
         }
     }
     /// <summary><b>[requires: VK_EXT_descriptor_buffer]</b> 
-    /// <br/><b>[deprecated by: VK_EXT_descriptor_heap]</b> see: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#legacy-descriptor-sets" />
+    /// <br/><b>[deprecated by: VK_EXT_descriptor_heap]</b> See: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#legacy-descriptor-sets" /><br/>
     /// Used by <see cref="Vk.GetImageViewOpaqueCaptureDescriptorDataEXT"/></summary>
     /// <remarks><see href="https://registry.khronos.org/vulkan/specs/1.3-extensions/man/html/VkImageViewCaptureDescriptorDataInfoEXT.html" /></remarks>
     public unsafe struct VkImageViewCaptureDescriptorDataInfoEXT
@@ -14385,8 +14385,8 @@ namespace OpenTK.Graphics.Vulkan
         }
     }
     /// <summary><b>[requires: v1.1]</b> 
-    /// <br/><b>[deprecated by: v1.2]</b> see: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#legacy-renderpass2" />
-    /// <br/><b>[deprecated by: VK_KHR_create_renderpass2]</b> see: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#legacy-renderpass2" />
+    /// <br/><b>[deprecated by: v1.2]</b> See: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#legacy-renderpass2" /><br/>
+    /// <br/><b>[deprecated by: VK_KHR_create_renderpass2]</b> See: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#legacy-renderpass2" /><br/>
     /// </summary>
     /// <remarks><see href="https://registry.khronos.org/vulkan/specs/1.3-extensions/man/html/VkInputAttachmentAspectReference.html" /></remarks>
     public unsafe struct VkInputAttachmentAspectReference
@@ -14796,8 +14796,8 @@ namespace OpenTK.Graphics.Vulkan
         }
     }
     /// <summary><b>[requires: v1.0]</b> 
-    /// <br/><b>[deprecated by: v1.3]</b> see: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#deprecation-sync2" />
-    /// <br/><b>[deprecated by: VK_KHR_synchronization2]</b> see: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#deprecation-sync2" />
+    /// <br/><b>[deprecated by: v1.3]</b> See: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#deprecation-sync2" /><br/>
+    /// <br/><b>[deprecated by: VK_KHR_synchronization2]</b> See: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#deprecation-sync2" /><br/>
     /// Used by <see cref="Vk.CmdPipelineBarrier"/>, <see cref="Vk.CmdWaitEvents"/></summary>
     /// <remarks><see href="https://registry.khronos.org/vulkan/specs/1.3-extensions/man/html/VkMemoryBarrier.html" /></remarks>
     public unsafe struct VkMemoryBarrier
@@ -15966,7 +15966,7 @@ namespace OpenTK.Graphics.Vulkan
         }
     }
     /// <summary><b>[requires: VK_EXT_mutable_descriptor_type]</b> 
-    /// <br/><b>[deprecated by: VK_EXT_descriptor_heap]</b> see: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#legacy-descriptor-sets" />
+    /// <br/><b>[deprecated by: VK_EXT_descriptor_heap]</b> See: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#legacy-descriptor-sets" /><br/>
     /// </summary>
     /// <remarks><see href="https://registry.khronos.org/vulkan/specs/1.3-extensions/man/html/VkMutableDescriptorTypeCreateInfoEXT.html" /></remarks>
     public unsafe struct VkMutableDescriptorTypeCreateInfoEXT
@@ -16010,7 +16010,7 @@ namespace OpenTK.Graphics.Vulkan
         }
     }
     /// <summary><b>[requires: VK_EXT_mutable_descriptor_type]</b> 
-    /// <br/><b>[deprecated by: VK_EXT_descriptor_heap]</b> see: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#legacy-descriptor-sets" />
+    /// <br/><b>[deprecated by: VK_EXT_descriptor_heap]</b> See: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#legacy-descriptor-sets" /><br/>
     /// </summary>
     /// <remarks><see href="https://registry.khronos.org/vulkan/specs/1.3-extensions/man/html/VkMutableDescriptorTypeListEXT.html" /></remarks>
     public unsafe struct VkMutableDescriptorTypeListEXT
@@ -16234,7 +16234,7 @@ namespace OpenTK.Graphics.Vulkan
         }
     }
     /// <summary><b>[requires: VK_EXT_descriptor_buffer]</b> 
-    /// <br/><b>[deprecated by: VK_EXT_descriptor_heap]</b> see: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#legacy-descriptor-sets" />
+    /// <br/><b>[deprecated by: VK_EXT_descriptor_heap]</b> See: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#legacy-descriptor-sets" /><br/>
     /// </summary>
     /// <remarks><see href="https://registry.khronos.org/vulkan/specs/1.3-extensions/man/html/VkOpaqueCaptureDescriptorDataCreateInfoEXT.html" /></remarks>
     public unsafe struct VkOpaqueCaptureDescriptorDataCreateInfoEXT
@@ -18468,7 +18468,7 @@ namespace OpenTK.Graphics.Vulkan
         }
     }
     /// <summary><b>[requires: VK_EXT_descriptor_buffer]</b> 
-    /// <br/><b>[deprecated by: VK_EXT_descriptor_heap]</b> see: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#legacy-descriptor-sets" />
+    /// <br/><b>[deprecated by: VK_EXT_descriptor_heap]</b> See: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#legacy-descriptor-sets" /><br/>
     /// </summary>
     /// <remarks><see href="https://registry.khronos.org/vulkan/specs/1.3-extensions/man/html/VkPhysicalDeviceDescriptorBufferDensityMapPropertiesEXT.html" /></remarks>
     public unsafe struct VkPhysicalDeviceDescriptorBufferDensityMapPropertiesEXT
@@ -18488,7 +18488,7 @@ namespace OpenTK.Graphics.Vulkan
         }
     }
     /// <summary><b>[requires: VK_EXT_descriptor_buffer]</b> 
-    /// <br/><b>[deprecated by: VK_EXT_descriptor_heap]</b> see: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#legacy-descriptor-sets" />
+    /// <br/><b>[deprecated by: VK_EXT_descriptor_heap]</b> See: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#legacy-descriptor-sets" /><br/>
     /// </summary>
     /// <remarks><see href="https://registry.khronos.org/vulkan/specs/1.3-extensions/man/html/VkPhysicalDeviceDescriptorBufferFeaturesEXT.html" /></remarks>
     public unsafe struct VkPhysicalDeviceDescriptorBufferFeaturesEXT
@@ -18517,7 +18517,7 @@ namespace OpenTK.Graphics.Vulkan
         }
     }
     /// <summary><b>[requires: VK_EXT_descriptor_buffer]</b> 
-    /// <br/><b>[deprecated by: VK_EXT_descriptor_heap]</b> see: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#legacy-descriptor-sets" />
+    /// <br/><b>[deprecated by: VK_EXT_descriptor_heap]</b> See: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#legacy-descriptor-sets" /><br/>
     /// </summary>
     /// <remarks><see href="https://registry.khronos.org/vulkan/specs/1.3-extensions/man/html/VkPhysicalDeviceDescriptorBufferPropertiesEXT.html" /></remarks>
     public unsafe struct VkPhysicalDeviceDescriptorBufferPropertiesEXT
@@ -18867,7 +18867,7 @@ namespace OpenTK.Graphics.Vulkan
         }
     }
     /// <summary><b>[requires: VK_EXT_descriptor_indexing]</b> 
-    /// <br/><b>[deprecated by: VK_EXT_descriptor_heap]</b> see: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#legacy-descriptor-sets" />
+    /// <br/><b>[deprecated by: VK_EXT_descriptor_heap]</b> See: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#legacy-descriptor-sets" /><br/>
     /// </summary>
     /// <remarks><see href="https://registry.khronos.org/vulkan/specs/1.3-extensions/man/html/VkPhysicalDeviceDescriptorIndexingFeaturesEXT.html" /></remarks>
     public unsafe struct VkPhysicalDeviceDescriptorIndexingFeaturesEXT
@@ -19028,7 +19028,7 @@ namespace OpenTK.Graphics.Vulkan
         }
     }
     /// <summary><b>[requires: VK_EXT_descriptor_indexing]</b> 
-    /// <br/><b>[deprecated by: VK_EXT_descriptor_heap]</b> see: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#legacy-descriptor-sets" />
+    /// <br/><b>[deprecated by: VK_EXT_descriptor_heap]</b> See: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#legacy-descriptor-sets" /><br/>
     /// </summary>
     /// <remarks><see href="https://registry.khronos.org/vulkan/specs/1.3-extensions/man/html/VkPhysicalDeviceDescriptorIndexingPropertiesEXT.html" /></remarks>
     public unsafe struct VkPhysicalDeviceDescriptorIndexingPropertiesEXT
@@ -21906,7 +21906,7 @@ namespace OpenTK.Graphics.Vulkan
         }
     }
     /// <summary><b>[requires: VK_EXT_inline_uniform_block]</b> 
-    /// <br/><b>[deprecated by: VK_EXT_descriptor_heap]</b> see: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#legacy-descriptor-sets" />
+    /// <br/><b>[deprecated by: VK_EXT_descriptor_heap]</b> See: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#legacy-descriptor-sets" /><br/>
     /// </summary>
     /// <remarks><see href="https://registry.khronos.org/vulkan/specs/1.3-extensions/man/html/VkPhysicalDeviceInlineUniformBlockFeaturesEXT.html" /></remarks>
     public unsafe struct VkPhysicalDeviceInlineUniformBlockFeaturesEXT
@@ -21959,7 +21959,7 @@ namespace OpenTK.Graphics.Vulkan
         }
     }
     /// <summary><b>[requires: VK_EXT_inline_uniform_block]</b> 
-    /// <br/><b>[deprecated by: VK_EXT_descriptor_heap]</b> see: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#legacy-descriptor-sets" />
+    /// <br/><b>[deprecated by: VK_EXT_descriptor_heap]</b> See: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#legacy-descriptor-sets" /><br/>
     /// </summary>
     /// <remarks><see href="https://registry.khronos.org/vulkan/specs/1.3-extensions/man/html/VkPhysicalDeviceInlineUniformBlockPropertiesEXT.html" /></remarks>
     public unsafe struct VkPhysicalDeviceInlineUniformBlockPropertiesEXT
@@ -23587,7 +23587,7 @@ namespace OpenTK.Graphics.Vulkan
         }
     }
     /// <summary><b>[requires: VK_EXT_mutable_descriptor_type]</b> 
-    /// <br/><b>[deprecated by: VK_EXT_descriptor_heap]</b> see: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#legacy-descriptor-sets" />
+    /// <br/><b>[deprecated by: VK_EXT_descriptor_heap]</b> See: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#legacy-descriptor-sets" /><br/>
     /// </summary>
     /// <remarks><see href="https://registry.khronos.org/vulkan/specs/1.3-extensions/man/html/VkPhysicalDeviceMutableDescriptorTypeFeaturesEXT.html" /></remarks>
     public unsafe struct VkPhysicalDeviceMutableDescriptorTypeFeaturesEXT
@@ -30663,7 +30663,7 @@ namespace OpenTK.Graphics.Vulkan
         }
     }
     /// <summary><b>[requires: v1.0]</b> 
-    /// <br/><b>[deprecated by: VK_EXT_descriptor_heap]</b> see: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#legacy-descriptor-sets" />
+    /// <br/><b>[deprecated by: VK_EXT_descriptor_heap]</b> See: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#legacy-descriptor-sets" /><br/>
     /// Used by <see cref="Vk.CreatePipelineLayout"/></summary>
     /// <remarks><see href="https://registry.khronos.org/vulkan/specs/1.3-extensions/man/html/VkPipelineLayoutCreateInfo.html" /></remarks>
     public unsafe struct VkPipelineLayoutCreateInfo
@@ -31973,7 +31973,7 @@ namespace OpenTK.Graphics.Vulkan
         }
     }
     /// <summary><b>[requires: v1.0]</b> 
-    /// <br/><b>[deprecated by: VK_EXT_descriptor_heap]</b> see: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#legacy-descriptor-sets" />
+    /// <br/><b>[deprecated by: VK_EXT_descriptor_heap]</b> See: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#legacy-descriptor-sets" /><br/>
     /// </summary>
     /// <remarks><see href="https://registry.khronos.org/vulkan/specs/1.3-extensions/man/html/VkPushConstantRange.html" /></remarks>
     public unsafe struct VkPushConstantRange
@@ -33394,8 +33394,8 @@ namespace OpenTK.Graphics.Vulkan
         }
     }
     /// <summary><b>[requires: v1.2]</b> 
-    /// <br/><b>[deprecated by: v1.4]</b> see: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#legacy-dynamicrendering" />
-    /// <br/><b>[deprecated by: VK_KHR_dynamic_rendering_local_read]</b> see: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#legacy-dynamicrendering" />
+    /// <br/><b>[deprecated by: v1.4]</b> See: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#legacy-dynamicrendering" /><br/>
+    /// <br/><b>[deprecated by: VK_KHR_dynamic_rendering_local_read]</b> See: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#legacy-dynamicrendering" /><br/>
     /// </summary>
     /// <remarks><see href="https://registry.khronos.org/vulkan/specs/1.3-extensions/man/html/VkRenderPassAttachmentBeginInfo.html" /></remarks>
     public unsafe struct VkRenderPassAttachmentBeginInfo
@@ -33439,8 +33439,8 @@ namespace OpenTK.Graphics.Vulkan
         }
     }
     /// <summary><b>[requires: v1.0]</b> 
-    /// <br/><b>[deprecated by: v1.4]</b> see: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#legacy-dynamicrendering" />
-    /// <br/><b>[deprecated by: VK_KHR_dynamic_rendering_local_read]</b> see: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#legacy-dynamicrendering" />
+    /// <br/><b>[deprecated by: v1.4]</b> See: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#legacy-dynamicrendering" /><br/>
+    /// <br/><b>[deprecated by: VK_KHR_dynamic_rendering_local_read]</b> See: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#legacy-dynamicrendering" /><br/>
     /// Used by <see cref="Vk.CmdBeginRenderPass"/>, <see cref="Vk.CmdBeginRenderPass2"/>, <see cref="Vk.CmdBeginRenderPass2KHR"/></summary>
     /// <remarks><see href="https://registry.khronos.org/vulkan/specs/1.3-extensions/man/html/VkRenderPassBeginInfo.html" /></remarks>
     public unsafe struct VkRenderPassBeginInfo
@@ -33472,8 +33472,8 @@ namespace OpenTK.Graphics.Vulkan
         }
     }
     /// <summary><b>[requires: v1.0]</b> 
-    /// <br/><b>[deprecated by: v1.2]</b> see: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#legacy-renderpass2" />
-    /// <br/><b>[deprecated by: VK_KHR_create_renderpass2]</b> see: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#legacy-renderpass2" />
+    /// <br/><b>[deprecated by: v1.2]</b> See: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#legacy-renderpass2" /><br/>
+    /// <br/><b>[deprecated by: VK_KHR_create_renderpass2]</b> See: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#legacy-renderpass2" /><br/>
     /// Used by <see cref="Vk.CreateRenderPass"/></summary>
     /// <remarks><see href="https://registry.khronos.org/vulkan/specs/1.3-extensions/man/html/VkRenderPassCreateInfo.html" /></remarks>
     public unsafe struct VkRenderPassCreateInfo
@@ -33511,8 +33511,8 @@ namespace OpenTK.Graphics.Vulkan
         }
     }
     /// <summary><b>[requires: v1.2]</b> 
-    /// <br/><b>[deprecated by: v1.4]</b> see: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#legacy-dynamicrendering" />
-    /// <br/><b>[deprecated by: VK_KHR_dynamic_rendering_local_read]</b> see: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#legacy-dynamicrendering" />
+    /// <br/><b>[deprecated by: v1.4]</b> See: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#legacy-dynamicrendering" /><br/>
+    /// <br/><b>[deprecated by: VK_KHR_dynamic_rendering_local_read]</b> See: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#legacy-dynamicrendering" /><br/>
     /// Used by <see cref="Vk.CreateRenderPass2"/>, <see cref="Vk.CreateRenderPass2KHR"/></summary>
     /// <remarks><see href="https://registry.khronos.org/vulkan/specs/1.3-extensions/man/html/VkRenderPassCreateInfo2.html" /></remarks>
     public unsafe struct VkRenderPassCreateInfo2
@@ -33598,8 +33598,8 @@ namespace OpenTK.Graphics.Vulkan
         }
     }
     /// <summary><b>[requires: VK_EXT_subpass_merge_feedback]</b> 
-    /// <br/><b>[deprecated by: v1.4]</b> see: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#legacy-dynamicrendering" />
-    /// <br/><b>[deprecated by: VK_KHR_dynamic_rendering_local_read]</b> see: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#legacy-dynamicrendering" />
+    /// <br/><b>[deprecated by: v1.4]</b> See: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#legacy-dynamicrendering" /><br/>
+    /// <br/><b>[deprecated by: VK_KHR_dynamic_rendering_local_read]</b> See: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#legacy-dynamicrendering" /><br/>
     /// </summary>
     /// <remarks><see href="https://registry.khronos.org/vulkan/specs/1.3-extensions/man/html/VkRenderPassCreationControlEXT.html" /></remarks>
     public unsafe struct VkRenderPassCreationControlEXT
@@ -33619,8 +33619,8 @@ namespace OpenTK.Graphics.Vulkan
         }
     }
     /// <summary><b>[requires: VK_EXT_subpass_merge_feedback]</b> 
-    /// <br/><b>[deprecated by: v1.4]</b> see: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#legacy-dynamicrendering" />
-    /// <br/><b>[deprecated by: VK_KHR_dynamic_rendering_local_read]</b> see: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#legacy-dynamicrendering" />
+    /// <br/><b>[deprecated by: v1.4]</b> See: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#legacy-dynamicrendering" /><br/>
+    /// <br/><b>[deprecated by: VK_KHR_dynamic_rendering_local_read]</b> See: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#legacy-dynamicrendering" /><br/>
     /// </summary>
     /// <remarks><see href="https://registry.khronos.org/vulkan/specs/1.3-extensions/man/html/VkRenderPassCreationFeedbackCreateInfoEXT.html" /></remarks>
     public unsafe struct VkRenderPassCreationFeedbackCreateInfoEXT
@@ -33640,8 +33640,8 @@ namespace OpenTK.Graphics.Vulkan
         }
     }
     /// <summary><b>[requires: VK_EXT_subpass_merge_feedback]</b> 
-    /// <br/><b>[deprecated by: v1.4]</b> see: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#legacy-dynamicrendering" />
-    /// <br/><b>[deprecated by: VK_KHR_dynamic_rendering_local_read]</b> see: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#legacy-dynamicrendering" />
+    /// <br/><b>[deprecated by: v1.4]</b> See: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#legacy-dynamicrendering" /><br/>
+    /// <br/><b>[deprecated by: VK_KHR_dynamic_rendering_local_read]</b> See: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#legacy-dynamicrendering" /><br/>
     /// </summary>
     /// <remarks><see href="https://registry.khronos.org/vulkan/specs/1.3-extensions/man/html/VkRenderPassCreationFeedbackInfoEXT.html" /></remarks>
     public unsafe struct VkRenderPassCreationFeedbackInfoEXT
@@ -33655,8 +33655,8 @@ namespace OpenTK.Graphics.Vulkan
         }
     }
     /// <summary><b>[requires: VK_EXT_fragment_density_map]</b> 
-    /// <br/><b>[deprecated by: v1.4]</b> see: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#legacy-dynamicrendering" />
-    /// <br/><b>[deprecated by: VK_KHR_dynamic_rendering_local_read]</b> see: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#legacy-dynamicrendering" />
+    /// <br/><b>[deprecated by: v1.4]</b> See: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#legacy-dynamicrendering" /><br/>
+    /// <br/><b>[deprecated by: VK_KHR_dynamic_rendering_local_read]</b> See: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#legacy-dynamicrendering" /><br/>
     /// </summary>
     /// <remarks><see href="https://registry.khronos.org/vulkan/specs/1.3-extensions/man/html/VkRenderPassFragmentDensityMapCreateInfoEXT.html" /></remarks>
     public unsafe struct VkRenderPassFragmentDensityMapCreateInfoEXT
@@ -33697,8 +33697,8 @@ namespace OpenTK.Graphics.Vulkan
         }
     }
     /// <summary><b>[requires: v1.1]</b> 
-    /// <br/><b>[deprecated by: v1.2]</b> see: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#legacy-renderpass2" />
-    /// <br/><b>[deprecated by: VK_KHR_create_renderpass2]</b> see: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#legacy-renderpass2" />
+    /// <br/><b>[deprecated by: v1.2]</b> See: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#legacy-renderpass2" /><br/>
+    /// <br/><b>[deprecated by: VK_KHR_create_renderpass2]</b> See: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#legacy-renderpass2" /><br/>
     /// </summary>
     /// <remarks><see href="https://registry.khronos.org/vulkan/specs/1.3-extensions/man/html/VkRenderPassInputAttachmentAspectCreateInfo.html" /></remarks>
     public unsafe struct VkRenderPassInputAttachmentAspectCreateInfo
@@ -33742,8 +33742,8 @@ namespace OpenTK.Graphics.Vulkan
         }
     }
     /// <summary><b>[requires: v1.1]</b> 
-    /// <br/><b>[deprecated by: v1.2]</b> see: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#legacy-renderpass2" />
-    /// <br/><b>[deprecated by: VK_KHR_create_renderpass2]</b> see: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#legacy-renderpass2" />
+    /// <br/><b>[deprecated by: v1.2]</b> See: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#legacy-renderpass2" /><br/>
+    /// <br/><b>[deprecated by: VK_KHR_create_renderpass2]</b> See: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#legacy-renderpass2" /><br/>
     /// </summary>
     /// <remarks><see href="https://registry.khronos.org/vulkan/specs/1.3-extensions/man/html/VkRenderPassMultiviewCreateInfo.html" /></remarks>
     public unsafe struct VkRenderPassMultiviewCreateInfo
@@ -33841,8 +33841,8 @@ namespace OpenTK.Graphics.Vulkan
         }
     }
     /// <summary><b>[requires: VK_EXT_sample_locations]</b> 
-    /// <br/><b>[deprecated by: v1.4]</b> see: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#legacy-dynamicrendering" />
-    /// <br/><b>[deprecated by: VK_KHR_dynamic_rendering_local_read]</b> see: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#legacy-dynamicrendering" />
+    /// <br/><b>[deprecated by: v1.4]</b> See: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#legacy-dynamicrendering" /><br/>
+    /// <br/><b>[deprecated by: VK_KHR_dynamic_rendering_local_read]</b> See: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#legacy-dynamicrendering" /><br/>
     /// </summary>
     /// <remarks><see href="https://registry.khronos.org/vulkan/specs/1.3-extensions/man/html/VkRenderPassSampleLocationsBeginInfoEXT.html" /></remarks>
     public unsafe struct VkRenderPassSampleLocationsBeginInfoEXT
@@ -33931,8 +33931,8 @@ namespace OpenTK.Graphics.Vulkan
         }
     }
     /// <summary><b>[requires: VK_EXT_subpass_merge_feedback]</b> 
-    /// <br/><b>[deprecated by: v1.4]</b> see: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#legacy-dynamicrendering" />
-    /// <br/><b>[deprecated by: VK_KHR_dynamic_rendering_local_read]</b> see: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#legacy-dynamicrendering" />
+    /// <br/><b>[deprecated by: v1.4]</b> See: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#legacy-dynamicrendering" /><br/>
+    /// <br/><b>[deprecated by: VK_KHR_dynamic_rendering_local_read]</b> See: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#legacy-dynamicrendering" /><br/>
     /// </summary>
     /// <remarks><see href="https://registry.khronos.org/vulkan/specs/1.3-extensions/man/html/VkRenderPassSubpassFeedbackCreateInfoEXT.html" /></remarks>
     public unsafe struct VkRenderPassSubpassFeedbackCreateInfoEXT
@@ -33952,8 +33952,8 @@ namespace OpenTK.Graphics.Vulkan
         }
     }
     /// <summary><b>[requires: VK_EXT_subpass_merge_feedback]</b> 
-    /// <br/><b>[deprecated by: v1.4]</b> see: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#legacy-dynamicrendering" />
-    /// <br/><b>[deprecated by: VK_KHR_dynamic_rendering_local_read]</b> see: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#legacy-dynamicrendering" />
+    /// <br/><b>[deprecated by: v1.4]</b> See: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#legacy-dynamicrendering" /><br/>
+    /// <br/><b>[deprecated by: VK_KHR_dynamic_rendering_local_read]</b> See: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#legacy-dynamicrendering" /><br/>
     /// </summary>
     /// <remarks><see href="https://registry.khronos.org/vulkan/specs/1.3-extensions/man/html/VkRenderPassSubpassFeedbackInfoEXT.html" /></remarks>
     public unsafe struct VkRenderPassSubpassFeedbackInfoEXT
@@ -34225,7 +34225,7 @@ namespace OpenTK.Graphics.Vulkan
         }
     }
     /// <summary><b>[requires: VK_EXT_descriptor_buffer]</b> 
-    /// <br/><b>[deprecated by: VK_EXT_descriptor_heap]</b> see: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#legacy-descriptor-sets" />
+    /// <br/><b>[deprecated by: VK_EXT_descriptor_heap]</b> See: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#legacy-descriptor-sets" /><br/>
     /// Used by <see cref="Vk.GetSamplerOpaqueCaptureDescriptorDataEXT"/></summary>
     /// <remarks><see href="https://registry.khronos.org/vulkan/specs/1.3-extensions/man/html/VkSamplerCaptureDescriptorDataInfoEXT.html" /></remarks>
     public unsafe struct VkSamplerCaptureDescriptorDataInfoEXT
@@ -35792,8 +35792,8 @@ namespace OpenTK.Graphics.Vulkan
         }
     }
     /// <summary><b>[requires: v1.0]</b> 
-    /// <br/><b>[deprecated by: v1.3]</b> see: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#deprecation-sync2" />
-    /// <br/><b>[deprecated by: VK_KHR_synchronization2]</b> see: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#deprecation-sync2" />
+    /// <br/><b>[deprecated by: v1.3]</b> See: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#deprecation-sync2" /><br/>
+    /// <br/><b>[deprecated by: VK_KHR_synchronization2]</b> See: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#deprecation-sync2" /><br/>
     /// Used by <see cref="Vk.QueueSubmit"/></summary>
     /// <remarks><see href="https://registry.khronos.org/vulkan/specs/1.3-extensions/man/html/VkSubmitInfo.html" /></remarks>
     public unsafe struct VkSubmitInfo
@@ -35903,8 +35903,8 @@ namespace OpenTK.Graphics.Vulkan
         }
     }
     /// <summary><b>[requires: v1.2]</b> 
-    /// <br/><b>[deprecated by: v1.4]</b> see: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#legacy-dynamicrendering" />
-    /// <br/><b>[deprecated by: VK_KHR_dynamic_rendering_local_read]</b> see: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#legacy-dynamicrendering" />
+    /// <br/><b>[deprecated by: v1.4]</b> See: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#legacy-dynamicrendering" /><br/>
+    /// <br/><b>[deprecated by: VK_KHR_dynamic_rendering_local_read]</b> See: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#legacy-dynamicrendering" /><br/>
     /// Used by <see cref="Vk.CmdBeginRenderPass2"/>, <see cref="Vk.CmdBeginRenderPass2KHR"/>, <see cref="Vk.CmdNextSubpass2"/>, ...</summary>
     /// <remarks><see href="https://registry.khronos.org/vulkan/specs/1.3-extensions/man/html/VkSubpassBeginInfo.html" /></remarks>
     public unsafe struct VkSubpassBeginInfo
@@ -35942,8 +35942,8 @@ namespace OpenTK.Graphics.Vulkan
         }
     }
     /// <summary><b>[requires: v1.0]</b> 
-    /// <br/><b>[deprecated by: v1.2]</b> see: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#legacy-renderpass2" />
-    /// <br/><b>[deprecated by: VK_KHR_create_renderpass2]</b> see: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#legacy-renderpass2" />
+    /// <br/><b>[deprecated by: v1.2]</b> See: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#legacy-renderpass2" /><br/>
+    /// <br/><b>[deprecated by: VK_KHR_create_renderpass2]</b> See: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#legacy-renderpass2" /><br/>
     /// </summary>
     /// <remarks><see href="https://registry.khronos.org/vulkan/specs/1.3-extensions/man/html/VkSubpassDependency.html" /></remarks>
     public unsafe struct VkSubpassDependency
@@ -35975,8 +35975,8 @@ namespace OpenTK.Graphics.Vulkan
         }
     }
     /// <summary><b>[requires: v1.2]</b> 
-    /// <br/><b>[deprecated by: v1.4]</b> see: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#legacy-dynamicrendering" />
-    /// <br/><b>[deprecated by: VK_KHR_dynamic_rendering_local_read]</b> see: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#legacy-dynamicrendering" />
+    /// <br/><b>[deprecated by: v1.4]</b> See: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#legacy-dynamicrendering" /><br/>
+    /// <br/><b>[deprecated by: VK_KHR_dynamic_rendering_local_read]</b> See: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#legacy-dynamicrendering" /><br/>
     /// </summary>
     /// <remarks><see href="https://registry.khronos.org/vulkan/specs/1.3-extensions/man/html/VkSubpassDependency2.html" /></remarks>
     public unsafe struct VkSubpassDependency2
@@ -36056,8 +36056,8 @@ namespace OpenTK.Graphics.Vulkan
         }
     }
     /// <summary><b>[requires: v1.0]</b> 
-    /// <br/><b>[deprecated by: v1.2]</b> see: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#legacy-renderpass2" />
-    /// <br/><b>[deprecated by: VK_KHR_create_renderpass2]</b> see: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#legacy-renderpass2" />
+    /// <br/><b>[deprecated by: v1.2]</b> See: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#legacy-renderpass2" /><br/>
+    /// <br/><b>[deprecated by: VK_KHR_create_renderpass2]</b> See: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#legacy-renderpass2" /><br/>
     /// </summary>
     /// <remarks><see href="https://registry.khronos.org/vulkan/specs/1.3-extensions/man/html/VkSubpassDescription.html" /></remarks>
     public unsafe struct VkSubpassDescription
@@ -36098,8 +36098,8 @@ namespace OpenTK.Graphics.Vulkan
         }
     }
     /// <summary><b>[requires: v1.2]</b> 
-    /// <br/><b>[deprecated by: v1.4]</b> see: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#legacy-dynamicrendering" />
-    /// <br/><b>[deprecated by: VK_KHR_dynamic_rendering_local_read]</b> see: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#legacy-dynamicrendering" />
+    /// <br/><b>[deprecated by: v1.4]</b> See: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#legacy-dynamicrendering" /><br/>
+    /// <br/><b>[deprecated by: VK_KHR_dynamic_rendering_local_read]</b> See: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#legacy-dynamicrendering" /><br/>
     /// </summary>
     /// <remarks><see href="https://registry.khronos.org/vulkan/specs/1.3-extensions/man/html/VkSubpassDescription2.html" /></remarks>
     public unsafe struct VkSubpassDescription2
@@ -36197,8 +36197,8 @@ namespace OpenTK.Graphics.Vulkan
         }
     }
     /// <summary><b>[requires: v1.2]</b> 
-    /// <br/><b>[deprecated by: v1.4]</b> see: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#legacy-dynamicrendering" />
-    /// <br/><b>[deprecated by: VK_KHR_dynamic_rendering_local_read]</b> see: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#legacy-dynamicrendering" />
+    /// <br/><b>[deprecated by: v1.4]</b> See: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#legacy-dynamicrendering" /><br/>
+    /// <br/><b>[deprecated by: VK_KHR_dynamic_rendering_local_read]</b> See: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#legacy-dynamicrendering" /><br/>
     /// </summary>
     /// <remarks><see href="https://registry.khronos.org/vulkan/specs/1.3-extensions/man/html/VkSubpassDescriptionDepthStencilResolve.html" /></remarks>
     public unsafe struct VkSubpassDescriptionDepthStencilResolve
@@ -36248,8 +36248,8 @@ namespace OpenTK.Graphics.Vulkan
         }
     }
     /// <summary><b>[requires: v1.2]</b> 
-    /// <br/><b>[deprecated by: v1.4]</b> see: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#legacy-dynamicrendering" />
-    /// <br/><b>[deprecated by: VK_KHR_dynamic_rendering_local_read]</b> see: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#legacy-dynamicrendering" />
+    /// <br/><b>[deprecated by: v1.4]</b> See: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#legacy-dynamicrendering" /><br/>
+    /// <br/><b>[deprecated by: VK_KHR_dynamic_rendering_local_read]</b> See: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#legacy-dynamicrendering" /><br/>
     /// Used by <see cref="Vk.CmdEndRenderPass2"/>, <see cref="Vk.CmdEndRenderPass2KHR"/>, <see cref="Vk.CmdNextSubpass2"/>, ...</summary>
     /// <remarks><see href="https://registry.khronos.org/vulkan/specs/1.3-extensions/man/html/VkSubpassEndInfo.html" /></remarks>
     public unsafe struct VkSubpassEndInfo
@@ -36320,8 +36320,8 @@ namespace OpenTK.Graphics.Vulkan
         }
     }
     /// <summary><b>[requires: VK_EXT_sample_locations]</b> 
-    /// <br/><b>[deprecated by: v1.4]</b> see: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#legacy-dynamicrendering" />
-    /// <br/><b>[deprecated by: VK_KHR_dynamic_rendering_local_read]</b> see: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#legacy-dynamicrendering" />
+    /// <br/><b>[deprecated by: v1.4]</b> See: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#legacy-dynamicrendering" /><br/>
+    /// <br/><b>[deprecated by: VK_KHR_dynamic_rendering_local_read]</b> See: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#legacy-dynamicrendering" /><br/>
     /// </summary>
     /// <remarks><see href="https://registry.khronos.org/vulkan/specs/1.3-extensions/man/html/VkSubpassSampleLocationsEXT.html" /></remarks>
     public unsafe struct VkSubpassSampleLocationsEXT
@@ -41069,7 +41069,7 @@ namespace OpenTK.Graphics.Vulkan
         }
     }
     /// <summary><b>[requires: v1.0]</b> 
-    /// <br/><b>[deprecated by: VK_EXT_descriptor_heap]</b> see: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#legacy-descriptor-sets" />
+    /// <br/><b>[deprecated by: VK_EXT_descriptor_heap]</b> See: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#legacy-descriptor-sets" /><br/>
     /// Used by <see cref="Vk.CmdPushDescriptorSet"/>, <see cref="Vk.CmdPushDescriptorSetKHR"/>, <see cref="Vk.UpdateDescriptorSets"/></summary>
     /// <remarks><see href="https://registry.khronos.org/vulkan/specs/1.3-extensions/man/html/VkWriteDescriptorSet.html" /></remarks>
     public unsafe struct VkWriteDescriptorSet
@@ -41110,7 +41110,7 @@ namespace OpenTK.Graphics.Vulkan
         }
     }
     /// <summary><b>[requires: VK_KHR_acceleration_structure]</b> 
-    /// <br/><b>[deprecated by: VK_EXT_descriptor_heap]</b> see: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#legacy-descriptor-sets" />
+    /// <br/><b>[deprecated by: VK_EXT_descriptor_heap]</b> See: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#legacy-descriptor-sets" /><br/>
     /// </summary>
     /// <remarks><see href="https://registry.khronos.org/vulkan/specs/1.3-extensions/man/html/VkWriteDescriptorSetAccelerationStructureKHR.html" /></remarks>
     public unsafe struct VkWriteDescriptorSetAccelerationStructureKHR
@@ -41154,7 +41154,7 @@ namespace OpenTK.Graphics.Vulkan
         }
     }
     /// <summary><b>[requires: v1.3]</b> 
-    /// <br/><b>[deprecated by: VK_EXT_descriptor_heap]</b> see: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#legacy-descriptor-sets" />
+    /// <br/><b>[deprecated by: VK_EXT_descriptor_heap]</b> See: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#legacy-descriptor-sets" /><br/>
     /// </summary>
     /// <remarks><see href="https://registry.khronos.org/vulkan/specs/1.3-extensions/man/html/VkWriteDescriptorSetInlineUniformBlock.html" /></remarks>
     public unsafe struct VkWriteDescriptorSetInlineUniformBlock

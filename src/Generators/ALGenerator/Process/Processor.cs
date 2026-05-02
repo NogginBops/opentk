@@ -15,7 +15,7 @@ namespace ALGenerator.Process
     {
         internal record FunctionData(
             Function NativeFunction,
-            CommandDocumentation? Documentation,
+            FunctionDocumentation? Documentation,
             Overload[] Overloads,
             bool ChangeNativeName);
 
@@ -48,7 +48,7 @@ namespace ALGenerator.Process
             Dictionary<string, FunctionData> allFunctions = new Dictionary<string, FunctionData>(spec.Functions.Count);
             foreach (Function nativeFunction in spec.Functions)
             {
-                CommandDocumentation? functionDocumentation = MakeDocumentationForNativeFunction(nativeFunction, docs);
+                FunctionDocumentation? functionDocumentation = MakeDocumentationForNativeFunction(nativeFunction, docs);
                 FunctionData overloadedFunction = GenerateOverloads(nativeFunction, functionDocumentation);
 
                 allFunctions.Add(nativeFunction.EntryPoint, overloadedFunction);
@@ -388,17 +388,14 @@ namespace ALGenerator.Process
                             FunctionReference func = functions.Find(f => f.EntryPoint == function.NativeFunction.EntryPoint) ?? throw new Exception($"Could not find function {function.NativeFunction.EntryPoint}!");
 
                             List<Link> urls = [];
-                            if (function.Documentation?.RefPagesLink != null)
+                            if (function.Documentation?.RefPagesLinks.Count > 0)
                             {
-                                urls.Add(function.Documentation.RefPagesLink);
+                                urls.AddRange(function.Documentation.RefPagesLinks);
                             }
 
-                            List<string> addedIn = new List<string>();
                             if (func.VersionInfo.Version != null)
                             {
-                                addedIn.Add($"v{func.VersionInfo.Version.Major}.{func.VersionInfo.Version.Minor}");
-
-                                if (function.Documentation?.RefPagesLink == null)
+                                if (function.Documentation?.RefPagesLinks.Count == 0)
                                 {
                                     // We use a google docs link to be able to link directly to a readable PDF
                                     // so the user doesn't get prompted to download the PDF.
@@ -409,25 +406,6 @@ namespace ALGenerator.Process
                                     urls.Add(new Link(string.Format(googleDocsPdfViewerLink, al1_1Reflink), "OpenAL 1.1 specification"));
                                 }
                                 
-                            }
-
-                            foreach (var extension in func.VersionInfo.Extensions)
-                            {
-                                addedIn.Add(extension.Name);
-                            }
-
-
-                            List<string> removedIn = new List<string>();
-                            if (func.VersionInfo.RemovedBy.Count > 0)
-                            {
-                                // FIXME: We only handle one RemovedBy entry for now.
-                                Debug.Assert(func.VersionInfo.RemovedBy.Count == 1);
-
-                                // In OpenGL only feature versions can remove so we can use the version straight.
-                                // - Noggin_bops 2025-08-11
-                                Version removedInV = func.VersionInfo.RemovedBy[0].Version!;
-
-                                removedIn.Add($"v{removedInV.Major}.{removedInV.Minor}");
                             }
 
                             foreach (var extension in func.VersionInfo.Extensions)
@@ -458,40 +436,27 @@ namespace ALGenerator.Process
 
                             if (function.Documentation != null)
                             {
-                                documentation[function.NativeFunction] = new FunctionDocumentation(
-                                    function.Documentation.Name,
-                                    function.Documentation.Purpose,
-                                    function.Documentation.Parameters,
-                                    urls,
-                                    addedIn,
-                                    removedIn
-                                    );
+                                documentation[function.NativeFunction] = function.Documentation with
+                                {
+                                    VersionInfo = func.VersionInfo,
+                                    RefPagesLinks = urls,
+                                };
                             }
                             else
                             {
                                 if (vendor == "")
                                 {
                                     Logger.Warning($"{function.NativeFunction.EntryPoint} doesn't have any documentation for {api}");
+                                }
 
-                                    documentation[function.NativeFunction] = new FunctionDocumentation(
-                                        function.NativeFunction.EntryPoint,
-                                        "",
-                                        Array.Empty<ParameterDocumentation>(),
-                                        urls,
-                                        addedIn,
-                                        removedIn);
-                                }
-                                else
+                                documentation[function.NativeFunction] = new FunctionDocumentation()
                                 {
-                                    // Extensions don't have documentation (yet?)
-                                    documentation[function.NativeFunction] = new FunctionDocumentation(
-                                        function.NativeFunction.EntryPoint,
-                                        "",
-                                        Array.Empty<ParameterDocumentation>(),
-                                        urls,
-                                        addedIn,
-                                        removedIn);
-                                }
+                                    FunctionName = function.NativeFunction.EntryPoint,
+                                    Purpose = "",
+                                    Parameters = [],
+                                    RefPagesLinks = urls,
+                                    VersionInfo = func.VersionInfo,
+                                };
                             }
                         }
                     }
@@ -701,9 +666,9 @@ namespace ALGenerator.Process
             }
         }
 
-        internal static CommandDocumentation? MakeDocumentationForNativeFunction(Function function, Documentation documentation)
+        internal static FunctionDocumentation? MakeDocumentationForNativeFunction(Function function, Documentation documentation)
         {
-            documentation.CommandDocs.TryGetValue(function.EntryPoint, out CommandDocumentation? docs);
+            documentation.CommandDocs.TryGetValue(function.EntryPoint, out FunctionDocumentation? docs);
             return docs;
         }
 
@@ -729,7 +694,7 @@ namespace ALGenerator.Process
             ];
 
         // Maybe we can do the return type overloading in a post processing step?
-        internal static FunctionData GenerateOverloads(Function nativeFunction, CommandDocumentation? functionDocumentation)
+        internal static FunctionData GenerateOverloads(Function nativeFunction, FunctionDocumentation? functionDocumentation)
         {
             List<Overload> overloads = new List<Overload>
             {

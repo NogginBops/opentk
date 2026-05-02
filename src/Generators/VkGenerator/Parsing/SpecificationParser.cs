@@ -1071,7 +1071,7 @@ namespace VkGenerator.Parsing
 
                 Comment = tagComment,
 
-                ExplanationLink = explanationlink,
+                ExplanationLink = $"https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#{explanationlink}",
             };
         }
 
