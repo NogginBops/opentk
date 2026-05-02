@@ -12637,9 +12637,9 @@ namespace OpenTK.Graphics.OpenGL
             /// <inheritdoc cref="ColorTableParameterfv(ColorTableTarget, ColorTableParameterPName, float*)"/>
             public static unsafe void ColorTableParameterf(ColorTableTarget target, ColorTableParameterPName pname, ref readonly Color4<Rgba> @params)
             {
-                fixed (Color4<Rgba>* tmp_@params = &@params)
+                fixed (Color4<Rgba>* tmp_params = &@params)
                 {
-                    float* @params_ptr = (float*)tmp_@params;
+                    float* @params_ptr = (float*)tmp_params;
                     ColorTableParameterfv(target, pname, @params_ptr);
                 }
             }
@@ -45265,9 +45265,9 @@ namespace OpenTK.Graphics.OpenGL
             /// <inheritdoc cref="ColorTableParameterfvSGI(ColorTableTargetSGI, ColorTableParameterPName, float*)"/>
             public static unsafe void ColorTableParameterfvSGI(ColorTableTargetSGI target, ColorTableParameterPName pname, ref readonly Color4<Rgba> @params)
             {
-                fixed (Color4<Rgba>* tmp_@params = &@params)
+                fixed (Color4<Rgba>* tmp_params = &@params)
                 {
-                    float* @params_ptr = (float*)tmp_@params;
+                    float* @params_ptr = (float*)tmp_params;
                     ColorTableParameterfvSGI(target, pname, @params_ptr);
                 }
             }

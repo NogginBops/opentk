@@ -325,7 +325,7 @@ namespace GeneratorBase.Overloading
                     Parameter colorParamter = ColorParamters[i];
                     BaseCSType colorType = ((CSRef)colorParamter.StrongType!).ReferencedType;
 
-                    writer.WriteLine($"fixed ({colorType.ToCSString()}* tmp_{nameTable[colorParamter]} = &{nameTable[colorParamter]})");
+                    writer.WriteLine($"fixed ({colorType.ToCSString()}* tmp_{NameMangler.MaybeRemoveStart(nameTable[colorParamter], "@")} = &{nameTable[colorParamter]})");
                 }
                 _csScope = writer.CsScope();
 
@@ -334,7 +334,7 @@ namespace GeneratorBase.Overloading
                     Parameter colorParamter = ColorParamters[i];
                     Parameter pointerParameter = PointerParameters[i];
 
-                    writer.WriteLine($"{pointerParameter.StrongType!.ToCSString()} {nameTable[pointerParameter]} = ({pointerParameter.StrongType!.ToCSString()})tmp_{nameTable[colorParamter]};");
+                    writer.WriteLine($"{pointerParameter.StrongType!.ToCSString()} {nameTable[pointerParameter]} = ({pointerParameter.StrongType!.ToCSString()})tmp_{NameMangler.MaybeRemoveStart(nameTable[colorParamter], "@")};");
                 }
             }
 
@@ -645,16 +645,16 @@ namespace GeneratorBase.Overloading
                     BaseCSType vectorType = ((IBaseTypeCSType)vectorParam.StrongType!).BaseType;
                     bool takeAddress = ((IBaseTypeCSType)vectorParam.StrongType!).TakeAddressInFixedStatement;
 
-                    writer.WriteLine($"fixed ({vectorType.ToCSString()}* tmp_{nameTable[vectorParam]} = {(takeAddress ? "&" : "")}{nameTable[vectorParam]})");
+                    writer.WriteLine($"fixed ({vectorType.ToCSString()}* tmp_{NameMangler.MaybeRemoveStart(nameTable[vectorParam], "@")} = {(takeAddress ? "&" : "")}{nameTable[vectorParam]})");
                 }
                 _csScope = writer.CsScope();
 
                 for (int i = 0; i < PointerParams.Count; i++)
                 {
                     Parameter pointerParameter = PointerParams[i];
-                    Parameter colorParamter = VectorParams[i];
+                    Parameter vectorParameter = VectorParams[i];
 
-                    writer.WriteLine($"{pointerParameter.StrongType!.ToCSString()} {nameTable[pointerParameter]} = ({pointerParameter.StrongType!.ToCSString()})tmp_{nameTable[colorParamter]};");
+                    writer.WriteLine($"{pointerParameter.StrongType!.ToCSString()} {nameTable[pointerParameter]} = ({pointerParameter.StrongType!.ToCSString()})tmp_{NameMangler.MaybeRemoveStart(nameTable[vectorParameter], "@")};");
                 }
             }
 
