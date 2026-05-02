@@ -51,7 +51,7 @@ namespace GLGenerator
 
                     // Reading the gl.xml file and parsing it into data structures.
                     using FileStream specificationStream = Reader.ReadGLSpecFromGithub();
-                    glSpecification = SpecificationParser.Parse(specificationStream, new NameMangler(glSettings), APIFile.GL, new List<string>());
+                    glSpecification = SpecificationParser.Parse(specificationStream, new NameMangler(glSettings), ApiFile.GL, new List<string>());
                 }
 
                 Specification wglSpecification;
@@ -85,7 +85,7 @@ namespace GLGenerator
 
                     // Reading the gl.xml file and parsing it into data structures.
                     using FileStream wglSpecificationStream = Reader.ReadWGLSpecFromGithub();
-                    wglSpecification = SpecificationParser.Parse(wglSpecificationStream, new NameMangler(wglSettings), APIFile.WGL, new List<string>());
+                    wglSpecification = SpecificationParser.Parse(wglSpecificationStream, new NameMangler(wglSettings), ApiFile.WGL, new List<string>());
                 }
 
                 Specification glxSpecification;
@@ -115,7 +115,7 @@ namespace GLGenerator
 
                     // Reading the gl.xml file and parsing it into data structures.
                     using FileStream glxSpecificationStream = Reader.ReadGLXSpecFromGithub();
-                    glxSpecification = SpecificationParser.Parse(glxSpecificationStream, new NameMangler(glxSettings), APIFile.GLX, glxIgnoreFunctions);
+                    glxSpecification = SpecificationParser.Parse(glxSpecificationStream, new NameMangler(glxSettings), ApiFile.GLX, glxIgnoreFunctions);
                 }
 
                 Specification eglSpecification;
@@ -140,10 +140,10 @@ namespace GLGenerator
 
                     // Reading the gl.xml file and parsing it into data structures.
                     using FileStream eglSpecificationStream = Reader.ReadEGLSpecFromGithub();
-                    eglSpecification = SpecificationParser.Parse(eglSpecificationStream, new NameMangler(eglSettings), APIFile.EGL, eglIgnoreFunctions);
+                    eglSpecification = SpecificationParser.Parse(eglSpecificationStream, new NameMangler(eglSettings), ApiFile.EGL, eglIgnoreFunctions);
 
                     using FileStream eglANGLESpecificationStream = Reader.ReadEGLANGLESpecFromFile();
-                    Specification eglANGLESpecification = SpecificationParser.Parse(eglANGLESpecificationStream, new NameMangler(eglSettings), APIFile.EGL, eglIgnoreFunctions);
+                    Specification eglANGLESpecification = SpecificationParser.Parse(eglANGLESpecificationStream, new NameMangler(eglSettings), ApiFile.EGL, eglIgnoreFunctions);
 
                     eglSpecification.Functions.AddRange(eglANGLESpecification.Functions);
                     eglSpecification.Enums.AddRange(eglANGLESpecification.Enums);

@@ -33,19 +33,19 @@ namespace GLGenerator
                 Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) ?? throw new NullReferenceException(),
                 "..", "..", "..", "..", "..", GraphicsNamespace);
 
-            foreach (Pointers pointers in data.Pointers)
+            foreach (ApiPointers pointers in data.Pointers)
             {
                 FileStrings strings = pointers.File switch
                 {
-                    APIFile.GL => new FileStrings("GL", "GL", "OpenGL", "GLLoader", "GLLoader.BindingsContext"),
-                    APIFile.WGL => new FileStrings("WGL", "Wgl", "Wgl", "WGLLoader", "WGLLoader.BindingsContext"),
-                    APIFile.GLX => new FileStrings("GLX", "Glx", "Glx", "GLXLoader", "GLXLoader.BindingsContext"),
-                    APIFile.EGL => new FileStrings("EGL", "Egl", "Egl", "EGLLoader", "EGLLoader.BindingsContext"),
+                    ApiFile.GL => new FileStrings("GL", "GL", "OpenGL", "GLLoader", "GLLoader.BindingsContext"),
+                    ApiFile.WGL => new FileStrings("WGL", "Wgl", "Wgl", "WGLLoader", "WGLLoader.BindingsContext"),
+                    ApiFile.GLX => new FileStrings("GLX", "Glx", "Glx", "GLXLoader", "GLXLoader.BindingsContext"),
+                    ApiFile.EGL => new FileStrings("EGL", "Egl", "Egl", "EGLLoader", "EGLLoader.BindingsContext"),
                     _ => throw new Exception(),
                 };
 
                 // FIXME: Merge the writing of these function pointers for the relevant namespaces!
-                WriteFunctionPointers(outputProjectPath, strings, pointers.NativeFunctions);
+                WriteFunctionPointers(outputProjectPath, strings, pointers.Functions);
             }
 
             foreach (Namespace @namespace in data.Namespaces)

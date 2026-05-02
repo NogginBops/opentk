@@ -11,7 +11,7 @@ using GeneratorBase.Overloading;
 namespace GLGenerator.Process
 {
     internal record OutputData(
-        List<Pointers> Pointers,
+        List<ApiPointers> Pointers,
         List<Namespace> Namespaces);
 
     // FIXME: Maybe change to API.. something? "namespace" is quite generic.
@@ -20,10 +20,6 @@ namespace GLGenerator.Process
         List<VendorFunctions> VendorFunctions,
         List<EnumType> EnumGroups,
         Dictionary<Function, FunctionDocumentation> Documentation);
-
-    internal record Pointers(
-        APIFile File,
-        List<Function> NativeFunctions);
 
     internal record FunctionDocumentation(
         string Name,

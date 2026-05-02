@@ -205,6 +205,9 @@ namespace GeneratorBase
         public required HashSet<Function> NativeFunctionsWithPostfix { get; init; }
     }
 
+    // List of pointers for a specific api.
+    public record class ApiPointers(ApiFile File, List<Function> Functions);
+
     public record class Parameter
     {
         public required string Name { get; init; }
@@ -335,7 +338,7 @@ namespace GeneratorBase
         public VersionInfo? VersionInfo { get; set; }
     }
 
-    public enum APIFile
+    public enum ApiFile
     {
         // OpenGL
         GL,
@@ -356,7 +359,7 @@ namespace GeneratorBase
     /// <param name="OriginalName">The name of the referenced enum group (as seen in the xml files).</param>
     /// <param name="TranslatedName">The name of the referenced enum group (as seen in OpenTK).</param>
     /// <param name="Namespace">The enum namespace that is referenced.</param>
-    public record GroupRef(string OriginalName, string TranslatedName, APIFile Namespace);
+    public record GroupRef(string OriginalName, string TranslatedName, ApiFile Namespace);
 
     public enum GLProfile
     {

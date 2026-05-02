@@ -15,7 +15,7 @@ namespace GLGenerator.Parsing
 {
     internal class SpecificationParser
     {
-        internal static Specification Parse(Stream input, NameMangler nameMangler, APIFile currentFile, List<string> ignoreFunctions)
+        internal static Specification Parse(Stream input, NameMangler nameMangler, ApiFile currentFile, List<string> ignoreFunctions)
         {
             XDocument? xdocument = XDocument.Load(input);
 
@@ -267,7 +267,7 @@ namespace GLGenerator.Parsing
             }
         }
 
-        private static List<Function> ParseCommands(XElement input, NameMangler nameMangler, APIFile currentFile, List<string> ignoreFunctions)
+        private static List<Function> ParseCommands(XElement input, NameMangler nameMangler, ApiFile currentFile, List<string> ignoreFunctions)
         {
             Logger.Info("Begining parsing of commands.");
             XElement? xelement = input.Element("commands")!;
@@ -450,7 +450,7 @@ namespace GLGenerator.Parsing
             else throw new Exception($"Could not parse expression '{expression}'");
         }
 
-        private static BaseCSType ParsePType(XElement t, APIFile currentFile, NameMangler nameMangler, out GroupRef? groupRef)
+        private static BaseCSType ParsePType(XElement t, ApiFile currentFile, NameMangler nameMangler, out GroupRef? groupRef)
         {
             string? group = t.Attribute("group")?.Value;
             if (group != null)
@@ -809,7 +809,7 @@ namespace GLGenerator.Parsing
         }
 
 
-        internal static List<EnumEntry> ParseEnums(XElement input, NameMangler nameMangler, APIFile currentFile)
+        internal static List<EnumEntry> ParseEnums(XElement input, NameMangler nameMangler, ApiFile currentFile)
         {
             Logger.Info("Begining parsing of enums.");
             List<EnumEntry> enumsEntries = new List<EnumEntry>();
@@ -859,10 +859,10 @@ namespace GLGenerator.Parsing
                     {
                         enumApi = currentFile switch
                         {
-                            APIFile.GL => OutputApiFlags.GL | OutputApiFlags.GLCompat | OutputApiFlags.GLES1 | OutputApiFlags.GLES2,
-                            APIFile.WGL => OutputApiFlags.WGL,
-                            APIFile.GLX => OutputApiFlags.GLX,
-                            APIFile.EGL => OutputApiFlags.EGL,
+                            ApiFile.GL => OutputApiFlags.GL | OutputApiFlags.GLCompat | OutputApiFlags.GLES1 | OutputApiFlags.GLES2,
+                            ApiFile.WGL => OutputApiFlags.WGL,
+                            ApiFile.GLX => OutputApiFlags.GLX,
+                            ApiFile.EGL => OutputApiFlags.EGL,
 
                             _ => throw new Exception(),
                         };
@@ -889,16 +889,16 @@ namespace GLGenerator.Parsing
                     {
                         switch (group.Namespace)
                         {
-                            case APIFile.GL:
+                            case ApiFile.GL:
                                 enumApi |= OutputApiFlags.GL | OutputApiFlags.GLCompat | OutputApiFlags.GLES1 | OutputApiFlags.GLES2;
                                 break;
-                            case APIFile.WGL:
+                            case ApiFile.WGL:
                                 enumApi |= OutputApiFlags.WGL;
                                 break;
-                            case APIFile.GLX:
+                            case ApiFile.GLX:
                                 enumApi |= OutputApiFlags.GLX;
                                 break;
-                            case APIFile.EGL:
+                            case ApiFile.EGL:
                                 enumApi |= OutputApiFlags.EGL;
                                 break;
                         }
@@ -943,7 +943,7 @@ namespace GLGenerator.Parsing
             }
         }
 
-        internal static GroupRef[] ParseGroups(string? groups, APIFile currentFile, NameMangler nameMangler)
+        internal static GroupRef[] ParseGroups(string? groups, ApiFile currentFile, NameMangler nameMangler)
         {
             if (groups == null) return Array.Empty<GroupRef>();
 
@@ -957,24 +957,24 @@ namespace GLGenerator.Parsing
             return groupRefs;
         }
 
-        internal static GroupRef GroupRefFromString(string group, APIFile currentFile, NameMangler nameMangler)
+        internal static GroupRef GroupRefFromString(string group, ApiFile currentFile, NameMangler nameMangler)
         {
             string name;
-            APIFile file;
+            ApiFile file;
             if (group.StartsWith("gl::"))
             {
                 name = NameMangler.RemoveStart(group, "gl::");
-                file = APIFile.GL;
+                file = ApiFile.GL;
             }
             else if (group.StartsWith("wgl::"))
             {
                 name = NameMangler.RemoveStart(group, "wgl::");
-                file = APIFile.WGL;
+                file = ApiFile.WGL;
             }
             else if (group.StartsWith("glx::"))
             {
                 name = NameMangler.RemoveStart(group, "glx::");
-                file = APIFile.GLX;
+                file = ApiFile.GLX;
             }
             else
             {

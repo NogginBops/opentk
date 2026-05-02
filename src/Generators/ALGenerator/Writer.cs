@@ -33,17 +33,17 @@ namespace ALGenerator
                 Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) ?? throw new NullReferenceException(),
                 "..", "..", "..", "..", "..", AudioNamespace);
 
-            foreach (Pointers pointers in data.Pointers)
+            foreach (ApiPointers pointers in data.Pointers)
             {
                 FileStrings strings = pointers.File switch
                 {
-                    APIFile.AL => new FileStrings("AL", "AL", "OpenAL", "ALLoader", "ALLoader", "ALGetProcAddress"),
-                    APIFile.ALC => new FileStrings("ALC", "ALC", "OpenAL.ALC", "ALCLoader", "ALLoader", "ALCGetProcAddress"),
+                    ApiFile.AL => new FileStrings("AL", "AL", "OpenAL", "ALLoader", "ALLoader", "ALGetProcAddress"),
+                    ApiFile.ALC => new FileStrings("ALC", "ALC", "OpenAL.ALC", "ALCLoader", "ALLoader", "ALCGetProcAddress"),
                     _ => throw new Exception(),
                 };
 
                 // FIXME: Merge the writing of these function pointers for the relevant namespaces!
-                WriteFunctionPointers(outputProjectPath, strings, pointers.NativeFunctions);
+                WriteFunctionPointers(outputProjectPath, strings, pointers.Functions);
             }
 
             foreach (Namespace @namespace in data.Namespaces)

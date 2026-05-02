@@ -19,7 +19,7 @@ namespace ALGenerator.Parsing
 {
     internal class SpecificationParser
     {
-        internal static Specification Parse(Stream input, NameMangler nameMangler, APIFile currentFile, List<string> ignoreFunctions)
+        internal static Specification Parse(Stream input, NameMangler nameMangler, ApiFile currentFile, List<string> ignoreFunctions)
         {
             XDocument? xdocument = XDocument.Load(input);
 
@@ -32,7 +32,7 @@ namespace ALGenerator.Parsing
             List<Feature>? features = ParseFeatures(xdocument.Root, currentFile);
             List<Extension>? extensions = ParseExtensions(xdocument.Root, currentFile, nameMangler);
 
-            if (currentFile == APIFile.AL)
+            if (currentFile == ApiFile.AL)
             {
                 // Adds AL_EXT_direct_context functions to the functions list
                 // and modifies the AL_EXT_direct_context extensions require tag
@@ -307,7 +307,7 @@ namespace ALGenerator.Parsing
             });
         }
 
-        private static List<Function> ParseCommands(XElement input, NameMangler nameMangler, APIFile currentFile, List<string> ignoreFunctions)
+        private static List<Function> ParseCommands(XElement input, NameMangler nameMangler, ApiFile currentFile, List<string> ignoreFunctions)
         {
             Logger.Info("Begining parsing of commands.");
 
@@ -492,7 +492,7 @@ namespace ALGenerator.Parsing
             else throw new Exception($"Could not parse expression '{expression}'");
         }
 
-        private static BaseCSType ParsePType(XElement t, APIFile currentFile, NameMangler nameMangler, out GroupRef? groupRef)
+        private static BaseCSType ParsePType(XElement t, ApiFile currentFile, NameMangler nameMangler, out GroupRef? groupRef)
         {
             string? group = t.Attribute("group")?.Value;
             if (group != null)
@@ -726,7 +726,7 @@ namespace ALGenerator.Parsing
         }
 
 
-        internal static List<EnumEntry> ParseEnums(XElement input, NameMangler nameMangler, APIFile currentFile)
+        internal static List<EnumEntry> ParseEnums(XElement input, NameMangler nameMangler, ApiFile currentFile)
         {
             Logger.Info("Begining parsing of enums.");
             List<EnumEntry> enumsEntries = new List<EnumEntry>();
@@ -767,8 +767,8 @@ namespace ALGenerator.Parsing
                     {
                         enumApi = currentFile switch
                         {
-                            APIFile.AL => OutputApiFlags.AL,
-                            APIFile.ALC => OutputApiFlags.ALC,
+                            ApiFile.AL => OutputApiFlags.AL,
+                            ApiFile.ALC => OutputApiFlags.ALC,
 
                             _ => throw new Exception(),
                         };
@@ -788,10 +788,10 @@ namespace ALGenerator.Parsing
                     {
                         switch (group.Namespace)
                         {
-                            case APIFile.AL:
+                            case ApiFile.AL:
                                 enumApi |= OutputApiFlags.AL;
                                 break;
-                            case APIFile.ALC:
+                            case ApiFile.ALC:
                                 enumApi |= OutputApiFlags.ALC;
                                 break;
                             default:
@@ -837,7 +837,7 @@ namespace ALGenerator.Parsing
             }
         }
 
-        internal static GroupRef[] ParseGroups(string? groups, APIFile currentFile, NameMangler nameMangler)
+        internal static GroupRef[] ParseGroups(string? groups, ApiFile currentFile, NameMangler nameMangler)
         {
             if (groups == null) return Array.Empty<GroupRef>();
 
@@ -851,19 +851,19 @@ namespace ALGenerator.Parsing
             return groupRefs;
         }
 
-        internal static GroupRef GroupRefFromString(string group, APIFile currentFile, NameMangler nameMangler)
+        internal static GroupRef GroupRefFromString(string group, ApiFile currentFile, NameMangler nameMangler)
         {
             string name;
-            APIFile file;
+            ApiFile file;
             if (group.StartsWith("al::"))
             {
                 name = NameMangler.RemoveStart(group, "al::");
-                file = APIFile.AL;
+                file = ApiFile.AL;
             }
             else if (group.StartsWith("alc::"))
             {
                 name = NameMangler.RemoveStart(group, "alc::");
-                file = APIFile.ALC;
+                file = ApiFile.ALC;
             }
             else
             {
@@ -877,7 +877,7 @@ namespace ALGenerator.Parsing
         }
 
 
-        internal static List<Feature> ParseFeatures(XElement input, APIFile currentFile)
+        internal static List<Feature> ParseFeatures(XElement input, ApiFile currentFile)
         {
             Logger.Info("Begining parsing of features.");
 
@@ -926,7 +926,7 @@ namespace ALGenerator.Parsing
             return features;
         }
 
-        internal static List<Extension> ParseExtensions(XElement input, APIFile currentFile, NameMangler nameMangler)
+        internal static List<Extension> ParseExtensions(XElement input, ApiFile currentFile, NameMangler nameMangler)
         {
             List<Extension> extensions = new List<Extension>();
             XElement? xelement = input.Element("extensions")!;
@@ -1062,13 +1062,13 @@ namespace ALGenerator.Parsing
             };
         }
 
-        internal static ALAPI FileToAPI(APIFile file)
+        internal static ALAPI FileToAPI(ApiFile file)
         {
             switch (file)
             {
-                case APIFile.AL:
+                case ApiFile.AL:
                     return ALAPI.AL;
-                case APIFile.ALC:
+                case ApiFile.ALC:
                     return ALAPI.ALC;
                 default:
                     throw new Exception();

@@ -68,24 +68,24 @@ namespace GLGenerator.Process
 
             foreach (EnumEntry @enum in spec.Enums)
             {
-                foreach ((string originalName, string translatedName, APIFile @namespace) in @enum.Groups)
+                foreach ((string originalName, string translatedName, ApiFile @namespace) in @enum.Groups)
                 {
-                    if (@namespace == APIFile.GL)
+                    if (@namespace == ApiFile.GL)
                     {
                         AddToGroup(allEnumGroups, OutputApi.GL, originalName, translatedName, @enum.IsFlags);
                         AddToGroup(allEnumGroups, OutputApi.GLCompat, originalName, translatedName, @enum.IsFlags);
                         AddToGroup(allEnumGroups, OutputApi.GLES1, originalName, translatedName, @enum.IsFlags);
                         AddToGroup(allEnumGroups, OutputApi.GLES2, originalName, translatedName, @enum.IsFlags);
                     }
-                    else if (@namespace == APIFile.WGL)
+                    else if (@namespace == ApiFile.WGL)
                     {
                         AddToGroup(allEnumGroups, OutputApi.WGL, originalName, translatedName, @enum.IsFlags);
                     }
-                    else if (@namespace == APIFile.GLX)
+                    else if (@namespace == ApiFile.GLX)
                     {
                         AddToGroup(allEnumGroups, OutputApi.GLX, originalName, translatedName, @enum.IsFlags);
                     }
-                    else if (@namespace == APIFile.EGL)
+                    else if (@namespace == ApiFile.EGL)
                     {
                         AddToGroup(allEnumGroups, OutputApi.EGL, originalName, translatedName, @enum.IsFlags);
                     }
@@ -178,14 +178,14 @@ namespace GLGenerator.Process
                 };
 
                 // FIXME: Do we need this here?
-                APIFile file = api switch
+                ApiFile file = api switch
                 {
-                    InputAPI.GL => APIFile.GL,
-                    InputAPI.GLES1 => APIFile.GL,
-                    InputAPI.GLES2 => APIFile.GL,
-                    InputAPI.WGL => APIFile.WGL,
-                    InputAPI.GLX => APIFile.GLX,
-                    InputAPI.EGL => APIFile.EGL,
+                    InputAPI.GL => ApiFile.GL,
+                    InputAPI.GLES1 => ApiFile.GL,
+                    InputAPI.GLES2 => ApiFile.GL,
+                    InputAPI.WGL => ApiFile.WGL,
+                    InputAPI.GLX => ApiFile.GLX,
+                    InputAPI.EGL => ApiFile.EGL,
 
                     _ => throw new Exception(),
                 };
@@ -199,7 +199,7 @@ namespace GLGenerator.Process
                     CrossReferenceEnums(OutputApi.GLCompat, file);
                 }
 
-                void CrossReferenceEnums(OutputApi outAPI, APIFile glFile)
+                void CrossReferenceEnums(OutputApi outAPI, ApiFile glFile)
                 {
                     bool removeFunctions = outAPI switch
                     {
@@ -233,10 +233,10 @@ namespace GLGenerator.Process
                         {
                             foreach (var groupRef in @enum.Groups!)
                             {
-                                APIFile @namespace = groupRef.Namespace;
+                                ApiFile @namespace = groupRef.Namespace;
                                 if (@namespace != glFile)
                                 {
-                                    if (@namespace == APIFile.GL)
+                                    if (@namespace == ApiFile.GL)
                                     {
                                         // FIXME: Cleanup
 
@@ -247,15 +247,15 @@ namespace GLGenerator.Process
                                         AddEnumToAPI(OutputApi.GLES1, @enum);
                                         AddEnumToAPI(OutputApi.GLES2, @enum);
                                     }
-                                    else if (@namespace == APIFile.WGL)
+                                    else if (@namespace == ApiFile.WGL)
                                     {
                                         AddEnumToAPI(OutputApi.WGL, @enum);
                                     }
-                                    else if (@namespace == APIFile.GLX)
+                                    else if (@namespace == ApiFile.GLX)
                                     {
                                         AddEnumToAPI(OutputApi.GLX, @enum);
                                     }
-                                    else if (@namespace == APIFile.EGL)
+                                    else if (@namespace == ApiFile.EGL)
                                     {
                                         AddEnumToAPI(OutputApi.EGL, @enum);
                                     }
@@ -347,14 +347,14 @@ namespace GLGenerator.Process
                 };
 
                 // FIXME: Do we need this here?
-                APIFile file = api switch
+                ApiFile file = api switch
                 {
-                    InputAPI.GL => APIFile.GL,
-                    InputAPI.GLES1 => APIFile.GL,
-                    InputAPI.GLES2 => APIFile.GL,
-                    InputAPI.WGL => APIFile.WGL,
-                    InputAPI.GLX => APIFile.GLX,
-                    InputAPI.EGL => APIFile.EGL,
+                    InputAPI.GL => ApiFile.GL,
+                    InputAPI.GLES1 => ApiFile.GL,
+                    InputAPI.GLES2 => ApiFile.GL,
+                    InputAPI.WGL => ApiFile.WGL,
+                    InputAPI.GLX => ApiFile.GLX,
+                    InputAPI.EGL => ApiFile.EGL,
 
                     _ => throw new Exception(),
                 };
@@ -366,7 +366,7 @@ namespace GLGenerator.Process
                     outputNamespaces.Add(CreateOutputAPI(OutputApi.GLCompat, file));
                 }
 
-                Namespace CreateOutputAPI(OutputApi outAPI, APIFile glFile)
+                Namespace CreateOutputAPI(OutputApi outAPI, ApiFile glFile)
                 {
                     // Function processing
 
@@ -718,15 +718,17 @@ namespace GLGenerator.Process
 
             // FIXME: This requires us to merge all input data!
             // FIXME: Potentially split the GLES function pointers from the GL ones.
-            List<Pointers> pointers = new List<Pointers>();
-            pointers.Add(CreatePointersList(APIFile.GL, outputNamespaces));
-            pointers.Add(CreatePointersList(APIFile.WGL, outputNamespaces));
-            pointers.Add(CreatePointersList(APIFile.GLX, outputNamespaces));
-            pointers.Add(CreatePointersList(APIFile.EGL, outputNamespaces));
+            List<ApiPointers> pointers =
+            [
+                CreatePointersList(ApiFile.GL, outputNamespaces),
+                CreatePointersList(ApiFile.WGL, outputNamespaces),
+                CreatePointersList(ApiFile.GLX, outputNamespaces),
+                CreatePointersList(ApiFile.EGL, outputNamespaces),
+            ];
 
             return new OutputData(pointers, outputNamespaces);
 
-            Pointers CreatePointersList(APIFile file, List<Namespace> namespaces)
+            ApiPointers CreatePointersList(ApiFile file, List<Namespace> namespaces)
             {
                 SortedList<string, Function> allFunctions = new SortedList<string, Function>();
                 foreach (Namespace @namespace in namespaces)
@@ -734,7 +736,7 @@ namespace GLGenerator.Process
                     bool addFunctions = false;
                     switch (file)
                     {
-                        case APIFile.GL:
+                        case ApiFile.GL:
                             if (@namespace.Name == OutputApi.GL ||
                                 @namespace.Name == OutputApi.GLCompat ||
                                 @namespace.Name == OutputApi.GLES1 ||
@@ -743,19 +745,19 @@ namespace GLGenerator.Process
                                 addFunctions = true;
                             }
                             break;
-                        case APIFile.WGL:
+                        case ApiFile.WGL:
                             if (@namespace.Name == OutputApi.WGL)
                             {
                                 addFunctions = true;
                             }
                             break;
-                        case APIFile.GLX:
+                        case ApiFile.GLX:
                             if (@namespace.Name == OutputApi.GLX)
                             {
                                 addFunctions = true;
                             }
                             break;
-                        case APIFile.EGL:
+                        case ApiFile.EGL:
                             if (@namespace.Name == OutputApi.EGL)
                             {
                                 addFunctions = true;
@@ -778,7 +780,7 @@ namespace GLGenerator.Process
                     }
                 }
 
-                return new Pointers(file, allFunctions.Values.ToList());
+                return new ApiPointers(file, allFunctions.Values.ToList());
             }
         }
 

@@ -20,7 +20,7 @@ namespace ALGenerator.Process
         Namespace GLX,
         */
 
-        List<Pointers> Pointers,
+        List<ApiPointers> Pointers,
         List<Namespace> Namespaces,
         Dictionary<string, EnumMemberDocumentation> EnumMemberDocumentation);
 
@@ -30,10 +30,6 @@ namespace ALGenerator.Process
         List<VendorFunctions> VendorFunctions,
         List<EnumType> EnumGroups,
         Dictionary<Function, FunctionDocumentation> FunctionDocumentation);
-
-    internal record Pointers(
-        APIFile File,
-        List<Function> NativeFunctions);
 
     internal record FunctionDocumentation(
         string Name,

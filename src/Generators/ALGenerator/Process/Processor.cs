@@ -65,14 +65,14 @@ namespace ALGenerator.Process
 
             foreach (EnumEntry @enum in spec.Enums)
             {
-                foreach ((string originalName, string translatedName, APIFile @namespace) in @enum.Groups)
+                foreach ((string originalName, string translatedName, ApiFile @namespace) in @enum.Groups)
                 {
                     switch (@namespace)
                     {
-                        case APIFile.AL:
+                        case ApiFile.AL:
                             AddToGroup(allEnumGroups, OutputApi.AL, originalName, translatedName, @enum.IsFlags);
                             break;
-                        case APIFile.ALC:
+                        case ApiFile.ALC:
                             AddToGroup(allEnumGroups, OutputApi.ALC, originalName, translatedName, @enum.IsFlags);
                             break;
                         default:
@@ -137,10 +137,10 @@ namespace ALGenerator.Process
                 };
 
                 // FIXME: Do we need this here?
-                APIFile file = api switch
+                ApiFile file = api switch
                 {
-                    InputAPI.AL => APIFile.AL,
-                    InputAPI.ALC => APIFile.ALC,
+                    InputAPI.AL => ApiFile.AL,
+                    InputAPI.ALC => ApiFile.ALC,
 
                     _ => throw new Exception(),
                 };
@@ -177,15 +177,15 @@ namespace ALGenerator.Process
                     {
                         foreach (var groupRef in @enum.Groups!)
                         {
-                            APIFile @namespace = groupRef.Namespace;
+                            ApiFile @namespace = groupRef.Namespace;
                             if (@namespace != file)
                             {
                                 switch (@namespace)
                                 {
-                                    case APIFile.AL:
+                                    case ApiFile.AL:
                                         AddEnumToAPI(OutputApi.AL, @enum);
                                         break;
-                                    case APIFile.ALC:
+                                    case ApiFile.ALC:
                                         AddEnumToAPI(OutputApi.ALC, @enum);
                                         break;
                                     default:
@@ -268,17 +268,17 @@ namespace ALGenerator.Process
                 };
 
                 // FIXME: Do we need this here?
-                APIFile file = api switch
+                ApiFile file = api switch
                 {
-                    InputAPI.AL => APIFile.AL,
-                    InputAPI.ALC => APIFile.ALC,
+                    InputAPI.AL => ApiFile.AL,
+                    InputAPI.ALC => ApiFile.ALC,
 
                     _ => throw new Exception(),
                 };
 
                 outputNamespaces.Add(CreateOutputAPI(outAPI, file));
 
-                Namespace CreateOutputAPI(OutputApi outAPI, APIFile alFile)
+                Namespace CreateOutputAPI(OutputApi outAPI, ApiFile alFile)
                 {
                     // Function processing
 
@@ -650,13 +650,15 @@ namespace ALGenerator.Process
             }
 
             // FIXME: This requires us to merge all input data!
-            List<Pointers> pointers = new List<Pointers>();
-            pointers.Add(CreatePointersList(APIFile.AL, outputNamespaces));
-            pointers.Add(CreatePointersList(APIFile.ALC, outputNamespaces));
+            List<ApiPointers> pointers =
+            [
+                CreatePointersList(ApiFile.AL, outputNamespaces),
+                CreatePointersList(ApiFile.ALC, outputNamespaces),
+            ];
 
             return new OutputData(pointers, outputNamespaces, docs.EnumDocs);
 
-            Pointers CreatePointersList(APIFile file, List<Namespace> namespaces)
+            ApiPointers CreatePointersList(ApiFile file, List<Namespace> namespaces)
             {
                 SortedList<string, Function> allFunctions = new SortedList<string, Function>();
                 foreach (Namespace @namespace in namespaces)
@@ -664,13 +666,13 @@ namespace ALGenerator.Process
                     bool addFunctions = false;
                     switch (file)
                     {
-                        case APIFile.AL:
+                        case ApiFile.AL:
                             if (@namespace.Name == OutputApi.AL)
                             {
                                 addFunctions = true;
                             }
                             break;
-                        case APIFile.ALC:
+                        case ApiFile.ALC:
                             if (@namespace.Name == OutputApi.ALC)
                             {
                                 addFunctions = true;
@@ -695,7 +697,7 @@ namespace ALGenerator.Process
                     }
                 }
 
-                return new Pointers(file, allFunctions.Values.ToList());
+                return new ApiPointers(file, allFunctions.Values.ToList());
             }
         }
 
