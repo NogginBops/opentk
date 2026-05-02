@@ -13,7 +13,7 @@ namespace ALGenerator.Process
 {
     internal static class Processor
     {
-        internal record OverloadedFunction(
+        internal record FunctionData(
             Function NativeFunction,
             CommandDocumentation? Documentation,
             Overload[] Overloads,
@@ -45,11 +45,11 @@ namespace ALGenerator.Process
         internal static OutputData ProcessSpec(Specification spec, Documentation docs)
         {
             // The first thing we do is process all of the vendorFunctions defined into a dictionary of Functions.
-            Dictionary<string, OverloadedFunction> allFunctions = new Dictionary<string, OverloadedFunction>(spec.Functions.Count);
+            Dictionary<string, FunctionData> allFunctions = new Dictionary<string, FunctionData>(spec.Functions.Count);
             foreach (Function nativeFunction in spec.Functions)
             {
                 CommandDocumentation? functionDocumentation = MakeDocumentationForNativeFunction(nativeFunction, docs);
-                OverloadedFunction overloadedFunction = GenerateOverloads(nativeFunction, functionDocumentation);
+                FunctionData overloadedFunction = GenerateOverloads(nativeFunction, functionDocumentation);
 
                 allFunctions.Add(nativeFunction.EntryPoint, overloadedFunction);
             }
@@ -290,10 +290,10 @@ namespace ALGenerator.Process
                     };
 
                     HashSet<GroupRef> groupsReferencedByFunctions = new HashSet<GroupRef>();
-                    Dictionary<string, HashSet<OverloadedFunction>> functionsByVendor = new Dictionary<string, HashSet<OverloadedFunction>>();
+                    Dictionary<string, HashSet<FunctionData>> functionsByVendor = new Dictionary<string, HashSet<FunctionData>>();
                     foreach (var functionRef in functions)
                     {
-                        if (allFunctions.TryGetValue(functionRef.EntryPoint, out OverloadedFunction? overloadedFunction))
+                        if (allFunctions.TryGetValue(functionRef.EntryPoint, out FunctionData? overloadedFunction))
                         {
                             bool referenced = false;
 
@@ -346,11 +346,11 @@ namespace ALGenerator.Process
                         {
                             if (!vendors.TryGetValue(vendor, out VendorFunctions? group))
                             {
-                                group = new VendorFunctions(vendor, new List<Process.OverloadedFunction>(), new HashSet<Function>());
+                                group = new VendorFunctions(vendor, new List<OverloadedFunction>(), new HashSet<Function>());
                                 vendors.Add(vendor, group);
                             }
 
-                            group.Functions.Add(new Process.OverloadedFunction(function.NativeFunction, function.Overloads));
+                            group.Functions.Add(new OverloadedFunction() { NativeFunction = function.NativeFunction, Overloads = function.Overloads });
 
                             if (function.ChangeNativeName)
                             {
@@ -727,7 +727,7 @@ namespace ALGenerator.Process
             ];
 
         // Maybe we can do the return type overloading in a post processing step?
-        internal static OverloadedFunction GenerateOverloads(Function nativeFunction, CommandDocumentation? functionDocumentation)
+        internal static FunctionData GenerateOverloads(Function nativeFunction, CommandDocumentation? functionDocumentation)
         {
             List<Overload> overloads = new List<Overload>
             {
@@ -767,7 +767,7 @@ namespace ALGenerator.Process
                 }
             }
 
-            return new OverloadedFunction(nativeFunction, functionDocumentation, overloadArray, changeNativeName);
+            return new FunctionData(nativeFunction, functionDocumentation, overloadArray, changeNativeName);
 
             static bool AreSignaturesDifferent(Function nativeFunction, Overload overload)
             {
