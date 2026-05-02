@@ -156,7 +156,7 @@ namespace GeneratorBase
     }
 
     // Vulkan
-    public record RequireEnum(string Name, int? Value, string Extends, string? Alias, string? Comment);
+    public record RequireEnum(string Name, ulong? Value, string Extends, string? Alias, string? Comment);
 
     public record CommandRef(string Name);
     public record EnumRef(string Name);

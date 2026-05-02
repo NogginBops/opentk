@@ -198,9 +198,9 @@ namespace OpenTK.Graphics.Vulkan
         /// <summary>[requires: <b>VK_KHR_synchronization2</b>] read access flag for reading conditional rendering predicate</summary>
         Access2ConditionalRenderingReadBitExt = 1048576,
         /// <summary>[requires: <b>VK_ARM_data_graph</b>] </summary>
-        Access2DataGraphReadBitArm = 32768,
+        Access2DataGraphReadBitArm = 140737488355328,
         /// <summary>[requires: <b>VK_ARM_data_graph</b>] </summary>
-        Access2DataGraphWriteBitArm = 65536,
+        Access2DataGraphWriteBitArm = 281474976710656,
         /// <summary>[requires: <b>v1.3</b>] </summary>
         Access2DepthStencilAttachmentReadBit = 512,
         /// <summary>[requires: <b>VK_KHR_synchronization2</b>] </summary>
@@ -210,7 +210,7 @@ namespace OpenTK.Graphics.Vulkan
         /// <summary>[requires: <b>VK_KHR_synchronization2</b>] </summary>
         Access2DepthStencilAttachmentWriteBitKhr = 1024,
         /// <summary>[requires: <b>VK_EXT_descriptor_buffer</b>] </summary>
-        Access2DescriptorBufferReadBitExt = 512,
+        Access2DescriptorBufferReadBitExt = 2199023255552,
         /// <summary>[requires: <b>VK_KHR_synchronization2</b>] </summary>
         Access2FragmentDensityMapReadBitExt = 16777216,
         /// <summary>[requires: <b>VK_KHR_synchronization2</b>] </summary>
@@ -236,11 +236,11 @@ namespace OpenTK.Graphics.Vulkan
         /// <summary>[requires: <b>VK_KHR_synchronization2</b>] </summary>
         Access2InputAttachmentReadBitKhr = 16,
         /// <summary>[requires: <b>VK_HUAWEI_invocation_mask</b>] </summary>
-        Access2InvocationMaskReadBitHuawei = 128,
+        Access2InvocationMaskReadBitHuawei = 549755813888,
         /// <summary>[requires: <b>VK_EXT_memory_decompression</b>] </summary>
-        Access2MemoryDecompressionReadBitExt = 8388608,
+        Access2MemoryDecompressionReadBitExt = 36028797018963968,
         /// <summary>[requires: <b>VK_EXT_memory_decompression</b>] </summary>
-        Access2MemoryDecompressionWriteBitExt = 16777216,
+        Access2MemoryDecompressionWriteBitExt = 72057594037927936,
         /// <summary>[requires: <b>v1.3</b>] </summary>
         Access2MemoryReadBit = 32768,
         /// <summary>[requires: <b>VK_KHR_synchronization2</b>] </summary>
@@ -250,23 +250,23 @@ namespace OpenTK.Graphics.Vulkan
         /// <summary>[requires: <b>VK_KHR_synchronization2</b>] </summary>
         Access2MemoryWriteBitKhr = 65536,
         /// <summary>[requires: <b>VK_EXT_opacity_micromap</b>] </summary>
-        Access2MicromapReadBitExt = 4096,
+        Access2MicromapReadBitExt = 17592186044416,
         /// <summary>[requires: <b>VK_EXT_opacity_micromap</b>] </summary>
-        Access2MicromapWriteBitExt = 8192,
+        Access2MicromapWriteBitExt = 35184372088832,
         /// <summary>[requires: <b>v1.3</b>] </summary>
         Access2None = 0,
         /// <summary>[requires: <b>VK_KHR_synchronization2</b>] </summary>
         Access2NoneKhr = 0,
         /// <summary>[requires: <b>VK_NV_optical_flow</b>] </summary>
-        Access2OpticalFlowReadBitNv = 1024,
+        Access2OpticalFlowReadBitNv = 4398046511104,
         /// <summary>[requires: <b>VK_NV_optical_flow</b>] </summary>
-        Access2OpticalFlowWriteBitNv = 2048,
+        Access2OpticalFlowWriteBitNv = 8796093022208,
         /// <summary>[requires: <b>VK_EXT_descriptor_heap</b>] </summary>
-        Access2ResourceHeapReadBitExt = 67108864,
+        Access2ResourceHeapReadBitExt = 288230376151711744,
         /// <summary>[requires: <b>VK_EXT_descriptor_heap</b>] </summary>
-        Access2SamplerHeapReadBitExt = 33554432,
+        Access2SamplerHeapReadBitExt = 144115188075855872,
         /// <summary>[requires: <b>VK_KHR_ray_tracing_maintenance1</b>] </summary>
-        Access2ShaderBindingTableReadBitKhr = 256,
+        Access2ShaderBindingTableReadBitKhr = 1099511627776,
         /// <summary>[requires: <b>v1.3</b>] </summary>
         Access2ShaderReadBit = 32,
         /// <summary>[requires: <b>VK_KHR_synchronization2</b>] </summary>
@@ -284,9 +284,9 @@ namespace OpenTK.Graphics.Vulkan
         /// <summary>[requires: <b>VK_KHR_synchronization2</b>] </summary>
         Access2ShaderStorageWriteBitKhr = 17179869184,
         /// <summary>[requires: <b>VK_QCOM_tile_shading</b>] </summary>
-        Access2ShaderTileAttachmentReadBitQcom = 524288,
+        Access2ShaderTileAttachmentReadBitQcom = 2251799813685248,
         /// <summary>[requires: <b>VK_QCOM_tile_shading</b>] </summary>
-        Access2ShaderTileAttachmentWriteBitQcom = 1048576,
+        Access2ShaderTileAttachmentWriteBitQcom = 4503599627370496,
         /// <summary>[requires: <b>v1.3</b>] </summary>
         Access2ShaderWriteBit = 64,
         /// <summary>[requires: <b>VK_KHR_synchronization2</b>] </summary>
@@ -316,13 +316,13 @@ namespace OpenTK.Graphics.Vulkan
         /// <summary>[requires: <b>VK_KHR_synchronization2</b>] </summary>
         Access2VertexAttributeReadBitKhr = 4,
         /// <summary>[requires: <b>VK_KHR_video_decode_queue</b>] </summary>
-        Access2VideoDecodeReadBitKhr = 8,
+        Access2VideoDecodeReadBitKhr = 34359738368,
         /// <summary>[requires: <b>VK_KHR_video_decode_queue</b>] </summary>
-        Access2VideoDecodeWriteBitKhr = 16,
+        Access2VideoDecodeWriteBitKhr = 68719476736,
         /// <summary>[requires: <b>VK_KHR_video_encode_queue</b>] </summary>
-        Access2VideoEncodeReadBitKhr = 32,
+        Access2VideoEncodeReadBitKhr = 137438953472,
         /// <summary>[requires: <b>VK_KHR_video_encode_queue</b>] </summary>
-        Access2VideoEncodeWriteBitKhr = 64,
+        Access2VideoEncodeWriteBitKhr = 274877906944,
     }
     /// <summary><b>[requires: VK_KHR_maintenance8]</b> </summary>
     /// <remarks><see href="https://registry.khronos.org/vulkan/specs/latest/man/html/VkAccessFlagBits3KHR.html" /></remarks>
@@ -745,7 +745,7 @@ namespace OpenTK.Graphics.Vulkan
         /// <summary>[requires: <b>VK_KHR_maintenance5</b>] </summary>
         BufferUsage2AccelerationStructureStorageBitKhr = 1048576,
         /// <summary>[requires: <b>VK_AMDX_dense_geometry_format</b>] </summary>
-        BufferUsage2CompressedDataDgf1BitAmdx = 2,
+        BufferUsage2CompressedDataDgf1BitAmdx = 8589934592,
         /// <summary>[requires: <b>VK_KHR_maintenance5</b>] </summary>
         BufferUsage2ConditionalRenderingBitExt = 512,
         /// <summary>[requires: <b>VK_ARM_data_graph</b>] </summary>
@@ -763,13 +763,13 @@ namespace OpenTK.Graphics.Vulkan
         /// <summary>[requires: <b>VK_KHR_maintenance5</b>] </summary>
         BufferUsage2IndirectBufferBitKhr = 256,
         /// <summary>[requires: <b>VK_EXT_memory_decompression</b>] </summary>
-        BufferUsage2MemoryDecompressionBitExt = 1,
+        BufferUsage2MemoryDecompressionBitExt = 4294967296,
         /// <summary>[requires: <b>VK_KHR_maintenance5</b>] </summary>
         BufferUsage2MicromapBuildInputReadOnlyBitExt = 8388608,
         /// <summary>[requires: <b>VK_KHR_maintenance5</b>] </summary>
         BufferUsage2MicromapStorageBitExt = 16777216,
         /// <summary>[requires: <b>VK_EXT_device_generated_commands</b>] </summary>
-        BufferUsage2PreprocessBufferBitExt = 18446744071562067968,
+        BufferUsage2PreprocessBufferBitExt = 2147483648,
         /// <summary>[requires: <b>VK_KHR_maintenance5</b>] </summary>
         BufferUsage2PushDescriptorsDescriptorBufferBitExt = 67108864,
         /// <summary>[requires: <b>VK_KHR_maintenance5</b>] </summary>
@@ -3611,7 +3611,7 @@ namespace OpenTK.Graphics.Vulkan
     public enum VkFormatFeatureFlagBits2 : ulong
     {
         /// <summary>[requires: <b>VK_NV_ray_tracing_linear_swept_spheres</b>] </summary>
-        FormatFeature2AccelerationStructureRadiusBufferBitNv = 524288,
+        FormatFeature2AccelerationStructureRadiusBufferBitNv = 2251799813685248,
         /// <summary>[requires: <b>VK_KHR_acceleration_structure</b>] </summary>
         FormatFeature2AccelerationStructureVertexBufferBitKhr = 536870912,
         /// <summary>[requires: <b>v1.3</b>] </summary>
@@ -3623,9 +3623,9 @@ namespace OpenTK.Graphics.Vulkan
         /// <summary>[requires: <b>VK_KHR_format_feature_flags2</b>] </summary>
         FormatFeature2BlitSrcBitKhr = 1024,
         /// <summary>[requires: <b>VK_QCOM_image_processing</b>] </summary>
-        FormatFeature2BlockMatchingBitQcom = 16,
+        FormatFeature2BlockMatchingBitQcom = 68719476736,
         /// <summary>[requires: <b>VK_QCOM_image_processing</b>] </summary>
-        FormatFeature2BoxFilterSampledBitQcom = 32,
+        FormatFeature2BoxFilterSampledBitQcom = 137438953472,
         /// <summary>[requires: <b>v1.3</b>] </summary>
         FormatFeature2ColorAttachmentBit = 128,
         /// <summary>[requires: <b>VK_KHR_format_feature_flags2</b>] </summary>
@@ -3635,21 +3635,21 @@ namespace OpenTK.Graphics.Vulkan
         /// <summary>[requires: <b>VK_KHR_format_feature_flags2</b>] </summary>
         FormatFeature2ColorAttachmentBlendBitKhr = 256,
         /// <summary>[requires: <b>VK_KHR_copy_memory_indirect</b>] </summary>
-        FormatFeature2CopyImageIndirectDstBitKhr = 134217728,
+        FormatFeature2CopyImageIndirectDstBitKhr = 576460752303423488,
         /// <summary>[requires: <b>v1.3</b>] </summary>
         FormatFeature2CositedChromaSamplesBit = 8388608,
         /// <summary>[requires: <b>VK_KHR_format_feature_flags2</b>] </summary>
         FormatFeature2CositedChromaSamplesBitKhr = 8388608,
         /// <summary>[requires: <b>VK_ARM_data_graph_optical_flow</b>] </summary>
-        FormatFeature2DataGraphOpticalFlowCostBitArm = 67108864,
+        FormatFeature2DataGraphOpticalFlowCostBitArm = 288230376151711744,
         /// <summary>[requires: <b>VK_ARM_data_graph_optical_flow</b>] </summary>
-        FormatFeature2DataGraphOpticalFlowImageBitArm = 16777216,
+        FormatFeature2DataGraphOpticalFlowImageBitArm = 72057594037927936,
         /// <summary>[requires: <b>VK_ARM_data_graph_optical_flow</b>] </summary>
-        FormatFeature2DataGraphOpticalFlowVectorBitArm = 33554432,
+        FormatFeature2DataGraphOpticalFlowVectorBitArm = 144115188075855872,
         /// <summary>[requires: <b>VK_KHR_maintenance10</b>] </summary>
-        FormatFeature2DepthCopyOnComputeQueueBitKhr = 1048576,
+        FormatFeature2DepthCopyOnComputeQueueBitKhr = 4503599627370496,
         /// <summary>[requires: <b>VK_KHR_maintenance10</b>] </summary>
-        FormatFeature2DepthCopyOnTransferQueueBitKhr = 2097152,
+        FormatFeature2DepthCopyOnTransferQueueBitKhr = 9007199254740992,
         /// <summary>[requires: <b>v1.3</b>] </summary>
         FormatFeature2DepthStencilAttachmentBit = 512,
         /// <summary>[requires: <b>VK_KHR_format_feature_flags2</b>] </summary>
@@ -3663,21 +3663,21 @@ namespace OpenTK.Graphics.Vulkan
         /// <summary>[requires: <b>VK_KHR_fragment_shading_rate</b>] </summary>
         FormatFeature2FragmentShadingRateAttachmentBitKhr = 1073741824,
         /// <summary>[requires: <b>v1.4</b>] </summary>
-        FormatFeature2HostImageTransferBit = 16384,
+        FormatFeature2HostImageTransferBit = 70368744177664,
         /// <summary>[requires: <b>VK_EXT_host_image_copy</b>] Host image copies are supported</summary>
-        FormatFeature2HostImageTransferBitExt = 16384,
+        FormatFeature2HostImageTransferBitExt = 70368744177664,
         /// <summary>[requires: <b>VK_NV_linear_color_attachment</b>] Format support linear image as render target, it cannot be mixed with non linear attachment</summary>
-        FormatFeature2LinearColorAttachmentBitNv = 64,
+        FormatFeature2LinearColorAttachmentBitNv = 274877906944,
         /// <summary>[requires: <b>v1.3</b>] </summary>
         FormatFeature2MidpointChromaSamplesBit = 131072,
         /// <summary>[requires: <b>VK_KHR_format_feature_flags2</b>] </summary>
         FormatFeature2MidpointChromaSamplesBitKhr = 131072,
         /// <summary>[requires: <b>VK_NV_optical_flow</b>] </summary>
-        FormatFeature2OpticalFlowCostBitNv = 1024,
+        FormatFeature2OpticalFlowCostBitNv = 4398046511104,
         /// <summary>[requires: <b>VK_NV_optical_flow</b>] </summary>
-        FormatFeature2OpticalFlowImageBitNv = 256,
+        FormatFeature2OpticalFlowImageBitNv = 1099511627776,
         /// <summary>[requires: <b>VK_NV_optical_flow</b>] </summary>
-        FormatFeature2OpticalFlowVectorBitNv = 512,
+        FormatFeature2OpticalFlowVectorBitNv = 2199023255552,
         /// <summary>[requires: <b>v1.3</b>] </summary>
         FormatFeature2SampledImageBit = 1,
         /// <summary>[requires: <b>VK_KHR_format_feature_flags2</b>] </summary>
@@ -3715,9 +3715,9 @@ namespace OpenTK.Graphics.Vulkan
         /// <summary>[requires: <b>VK_KHR_format_feature_flags2</b>] </summary>
         FormatFeature2SampledImageYcbcrConversionSeparateReconstructionFilterBitKhr = 524288,
         /// <summary>[requires: <b>VK_KHR_maintenance10</b>] </summary>
-        FormatFeature2StencilCopyOnComputeQueueBitKhr = 4194304,
+        FormatFeature2StencilCopyOnComputeQueueBitKhr = 18014398509481984,
         /// <summary>[requires: <b>VK_KHR_maintenance10</b>] </summary>
-        FormatFeature2StencilCopyOnTransferQueueBitKhr = 8388608,
+        FormatFeature2StencilCopyOnTransferQueueBitKhr = 36028797018963968,
         /// <summary>[requires: <b>v1.3</b>] </summary>
         FormatFeature2StorageImageAtomicBit = 4,
         /// <summary>[requires: <b>VK_KHR_format_feature_flags2</b>] </summary>
@@ -3743,11 +3743,11 @@ namespace OpenTK.Graphics.Vulkan
         /// <summary>[requires: <b>VK_KHR_format_feature_flags2</b>] </summary>
         FormatFeature2StorageWriteWithoutFormatBitKhr = 4294967296,
         /// <summary>[requires: <b>VK_ARM_data_graph</b>] </summary>
-        FormatFeature2TensorDataGraphBitArm = 65536,
+        FormatFeature2TensorDataGraphBitArm = 281474976710656,
         /// <summary>[requires: <b>VK_ARM_tensors</b>] </summary>
-        FormatFeature2TensorImageAliasingBitArm = 2048,
+        FormatFeature2TensorImageAliasingBitArm = 8796093022208,
         /// <summary>[requires: <b>VK_ARM_tensors</b>] </summary>
-        FormatFeature2TensorShaderBitArm = 128,
+        FormatFeature2TensorShaderBitArm = 549755813888,
         /// <summary>[requires: <b>v1.3</b>] </summary>
         FormatFeature2TransferDstBit = 32768,
         /// <summary>[requires: <b>VK_KHR_format_feature_flags2</b>] </summary>
@@ -3771,15 +3771,15 @@ namespace OpenTK.Graphics.Vulkan
         /// <summary>[requires: <b>VK_KHR_video_encode_queue</b>] </summary>
         FormatFeature2VideoEncodeDpbBitKhr = 268435456,
         /// <summary>[requires: <b>VK_KHR_video_encode_quantization_map</b>] </summary>
-        FormatFeature2VideoEncodeEmphasisMapBitKhr = 262144,
+        FormatFeature2VideoEncodeEmphasisMapBitKhr = 1125899906842624,
         /// <summary>[requires: <b>VK_KHR_video_encode_queue</b>] </summary>
         FormatFeature2VideoEncodeInputBitKhr = 134217728,
         /// <summary>[requires: <b>VK_KHR_video_encode_quantization_map</b>] </summary>
-        FormatFeature2VideoEncodeQuantizationDeltaMapBitKhr = 131072,
+        FormatFeature2VideoEncodeQuantizationDeltaMapBitKhr = 562949953421312,
         /// <summary>[requires: <b>VK_QCOM_image_processing</b>] </summary>
-        FormatFeature2WeightImageBitQcom = 4,
+        FormatFeature2WeightImageBitQcom = 17179869184,
         /// <summary>[requires: <b>VK_QCOM_image_processing</b>] </summary>
-        FormatFeature2WeightSampledImageBitQcom = 8,
+        FormatFeature2WeightSampledImageBitQcom = 34359738368,
     }
     /// <summary><b>[requires: VK_KHR_format_feature_flags2]</b> </summary>
     /// <remarks><see href="https://registry.khronos.org/vulkan/specs/latest/man/html/VkFormatFeatureFlags2KHR.html" /></remarks>
@@ -5544,13 +5544,13 @@ namespace OpenTK.Graphics.Vulkan
     public enum VkPipelineCreateFlagBits2 : ulong
     {
         /// <summary>[requires: <b>VK_EXT_shader_64bit_indexing</b>] </summary>
-        PipelineCreate264BitIndexingBitExt = 2048,
+        PipelineCreate264BitIndexingBitExt = 8796093022208,
         /// <summary>[requires: <b>v1.4</b>] </summary>
         PipelineCreate2AllowDerivativesBit = 2,
         /// <summary>[requires: <b>VK_KHR_maintenance5</b>] </summary>
         PipelineCreate2AllowDerivativesBitKhr = 2,
         /// <summary>[requires: <b>VK_KHR_pipeline_binary</b>] </summary>
-        PipelineCreate2CaptureDataBitKhr = 18446744071562067968,
+        PipelineCreate2CaptureDataBitKhr = 2147483648,
         /// <summary>[requires: <b>VK_KHR_maintenance5</b>] </summary>
         PipelineCreate2CaptureInternalRepresentationsBitKhr = 128,
         /// <summary>[requires: <b>VK_KHR_maintenance5</b>] </summary>
@@ -5568,13 +5568,13 @@ namespace OpenTK.Graphics.Vulkan
         /// <summary>[requires: <b>VK_KHR_maintenance5</b>] </summary>
         PipelineCreate2DescriptorBufferBitExt = 536870912,
         /// <summary>[requires: <b>VK_EXT_descriptor_heap</b>] </summary>
-        PipelineCreate2DescriptorHeapBitExt = 16,
+        PipelineCreate2DescriptorHeapBitExt = 68719476736,
         /// <summary>[requires: <b>v1.4</b>] </summary>
         PipelineCreate2DisableOptimizationBit = 1,
         /// <summary>[requires: <b>VK_KHR_maintenance5</b>] </summary>
         PipelineCreate2DisableOptimizationBitKhr = 1,
         /// <summary>[requires: <b>VK_KHR_maintenance5 | VK_ARM_pipeline_opacity_micromap</b>] </summary>
-        PipelineCreate2DisallowOpacityMicromapBitArm = 32,
+        PipelineCreate2DisallowOpacityMicromapBitArm = 137438953472,
         /// <summary>[requires: <b>v1.4</b>] </summary>
         PipelineCreate2DispatchBaseBit = 16,
         /// <summary>[requires: <b>VK_KHR_maintenance5</b>] </summary>
@@ -5584,19 +5584,19 @@ namespace OpenTK.Graphics.Vulkan
         /// <summary>[requires: <b>VK_KHR_maintenance5</b>] </summary>
         PipelineCreate2EarlyReturnOnFailureBitKhr = 512,
         /// <summary>[requires: <b>VK_EXT_legacy_dithering</b>] </summary>
-        PipelineCreate2EnableLegacyDitheringBitExt = 4,
+        PipelineCreate2EnableLegacyDitheringBitExt = 17179869184,
         /// <summary>[requires: <b>VK_AMDX_shader_enqueue</b>] </summary>
-        PipelineCreate2ExecutionGraphBitAmdx = 1,
+        PipelineCreate2ExecutionGraphBitAmdx = 4294967296,
         /// <summary>[requires: <b>v1.4</b>] </summary>
         PipelineCreate2FailOnPipelineCompileRequiredBit = 256,
         /// <summary>[requires: <b>VK_KHR_maintenance5</b>] </summary>
         PipelineCreate2FailOnPipelineCompileRequiredBitKhr = 256,
         /// <summary>[requires: <b>VK_EXT_device_generated_commands</b>] </summary>
-        PipelineCreate2IndirectBindableBitExt = 64,
+        PipelineCreate2IndirectBindableBitExt = 274877906944,
         /// <summary>[requires: <b>VK_KHR_maintenance5</b>] </summary>
         PipelineCreate2IndirectBindableBitNv = 262144,
         /// <summary>[requires: <b>VK_KHR_maintenance5 | VK_ARM_shader_instrumentation</b>] </summary>
-        PipelineCreate2InstrumentShadersBitArm = 128,
+        PipelineCreate2InstrumentShadersBitArm = 549755813888,
         /// <summary>[requires: <b>VK_KHR_maintenance5</b>] </summary>
         PipelineCreate2LibraryBitKhr = 2048,
         /// <summary>[requires: <b>VK_KHR_maintenance5</b>] </summary>
@@ -5606,7 +5606,7 @@ namespace OpenTK.Graphics.Vulkan
         /// <summary>[requires: <b>VK_KHR_maintenance5</b>] </summary>
         PipelineCreate2NoProtectedAccessBitExt = 134217728,
         /// <summary>[requires: <b>VK_VALVE_fragment_density_map_layered</b>] </summary>
-        PipelineCreate2PerLayerFragmentDensityBitValve = 256,
+        PipelineCreate2PerLayerFragmentDensityBitValve = 1099511627776,
         /// <summary>[requires: <b>v1.4</b>] </summary>
         PipelineCreate2ProtectedAccessOnlyBit = 1073741824,
         /// <summary>[requires: <b>VK_KHR_maintenance5</b>] </summary>
@@ -5614,7 +5614,7 @@ namespace OpenTK.Graphics.Vulkan
         /// <summary>[requires: <b>VK_KHR_maintenance5</b>] </summary>
         PipelineCreate2RayTracingAllowMotionBitNv = 1048576,
         /// <summary>[requires: <b>VK_NV_ray_tracing_linear_swept_spheres</b>] </summary>
-        PipelineCreate2RayTracingAllowSpheresAndLinearSweptSpheresBitNv = 2,
+        PipelineCreate2RayTracingAllowSpheresAndLinearSweptSpheresBitNv = 8589934592,
         /// <summary>[requires: <b>VK_KHR_maintenance5</b>] </summary>
         PipelineCreate2RayTracingDisplacementMicromapBitNv = 268435456,
         /// <summary>[requires: <b>VK_KHR_maintenance5</b>] </summary>
@@ -5939,7 +5939,7 @@ namespace OpenTK.Graphics.Vulkan
         /// <summary>[requires: <b>VK_KHR_synchronization2</b>] </summary>
         PipelineStage2ClearBitKhr = 34359738368,
         /// <summary>[requires: <b>VK_HUAWEI_cluster_culling_shader</b>] </summary>
-        PipelineStage2ClusterCullingShaderBitHuawei = 512,
+        PipelineStage2ClusterCullingShaderBitHuawei = 2199023255552,
         /// <summary>[requires: <b>v1.3</b>] </summary>
         PipelineStage2ColorAttachmentOutputBit = 1024,
         /// <summary>[requires: <b>VK_KHR_synchronization2</b>] </summary>
@@ -5955,15 +5955,15 @@ namespace OpenTK.Graphics.Vulkan
         /// <summary>[requires: <b>VK_KHR_synchronization2</b>] A pipeline stage for conditional rendering predicate fetch</summary>
         PipelineStage2ConditionalRenderingBitExt = 262144,
         /// <summary>[requires: <b>VK_NV_cooperative_vector</b>] </summary>
-        PipelineStage2ConvertCooperativeVectorMatrixBitNv = 4096,
+        PipelineStage2ConvertCooperativeVectorMatrixBitNv = 17592186044416,
         /// <summary>[requires: <b>v1.3</b>] </summary>
         PipelineStage2CopyBit = 4294967296,
         /// <summary>[requires: <b>VK_KHR_synchronization2</b>] </summary>
         PipelineStage2CopyBitKhr = 4294967296,
         /// <summary>[requires: <b>VK_KHR_copy_memory_indirect</b>] </summary>
-        PipelineStage2CopyIndirectBitKhr = 16384,
+        PipelineStage2CopyIndirectBitKhr = 70368744177664,
         /// <summary>[requires: <b>VK_ARM_data_graph</b>] </summary>
-        PipelineStage2DataGraphBitArm = 1024,
+        PipelineStage2DataGraphBitArm = 4398046511104,
         /// <summary>[requires: <b>v1.3</b>] </summary>
         PipelineStage2DrawIndirectBit = 2,
         /// <summary>[requires: <b>VK_KHR_synchronization2</b>] </summary>
@@ -5993,13 +5993,13 @@ namespace OpenTK.Graphics.Vulkan
         /// <summary>[requires: <b>VK_KHR_synchronization2</b>] </summary>
         PipelineStage2IndexInputBitKhr = 68719476736,
         /// <summary>[requires: <b>VK_HUAWEI_invocation_mask</b>] </summary>
-        PipelineStage2InvocationMaskBitHuawei = 256,
+        PipelineStage2InvocationMaskBitHuawei = 1099511627776,
         /// <summary>[requires: <b>v1.3</b>] </summary>
         PipelineStage2LateFragmentTestsBit = 512,
         /// <summary>[requires: <b>VK_KHR_synchronization2</b>] </summary>
         PipelineStage2LateFragmentTestsBitKhr = 512,
         /// <summary>[requires: <b>VK_EXT_memory_decompression</b>] </summary>
-        PipelineStage2MemoryDecompressionBitExt = 8192,
+        PipelineStage2MemoryDecompressionBitExt = 35184372088832,
         /// <summary>[requires: <b>VK_KHR_synchronization2</b>] </summary>
         PipelineStage2MeshShaderBitExt = 1048576,
         /// <summary>[requires: <b>VK_KHR_synchronization2</b>] </summary>
@@ -6027,9 +6027,9 @@ namespace OpenTK.Graphics.Vulkan
         /// <summary>[requires: <b>VK_KHR_synchronization2</b>] </summary>
         PipelineStage2ShadingRateImageBitNv = 4194304,
         /// <summary>[requires: <b>VK_HUAWEI_subpass_shading</b>] </summary>
-        PipelineStage2SubpassShaderBitHuawei = 128,
+        PipelineStage2SubpassShaderBitHuawei = 549755813888,
         /// <summary>[requires: <b>VK_HUAWEI_subpass_shading</b>] </summary>
-        PipelineStage2SubpassShadingBitHuawei = 128,
+        PipelineStage2SubpassShadingBitHuawei = 549755813888,
         /// <summary>[requires: <b>VK_KHR_synchronization2</b>] </summary>
         PipelineStage2TaskShaderBitExt = 524288,
         /// <summary>[requires: <b>VK_KHR_synchronization2</b>] </summary>

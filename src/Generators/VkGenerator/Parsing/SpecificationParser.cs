@@ -639,7 +639,7 @@ namespace VkGenerator.Parsing
                                 {
                                     Name = memberName,
                                     OriginalName = memberName,
-                                    Value = (ulong)1 << int.Parse(bitpos),
+                                    Value = 1ul << int.Parse(bitpos),
                                     Comment = comment,
                                     Alias = null,
                                     Extension = null,
@@ -977,24 +977,27 @@ namespace VkGenerator.Parsing
                         string? bitposStr = @enum.Attribute("bitpos")?.Value;
                         string? valueStr = @enum.Attribute("value")?.Value;
 
-                        int value;
+                        ulong value;
                         if (offsetStr != null)
                         {
+                            long svalue;
                             if (int.TryParse(@enum.Attribute("extnumber")?.Value ?? "", out int extNumber) == false)
                                 extNumber = number;
 
-                            value = 1000000000 + ((extNumber - 1) * 1000) + int.Parse(offsetStr);
+                            svalue = 1000000000 + ((extNumber - 1) * 1000) + int.Parse(offsetStr);
 
                             if (@enum.Attribute("dir")?.Value == "-")
-                                value = -value;
+                                svalue = -svalue;
+
+                            value = (ulong)svalue;
                         }
                         else if (bitposStr != null)
                         {
-                            value = 1 << int.Parse(bitposStr);
+                            value = 1ul << int.Parse(bitposStr);
                         }
                         else if (valueStr != null)
                         {
-                            value = int.Parse(valueStr);
+                            value = (ulong)int.Parse(valueStr);
                         }
                         else
                         {
@@ -1309,7 +1312,7 @@ namespace VkGenerator.Parsing
                     {
                         string valueStr = @enum.Attribute("value")?.Value ?? throw new Exception();
                         int value = int.Parse(valueStr);
-                        addedEnums.Add(new RequireEnum(enumName, value, extends, null, comment));
+                        addedEnums.Add(new RequireEnum(enumName, (ulong)value, extends, null, comment));
                         requiredEnums.Add(new EnumRef(enumName));
                     }
                 }

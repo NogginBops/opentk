@@ -79,7 +79,7 @@ namespace VkGenerator.Process
                                 {
                                     Name = requiredEnum.Name,
                                     OriginalName = requiredEnum.Name,
-                                    Value = (ulong)requiredEnum.Value!.Value,
+                                    Value = requiredEnum.Value!.Value,
                                     Comment = requiredEnum.Comment,
                                     Alias = null,
                                     Extension = feature.Name,
@@ -146,7 +146,7 @@ namespace VkGenerator.Process
                                 {
                                     Name = requiredEnum.Name,
                                     OriginalName = requiredEnum.Name,
-                                    Value = (ulong)requiredEnum.Value!.Value,
+                                    Value = requiredEnum.Value!.Value,
                                     Comment = requiredEnum.Comment,
                                     Alias = null,
                                     Extension = extension.Name,
