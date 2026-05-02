@@ -28,7 +28,7 @@ namespace ALGenerator.Process
     internal record Namespace(
         OutputApi Name,
         List<VendorFunctions> VendorFunctions,
-        List<EnumGroup> EnumGroups,
+        List<EnumType> EnumGroups,
         Dictionary<Function, FunctionDocumentation> FunctionDocumentation);
 
     internal record Pointers(
@@ -58,35 +58,6 @@ namespace ALGenerator.Process
             return NativeFunction.Name.CompareTo(other?.NativeFunction.Name);
         }
     }
-
-
-    internal record EnumGroupMember(
-        string Name,
-        string MangledName,
-        ulong Value,
-        GroupRef[] Groups,
-        bool IsFlag) : IEquatable<EnumGroupMember?>
-    {
-        internal static int DefaultComparison(EnumGroupMember m1, EnumGroupMember m2)
-        {
-            int comp = m1.Value.CompareTo(m2.Value);
-            if (comp == 0)
-            {
-                return m1.MangledName.CompareTo(m2.MangledName);
-            }
-            else
-            {
-                return comp;
-            }
-        }
-    }
-
-    internal record EnumGroup(
-        string Name,
-        bool IsFlags,
-        List<EnumGroupMember> Members,
-        List<(string Vendor, Function Function)>? FunctionsUsingEnumGroup);
-
 
     internal enum OutputApi
     {

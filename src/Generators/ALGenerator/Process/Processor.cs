@@ -13,12 +13,6 @@ namespace ALGenerator.Process
 {
     internal static class Processor
     {
-        // These types are only used to pass data from ProcessSpec to GetOutputApiFromRequireTags.
-        private record ProcessedGLInformation(
-            Dictionary<string, OverloadedFunction> AllFunctions,
-            Dictionary<OutputApi, Dictionary<string, EnumGroupMember>> AllEnumsPerAPI,
-            List<EnumGroupInfo> AllEnumGroups);
-
         internal record OverloadedFunction(
             Function NativeFunction,
             CommandDocumentation? Documentation,
@@ -60,28 +54,26 @@ namespace ALGenerator.Process
                 allFunctions.Add(nativeFunction.EntryPoint, overloadedFunction);
             }
 
-            Dictionary<OutputApi, Dictionary<string, EnumGroupMember>> allEnumsPerAPI = new Dictionary<OutputApi, Dictionary<string, EnumGroupMember>>();
+            Dictionary<OutputApi, Dictionary<string, EnumMember>> allEnumsPerAPI = new Dictionary<OutputApi, Dictionary<string, EnumMember>>();
             Dictionary<OutputApi, HashSet<EnumGroupInfo>> allEnumGroups = new Dictionary<OutputApi, HashSet<EnumGroupInfo>>();
             foreach (OutputApi outputApi in Enum.GetValues<OutputApi>())
             {
                 if (outputApi == OutputApi.Invalid) continue;
-                allEnumsPerAPI.Add(outputApi, new Dictionary<string, EnumGroupMember>());
+                allEnumsPerAPI.Add(outputApi, new Dictionary<string, EnumMember>());
                 allEnumGroups.Add(outputApi, new HashSet<EnumGroupInfo>());
             }
 
             foreach (EnumEntry @enum in spec.Enums)
             {
-                bool isFlag = @enum.IsFlags;
-
                 foreach ((string originalName, string translatedName, APIFile @namespace) in @enum.Groups)
                 {
                     switch (@namespace)
                     {
                         case APIFile.AL:
-                            AddToGroup(allEnumGroups, OutputApi.AL, originalName, translatedName, isFlag);
+                            AddToGroup(allEnumGroups, OutputApi.AL, originalName, translatedName, @enum.IsFlags);
                             break;
                         case APIFile.ALC:
-                            AddToGroup(allEnumGroups, OutputApi.ALC, originalName, translatedName, isFlag);
+                            AddToGroup(allEnumGroups, OutputApi.ALC, originalName, translatedName, @enum.IsFlags);
                             break;
                         default:
                             throw new Exception();
@@ -108,7 +100,14 @@ namespace ALGenerator.Process
                     }
                 }
 
-                EnumGroupMember data = new EnumGroupMember(@enum.Name, @enum.MangledName, @enum.Value, @enum.Groups, isFlag);
+                EnumMember member = new EnumMember()
+                {
+                    Name =  @enum.MangledName,
+                    OriginalName = @enum.Name,
+                    Value = @enum.Value,
+                    Groups = @enum.Groups,
+                    IsFlag = @enum.IsFlags,
+                };
 
                 if (@enum.Apis == OutputApiFlags.None)
                 {
@@ -117,12 +116,12 @@ namespace ALGenerator.Process
 
                 if (@enum.Apis.HasFlag(OutputApiFlags.AL))
                 {
-                    allEnumsPerAPI.AddToNestedDictIfNotPresent(OutputApi.AL, @enum.Name, data);
+                    allEnumsPerAPI.AddToNestedDictIfNotPresent(OutputApi.AL, @enum.Name, member);
                 }
 
                 if (@enum.Apis.HasFlag(OutputApiFlags.ALC))
                 {
-                    allEnumsPerAPI.AddToNestedDictIfNotPresent(OutputApi.ALC, @enum.Name, data);
+                    allEnumsPerAPI.AddToNestedDictIfNotPresent(OutputApi.ALC, @enum.Name, member);
                 }
             }
 
@@ -153,7 +152,7 @@ namespace ALGenerator.Process
                     _ => false,
                 };
 
-                Dictionary<string, EnumGroupMember>? enumsDict = allEnumsPerAPI[outAPI];
+                Dictionary<string, EnumMember>? enumsDict = allEnumsPerAPI[outAPI];
 
                 foreach (EnumReference enumRef in enums)
                 {
@@ -174,9 +173,9 @@ namespace ALGenerator.Process
                     // We don't want to process this "enum" as it is a string.
                     if (enumRef.EnumName == "GLX_EXTENSION_NAME") continue;
 
-                    if (enumsDict.TryGetValue(enumRef.EnumName, out EnumGroupMember? @enum))
+                    if (enumsDict.TryGetValue(enumRef.EnumName, out EnumMember? @enum))
                     {
-                        foreach (var groupRef in @enum.Groups)
+                        foreach (var groupRef in @enum.Groups!)
                         {
                             APIFile @namespace = groupRef.Namespace;
                             if (@namespace != file)
@@ -193,22 +192,22 @@ namespace ALGenerator.Process
                                         throw new Exception();
                                 }
 
-                                void AddEnumToAPI(OutputApi outputApi, EnumGroupMember @enum)
+                                void AddEnumToAPI(OutputApi outputApi, EnumMember @enum)
                                 {
                                     // FIXME: There is an issue where a cross referenced enum gets readded here.
                                     // We want to avoid this.
 
-                                    if (allEnumsPerAPI[outputApi].ContainsKey(@enum.Name) == false)
+                                    if (allEnumsPerAPI[outputApi].ContainsKey(@enum.OriginalName) == false)
                                     {
-                                        allEnumsPerAPI.AddToNestedDict(outputApi, @enum.Name, @enum);
+                                        allEnumsPerAPI.AddToNestedDict(outputApi, @enum.OriginalName, @enum);
                                     }
 
                                     foreach (var api in spec.APIs)
                                     {
                                         if (MatchesAPI(api.Name, outputApi))
                                         {
-                                            api.Enums.Add(new EnumReference(@enum.Name, new VersionInfo(null, []), true));
-                                            Logger.Info($"Added enum entry '{@enum.MangledName}' to {outputApi}.");
+                                            api.Enums.Add(new EnumReference(@enum.OriginalName, new VersionInfo(null, []), true));
+                                            Logger.Info($"Added enum entry '{@enum.Name}' to {outputApi}.");
                                         }
                                     }
 
@@ -499,11 +498,11 @@ namespace ALGenerator.Process
 
                     // Enum processing
 
-                    Dictionary<string, EnumGroupMember>? enumsDict = allEnumsPerAPI[outAPI];
+                    Dictionary<string, EnumMember>? enumsDict = allEnumsPerAPI[outAPI];
 
-                    Dictionary<string, List<EnumGroupMember>> groupNameToEnumGroup = new Dictionary<string, List<EnumGroupMember>>();
+                    Dictionary<string, List<EnumMember>> groupNameToEnumGroup = new Dictionary<string, List<EnumMember>>();
 
-                    HashSet<EnumGroupMember> theAllEnumGroup = new HashSet<EnumGroupMember>();
+                    HashSet<EnumMember> theAllEnumGroup = new HashSet<EnumMember>();
 
                     // FIXME: Here we are trusting that the enum refs in the <require> tags tell us all of the
                     // enums to include. But this is not necessarily true as is the case with WGL as it references
@@ -521,20 +520,20 @@ namespace ALGenerator.Process
                             }
                         }
 
-                        if (enumsDict.TryGetValue(enumRef.EnumName, out EnumGroupMember? @enum))
+                        if (enumsDict.TryGetValue(enumRef.EnumName, out EnumMember? @enum))
                         {
                             foreach (var (originalName, translatedName, @namespace) in @enum.Groups)
                             {
                                 if (@namespace != alFile)
                                     continue;
 
-                                if (groupNameToEnumGroup.TryGetValue(translatedName, out List<EnumGroupMember>? groupMembers) == false)
+                                if (groupNameToEnumGroup.TryGetValue(translatedName, out List<EnumMember>? groupMembers) == false)
                                 {
-                                    groupMembers = new List<EnumGroupMember>();
+                                    groupMembers = new List<EnumMember>();
                                     groupNameToEnumGroup.Add(translatedName, groupMembers);
                                 }
 
-                                if (groupMembers.Find(g => g.MangledName == @enum.MangledName) == null)
+                                if (groupMembers.Find(g => g.Name == @enum.Name) == null)
                                 {
                                     groupMembers.Add(@enum);
                                 }
@@ -554,10 +553,10 @@ namespace ALGenerator.Process
                     // Go through all of the groupNameToEnumGroup and put them into their groups
 
                     // Add keys + lists for all enumName names
-                    List<EnumGroup> finalGroups = new List<EnumGroup>();
+                    List<EnumType> finalGroups = new List<EnumType>();
                     foreach ((string originalName, string translatedName, bool isFlags) in allEnumGroups[outAPI])
                     {
-                        if (groupNameToEnumGroup.TryGetValue(translatedName, out List<EnumGroupMember>? members) == false)
+                        if (groupNameToEnumGroup.TryGetValue(translatedName, out List<EnumMember>? members) == false)
                         {
                             members = [];
                             groupNameToEnumGroup.Add(translatedName, members);
@@ -590,9 +589,16 @@ namespace ALGenerator.Process
                                 return f1.Function.Name.CompareTo(f2.Function.Name);
                             });
 
-                        members.Sort(EnumGroupMember.DefaultComparison);
+                        members.Sort(EnumMember.DefaultComparison);
 
-                        finalGroups.Add(new EnumGroup(translatedName, isFlags, members, functionsUsingEnumGroup));
+                        finalGroups.Add(new EnumType()
+                        {
+                            Name = translatedName,
+                            IsFlags = isFlags,
+                            Members = members,
+                            ReferencedBy = [],
+                            FunctionsUsingEnumGroup = functionsUsingEnumGroup,
+                        });
                     }
                     foreach (var group in groupsReferencedByFunctions)
                     {
@@ -605,25 +611,39 @@ namespace ALGenerator.Process
                             continue;
                         }
 
-                        if (groupNameToEnumGroup.TryGetValue(group.TranslatedName, out List<EnumGroupMember>? members) == false)
+                        if (groupNameToEnumGroup.TryGetValue(group.TranslatedName, out List<EnumMember>? members) == false)
                         {
                             if (enumGroupToNativeFunctionsUsingThatEnumGroup.TryGetValue(group, out var functionsUsingEnumGroup) == false)
                             {
                                 functionsUsingEnumGroup = null;
                             }
 
-                            finalGroups.Add(new EnumGroup(group.TranslatedName, false, [], functionsUsingEnumGroup));
+                            finalGroups.Add(new EnumType()
+                            {
+                                Name = group.TranslatedName,
+                                IsFlags = false,
+                                Members = [],
+                                ReferencedBy = [],
+                                FunctionsUsingEnumGroup = functionsUsingEnumGroup,
+                            });
                         }
                     }
 
                     // Sort enum groups be name
                     finalGroups.Sort((g1, g2) => g1.Name.CompareTo(g2.Name));
 
-                    List<EnumGroupMember> allEnumGroup = theAllEnumGroup.ToList();
-                    allEnumGroup.Sort(EnumGroupMember.DefaultComparison);
+                    List<EnumMember> allEnumGroup = theAllEnumGroup.ToList();
+                    allEnumGroup.Sort(EnumMember.DefaultComparison);
 
                     // Add the All enum group first.
-                    finalGroups.Insert(0, new EnumGroup("All", false, allEnumGroup, null));
+                    finalGroups.Insert(0, new EnumType()
+                    {
+                        Name = "All",
+                        IsFlags = false,
+                        Members = allEnumGroup,
+                        ReferencedBy = [],
+                        FunctionsUsingEnumGroup = null,
+                    });
 
                     return new Namespace(outAPI, sortedVendorFunctions, finalGroups, documentation);
                 }

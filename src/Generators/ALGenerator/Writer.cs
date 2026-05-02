@@ -474,7 +474,7 @@ namespace ALGenerator
             }
         }
 
-        private static void WriteEnumMemberDocumentation(IndentedTextWriter writer, EnumGroupMember member, EnumMemberDocumentation? documentation)
+        private static void WriteEnumMemberDocumentation(IndentedTextWriter writer, EnumMember member, EnumMemberDocumentation? documentation)
         {
             if (documentation != null)
             {
@@ -510,10 +510,10 @@ namespace ALGenerator
                 }
             }
 
-            writer.WriteLine($"/// <remarks>[originally: {member.Name}]</remarks>");
+            writer.WriteLine($"/// <remarks>[originally: {member.OriginalName}]</remarks>");
         }
 
-        private static void WriteEnums(string directoryPath, FileStrings strings, List<EnumGroup> enumGroups, Dictionary<string, EnumMemberDocumentation> enumMemberDocumentation)
+        private static void WriteEnums(string directoryPath, FileStrings strings, List<EnumType> enumGroups, Dictionary<string, EnumMemberDocumentation> enumMemberDocumentation)
         {
             using StreamWriter stream = File.CreateText(Path.Combine(directoryPath, $"{strings.FileNamePrefix}.Enums.cs"));
             using IndentedTextWriter writer = new IndentedTextWriter(stream);
@@ -535,7 +535,7 @@ namespace ALGenerator
             }
         }
 
-        private static void WriteEnumGroups(IndentedTextWriter writer, string apiName, List<EnumGroup> enumGroups, Dictionary<string, EnumMemberDocumentation> enumMemberDocumentation)
+        private static void WriteEnumGroups(IndentedTextWriter writer, string apiName, List<EnumType> enumGroups, Dictionary<string, EnumMemberDocumentation> enumMemberDocumentation)
         {
             foreach (var group in enumGroups)
             {
@@ -557,7 +557,7 @@ namespace ALGenerator
                 {
                     foreach (var member in group.Members)
                     {
-                        enumMemberDocumentation.TryGetValue(member.Name, out var documentation);
+                        enumMemberDocumentation.TryGetValue(member.OriginalName, out var documentation);
                         WriteEnumMemberDocumentation(writer, member, documentation);
 
                         // HACK: Some enums have a value of -1, and because
@@ -567,11 +567,11 @@ namespace ALGenerator
                         // - Noggin_bops 2024-11-11
                         if (member.Value == ulong.MaxValue)
                         {
-                            writer.WriteLine($"{member.MangledName} = unchecked((uint)-1),");
+                            writer.WriteLine($"{member.Name} = unchecked((uint)-1),");
                         }
                         else
                         {
-                            writer.WriteLine($"{member.MangledName} = {member.Value},");
+                            writer.WriteLine($"{member.Name} = {member.Value},");
                         }
                     }
                 }
