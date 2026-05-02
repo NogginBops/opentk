@@ -85,7 +85,10 @@ namespace OpenTK.Graphics.Vulkan
         /// <summary>[requires: <b>VK_NV_ray_tracing</b>] </summary>
         AccelerationStructureTypeTopLevelNv = 0,
     }
-    /// <summary><b>[requires: v1.0]</b> </summary>
+    /// <summary><b>[requires: v1.0]</b> 
+    /// <br/><b>[deprecated by: v1.3]</b> see: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#deprecation-sync2" />
+    /// <br/><b>[deprecated by: VK_KHR_synchronization2]</b> see: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#deprecation-sync2" />
+    /// </summary>
     /// <remarks><see href="https://registry.khronos.org/vulkan/specs/latest/man/html/VkAccessFlagBits.html" /></remarks>
     [Flags]
     public enum VkAccessFlagBits : uint
@@ -340,6 +343,24 @@ namespace OpenTK.Graphics.Vulkan
     [Flags]
     public enum VkAcquireProfilingLockFlagBitsKHR : uint
     {
+    }
+    /// <summary><b>[requires: VK_KHR_device_address_commands]</b> Used by <see cref="Vk.CmdCopyQueryPoolResultsToMemoryKHR"/>, <see cref="Vk.CmdFillMemoryKHR"/>, <see cref="Vk.CmdUpdateMemoryKHR"/></summary>
+    /// <remarks><see href="https://registry.khronos.org/vulkan/specs/latest/man/html/VkAddressCommandFlagBitsKHR.html" /></remarks>
+    [Flags]
+    public enum VkAddressCommandFlagBitsKHR : uint
+    {
+        /// <summary>[requires: <b>VK_KHR_device_address_commands</b>] </summary>
+        AddressCommandFullyBoundBitKhr = 2,
+        /// <summary>[requires: <b>VK_KHR_device_address_commands</b>] </summary>
+        AddressCommandProtectedBitKhr = 1,
+        /// <summary>[requires: <b>VK_KHR_device_address_commands</b>] </summary>
+        AddressCommandStorageBufferUsageBitKhr = 4,
+        /// <summary>[requires: <b>VK_KHR_device_address_commands</b>] </summary>
+        AddressCommandTransformFeedbackBufferUsageBitKhr = 16,
+        /// <summary>[requires: <b>VK_KHR_device_address_commands</b>] </summary>
+        AddressCommandUnknownStorageBufferUsageBitKhr = 8,
+        /// <summary>[requires: <b>VK_KHR_device_address_commands</b>] </summary>
+        AddressCommandUnknownTransformFeedbackBufferUsageBitKhr = 32,
     }
     /// <summary><b>[requires: VK_KHR_copy_memory_indirect]</b> </summary>
     /// <remarks><see href="https://registry.khronos.org/vulkan/specs/latest/man/html/VkAddressCopyFlagBitsKHR.html" /></remarks>
@@ -643,7 +664,10 @@ namespace OpenTK.Graphics.Vulkan
         /// <summary>[requires: <b>VK_KHR_video_maintenance1</b>] </summary>
         BufferCreateVideoProfileIndependentBitKhr = 64,
     }
-    /// <summary><b>[requires: v1.0]</b> </summary>
+    /// <summary><b>[requires: v1.0]</b> 
+    /// <br/><b>[deprecated by: v1.4]</b> see: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#legacy-flagbits" />
+    /// <br/><b>[deprecated by: VK_KHR_maintenance5]</b> see: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#legacy-flagbits" />
+    /// </summary>
     /// <remarks><see href="https://registry.khronos.org/vulkan/specs/latest/man/html/VkBufferUsageFlagBits.html" /></remarks>
     [Flags]
     public enum VkBufferUsageFlagBits : uint
@@ -1374,11 +1398,106 @@ namespace OpenTK.Graphics.Vulkan
         /// <summary>[requires: <b>VK_QCOM_data_graph_model</b>] </summary>
         DataGraphModelCacheTypeGenericBinaryQcom = 0,
     }
+    /// <summary><b>[requires: VK_ARM_data_graph_optical_flow]</b> </summary>
+    /// <remarks><see href="https://registry.khronos.org/vulkan/specs/latest/man/html/VkDataGraphOpticalFlowCreateFlagBitsARM.html" /></remarks>
+    [Flags]
+    public enum VkDataGraphOpticalFlowCreateFlagBitsARM : uint
+    {
+        /// <summary>[requires: <b>VK_ARM_data_graph_optical_flow</b>] </summary>
+        DataGraphOpticalFlowCreateEnableCostBitArm = 2,
+        /// <summary>[requires: <b>VK_ARM_data_graph_optical_flow</b>] </summary>
+        DataGraphOpticalFlowCreateEnableHintBitArm = 1,
+        /// <summary>[requires: <b>VK_ARM_data_graph_optical_flow</b>] </summary>
+        DataGraphOpticalFlowCreateReserved30BitArm = 1073741824,
+    }
+    /// <summary><b>[requires: VK_ARM_data_graph_optical_flow]</b> </summary>
+    /// <remarks><see href="https://registry.khronos.org/vulkan/specs/latest/man/html/VkDataGraphOpticalFlowExecuteFlagBitsARM.html" /></remarks>
+    [Flags]
+    public enum VkDataGraphOpticalFlowExecuteFlagBitsARM : uint
+    {
+        /// <summary>[requires: <b>VK_ARM_data_graph_optical_flow</b>] </summary>
+        DataGraphOpticalFlowExecuteDisableTemporalHintsBitArm = 1,
+        /// <summary>[requires: <b>VK_ARM_data_graph_optical_flow</b>] </summary>
+        DataGraphOpticalFlowExecuteInputIsPreviousReferenceBitArm = 8,
+        /// <summary>[requires: <b>VK_ARM_data_graph_optical_flow</b>] </summary>
+        DataGraphOpticalFlowExecuteInputUnchangedBitArm = 2,
+        /// <summary>[requires: <b>VK_ARM_data_graph_optical_flow</b>] </summary>
+        DataGraphOpticalFlowExecuteReferenceIsPreviousInputBitArm = 16,
+        /// <summary>[requires: <b>VK_ARM_data_graph_optical_flow</b>] </summary>
+        DataGraphOpticalFlowExecuteReferenceUnchangedBitArm = 4,
+    }
+    /// <summary><b>[requires: VK_ARM_data_graph_optical_flow]</b> </summary>
+    /// <remarks><see href="https://registry.khronos.org/vulkan/specs/latest/man/html/VkDataGraphOpticalFlowGridSizeFlagBitsARM.html" /></remarks>
+    [Flags]
+    public enum VkDataGraphOpticalFlowGridSizeFlagBitsARM : uint
+    {
+        /// <summary>[requires: <b>VK_ARM_data_graph_optical_flow</b>] </summary>
+        DataGraphOpticalFlowGridSize1x1BitArm = 1,
+        /// <summary>[requires: <b>VK_ARM_data_graph_optical_flow</b>] </summary>
+        DataGraphOpticalFlowGridSize2x2BitArm = 2,
+        /// <summary>[requires: <b>VK_ARM_data_graph_optical_flow</b>] </summary>
+        DataGraphOpticalFlowGridSize4x4BitArm = 4,
+        /// <summary>[requires: <b>VK_ARM_data_graph_optical_flow</b>] </summary>
+        DataGraphOpticalFlowGridSize8x8BitArm = 8,
+        /// <summary>[requires: <b>VK_ARM_data_graph_optical_flow</b>] </summary>
+        DataGraphOpticalFlowGridSizeUnknownArm = 0,
+    }
+    /// <summary><b>[requires: VK_ARM_data_graph_optical_flow]</b> </summary>
+    /// <remarks><see href="https://registry.khronos.org/vulkan/specs/latest/man/html/VkDataGraphOpticalFlowImageUsageFlagBitsARM.html" /></remarks>
+    [Flags]
+    public enum VkDataGraphOpticalFlowImageUsageFlagBitsARM : uint
+    {
+        /// <summary>[requires: <b>VK_ARM_data_graph_optical_flow</b>] </summary>
+        DataGraphOpticalFlowImageUsageCostBitArm = 8,
+        /// <summary>[requires: <b>VK_ARM_data_graph_optical_flow</b>] </summary>
+        DataGraphOpticalFlowImageUsageHintBitArm = 4,
+        /// <summary>[requires: <b>VK_ARM_data_graph_optical_flow</b>] </summary>
+        DataGraphOpticalFlowImageUsageInputBitArm = 1,
+        /// <summary>[requires: <b>VK_ARM_data_graph_optical_flow</b>] </summary>
+        DataGraphOpticalFlowImageUsageOutputBitArm = 2,
+        /// <summary>[requires: <b>VK_ARM_data_graph_optical_flow</b>] </summary>
+        DataGraphOpticalFlowImageUsageUnknownArm = 0,
+    }
+    /// <summary><b>[requires: VK_ARM_data_graph_optical_flow]</b> </summary>
+    /// <remarks><see href="https://registry.khronos.org/vulkan/specs/latest/man/html/VkDataGraphOpticalFlowPerformanceLevelARM.html" /></remarks>
+    public enum VkDataGraphOpticalFlowPerformanceLevelARM : int
+    {
+        /// <summary>[requires: <b>VK_ARM_data_graph_optical_flow</b>] </summary>
+        DataGraphOpticalFlowPerformanceLevelFastArm = 3,
+        /// <summary>[requires: <b>VK_ARM_data_graph_optical_flow</b>] </summary>
+        DataGraphOpticalFlowPerformanceLevelMediumArm = 2,
+        /// <summary>[requires: <b>VK_ARM_data_graph_optical_flow</b>] </summary>
+        DataGraphOpticalFlowPerformanceLevelSlowArm = 1,
+        /// <summary>[requires: <b>VK_ARM_data_graph_optical_flow</b>] </summary>
+        DataGraphOpticalFlowPerformanceLevelUnknownArm = 0,
+    }
     /// <summary><b>[requires: VK_ARM_data_graph]</b> </summary>
     /// <remarks><see href="https://registry.khronos.org/vulkan/specs/latest/man/html/VkDataGraphPipelineDispatchFlagBitsARM.html" /></remarks>
     [Flags]
     public enum VkDataGraphPipelineDispatchFlagBitsARM : ulong
     {
+    }
+    /// <summary><b>[requires: VK_ARM_data_graph_optical_flow]</b> </summary>
+    /// <remarks><see href="https://registry.khronos.org/vulkan/specs/latest/man/html/VkDataGraphPipelineNodeConnectionTypeARM.html" /></remarks>
+    public enum VkDataGraphPipelineNodeConnectionTypeARM : int
+    {
+        /// <summary>[requires: <b>VK_ARM_data_graph_optical_flow</b>] </summary>
+        DataGraphPipelineNodeConnectionTypeOpticalFlowCostArm = 1000631004,
+        /// <summary>[requires: <b>VK_ARM_data_graph_optical_flow</b>] </summary>
+        DataGraphPipelineNodeConnectionTypeOpticalFlowFlowVectorArm = 1000631003,
+        /// <summary>[requires: <b>VK_ARM_data_graph_optical_flow</b>] </summary>
+        DataGraphPipelineNodeConnectionTypeOpticalFlowHintArm = 1000631002,
+        /// <summary>[requires: <b>VK_ARM_data_graph_optical_flow</b>] </summary>
+        DataGraphPipelineNodeConnectionTypeOpticalFlowInputArm = 1000631000,
+        /// <summary>[requires: <b>VK_ARM_data_graph_optical_flow</b>] </summary>
+        DataGraphPipelineNodeConnectionTypeOpticalFlowReferenceArm = 1000631001,
+    }
+    /// <summary><b>[requires: VK_ARM_data_graph_optical_flow]</b> </summary>
+    /// <remarks><see href="https://registry.khronos.org/vulkan/specs/latest/man/html/VkDataGraphPipelineNodeTypeARM.html" /></remarks>
+    public enum VkDataGraphPipelineNodeTypeARM : int
+    {
+        /// <summary>[requires: <b>VK_ARM_data_graph_optical_flow</b>] </summary>
+        DataGraphPipelineNodeTypeOpticalFlowArm = 1000631000,
     }
     /// <summary><b>[requires: VK_ARM_data_graph]</b> Used by <see cref="Vk.GetDataGraphPipelineAvailablePropertiesARM"/></summary>
     /// <remarks><see href="https://registry.khronos.org/vulkan/specs/latest/man/html/VkDataGraphPipelinePropertyARM.html" /></remarks>
@@ -1388,11 +1507,19 @@ namespace OpenTK.Graphics.Vulkan
         DataGraphPipelinePropertyCreationLogArm = 0,
         /// <summary>[requires: <b>VK_ARM_data_graph</b>] </summary>
         DataGraphPipelinePropertyIdentifierArm = 1,
+        /// <summary>[requires: <b>VK_ARM_data_graph_neural_accelerator_statistics</b>] </summary>
+        DataGraphPipelinePropertyNeuralAcceleratorDebugDatabaseArm = 1000676000,
+        /// <summary>[requires: <b>VK_ARM_data_graph_neural_accelerator_statistics</b>] </summary>
+        DataGraphPipelinePropertyNeuralAcceleratorStatisticsInfoArm = 1000676001,
     }
     /// <summary><b>[requires: VK_ARM_data_graph]</b> </summary>
     /// <remarks><see href="https://registry.khronos.org/vulkan/specs/latest/man/html/VkDataGraphPipelineSessionBindPointARM.html" /></remarks>
     public enum VkDataGraphPipelineSessionBindPointARM : int
     {
+        /// <summary>[requires: <b>VK_ARM_data_graph_neural_accelerator_statistics</b>] </summary>
+        DataGraphPipelineSessionBindPointNeuralAcceleratorStatisticsArm = 1000676000,
+        /// <summary>[requires: <b>VK_ARM_data_graph_optical_flow</b>] </summary>
+        DataGraphPipelineSessionBindPointOpticalFlowCacheArm = 1000631001,
         /// <summary>[requires: <b>VK_ARM_data_graph</b>] </summary>
         DataGraphPipelineSessionBindPointTransientArm = 0,
     }
@@ -1408,8 +1535,33 @@ namespace OpenTK.Graphics.Vulkan
     [Flags]
     public enum VkDataGraphPipelineSessionCreateFlagBitsARM : ulong
     {
+        /// <summary>[requires: <b>VK_ARM_data_graph_optical_flow</b>] </summary>
+        DataGraphPipelineSessionCreateOpticalFlowCacheBitArm = 2,
         /// <summary>[requires: <b>VK_ARM_data_graph</b>] </summary>
         DataGraphPipelineSessionCreateProtectedBitArm = 1,
+    }
+    /// <summary><b>[requires: VK_ARM_data_graph_instruction_set_tosa]</b> </summary>
+    /// <remarks><see href="https://registry.khronos.org/vulkan/specs/latest/man/html/VkDataGraphTOSALevelARM.html" /></remarks>
+    public enum VkDataGraphTOSALevelARM : int
+    {
+        /// <summary>[requires: <b>VK_ARM_data_graph_instruction_set_tosa</b>] </summary>
+        DataGraphTosaLevel8kArm = 1,
+        /// <summary>[requires: <b>VK_ARM_data_graph_instruction_set_tosa</b>] </summary>
+        DataGraphTosaLevelNoneArm = 0,
+    }
+    /// <summary><b>[requires: VK_ARM_data_graph_instruction_set_tosa]</b> </summary>
+    /// <remarks><see href="https://registry.khronos.org/vulkan/specs/latest/man/html/VkDataGraphTOSAQualityFlagBitsARM.html" /></remarks>
+    [Flags]
+    public enum VkDataGraphTOSAQualityFlagBitsARM : uint
+    {
+        /// <summary>[requires: <b>VK_ARM_data_graph_instruction_set_tosa</b>] </summary>
+        DataGraphTosaQualityAcceleratedArm = 1,
+        /// <summary>[requires: <b>VK_ARM_data_graph_instruction_set_tosa</b>] </summary>
+        DataGraphTosaQualityConformantArm = 2,
+        /// <summary>[requires: <b>VK_ARM_data_graph_instruction_set_tosa</b>] </summary>
+        DataGraphTosaQualityDeprecatedArm = 8,
+        /// <summary>[requires: <b>VK_ARM_data_graph_instruction_set_tosa</b>] </summary>
+        DataGraphTosaQualityExperimentalArm = 4,
     }
     /// <summary><b>[requires: VK_EXT_debug_report]</b> Used by <see cref="Vk.DebugReportMessageEXT"/></summary>
     /// <remarks><see href="https://registry.khronos.org/vulkan/specs/latest/man/html/VkDebugReportFlagBitsEXT.html" /></remarks>
@@ -1844,31 +1996,65 @@ namespace OpenTK.Graphics.Vulkan
         /// <summary>[requires: <b>VK_EXT_display_control</b>] </summary>
         DeviceEventTypeDisplayHotplugExt = 0,
     }
-    /// <summary><b>[requires: VK_EXT_device_fault]</b> </summary>
-    /// <remarks><see href="https://registry.khronos.org/vulkan/specs/latest/man/html/VkDeviceFaultAddressTypeEXT.html" /></remarks>
-    public enum VkDeviceFaultAddressTypeEXT : int
+    /// <summary><b>[requires: VK_KHR_device_fault]</b> </summary>
+    /// <remarks><see href="https://registry.khronos.org/vulkan/specs/latest/man/html/VkDeviceFaultAddressTypeKHR.html" /></remarks>
+    public enum VkDeviceFaultAddressTypeKHR : int
     {
         /// <summary>[requires: <b>VK_EXT_device_fault</b>] </summary>
         DeviceFaultAddressTypeExecuteInvalidExt = 3,
+        /// <summary>[requires: <b>VK_KHR_device_fault</b>] </summary>
+        DeviceFaultAddressTypeExecuteInvalidKhr = 3,
         /// <summary>[requires: <b>VK_EXT_device_fault</b>] </summary>
         DeviceFaultAddressTypeInstructionPointerFaultExt = 6,
+        /// <summary>[requires: <b>VK_KHR_device_fault</b>] </summary>
+        DeviceFaultAddressTypeInstructionPointerFaultKhr = 6,
         /// <summary>[requires: <b>VK_EXT_device_fault</b>] </summary>
         DeviceFaultAddressTypeInstructionPointerInvalidExt = 5,
+        /// <summary>[requires: <b>VK_KHR_device_fault</b>] </summary>
+        DeviceFaultAddressTypeInstructionPointerInvalidKhr = 5,
         /// <summary>[requires: <b>VK_EXT_device_fault</b>] </summary>
         DeviceFaultAddressTypeInstructionPointerUnknownExt = 4,
-        /// <summary>[requires: <b>VK_EXT_device_fault</b>] Currently unused</summary>
+        /// <summary>[requires: <b>VK_KHR_device_fault</b>] </summary>
+        DeviceFaultAddressTypeInstructionPointerUnknownKhr = 4,
+        /// <summary>[requires: <b>VK_EXT_device_fault</b>] </summary>
         DeviceFaultAddressTypeNoneExt = 0,
+        /// <summary>[requires: <b>VK_KHR_device_fault</b>] Currently unused</summary>
+        DeviceFaultAddressTypeNoneKhr = 0,
         /// <summary>[requires: <b>VK_EXT_device_fault</b>] </summary>
         DeviceFaultAddressTypeReadInvalidExt = 1,
+        /// <summary>[requires: <b>VK_KHR_device_fault</b>] </summary>
+        DeviceFaultAddressTypeReadInvalidKhr = 1,
         /// <summary>[requires: <b>VK_EXT_device_fault</b>] </summary>
         DeviceFaultAddressTypeWriteInvalidExt = 2,
+        /// <summary>[requires: <b>VK_KHR_device_fault</b>] </summary>
+        DeviceFaultAddressTypeWriteInvalidKhr = 2,
     }
-    /// <summary><b>[requires: VK_EXT_device_fault]</b> </summary>
-    /// <remarks><see href="https://registry.khronos.org/vulkan/specs/latest/man/html/VkDeviceFaultVendorBinaryHeaderVersionEXT.html" /></remarks>
-    public enum VkDeviceFaultVendorBinaryHeaderVersionEXT : int
+    /// <summary><b>[requires: VK_KHR_device_fault]</b> </summary>
+    /// <remarks><see href="https://registry.khronos.org/vulkan/specs/latest/man/html/VkDeviceFaultFlagBitsKHR.html" /></remarks>
+    [Flags]
+    public enum VkDeviceFaultFlagBitsKHR : uint
     {
-        /// <summary>[requires: <b>VK_EXT_device_fault</b>] </summary>
+        /// <summary>[requires: <b>VK_KHR_device_fault</b>] </summary>
+        DeviceFaultFlagDeviceLostKhr = 1,
+        /// <summary>[requires: <b>VK_KHR_device_fault</b>] </summary>
+        DeviceFaultFlagInstructionAddressKhr = 4,
+        /// <summary>[requires: <b>VK_KHR_device_fault</b>] </summary>
+        DeviceFaultFlagMemoryAddressKhr = 2,
+        /// <summary>[requires: <b>VK_KHR_device_fault</b>] </summary>
+        DeviceFaultFlagOverflowKhr = 32,
+        /// <summary>[requires: <b>VK_KHR_device_fault</b>] </summary>
+        DeviceFaultFlagVendorKhr = 8,
+        /// <summary>[requires: <b>VK_KHR_device_fault</b>] </summary>
+        DeviceFaultFlagWatchdogTimeoutKhr = 16,
+    }
+    /// <summary><b>[requires: VK_KHR_device_fault]</b> </summary>
+    /// <remarks><see href="https://registry.khronos.org/vulkan/specs/latest/man/html/VkDeviceFaultVendorBinaryHeaderVersionKHR.html" /></remarks>
+    public enum VkDeviceFaultVendorBinaryHeaderVersionKHR : int
+    {
+        /// <summary>[requires: <b>VK_KHR_device_fault</b>] </summary>
         DeviceFaultVendorBinaryHeaderVersionOneExt = 1,
+        /// <summary>[requires: <b>VK_KHR_device_fault</b>] </summary>
+        DeviceFaultVendorBinaryHeaderVersionOneKhr = 1,
     }
     /// <summary><b>[requires: VK_KHR_swapchain | VK_KHR_device_group]</b> Used by <see cref="Vk.GetDeviceGroupSurfacePresentModes2EXT"/>, <see cref="Vk.GetDeviceGroupSurfacePresentModesKHR"/></summary>
     /// <remarks><see href="https://registry.khronos.org/vulkan/specs/latest/man/html/VkDeviceGroupPresentModeFlagBitsKHR.html" /></remarks>
@@ -3326,7 +3512,10 @@ namespace OpenTK.Graphics.Vulkan
         /// <summary>[requires: <b>v1.0</b>] </summary>
         FormatX8D24UnormPack32 = 125,
     }
-    /// <summary><b>[requires: v1.0]</b> </summary>
+    /// <summary><b>[requires: v1.0]</b> 
+    /// <br/><b>[deprecated by: v1.3]</b> see: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#legacy-flagbits" />
+    /// <br/><b>[deprecated by: VK_KHR_format_feature_flags2]</b> see: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#legacy-flagbits" />
+    /// </summary>
     /// <remarks><see href="https://registry.khronos.org/vulkan/specs/latest/man/html/VkFormatFeatureFlagBits.html" /></remarks>
     [Flags]
     public enum VkFormatFeatureFlagBits : uint
@@ -3451,6 +3640,12 @@ namespace OpenTK.Graphics.Vulkan
         FormatFeature2CositedChromaSamplesBit = 8388608,
         /// <summary>[requires: <b>VK_KHR_format_feature_flags2</b>] </summary>
         FormatFeature2CositedChromaSamplesBitKhr = 8388608,
+        /// <summary>[requires: <b>VK_ARM_data_graph_optical_flow</b>] </summary>
+        FormatFeature2DataGraphOpticalFlowCostBitArm = 67108864,
+        /// <summary>[requires: <b>VK_ARM_data_graph_optical_flow</b>] </summary>
+        FormatFeature2DataGraphOpticalFlowImageBitArm = 16777216,
+        /// <summary>[requires: <b>VK_ARM_data_graph_optical_flow</b>] </summary>
+        FormatFeature2DataGraphOpticalFlowVectorBitArm = 33554432,
         /// <summary>[requires: <b>VK_KHR_maintenance10</b>] </summary>
         FormatFeature2DepthCopyOnComputeQueueBitKhr = 1048576,
         /// <summary>[requires: <b>VK_KHR_maintenance10</b>] </summary>
@@ -3946,6 +4141,8 @@ namespace OpenTK.Graphics.Vulkan
         ImageCreateAliasBit = 1024,
         /// <summary>[requires: <b>VK_KHR_bind_memory2</b>] </summary>
         ImageCreateAliasBitKhr = 1024,
+        /// <summary>[requires: <b>VK_KHR_maintenance11</b>] </summary>
+        ImageCreateAliasSingleLayerDescriptorBitKhr = 4194304,
         /// <summary>[requires: <b>v1.1</b>] </summary>
         ImageCreateBlockTexelViewCompatibleBit = 128,
         /// <summary>[requires: <b>VK_KHR_maintenance2</b>] </summary>
@@ -4637,6 +4834,17 @@ namespace OpenTK.Graphics.Vulkan
         /// <summary>[requires: <b>VK_EXT_opacity_micromap</b>] </summary>
         MicromapTypeOpacityMicromapExt = 0,
     }
+    /// <summary><b>[requires: VK_ARM_data_graph_neural_accelerator_statistics]</b> </summary>
+    /// <remarks><see href="https://registry.khronos.org/vulkan/specs/latest/man/html/VkNeuralAcceleratorStatisticsModeARM.html" /></remarks>
+    public enum VkNeuralAcceleratorStatisticsModeARM : int
+    {
+        /// <summary>[requires: <b>VK_ARM_data_graph_neural_accelerator_statistics</b>] </summary>
+        NeuralAcceleratorStatisticsModeDisabledArm = 0,
+        /// <summary>[requires: <b>VK_ARM_data_graph_neural_accelerator_statistics</b>] </summary>
+        NeuralAcceleratorStatisticsModeStatistics0Arm = 1,
+        /// <summary>[requires: <b>VK_ARM_data_graph_neural_accelerator_statistics</b>] </summary>
+        NeuralAcceleratorStatisticsModeStatistics1Arm = 2,
+    }
     /// <summary><b>[requires: v1.0]</b> Used by <see cref="Vk.GetPhysicalDeviceRefreshableObjectTypesKHR"/>, <see cref="Vk.GetPrivateData"/>, <see cref="Vk.GetPrivateDataEXT"/>, ...</summary>
     /// <remarks><see href="https://registry.khronos.org/vulkan/specs/latest/man/html/VkObjectType.html" /></remarks>
     public enum VkObjectType : int
@@ -4747,6 +4955,8 @@ namespace OpenTK.Graphics.Vulkan
         ObjectTypeSemaphoreSciSyncPoolNv = 1000489000,
         /// <summary>[requires: <b>VK_EXT_shader_object</b>] </summary>
         ObjectTypeShaderExt = 1000482000,
+        /// <summary>[requires: <b>VK_ARM_shader_instrumentation</b>] </summary>
+        ObjectTypeShaderInstrumentationArm = 1000607000,
         /// <summary>[requires: <b>v1.0</b>] </summary>
         ObjectTypeShaderModule = 15,
         /// <summary>[requires: <b>VK_KHR_surface</b>] </summary>
@@ -4958,6 +5168,19 @@ namespace OpenTK.Graphics.Vulkan
     public enum VkPeerMemoryFeatureFlagsKHR : uint
     {
     }
+    /// <summary><b>[requires: VK_QCOM_queue_perf_hint]</b> </summary>
+    /// <remarks><see href="https://registry.khronos.org/vulkan/specs/latest/man/html/VkPerfHintTypeQCOM.html" /></remarks>
+    public enum VkPerfHintTypeQCOM : int
+    {
+        /// <summary>[requires: <b>VK_QCOM_queue_perf_hint</b>] </summary>
+        PerfHintTypeDefaultQcom = 0,
+        /// <summary>[requires: <b>VK_QCOM_queue_perf_hint</b>] </summary>
+        PerfHintTypeFrequencyMaxQcom = 2,
+        /// <summary>[requires: <b>VK_QCOM_queue_perf_hint</b>] </summary>
+        PerfHintTypeFrequencyMinQcom = 1,
+        /// <summary>[requires: <b>VK_QCOM_queue_perf_hint</b>] </summary>
+        PerfHintTypeFrequencyScaledQcom = 3,
+    }
     /// <summary><b>[requires: VK_INTEL_performance_query]</b> </summary>
     /// <remarks><see href="https://registry.khronos.org/vulkan/specs/latest/man/html/VkPerformanceConfigurationTypeINTEL.html" /></remarks>
     public enum VkPerformanceConfigurationTypeINTEL : int
@@ -5087,6 +5310,8 @@ namespace OpenTK.Graphics.Vulkan
         PhysicalDeviceDataGraphOperationTypeBuiltinModelQcom = 1000629001,
         /// <summary>[requires: <b>VK_QCOM_data_graph_model</b>] </summary>
         PhysicalDeviceDataGraphOperationTypeNeuralModelQcom = 1000629000,
+        /// <summary>[requires: <b>VK_ARM_data_graph_optical_flow</b>] </summary>
+        PhysicalDeviceDataGraphOperationTypeOpticalFlowArm = 1000631000,
         /// <summary>[requires: <b>VK_ARM_data_graph</b>] </summary>
         PhysicalDeviceDataGraphOperationTypeSpirvExtendedInstructionSetArm = 0,
     }
@@ -5121,6 +5346,8 @@ namespace OpenTK.Graphics.Vulkan
     [Flags]
     public enum VkPhysicalDeviceSchedulingControlsFlagBitsARM : ulong
     {
+        /// <summary>[requires: <b>VK_ARM_scheduling_controls</b>] </summary>
+        PhysicalDeviceSchedulingControlsDispatchParametersArm = 2,
         /// <summary>[requires: <b>VK_ARM_scheduling_controls</b>] </summary>
         PhysicalDeviceSchedulingControlsShaderCoreCountArm = 1,
     }
@@ -5158,7 +5385,7 @@ namespace OpenTK.Graphics.Vulkan
         /// <summary>[requires: <b>VK_HUAWEI_subpass_shading</b>] </summary>
         PipelineBindPointSubpassShadingHuawei = 1000369003,
     }
-    /// <summary><b>[requires: v1.3 | VK_EXT_pipeline_creation_cache_control | VK_KHR_maintenance8]</b> </summary>
+    /// <summary><b>[requires: v1.0 | VK_EXT_pipeline_creation_cache_control | VK_KHR_maintenance8]</b> </summary>
     /// <remarks><see href="https://registry.khronos.org/vulkan/specs/latest/man/html/VkPipelineCacheCreateFlagBits.html" /></remarks>
     [Flags]
     public enum VkPipelineCacheCreateFlagBits : uint
@@ -5186,7 +5413,7 @@ namespace OpenTK.Graphics.Vulkan
         /// <summary></summary>
         PipelineCacheValidationVersionSafetyCriticalOne = 1,
     }
-    /// <summary><b>[requires: VK_EXT_rasterization_order_attachment_access]</b> </summary>
+    /// <summary><b>[requires: v1.0 | VK_EXT_rasterization_order_attachment_access]</b> </summary>
     /// <remarks><see href="https://registry.khronos.org/vulkan/specs/latest/man/html/VkPipelineColorBlendStateCreateFlagBits.html" /></remarks>
     [Flags]
     public enum VkPipelineColorBlendStateCreateFlagBits : uint
@@ -5220,7 +5447,10 @@ namespace OpenTK.Graphics.Vulkan
     public enum VkPipelineCoverageToColorStateCreateFlagsNV : uint
     {
     }
-    /// <summary><b>[requires: v1.0]</b> </summary>
+    /// <summary><b>[requires: v1.0]</b> 
+    /// <br/><b>[deprecated by: v1.4]</b> see: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#legacy-flagbits" />
+    /// <br/><b>[deprecated by: VK_KHR_maintenance5]</b> see: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#legacy-flagbits" />
+    /// </summary>
     /// <remarks><see href="https://registry.khronos.org/vulkan/specs/latest/man/html/VkPipelineCreateFlagBits.html" /></remarks>
     [Flags]
     public enum VkPipelineCreateFlagBits : uint
@@ -5365,6 +5595,8 @@ namespace OpenTK.Graphics.Vulkan
         PipelineCreate2IndirectBindableBitExt = 64,
         /// <summary>[requires: <b>VK_KHR_maintenance5</b>] </summary>
         PipelineCreate2IndirectBindableBitNv = 262144,
+        /// <summary>[requires: <b>VK_KHR_maintenance5 | VK_ARM_shader_instrumentation</b>] </summary>
+        PipelineCreate2InstrumentShadersBitArm = 128,
         /// <summary>[requires: <b>VK_KHR_maintenance5</b>] </summary>
         PipelineCreate2LibraryBitKhr = 2048,
         /// <summary>[requires: <b>VK_KHR_maintenance5</b>] </summary>
@@ -5444,7 +5676,7 @@ namespace OpenTK.Graphics.Vulkan
     public enum VkPipelineCreationFeedbackFlagsEXT : uint
     {
     }
-    /// <summary><b>[requires: VK_EXT_rasterization_order_attachment_access]</b> </summary>
+    /// <summary><b>[requires: v1.0 | VK_EXT_rasterization_order_attachment_access]</b> </summary>
     /// <remarks><see href="https://registry.khronos.org/vulkan/specs/latest/man/html/VkPipelineDepthStencilStateCreateFlagBits.html" /></remarks>
     [Flags]
     public enum VkPipelineDepthStencilStateCreateFlagBits : uint
@@ -5489,7 +5721,7 @@ namespace OpenTK.Graphics.Vulkan
     public enum VkPipelineInputAssemblyStateCreateFlags : uint
     {
     }
-    /// <summary><b>[requires: VK_EXT_graphics_pipeline_library]</b> 
+    /// <summary><b>[requires: v1.0 | VK_EXT_graphics_pipeline_library]</b> 
     /// <br/><b>[deprecated by: VK_EXT_descriptor_heap]</b> see: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#legacy-descriptor-sets" />
     /// </summary>
     /// <remarks><see href="https://registry.khronos.org/vulkan/specs/latest/man/html/VkPipelineLayoutCreateFlagBits.html" /></remarks>
@@ -5498,6 +5730,8 @@ namespace OpenTK.Graphics.Vulkan
     {
         /// <summary>[requires: <b>VK_EXT_graphics_pipeline_library</b>] </summary>
         PipelineLayoutCreateIndependentSetsBitExt = 2,
+        /// <summary>[requires: <b>VK_KHR_maintenance11</b>] </summary>
+        PipelineLayoutCreateNoTaskShaderBitKhr = 4,
     }
     /// <summary></summary>
     /// <remarks><see href="https://registry.khronos.org/vulkan/specs/latest/man/html/VkPipelineMatchControl.html" /></remarks>
@@ -5592,7 +5826,10 @@ namespace OpenTK.Graphics.Vulkan
         /// <summary>[requires: <b>VK_EXT_subgroup_size_control</b>] </summary>
         PipelineShaderStageCreateRequireFullSubgroupsBitExt = 2,
     }
-    /// <summary><b>[requires: v1.0]</b> Used by <see cref="Vk.CmdPipelineBarrier"/>, <see cref="Vk.CmdPipelineBarrier"/>, <see cref="Vk.CmdResetEvent"/>, ...</summary>
+    /// <summary><b>[requires: v1.0]</b> 
+    /// <br/><b>[deprecated by: v1.3]</b> see: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#deprecation-sync2" />
+    /// <br/><b>[deprecated by: VK_KHR_synchronization2]</b> see: <see href="https://registry.khronos.org/vulkan/specs/latest/html/vkspec.html#deprecation-sync2" />
+    /// Used by <see cref="Vk.CmdPipelineBarrier"/>, <see cref="Vk.CmdPipelineBarrier"/>, <see cref="Vk.CmdResetEvent"/>, ...</summary>
     /// <remarks><see href="https://registry.khronos.org/vulkan/specs/latest/man/html/VkPipelineStageFlagBits.html" /></remarks>
     [Flags]
     public enum VkPipelineStageFlagBits : uint
@@ -6092,7 +6329,7 @@ namespace OpenTK.Graphics.Vulkan
         /// <summary>[requires: <b>VK_INTEL_performance_query</b>] </summary>
         QueryPoolSamplingModeManualIntel = 0,
     }
-    /// <summary><b>[requires: v1.0]</b> Used by <see cref="Vk.CmdCopyQueryPoolResults"/>, <see cref="Vk.GetQueryPoolResults"/></summary>
+    /// <summary><b>[requires: v1.0]</b> Used by <see cref="Vk.CmdCopyQueryPoolResults"/>, <see cref="Vk.CmdCopyQueryPoolResultsToMemoryKHR"/>, <see cref="Vk.GetQueryPoolResults"/></summary>
     /// <remarks><see href="https://registry.khronos.org/vulkan/specs/latest/man/html/VkQueryResultFlagBits.html" /></remarks>
     [Flags]
     public enum VkQueryResultFlagBits : uint
@@ -6769,8 +7006,12 @@ namespace OpenTK.Graphics.Vulkan
         ShaderCreateFragmentDensityMapAttachmentBitExt = 64,
         /// <summary>[requires: <b>VK_EXT_shader_object</b>] </summary>
         ShaderCreateFragmentShadingRateAttachmentBitExt = 32,
+        /// <summary>[requires: <b>VK_KHR_maintenance11</b>] </summary>
+        ShaderCreateIndependentSetsBitKhr = 262144,
         /// <summary>[requires: <b>VK_EXT_device_generated_commands</b>] </summary>
         ShaderCreateIndirectBindableBitExt = 128,
+        /// <summary>[requires: <b>VK_KHR_maintenance5 | VK_ARM_shader_instrumentation</b>] </summary>
+        ShaderCreateInstrumentShaderBitArm = 2048,
         /// <summary>[requires: <b>VK_EXT_shader_object</b>] </summary>
         ShaderCreateLinkStageBitExt = 1,
         /// <summary>[requires: <b>VK_EXT_shader_object</b>] </summary>
@@ -6818,6 +7059,12 @@ namespace OpenTK.Graphics.Vulkan
         ShaderInfoTypeDisassemblyAmd = 2,
         /// <summary>[requires: <b>VK_AMD_shader_info</b>] </summary>
         ShaderInfoTypeStatisticsAmd = 0,
+    }
+    /// <summary><b>[requires: VK_ARM_shader_instrumentation]</b> Used by <see cref="Vk.GetShaderInstrumentationValuesARM"/></summary>
+    /// <remarks><see href="https://registry.khronos.org/vulkan/specs/latest/man/html/VkShaderInstrumentationValuesFlagsARM.html" /></remarks>
+    [Flags]
+    public enum VkShaderInstrumentationValuesFlagsARM : uint
+    {
     }
     /// <summary></summary>
     /// <remarks><see href="https://registry.khronos.org/vulkan/specs/latest/man/html/VkShaderModuleCreateFlagBits.html" /></remarks>
@@ -7026,6 +7273,8 @@ namespace OpenTK.Graphics.Vulkan
         StructureTypeAccelerationStructureBuildSizesInfoKhr = 1000150020,
         /// <summary>[requires: <b>VK_EXT_descriptor_buffer</b>] </summary>
         StructureTypeAccelerationStructureCaptureDescriptorDataInfoExt = 1000316009,
+        /// <summary>[requires: <b>VK_KHR_device_address_commands</b>] </summary>
+        StructureTypeAccelerationStructureCreateInfo2Khr = 1000318015,
         /// <summary>[requires: <b>VK_KHR_acceleration_structure</b>] </summary>
         StructureTypeAccelerationStructureCreateInfoKhr = 1000150017,
         /// <summary>[requires: <b>VK_NV_ray_tracing</b>] </summary>
@@ -7144,6 +7393,8 @@ namespace OpenTK.Graphics.Vulkan
         StructureTypeBindImagePlaneMemoryInfo = 1000156002,
         /// <summary>[requires: <b>VK_KHR_sampler_ycbcr_conversion</b>] </summary>
         StructureTypeBindImagePlaneMemoryInfoKhr = 1000156002,
+        /// <summary>[requires: <b>VK_KHR_device_address_commands</b>] </summary>
+        StructureTypeBindIndexBuffer3InfoKhr = 1000318007,
         /// <summary>[requires: <b>v1.4</b>] </summary>
         StructureTypeBindMemoryStatus = 1000545002,
         /// <summary>[requires: <b>VK_KHR_maintenance6</b>] </summary>
@@ -7152,6 +7403,10 @@ namespace OpenTK.Graphics.Vulkan
         StructureTypeBindSparseInfo = 7,
         /// <summary>[requires: <b>VK_ARM_tensors</b>] </summary>
         StructureTypeBindTensorMemoryInfoArm = 1000460002,
+        /// <summary>[requires: <b>VK_KHR_device_address_commands</b>] </summary>
+        StructureTypeBindTransformFeedbackBuffer2InfoExt = 1000318013,
+        /// <summary>[requires: <b>VK_KHR_device_address_commands</b>] </summary>
+        StructureTypeBindVertexBuffer3InfoKhr = 1000318008,
         /// <summary>[requires: <b>VK_KHR_video_queue</b>] </summary>
         StructureTypeBindVideoSessionMemoryInfoKhr = 1000023004,
         /// <summary>[requires: <b>VK_QCOM_filter_cubic_weights</b>] </summary>
@@ -7262,6 +7517,8 @@ namespace OpenTK.Graphics.Vulkan
         StructureTypeComputePipelineCreateInfo = 29,
         /// <summary>[requires: <b>VK_NV_device_generated_commands_compute</b>] </summary>
         StructureTypeComputePipelineIndirectBufferInfoNv = 1000428001,
+        /// <summary>[requires: <b>VK_KHR_device_address_commands</b>] </summary>
+        StructureTypeConditionalRenderingBeginInfo2Ext = 1000318012,
         /// <summary>[requires: <b>VK_EXT_conditional_rendering</b>] </summary>
         StructureTypeConditionalRenderingBeginInfoExt = 1000081002,
         /// <summary>[requires: <b>VK_NV_cooperative_vector</b>] </summary>
@@ -7290,6 +7547,10 @@ namespace OpenTK.Graphics.Vulkan
         StructureTypeCopyCommandTransformInfoQcom = 1000333000,
         /// <summary>[requires: <b>v1.0</b>] </summary>
         StructureTypeCopyDescriptorSet = 36,
+        /// <summary>[requires: <b>VK_KHR_device_address_commands</b>] </summary>
+        StructureTypeCopyDeviceMemoryImageInfoKhr = 1000318003,
+        /// <summary>[requires: <b>VK_KHR_device_address_commands</b>] </summary>
+        StructureTypeCopyDeviceMemoryInfoKhr = 1000318001,
         /// <summary>[requires: <b>v1.3</b>] </summary>
         StructureTypeCopyImageInfo2 = 1000337001,
         /// <summary>[requires: <b>VK_KHR_copy_commands2</b>] </summary>
@@ -7342,6 +7603,10 @@ namespace OpenTK.Graphics.Vulkan
         StructureTypeCustomResolveCreateInfoExt = 1000628002,
         /// <summary>[requires: <b>VK_KHR_external_semaphore_win32</b>] </summary>
         StructureTypeD3D12FenceSubmitInfoKhr = 1000078002,
+        /// <summary>[requires: <b>VK_ARM_data_graph_optical_flow</b>] </summary>
+        StructureTypeDataGraphOpticalFlowImageFormatInfoArm = 1000631003,
+        /// <summary>[requires: <b>VK_ARM_data_graph_optical_flow</b>] </summary>
+        StructureTypeDataGraphOpticalFlowImageFormatPropertiesArm = 1000631004,
         /// <summary>[requires: <b>VK_QCOM_data_graph_model</b>] </summary>
         StructureTypeDataGraphPipelineBuiltinModelCreateInfoQcom = 1000629001,
         /// <summary>[requires: <b>VK_ARM_data_graph</b>] </summary>
@@ -7358,10 +7623,18 @@ namespace OpenTK.Graphics.Vulkan
         StructureTypeDataGraphPipelineIdentifierCreateInfoArm = 1000507013,
         /// <summary>[requires: <b>VK_ARM_data_graph</b>] </summary>
         StructureTypeDataGraphPipelineInfoArm = 1000507009,
+        /// <summary>[requires: <b>VK_ARM_data_graph_neural_accelerator_statistics</b>] </summary>
+        StructureTypeDataGraphPipelineNeuralStatisticsCreateInfoArm = 1000676000,
+        /// <summary>[requires: <b>VK_ARM_data_graph_optical_flow</b>] </summary>
+        StructureTypeDataGraphPipelineOpticalFlowCreateInfoArm = 1000631002,
+        /// <summary>[requires: <b>VK_ARM_data_graph_optical_flow</b>] </summary>
+        StructureTypeDataGraphPipelineOpticalFlowDispatchInfoArm = 1000631005,
         /// <summary>[requires: <b>VK_ARM_data_graph</b>] </summary>
         StructureTypeDataGraphPipelinePropertyQueryResultArm = 1000507008,
         /// <summary>[requires: <b>VK_ARM_data_graph</b>] </summary>
         StructureTypeDataGraphPipelineResourceInfoArm = 1000507002,
+        /// <summary>[requires: <b>VK_ARM_data_graph_optical_flow</b>] </summary>
+        StructureTypeDataGraphPipelineResourceInfoImageLayoutArm = 1000631006,
         /// <summary>[requires: <b>VK_ARM_data_graph</b>] </summary>
         StructureTypeDataGraphPipelineSessionBindPointRequirementArm = 1000507012,
         /// <summary>[requires: <b>VK_ARM_data_graph</b>] </summary>
@@ -7370,8 +7643,14 @@ namespace OpenTK.Graphics.Vulkan
         StructureTypeDataGraphPipelineSessionCreateInfoArm = 1000507001,
         /// <summary>[requires: <b>VK_ARM_data_graph</b>] </summary>
         StructureTypeDataGraphPipelineSessionMemoryRequirementsInfoArm = 1000507004,
+        /// <summary>[requires: <b>VK_ARM_data_graph_neural_accelerator_statistics</b>] </summary>
+        StructureTypeDataGraphPipelineSessionNeuralStatisticsCreateInfoArm = 1000676001,
         /// <summary>[requires: <b>VK_ARM_data_graph</b>] </summary>
         StructureTypeDataGraphPipelineShaderModuleCreateInfoArm = 1000507007,
+        /// <summary>[requires: <b>VK_ARM_data_graph_optical_flow</b>] </summary>
+        StructureTypeDataGraphPipelineSingleNodeConnectionArm = 1000631008,
+        /// <summary>[requires: <b>VK_ARM_data_graph_optical_flow</b>] </summary>
+        StructureTypeDataGraphPipelineSingleNodeCreateInfoArm = 1000631007,
         /// <summary>[requires: <b>VK_ARM_data_graph</b>] </summary>
         StructureTypeDataGraphProcessingEngineCreateInfoArm = 1000507016,
         /// <summary>[requires: <b>VK_EXT_debug_marker</b>] </summary>
@@ -7472,8 +7751,14 @@ namespace OpenTK.Graphics.Vulkan
         StructureTypeDeviceEventInfoExt = 1000091001,
         /// <summary>[requires: <b>VK_EXT_device_fault</b>] </summary>
         StructureTypeDeviceFaultCountsExt = 1000341001,
+        /// <summary>[requires: <b>VK_KHR_device_fault</b>] </summary>
+        StructureTypeDeviceFaultDebugInfoKhr = 1000573003,
         /// <summary>[requires: <b>VK_EXT_device_fault</b>] </summary>
         StructureTypeDeviceFaultInfoExt = 1000341002,
+        /// <summary>[requires: <b>VK_KHR_device_fault</b>] </summary>
+        StructureTypeDeviceFaultInfoKhr = 1000573002,
+        /// <summary>[requires: <b>VK_KHR_shader_abort</b>] </summary>
+        StructureTypeDeviceFaultShaderAbortMessageInfoKhr = 1000233001,
         /// <summary>[requires: <b>v1.1</b>] </summary>
         StructureTypeDeviceGroupBindSparseInfo = 1000060006,
         /// <summary>[requires: <b>VK_KHR_device_group</b>] </summary>
@@ -7508,6 +7793,10 @@ namespace OpenTK.Graphics.Vulkan
         StructureTypeDeviceImageSubresourceInfo = 1000470004,
         /// <summary>[requires: <b>VK_KHR_maintenance5</b>] </summary>
         StructureTypeDeviceImageSubresourceInfoKhr = 1000470004,
+        /// <summary>[requires: <b>VK_KHR_device_address_commands</b>] </summary>
+        StructureTypeDeviceMemoryCopyKhr = 1000318000,
+        /// <summary>[requires: <b>VK_KHR_device_address_commands</b>] </summary>
+        StructureTypeDeviceMemoryImageCopyKhr = 1000318002,
         /// <summary>[requires: <b>v1.2</b>] </summary>
         StructureTypeDeviceMemoryOpaqueCaptureAddressInfo = 1000257004,
         /// <summary>[requires: <b>VK_KHR_buffer_device_address</b>] </summary>
@@ -7542,6 +7831,10 @@ namespace OpenTK.Graphics.Vulkan
         StructureTypeDirectDriverLoadingListLunarg = 1000459001,
         /// <summary>[requires: <b>VK_EXT_directfb_surface</b>] </summary>
         StructureTypeDirectfbSurfaceCreateInfoExt = 1000346000,
+        /// <summary>[requires: <b>VK_KHR_device_address_commands</b>] </summary>
+        StructureTypeDispatchIndirect2InfoKhr = 1000318011,
+        /// <summary>[requires: <b>VK_ARM_scheduling_controls</b>] </summary>
+        StructureTypeDispatchParametersArm = 1000417003,
         /// <summary>[requires: <b>VK_QCOM_tile_shading</b>] </summary>
         StructureTypeDispatchTileInfoQcom = 1000309005,
         /// <summary>[requires: <b>VK_EXT_display_control</b>] </summary>
@@ -7570,6 +7863,10 @@ namespace OpenTK.Graphics.Vulkan
         StructureTypeDisplaySurfaceCreateInfoKhr = 1000002001,
         /// <summary>[requires: <b>VK_NV_display_stereo</b>] </summary>
         StructureTypeDisplaySurfaceStereoCreateInfoNv = 1000551000,
+        /// <summary>[requires: <b>VK_KHR_device_address_commands</b>] </summary>
+        StructureTypeDrawIndirect2InfoKhr = 1000318009,
+        /// <summary>[requires: <b>VK_KHR_device_address_commands</b>] </summary>
+        StructureTypeDrawIndirectCount2InfoKhr = 1000318010,
         /// <summary>[requires: <b>VK_EXT_image_drm_format_modifier</b>] </summary>
         StructureTypeDrmFormatModifierPropertiesList2Ext = 1000158006,
         /// <summary>[requires: <b>VK_EXT_image_drm_format_modifier</b>] </summary>
@@ -7982,6 +8279,8 @@ namespace OpenTK.Graphics.Vulkan
         StructureTypeMemoryMapInfoKhr = 1000271000,
         /// <summary>[requires: <b>VK_EXT_map_memory_placed</b>] </summary>
         StructureTypeMemoryMapPlacedInfoExt = 1000272002,
+        /// <summary>[requires: <b>VK_KHR_device_address_commands</b>] </summary>
+        StructureTypeMemoryMarkerInfoAmd = 1000318014,
         /// <summary>[requires: <b>VK_EXT_external_memory_metal</b>] </summary>
         StructureTypeMemoryMetalHandlePropertiesExt = 1000602001,
         /// <summary>[requires: <b>v1.2</b>] </summary>
@@ -7990,6 +8289,10 @@ namespace OpenTK.Graphics.Vulkan
         StructureTypeMemoryOpaqueCaptureAddressAllocateInfoKhr = 1000257003,
         /// <summary>[requires: <b>VK_EXT_memory_priority</b>] </summary>
         StructureTypeMemoryPriorityAllocateInfoExt = 1000238001,
+        /// <summary>[requires: <b>VK_KHR_device_address_commands</b>] </summary>
+        StructureTypeMemoryRangeBarrierKhr = 1000318005,
+        /// <summary>[requires: <b>VK_KHR_device_address_commands</b>] </summary>
+        StructureTypeMemoryRangeBarriersInfoKhr = 1000318004,
         /// <summary>[requires: <b>v1.1</b>] </summary>
         StructureTypeMemoryRequirements2 = 1000146003,
         /// <summary>[requires: <b>VK_KHR_get_memory_requirements2</b>] </summary>
@@ -8066,6 +8369,8 @@ namespace OpenTK.Graphics.Vulkan
         StructureTypePerTileBeginInfoQcom = 1000309003,
         /// <summary>[requires: <b>VK_QCOM_tile_shading</b>] </summary>
         StructureTypePerTileEndInfoQcom = 1000309004,
+        /// <summary>[requires: <b>VK_QCOM_queue_perf_hint</b>] </summary>
+        StructureTypePerfHintInfoQcom = 1000302000,
         /// <summary>[requires: <b>VK_INTEL_performance_query</b>] </summary>
         StructureTypePerformanceConfigurationAcquireInfoIntel = 1000210005,
         /// <summary>[requires: <b>VK_ARM_performance_counters_by_region</b>] </summary>
@@ -8200,6 +8505,10 @@ namespace OpenTK.Graphics.Vulkan
         StructureTypePhysicalDeviceDataGraphFeaturesArm = 1000507006,
         /// <summary>[requires: <b>VK_QCOM_data_graph_model</b>] </summary>
         StructureTypePhysicalDeviceDataGraphModelFeaturesQcom = 1000629000,
+        /// <summary>[requires: <b>VK_ARM_data_graph_neural_accelerator_statistics</b>] </summary>
+        StructureTypePhysicalDeviceDataGraphNeuralAcceleratorStatisticsFeaturesArm = 1000676002,
+        /// <summary>[requires: <b>VK_ARM_data_graph_optical_flow</b>] </summary>
+        StructureTypePhysicalDeviceDataGraphOpticalFlowFeaturesArm = 1000631000,
         /// <summary>[requires: <b>VK_NV_dedicated_allocation_image_aliasing</b>] </summary>
         StructureTypePhysicalDeviceDedicatedAllocationImageAliasingFeaturesNv = 1000240000,
         /// <summary>[requires: <b>VK_AMDX_dense_geometry_format</b>] </summary>
@@ -8248,6 +8557,8 @@ namespace OpenTK.Graphics.Vulkan
         StructureTypePhysicalDeviceDescriptorPoolOverallocationFeaturesNv = 1000546000,
         /// <summary>[requires: <b>VK_VALVE_descriptor_set_host_mapping</b>] </summary>
         StructureTypePhysicalDeviceDescriptorSetHostMappingFeaturesValve = 1000420000,
+        /// <summary>[requires: <b>VK_KHR_device_address_commands</b>] </summary>
+        StructureTypePhysicalDeviceDeviceAddressCommandsFeaturesKhr = 1000318006,
         /// <summary>[requires: <b>VK_NV_device_generated_commands_compute</b>] </summary>
         StructureTypePhysicalDeviceDeviceGeneratedCommandsComputeFeaturesNv = 1000428000,
         /// <summary>[requires: <b>VK_EXT_device_generated_commands</b>] </summary>
@@ -8338,6 +8649,10 @@ namespace OpenTK.Graphics.Vulkan
         StructureTypePhysicalDeviceExternalTensorInfoArm = 1000460015,
         /// <summary>[requires: <b>VK_EXT_device_fault</b>] </summary>
         StructureTypePhysicalDeviceFaultFeaturesExt = 1000341000,
+        /// <summary>[requires: <b>VK_KHR_device_fault</b>] </summary>
+        StructureTypePhysicalDeviceFaultFeaturesKhr = 1000573000,
+        /// <summary>[requires: <b>VK_KHR_device_fault</b>] </summary>
+        StructureTypePhysicalDeviceFaultPropertiesKhr = 1000573001,
         /// <summary>[requires: <b>v1.1</b>] </summary>
         StructureTypePhysicalDeviceFeatures2 = 1000059000,
         /// <summary>[requires: <b>VK_KHR_get_physical_device_properties2</b>] </summary>
@@ -8512,6 +8827,8 @@ namespace OpenTK.Graphics.Vulkan
         StructureTypePhysicalDeviceMaintenance10FeaturesKhr = 1000630000,
         /// <summary>[requires: <b>VK_KHR_maintenance10</b>] </summary>
         StructureTypePhysicalDeviceMaintenance10PropertiesKhr = 1000630001,
+        /// <summary>[requires: <b>VK_KHR_maintenance11</b>] </summary>
+        StructureTypePhysicalDeviceMaintenance11FeaturesKhr = 1000657000,
         /// <summary>[requires: <b>v1.1</b>] </summary>
         StructureTypePhysicalDeviceMaintenance3Properties = 1000168000,
         /// <summary>[requires: <b>VK_KHR_maintenance3</b>] </summary>
@@ -8690,6 +9007,8 @@ namespace OpenTK.Graphics.Vulkan
         StructureTypePhysicalDevicePresentWait2FeaturesKhr = 1000480001,
         /// <summary>[requires: <b>VK_KHR_present_wait</b>] </summary>
         StructureTypePhysicalDevicePresentWaitFeaturesKhr = 1000248000,
+        /// <summary>[requires: <b>VK_EXT_primitive_restart_index</b>] </summary>
+        StructureTypePhysicalDevicePrimitiveRestartIndexFeaturesExt = 1000678000,
         /// <summary>[requires: <b>VK_EXT_primitive_topology_list_restart</b>] </summary>
         StructureTypePhysicalDevicePrimitiveTopologyListRestartFeaturesExt = 1000356000,
         /// <summary>[requires: <b>VK_EXT_primitives_generated_query</b>] </summary>
@@ -8720,6 +9039,10 @@ namespace OpenTK.Graphics.Vulkan
         StructureTypePhysicalDevicePushDescriptorPropertiesKhr = 1000080000,
         /// <summary>[requires: <b>VK_ARM_data_graph</b>] </summary>
         StructureTypePhysicalDeviceQueueFamilyDataGraphProcessingEngineInfoArm = 1000507019,
+        /// <summary>[requires: <b>VK_QCOM_queue_perf_hint</b>] </summary>
+        StructureTypePhysicalDeviceQueuePerfHintFeaturesQcom = 1000302001,
+        /// <summary>[requires: <b>VK_QCOM_queue_perf_hint</b>] </summary>
+        StructureTypePhysicalDeviceQueuePerfHintPropertiesQcom = 1000302002,
         /// <summary>[requires: <b>VK_ARM_rasterization_order_attachment_access</b>] </summary>
         StructureTypePhysicalDeviceRasterizationOrderAttachmentAccessFeaturesArm = 1000342000,
         /// <summary>[requires: <b>VK_EXT_rasterization_order_attachment_access</b>] </summary>
@@ -8785,6 +9108,8 @@ namespace OpenTK.Graphics.Vulkan
         /// <summary>[requires: <b>VK_EXT_scalar_block_layout</b>] </summary>
         StructureTypePhysicalDeviceScalarBlockLayoutFeaturesExt = 1000221000,
         /// <summary>[requires: <b>VK_ARM_scheduling_controls</b>] </summary>
+        StructureTypePhysicalDeviceSchedulingControlsDispatchParametersPropertiesArm = 1000417004,
+        /// <summary>[requires: <b>VK_ARM_scheduling_controls</b>] </summary>
         StructureTypePhysicalDeviceSchedulingControlsFeaturesArm = 1000417001,
         /// <summary>[requires: <b>VK_ARM_scheduling_controls</b>] </summary>
         StructureTypePhysicalDeviceSchedulingControlsPropertiesArm = 1000417002,
@@ -8794,6 +9119,10 @@ namespace OpenTK.Graphics.Vulkan
         StructureTypePhysicalDeviceSeparateDepthStencilLayoutsFeaturesKhr = 1000241000,
         /// <summary>[requires: <b>VK_EXT_shader_64bit_indexing</b>] </summary>
         StructureTypePhysicalDeviceShader64BitIndexingFeaturesExt = 1000627000,
+        /// <summary>[requires: <b>VK_KHR_shader_abort</b>] </summary>
+        StructureTypePhysicalDeviceShaderAbortFeaturesKhr = 1000233000,
+        /// <summary>[requires: <b>VK_KHR_shader_abort</b>] </summary>
+        StructureTypePhysicalDeviceShaderAbortPropertiesKhr = 1000233002,
         /// <summary>[requires: <b>VK_EXT_shader_atomic_float2</b>] </summary>
         StructureTypePhysicalDeviceShaderAtomicFloat2FeaturesExt = 1000273000,
         /// <summary>[requires: <b>VK_EXT_shader_atomic_float</b>] </summary>
@@ -8808,6 +9137,8 @@ namespace OpenTK.Graphics.Vulkan
         StructureTypePhysicalDeviceShaderBfloat16FeaturesKhr = 1000141000,
         /// <summary>[requires: <b>VK_KHR_shader_clock</b>] </summary>
         StructureTypePhysicalDeviceShaderClockFeaturesKhr = 1000181000,
+        /// <summary>[requires: <b>VK_KHR_shader_constant_data</b>] </summary>
+        StructureTypePhysicalDeviceShaderConstantDataFeaturesKhr = 1000231000,
         /// <summary>[requires: <b>VK_ARM_shader_core_builtins</b>] </summary>
         StructureTypePhysicalDeviceShaderCoreBuiltinsFeaturesArm = 1000497000,
         /// <summary>[requires: <b>VK_ARM_shader_core_builtins</b>] </summary>
@@ -8852,6 +9183,10 @@ namespace OpenTK.Graphics.Vulkan
         StructureTypePhysicalDeviceShaderImageAtomicInt64FeaturesExt = 1000234000,
         /// <summary>[requires: <b>VK_NV_shader_image_footprint</b>] </summary>
         StructureTypePhysicalDeviceShaderImageFootprintFeaturesNv = 1000204000,
+        /// <summary>[requires: <b>VK_ARM_shader_instrumentation</b>] </summary>
+        StructureTypePhysicalDeviceShaderInstrumentationFeaturesArm = 1000607000,
+        /// <summary>[requires: <b>VK_ARM_shader_instrumentation</b>] </summary>
+        StructureTypePhysicalDeviceShaderInstrumentationPropertiesArm = 1000607001,
         /// <summary>[requires: <b>v1.3</b>] </summary>
         StructureTypePhysicalDeviceShaderIntegerDotProductFeatures = 1000280000,
         /// <summary>[requires: <b>VK_KHR_shader_integer_dot_product</b>] </summary>
@@ -8868,6 +9203,8 @@ namespace OpenTK.Graphics.Vulkan
         StructureTypePhysicalDeviceShaderLongVectorPropertiesExt = 1000635001,
         /// <summary>[requires: <b>VK_KHR_shader_maximal_reconvergence</b>] </summary>
         StructureTypePhysicalDeviceShaderMaximalReconvergenceFeaturesKhr = 1000434000,
+        /// <summary>[requires: <b>VK_VALVE_shader_mixed_float_dot_product</b>] </summary>
+        StructureTypePhysicalDeviceShaderMixedFloatDotProductFeaturesValve = 1000673000,
         /// <summary>[requires: <b>VK_EXT_shader_module_identifier</b>] </summary>
         StructureTypePhysicalDeviceShaderModuleIdentifierFeaturesExt = 1000462000,
         /// <summary>[requires: <b>VK_EXT_shader_module_identifier</b>] </summary>
@@ -8960,6 +9297,8 @@ namespace OpenTK.Graphics.Vulkan
         StructureTypePhysicalDeviceTextureCompressionAstcHdrFeatures = 1000066000,
         /// <summary>[requires: <b>VK_EXT_texture_compression_astc_hdr</b>] </summary>
         StructureTypePhysicalDeviceTextureCompressionAstcHdrFeaturesExt = 1000066000,
+        /// <summary>[requires: <b>VK_SEC_throttle_hint</b>] </summary>
+        StructureTypePhysicalDeviceThrottleHintFeaturesSec = 1000674000,
         /// <summary>[requires: <b>VK_QCOM_tile_memory_heap</b>] </summary>
         StructureTypePhysicalDeviceTileMemoryHeapFeaturesQcom = 1000547000,
         /// <summary>[requires: <b>VK_QCOM_tile_memory_heap</b>] </summary>
@@ -9270,16 +9609,22 @@ namespace OpenTK.Graphics.Vulkan
         StructureTypeQueueFamilyCheckpointProperties2Nv = 1000314008,
         /// <summary>[requires: <b>VK_NV_device_diagnostic_checkpoints</b>] </summary>
         StructureTypeQueueFamilyCheckpointPropertiesNv = 1000206001,
+        /// <summary>[requires: <b>VK_ARM_data_graph_optical_flow</b>] </summary>
+        StructureTypeQueueFamilyDataGraphOpticalFlowPropertiesArm = 1000631001,
         /// <summary>[requires: <b>VK_ARM_data_graph</b>] </summary>
         StructureTypeQueueFamilyDataGraphProcessingEnginePropertiesArm = 1000507017,
         /// <summary>[requires: <b>VK_ARM_data_graph</b>] </summary>
         StructureTypeQueueFamilyDataGraphPropertiesArm = 1000507018,
+        /// <summary>[requires: <b>VK_ARM_data_graph_instruction_set_tosa</b>] </summary>
+        StructureTypeQueueFamilyDataGraphTosaPropertiesArm = 1000508000,
         /// <summary>[requires: <b>v1.4</b>] </summary>
         StructureTypeQueueFamilyGlobalPriorityProperties = 1000388001,
         /// <summary>[requires: <b>VK_EXT_global_priority_query</b>] </summary>
         StructureTypeQueueFamilyGlobalPriorityPropertiesExt = 1000388001,
         /// <summary>[requires: <b>VK_KHR_global_priority</b>] </summary>
         StructureTypeQueueFamilyGlobalPriorityPropertiesKhr = 1000388001,
+        /// <summary>[requires: <b>VK_KHR_maintenance11</b>] </summary>
+        StructureTypeQueueFamilyOptimalImageTransferGranularityPropertiesKhr = 1000657001,
         /// <summary>[requires: <b>VK_KHR_maintenance9</b>] </summary>
         StructureTypeQueueFamilyOwnershipTransferPropertiesKhr = 1000584002,
         /// <summary>[requires: <b>v1.1</b>] </summary>
@@ -9474,6 +9819,10 @@ namespace OpenTK.Graphics.Vulkan
         StructureTypeShaderCreateInfoExt = 1000482002,
         /// <summary>[requires: <b>VK_EXT_descriptor_heap</b>] </summary>
         StructureTypeShaderDescriptorSetAndBindingMappingInfoExt = 1000135006,
+        /// <summary>[requires: <b>VK_ARM_shader_instrumentation</b>] </summary>
+        StructureTypeShaderInstrumentationCreateInfoArm = 1000607002,
+        /// <summary>[requires: <b>VK_ARM_shader_instrumentation</b>] </summary>
+        StructureTypeShaderInstrumentationMetricDescriptionArm = 1000607003,
         /// <summary>[requires: <b>v1.0</b>] </summary>
         StructureTypeShaderModuleCreateInfo = 16,
         /// <summary>[requires: <b>VK_EXT_shader_module_identifier</b>] </summary>
@@ -9630,6 +9979,8 @@ namespace OpenTK.Graphics.Vulkan
         StructureTypeTexelBufferDescriptorInfoExt = 1000135000,
         /// <summary>[requires: <b>VK_AMD_texture_gather_bias_lod</b>] </summary>
         StructureTypeTextureLodGatherFormatPropertiesAmd = 1000041000,
+        /// <summary>[requires: <b>VK_SEC_throttle_hint</b>] </summary>
+        StructureTypeThrottleHintSubmitInfoSec = 1000674001,
         /// <summary>[requires: <b>VK_QCOM_tile_memory_heap</b>] </summary>
         StructureTypeTileMemoryBindInfoQcom = 1000547003,
         /// <summary>[requires: <b>VK_QCOM_tile_memory_heap</b>] </summary>
@@ -10181,6 +10532,17 @@ namespace OpenTK.Graphics.Vulkan
         TessellationDomainOriginUpperLeft = 0,
         /// <summary>[requires: <b>VK_KHR_maintenance2</b>] </summary>
         TessellationDomainOriginUpperLeftKhr = 0,
+    }
+    /// <summary><b>[requires: VK_SEC_throttle_hint]</b> </summary>
+    /// <remarks><see href="https://registry.khronos.org/vulkan/specs/latest/man/html/VkThrottleHintTypeSEC.html" /></remarks>
+    public enum VkThrottleHintTypeSEC : int
+    {
+        /// <summary>[requires: <b>VK_SEC_throttle_hint</b>] </summary>
+        ThrottleHintTypeDefaultSec = 0,
+        /// <summary>[requires: <b>VK_SEC_throttle_hint</b>] </summary>
+        ThrottleHintTypeHighSec = 2,
+        /// <summary>[requires: <b>VK_SEC_throttle_hint</b>] </summary>
+        ThrottleHintTypeLowSec = 1,
     }
     /// <summary><b>[requires: VK_QCOM_tile_shading]</b> </summary>
     /// <remarks><see href="https://registry.khronos.org/vulkan/specs/latest/man/html/VkTileShadingRenderPassFlagBitsQCOM.html" /></remarks>

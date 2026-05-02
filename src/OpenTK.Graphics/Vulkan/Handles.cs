@@ -6,7 +6,7 @@ using System.Runtime.CompilerServices;
 namespace OpenTK.Graphics.Vulkan
 {
 #pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
-    /// <summary><b>[requires: VK_KHR_acceleration_structure]</b> Used by <see cref="Vk.CmdWriteAccelerationStructuresPropertiesKHR"/>, <see cref="Vk.CreateAccelerationStructureKHR"/>, <see cref="Vk.DestroyAccelerationStructureKHR"/>, ...</summary>
+    /// <summary><b>[requires: VK_KHR_acceleration_structure]</b> Used by <see cref="Vk.CmdWriteAccelerationStructuresPropertiesKHR"/>, <see cref="Vk.CreateAccelerationStructure2KHR"/>, <see cref="Vk.CreateAccelerationStructureKHR"/>, ...</summary>
     /// <remarks><see href="https://registry.khronos.org/vulkan/specs/1.3-extensions/man/html/VkAccelerationStructureKHR.html" /></remarks>
     [DebuggerDisplay("VkAccelerationStructureKHR\\{{Handle}\\}")]
     public unsafe struct VkAccelerationStructureKHR : IEquatable<VkAccelerationStructureKHR>
@@ -93,7 +93,7 @@ namespace OpenTK.Graphics.Vulkan
         public static explicit operator ulong(VkBufferView handle) => handle.Handle;
         public static explicit operator VkBufferView(ulong handle) => new VkBufferView(handle);
     }
-    /// <summary><b>[requires: v1.0]</b> Used by <see cref="Vk.AllocateCommandBuffers"/>, <see cref="Vk.BeginCommandBuffer"/>, <see cref="Vk.CmdBeginConditionalRenderingEXT"/>, ...</summary>
+    /// <summary><b>[requires: v1.0]</b> Used by <see cref="Vk.AllocateCommandBuffers"/>, <see cref="Vk.BeginCommandBuffer"/>, <see cref="Vk.CmdBeginConditionalRendering2EXT"/>, ...</summary>
     /// <remarks><see href="https://registry.khronos.org/vulkan/specs/1.3-extensions/man/html/VkCommandBuffer.html" /></remarks>
     [DebuggerDisplay("VkCommandBuffer\\{{Handle}\\}")]
     public unsafe struct VkCommandBuffer : IEquatable<VkCommandBuffer>
@@ -924,6 +924,23 @@ namespace OpenTK.Graphics.Vulkan
         public static bool operator !=(VkShaderEXT left, VkShaderEXT right) => !(left == right);
         public static explicit operator ulong(VkShaderEXT handle) => handle.Handle;
         public static explicit operator VkShaderEXT(ulong handle) => new VkShaderEXT(handle);
+    }
+    /// <summary><b>[requires: VK_ARM_shader_instrumentation]</b> Used by <see cref="Vk.ClearShaderInstrumentationMetricsARM"/>, <see cref="Vk.CmdBeginShaderInstrumentationARM"/>, <see cref="Vk.CreateShaderInstrumentationARM"/>, ...</summary>
+    /// <remarks><see href="https://registry.khronos.org/vulkan/specs/1.3-extensions/man/html/VkShaderInstrumentationARM.html" /></remarks>
+    [DebuggerDisplay("VkShaderInstrumentationARM\\{{Handle}\\}")]
+    public unsafe struct VkShaderInstrumentationARM : IEquatable<VkShaderInstrumentationARM>
+    {
+        public static VkShaderInstrumentationARM Zero => new VkShaderInstrumentationARM(0);
+        public ulong Handle;
+        public VkShaderInstrumentationARM(ulong handle) => Handle = handle;
+        public override bool Equals(object? obj) => obj is VkShaderInstrumentationARM instance && Equals(instance);
+        public bool Equals(VkShaderInstrumentationARM other) => Handle.Equals(other.Handle);
+        public override int GetHashCode() => HashCode.Combine(Handle);
+        public override string? ToString() => Handle.ToString();
+        public static bool operator ==(VkShaderInstrumentationARM left, VkShaderInstrumentationARM right) => left.Equals(right);
+        public static bool operator !=(VkShaderInstrumentationARM left, VkShaderInstrumentationARM right) => !(left == right);
+        public static explicit operator ulong(VkShaderInstrumentationARM handle) => handle.Handle;
+        public static explicit operator VkShaderInstrumentationARM(ulong handle) => new VkShaderInstrumentationARM(handle);
     }
     /// <summary><b>[requires: v1.0]</b> Used by <see cref="Vk.CreateShaderModule"/>, <see cref="Vk.DestroyShaderModule"/>, <see cref="Vk.GetShaderModuleIdentifierEXT"/></summary>
     /// <remarks><see href="https://registry.khronos.org/vulkan/specs/1.3-extensions/man/html/VkShaderModule.html" /></remarks>

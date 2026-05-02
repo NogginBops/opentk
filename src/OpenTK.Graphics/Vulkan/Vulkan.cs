@@ -283,6 +283,22 @@ namespace OpenTK.Graphics.Vulkan
         {
             return VkPointers._vkBuildMicromapsEXT_fnptr(device, deferredOperation, infoCount, pInfos);
         }
+        /// <summary><b>[requires: VK_ARM_shader_instrumentation]</b> [device command] </summary>
+        /// <param name="device"></param>
+        /// <param name="instrumentation"></param>
+        /// <remarks><see href="https://registry.khronos.org/vulkan/specs/1.3-extensions/man/html/vkClearShaderInstrumentationMetricsARM.html" /></remarks>
+        public static void ClearShaderInstrumentationMetricsARM(VkDevice device, VkShaderInstrumentationARM instrumentation)
+        {
+            VkPointers._vkClearShaderInstrumentationMetricsARM_fnptr(device, instrumentation);
+        }
+        /// <summary><b>[requires: VK_KHR_device_address_commands]</b> [device command] </summary>
+        /// <param name="commandBuffer">[extern sync: always] </param>
+        /// <param name="pConditionalRenderingBegin"></param>
+        /// <remarks><see href="https://registry.khronos.org/vulkan/specs/1.3-extensions/man/html/vkCmdBeginConditionalRendering2EXT.html" /></remarks>
+        public static void CmdBeginConditionalRendering2EXT(VkCommandBuffer commandBuffer, VkConditionalRenderingBeginInfo2EXT* pConditionalRenderingBegin)
+        {
+            VkPointers._vkCmdBeginConditionalRendering2EXT_fnptr(commandBuffer, pConditionalRenderingBegin);
+        }
         /// <summary><b>[requires: VK_EXT_conditional_rendering]</b> [device command] </summary>
         /// <param name="commandBuffer">[extern sync: always] </param>
         /// <param name="pConditionalRenderingBegin"></param>
@@ -378,6 +394,24 @@ namespace OpenTK.Graphics.Vulkan
         public static void CmdBeginRenderPass2KHR(VkCommandBuffer commandBuffer, VkRenderPassBeginInfo* pRenderPassBegin, VkSubpassBeginInfo* pSubpassBeginInfo)
         {
             VkPointers._vkCmdBeginRenderPass2KHR_fnptr(commandBuffer, pRenderPassBegin, pSubpassBeginInfo);
+        }
+        /// <summary><b>[requires: VK_ARM_shader_instrumentation]</b> [device command] </summary>
+        /// <param name="commandBuffer">[extern sync: always] </param>
+        /// <param name="instrumentation">[extern sync: always] </param>
+        /// <remarks><see href="https://registry.khronos.org/vulkan/specs/1.3-extensions/man/html/vkCmdBeginShaderInstrumentationARM.html" /></remarks>
+        public static void CmdBeginShaderInstrumentationARM(VkCommandBuffer commandBuffer, VkShaderInstrumentationARM instrumentation)
+        {
+            VkPointers._vkCmdBeginShaderInstrumentationARM_fnptr(commandBuffer, instrumentation);
+        }
+        /// <summary><b>[requires: VK_KHR_device_address_commands]</b> [device command] </summary>
+        /// <param name="commandBuffer">[extern sync: always] </param>
+        /// <param name="firstCounterRange"></param>
+        /// <param name="counterRangeCount">[optional] </param>
+        /// <param name="pCounterInfos">[optional] </param>
+        /// <remarks><see href="https://registry.khronos.org/vulkan/specs/1.3-extensions/man/html/vkCmdBeginTransformFeedback2EXT.html" /></remarks>
+        public static void CmdBeginTransformFeedback2EXT(VkCommandBuffer commandBuffer, uint firstCounterRange, uint counterRangeCount, VkBindTransformFeedbackBuffer2InfoEXT* pCounterInfos)
+        {
+            VkPointers._vkCmdBeginTransformFeedback2EXT_fnptr(commandBuffer, firstCounterRange, counterRangeCount, pCounterInfos);
         }
         /// <summary><b>[requires: VK_EXT_transform_feedback]</b> [device command] </summary>
         /// <param name="commandBuffer">[extern sync: always] </param>
@@ -487,6 +521,14 @@ namespace OpenTK.Graphics.Vulkan
         {
             VkPointers._vkCmdBindIndexBuffer2KHR_fnptr(commandBuffer, buffer, offset, size, indexType);
         }
+        /// <summary><b>[requires: VK_KHR_device_address_commands]</b> [device command] </summary>
+        /// <param name="commandBuffer">[extern sync: always] </param>
+        /// <param name="pInfo"></param>
+        /// <remarks><see href="https://registry.khronos.org/vulkan/specs/1.3-extensions/man/html/vkCmdBindIndexBuffer3KHR.html" /></remarks>
+        public static void CmdBindIndexBuffer3KHR(VkCommandBuffer commandBuffer, VkBindIndexBuffer3InfoKHR* pInfo)
+        {
+            VkPointers._vkCmdBindIndexBuffer3KHR_fnptr(commandBuffer, pInfo);
+        }
         /// <summary><b>[requires: VK_HUAWEI_invocation_mask]</b> [device command] </summary>
         /// <param name="commandBuffer">[extern sync: always] </param>
         /// <param name="imageView">[optional] </param>
@@ -558,6 +600,16 @@ namespace OpenTK.Graphics.Vulkan
         {
             VkPointers._vkCmdBindTileMemoryQCOM_fnptr(commandBuffer, pTileMemoryBindInfo);
         }
+        /// <summary><b>[requires: VK_KHR_device_address_commands]</b> [device command] </summary>
+        /// <param name="commandBuffer">[extern sync: always] </param>
+        /// <param name="firstBinding"></param>
+        /// <param name="bindingCount"></param>
+        /// <param name="pBindingInfos">[optional] </param>
+        /// <remarks><see href="https://registry.khronos.org/vulkan/specs/1.3-extensions/man/html/vkCmdBindTransformFeedbackBuffers2EXT.html" /></remarks>
+        public static void CmdBindTransformFeedbackBuffers2EXT(VkCommandBuffer commandBuffer, uint firstBinding, uint bindingCount, VkBindTransformFeedbackBuffer2InfoEXT* pBindingInfos)
+        {
+            VkPointers._vkCmdBindTransformFeedbackBuffers2EXT_fnptr(commandBuffer, firstBinding, bindingCount, pBindingInfos);
+        }
         /// <summary><b>[requires: VK_EXT_transform_feedback]</b> [device command] </summary>
         /// <param name="commandBuffer">[extern sync: always] </param>
         /// <param name="firstBinding"></param>
@@ -606,6 +658,16 @@ namespace OpenTK.Graphics.Vulkan
         public static void CmdBindVertexBuffers2EXT(VkCommandBuffer commandBuffer, uint firstBinding, uint bindingCount, VkBuffer* pBuffers, ulong* pOffsets, ulong* pSizes, ulong* pStrides)
         {
             VkPointers._vkCmdBindVertexBuffers2EXT_fnptr(commandBuffer, firstBinding, bindingCount, pBuffers, pOffsets, pSizes, pStrides);
+        }
+        /// <summary><b>[requires: VK_KHR_device_address_commands]</b> [device command] </summary>
+        /// <param name="commandBuffer">[extern sync: always] </param>
+        /// <param name="firstBinding"></param>
+        /// <param name="bindingCount"></param>
+        /// <param name="pBindingInfos"></param>
+        /// <remarks><see href="https://registry.khronos.org/vulkan/specs/1.3-extensions/man/html/vkCmdBindVertexBuffers3KHR.html" /></remarks>
+        public static void CmdBindVertexBuffers3KHR(VkCommandBuffer commandBuffer, uint firstBinding, uint bindingCount, VkBindVertexBuffer3InfoKHR* pBindingInfos)
+        {
+            VkPointers._vkCmdBindVertexBuffers3KHR_fnptr(commandBuffer, firstBinding, bindingCount, pBindingInfos);
         }
         /// <summary><b>[requires: v1.0]</b> [device command] </summary>
         /// <param name="commandBuffer">[extern sync: always] </param>
@@ -889,6 +951,14 @@ namespace OpenTK.Graphics.Vulkan
         {
             VkPointers._vkCmdCopyImageToBuffer2KHR_fnptr(commandBuffer, pCopyImageToBufferInfo);
         }
+        /// <summary><b>[requires: VK_KHR_device_address_commands]</b> [device command] </summary>
+        /// <param name="commandBuffer">[extern sync: always] </param>
+        /// <param name="pCopyMemoryInfo">[optional] </param>
+        /// <remarks><see href="https://registry.khronos.org/vulkan/specs/1.3-extensions/man/html/vkCmdCopyImageToMemoryKHR.html" /></remarks>
+        public static void CmdCopyImageToMemoryKHR(VkCommandBuffer commandBuffer, VkCopyDeviceMemoryImageInfoKHR* pCopyMemoryInfo)
+        {
+            VkPointers._vkCmdCopyImageToMemoryKHR_fnptr(commandBuffer, pCopyMemoryInfo);
+        }
         /// <summary><b>[requires: VK_KHR_copy_memory_indirect]</b> [device command] </summary>
         /// <param name="commandBuffer">[extern sync: always] </param>
         /// <param name="pCopyMemoryIndirectInfo"></param>
@@ -906,6 +976,14 @@ namespace OpenTK.Graphics.Vulkan
         public static void CmdCopyMemoryIndirectNV(VkCommandBuffer commandBuffer, ulong copyBufferAddress, uint copyCount, uint stride)
         {
             VkPointers._vkCmdCopyMemoryIndirectNV_fnptr(commandBuffer, copyBufferAddress, copyCount, stride);
+        }
+        /// <summary><b>[requires: VK_KHR_device_address_commands]</b> [device command] </summary>
+        /// <param name="commandBuffer">[extern sync: always] </param>
+        /// <param name="pCopyMemoryInfo">[optional] </param>
+        /// <remarks><see href="https://registry.khronos.org/vulkan/specs/1.3-extensions/man/html/vkCmdCopyMemoryKHR.html" /></remarks>
+        public static void CmdCopyMemoryKHR(VkCommandBuffer commandBuffer, VkCopyDeviceMemoryInfoKHR* pCopyMemoryInfo)
+        {
+            VkPointers._vkCmdCopyMemoryKHR_fnptr(commandBuffer, pCopyMemoryInfo);
         }
         /// <summary><b>[requires: VK_KHR_acceleration_structure]</b> [device command] </summary>
         /// <param name="commandBuffer">[extern sync: always] </param>
@@ -935,6 +1013,14 @@ namespace OpenTK.Graphics.Vulkan
         public static void CmdCopyMemoryToImageIndirectNV(VkCommandBuffer commandBuffer, ulong copyBufferAddress, uint copyCount, uint stride, VkImage dstImage, VkImageLayout dstImageLayout, VkImageSubresourceLayers* pImageSubresources)
         {
             VkPointers._vkCmdCopyMemoryToImageIndirectNV_fnptr(commandBuffer, copyBufferAddress, copyCount, stride, dstImage, dstImageLayout, pImageSubresources);
+        }
+        /// <summary><b>[requires: VK_KHR_device_address_commands]</b> [device command] </summary>
+        /// <param name="commandBuffer">[extern sync: always] </param>
+        /// <param name="pCopyMemoryInfo">[optional] </param>
+        /// <remarks><see href="https://registry.khronos.org/vulkan/specs/1.3-extensions/man/html/vkCmdCopyMemoryToImageKHR.html" /></remarks>
+        public static void CmdCopyMemoryToImageKHR(VkCommandBuffer commandBuffer, VkCopyDeviceMemoryImageInfoKHR* pCopyMemoryInfo)
+        {
+            VkPointers._vkCmdCopyMemoryToImageKHR_fnptr(commandBuffer, pCopyMemoryInfo);
         }
         /// <summary><b>[requires: VK_EXT_opacity_micromap]</b> [device command] </summary>
         /// <param name="commandBuffer">[extern sync: always] </param>
@@ -973,6 +1059,19 @@ namespace OpenTK.Graphics.Vulkan
         public static void CmdCopyQueryPoolResults(VkCommandBuffer commandBuffer, VkQueryPool queryPool, uint firstQuery, uint queryCount, VkBuffer dstBuffer, ulong dstOffset, ulong stride, VkQueryResultFlagBits flags)
         {
             VkPointers._vkCmdCopyQueryPoolResults_fnptr(commandBuffer, queryPool, firstQuery, queryCount, dstBuffer, dstOffset, stride, flags);
+        }
+        /// <summary><b>[requires: VK_KHR_device_address_commands]</b> [device command] </summary>
+        /// <param name="commandBuffer">[extern sync: always] </param>
+        /// <param name="queryPool"></param>
+        /// <param name="firstQuery"></param>
+        /// <param name="queryCount"></param>
+        /// <param name="pDstRange"></param>
+        /// <param name="dstFlags">[optional] </param>
+        /// <param name="queryResultFlags">[optional] </param>
+        /// <remarks><see href="https://registry.khronos.org/vulkan/specs/1.3-extensions/man/html/vkCmdCopyQueryPoolResultsToMemoryKHR.html" /></remarks>
+        public static void CmdCopyQueryPoolResultsToMemoryKHR(VkCommandBuffer commandBuffer, VkQueryPool queryPool, uint firstQuery, uint queryCount, VkStridedDeviceAddressRangeKHR* pDstRange, VkAddressCommandFlagBitsKHR dstFlags, VkQueryResultFlagBits queryResultFlags)
+        {
+            VkPointers._vkCmdCopyQueryPoolResultsToMemoryKHR_fnptr(commandBuffer, queryPool, firstQuery, queryCount, pDstRange, dstFlags, queryResultFlags);
         }
         /// <summary><b>[requires: VK_ARM_tensors]</b> [device command] </summary>
         /// <param name="commandBuffer">[extern sync: always] </param>
@@ -1152,6 +1251,14 @@ namespace OpenTK.Graphics.Vulkan
         {
             VkPointers._vkCmdDispatchIndirect_fnptr(commandBuffer, buffer, offset);
         }
+        /// <summary><b>[requires: VK_KHR_device_address_commands]</b> [device command] </summary>
+        /// <param name="commandBuffer">[extern sync: always] </param>
+        /// <param name="pInfo"></param>
+        /// <remarks><see href="https://registry.khronos.org/vulkan/specs/1.3-extensions/man/html/vkCmdDispatchIndirect2KHR.html" /></remarks>
+        public static void CmdDispatchIndirect2KHR(VkCommandBuffer commandBuffer, VkDispatchIndirect2InfoKHR* pInfo)
+        {
+            VkPointers._vkCmdDispatchIndirect2KHR_fnptr(commandBuffer, pInfo);
+        }
         /// <summary><b>[requires: VK_QCOM_tile_shading]</b> [device command] </summary>
         /// <param name="commandBuffer"></param>
         /// <param name="pDispatchTileInfo"></param>
@@ -1213,6 +1320,14 @@ namespace OpenTK.Graphics.Vulkan
         {
             VkPointers._vkCmdDrawIndexedIndirect_fnptr(commandBuffer, buffer, offset, drawCount, stride);
         }
+        /// <summary><b>[requires: VK_KHR_device_address_commands]</b> [device command] </summary>
+        /// <param name="commandBuffer">[extern sync: always] </param>
+        /// <param name="pInfo"></param>
+        /// <remarks><see href="https://registry.khronos.org/vulkan/specs/1.3-extensions/man/html/vkCmdDrawIndexedIndirect2KHR.html" /></remarks>
+        public static void CmdDrawIndexedIndirect2KHR(VkCommandBuffer commandBuffer, VkDrawIndirect2InfoKHR* pInfo)
+        {
+            VkPointers._vkCmdDrawIndexedIndirect2KHR_fnptr(commandBuffer, pInfo);
+        }
         /// <summary><b>[requires: v1.2]</b> [device command] </summary>
         /// <param name="commandBuffer">[extern sync: always] </param>
         /// <param name="buffer"></param>
@@ -1225,6 +1340,14 @@ namespace OpenTK.Graphics.Vulkan
         public static void CmdDrawIndexedIndirectCount(VkCommandBuffer commandBuffer, VkBuffer buffer, ulong offset, VkBuffer countBuffer, ulong countBufferOffset, uint maxDrawCount, uint stride)
         {
             VkPointers._vkCmdDrawIndexedIndirectCount_fnptr(commandBuffer, buffer, offset, countBuffer, countBufferOffset, maxDrawCount, stride);
+        }
+        /// <summary><b>[requires: VK_KHR_device_address_commands]</b> [device command] </summary>
+        /// <param name="commandBuffer">[extern sync: always] </param>
+        /// <param name="pInfo"></param>
+        /// <remarks><see href="https://registry.khronos.org/vulkan/specs/1.3-extensions/man/html/vkCmdDrawIndexedIndirectCount2KHR.html" /></remarks>
+        public static void CmdDrawIndexedIndirectCount2KHR(VkCommandBuffer commandBuffer, VkDrawIndirectCount2InfoKHR* pInfo)
+        {
+            VkPointers._vkCmdDrawIndexedIndirectCount2KHR_fnptr(commandBuffer, pInfo);
         }
         /// <summary><b>[requires: VK_AMD_draw_indirect_count]</b> [device command]  Alias of <see cref="CmdDrawIndexedIndirectCount"/></summary>
         /// <param name="commandBuffer">[extern sync: always] </param>
@@ -1263,6 +1386,26 @@ namespace OpenTK.Graphics.Vulkan
         {
             VkPointers._vkCmdDrawIndirect_fnptr(commandBuffer, buffer, offset, drawCount, stride);
         }
+        /// <summary><b>[requires: VK_KHR_device_address_commands]</b> [device command] </summary>
+        /// <param name="commandBuffer">[extern sync: always] </param>
+        /// <param name="pInfo"></param>
+        /// <remarks><see href="https://registry.khronos.org/vulkan/specs/1.3-extensions/man/html/vkCmdDrawIndirect2KHR.html" /></remarks>
+        public static void CmdDrawIndirect2KHR(VkCommandBuffer commandBuffer, VkDrawIndirect2InfoKHR* pInfo)
+        {
+            VkPointers._vkCmdDrawIndirect2KHR_fnptr(commandBuffer, pInfo);
+        }
+        /// <summary><b>[requires: VK_KHR_device_address_commands]</b> [device command] </summary>
+        /// <param name="commandBuffer">[extern sync: always] </param>
+        /// <param name="instanceCount"></param>
+        /// <param name="firstInstance"></param>
+        /// <param name="pCounterInfo"></param>
+        /// <param name="counterOffset"></param>
+        /// <param name="vertexStride"></param>
+        /// <remarks><see href="https://registry.khronos.org/vulkan/specs/1.3-extensions/man/html/vkCmdDrawIndirectByteCount2EXT.html" /></remarks>
+        public static void CmdDrawIndirectByteCount2EXT(VkCommandBuffer commandBuffer, uint instanceCount, uint firstInstance, VkBindTransformFeedbackBuffer2InfoEXT* pCounterInfo, uint counterOffset, uint vertexStride)
+        {
+            VkPointers._vkCmdDrawIndirectByteCount2EXT_fnptr(commandBuffer, instanceCount, firstInstance, pCounterInfo, counterOffset, vertexStride);
+        }
         /// <summary><b>[requires: VK_EXT_transform_feedback]</b> [device command] </summary>
         /// <param name="commandBuffer">[extern sync: always] </param>
         /// <param name="instanceCount"></param>
@@ -1288,6 +1431,14 @@ namespace OpenTK.Graphics.Vulkan
         public static void CmdDrawIndirectCount(VkCommandBuffer commandBuffer, VkBuffer buffer, ulong offset, VkBuffer countBuffer, ulong countBufferOffset, uint maxDrawCount, uint stride)
         {
             VkPointers._vkCmdDrawIndirectCount_fnptr(commandBuffer, buffer, offset, countBuffer, countBufferOffset, maxDrawCount, stride);
+        }
+        /// <summary><b>[requires: VK_KHR_device_address_commands]</b> [device command] </summary>
+        /// <param name="commandBuffer">[extern sync: always] </param>
+        /// <param name="pInfo"></param>
+        /// <remarks><see href="https://registry.khronos.org/vulkan/specs/1.3-extensions/man/html/vkCmdDrawIndirectCount2KHR.html" /></remarks>
+        public static void CmdDrawIndirectCount2KHR(VkCommandBuffer commandBuffer, VkDrawIndirectCount2InfoKHR* pInfo)
+        {
+            VkPointers._vkCmdDrawIndirectCount2KHR_fnptr(commandBuffer, pInfo);
         }
         /// <summary><b>[requires: VK_AMD_draw_indirect_count]</b> [device command]  Alias of <see cref="CmdDrawIndirectCount"/></summary>
         /// <param name="commandBuffer">[extern sync: always] </param>
@@ -1324,6 +1475,22 @@ namespace OpenTK.Graphics.Vulkan
         public static void CmdDrawMeshTasksEXT(VkCommandBuffer commandBuffer, uint groupCountX, uint groupCountY, uint groupCountZ)
         {
             VkPointers._vkCmdDrawMeshTasksEXT_fnptr(commandBuffer, groupCountX, groupCountY, groupCountZ);
+        }
+        /// <summary><b>[requires: VK_KHR_device_address_commands]</b> [device command] </summary>
+        /// <param name="commandBuffer">[extern sync: always] </param>
+        /// <param name="pInfo"></param>
+        /// <remarks><see href="https://registry.khronos.org/vulkan/specs/1.3-extensions/man/html/vkCmdDrawMeshTasksIndirect2EXT.html" /></remarks>
+        public static void CmdDrawMeshTasksIndirect2EXT(VkCommandBuffer commandBuffer, VkDrawIndirect2InfoKHR* pInfo)
+        {
+            VkPointers._vkCmdDrawMeshTasksIndirect2EXT_fnptr(commandBuffer, pInfo);
+        }
+        /// <summary><b>[requires: VK_KHR_device_address_commands]</b> [device command] </summary>
+        /// <param name="commandBuffer">[extern sync: always] </param>
+        /// <param name="pInfo"></param>
+        /// <remarks><see href="https://registry.khronos.org/vulkan/specs/1.3-extensions/man/html/vkCmdDrawMeshTasksIndirectCount2EXT.html" /></remarks>
+        public static void CmdDrawMeshTasksIndirectCount2EXT(VkCommandBuffer commandBuffer, VkDrawIndirectCount2InfoKHR* pInfo)
+        {
+            VkPointers._vkCmdDrawMeshTasksIndirectCount2EXT_fnptr(commandBuffer, pInfo);
         }
         /// <summary><b>[requires: VK_EXT_mesh_shader]</b> [device command] </summary>
         /// <param name="commandBuffer">[extern sync: always] </param>
@@ -1509,6 +1676,23 @@ namespace OpenTK.Graphics.Vulkan
         {
             VkPointers._vkCmdEndRenderPass2KHR_fnptr(commandBuffer, pSubpassEndInfo);
         }
+        /// <summary><b>[requires: VK_ARM_shader_instrumentation]</b> [device command] </summary>
+        /// <param name="commandBuffer">[extern sync: always] </param>
+        /// <remarks><see href="https://registry.khronos.org/vulkan/specs/1.3-extensions/man/html/vkCmdEndShaderInstrumentationARM.html" /></remarks>
+        public static void CmdEndShaderInstrumentationARM(VkCommandBuffer commandBuffer)
+        {
+            VkPointers._vkCmdEndShaderInstrumentationARM_fnptr(commandBuffer);
+        }
+        /// <summary><b>[requires: VK_KHR_device_address_commands]</b> [device command] </summary>
+        /// <param name="commandBuffer">[extern sync: always] </param>
+        /// <param name="firstCounterRange"></param>
+        /// <param name="counterRangeCount">[optional] </param>
+        /// <param name="pCounterInfos">[optional] </param>
+        /// <remarks><see href="https://registry.khronos.org/vulkan/specs/1.3-extensions/man/html/vkCmdEndTransformFeedback2EXT.html" /></remarks>
+        public static void CmdEndTransformFeedback2EXT(VkCommandBuffer commandBuffer, uint firstCounterRange, uint counterRangeCount, VkBindTransformFeedbackBuffer2InfoEXT* pCounterInfos)
+        {
+            VkPointers._vkCmdEndTransformFeedback2EXT_fnptr(commandBuffer, firstCounterRange, counterRangeCount, pCounterInfos);
+        }
         /// <summary><b>[requires: VK_EXT_transform_feedback]</b> [device command] </summary>
         /// <param name="commandBuffer">[extern sync: always] </param>
         /// <param name="firstCounterBuffer"></param>
@@ -1565,6 +1749,16 @@ namespace OpenTK.Graphics.Vulkan
         public static void CmdFillBuffer(VkCommandBuffer commandBuffer, VkBuffer dstBuffer, ulong dstOffset, ulong size, uint data)
         {
             VkPointers._vkCmdFillBuffer_fnptr(commandBuffer, dstBuffer, dstOffset, size, data);
+        }
+        /// <summary><b>[requires: VK_KHR_device_address_commands]</b> [device command] </summary>
+        /// <param name="commandBuffer">[extern sync: always] </param>
+        /// <param name="pDstRange"></param>
+        /// <param name="dstFlags">[optional] </param>
+        /// <param name="data"></param>
+        /// <remarks><see href="https://registry.khronos.org/vulkan/specs/1.3-extensions/man/html/vkCmdFillMemoryKHR.html" /></remarks>
+        public static void CmdFillMemoryKHR(VkCommandBuffer commandBuffer, VkDeviceAddressRangeKHR* pDstRange, VkAddressCommandFlagBitsKHR dstFlags, uint data)
+        {
+            VkPointers._vkCmdFillMemoryKHR_fnptr(commandBuffer, pDstRange, dstFlags, data);
         }
         /// <summary><b>[requires: VK_AMDX_shader_enqueue]</b> [device command] </summary>
         /// <param name="commandBuffer"></param>
@@ -2239,6 +2433,14 @@ namespace OpenTK.Graphics.Vulkan
         {
             VkPointers._vkCmdSetDiscardRectangleModeEXT_fnptr(commandBuffer, discardRectangleMode);
         }
+        /// <summary><b>[requires: VK_ARM_scheduling_controls]</b> [device command] </summary>
+        /// <param name="commandBuffer">[extern sync: always] </param>
+        /// <param name="pDispatchParameters"></param>
+        /// <remarks><see href="https://registry.khronos.org/vulkan/specs/1.3-extensions/man/html/vkCmdSetDispatchParametersARM.html" /></remarks>
+        public static void CmdSetDispatchParametersARM(VkCommandBuffer commandBuffer, VkDispatchParametersARM* pDispatchParameters)
+        {
+            VkPointers._vkCmdSetDispatchParametersARM_fnptr(commandBuffer, pDispatchParameters);
+        }
         /// <summary><b>[requires: v1.0]</b> [device command] </summary>
         /// <param name="commandBuffer">[extern sync: always] </param>
         /// <param name="event"></param>
@@ -2450,6 +2652,14 @@ namespace OpenTK.Graphics.Vulkan
         public static void CmdSetPrimitiveRestartEnableEXT(VkCommandBuffer commandBuffer, int primitiveRestartEnable)
         {
             VkPointers._vkCmdSetPrimitiveRestartEnableEXT_fnptr(commandBuffer, primitiveRestartEnable);
+        }
+        /// <summary><b>[requires: VK_EXT_primitive_restart_index]</b> [device command] </summary>
+        /// <param name="commandBuffer">[extern sync: always] </param>
+        /// <param name="primitiveRestartIndex">[optional] </param>
+        /// <remarks><see href="https://registry.khronos.org/vulkan/specs/1.3-extensions/man/html/vkCmdSetPrimitiveRestartIndexEXT.html" /></remarks>
+        public static void CmdSetPrimitiveRestartIndexEXT(VkCommandBuffer commandBuffer, uint primitiveRestartIndex)
+        {
+            VkPointers._vkCmdSetPrimitiveRestartIndexEXT_fnptr(commandBuffer, primitiveRestartIndex);
         }
         /// <summary><b>[requires: v1.3]</b> [device command] </summary>
         /// <param name="commandBuffer">[extern sync: always] </param>
@@ -2841,6 +3051,17 @@ namespace OpenTK.Graphics.Vulkan
         {
             VkPointers._vkCmdUpdateBuffer_fnptr(commandBuffer, dstBuffer, dstOffset, dataSize, pData);
         }
+        /// <summary><b>[requires: VK_KHR_device_address_commands]</b> [device command] </summary>
+        /// <param name="commandBuffer">[extern sync: always] </param>
+        /// <param name="pDstRange"></param>
+        /// <param name="dstFlags">[optional] </param>
+        /// <param name="dataSize"></param>
+        /// <param name="pData"></param>
+        /// <remarks><see href="https://registry.khronos.org/vulkan/specs/1.3-extensions/man/html/vkCmdUpdateMemoryKHR.html" /></remarks>
+        public static void CmdUpdateMemoryKHR(VkCommandBuffer commandBuffer, VkDeviceAddressRangeKHR* pDstRange, VkAddressCommandFlagBitsKHR dstFlags, ulong dataSize, void* pData)
+        {
+            VkPointers._vkCmdUpdateMemoryKHR_fnptr(commandBuffer, pDstRange, dstFlags, dataSize, pData);
+        }
         /// <summary><b>[requires: VK_NV_device_generated_commands_compute]</b> [device command] </summary>
         /// <param name="commandBuffer">[extern sync: always] </param>
         /// <param name="pipelineBindPoint"></param>
@@ -2932,6 +3153,14 @@ namespace OpenTK.Graphics.Vulkan
         public static void CmdWriteBufferMarkerAMD(VkCommandBuffer commandBuffer, VkPipelineStageFlagBits pipelineStage, VkBuffer dstBuffer, ulong dstOffset, uint marker)
         {
             VkPointers._vkCmdWriteBufferMarkerAMD_fnptr(commandBuffer, pipelineStage, dstBuffer, dstOffset, marker);
+        }
+        /// <summary><b>[requires: VK_KHR_device_address_commands]</b> [device command] </summary>
+        /// <param name="commandBuffer">[extern sync: always] </param>
+        /// <param name="pInfo"></param>
+        /// <remarks><see href="https://registry.khronos.org/vulkan/specs/1.3-extensions/man/html/vkCmdWriteMarkerToMemoryAMD.html" /></remarks>
+        public static void CmdWriteMarkerToMemoryAMD(VkCommandBuffer commandBuffer, VkMemoryMarkerInfoAMD* pInfo)
+        {
+            VkPointers._vkCmdWriteMarkerToMemoryAMD_fnptr(commandBuffer, pInfo);
         }
         /// <summary><b>[requires: VK_EXT_opacity_micromap]</b> [device command] </summary>
         /// <param name="commandBuffer">[extern sync: always] </param>
@@ -3093,6 +3322,16 @@ namespace OpenTK.Graphics.Vulkan
         public static VkResult CopyMicromapToMemoryEXT(VkDevice device, VkDeferredOperationKHR deferredOperation, VkCopyMicromapToMemoryInfoEXT* pInfo)
         {
             return VkPointers._vkCopyMicromapToMemoryEXT_fnptr(device, deferredOperation, pInfo);
+        }
+        /// <summary><b>[requires: VK_KHR_device_address_commands]</b> [device command] </summary>
+        /// <param name="device"></param>
+        /// <param name="pCreateInfo"></param>
+        /// <param name="pAllocator">[optional] </param>
+        /// <param name="pAccelerationStructure"></param>
+        /// <remarks><see href="https://registry.khronos.org/vulkan/specs/1.3-extensions/man/html/vkCreateAccelerationStructure2KHR.html" /></remarks>
+        public static VkResult CreateAccelerationStructure2KHR(VkDevice device, VkAccelerationStructureCreateInfo2KHR* pCreateInfo, VkAllocationCallbacks* pAllocator, VkAccelerationStructureKHR* pAccelerationStructure)
+        {
+            return VkPointers._vkCreateAccelerationStructure2KHR_fnptr(device, pCreateInfo, pAllocator, pAccelerationStructure);
         }
         /// <summary><b>[requires: VK_KHR_acceleration_structure]</b> [device command] </summary>
         /// <param name="device"></param>
@@ -3717,6 +3956,16 @@ namespace OpenTK.Graphics.Vulkan
         {
             return VkPointers._vkCreateSemaphoreSciSyncPoolNV_fnptr(device, pCreateInfo, pAllocator, pSemaphorePool);
         }
+        /// <summary><b>[requires: VK_ARM_shader_instrumentation]</b> [device command] </summary>
+        /// <param name="device"></param>
+        /// <param name="pCreateInfo"></param>
+        /// <param name="pAllocator">[optional] </param>
+        /// <param name="pInstrumentation"></param>
+        /// <remarks><see href="https://registry.khronos.org/vulkan/specs/1.3-extensions/man/html/vkCreateShaderInstrumentationARM.html" /></remarks>
+        public static VkResult CreateShaderInstrumentationARM(VkDevice device, VkShaderInstrumentationCreateInfoARM* pCreateInfo, VkAllocationCallbacks* pAllocator, VkShaderInstrumentationARM* pInstrumentation)
+        {
+            return VkPointers._vkCreateShaderInstrumentationARM_fnptr(device, pCreateInfo, pAllocator, pInstrumentation);
+        }
         /// <summary><b>[requires: v1.0]</b> [device command] </summary>
         /// <param name="device"></param>
         /// <param name="pCreateInfo"></param>
@@ -4330,6 +4579,15 @@ namespace OpenTK.Graphics.Vulkan
         {
             VkPointers._vkDestroyShaderEXT_fnptr(device, shader, pAllocator);
         }
+        /// <summary><b>[requires: VK_ARM_shader_instrumentation]</b> [device command] </summary>
+        /// <param name="device"></param>
+        /// <param name="instrumentation">[optional] [extern sync: always] </param>
+        /// <param name="pAllocator">[optional] </param>
+        /// <remarks><see href="https://registry.khronos.org/vulkan/specs/1.3-extensions/man/html/vkDestroyShaderInstrumentationARM.html" /></remarks>
+        public static void DestroyShaderInstrumentationARM(VkDevice device, VkShaderInstrumentationARM instrumentation, VkAllocationCallbacks* pAllocator)
+        {
+            VkPointers._vkDestroyShaderInstrumentationARM_fnptr(device, instrumentation, pAllocator);
+        }
         /// <summary><b>[requires: v1.0]</b> [device command] </summary>
         /// <param name="device"></param>
         /// <param name="shaderModule">[optional] [extern sync: always] </param>
@@ -4516,6 +4774,15 @@ namespace OpenTK.Graphics.Vulkan
         public static VkResult EnumeratePhysicalDevices(VkInstance instance, uint* pPhysicalDeviceCount, VkPhysicalDevice* pPhysicalDevices)
         {
             return VkPointers._vkEnumeratePhysicalDevices_fnptr(instance, pPhysicalDeviceCount, pPhysicalDevices);
+        }
+        /// <summary><b>[requires: VK_ARM_shader_instrumentation]</b> [instance command] </summary>
+        /// <param name="physicalDevice"></param>
+        /// <param name="pDescriptionCount">[ptr required, value optional] </param>
+        /// <param name="pDescriptions">[optional] </param>
+        /// <remarks><see href="https://registry.khronos.org/vulkan/specs/1.3-extensions/man/html/vkEnumeratePhysicalDeviceShaderInstrumentationMetricsARM.html" /></remarks>
+        public static VkResult EnumeratePhysicalDeviceShaderInstrumentationMetricsARM(VkPhysicalDevice physicalDevice, uint* pDescriptionCount, VkShaderInstrumentationMetricDescriptionARM* pDescriptions)
+        {
+            return VkPointers._vkEnumeratePhysicalDeviceShaderInstrumentationMetricsARM_fnptr(physicalDevice, pDescriptionCount, pDescriptions);
         }
         /// <summary><b>[requires: VK_EXT_metal_objects]</b> [device command] </summary>
         /// <param name="device"></param>
@@ -4911,6 +5178,14 @@ namespace OpenTK.Graphics.Vulkan
         {
             return VkPointers._vkGetDeviceCombinedImageSamplerIndexNVX_fnptr(device, imageViewIndex, samplerIndex);
         }
+        /// <summary><b>[requires: VK_KHR_device_fault]</b> [device command] </summary>
+        /// <param name="device"></param>
+        /// <param name="pDebugInfo"></param>
+        /// <remarks><see href="https://registry.khronos.org/vulkan/specs/1.3-extensions/man/html/vkGetDeviceFaultDebugInfoKHR.html" /></remarks>
+        public static VkResult GetDeviceFaultDebugInfoKHR(VkDevice device, VkDeviceFaultDebugInfoKHR* pDebugInfo)
+        {
+            return VkPointers._vkGetDeviceFaultDebugInfoKHR_fnptr(device, pDebugInfo);
+        }
         /// <summary><b>[requires: VK_EXT_device_fault]</b> [device command] </summary>
         /// <param name="device"></param>
         /// <param name="pFaultCounts"></param>
@@ -4919,6 +5194,16 @@ namespace OpenTK.Graphics.Vulkan
         public static VkResult GetDeviceFaultInfoEXT(VkDevice device, VkDeviceFaultCountsEXT* pFaultCounts, VkDeviceFaultInfoEXT* pFaultInfo)
         {
             return VkPointers._vkGetDeviceFaultInfoEXT_fnptr(device, pFaultCounts, pFaultInfo);
+        }
+        /// <summary><b>[requires: VK_KHR_device_fault]</b> [device command] </summary>
+        /// <param name="device"></param>
+        /// <param name="timeout"></param>
+        /// <param name="pFaultCounts"></param>
+        /// <param name="pFaultInfo">[optional] </param>
+        /// <remarks><see href="https://registry.khronos.org/vulkan/specs/1.3-extensions/man/html/vkGetDeviceFaultReportsKHR.html" /></remarks>
+        public static VkResult GetDeviceFaultReportsKHR(VkDevice device, ulong timeout, uint* pFaultCounts, VkDeviceFaultInfoKHR* pFaultInfo)
+        {
+            return VkPointers._vkGetDeviceFaultReportsKHR_fnptr(device, timeout, pFaultCounts, pFaultInfo);
         }
         /// <summary><b>[requires: v1.1]</b> [device command] </summary>
         /// <param name="device"></param>
@@ -6027,6 +6312,28 @@ namespace OpenTK.Graphics.Vulkan
         {
             VkPointers._vkGetPhysicalDeviceProperties2KHR_fnptr(physicalDevice, pProperties);
         }
+        /// <summary><b>[requires: VK_ARM_data_graph_instruction_set_tosa | VK_ARM_data_graph_optical_flow]</b> [instance command] </summary>
+        /// <param name="physicalDevice"></param>
+        /// <param name="queueFamilyIndex"></param>
+        /// <param name="pQueueFamilyDataGraphProperties"></param>
+        /// <param name="pProperties"></param>
+        /// <remarks><see href="https://registry.khronos.org/vulkan/specs/1.3-extensions/man/html/vkGetPhysicalDeviceQueueFamilyDataGraphEngineOperationPropertiesARM.html" /></remarks>
+        public static VkResult GetPhysicalDeviceQueueFamilyDataGraphEngineOperationPropertiesARM(VkPhysicalDevice physicalDevice, uint queueFamilyIndex, VkQueueFamilyDataGraphPropertiesARM* pQueueFamilyDataGraphProperties, VkBaseOutStructure* pProperties)
+        {
+            return VkPointers._vkGetPhysicalDeviceQueueFamilyDataGraphEngineOperationPropertiesARM_fnptr(physicalDevice, queueFamilyIndex, pQueueFamilyDataGraphProperties, pProperties);
+        }
+        /// <summary><b>[requires: VK_ARM_data_graph_optical_flow]</b> [instance command] </summary>
+        /// <param name="physicalDevice"></param>
+        /// <param name="queueFamilyIndex"></param>
+        /// <param name="pQueueFamilyDataGraphProperties"></param>
+        /// <param name="pOpticalFlowImageFormatInfo"></param>
+        /// <param name="pFormatCount">[ptr required, value optional] </param>
+        /// <param name="pImageFormatProperties">[optional] </param>
+        /// <remarks><see href="https://registry.khronos.org/vulkan/specs/1.3-extensions/man/html/vkGetPhysicalDeviceQueueFamilyDataGraphOpticalFlowImageFormatsARM.html" /></remarks>
+        public static VkResult GetPhysicalDeviceQueueFamilyDataGraphOpticalFlowImageFormatsARM(VkPhysicalDevice physicalDevice, uint queueFamilyIndex, VkQueueFamilyDataGraphPropertiesARM* pQueueFamilyDataGraphProperties, VkDataGraphOpticalFlowImageFormatInfoARM* pOpticalFlowImageFormatInfo, uint* pFormatCount, VkDataGraphOpticalFlowImageFormatPropertiesARM* pImageFormatProperties)
+        {
+            return VkPointers._vkGetPhysicalDeviceQueueFamilyDataGraphOpticalFlowImageFormatsARM_fnptr(physicalDevice, queueFamilyIndex, pQueueFamilyDataGraphProperties, pOpticalFlowImageFormatInfo, pFormatCount, pImageFormatProperties);
+        }
         /// <summary><b>[requires: VK_ARM_data_graph]</b> [instance command] </summary>
         /// <param name="physicalDevice"></param>
         /// <param name="pQueueFamilyDataGraphProcessingEngineInfo"></param>
@@ -6258,11 +6565,11 @@ namespace OpenTK.Graphics.Vulkan
         /// <summary><b>[requires: VK_SEC_ubm_surface]</b> [instance command] </summary>
         /// <param name="physicalDevice"></param>
         /// <param name="queueFamilyIndex"></param>
-        /// <param name="ubm_device"></param>
+        /// <param name="device"></param>
         /// <remarks><see href="https://registry.khronos.org/vulkan/specs/1.3-extensions/man/html/vkGetPhysicalDeviceUbmPresentationSupportSEC.html" /></remarks>
-        public static int GetPhysicalDeviceUbmPresentationSupportSEC(VkPhysicalDevice physicalDevice, uint queueFamilyIndex, IntPtr ubm_device)
+        public static int GetPhysicalDeviceUbmPresentationSupportSEC(VkPhysicalDevice physicalDevice, uint queueFamilyIndex, IntPtr device)
         {
-            return VkPointers._vkGetPhysicalDeviceUbmPresentationSupportSEC_fnptr(physicalDevice, queueFamilyIndex, ubm_device);
+            return VkPointers._vkGetPhysicalDeviceUbmPresentationSupportSEC_fnptr(physicalDevice, queueFamilyIndex, device);
         }
         /// <summary><b>[requires: VK_KHR_video_queue]</b> [instance command] </summary>
         /// <param name="physicalDevice"></param>
@@ -6655,6 +6962,17 @@ namespace OpenTK.Graphics.Vulkan
         {
             return VkPointers._vkGetShaderInfoAMD_fnptr(device, pipeline, shaderStage, infoType, pInfoSize, pInfo);
         }
+        /// <summary><b>[requires: VK_ARM_shader_instrumentation]</b> [device command] </summary>
+        /// <param name="device"></param>
+        /// <param name="instrumentation"></param>
+        /// <param name="pMetricBlockCount"></param>
+        /// <param name="pMetricValues"></param>
+        /// <param name="flags">[optional] </param>
+        /// <remarks><see href="https://registry.khronos.org/vulkan/specs/1.3-extensions/man/html/vkGetShaderInstrumentationValuesARM.html" /></remarks>
+        public static VkResult GetShaderInstrumentationValuesARM(VkDevice device, VkShaderInstrumentationARM instrumentation, uint* pMetricBlockCount, void* pMetricValues, VkShaderInstrumentationValuesFlagsARM flags)
+        {
+            return VkPointers._vkGetShaderInstrumentationValuesARM_fnptr(device, instrumentation, pMetricBlockCount, pMetricValues, flags);
+        }
         /// <summary><b>[requires: VK_EXT_shader_module_identifier]</b> [device command] </summary>
         /// <param name="device"></param>
         /// <param name="pCreateInfo"></param>
@@ -7008,6 +7326,14 @@ namespace OpenTK.Graphics.Vulkan
         {
             return VkPointers._vkQueuePresentKHR_fnptr(queue, pPresentInfo);
         }
+        /// <summary><b>[requires: VK_QCOM_queue_perf_hint]</b> [device command] </summary>
+        /// <param name="queue">[extern sync: maybe] </param>
+        /// <param name="pPerfHintInfo"></param>
+        /// <remarks><see href="https://registry.khronos.org/vulkan/specs/1.3-extensions/man/html/vkQueueSetPerfHintQCOM.html" /></remarks>
+        public static VkResult QueueSetPerfHintQCOM(VkQueue queue, VkPerfHintInfoQCOM* pPerfHintInfo)
+        {
+            return VkPointers._vkQueueSetPerfHintQCOM_fnptr(queue, pPerfHintInfo);
+        }
         /// <summary><b>[requires: VK_INTEL_performance_query]</b> [device command] </summary>
         /// <param name="queue">[extern sync: maybe] </param>
         /// <param name="configuration"></param>
@@ -7279,7 +7605,7 @@ namespace OpenTK.Graphics.Vulkan
         /// <summary><b>[requires: VK_EXT_hdr_metadata]</b> [device command] </summary>
         /// <param name="device"></param>
         /// <param name="swapchainCount"></param>
-        /// <param name="pSwapchains"></param>
+        /// <param name="pSwapchains">[extern sync: always] </param>
         /// <param name="pMetadata"></param>
         /// <remarks><see href="https://registry.khronos.org/vulkan/specs/1.3-extensions/man/html/vkSetHdrMetadataEXT.html" /></remarks>
         public static void SetHdrMetadataEXT(VkDevice device, uint swapchainCount, VkSwapchainKHR* pSwapchains, VkHdrMetadataEXT* pMetadata)
