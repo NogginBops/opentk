@@ -491,7 +491,7 @@ namespace GLGenerator
             }
         }
 
-        private static void WriteEnums(string directoryPath, FileStrings strings, List<EnumGroup> enumGroups)
+        private static void WriteEnums(string directoryPath, FileStrings strings, List<EnumType> enumGroups)
         {
             using StreamWriter stream = File.CreateText(Path.Combine(directoryPath, "Enums.cs"));
             using IndentedTextWriter writer = new IndentedTextWriter(stream);
@@ -513,7 +513,7 @@ namespace GLGenerator
             }
         }
 
-        private static void WriteEnumGroups(IndentedTextWriter writer, string apiName, List<EnumGroup> enumGroups)
+        private static void WriteEnumGroups(IndentedTextWriter writer, string apiName, List<EnumType> enumGroups)
         {
             foreach (var group in enumGroups)
             {
@@ -542,11 +542,11 @@ namespace GLGenerator
                         // - Noggin_bops 2024-11-11
                         if (member.Value == ulong.MaxValue)
                         {
-                            writer.WriteLine($"{member.MangledName} = unchecked((uint)-1),");
+                            writer.WriteLine($"{member.Name} = unchecked((uint)-1),");
                         }
                         else
                         {
-                            writer.WriteLine($"{member.MangledName} = {member.Value},");
+                            writer.WriteLine($"{member.Name} = {member.Value},");
                         }
                     }
                 }

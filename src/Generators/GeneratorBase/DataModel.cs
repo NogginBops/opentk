@@ -231,7 +231,7 @@ namespace GeneratorBase
 
         // OpenGL/OpenAL
         // FIXME: We can probably remove this property...
-        public GroupRef[] Groups { get; init; }
+        public GroupRef[]? Groups { get; init; }
         public bool IsFlag { get; init; }
 
         // Vulkan
@@ -239,6 +239,19 @@ namespace GeneratorBase
         public string? Extension { get; init; }
 
         public VersionInfo? VersionInfo { get; set; }
+
+        public static int DefaultComparison(EnumMember m1, EnumMember m2)
+        {
+            int comp = m1.Value.CompareTo(m2.Value);
+            if (comp == 0)
+            {
+                return m1.Name.CompareTo(m2.Name);
+            }
+            else
+            {
+                return comp;
+            }
+        }
     }
 
     public record class FunctionPoiner : IReferable

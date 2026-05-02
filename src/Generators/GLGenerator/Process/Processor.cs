@@ -1,24 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using GeneratorBase.Utility.Extensions;
-using GeneratorBase.Utility;
-using GLGenerator.Process;
-using GLGenerator.Parsing;
-using System.Diagnostics;
-using GeneratorBase;
+﻿using GeneratorBase;
 using GeneratorBase.Overloading;
+using GeneratorBase.Utility;
+using GeneratorBase.Utility.Extensions;
+using GLGenerator.Parsing;
+using GLGenerator.Process;
+using System;
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Linq;
+using System.Runtime.Serialization.DataContracts;
 
 namespace GLGenerator.Process
 {
     internal static class Processor
     {
-        // These types are only used to pass data from ProcessSpec to GetOutputApiFromRequireTags.
-        private record ProcessedGLInformation(
-            Dictionary<string, OverloadedFunction> AllFunctions,
-            Dictionary<OutputApi, Dictionary<string, EnumGroupMember>> AllEnumsPerAPI,
-            List<EnumGroupInfo> AllEnumGroups);
-
         internal record OverloadedFunction(
             Function NativeFunction,
             Dictionary<OutputApi, CommandDocumentation> Documentation,
@@ -62,39 +57,37 @@ namespace GLGenerator.Process
                 allFunctions.Add(function.EntryPoint, overloadedFunction);
             }
 
-            Dictionary<OutputApi, Dictionary<string, EnumGroupMember>> allEnumsPerAPI = new Dictionary<OutputApi, Dictionary<string, EnumGroupMember>>();
+            Dictionary<OutputApi, Dictionary<string, EnumMember>> allEnumsPerAPI = new Dictionary<OutputApi, Dictionary<string, EnumMember>>();
             Dictionary<OutputApi, HashSet<EnumGroupInfo>> allEnumGroups = new Dictionary<OutputApi, HashSet<EnumGroupInfo>>();
             foreach (OutputApi outputApi in Enum.GetValues<OutputApi>())
             {
                 if (outputApi == OutputApi.Invalid) continue;
-                allEnumsPerAPI.Add(outputApi, new Dictionary<string, EnumGroupMember>());
+                allEnumsPerAPI.Add(outputApi, new Dictionary<string, EnumMember>());
                 allEnumGroups.Add(outputApi, new HashSet<EnumGroupInfo>());
             }
 
             foreach (EnumEntry @enum in spec.Enums)
             {
-                bool isFlag = @enum.IsFlags;
-
                 foreach ((string originalName, string translatedName, APIFile @namespace) in @enum.Groups)
                 {
                     if (@namespace == APIFile.GL)
                     {
-                        AddToGroup(allEnumGroups, OutputApi.GL, originalName, translatedName, isFlag);
-                        AddToGroup(allEnumGroups, OutputApi.GLCompat, originalName, translatedName, isFlag);
-                        AddToGroup(allEnumGroups, OutputApi.GLES1, originalName, translatedName, isFlag);
-                        AddToGroup(allEnumGroups, OutputApi.GLES2, originalName, translatedName, isFlag);
+                        AddToGroup(allEnumGroups, OutputApi.GL, originalName, translatedName, @enum.IsFlags);
+                        AddToGroup(allEnumGroups, OutputApi.GLCompat, originalName, translatedName, @enum.IsFlags);
+                        AddToGroup(allEnumGroups, OutputApi.GLES1, originalName, translatedName, @enum.IsFlags);
+                        AddToGroup(allEnumGroups, OutputApi.GLES2, originalName, translatedName, @enum.IsFlags);
                     }
                     else if (@namespace == APIFile.WGL)
                     {
-                        AddToGroup(allEnumGroups, OutputApi.WGL, originalName, translatedName, isFlag);
+                        AddToGroup(allEnumGroups, OutputApi.WGL, originalName, translatedName, @enum.IsFlags);
                     }
                     else if (@namespace == APIFile.GLX)
                     {
-                        AddToGroup(allEnumGroups, OutputApi.GLX, originalName, translatedName, isFlag);
+                        AddToGroup(allEnumGroups, OutputApi.GLX, originalName, translatedName, @enum.IsFlags);
                     }
                     else if (@namespace == APIFile.EGL)
                     {
-                        AddToGroup(allEnumGroups, OutputApi.EGL, originalName, translatedName, isFlag);
+                        AddToGroup(allEnumGroups, OutputApi.EGL, originalName, translatedName, @enum.IsFlags);
                     }
 
                     static void AddToGroup(Dictionary<OutputApi, HashSet<EnumGroupInfo>> allEnumGroups, OutputApi api, string originalName, string translatedName, bool isFlag)
@@ -118,7 +111,14 @@ namespace GLGenerator.Process
                     }
                 }
 
-                EnumGroupMember data = new EnumGroupMember(@enum.Name, @enum.MangledName, @enum.Value, @enum.Groups, isFlag);
+                EnumMember member = new EnumMember()
+                {
+                    Name = @enum.MangledName,
+                    OriginalName = @enum.Name,
+                    Value = @enum.Value,
+                    Groups = @enum.Groups,
+                    IsFlag = @enum.IsFlags,
+                };
 
                 if (@enum.Apis == OutputApiFlags.None)
                 {
@@ -127,37 +127,37 @@ namespace GLGenerator.Process
 
                 if (@enum.Apis.HasFlag(OutputApiFlags.GL))
                 {
-                    allEnumsPerAPI.AddToNestedDict(OutputApi.GL, @enum.Name, data);
+                    allEnumsPerAPI.AddToNestedDict(OutputApi.GL, @enum.Name, member);
                 }
 
                 if (@enum.Apis.HasFlag(OutputApiFlags.GLCompat))
                 {
-                    allEnumsPerAPI.AddToNestedDict(OutputApi.GLCompat, @enum.Name, data);
+                    allEnumsPerAPI.AddToNestedDict(OutputApi.GLCompat, @enum.Name, member);
                 }
 
                 if (@enum.Apis.HasFlag(OutputApiFlags.GLES1))
                 {
-                    allEnumsPerAPI.AddToNestedDict(OutputApi.GLES1, @enum.Name, data);
+                    allEnumsPerAPI.AddToNestedDict(OutputApi.GLES1, @enum.Name, member);
                 }
 
                 if (@enum.Apis.HasFlag(OutputApiFlags.GLES2))
                 {
-                    allEnumsPerAPI.AddToNestedDict(OutputApi.GLES2, @enum.Name, data);
+                    allEnumsPerAPI.AddToNestedDict(OutputApi.GLES2, @enum.Name, member);
                 }
 
                 if (@enum.Apis.HasFlag(OutputApiFlags.WGL))
                 {
-                    allEnumsPerAPI.AddToNestedDict(OutputApi.WGL, @enum.Name, data);
+                    allEnumsPerAPI.AddToNestedDict(OutputApi.WGL, @enum.Name, member);
                 }
 
                 if (@enum.Apis.HasFlag(OutputApiFlags.GLX))
                 {
-                    allEnumsPerAPI.AddToNestedDict(OutputApi.GLX, @enum.Name, data);
+                    allEnumsPerAPI.AddToNestedDict(OutputApi.GLX, @enum.Name, member);
                 }
 
                 if (@enum.Apis.HasFlag(OutputApiFlags.EGL))
                 {
-                    allEnumsPerAPI.AddToNestedDict(OutputApi.EGL, @enum.Name, data);
+                    allEnumsPerAPI.AddToNestedDict(OutputApi.EGL, @enum.Name, member);
                 }
             }
 
@@ -208,7 +208,7 @@ namespace GLGenerator.Process
                         _ => false,
                     };
 
-                    Dictionary<string, EnumGroupMember>? enumsDict = allEnumsPerAPI[outAPI];
+                    Dictionary<string, EnumMember>? enumsDict = allEnumsPerAPI[outAPI];
 
                     foreach (EnumReference enumRef in enums)
                     {
@@ -229,9 +229,9 @@ namespace GLGenerator.Process
                         // We don't want to process this "enum" as it is a string.
                         if (enumRef.EnumName == "GLX_EXTENSION_NAME") continue;
 
-                        if (enumsDict.TryGetValue(enumRef.EnumName, out EnumGroupMember? @enum))
+                        if (enumsDict.TryGetValue(enumRef.EnumName, out EnumMember? @enum))
                         {
-                            foreach (var groupRef in @enum.Groups)
+                            foreach (var groupRef in @enum.Groups!)
                             {
                                 APIFile @namespace = groupRef.Namespace;
                                 if (@namespace != glFile)
@@ -260,22 +260,22 @@ namespace GLGenerator.Process
                                         AddEnumToAPI(OutputApi.EGL, @enum);
                                     }
 
-                                    void AddEnumToAPI(OutputApi outputApi, EnumGroupMember @enum)
+                                    void AddEnumToAPI(OutputApi outputApi, EnumMember @enum)
                                     {
                                         // FIXME: There is an issue where a cross referenced enum gets readded here.
                                         // We want to avoid this.
 
-                                        if (allEnumsPerAPI[outputApi].ContainsKey(@enum.Name) == false)
+                                        if (allEnumsPerAPI[outputApi].ContainsKey(@enum.OriginalName) == false)
                                         {
-                                            allEnumsPerAPI.AddToNestedDict(outputApi, @enum.Name, @enum);
+                                            allEnumsPerAPI.AddToNestedDict(outputApi, @enum.OriginalName, @enum);
                                         }
 
                                         foreach (var api in spec.APIs)
                                         {
                                             if (MatchesAPI(api.Name, outputApi))
                                             {
-                                                api.Enums.Add(new EnumReference(@enum.Name, new VersionInfo(null, []), GLProfile.None, true));
-                                                Logger.Info($"Added enum entry '{@enum.MangledName}' to {outputApi}.");
+                                                api.Enums.Add(new EnumReference(@enum.OriginalName, new VersionInfo(null, []), GLProfile.None, true));
+                                                Logger.Info($"Added enum entry '{@enum.Name}' to {outputApi}.");
                                             }
                                         }
 
@@ -316,8 +316,6 @@ namespace GLGenerator.Process
                                             }
                                         }
                                     }
-
-                                    
                                 }
                             }
                         }
@@ -563,11 +561,11 @@ namespace GLGenerator.Process
 
                     /// Enum processing
 
-                    Dictionary<string, EnumGroupMember>? enumsDict = allEnumsPerAPI[outAPI];
+                    Dictionary<string, EnumMember>? enumsDict = allEnumsPerAPI[outAPI];
 
-                    Dictionary<string, List<EnumGroupMember>> groupNameToEnumGroup = new Dictionary<string, List<EnumGroupMember>>();
+                    Dictionary<string, List<EnumMember>> groupNameToEnumGroup = new Dictionary<string, List<EnumMember>>();
 
-                    HashSet<EnumGroupMember> theAllEnumGroup = new HashSet<EnumGroupMember>();
+                    HashSet<EnumMember> theAllEnumGroup = new HashSet<EnumMember>();
 
                     // FIXME: Here we are trusting that the enum refs in the <require> tags tell us all of the
                     // enums to include. But this is not necessarily true as is the case with WGL as it references
@@ -589,20 +587,20 @@ namespace GLGenerator.Process
                         // We don't want to process this "enum" as it is a string.
                         if (enumRef.EnumName == "GLX_EXTENSION_NAME") continue;
 
-                        if (enumsDict.TryGetValue(enumRef.EnumName, out EnumGroupMember? @enum))
+                        if (enumsDict.TryGetValue(enumRef.EnumName, out EnumMember? @enum))
                         {
-                            foreach (var (originalName, translatedName, @namespace) in @enum.Groups)
+                            foreach (var (originalName, translatedName, @namespace) in @enum.Groups!)
                             {
                                 if (@namespace != glFile)
                                     continue;
 
-                                if (groupNameToEnumGroup.TryGetValue(translatedName, out List<EnumGroupMember>? groupMembers) == false)
+                                if (groupNameToEnumGroup.TryGetValue(translatedName, out List<EnumMember>? groupMembers) == false)
                                 {
-                                    groupMembers = new List<EnumGroupMember>();
+                                    groupMembers = new List<EnumMember>();
                                     groupNameToEnumGroup.Add(translatedName, groupMembers);
                                 }
 
-                                if (groupMembers.Find(g => g.MangledName == @enum.MangledName) == null)
+                                if (groupMembers.Find(g => g.Name == @enum.Name) == null)
                                 {
                                     groupMembers.Add(@enum);
                                 }
@@ -622,10 +620,10 @@ namespace GLGenerator.Process
                     // Go through all of the groupNameToEnumGroup and put them into their groups
 
                     // Add keys + lists for all enumName names
-                    List<EnumGroup> finalGroups = new List<EnumGroup>();
+                    List<EnumType> finalGroups = new List<EnumType>();
                     foreach ((string originalName, string translatedName, bool isFlags) in allEnumGroups[outAPI])
                     {
-                        if (groupNameToEnumGroup.TryGetValue(translatedName, out List<EnumGroupMember>? members) == false)
+                        if (groupNameToEnumGroup.TryGetValue(translatedName, out List<EnumMember>? members) == false)
                         {
                             members = [];
                             groupNameToEnumGroup.Add(translatedName, members);
@@ -658,9 +656,16 @@ namespace GLGenerator.Process
                                 return f1.Function.Name.CompareTo(f2.Function.Name);
                             });
 
-                        members.Sort(EnumGroupMember.DefaultComparison);
+                        members.Sort(EnumMember.DefaultComparison);
 
-                        finalGroups.Add(new EnumGroup(translatedName, isFlags, members, functionsUsingEnumGroup));
+                        finalGroups.Add(new EnumType()
+                        {
+                            Name = translatedName,
+                            IsFlags = isFlags,
+                            Members = members,
+                            ReferencedBy = [],
+                            FunctionsUsingEnumGroup = functionsUsingEnumGroup,
+                        });
                     }
                     foreach (var group in groupsReferencedByFunctions)
                     {
@@ -673,25 +678,39 @@ namespace GLGenerator.Process
                             continue;
                         }
 
-                        if (groupNameToEnumGroup.TryGetValue(group.TranslatedName, out List<EnumGroupMember>? members) == false)
+                        if (groupNameToEnumGroup.TryGetValue(group.TranslatedName, out List<EnumMember>? members) == false)
                         {
                             if (enumGroupToNativeFunctionsUsingThatEnumGroup.TryGetValue(group, out var functionsUsingEnumGroup) == false)
                             {
                                 functionsUsingEnumGroup = null;
                             }
 
-                            finalGroups.Add(new EnumGroup(group.TranslatedName, false, [], functionsUsingEnumGroup));
+                            finalGroups.Add(new EnumType()
+                            {
+                                Name = group.TranslatedName,
+                                IsFlags = false,
+                                Members = [],
+                                ReferencedBy = [],
+                                FunctionsUsingEnumGroup = functionsUsingEnumGroup,
+                            });
                         }
                     }
 
                     // Sort enum groups be name
                     finalGroups.Sort((g1, g2) => g1.Name.CompareTo(g2.Name));
 
-                    List<EnumGroupMember> allEnumGroup = theAllEnumGroup.ToList();
-                    allEnumGroup.Sort(EnumGroupMember.DefaultComparison);
+                    List<EnumMember> allEnumGroup = theAllEnumGroup.ToList();
+                    allEnumGroup.Sort(EnumMember.DefaultComparison);
 
                     // Add the All enum group first.
-                    finalGroups.Insert(0, new EnumGroup("All", false, allEnumGroup, null));
+                    finalGroups.Insert(0, new EnumType()
+                    {
+                        Name = "All",
+                        IsFlags = false,
+                        Members = allEnumGroup,
+                        ReferencedBy = [],
+                        FunctionsUsingEnumGroup = null,
+                    });
 
                     return new Namespace(outAPI, sortedVendorFunctions, finalGroups, documentation);
                 }

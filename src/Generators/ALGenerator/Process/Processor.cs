@@ -54,7 +54,7 @@ namespace ALGenerator.Process
             Dictionary<string, OverloadedFunction> allFunctions = new Dictionary<string, OverloadedFunction>(spec.Functions.Count);
             foreach (Function nativeFunction in spec.Functions)
             {
-                CommandDocumentation functionDocumentation = MakeDocumentationForNativeFunction(nativeFunction, docs);
+                CommandDocumentation? functionDocumentation = MakeDocumentationForNativeFunction(nativeFunction, docs);
                 OverloadedFunction overloadedFunction = GenerateOverloads(nativeFunction, functionDocumentation);
 
                 allFunctions.Add(nativeFunction.EntryPoint, overloadedFunction);
@@ -707,7 +707,7 @@ namespace ALGenerator.Process
             ];
 
         // Maybe we can do the return type overloading in a post processing step?
-        internal static OverloadedFunction GenerateOverloads(Function nativeFunction, CommandDocumentation functionDocumentation)
+        internal static OverloadedFunction GenerateOverloads(Function nativeFunction, CommandDocumentation? functionDocumentation)
         {
             List<Overload> overloads = new List<Overload>
             {
