@@ -5,7 +5,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Text;
 
-namespace GeneratorBase
+namespace GeneratorBase.Utility
 {
     public static class DocumentationExtensions
     {
