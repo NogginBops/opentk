@@ -487,7 +487,7 @@ namespace ALGenerator.Process
 
                         if (enumsDict.TryGetValue(enumRef.EnumName, out EnumMember? @enum))
                         {
-                            foreach (var (originalName, translatedName, @namespace) in @enum.Groups)
+                            foreach (var (originalName, translatedName, @namespace) in @enum.Groups!)
                             {
                                 if (@namespace != alFile)
                                     continue;
@@ -621,7 +621,7 @@ namespace ALGenerator.Process
                 CreatePointersList(ApiFile.ALC, outputNamespaces),
             ];
 
-            return new OutputData(pointers, outputNamespaces, docs.EnumDocs);
+            return new OutputData(pointers, outputNamespaces) { EnumMemberDocumentation = docs.EnumDocs };
 
             ApiPointers CreatePointersList(ApiFile file, List<OutputApiData> namespaces)
             {

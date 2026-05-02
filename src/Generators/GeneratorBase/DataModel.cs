@@ -46,6 +46,14 @@ namespace GeneratorBase
         }
     }
 
+    public record OutputData(
+        List<ApiPointers> Pointers,
+        List<OutputApiData> Namespaces)
+    {
+        // OpenAL
+        public Dictionary<string, EnumMemberDocumentation> EnumMemberDocumentation { get; init; }
+    }
+
     // FIXME: Add vulkan stuff to this...
     // FIXME: Better name?
     public record OutputApiData(
