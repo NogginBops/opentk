@@ -14,7 +14,7 @@ namespace GLGenerator.Process
 {
     internal static class Processor
     {
-        internal record OverloadedFunction(
+        internal record FunctionData(
             Function NativeFunction,
             Dictionary<OutputApi, CommandDocumentation> Documentation,
             Overload[] Overloads,
@@ -47,11 +47,11 @@ namespace GLGenerator.Process
         {
             // The first thing we do is process all of the vendorFunctions defined into a dictionary of Functions.
             List<Function> allEntryPoints = new List<Function>(spec.Functions.Count);
-            Dictionary<string, OverloadedFunction> allFunctions = new Dictionary<string, OverloadedFunction>(spec.Functions.Count);
+            Dictionary<string, FunctionData> allFunctions = new Dictionary<string, FunctionData>(spec.Functions.Count);
             foreach (Function function in spec.Functions)
             {
                 Dictionary<OutputApi, CommandDocumentation> functionDocumentation = MakeDocumentationForNativeFunction(function, docs);
-                OverloadedFunction overloadedFunction = GenerateOverloads(function, functionDocumentation);
+                FunctionData overloadedFunction = GenerateOverloads(function, functionDocumentation);
 
                 allEntryPoints.Add(function);
                 allFunctions.Add(function.EntryPoint, overloadedFunction);
@@ -378,10 +378,10 @@ namespace GLGenerator.Process
                     };
 
                     HashSet<GroupRef> groupsReferencedByFunctions = new HashSet<GroupRef>();
-                    Dictionary<string, List<OverloadedFunction>> functionsByVendor = new Dictionary<string, List<OverloadedFunction>>();
+                    Dictionary<string, List<FunctionData>> functionsByVendor = new Dictionary<string, List<FunctionData>>();
                     foreach (var functionRef in functions)
                     {
-                        if (allFunctions.TryGetValue(functionRef.EntryPoint, out OverloadedFunction? overloadedFunction))
+                        if (allFunctions.TryGetValue(functionRef.EntryPoint, out FunctionData? overloadedFunction))
                         {
                             bool referenced = false;
 
@@ -424,11 +424,11 @@ namespace GLGenerator.Process
                         {
                             if (!vendors.TryGetValue(vendor, out VendorFunctions? group))
                             {
-                                group = new VendorFunctions(vendor, new List<Process.OverloadedFunction>(), new HashSet<Function>());
+                                group = new VendorFunctions(vendor, new List<OverloadedFunction>(), new HashSet<Function>());
                                 vendors.Add(vendor, group);
                             }
 
-                            group.Functions.Add(new Process.OverloadedFunction(function.NativeFunction, function.Overloads));
+                            group.Functions.Add(new OverloadedFunction() { NativeFunction = function.NativeFunction, Overloads = function.Overloads });
 
                             if (function.ChangeNativeName)
                             {
@@ -833,7 +833,7 @@ namespace GLGenerator.Process
             ];
 
         // Maybe we can do the return type overloading in a post processing step?
-        internal static OverloadedFunction GenerateOverloads(Function nativeFunction, Dictionary<OutputApi, CommandDocumentation> functionDocumentation)
+        internal static FunctionData GenerateOverloads(Function nativeFunction, Dictionary<OutputApi, CommandDocumentation> functionDocumentation)
         {
             List<Overload> overloads = new List<Overload>
             {
@@ -873,7 +873,7 @@ namespace GLGenerator.Process
                 }
             }
 
-            return new OverloadedFunction(nativeFunction, functionDocumentation, overloadArray, changeNativeName);
+            return new FunctionData(nativeFunction, functionDocumentation, overloadArray, changeNativeName);
 
             static bool AreSignaturesDifferent(Function nativeFunction, Overload overload)
             {

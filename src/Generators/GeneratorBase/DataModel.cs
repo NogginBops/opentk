@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GeneratorBase.Overloading;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
@@ -183,6 +184,17 @@ namespace GeneratorBase
 
         // Vulkan
         public CommandType CommandType { get; set; } = CommandType.Invalid;
+    }
+
+    public record class OverloadedFunction : IComparable<OverloadedFunction>
+    {
+        public required Function NativeFunction { get; init; }
+        public required Overload[] Overloads { get; init; }
+
+        public int CompareTo(OverloadedFunction? other)
+        {
+            return NativeFunction.Name.CompareTo(other?.NativeFunction.Name);
+        }
     }
 
     public record class Parameter

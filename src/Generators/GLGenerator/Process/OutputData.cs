@@ -39,16 +39,6 @@ namespace GLGenerator.Process
         List<OverloadedFunction> Functions,
         HashSet<Function> NativeFunctionsWithPostfix);
 
-    internal record OverloadedFunction(
-        Function NativeFunction,
-        Overload[] Overloads) : IComparable<OverloadedFunction>
-    {
-        public int CompareTo(OverloadedFunction? other)
-        {
-            return NativeFunction.Name.CompareTo(other?.NativeFunction.Name);
-        }
-    }
-
     internal enum OutputApi
     {
         Invalid,
