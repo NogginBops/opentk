@@ -346,7 +346,7 @@ namespace ALGenerator.Process
                         {
                             if (!vendors.TryGetValue(vendor, out VendorFunctions? group))
                             {
-                                group = new VendorFunctions(vendor, new List<OverloadedFunction>(), new HashSet<Function>());
+                                group = new VendorFunctions() { Vendor = vendor, Functions = [], NativeFunctionsWithPostfix = [] };
                                 vendors.Add(vendor, group);
                             }
 

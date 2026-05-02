@@ -197,6 +197,14 @@ namespace GeneratorBase
         }
     }
 
+    public record class VendorFunctions
+    {
+        public required string Vendor { get; init; }
+        public required List<OverloadedFunction> Functions { get; init; }
+        // FIXME: Move into OverloadedFunction?
+        public required HashSet<Function> NativeFunctionsWithPostfix { get; init; }
+    }
+
     public record class Parameter
     {
         public required string Name { get; init; }

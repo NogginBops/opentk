@@ -44,11 +44,6 @@ namespace ALGenerator.Process
         List<string>? RemovedIn
         );
 
-    internal record VendorFunctions(
-        string Vendor,
-        List<OverloadedFunction> Functions,
-        HashSet<Function> NativeFunctionsWithPostfix);
-
     internal enum OutputApi
     {
         Invalid,
