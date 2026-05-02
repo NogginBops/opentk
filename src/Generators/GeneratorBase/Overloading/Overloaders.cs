@@ -1795,6 +1795,7 @@ namespace GeneratorBase.Overloading
         }
     }
 
+    // OpenGL specific to make glObjectPtrLabel have good overloads.
     public class ObjectPtrLabelOverloader : IOverloader
     {
         public bool TryGenerateOverloads(Overload overload, [NotNullWhen(true)] out List<Overload>? newOverloads)
