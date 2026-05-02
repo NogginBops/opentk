@@ -4164,9 +4164,9 @@ namespace OpenTK.Graphics.Vulkan
         /// <param name="pLayerPrefix"></param>
         /// <param name="pMessage"></param>
         /// <remarks><see href="https://registry.khronos.org/vulkan/specs/1.3-extensions/man/html/vkDebugReportMessageEXT.html" /></remarks>
-        public static void DebugReportMessageEXT(VkInstance instance, VkDebugReportFlagBitsEXT flags, VkDebugReportObjectTypeEXT objectType, ulong obj, nuint location, int messageCode, byte* pLayerPrefix, byte* pMessage)
+        public static void DebugReportMessageEXT(VkInstance instance, VkDebugReportFlagBitsEXT flags, VkDebugReportObjectTypeEXT objectType, ulong @object, nuint location, int messageCode, byte* pLayerPrefix, byte* pMessage)
         {
-            VkPointers._vkDebugReportMessageEXT_fnptr(instance, flags, objectType, obj, location, messageCode, pLayerPrefix, pMessage);
+            VkPointers._vkDebugReportMessageEXT_fnptr(instance, flags, objectType, @object, location, messageCode, pLayerPrefix, pMessage);
         }
         /// <summary><b>[requires: VK_KHR_deferred_host_operations]</b> [device command] </summary>
         /// <param name="device"></param>
@@ -5499,9 +5499,9 @@ namespace OpenTK.Graphics.Vulkan
         /// <param name="params"></param>
         /// <param name="pData"></param>
         /// <remarks><see href="https://registry.khronos.org/vulkan/specs/1.3-extensions/man/html/vkGetExternalComputeQueueDataNV.html" /></remarks>
-        public static void GetExternalComputeQueueDataNV(VkExternalComputeQueueNV externalQueue, VkExternalComputeQueueDataParamsNV* parameters, void* pData)
+        public static void GetExternalComputeQueueDataNV(VkExternalComputeQueueNV externalQueue, VkExternalComputeQueueDataParamsNV* @params, void* pData)
         {
-            VkPointers._vkGetExternalComputeQueueDataNV_fnptr(externalQueue, parameters, pData);
+            VkPointers._vkGetExternalComputeQueueDataNV_fnptr(externalQueue, @params, pData);
         }
         /// <summary>[device command] </summary>
         /// <param name="device"></param>

@@ -30,9 +30,9 @@ namespace OpenTK.Graphics.OpenGL.Compatibility
         
         /// <summary> <b>[requires: v1.0]</b> <b>[removed in: v3.2]</b> <b>[entry point: <c>glAlphaFunc</c>]</b><br/> Specify the alpha test function. </summary>
         /// <param name="func"> Specifies the alpha comparison function. Symbolic constants GL_NEVER, GL_LESS, GL_EQUAL, GL_LEQUAL, GL_GREATER, GL_NOTEQUAL, GL_GEQUAL, and GL_ALWAYS are accepted. The initial value is GL_ALWAYS. </param>
-        /// <param name="reference"> Specifies the reference value that incoming alpha values are compared to. This value is clamped to the range 0 1 , where 0 represents the lowest possible alpha value and 1 the highest possible value. The initial reference value is 0. </param>
+        /// <param name="ref"> Specifies the reference value that incoming alpha values are compared to. This value is clamped to the range 0 1 , where 0 represents the lowest possible alpha value and 1 the highest possible value. The initial reference value is 0. </param>
         /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/gl2.1/xhtml/glAlphaFunc.xml"/></remarks>
-        public static void AlphaFunc(AlphaFunction func, float reference) => GLPointers.glAlphaFunc_Lazy((uint)func, reference);
+        public static void AlphaFunc(AlphaFunction func, float @ref) => GLPointers.glAlphaFunc_Lazy((uint)func, @ref);
         
         /// <summary> <b>[requires: v1.1]</b> <b>[removed in: v3.2]</b> <b>[entry point: <c>glAreTexturesResident</c>]</b><br/> Determine if textures are loaded in texture memory. </summary>
         /// <param name="n"> Specifies the number of textures to be queried. </param>
@@ -1664,7 +1664,7 @@ namespace OpenTK.Graphics.OpenGL.Compatibility
         public static void Fogf(FogParameter pname, float param) => GLPointers.glFogf_Lazy((uint)pname, param);
         
         /// <summary> <b>[requires: v1.0]</b> <b>[removed in: v3.2]</b> <b>[entry point: <c>glFogfv</c>]</b><br/>  </summary>
-        public static void Fogfv(FogParameter pname, float* parameters) => GLPointers.glFogfv_Lazy((uint)pname, parameters);
+        public static void Fogfv(FogParameter pname, float* @params) => GLPointers.glFogfv_Lazy((uint)pname, @params);
         
         /// <summary> <b>[requires: v1.0]</b> <b>[removed in: v3.2]</b> <b>[entry point: <c>glFogi</c>]</b><br/> Specify fog parameters. </summary>
         /// <param name="pname"> Specifies a single-valued fog parameter. GL_FOG_MODE, GL_FOG_DENSITY, GL_FOG_START, GL_FOG_END, GL_FOG_INDEX, and GL_FOG_COORD_SRC are accepted. </param>
@@ -1673,7 +1673,7 @@ namespace OpenTK.Graphics.OpenGL.Compatibility
         public static void Fogi(FogParameter pname, int param) => GLPointers.glFogi_Lazy((uint)pname, param);
         
         /// <summary> <b>[requires: v1.0]</b> <b>[removed in: v3.2]</b> <b>[entry point: <c>glFogiv</c>]</b><br/>  </summary>
-        public static void Fogiv(FogParameter pname, int* parameters) => GLPointers.glFogiv_Lazy((uint)pname, parameters);
+        public static void Fogiv(FogParameter pname, int* @params) => GLPointers.glFogiv_Lazy((uint)pname, @params);
         
         /// <summary> <b>[requires: v4.3 | GL_ARB_framebuffer_no_attachments]</b> <b>[entry point: <c>glFramebufferParameteri</c>]</b><br/> Set a named parameter of a framebuffer object. </summary>
         /// <param name="target"> Specifies the target to which the framebuffer is bound for glFramebufferParameteri. </param>
@@ -1823,9 +1823,9 @@ namespace OpenTK.Graphics.OpenGL.Compatibility
         /// <param name="program"> The name of a program object from which to retrieve information. </param>
         /// <param name="bufferIndex"> Specifies index of an active atomic counter buffer. </param>
         /// <param name="pname"> Specifies which parameter of the atomic counter buffer to retrieve. </param>
-        /// <param name="parameters"> Specifies the address of a variable into which to write the retrieved information. </param>
+        /// <param name="params"> Specifies the address of a variable into which to write the retrieved information. </param>
         /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/glGetActiveAtomicCounterBufferiv.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_shader_atomic_counters.txt"/></remarks>
-        public static void GetActiveAtomicCounterBufferiv(int program, uint bufferIndex, AtomicCounterBufferPName pname, int* parameters) => GLPointers.glGetActiveAtomicCounterBufferiv_Lazy(program, bufferIndex, (uint)pname, parameters);
+        public static void GetActiveAtomicCounterBufferiv(int program, uint bufferIndex, AtomicCounterBufferPName pname, int* @params) => GLPointers.glGetActiveAtomicCounterBufferiv_Lazy(program, bufferIndex, (uint)pname, @params);
         
         /// <summary> <b>[requires: v2.0]</b> <b>[entry point: <c>glGetActiveAttrib</c>]</b><br/> Returns information about an active attribute variable for the specified program object. </summary>
         /// <param name="program">Specifies the program object to be queried.</param>
@@ -1882,9 +1882,9 @@ namespace OpenTK.Graphics.OpenGL.Compatibility
         /// <param name="program"> Specifies the name of a program containing the uniform block. </param>
         /// <param name="uniformBlockIndex"> Specifies the index of the uniform block within program. </param>
         /// <param name="pname"> Specifies the name of the parameter to query. </param>
-        /// <param name="parameters"> Specifies the address of a variable to receive the result of the query. </param>
+        /// <param name="params"> Specifies the address of a variable to receive the result of the query. </param>
         /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/glGetActiveUniformBlock.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_uniform_buffer_object.txt"/></remarks>
-        public static void GetActiveUniformBlockiv(int program, uint uniformBlockIndex, UniformBlockPName pname, int* parameters) => GLPointers.glGetActiveUniformBlockiv_Lazy(program, uniformBlockIndex, (uint)pname, parameters);
+        public static void GetActiveUniformBlockiv(int program, uint uniformBlockIndex, UniformBlockPName pname, int* @params) => GLPointers.glGetActiveUniformBlockiv_Lazy(program, uniformBlockIndex, (uint)pname, @params);
         
         /// <summary> <b>[requires: v3.1 | GL_ARB_uniform_buffer_object]</b> <b>[entry point: <c>glGetActiveUniformBlockName</c>]</b><br/> Retrieve the name of an active uniform block. </summary>
         /// <param name="program"> Specifies the name of a program containing the uniform block. </param>
@@ -1909,9 +1909,9 @@ namespace OpenTK.Graphics.OpenGL.Compatibility
         /// <param name="uniformCount">Specifies both the number of elements in the array of indices uniformIndices and the number of parameters written to params upon successful return.</param>
         /// <param name="uniformIndices">Specifies the address of an array of uniformCount integers containing the indices of uniforms within program whose parameter pname should be queried.</param>
         /// <param name="pname">Specifies the property of each uniform in uniformIndices that should be written into the corresponding element of params.</param>
-        /// <param name="parameters">Specifies the address of an array of uniformCount integers which are to receive the value of pname for each uniform in uniformIndices.</param>
+        /// <param name="params">Specifies the address of an array of uniformCount integers which are to receive the value of pname for each uniform in uniformIndices.</param>
         /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/glGetActiveUniformsiv.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_uniform_buffer_object.txt"/></remarks>
-        public static void GetActiveUniformsiv(int program, int uniformCount, uint* uniformIndices, UniformPName pname, int* parameters) => GLPointers.glGetActiveUniformsiv_Lazy(program, uniformCount, uniformIndices, (uint)pname, parameters);
+        public static void GetActiveUniformsiv(int program, int uniformCount, uint* uniformIndices, UniformPName pname, int* @params) => GLPointers.glGetActiveUniformsiv_Lazy(program, uniformCount, uniformIndices, (uint)pname, @params);
         
         /// <summary> <b>[requires: v2.0]</b> <b>[entry point: <c>glGetAttachedShaders</c>]</b><br/> Returns the handles of the shader objects attached to a program object. </summary>
         /// <param name="program">Specifies the program object to be queried.</param>
@@ -1943,23 +1943,23 @@ namespace OpenTK.Graphics.OpenGL.Compatibility
         /// <summary> <b>[requires: v3.2]</b> <b>[entry point: <c>glGetBufferParameteri64v</c>]</b><br/> Return parameters of a buffer object. </summary>
         /// <param name="target"> Specifies the target to which the buffer object is bound for glGetBufferParameteriv and glGetBufferParameteri64v. Must be one of the buffer binding targets in the following table: </param>
         /// <param name="pname"> Specifies the name of the buffer object parameter to query. </param>
-        /// <param name="parameters"> Returns the requested parameter. </param>
+        /// <param name="params"> Returns the requested parameter. </param>
         /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/glGetBufferParameter.xhtml"/></remarks>
-        public static void GetBufferParameteri64v(BufferTarget target, BufferPName pname, long* parameters) => GLPointers.glGetBufferParameteri64v_Lazy((uint)target, (uint)pname, parameters);
+        public static void GetBufferParameteri64v(BufferTarget target, BufferPName pname, long* @params) => GLPointers.glGetBufferParameteri64v_Lazy((uint)target, (uint)pname, @params);
         
         /// <summary> <b>[requires: v1.5]</b> <b>[entry point: <c>glGetBufferParameteriv</c>]</b><br/> Return parameters of a buffer object. </summary>
         /// <param name="target"> Specifies the target to which the buffer object is bound for glGetBufferParameteriv and glGetBufferParameteri64v. Must be one of the buffer binding targets in the following table: </param>
         /// <param name="pname"> Specifies the name of the buffer object parameter to query. </param>
-        /// <param name="parameters"> Returns the requested parameter. </param>
+        /// <param name="params"> Returns the requested parameter. </param>
         /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/glGetBufferParameter.xhtml"/></remarks>
-        public static void GetBufferParameteriv(BufferTarget target, BufferPName pname, int* parameters) => GLPointers.glGetBufferParameteriv_Lazy((uint)target, (uint)pname, parameters);
+        public static void GetBufferParameteriv(BufferTarget target, BufferPName pname, int* @params) => GLPointers.glGetBufferParameteriv_Lazy((uint)target, (uint)pname, @params);
         
         /// <summary> <b>[requires: v1.5]</b> <b>[entry point: <c>glGetBufferPointerv</c>]</b><br/> Return the pointer to a mapped buffer object&apos;s data store. </summary>
         /// <param name="target"> Specifies the target to which the buffer object is bound for glGetBufferPointerv, which must be one of the buffer binding targets in the following table: </param>
         /// <param name="pname"> Specifies the name of the pointer to be returned. Must be GL_BUFFER_MAP_POINTER. </param>
-        /// <param name="parameters"> Returns the pointer value specified by pname. </param>
+        /// <param name="params"> Returns the pointer value specified by pname. </param>
         /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/glGetBufferPointerv.xhtml"/></remarks>
-        public static void GetBufferPointerv(BufferTarget target, BufferPointerNameARB pname, void** parameters) => GLPointers.glGetBufferPointerv_Lazy((uint)target, (uint)pname, parameters);
+        public static void GetBufferPointerv(BufferTarget target, BufferPointerNameARB pname, void** @params) => GLPointers.glGetBufferPointerv_Lazy((uint)target, (uint)pname, @params);
         
         /// <summary> <b>[requires: v1.5]</b> <b>[entry point: <c>glGetBufferSubData</c>]</b><br/> Returns a subset of a buffer object&apos;s data store. </summary>
         /// <param name="target"> Specifies the target to which the buffer object is bound for glGetBufferSubData, which must be one of the buffer binding targets in the following table: </param>
@@ -2062,16 +2062,16 @@ namespace OpenTK.Graphics.OpenGL.Compatibility
         /// <param name="target"> Specifies the target to which the framebuffer object is bound for glGetFramebufferAttachmentParameteriv. </param>
         /// <param name="attachment"> Specifies the attachment of the framebuffer object to query. </param>
         /// <param name="pname"> Specifies the parameter of attachment to query. </param>
-        /// <param name="parameters"> Returns the value of parameter pname for attachment. </param>
+        /// <param name="params"> Returns the value of parameter pname for attachment. </param>
         /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/glGetFramebufferAttachmentParameter.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_framebuffer_object.txt"/></remarks>
-        public static void GetFramebufferAttachmentParameteriv(FramebufferTarget target, FramebufferAttachment attachment, FramebufferAttachmentParameterName pname, int* parameters) => GLPointers.glGetFramebufferAttachmentParameteriv_Lazy((uint)target, (uint)attachment, (uint)pname, parameters);
+        public static void GetFramebufferAttachmentParameteriv(FramebufferTarget target, FramebufferAttachment attachment, FramebufferAttachmentParameterName pname, int* @params) => GLPointers.glGetFramebufferAttachmentParameteriv_Lazy((uint)target, (uint)attachment, (uint)pname, @params);
         
         /// <summary> <b>[requires: v4.3 | GL_ARB_framebuffer_no_attachments]</b> <b>[entry point: <c>glGetFramebufferParameteriv</c>]</b><br/> Query a named parameter of a framebuffer object. </summary>
         /// <param name="target"> Specifies the target to which the framebuffer object is bound for glGetFramebufferParameteriv. </param>
         /// <param name="pname"> Specifies the parameter of the framebuffer object to query. </param>
-        /// <param name="parameters"> Returns the value of parameter pname for the framebuffer object. </param>
+        /// <param name="params"> Returns the value of parameter pname for the framebuffer object. </param>
         /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/glGetFramebufferParameter.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_framebuffer_no_attachments.txt"/></remarks>
-        public static void GetFramebufferParameteriv(FramebufferTarget target, FramebufferAttachmentParameterName pname, int* parameters) => GLPointers.glGetFramebufferParameteriv_Lazy((uint)target, (uint)pname, parameters);
+        public static void GetFramebufferParameteriv(FramebufferTarget target, FramebufferAttachmentParameterName pname, int* @params) => GLPointers.glGetFramebufferParameteriv_Lazy((uint)target, (uint)pname, @params);
         
         /// <summary> <b>[requires: v4.5 | GL_KHR_robustness]</b> <b>[entry point: <c>glGetGraphicsResetStatus</c>]</b><br/> Check if the rendering context has not been lost due to software or hardware issues. </summary>
         /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/glGetGraphicsResetStatus.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/KHR/KHR_robustness.txt"/></remarks>
@@ -2108,32 +2108,32 @@ namespace OpenTK.Graphics.OpenGL.Compatibility
         /// <param name="internalformat"> Specifies the internal format about which to retrieve information. </param>
         /// <param name="pname"> Specifies the type of information to query. </param>
         /// <param name="count"> Specifies the maximum number of integers of the specified width that may be written to params by the function. </param>
-        /// <param name="parameters"> Specifies the address of a variable into which to write the retrieved information. </param>
+        /// <param name="params"> Specifies the address of a variable into which to write the retrieved information. </param>
         /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/glGetInternalformat.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_internalformat_query2.txt"/></remarks>
-        public static void GetInternalformati64v(TextureTarget target, InternalFormat internalformat, InternalFormatPName pname, int count, long* parameters) => GLPointers.glGetInternalformati64v_Lazy((uint)target, (uint)internalformat, (uint)pname, count, parameters);
+        public static void GetInternalformati64v(TextureTarget target, InternalFormat internalformat, InternalFormatPName pname, int count, long* @params) => GLPointers.glGetInternalformati64v_Lazy((uint)target, (uint)internalformat, (uint)pname, count, @params);
         
         /// <summary> <b>[requires: v4.2 | GL_ARB_internalformat_query]</b> <b>[entry point: <c>glGetInternalformativ</c>]</b><br/> Retrieve information about implementation-dependent support for internal formats. </summary>
         /// <param name="target"> Indicates the usage of the internal format. target must be GL_TEXTURE_1D, GL_TEXTURE_1D_ARRAY, GL_TEXTURE_2D, GL_TEXTURE_2D_ARRAY, GL_TEXTURE_3D, GL_TEXTURE_CUBE_MAP, GL_TEXTURE_CUBE_MAP_ARRAY, GL_TEXTURE_RECTANGLE, GL_TEXTURE_BUFFER, GL_RENDERBUFFER, GL_TEXTURE_2D_MULTISAMPLE or GL_TEXTURE_2D_MULTISAMPLE_ARRAY. </param>
         /// <param name="internalformat"> Specifies the internal format about which to retrieve information. </param>
         /// <param name="pname"> Specifies the type of information to query. </param>
         /// <param name="count"> Specifies the maximum number of integers of the specified width that may be written to params by the function. </param>
-        /// <param name="parameters"> Specifies the address of a variable into which to write the retrieved information. </param>
+        /// <param name="params"> Specifies the address of a variable into which to write the retrieved information. </param>
         /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/glGetInternalformat.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_internalformat_query.txt"/></remarks>
-        public static void GetInternalformativ(TextureTarget target, InternalFormat internalformat, InternalFormatPName pname, int count, int* parameters) => GLPointers.glGetInternalformativ_Lazy((uint)target, (uint)internalformat, (uint)pname, count, parameters);
+        public static void GetInternalformativ(TextureTarget target, InternalFormat internalformat, InternalFormatPName pname, int count, int* @params) => GLPointers.glGetInternalformativ_Lazy((uint)target, (uint)internalformat, (uint)pname, count, @params);
         
         /// <summary> <b>[requires: v1.0]</b> <b>[removed in: v3.2]</b> <b>[entry point: <c>glGetLightfv</c>]</b><br/> Return light source parameter values. </summary>
         /// <param name="light"> Specifies a light source. The number of possible lights depends on the implementation, but at least eight lights are supported. They are identified by symbolic names of the form GL_LIGHT i where i ranges from 0 to the value of GL_MAX_LIGHTS - 1. </param>
         /// <param name="pname"> Specifies a light source parameter for light. Accepted symbolic names are GL_AMBIENT, GL_DIFFUSE, GL_SPECULAR, GL_POSITION, GL_SPOT_DIRECTION, GL_SPOT_EXPONENT, GL_SPOT_CUTOFF, GL_CONSTANT_ATTENUATION, GL_LINEAR_ATTENUATION, and GL_QUADRATIC_ATTENUATION. </param>
-        /// <param name="parameters"> Returns the requested data. </param>
+        /// <param name="params"> Returns the requested data. </param>
         /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/gl2.1/xhtml/glGetLight.xml"/></remarks>
-        public static void GetLightfv(LightName light, LightParameter pname, float* parameters) => GLPointers.glGetLightfv_Lazy((uint)light, (uint)pname, parameters);
+        public static void GetLightfv(LightName light, LightParameter pname, float* @params) => GLPointers.glGetLightfv_Lazy((uint)light, (uint)pname, @params);
         
         /// <summary> <b>[requires: v1.0]</b> <b>[removed in: v3.2]</b> <b>[entry point: <c>glGetLightiv</c>]</b><br/> Return light source parameter values. </summary>
         /// <param name="light"> Specifies a light source. The number of possible lights depends on the implementation, but at least eight lights are supported. They are identified by symbolic names of the form GL_LIGHT i where i ranges from 0 to the value of GL_MAX_LIGHTS - 1. </param>
         /// <param name="pname"> Specifies a light source parameter for light. Accepted symbolic names are GL_AMBIENT, GL_DIFFUSE, GL_SPECULAR, GL_POSITION, GL_SPOT_DIRECTION, GL_SPOT_EXPONENT, GL_SPOT_CUTOFF, GL_CONSTANT_ATTENUATION, GL_LINEAR_ATTENUATION, and GL_QUADRATIC_ATTENUATION. </param>
-        /// <param name="parameters"> Returns the requested data. </param>
+        /// <param name="params"> Returns the requested data. </param>
         /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/gl2.1/xhtml/glGetLight.xml"/></remarks>
-        public static void GetLightiv(LightName light, LightParameter pname, int* parameters) => GLPointers.glGetLightiv_Lazy((uint)light, (uint)pname, parameters);
+        public static void GetLightiv(LightName light, LightParameter pname, int* @params) => GLPointers.glGetLightiv_Lazy((uint)light, (uint)pname, @params);
         
         /// <summary> <b>[requires: v1.0]</b> <b>[removed in: v3.2]</b> <b>[entry point: <c>glGetMapdv</c>]</b><br/> Return evaluator parameters. </summary>
         /// <param name="target"> Specifies the symbolic name of a map. Accepted values are GL_MAP1_COLOR_4, GL_MAP1_INDEX, GL_MAP1_NORMAL, GL_MAP1_TEXTURE_COORD_1, GL_MAP1_TEXTURE_COORD_2, GL_MAP1_TEXTURE_COORD_3, GL_MAP1_TEXTURE_COORD_4, GL_MAP1_VERTEX_3, GL_MAP1_VERTEX_4, GL_MAP2_COLOR_4, GL_MAP2_INDEX, GL_MAP2_NORMAL, GL_MAP2_TEXTURE_COORD_1, GL_MAP2_TEXTURE_COORD_2, GL_MAP2_TEXTURE_COORD_3, GL_MAP2_TEXTURE_COORD_4, GL_MAP2_VERTEX_3, and GL_MAP2_VERTEX_4. </param>
@@ -2159,16 +2159,16 @@ namespace OpenTK.Graphics.OpenGL.Compatibility
         /// <summary> <b>[requires: v1.0]</b> <b>[removed in: v3.2]</b> <b>[entry point: <c>glGetMaterialfv</c>]</b><br/> Return material parameters. </summary>
         /// <param name="face"> Specifies which of the two materials is being queried. GL_FRONT or GL_BACK are accepted, representing the front and back materials, respectively. </param>
         /// <param name="pname"> Specifies the material parameter to return. GL_AMBIENT, GL_DIFFUSE, GL_SPECULAR, GL_EMISSION, GL_SHININESS, and GL_COLOR_INDEXES are accepted. </param>
-        /// <param name="parameters"> Returns the requested data. </param>
+        /// <param name="params"> Returns the requested data. </param>
         /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/gl2.1/xhtml/glGetMaterial.xml"/></remarks>
-        public static void GetMaterialfv(TriangleFace face, MaterialParameter pname, float* parameters) => GLPointers.glGetMaterialfv_Lazy((uint)face, (uint)pname, parameters);
+        public static void GetMaterialfv(TriangleFace face, MaterialParameter pname, float* @params) => GLPointers.glGetMaterialfv_Lazy((uint)face, (uint)pname, @params);
         
         /// <summary> <b>[requires: v1.0]</b> <b>[removed in: v3.2]</b> <b>[entry point: <c>glGetMaterialiv</c>]</b><br/> Return material parameters. </summary>
         /// <param name="face"> Specifies which of the two materials is being queried. GL_FRONT or GL_BACK are accepted, representing the front and back materials, respectively. </param>
         /// <param name="pname"> Specifies the material parameter to return. GL_AMBIENT, GL_DIFFUSE, GL_SPECULAR, GL_EMISSION, GL_SHININESS, and GL_COLOR_INDEXES are accepted. </param>
-        /// <param name="parameters"> Returns the requested data. </param>
+        /// <param name="params"> Returns the requested data. </param>
         /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/gl2.1/xhtml/glGetMaterial.xml"/></remarks>
-        public static void GetMaterialiv(TriangleFace face, MaterialParameter pname, int* parameters) => GLPointers.glGetMaterialiv_Lazy((uint)face, (uint)pname, parameters);
+        public static void GetMaterialiv(TriangleFace face, MaterialParameter pname, int* @params) => GLPointers.glGetMaterialiv_Lazy((uint)face, (uint)pname, @params);
         
         /// <summary> <b>[requires: v3.2 | GL_ARB_texture_multisample]</b> <b>[entry point: <c>glGetMultisamplefv</c>]</b><br/> Retrieve the location of a sample. </summary>
         /// <param name="pname"> Specifies the sample parameter name. pname must be GL_SAMPLE_POSITION. </param>
@@ -2180,23 +2180,23 @@ namespace OpenTK.Graphics.OpenGL.Compatibility
         /// <summary> <b>[requires: v4.5 | GL_ARB_direct_state_access]</b> <b>[entry point: <c>glGetNamedBufferParameteri64v</c>]</b><br/> Return parameters of a buffer object. </summary>
         /// <param name="buffer"> Specifies the name of the buffer object for glGetNamedBufferParameteriv and glGetNamedBufferParameteri64v. </param>
         /// <param name="pname">!!missing documentation!!</param>
-        /// <param name="parameters">!!missing documentation!!</param>
+        /// <param name="params">!!missing documentation!!</param>
         /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/glGetBufferParameter.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_direct_state_access.txt"/></remarks>
-        public static void GetNamedBufferParameteri64v(int buffer, BufferPName pname, long* parameters) => GLPointers.glGetNamedBufferParameteri64v_Lazy(buffer, (uint)pname, parameters);
+        public static void GetNamedBufferParameteri64v(int buffer, BufferPName pname, long* @params) => GLPointers.glGetNamedBufferParameteri64v_Lazy(buffer, (uint)pname, @params);
         
         /// <summary> <b>[requires: v4.5 | GL_ARB_direct_state_access]</b> <b>[entry point: <c>glGetNamedBufferParameteriv</c>]</b><br/> Return parameters of a buffer object. </summary>
         /// <param name="buffer"> Specifies the name of the buffer object for glGetNamedBufferParameteriv and glGetNamedBufferParameteri64v. </param>
         /// <param name="pname">!!missing documentation!!</param>
-        /// <param name="parameters">!!missing documentation!!</param>
+        /// <param name="params">!!missing documentation!!</param>
         /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/glGetBufferParameter.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_direct_state_access.txt"/></remarks>
-        public static void GetNamedBufferParameteriv(int buffer, BufferPName pname, int* parameters) => GLPointers.glGetNamedBufferParameteriv_Lazy(buffer, (uint)pname, parameters);
+        public static void GetNamedBufferParameteriv(int buffer, BufferPName pname, int* @params) => GLPointers.glGetNamedBufferParameteriv_Lazy(buffer, (uint)pname, @params);
         
         /// <summary> <b>[requires: v4.5 | GL_ARB_direct_state_access]</b> <b>[entry point: <c>glGetNamedBufferPointerv</c>]</b><br/> Return the pointer to a mapped buffer object&apos;s data store. </summary>
         /// <param name="buffer"> Specifies the name of the buffer object for glGetNamedBufferPointerv. </param>
         /// <param name="pname"> Specifies the name of the pointer to be returned. Must be GL_BUFFER_MAP_POINTER. </param>
-        /// <param name="parameters"> Returns the pointer value specified by pname. </param>
+        /// <param name="params"> Returns the pointer value specified by pname. </param>
         /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/glGetBufferPointerv.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_direct_state_access.txt"/></remarks>
-        public static void GetNamedBufferPointerv(int buffer, BufferPointerNameARB pname, void** parameters) => GLPointers.glGetNamedBufferPointerv_Lazy(buffer, (uint)pname, parameters);
+        public static void GetNamedBufferPointerv(int buffer, BufferPointerNameARB pname, void** @params) => GLPointers.glGetNamedBufferPointerv_Lazy(buffer, (uint)pname, @params);
         
         /// <summary> <b>[requires: v4.5 | GL_ARB_direct_state_access]</b> <b>[entry point: <c>glGetNamedBufferSubData</c>]</b><br/> Returns a subset of a buffer object&apos;s data store. </summary>
         /// <param name="buffer"> Specifies the name of the buffer object for glGetNamedBufferSubData. </param>
@@ -2210,9 +2210,9 @@ namespace OpenTK.Graphics.OpenGL.Compatibility
         /// <param name="framebuffer"> Specifies the name of the framebuffer object for glGetNamedFramebufferAttachmentParameteriv. </param>
         /// <param name="attachment"> Specifies the attachment of the framebuffer object to query. </param>
         /// <param name="pname"> Specifies the parameter of attachment to query. </param>
-        /// <param name="parameters"> Returns the value of parameter pname for attachment. </param>
+        /// <param name="params"> Returns the value of parameter pname for attachment. </param>
         /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/glGetFramebufferAttachmentParameter.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_direct_state_access.txt"/></remarks>
-        public static void GetNamedFramebufferAttachmentParameteriv(int framebuffer, FramebufferAttachment attachment, FramebufferAttachmentParameterName pname, int* parameters) => GLPointers.glGetNamedFramebufferAttachmentParameteriv_Lazy(framebuffer, (uint)attachment, (uint)pname, parameters);
+        public static void GetNamedFramebufferAttachmentParameteriv(int framebuffer, FramebufferAttachment attachment, FramebufferAttachmentParameterName pname, int* @params) => GLPointers.glGetNamedFramebufferAttachmentParameteriv_Lazy(framebuffer, (uint)attachment, (uint)pname, @params);
         
         /// <summary> <b>[requires: v4.5 | GL_ARB_direct_state_access]</b> <b>[entry point: <c>glGetNamedFramebufferParameteriv</c>]</b><br/> Query a named parameter of a framebuffer object. </summary>
         /// <param name="framebuffer"> Specifies the name of the framebuffer object for glGetNamedFramebufferParameteriv. </param>
@@ -2224,9 +2224,9 @@ namespace OpenTK.Graphics.OpenGL.Compatibility
         /// <summary> <b>[requires: v4.5 | GL_ARB_direct_state_access]</b> <b>[entry point: <c>glGetNamedRenderbufferParameteriv</c>]</b><br/> Query a named parameter of a renderbuffer object. </summary>
         /// <param name="renderbuffer"> Specifies the name of the renderbuffer object for glGetNamedRenderbufferParameteriv. </param>
         /// <param name="pname"> Specifies the parameter of the renderbuffer object to query. </param>
-        /// <param name="parameters"> Returns the value of parameter pname for the renderbuffer object. </param>
+        /// <param name="params"> Returns the value of parameter pname for the renderbuffer object. </param>
         /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/glGetRenderbufferParameter.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_direct_state_access.txt"/></remarks>
-        public static void GetNamedRenderbufferParameteriv(int renderbuffer, RenderbufferParameterName pname, int* parameters) => GLPointers.glGetNamedRenderbufferParameteriv_Lazy(renderbuffer, (uint)pname, parameters);
+        public static void GetNamedRenderbufferParameteriv(int renderbuffer, RenderbufferParameterName pname, int* @params) => GLPointers.glGetNamedRenderbufferParameteriv_Lazy(renderbuffer, (uint)pname, @params);
         
         /// <summary> <b>[requires: v4.5]</b> <b>[entry point: <c>glGetnColorTable</c>]</b><br/>  </summary>
         public static void GetnColorTable(ColorTableTarget target, PixelFormat format, PixelType type, int bufSize, void* table) => GLPointers.glGetnColorTable_Lazy((uint)target, (uint)format, (uint)type, bufSize, table);
@@ -2286,33 +2286,33 @@ namespace OpenTK.Graphics.OpenGL.Compatibility
         /// <param name="program">Specifies the program object to be queried.</param>
         /// <param name="location">Specifies the location of the uniform variable to be queried.</param>
         /// <param name="bufSize">Specifies the size of the buffer params.</param>
-        /// <param name="parameters">Returns the value of the specified uniform variable.</param>
+        /// <param name="params">Returns the value of the specified uniform variable.</param>
         /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/glGetUniform.xhtml"/></remarks>
-        public static void GetnUniformdv(int program, int location, int bufSize, double* parameters) => GLPointers.glGetnUniformdv_Lazy(program, location, bufSize, parameters);
+        public static void GetnUniformdv(int program, int location, int bufSize, double* @params) => GLPointers.glGetnUniformdv_Lazy(program, location, bufSize, @params);
         
         /// <summary> <b>[requires: v4.5 | GL_KHR_robustness]</b> <b>[entry point: <c>glGetnUniformfv</c>]</b><br/> Returns the value of a uniform variable. </summary>
         /// <param name="program">Specifies the program object to be queried.</param>
         /// <param name="location">Specifies the location of the uniform variable to be queried.</param>
         /// <param name="bufSize">Specifies the size of the buffer params.</param>
-        /// <param name="parameters">Returns the value of the specified uniform variable.</param>
+        /// <param name="params">Returns the value of the specified uniform variable.</param>
         /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/glGetUniform.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/KHR/KHR_robustness.txt"/></remarks>
-        public static void GetnUniformfv(int program, int location, int bufSize, float* parameters) => GLPointers.glGetnUniformfv_Lazy(program, location, bufSize, parameters);
+        public static void GetnUniformfv(int program, int location, int bufSize, float* @params) => GLPointers.glGetnUniformfv_Lazy(program, location, bufSize, @params);
         
         /// <summary> <b>[requires: v4.5 | GL_KHR_robustness]</b> <b>[entry point: <c>glGetnUniformiv</c>]</b><br/> Returns the value of a uniform variable. </summary>
         /// <param name="program">Specifies the program object to be queried.</param>
         /// <param name="location">Specifies the location of the uniform variable to be queried.</param>
         /// <param name="bufSize">Specifies the size of the buffer params.</param>
-        /// <param name="parameters">Returns the value of the specified uniform variable.</param>
+        /// <param name="params">Returns the value of the specified uniform variable.</param>
         /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/glGetUniform.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/KHR/KHR_robustness.txt"/></remarks>
-        public static void GetnUniformiv(int program, int location, int bufSize, int* parameters) => GLPointers.glGetnUniformiv_Lazy(program, location, bufSize, parameters);
+        public static void GetnUniformiv(int program, int location, int bufSize, int* @params) => GLPointers.glGetnUniformiv_Lazy(program, location, bufSize, @params);
         
         /// <summary> <b>[requires: v4.5 | GL_KHR_robustness]</b> <b>[entry point: <c>glGetnUniformuiv</c>]</b><br/> Returns the value of a uniform variable. </summary>
         /// <param name="program">Specifies the program object to be queried.</param>
         /// <param name="location">Specifies the location of the uniform variable to be queried.</param>
         /// <param name="bufSize">Specifies the size of the buffer params.</param>
-        /// <param name="parameters">Returns the value of the specified uniform variable.</param>
+        /// <param name="params">Returns the value of the specified uniform variable.</param>
         /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/glGetUniform.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/KHR/KHR_robustness.txt"/></remarks>
-        public static void GetnUniformuiv(int program, int location, int bufSize, uint* parameters) => GLPointers.glGetnUniformuiv_Lazy(program, location, bufSize, parameters);
+        public static void GetnUniformuiv(int program, int location, int bufSize, uint* @params) => GLPointers.glGetnUniformuiv_Lazy(program, location, bufSize, @params);
         
         /// <summary> <b>[requires: v4.3 | GL_KHR_debug]</b> <b>[entry point: <c>glGetObjectLabel</c>]</b><br/> Retrieve the label of a named object identified within a namespace. </summary>
         /// <param name="identifier"> The namespace from which the name of the object is allocated. </param>
@@ -2351,9 +2351,9 @@ namespace OpenTK.Graphics.OpenGL.Compatibility
         
         /// <summary> <b>[requires: v1.1 | GL_KHR_debug]</b> <b>[removed in: v3.2]</b> <b>[entry point: <c>glGetPointerv</c>]</b><br/> Return the address of the specified pointer. </summary>
         /// <param name="pname"> Specifies the pointer to be returned. Must be one of GL_DEBUG_CALLBACK_FUNCTION or GL_DEBUG_CALLBACK_USER_PARAM. </param>
-        /// <param name="parameters"> Returns the pointer value specified by pname. </param>
+        /// <param name="params"> Returns the pointer value specified by pname. </param>
         /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/glGetPointerv.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/KHR/KHR_debug.txt"/></remarks>
-        public static void GetPointerv(GetPointervPName pname, void** parameters) => GLPointers.glGetPointerv_Lazy((uint)pname, parameters);
+        public static void GetPointerv(GetPointervPName pname, void** @params) => GLPointers.glGetPointerv_Lazy((uint)pname, @params);
         
         /// <summary> <b>[requires: v1.0]</b> <b>[removed in: v3.2]</b> <b>[entry point: <c>glGetPolygonStipple</c>]</b><br/> Return the polygon stipple pattern. </summary>
         /// <param name="mask"> Returns the stipple pattern. The initial value is all 1&apos;s. </param>
@@ -2381,16 +2381,16 @@ namespace OpenTK.Graphics.OpenGL.Compatibility
         /// <param name="program"> The name of a program object whose interface to query. </param>
         /// <param name="programInterface"> A token identifying the interface within program to query. </param>
         /// <param name="pname"> The name of the parameter within programInterface to query. </param>
-        /// <param name="parameters"> The address of a variable to retrieve the value of pname for the program interface. </param>
+        /// <param name="params"> The address of a variable to retrieve the value of pname for the program interface. </param>
         /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/glGetProgramInterface.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_program_interface_query.txt"/></remarks>
-        public static void GetProgramInterfaceiv(int program, ProgramInterface programInterface, ProgramInterfacePName pname, int* parameters) => GLPointers.glGetProgramInterfaceiv_Lazy(program, (uint)programInterface, (uint)pname, parameters);
+        public static void GetProgramInterfaceiv(int program, ProgramInterface programInterface, ProgramInterfacePName pname, int* @params) => GLPointers.glGetProgramInterfaceiv_Lazy(program, (uint)programInterface, (uint)pname, @params);
         
         /// <summary> <b>[requires: v2.0]</b> <b>[entry point: <c>glGetProgramiv</c>]</b><br/> Returns a parameter from a program object. </summary>
         /// <param name="program">Specifies the program object to be queried.</param>
         /// <param name="pname">Specifies the object parameter. Accepted symbolic names are GL_DELETE_STATUS, GL_LINK_STATUS, GL_VALIDATE_STATUS, GL_INFO_LOG_LENGTH, GL_ATTACHED_SHADERS, GL_ACTIVE_ATOMIC_COUNTER_BUFFERS, GL_ACTIVE_ATTRIBUTES, GL_ACTIVE_ATTRIBUTE_MAX_LENGTH, GL_ACTIVE_UNIFORMS, GL_ACTIVE_UNIFORM_BLOCKS, GL_ACTIVE_UNIFORM_BLOCK_MAX_NAME_LENGTH, GL_ACTIVE_UNIFORM_MAX_LENGTH, GL_COMPUTE_WORK_GROUP_SIZE GL_PROGRAM_BINARY_LENGTH, GL_TRANSFORM_FEEDBACK_BUFFER_MODE, GL_TRANSFORM_FEEDBACK_VARYINGS, GL_TRANSFORM_FEEDBACK_VARYING_MAX_LENGTH, GL_GEOMETRY_VERTICES_OUT, GL_GEOMETRY_INPUT_TYPE, and GL_GEOMETRY_OUTPUT_TYPE.</param>
-        /// <param name="parameters">Returns the requested object parameter.</param>
+        /// <param name="params">Returns the requested object parameter.</param>
         /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/glGetProgram.xhtml"/></remarks>
-        public static void GetProgramiv(int program, ProgramProperty pname, int* parameters) => GLPointers.glGetProgramiv_Lazy(program, (uint)pname, parameters);
+        public static void GetProgramiv(int program, ProgramProperty pname, int* @params) => GLPointers.glGetProgramiv_Lazy(program, (uint)pname, @params);
         
         /// <summary> <b>[requires: v4.1 | GL_ARB_separate_shader_objects]</b> <b>[entry point: <c>glGetProgramPipelineInfoLog</c>]</b><br/> Retrieve the info log string from a program pipeline object. </summary>
         /// <param name="pipeline"> Specifies the name of a program pipeline object from which to retrieve the info log. </param>
@@ -2403,9 +2403,9 @@ namespace OpenTK.Graphics.OpenGL.Compatibility
         /// <summary> <b>[requires: v4.1 | GL_ARB_separate_shader_objects]</b> <b>[entry point: <c>glGetProgramPipelineiv</c>]</b><br/> Retrieve properties of a program pipeline object. </summary>
         /// <param name="pipeline"> Specifies the name of a program pipeline object whose parameter retrieve. </param>
         /// <param name="pname"> Specifies the name of the parameter to retrieve. </param>
-        /// <param name="parameters"> Specifies the address of a variable into which will be written the value or values of pname for pipeline. </param>
+        /// <param name="params"> Specifies the address of a variable into which will be written the value or values of pname for pipeline. </param>
         /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/glGetProgramPipeline.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_separate_shader_objects.txt"/></remarks>
-        public static void GetProgramPipelineiv(int pipeline, PipelineParameterName pname, int* parameters) => GLPointers.glGetProgramPipelineiv_Lazy(pipeline, (uint)pname, parameters);
+        public static void GetProgramPipelineiv(int pipeline, PipelineParameterName pname, int* @params) => GLPointers.glGetProgramPipelineiv_Lazy(pipeline, (uint)pname, @params);
         
         /// <summary> <b>[requires: v4.3 | GL_ARB_program_interface_query]</b> <b>[entry point: <c>glGetProgramResourceIndex</c>]</b><br/> Query the index of a named resource within a program. </summary>
         /// <param name="program"> The name of a program object whose resources to query. </param>
@@ -2422,9 +2422,9 @@ namespace OpenTK.Graphics.OpenGL.Compatibility
         /// <param name="props">!!missing documentation!!</param>
         /// <param name="count">!!missing documentation!!</param>
         /// <param name="length">!!missing documentation!!</param>
-        /// <param name="parameters">!!missing documentation!!</param>
+        /// <param name="params">!!missing documentation!!</param>
         /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/glGetProgramResource.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_program_interface_query.txt"/></remarks>
-        public static void GetProgramResourceiv(int program, ProgramInterface programInterface, uint index, int propCount, ProgramResourceProperty* props, int count, int* length, int* parameters) => GLPointers.glGetProgramResourceiv_Lazy(program, (uint)programInterface, index, propCount, (uint*)props, count, length, parameters);
+        public static void GetProgramResourceiv(int program, ProgramInterface programInterface, uint index, int propCount, ProgramResourceProperty* props, int count, int* length, int* @params) => GLPointers.glGetProgramResourceiv_Lazy(program, (uint)programInterface, index, propCount, (uint*)props, count, length, @params);
         
         /// <summary> <b>[requires: v4.3 | GL_ARB_program_interface_query]</b> <b>[entry point: <c>glGetProgramResourceLocation</c>]</b><br/> Query the location of a named resource within a program. </summary>
         /// <param name="program"> The name of a program object whose resources to query. </param>
@@ -2494,79 +2494,79 @@ namespace OpenTK.Graphics.OpenGL.Compatibility
         /// <param name="target"> Specifies a query object target. Must be GL_SAMPLES_PASSED, GL_ANY_SAMPLES_PASSED, GL_ANY_SAMPLES_PASSED_CONSERVATIVE GL_PRIMITIVES_GENERATED, GL_TRANSFORM_FEEDBACK_PRIMITIVES_WRITTEN, GL_TIME_ELAPSED, or GL_TIMESTAMP. </param>
         /// <param name="index"> Specifies the index of the query object target. </param>
         /// <param name="pname"> Specifies the symbolic name of a query object target parameter. Accepted values are GL_CURRENT_QUERY or GL_QUERY_COUNTER_BITS. </param>
-        /// <param name="parameters"> Returns the requested data. </param>
+        /// <param name="params"> Returns the requested data. </param>
         /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/glGetQueryIndexed.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_transform_feedback3.txt"/></remarks>
-        public static void GetQueryIndexediv(QueryTarget target, uint index, QueryParameterName pname, int* parameters) => GLPointers.glGetQueryIndexediv_Lazy((uint)target, index, (uint)pname, parameters);
+        public static void GetQueryIndexediv(QueryTarget target, uint index, QueryParameterName pname, int* @params) => GLPointers.glGetQueryIndexediv_Lazy((uint)target, index, (uint)pname, @params);
         
         /// <summary> <b>[requires: v1.5]</b> <b>[entry point: <c>glGetQueryiv</c>]</b><br/> Return parameters of a query object target. </summary>
         /// <param name="target"> Specifies a query object target. Must be GL_SAMPLES_PASSED, GL_ANY_SAMPLES_PASSED, GL_ANY_SAMPLES_PASSED_CONSERVATIVE GL_PRIMITIVES_GENERATED, GL_TRANSFORM_FEEDBACK_PRIMITIVES_WRITTEN, GL_TIME_ELAPSED, or GL_TIMESTAMP. </param>
         /// <param name="pname"> Specifies the symbolic name of a query object target parameter. Accepted values are GL_CURRENT_QUERY or GL_QUERY_COUNTER_BITS. </param>
-        /// <param name="parameters"> Returns the requested data. </param>
+        /// <param name="params"> Returns the requested data. </param>
         /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/glGetQueryiv.xhtml"/></remarks>
-        public static void GetQueryiv(QueryTarget target, QueryParameterName pname, int* parameters) => GLPointers.glGetQueryiv_Lazy((uint)target, (uint)pname, parameters);
+        public static void GetQueryiv(QueryTarget target, QueryParameterName pname, int* @params) => GLPointers.glGetQueryiv_Lazy((uint)target, (uint)pname, @params);
         
         /// <summary> <b>[requires: v3.3 | GL_ARB_timer_query]</b> <b>[entry point: <c>glGetQueryObjecti64v</c>]</b><br/> Return parameters of a query object. </summary>
         /// <param name="id"> Specifies the name of a query object. </param>
         /// <param name="pname"> Specifies the symbolic name of a query object parameter. Accepted values are GL_QUERY_RESULT or GL_QUERY_RESULT_AVAILABLE. </param>
-        /// <param name="parameters"> If a buffer is bound to the GL_QUERY_RESULT_BUFFER target, then params is treated as an offset to a location within that buffer&apos;s data store to receive the result of the query. If no buffer is bound to GL_QUERY_RESULT_BUFFER, then params is treated as an address in client memory of a variable to receive the resulting data. </param>
+        /// <param name="params"> If a buffer is bound to the GL_QUERY_RESULT_BUFFER target, then params is treated as an offset to a location within that buffer&apos;s data store to receive the result of the query. If no buffer is bound to GL_QUERY_RESULT_BUFFER, then params is treated as an address in client memory of a variable to receive the resulting data. </param>
         /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/glGetQueryObject.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_timer_query.txt"/></remarks>
-        public static void GetQueryObjecti64v(int id, QueryObjectParameterName pname, long* parameters) => GLPointers.glGetQueryObjecti64v_Lazy(id, (uint)pname, parameters);
+        public static void GetQueryObjecti64v(int id, QueryObjectParameterName pname, long* @params) => GLPointers.glGetQueryObjecti64v_Lazy(id, (uint)pname, @params);
         
         /// <summary> <b>[requires: v1.5]</b> <b>[entry point: <c>glGetQueryObjectiv</c>]</b><br/> Return parameters of a query object. </summary>
         /// <param name="id"> Specifies the name of a query object. </param>
         /// <param name="pname"> Specifies the symbolic name of a query object parameter. Accepted values are GL_QUERY_RESULT or GL_QUERY_RESULT_AVAILABLE. </param>
-        /// <param name="parameters"> If a buffer is bound to the GL_QUERY_RESULT_BUFFER target, then params is treated as an offset to a location within that buffer&apos;s data store to receive the result of the query. If no buffer is bound to GL_QUERY_RESULT_BUFFER, then params is treated as an address in client memory of a variable to receive the resulting data. </param>
+        /// <param name="params"> If a buffer is bound to the GL_QUERY_RESULT_BUFFER target, then params is treated as an offset to a location within that buffer&apos;s data store to receive the result of the query. If no buffer is bound to GL_QUERY_RESULT_BUFFER, then params is treated as an address in client memory of a variable to receive the resulting data. </param>
         /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/glGetQueryObject.xhtml"/></remarks>
-        public static void GetQueryObjectiv(int id, QueryObjectParameterName pname, int* parameters) => GLPointers.glGetQueryObjectiv_Lazy(id, (uint)pname, parameters);
+        public static void GetQueryObjectiv(int id, QueryObjectParameterName pname, int* @params) => GLPointers.glGetQueryObjectiv_Lazy(id, (uint)pname, @params);
         
         /// <summary> <b>[requires: v3.3 | GL_ARB_timer_query]</b> <b>[entry point: <c>glGetQueryObjectui64v</c>]</b><br/> Return parameters of a query object. </summary>
         /// <param name="id"> Specifies the name of a query object. </param>
         /// <param name="pname"> Specifies the symbolic name of a query object parameter. Accepted values are GL_QUERY_RESULT or GL_QUERY_RESULT_AVAILABLE. </param>
-        /// <param name="parameters"> If a buffer is bound to the GL_QUERY_RESULT_BUFFER target, then params is treated as an offset to a location within that buffer&apos;s data store to receive the result of the query. If no buffer is bound to GL_QUERY_RESULT_BUFFER, then params is treated as an address in client memory of a variable to receive the resulting data. </param>
+        /// <param name="params"> If a buffer is bound to the GL_QUERY_RESULT_BUFFER target, then params is treated as an offset to a location within that buffer&apos;s data store to receive the result of the query. If no buffer is bound to GL_QUERY_RESULT_BUFFER, then params is treated as an address in client memory of a variable to receive the resulting data. </param>
         /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/glGetQueryObject.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_timer_query.txt"/></remarks>
-        public static void GetQueryObjectui64v(int id, QueryObjectParameterName pname, ulong* parameters) => GLPointers.glGetQueryObjectui64v_Lazy(id, (uint)pname, parameters);
+        public static void GetQueryObjectui64v(int id, QueryObjectParameterName pname, ulong* @params) => GLPointers.glGetQueryObjectui64v_Lazy(id, (uint)pname, @params);
         
         /// <summary> <b>[requires: v1.5]</b> <b>[entry point: <c>glGetQueryObjectuiv</c>]</b><br/> Return parameters of a query object. </summary>
         /// <param name="id"> Specifies the name of a query object. </param>
         /// <param name="pname"> Specifies the symbolic name of a query object parameter. Accepted values are GL_QUERY_RESULT or GL_QUERY_RESULT_AVAILABLE. </param>
-        /// <param name="parameters"> If a buffer is bound to the GL_QUERY_RESULT_BUFFER target, then params is treated as an offset to a location within that buffer&apos;s data store to receive the result of the query. If no buffer is bound to GL_QUERY_RESULT_BUFFER, then params is treated as an address in client memory of a variable to receive the resulting data. </param>
+        /// <param name="params"> If a buffer is bound to the GL_QUERY_RESULT_BUFFER target, then params is treated as an offset to a location within that buffer&apos;s data store to receive the result of the query. If no buffer is bound to GL_QUERY_RESULT_BUFFER, then params is treated as an address in client memory of a variable to receive the resulting data. </param>
         /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/glGetQueryObject.xhtml"/></remarks>
-        public static void GetQueryObjectuiv(int id, QueryObjectParameterName pname, uint* parameters) => GLPointers.glGetQueryObjectuiv_Lazy(id, (uint)pname, parameters);
+        public static void GetQueryObjectuiv(int id, QueryObjectParameterName pname, uint* @params) => GLPointers.glGetQueryObjectuiv_Lazy(id, (uint)pname, @params);
         
         /// <summary> <b>[requires: v3.0 | GL_ARB_framebuffer_object]</b> <b>[entry point: <c>glGetRenderbufferParameteriv</c>]</b><br/> Query a named parameter of a renderbuffer object. </summary>
         /// <param name="target"> Specifies the target to which the renderbuffer object is bound for glGetRenderbufferParameteriv. target must be GL_RENDERBUFFER. </param>
         /// <param name="pname"> Specifies the parameter of the renderbuffer object to query. </param>
-        /// <param name="parameters"> Returns the value of parameter pname for the renderbuffer object. </param>
+        /// <param name="params"> Returns the value of parameter pname for the renderbuffer object. </param>
         /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/glGetRenderbufferParameter.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_framebuffer_object.txt"/></remarks>
-        public static void GetRenderbufferParameteriv(RenderbufferTarget target, RenderbufferParameterName pname, int* parameters) => GLPointers.glGetRenderbufferParameteriv_Lazy((uint)target, (uint)pname, parameters);
+        public static void GetRenderbufferParameteriv(RenderbufferTarget target, RenderbufferParameterName pname, int* @params) => GLPointers.glGetRenderbufferParameteriv_Lazy((uint)target, (uint)pname, @params);
         
         /// <summary> <b>[requires: v3.3 | GL_ARB_sampler_objects]</b> <b>[entry point: <c>glGetSamplerParameterfv</c>]</b><br/> Return sampler parameter values. </summary>
         /// <param name="sampler"> Specifies name of the sampler object from which to retrieve parameters. </param>
         /// <param name="pname"> Specifies the symbolic name of a sampler parameter. GL_TEXTURE_MAG_FILTER, GL_TEXTURE_MIN_FILTER, GL_TEXTURE_MIN_LOD, GL_TEXTURE_MAX_LOD, GL_TEXTURE_LOD_BIAS, GL_TEXTURE_WRAP_S, GL_TEXTURE_WRAP_T, GL_TEXTURE_WRAP_R, GL_TEXTURE_BORDER_COLOR, GL_TEXTURE_COMPARE_MODE, and GL_TEXTURE_COMPARE_FUNC are accepted. </param>
-        /// <param name="parameters"> Returns the sampler parameters. </param>
+        /// <param name="params"> Returns the sampler parameters. </param>
         /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/glGetSamplerParameter.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_sampler_objects.txt"/></remarks>
-        public static void GetSamplerParameterfv(int sampler, SamplerParameterF pname, float* parameters) => GLPointers.glGetSamplerParameterfv_Lazy(sampler, (uint)pname, parameters);
+        public static void GetSamplerParameterfv(int sampler, SamplerParameterF pname, float* @params) => GLPointers.glGetSamplerParameterfv_Lazy(sampler, (uint)pname, @params);
         
         /// <summary> <b>[requires: v3.3 | GL_ARB_sampler_objects]</b> <b>[entry point: <c>glGetSamplerParameterIiv</c>]</b><br/> Return sampler parameter values. </summary>
         /// <param name="sampler"> Specifies name of the sampler object from which to retrieve parameters. </param>
         /// <param name="pname"> Specifies the symbolic name of a sampler parameter. GL_TEXTURE_MAG_FILTER, GL_TEXTURE_MIN_FILTER, GL_TEXTURE_MIN_LOD, GL_TEXTURE_MAX_LOD, GL_TEXTURE_LOD_BIAS, GL_TEXTURE_WRAP_S, GL_TEXTURE_WRAP_T, GL_TEXTURE_WRAP_R, GL_TEXTURE_BORDER_COLOR, GL_TEXTURE_COMPARE_MODE, and GL_TEXTURE_COMPARE_FUNC are accepted. </param>
-        /// <param name="parameters"> Returns the sampler parameters. </param>
+        /// <param name="params"> Returns the sampler parameters. </param>
         /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/glGetSamplerParameter.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_sampler_objects.txt"/></remarks>
-        public static void GetSamplerParameterIiv(int sampler, SamplerParameterI pname, int* parameters) => GLPointers.glGetSamplerParameterIiv_Lazy(sampler, (uint)pname, parameters);
+        public static void GetSamplerParameterIiv(int sampler, SamplerParameterI pname, int* @params) => GLPointers.glGetSamplerParameterIiv_Lazy(sampler, (uint)pname, @params);
         
         /// <summary> <b>[requires: v3.3 | GL_ARB_sampler_objects]</b> <b>[entry point: <c>glGetSamplerParameterIuiv</c>]</b><br/> Return sampler parameter values. </summary>
         /// <param name="sampler"> Specifies name of the sampler object from which to retrieve parameters. </param>
         /// <param name="pname"> Specifies the symbolic name of a sampler parameter. GL_TEXTURE_MAG_FILTER, GL_TEXTURE_MIN_FILTER, GL_TEXTURE_MIN_LOD, GL_TEXTURE_MAX_LOD, GL_TEXTURE_LOD_BIAS, GL_TEXTURE_WRAP_S, GL_TEXTURE_WRAP_T, GL_TEXTURE_WRAP_R, GL_TEXTURE_BORDER_COLOR, GL_TEXTURE_COMPARE_MODE, and GL_TEXTURE_COMPARE_FUNC are accepted. </param>
-        /// <param name="parameters"> Returns the sampler parameters. </param>
+        /// <param name="params"> Returns the sampler parameters. </param>
         /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/glGetSamplerParameter.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_sampler_objects.txt"/></remarks>
-        public static void GetSamplerParameterIuiv(int sampler, SamplerParameterI pname, uint* parameters) => GLPointers.glGetSamplerParameterIuiv_Lazy(sampler, (uint)pname, parameters);
+        public static void GetSamplerParameterIuiv(int sampler, SamplerParameterI pname, uint* @params) => GLPointers.glGetSamplerParameterIuiv_Lazy(sampler, (uint)pname, @params);
         
         /// <summary> <b>[requires: v3.3 | GL_ARB_sampler_objects]</b> <b>[entry point: <c>glGetSamplerParameteriv</c>]</b><br/> Return sampler parameter values. </summary>
         /// <param name="sampler"> Specifies name of the sampler object from which to retrieve parameters. </param>
         /// <param name="pname"> Specifies the symbolic name of a sampler parameter. GL_TEXTURE_MAG_FILTER, GL_TEXTURE_MIN_FILTER, GL_TEXTURE_MIN_LOD, GL_TEXTURE_MAX_LOD, GL_TEXTURE_LOD_BIAS, GL_TEXTURE_WRAP_S, GL_TEXTURE_WRAP_T, GL_TEXTURE_WRAP_R, GL_TEXTURE_BORDER_COLOR, GL_TEXTURE_COMPARE_MODE, and GL_TEXTURE_COMPARE_FUNC are accepted. </param>
-        /// <param name="parameters"> Returns the sampler parameters. </param>
+        /// <param name="params"> Returns the sampler parameters. </param>
         /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/glGetSamplerParameter.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_sampler_objects.txt"/></remarks>
-        public static void GetSamplerParameteriv(int sampler, SamplerParameterI pname, int* parameters) => GLPointers.glGetSamplerParameteriv_Lazy(sampler, (uint)pname, parameters);
+        public static void GetSamplerParameteriv(int sampler, SamplerParameterI pname, int* @params) => GLPointers.glGetSamplerParameteriv_Lazy(sampler, (uint)pname, @params);
         
         /// <summary> <b>[requires: v2.0]</b> <b>[entry point: <c>glGetShaderInfoLog</c>]</b><br/> Returns the information log for a shader object. </summary>
         /// <param name="shader">Specifies the shader object whose information log is to be queried.</param>
@@ -2579,9 +2579,9 @@ namespace OpenTK.Graphics.OpenGL.Compatibility
         /// <summary> <b>[requires: v2.0]</b> <b>[entry point: <c>glGetShaderiv</c>]</b><br/> Returns a parameter from a shader object. </summary>
         /// <param name="shader">Specifies the shader object to be queried.</param>
         /// <param name="pname">Specifies the object parameter. Accepted symbolic names are GL_SHADER_TYPE, GL_DELETE_STATUS, GL_COMPILE_STATUS, GL_INFO_LOG_LENGTH, GL_SHADER_SOURCE_LENGTH.</param>
-        /// <param name="parameters">Returns the requested object parameter.</param>
+        /// <param name="params">Returns the requested object parameter.</param>
         /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/glGetShader.xhtml"/></remarks>
-        public static void GetShaderiv(int shader, ShaderParameterName pname, int* parameters) => GLPointers.glGetShaderiv_Lazy(shader, (uint)pname, parameters);
+        public static void GetShaderiv(int shader, ShaderParameterName pname, int* @params) => GLPointers.glGetShaderiv_Lazy(shader, (uint)pname, @params);
         
         /// <summary> <b>[requires: v4.1 | GL_ARB_ES2_compatibility]</b> <b>[entry point: <c>glGetShaderPrecisionFormat</c>]</b><br/> Retrieve the range and precision for numeric formats supported by the shader compiler. </summary>
         /// <param name="shadertype"> Specifies the type of shader whose precision to query. shaderType must be GL_VERTEX_SHADER or GL_FRAGMENT_SHADER. </param>
@@ -2636,37 +2636,37 @@ namespace OpenTK.Graphics.OpenGL.Compatibility
         /// <summary> <b>[requires: v1.0]</b> <b>[removed in: v3.2]</b> <b>[entry point: <c>glGetTexEnvfv</c>]</b><br/> Return texture environment parameters. </summary>
         /// <param name="target"> Specifies a texture environment. May be GL_TEXTURE_ENV, GL_TEXTURE_FILTER_CONTROL, or GL_POINT_SPRITE. </param>
         /// <param name="pname"> Specifies the symbolic name of a texture environment parameter. Accepted values are GL_TEXTURE_ENV_MODE, GL_TEXTURE_ENV_COLOR, GL_TEXTURE_LOD_BIAS, GL_COMBINE_RGB, GL_COMBINE_ALPHA, GL_SRC0_RGB, GL_SRC1_RGB, GL_SRC2_RGB, GL_SRC0_ALPHA, GL_SRC1_ALPHA, GL_SRC2_ALPHA, GL_OPERAND0_RGB, GL_OPERAND1_RGB, GL_OPERAND2_RGB, GL_OPERAND0_ALPHA, GL_OPERAND1_ALPHA, GL_OPERAND2_ALPHA, GL_RGB_SCALE, GL_ALPHA_SCALE, or GL_COORD_REPLACE. </param>
-        /// <param name="parameters"> Returns the requested data. </param>
+        /// <param name="params"> Returns the requested data. </param>
         /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/gl2.1/xhtml/glGetTexEnv.xml"/></remarks>
-        public static void GetTexEnvfv(TextureEnvTarget target, TextureEnvParameter pname, float* parameters) => GLPointers.glGetTexEnvfv_Lazy((uint)target, (uint)pname, parameters);
+        public static void GetTexEnvfv(TextureEnvTarget target, TextureEnvParameter pname, float* @params) => GLPointers.glGetTexEnvfv_Lazy((uint)target, (uint)pname, @params);
         
         /// <summary> <b>[requires: v1.0]</b> <b>[removed in: v3.2]</b> <b>[entry point: <c>glGetTexEnviv</c>]</b><br/> Return texture environment parameters. </summary>
         /// <param name="target"> Specifies a texture environment. May be GL_TEXTURE_ENV, GL_TEXTURE_FILTER_CONTROL, or GL_POINT_SPRITE. </param>
         /// <param name="pname"> Specifies the symbolic name of a texture environment parameter. Accepted values are GL_TEXTURE_ENV_MODE, GL_TEXTURE_ENV_COLOR, GL_TEXTURE_LOD_BIAS, GL_COMBINE_RGB, GL_COMBINE_ALPHA, GL_SRC0_RGB, GL_SRC1_RGB, GL_SRC2_RGB, GL_SRC0_ALPHA, GL_SRC1_ALPHA, GL_SRC2_ALPHA, GL_OPERAND0_RGB, GL_OPERAND1_RGB, GL_OPERAND2_RGB, GL_OPERAND0_ALPHA, GL_OPERAND1_ALPHA, GL_OPERAND2_ALPHA, GL_RGB_SCALE, GL_ALPHA_SCALE, or GL_COORD_REPLACE. </param>
-        /// <param name="parameters"> Returns the requested data. </param>
+        /// <param name="params"> Returns the requested data. </param>
         /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/gl2.1/xhtml/glGetTexEnv.xml"/></remarks>
-        public static void GetTexEnviv(TextureEnvTarget target, TextureEnvParameter pname, int* parameters) => GLPointers.glGetTexEnviv_Lazy((uint)target, (uint)pname, parameters);
+        public static void GetTexEnviv(TextureEnvTarget target, TextureEnvParameter pname, int* @params) => GLPointers.glGetTexEnviv_Lazy((uint)target, (uint)pname, @params);
         
         /// <summary> <b>[requires: v1.0]</b> <b>[removed in: v3.2]</b> <b>[entry point: <c>glGetTexGendv</c>]</b><br/> Return texture coordinate generation parameters. </summary>
         /// <param name="coord"> Specifies a texture coordinate. Must be GL_S, GL_T, GL_R, or GL_Q. </param>
         /// <param name="pname"> Specifies the symbolic name of the value(s) to be returned. Must be either GL_TEXTURE_GEN_MODE or the name of one of the texture generation plane equations: GL_OBJECT_PLANE or GL_EYE_PLANE. </param>
-        /// <param name="parameters"> Returns the requested data. </param>
+        /// <param name="params"> Returns the requested data. </param>
         /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/gl2.1/xhtml/glGetTexGen.xml"/></remarks>
-        public static void GetTexGendv(TextureCoordName coord, TextureGenParameter pname, double* parameters) => GLPointers.glGetTexGendv_Lazy((uint)coord, (uint)pname, parameters);
+        public static void GetTexGendv(TextureCoordName coord, TextureGenParameter pname, double* @params) => GLPointers.glGetTexGendv_Lazy((uint)coord, (uint)pname, @params);
         
         /// <summary> <b>[requires: v1.0]</b> <b>[removed in: v3.2]</b> <b>[entry point: <c>glGetTexGenfv</c>]</b><br/> Return texture coordinate generation parameters. </summary>
         /// <param name="coord"> Specifies a texture coordinate. Must be GL_S, GL_T, GL_R, or GL_Q. </param>
         /// <param name="pname"> Specifies the symbolic name of the value(s) to be returned. Must be either GL_TEXTURE_GEN_MODE or the name of one of the texture generation plane equations: GL_OBJECT_PLANE or GL_EYE_PLANE. </param>
-        /// <param name="parameters"> Returns the requested data. </param>
+        /// <param name="params"> Returns the requested data. </param>
         /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/gl2.1/xhtml/glGetTexGen.xml"/></remarks>
-        public static void GetTexGenfv(TextureCoordName coord, TextureGenParameter pname, float* parameters) => GLPointers.glGetTexGenfv_Lazy((uint)coord, (uint)pname, parameters);
+        public static void GetTexGenfv(TextureCoordName coord, TextureGenParameter pname, float* @params) => GLPointers.glGetTexGenfv_Lazy((uint)coord, (uint)pname, @params);
         
         /// <summary> <b>[requires: v1.0]</b> <b>[removed in: v3.2]</b> <b>[entry point: <c>glGetTexGeniv</c>]</b><br/> Return texture coordinate generation parameters. </summary>
         /// <param name="coord"> Specifies a texture coordinate. Must be GL_S, GL_T, GL_R, or GL_Q. </param>
         /// <param name="pname"> Specifies the symbolic name of the value(s) to be returned. Must be either GL_TEXTURE_GEN_MODE or the name of one of the texture generation plane equations: GL_OBJECT_PLANE or GL_EYE_PLANE. </param>
-        /// <param name="parameters"> Returns the requested data. </param>
+        /// <param name="params"> Returns the requested data. </param>
         /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/gl2.1/xhtml/glGetTexGen.xml"/></remarks>
-        public static void GetTexGeniv(TextureCoordName coord, TextureGenParameter pname, int* parameters) => GLPointers.glGetTexGeniv_Lazy((uint)coord, (uint)pname, parameters);
+        public static void GetTexGeniv(TextureCoordName coord, TextureGenParameter pname, int* @params) => GLPointers.glGetTexGeniv_Lazy((uint)coord, (uint)pname, @params);
         
         /// <summary> <b>[requires: v1.0]</b> <b>[entry point: <c>glGetTexImage</c>]</b><br/> Return a texture image. </summary>
         /// <param name="target">Specifies the target to which the texture is bound for glGetTexImage and glGetnTexImage functions. GL_TEXTURE_1D, GL_TEXTURE_2D, GL_TEXTURE_3D, GL_TEXTURE_1D_ARRAY, GL_TEXTURE_2D_ARRAY, GL_TEXTURE_RECTANGLE, GL_TEXTURE_CUBE_MAP_POSITIVE_X, GL_TEXTURE_CUBE_MAP_NEGATIVE_X, GL_TEXTURE_CUBE_MAP_POSITIVE_Y, GL_TEXTURE_CUBE_MAP_NEGATIVE_Y, GL_TEXTURE_CUBE_MAP_POSITIVE_Z, GL_TEXTURE_CUBE_MAP_NEGATIVE_Z, and GL_TEXTURE_CUBE_MAP_ARRAY are acceptable.</param>
@@ -2681,45 +2681,45 @@ namespace OpenTK.Graphics.OpenGL.Compatibility
         /// <param name="target">Specifies the target to which the texture is bound for glGetTexLevelParameterfv and glGetTexLevelParameteriv functions. Must be one of the following values: GL_TEXTURE_1D, GL_TEXTURE_2D, GL_TEXTURE_3D, GL_TEXTURE_1D_ARRAY, GL_TEXTURE_2D_ARRAY, GL_TEXTURE_RECTANGLE, GL_TEXTURE_2D_MULTISAMPLE, GL_TEXTURE_2D_MULTISAMPLE_ARRAY, GL_TEXTURE_CUBE_MAP_POSITIVE_X, GL_TEXTURE_CUBE_MAP_NEGATIVE_X, GL_TEXTURE_CUBE_MAP_POSITIVE_Y, GL_TEXTURE_CUBE_MAP_NEGATIVE_Y, GL_TEXTURE_CUBE_MAP_POSITIVE_Z, GL_TEXTURE_CUBE_MAP_NEGATIVE_Z, GL_PROXY_TEXTURE_1D, GL_PROXY_TEXTURE_2D, GL_PROXY_TEXTURE_3D, GL_PROXY_TEXTURE_1D_ARRAY, GL_PROXY_TEXTURE_2D_ARRAY, GL_PROXY_TEXTURE_RECTANGLE, GL_PROXY_TEXTURE_2D_MULTISAMPLE, GL_PROXY_TEXTURE_2D_MULTISAMPLE_ARRAY, GL_PROXY_TEXTURE_CUBE_MAP, or GL_TEXTURE_BUFFER.</param>
         /// <param name="level"> Specifies the level-of-detail number of the desired image. Level 0 is the base image level. Level n is the nth mipmap reduction image. </param>
         /// <param name="pname">Specifies the symbolic name of a texture parameter. GL_TEXTURE_WIDTH, GL_TEXTURE_HEIGHT, GL_TEXTURE_DEPTH, GL_TEXTURE_INTERNAL_FORMAT, GL_TEXTURE_RED_SIZE, GL_TEXTURE_GREEN_SIZE, GL_TEXTURE_BLUE_SIZE, GL_TEXTURE_ALPHA_SIZE, GL_TEXTURE_DEPTH_SIZE, GL_TEXTURE_COMPRESSED, GL_TEXTURE_COMPRESSED_IMAGE_SIZE, and GL_TEXTURE_BUFFER_OFFSET are accepted.</param>
-        /// <param name="parameters">Returns the requested data.</param>
+        /// <param name="params">Returns the requested data.</param>
         /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/glGetTexLevelParameter.xhtml"/></remarks>
-        public static void GetTexLevelParameterfv(TextureTarget target, int level, GetTextureParameter pname, float* parameters) => GLPointers.glGetTexLevelParameterfv_Lazy((uint)target, level, (uint)pname, parameters);
+        public static void GetTexLevelParameterfv(TextureTarget target, int level, GetTextureParameter pname, float* @params) => GLPointers.glGetTexLevelParameterfv_Lazy((uint)target, level, (uint)pname, @params);
         
         /// <summary> <b>[requires: v1.0]</b> <b>[entry point: <c>glGetTexLevelParameteriv</c>]</b><br/> Return texture parameter values for a specific level of    detail. </summary>
         /// <param name="target">Specifies the target to which the texture is bound for glGetTexLevelParameterfv and glGetTexLevelParameteriv functions. Must be one of the following values: GL_TEXTURE_1D, GL_TEXTURE_2D, GL_TEXTURE_3D, GL_TEXTURE_1D_ARRAY, GL_TEXTURE_2D_ARRAY, GL_TEXTURE_RECTANGLE, GL_TEXTURE_2D_MULTISAMPLE, GL_TEXTURE_2D_MULTISAMPLE_ARRAY, GL_TEXTURE_CUBE_MAP_POSITIVE_X, GL_TEXTURE_CUBE_MAP_NEGATIVE_X, GL_TEXTURE_CUBE_MAP_POSITIVE_Y, GL_TEXTURE_CUBE_MAP_NEGATIVE_Y, GL_TEXTURE_CUBE_MAP_POSITIVE_Z, GL_TEXTURE_CUBE_MAP_NEGATIVE_Z, GL_PROXY_TEXTURE_1D, GL_PROXY_TEXTURE_2D, GL_PROXY_TEXTURE_3D, GL_PROXY_TEXTURE_1D_ARRAY, GL_PROXY_TEXTURE_2D_ARRAY, GL_PROXY_TEXTURE_RECTANGLE, GL_PROXY_TEXTURE_2D_MULTISAMPLE, GL_PROXY_TEXTURE_2D_MULTISAMPLE_ARRAY, GL_PROXY_TEXTURE_CUBE_MAP, or GL_TEXTURE_BUFFER.</param>
         /// <param name="level"> Specifies the level-of-detail number of the desired image. Level 0 is the base image level. Level n is the nth mipmap reduction image. </param>
         /// <param name="pname">Specifies the symbolic name of a texture parameter. GL_TEXTURE_WIDTH, GL_TEXTURE_HEIGHT, GL_TEXTURE_DEPTH, GL_TEXTURE_INTERNAL_FORMAT, GL_TEXTURE_RED_SIZE, GL_TEXTURE_GREEN_SIZE, GL_TEXTURE_BLUE_SIZE, GL_TEXTURE_ALPHA_SIZE, GL_TEXTURE_DEPTH_SIZE, GL_TEXTURE_COMPRESSED, GL_TEXTURE_COMPRESSED_IMAGE_SIZE, and GL_TEXTURE_BUFFER_OFFSET are accepted.</param>
-        /// <param name="parameters">Returns the requested data.</param>
+        /// <param name="params">Returns the requested data.</param>
         /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/glGetTexLevelParameter.xhtml"/></remarks>
-        public static void GetTexLevelParameteriv(TextureTarget target, int level, GetTextureParameter pname, int* parameters) => GLPointers.glGetTexLevelParameteriv_Lazy((uint)target, level, (uint)pname, parameters);
+        public static void GetTexLevelParameteriv(TextureTarget target, int level, GetTextureParameter pname, int* @params) => GLPointers.glGetTexLevelParameteriv_Lazy((uint)target, level, (uint)pname, @params);
         
         /// <summary> <b>[requires: v1.0]</b> <b>[entry point: <c>glGetTexParameterfv</c>]</b><br/> Return texture parameter values. </summary>
         /// <param name="target">Specifies the target to which the texture is bound for glGetTexParameterfv, glGetTexParameteriv, glGetTexParameterIiv, and glGetTexParameterIuiv functions. GL_TEXTURE_1D, GL_TEXTURE_1D_ARRAY, GL_TEXTURE_2D, GL_TEXTURE_2D_ARRAY, GL_TEXTURE_2D_MULTISAMPLE, GL_TEXTURE_2D_MULTISAMPLE_ARRAY, GL_TEXTURE_3D, GL_TEXTURE_CUBE_MAP, GL_TEXTURE_RECTANGLE, and GL_TEXTURE_CUBE_MAP_ARRAY are accepted.</param>
         /// <param name="pname">Specifies the symbolic name of a texture parameter. GL_DEPTH_STENCIL_TEXTURE_MODE, GL_IMAGE_FORMAT_COMPATIBILITY_TYPE, GL_TEXTURE_BASE_LEVEL, GL_TEXTURE_BORDER_COLOR, GL_TEXTURE_COMPARE_MODE, GL_TEXTURE_COMPARE_FUNC, GL_TEXTURE_IMMUTABLE_FORMAT, GL_TEXTURE_IMMUTABLE_LEVELS, GL_TEXTURE_LOD_BIAS, GL_TEXTURE_MAG_FILTER, GL_TEXTURE_MAX_LEVEL, GL_TEXTURE_MAX_LOD, GL_TEXTURE_MIN_FILTER, GL_TEXTURE_MIN_LOD, GL_TEXTURE_SWIZZLE_R, GL_TEXTURE_SWIZZLE_G, GL_TEXTURE_SWIZZLE_B, GL_TEXTURE_SWIZZLE_A, GL_TEXTURE_SWIZZLE_RGBA, GL_TEXTURE_TARGET, GL_TEXTURE_VIEW_MIN_LAYER, GL_TEXTURE_VIEW_MIN_LEVEL, GL_TEXTURE_VIEW_NUM_LAYERS, GL_TEXTURE_VIEW_NUM_LEVELS, GL_TEXTURE_WRAP_S, GL_TEXTURE_WRAP_T, and GL_TEXTURE_WRAP_R are accepted.</param>
-        /// <param name="parameters">Returns the texture parameters.</param>
+        /// <param name="params">Returns the texture parameters.</param>
         /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/glGetTexParameter.xhtml"/></remarks>
-        public static void GetTexParameterfv(TextureTarget target, GetTextureParameter pname, float* parameters) => GLPointers.glGetTexParameterfv_Lazy((uint)target, (uint)pname, parameters);
+        public static void GetTexParameterfv(TextureTarget target, GetTextureParameter pname, float* @params) => GLPointers.glGetTexParameterfv_Lazy((uint)target, (uint)pname, @params);
         
         /// <summary> <b>[requires: v3.0]</b> <b>[entry point: <c>glGetTexParameterIiv</c>]</b><br/> Return texture parameter values. </summary>
         /// <param name="target">Specifies the target to which the texture is bound for glGetTexParameterfv, glGetTexParameteriv, glGetTexParameterIiv, and glGetTexParameterIuiv functions. GL_TEXTURE_1D, GL_TEXTURE_1D_ARRAY, GL_TEXTURE_2D, GL_TEXTURE_2D_ARRAY, GL_TEXTURE_2D_MULTISAMPLE, GL_TEXTURE_2D_MULTISAMPLE_ARRAY, GL_TEXTURE_3D, GL_TEXTURE_CUBE_MAP, GL_TEXTURE_RECTANGLE, and GL_TEXTURE_CUBE_MAP_ARRAY are accepted.</param>
         /// <param name="pname">Specifies the symbolic name of a texture parameter. GL_DEPTH_STENCIL_TEXTURE_MODE, GL_IMAGE_FORMAT_COMPATIBILITY_TYPE, GL_TEXTURE_BASE_LEVEL, GL_TEXTURE_BORDER_COLOR, GL_TEXTURE_COMPARE_MODE, GL_TEXTURE_COMPARE_FUNC, GL_TEXTURE_IMMUTABLE_FORMAT, GL_TEXTURE_IMMUTABLE_LEVELS, GL_TEXTURE_LOD_BIAS, GL_TEXTURE_MAG_FILTER, GL_TEXTURE_MAX_LEVEL, GL_TEXTURE_MAX_LOD, GL_TEXTURE_MIN_FILTER, GL_TEXTURE_MIN_LOD, GL_TEXTURE_SWIZZLE_R, GL_TEXTURE_SWIZZLE_G, GL_TEXTURE_SWIZZLE_B, GL_TEXTURE_SWIZZLE_A, GL_TEXTURE_SWIZZLE_RGBA, GL_TEXTURE_TARGET, GL_TEXTURE_VIEW_MIN_LAYER, GL_TEXTURE_VIEW_MIN_LEVEL, GL_TEXTURE_VIEW_NUM_LAYERS, GL_TEXTURE_VIEW_NUM_LEVELS, GL_TEXTURE_WRAP_S, GL_TEXTURE_WRAP_T, and GL_TEXTURE_WRAP_R are accepted.</param>
-        /// <param name="parameters">Returns the texture parameters.</param>
+        /// <param name="params">Returns the texture parameters.</param>
         /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/glGetTexParameter.xhtml"/></remarks>
-        public static void GetTexParameterIiv(TextureTarget target, GetTextureParameter pname, int* parameters) => GLPointers.glGetTexParameterIiv_Lazy((uint)target, (uint)pname, parameters);
+        public static void GetTexParameterIiv(TextureTarget target, GetTextureParameter pname, int* @params) => GLPointers.glGetTexParameterIiv_Lazy((uint)target, (uint)pname, @params);
         
         /// <summary> <b>[requires: v3.0]</b> <b>[entry point: <c>glGetTexParameterIuiv</c>]</b><br/> Return texture parameter values. </summary>
         /// <param name="target">Specifies the target to which the texture is bound for glGetTexParameterfv, glGetTexParameteriv, glGetTexParameterIiv, and glGetTexParameterIuiv functions. GL_TEXTURE_1D, GL_TEXTURE_1D_ARRAY, GL_TEXTURE_2D, GL_TEXTURE_2D_ARRAY, GL_TEXTURE_2D_MULTISAMPLE, GL_TEXTURE_2D_MULTISAMPLE_ARRAY, GL_TEXTURE_3D, GL_TEXTURE_CUBE_MAP, GL_TEXTURE_RECTANGLE, and GL_TEXTURE_CUBE_MAP_ARRAY are accepted.</param>
         /// <param name="pname">Specifies the symbolic name of a texture parameter. GL_DEPTH_STENCIL_TEXTURE_MODE, GL_IMAGE_FORMAT_COMPATIBILITY_TYPE, GL_TEXTURE_BASE_LEVEL, GL_TEXTURE_BORDER_COLOR, GL_TEXTURE_COMPARE_MODE, GL_TEXTURE_COMPARE_FUNC, GL_TEXTURE_IMMUTABLE_FORMAT, GL_TEXTURE_IMMUTABLE_LEVELS, GL_TEXTURE_LOD_BIAS, GL_TEXTURE_MAG_FILTER, GL_TEXTURE_MAX_LEVEL, GL_TEXTURE_MAX_LOD, GL_TEXTURE_MIN_FILTER, GL_TEXTURE_MIN_LOD, GL_TEXTURE_SWIZZLE_R, GL_TEXTURE_SWIZZLE_G, GL_TEXTURE_SWIZZLE_B, GL_TEXTURE_SWIZZLE_A, GL_TEXTURE_SWIZZLE_RGBA, GL_TEXTURE_TARGET, GL_TEXTURE_VIEW_MIN_LAYER, GL_TEXTURE_VIEW_MIN_LEVEL, GL_TEXTURE_VIEW_NUM_LAYERS, GL_TEXTURE_VIEW_NUM_LEVELS, GL_TEXTURE_WRAP_S, GL_TEXTURE_WRAP_T, and GL_TEXTURE_WRAP_R are accepted.</param>
-        /// <param name="parameters">Returns the texture parameters.</param>
+        /// <param name="params">Returns the texture parameters.</param>
         /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/glGetTexParameter.xhtml"/></remarks>
-        public static void GetTexParameterIuiv(TextureTarget target, GetTextureParameter pname, uint* parameters) => GLPointers.glGetTexParameterIuiv_Lazy((uint)target, (uint)pname, parameters);
+        public static void GetTexParameterIuiv(TextureTarget target, GetTextureParameter pname, uint* @params) => GLPointers.glGetTexParameterIuiv_Lazy((uint)target, (uint)pname, @params);
         
         /// <summary> <b>[requires: v1.0]</b> <b>[entry point: <c>glGetTexParameteriv</c>]</b><br/> Return texture parameter values. </summary>
         /// <param name="target">Specifies the target to which the texture is bound for glGetTexParameterfv, glGetTexParameteriv, glGetTexParameterIiv, and glGetTexParameterIuiv functions. GL_TEXTURE_1D, GL_TEXTURE_1D_ARRAY, GL_TEXTURE_2D, GL_TEXTURE_2D_ARRAY, GL_TEXTURE_2D_MULTISAMPLE, GL_TEXTURE_2D_MULTISAMPLE_ARRAY, GL_TEXTURE_3D, GL_TEXTURE_CUBE_MAP, GL_TEXTURE_RECTANGLE, and GL_TEXTURE_CUBE_MAP_ARRAY are accepted.</param>
         /// <param name="pname">Specifies the symbolic name of a texture parameter. GL_DEPTH_STENCIL_TEXTURE_MODE, GL_IMAGE_FORMAT_COMPATIBILITY_TYPE, GL_TEXTURE_BASE_LEVEL, GL_TEXTURE_BORDER_COLOR, GL_TEXTURE_COMPARE_MODE, GL_TEXTURE_COMPARE_FUNC, GL_TEXTURE_IMMUTABLE_FORMAT, GL_TEXTURE_IMMUTABLE_LEVELS, GL_TEXTURE_LOD_BIAS, GL_TEXTURE_MAG_FILTER, GL_TEXTURE_MAX_LEVEL, GL_TEXTURE_MAX_LOD, GL_TEXTURE_MIN_FILTER, GL_TEXTURE_MIN_LOD, GL_TEXTURE_SWIZZLE_R, GL_TEXTURE_SWIZZLE_G, GL_TEXTURE_SWIZZLE_B, GL_TEXTURE_SWIZZLE_A, GL_TEXTURE_SWIZZLE_RGBA, GL_TEXTURE_TARGET, GL_TEXTURE_VIEW_MIN_LAYER, GL_TEXTURE_VIEW_MIN_LEVEL, GL_TEXTURE_VIEW_NUM_LAYERS, GL_TEXTURE_VIEW_NUM_LEVELS, GL_TEXTURE_WRAP_S, GL_TEXTURE_WRAP_T, and GL_TEXTURE_WRAP_R are accepted.</param>
-        /// <param name="parameters">Returns the texture parameters.</param>
+        /// <param name="params">Returns the texture parameters.</param>
         /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/glGetTexParameter.xhtml"/></remarks>
-        public static void GetTexParameteriv(TextureTarget target, GetTextureParameter pname, int* parameters) => GLPointers.glGetTexParameteriv_Lazy((uint)target, (uint)pname, parameters);
+        public static void GetTexParameteriv(TextureTarget target, GetTextureParameter pname, int* @params) => GLPointers.glGetTexParameteriv_Lazy((uint)target, (uint)pname, @params);
         
         /// <summary> <b>[requires: v4.5 | GL_ARB_direct_state_access]</b> <b>[entry point: <c>glGetTextureImage</c>]</b><br/> Return a texture image. </summary>
         /// <param name="texture"> Specifies the texture object name. </param>
@@ -2735,45 +2735,45 @@ namespace OpenTK.Graphics.OpenGL.Compatibility
         /// <param name="texture">Specifies the texture object name for glGetTextureLevelParameterfv and glGetTextureLevelParameteriv functions.</param>
         /// <param name="level"> Specifies the level-of-detail number of the desired image. Level 0 is the base image level. Level n is the nth mipmap reduction image. </param>
         /// <param name="pname">Specifies the symbolic name of a texture parameter. GL_TEXTURE_WIDTH, GL_TEXTURE_HEIGHT, GL_TEXTURE_DEPTH, GL_TEXTURE_INTERNAL_FORMAT, GL_TEXTURE_RED_SIZE, GL_TEXTURE_GREEN_SIZE, GL_TEXTURE_BLUE_SIZE, GL_TEXTURE_ALPHA_SIZE, GL_TEXTURE_DEPTH_SIZE, GL_TEXTURE_COMPRESSED, GL_TEXTURE_COMPRESSED_IMAGE_SIZE, and GL_TEXTURE_BUFFER_OFFSET are accepted.</param>
-        /// <param name="parameters">Returns the requested data.</param>
+        /// <param name="params">Returns the requested data.</param>
         /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/glGetTexLevelParameter.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_direct_state_access.txt"/></remarks>
-        public static void GetTextureLevelParameterfv(int texture, int level, GetTextureParameter pname, float* parameters) => GLPointers.glGetTextureLevelParameterfv_Lazy(texture, level, (uint)pname, parameters);
+        public static void GetTextureLevelParameterfv(int texture, int level, GetTextureParameter pname, float* @params) => GLPointers.glGetTextureLevelParameterfv_Lazy(texture, level, (uint)pname, @params);
         
         /// <summary> <b>[requires: v4.5 | GL_ARB_direct_state_access]</b> <b>[entry point: <c>glGetTextureLevelParameteriv</c>]</b><br/> Return texture parameter values for a specific level of    detail. </summary>
         /// <param name="texture">Specifies the texture object name for glGetTextureLevelParameterfv and glGetTextureLevelParameteriv functions.</param>
         /// <param name="level"> Specifies the level-of-detail number of the desired image. Level 0 is the base image level. Level n is the nth mipmap reduction image. </param>
         /// <param name="pname">Specifies the symbolic name of a texture parameter. GL_TEXTURE_WIDTH, GL_TEXTURE_HEIGHT, GL_TEXTURE_DEPTH, GL_TEXTURE_INTERNAL_FORMAT, GL_TEXTURE_RED_SIZE, GL_TEXTURE_GREEN_SIZE, GL_TEXTURE_BLUE_SIZE, GL_TEXTURE_ALPHA_SIZE, GL_TEXTURE_DEPTH_SIZE, GL_TEXTURE_COMPRESSED, GL_TEXTURE_COMPRESSED_IMAGE_SIZE, and GL_TEXTURE_BUFFER_OFFSET are accepted.</param>
-        /// <param name="parameters">Returns the requested data.</param>
+        /// <param name="params">Returns the requested data.</param>
         /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/glGetTexLevelParameter.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_direct_state_access.txt"/></remarks>
-        public static void GetTextureLevelParameteriv(int texture, int level, GetTextureParameter pname, int* parameters) => GLPointers.glGetTextureLevelParameteriv_Lazy(texture, level, (uint)pname, parameters);
+        public static void GetTextureLevelParameteriv(int texture, int level, GetTextureParameter pname, int* @params) => GLPointers.glGetTextureLevelParameteriv_Lazy(texture, level, (uint)pname, @params);
         
         /// <summary> <b>[requires: v4.5 | GL_ARB_direct_state_access]</b> <b>[entry point: <c>glGetTextureParameterfv</c>]</b><br/> Return texture parameter values. </summary>
         /// <param name="texture">Specifies the texture object name for glGetTextureParameterfv, glGetTextureParameteriv, glGetTextureParameterIiv, and glGetTextureParameterIuiv functions.</param>
         /// <param name="pname">Specifies the symbolic name of a texture parameter. GL_DEPTH_STENCIL_TEXTURE_MODE, GL_IMAGE_FORMAT_COMPATIBILITY_TYPE, GL_TEXTURE_BASE_LEVEL, GL_TEXTURE_BORDER_COLOR, GL_TEXTURE_COMPARE_MODE, GL_TEXTURE_COMPARE_FUNC, GL_TEXTURE_IMMUTABLE_FORMAT, GL_TEXTURE_IMMUTABLE_LEVELS, GL_TEXTURE_LOD_BIAS, GL_TEXTURE_MAG_FILTER, GL_TEXTURE_MAX_LEVEL, GL_TEXTURE_MAX_LOD, GL_TEXTURE_MIN_FILTER, GL_TEXTURE_MIN_LOD, GL_TEXTURE_SWIZZLE_R, GL_TEXTURE_SWIZZLE_G, GL_TEXTURE_SWIZZLE_B, GL_TEXTURE_SWIZZLE_A, GL_TEXTURE_SWIZZLE_RGBA, GL_TEXTURE_TARGET, GL_TEXTURE_VIEW_MIN_LAYER, GL_TEXTURE_VIEW_MIN_LEVEL, GL_TEXTURE_VIEW_NUM_LAYERS, GL_TEXTURE_VIEW_NUM_LEVELS, GL_TEXTURE_WRAP_S, GL_TEXTURE_WRAP_T, and GL_TEXTURE_WRAP_R are accepted.</param>
-        /// <param name="parameters">Returns the texture parameters.</param>
+        /// <param name="params">Returns the texture parameters.</param>
         /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/glGetTexParameter.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_direct_state_access.txt"/></remarks>
-        public static void GetTextureParameterfv(int texture, GetTextureParameter pname, float* parameters) => GLPointers.glGetTextureParameterfv_Lazy(texture, (uint)pname, parameters);
+        public static void GetTextureParameterfv(int texture, GetTextureParameter pname, float* @params) => GLPointers.glGetTextureParameterfv_Lazy(texture, (uint)pname, @params);
         
         /// <summary> <b>[requires: v4.5 | GL_ARB_direct_state_access]</b> <b>[entry point: <c>glGetTextureParameterIiv</c>]</b><br/> Return texture parameter values. </summary>
         /// <param name="texture">Specifies the texture object name for glGetTextureParameterfv, glGetTextureParameteriv, glGetTextureParameterIiv, and glGetTextureParameterIuiv functions.</param>
         /// <param name="pname">Specifies the symbolic name of a texture parameter. GL_DEPTH_STENCIL_TEXTURE_MODE, GL_IMAGE_FORMAT_COMPATIBILITY_TYPE, GL_TEXTURE_BASE_LEVEL, GL_TEXTURE_BORDER_COLOR, GL_TEXTURE_COMPARE_MODE, GL_TEXTURE_COMPARE_FUNC, GL_TEXTURE_IMMUTABLE_FORMAT, GL_TEXTURE_IMMUTABLE_LEVELS, GL_TEXTURE_LOD_BIAS, GL_TEXTURE_MAG_FILTER, GL_TEXTURE_MAX_LEVEL, GL_TEXTURE_MAX_LOD, GL_TEXTURE_MIN_FILTER, GL_TEXTURE_MIN_LOD, GL_TEXTURE_SWIZZLE_R, GL_TEXTURE_SWIZZLE_G, GL_TEXTURE_SWIZZLE_B, GL_TEXTURE_SWIZZLE_A, GL_TEXTURE_SWIZZLE_RGBA, GL_TEXTURE_TARGET, GL_TEXTURE_VIEW_MIN_LAYER, GL_TEXTURE_VIEW_MIN_LEVEL, GL_TEXTURE_VIEW_NUM_LAYERS, GL_TEXTURE_VIEW_NUM_LEVELS, GL_TEXTURE_WRAP_S, GL_TEXTURE_WRAP_T, and GL_TEXTURE_WRAP_R are accepted.</param>
-        /// <param name="parameters">Returns the texture parameters.</param>
+        /// <param name="params">Returns the texture parameters.</param>
         /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/glGetTexParameter.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_direct_state_access.txt"/></remarks>
-        public static void GetTextureParameterIiv(int texture, GetTextureParameter pname, int* parameters) => GLPointers.glGetTextureParameterIiv_Lazy(texture, (uint)pname, parameters);
+        public static void GetTextureParameterIiv(int texture, GetTextureParameter pname, int* @params) => GLPointers.glGetTextureParameterIiv_Lazy(texture, (uint)pname, @params);
         
         /// <summary> <b>[requires: v4.5 | GL_ARB_direct_state_access]</b> <b>[entry point: <c>glGetTextureParameterIuiv</c>]</b><br/> Return texture parameter values. </summary>
         /// <param name="texture">Specifies the texture object name for glGetTextureParameterfv, glGetTextureParameteriv, glGetTextureParameterIiv, and glGetTextureParameterIuiv functions.</param>
         /// <param name="pname">Specifies the symbolic name of a texture parameter. GL_DEPTH_STENCIL_TEXTURE_MODE, GL_IMAGE_FORMAT_COMPATIBILITY_TYPE, GL_TEXTURE_BASE_LEVEL, GL_TEXTURE_BORDER_COLOR, GL_TEXTURE_COMPARE_MODE, GL_TEXTURE_COMPARE_FUNC, GL_TEXTURE_IMMUTABLE_FORMAT, GL_TEXTURE_IMMUTABLE_LEVELS, GL_TEXTURE_LOD_BIAS, GL_TEXTURE_MAG_FILTER, GL_TEXTURE_MAX_LEVEL, GL_TEXTURE_MAX_LOD, GL_TEXTURE_MIN_FILTER, GL_TEXTURE_MIN_LOD, GL_TEXTURE_SWIZZLE_R, GL_TEXTURE_SWIZZLE_G, GL_TEXTURE_SWIZZLE_B, GL_TEXTURE_SWIZZLE_A, GL_TEXTURE_SWIZZLE_RGBA, GL_TEXTURE_TARGET, GL_TEXTURE_VIEW_MIN_LAYER, GL_TEXTURE_VIEW_MIN_LEVEL, GL_TEXTURE_VIEW_NUM_LAYERS, GL_TEXTURE_VIEW_NUM_LEVELS, GL_TEXTURE_WRAP_S, GL_TEXTURE_WRAP_T, and GL_TEXTURE_WRAP_R are accepted.</param>
-        /// <param name="parameters">Returns the texture parameters.</param>
+        /// <param name="params">Returns the texture parameters.</param>
         /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/glGetTexParameter.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_direct_state_access.txt"/></remarks>
-        public static void GetTextureParameterIuiv(int texture, GetTextureParameter pname, uint* parameters) => GLPointers.glGetTextureParameterIuiv_Lazy(texture, (uint)pname, parameters);
+        public static void GetTextureParameterIuiv(int texture, GetTextureParameter pname, uint* @params) => GLPointers.glGetTextureParameterIuiv_Lazy(texture, (uint)pname, @params);
         
         /// <summary> <b>[requires: v4.5 | GL_ARB_direct_state_access]</b> <b>[entry point: <c>glGetTextureParameteriv</c>]</b><br/> Return texture parameter values. </summary>
         /// <param name="texture">Specifies the texture object name for glGetTextureParameterfv, glGetTextureParameteriv, glGetTextureParameterIiv, and glGetTextureParameterIuiv functions.</param>
         /// <param name="pname">Specifies the symbolic name of a texture parameter. GL_DEPTH_STENCIL_TEXTURE_MODE, GL_IMAGE_FORMAT_COMPATIBILITY_TYPE, GL_TEXTURE_BASE_LEVEL, GL_TEXTURE_BORDER_COLOR, GL_TEXTURE_COMPARE_MODE, GL_TEXTURE_COMPARE_FUNC, GL_TEXTURE_IMMUTABLE_FORMAT, GL_TEXTURE_IMMUTABLE_LEVELS, GL_TEXTURE_LOD_BIAS, GL_TEXTURE_MAG_FILTER, GL_TEXTURE_MAX_LEVEL, GL_TEXTURE_MAX_LOD, GL_TEXTURE_MIN_FILTER, GL_TEXTURE_MIN_LOD, GL_TEXTURE_SWIZZLE_R, GL_TEXTURE_SWIZZLE_G, GL_TEXTURE_SWIZZLE_B, GL_TEXTURE_SWIZZLE_A, GL_TEXTURE_SWIZZLE_RGBA, GL_TEXTURE_TARGET, GL_TEXTURE_VIEW_MIN_LAYER, GL_TEXTURE_VIEW_MIN_LEVEL, GL_TEXTURE_VIEW_NUM_LAYERS, GL_TEXTURE_VIEW_NUM_LEVELS, GL_TEXTURE_WRAP_S, GL_TEXTURE_WRAP_T, and GL_TEXTURE_WRAP_R are accepted.</param>
-        /// <param name="parameters">Returns the texture parameters.</param>
+        /// <param name="params">Returns the texture parameters.</param>
         /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/glGetTexParameter.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_direct_state_access.txt"/></remarks>
-        public static void GetTextureParameteriv(int texture, GetTextureParameter pname, int* parameters) => GLPointers.glGetTextureParameteriv_Lazy(texture, (uint)pname, parameters);
+        public static void GetTextureParameteriv(int texture, GetTextureParameter pname, int* @params) => GLPointers.glGetTextureParameteriv_Lazy(texture, (uint)pname, @params);
         
         /// <summary> <b>[requires: v4.5 | GL_ARB_get_texture_sub_image]</b> <b>[entry point: <c>glGetTextureSubImage</c>]</b><br/> Retrieve a sub-region of a texture image from a texture    object. </summary>
         /// <param name="texture">Specifies the name of the source texture object. Must be GL_TEXTURE_1D, GL_TEXTURE_1D_ARRAY, GL_TEXTURE_2D, GL_TEXTURE_2D_ARRAY, GL_TEXTURE_3D, GL_TEXTURE_CUBE_MAP, GL_TEXTURE_CUBE_MAP_ARRAY or GL_TEXTURE_RECTANGLE. In specific, buffer and multisample textures are not permitted.</param>
@@ -2834,16 +2834,16 @@ namespace OpenTK.Graphics.OpenGL.Compatibility
         /// <summary> <b>[requires: v4.0 | GL_ARB_gpu_shader_fp64]</b> <b>[entry point: <c>glGetUniformdv</c>]</b><br/> Returns the value of a uniform variable. </summary>
         /// <param name="program">Specifies the program object to be queried.</param>
         /// <param name="location">Specifies the location of the uniform variable to be queried.</param>
-        /// <param name="parameters">Returns the value of the specified uniform variable.</param>
+        /// <param name="params">Returns the value of the specified uniform variable.</param>
         /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/glGetUniform.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_gpu_shader_fp64.txt"/></remarks>
-        public static void GetUniformdv(int program, int location, double* parameters) => GLPointers.glGetUniformdv_Lazy(program, location, parameters);
+        public static void GetUniformdv(int program, int location, double* @params) => GLPointers.glGetUniformdv_Lazy(program, location, @params);
         
         /// <summary> <b>[requires: v2.0]</b> <b>[entry point: <c>glGetUniformfv</c>]</b><br/> Returns the value of a uniform variable. </summary>
         /// <param name="program">Specifies the program object to be queried.</param>
         /// <param name="location">Specifies the location of the uniform variable to be queried.</param>
-        /// <param name="parameters">Returns the value of the specified uniform variable.</param>
+        /// <param name="params">Returns the value of the specified uniform variable.</param>
         /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/glGetUniform.xhtml"/></remarks>
-        public static void GetUniformfv(int program, int location, float* parameters) => GLPointers.glGetUniformfv_Lazy(program, location, parameters);
+        public static void GetUniformfv(int program, int location, float* @params) => GLPointers.glGetUniformfv_Lazy(program, location, @params);
         
         /// <summary> <b>[requires: v3.1 | GL_ARB_uniform_buffer_object]</b> <b>[entry point: <c>glGetUniformIndices</c>]</b><br/> Retrieve the index of a named uniform block. </summary>
         /// <param name="program"> Specifies the name of a program containing uniforms whose indices to query. </param>
@@ -2856,9 +2856,9 @@ namespace OpenTK.Graphics.OpenGL.Compatibility
         /// <summary> <b>[requires: v2.0]</b> <b>[entry point: <c>glGetUniformiv</c>]</b><br/> Returns the value of a uniform variable. </summary>
         /// <param name="program">Specifies the program object to be queried.</param>
         /// <param name="location">Specifies the location of the uniform variable to be queried.</param>
-        /// <param name="parameters">Returns the value of the specified uniform variable.</param>
+        /// <param name="params">Returns the value of the specified uniform variable.</param>
         /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/glGetUniform.xhtml"/></remarks>
-        public static void GetUniformiv(int program, int location, int* parameters) => GLPointers.glGetUniformiv_Lazy(program, location, parameters);
+        public static void GetUniformiv(int program, int location, int* @params) => GLPointers.glGetUniformiv_Lazy(program, location, @params);
         
         /// <summary> <b>[requires: v2.0]</b> <b>[entry point: <c>glGetUniformLocation</c>]</b><br/> Returns the location of a uniform variable. </summary>
         /// <param name="program">Specifies the program object to be queried.</param>
@@ -2869,16 +2869,16 @@ namespace OpenTK.Graphics.OpenGL.Compatibility
         /// <summary> <b>[requires: v4.0 | GL_ARB_shader_subroutine]</b> <b>[entry point: <c>glGetUniformSubroutineuiv</c>]</b><br/> Retrieve the value of a subroutine uniform of a given shader stage of the current program. </summary>
         /// <param name="shadertype"> Specifies the shader stage from which to query for subroutine uniform index. shadertype must be one of GL_VERTEX_SHADER, GL_TESS_CONTROL_SHADER, GL_TESS_EVALUATION_SHADER, GL_GEOMETRY_SHADER or GL_FRAGMENT_SHADER. </param>
         /// <param name="location"> Specifies the location of the subroutine uniform. </param>
-        /// <param name="parameters"> Specifies the address of a variable to receive the value or values of the subroutine uniform. </param>
+        /// <param name="params"> Specifies the address of a variable to receive the value or values of the subroutine uniform. </param>
         /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/glGetUniformSubroutine.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_shader_subroutine.txt"/></remarks>
-        public static void GetUniformSubroutineuiv(ShaderType shadertype, int location, uint* parameters) => GLPointers.glGetUniformSubroutineuiv_Lazy((uint)shadertype, location, parameters);
+        public static void GetUniformSubroutineuiv(ShaderType shadertype, int location, uint* @params) => GLPointers.glGetUniformSubroutineuiv_Lazy((uint)shadertype, location, @params);
         
         /// <summary> <b>[requires: v3.0]</b> <b>[entry point: <c>glGetUniformuiv</c>]</b><br/> Returns the value of a uniform variable. </summary>
         /// <param name="program">Specifies the program object to be queried.</param>
         /// <param name="location">Specifies the location of the uniform variable to be queried.</param>
-        /// <param name="parameters">Returns the value of the specified uniform variable.</param>
+        /// <param name="params">Returns the value of the specified uniform variable.</param>
         /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/glGetUniform.xhtml"/></remarks>
-        public static void GetUniformuiv(int program, int location, uint* parameters) => GLPointers.glGetUniformuiv_Lazy(program, location, parameters);
+        public static void GetUniformuiv(int program, int location, uint* @params) => GLPointers.glGetUniformuiv_Lazy(program, location, @params);
         
         /// <summary> <b>[requires: v4.5 | GL_ARB_direct_state_access]</b> <b>[entry point: <c>glGetVertexArrayIndexed64iv</c>]</b><br/> Retrieve parameters of an attribute of a vertex array    object. </summary>
         /// <param name="vaobj">Specifies the name of a vertex array object.</param>
@@ -2906,44 +2906,44 @@ namespace OpenTK.Graphics.OpenGL.Compatibility
         /// <summary> <b>[requires: v2.0]</b> <b>[entry point: <c>glGetVertexAttribdv</c>]</b><br/> Return a generic vertex attribute parameter. </summary>
         /// <param name="index">Specifies the generic vertex attribute parameter to be queried.</param>
         /// <param name="pname">Specifies the symbolic name of the vertex attribute parameter to be queried. Accepted values are GL_VERTEX_ATTRIB_ARRAY_BUFFER_BINDING, GL_VERTEX_ATTRIB_ARRAY_ENABLED, GL_VERTEX_ATTRIB_ARRAY_SIZE, GL_VERTEX_ATTRIB_ARRAY_STRIDE, GL_VERTEX_ATTRIB_ARRAY_TYPE, GL_VERTEX_ATTRIB_ARRAY_NORMALIZED, GL_VERTEX_ATTRIB_ARRAY_INTEGER, GL_VERTEX_ATTRIB_ARRAY_LONG, GL_VERTEX_ATTRIB_ARRAY_DIVISOR, GL_VERTEX_ATTRIB_BINDING, GL_VERTEX_ATTRIB_RELATIVE_OFFSET or GL_CURRENT_VERTEX_ATTRIB.</param>
-        /// <param name="parameters">Returns the requested data.</param>
+        /// <param name="params">Returns the requested data.</param>
         /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/glGetVertexAttrib.xhtml"/></remarks>
-        public static void GetVertexAttribdv(uint index, VertexAttribPropertyARB pname, double* parameters) => GLPointers.glGetVertexAttribdv_Lazy(index, (uint)pname, parameters);
+        public static void GetVertexAttribdv(uint index, VertexAttribPropertyARB pname, double* @params) => GLPointers.glGetVertexAttribdv_Lazy(index, (uint)pname, @params);
         
         /// <summary> <b>[requires: v2.0]</b> <b>[entry point: <c>glGetVertexAttribfv</c>]</b><br/> Return a generic vertex attribute parameter. </summary>
         /// <param name="index">Specifies the generic vertex attribute parameter to be queried.</param>
         /// <param name="pname">Specifies the symbolic name of the vertex attribute parameter to be queried. Accepted values are GL_VERTEX_ATTRIB_ARRAY_BUFFER_BINDING, GL_VERTEX_ATTRIB_ARRAY_ENABLED, GL_VERTEX_ATTRIB_ARRAY_SIZE, GL_VERTEX_ATTRIB_ARRAY_STRIDE, GL_VERTEX_ATTRIB_ARRAY_TYPE, GL_VERTEX_ATTRIB_ARRAY_NORMALIZED, GL_VERTEX_ATTRIB_ARRAY_INTEGER, GL_VERTEX_ATTRIB_ARRAY_LONG, GL_VERTEX_ATTRIB_ARRAY_DIVISOR, GL_VERTEX_ATTRIB_BINDING, GL_VERTEX_ATTRIB_RELATIVE_OFFSET or GL_CURRENT_VERTEX_ATTRIB.</param>
-        /// <param name="parameters">Returns the requested data.</param>
+        /// <param name="params">Returns the requested data.</param>
         /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/glGetVertexAttrib.xhtml"/></remarks>
-        public static void GetVertexAttribfv(uint index, VertexAttribPropertyARB pname, float* parameters) => GLPointers.glGetVertexAttribfv_Lazy(index, (uint)pname, parameters);
+        public static void GetVertexAttribfv(uint index, VertexAttribPropertyARB pname, float* @params) => GLPointers.glGetVertexAttribfv_Lazy(index, (uint)pname, @params);
         
         /// <summary> <b>[requires: v3.0]</b> <b>[entry point: <c>glGetVertexAttribIiv</c>]</b><br/> Return a generic vertex attribute parameter. </summary>
         /// <param name="index">Specifies the generic vertex attribute parameter to be queried.</param>
         /// <param name="pname">Specifies the symbolic name of the vertex attribute parameter to be queried. Accepted values are GL_VERTEX_ATTRIB_ARRAY_BUFFER_BINDING, GL_VERTEX_ATTRIB_ARRAY_ENABLED, GL_VERTEX_ATTRIB_ARRAY_SIZE, GL_VERTEX_ATTRIB_ARRAY_STRIDE, GL_VERTEX_ATTRIB_ARRAY_TYPE, GL_VERTEX_ATTRIB_ARRAY_NORMALIZED, GL_VERTEX_ATTRIB_ARRAY_INTEGER, GL_VERTEX_ATTRIB_ARRAY_LONG, GL_VERTEX_ATTRIB_ARRAY_DIVISOR, GL_VERTEX_ATTRIB_BINDING, GL_VERTEX_ATTRIB_RELATIVE_OFFSET or GL_CURRENT_VERTEX_ATTRIB.</param>
-        /// <param name="parameters">Returns the requested data.</param>
+        /// <param name="params">Returns the requested data.</param>
         /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/glGetVertexAttrib.xhtml"/></remarks>
-        public static void GetVertexAttribIiv(uint index, VertexAttribEnum pname, int* parameters) => GLPointers.glGetVertexAttribIiv_Lazy(index, (uint)pname, parameters);
+        public static void GetVertexAttribIiv(uint index, VertexAttribEnum pname, int* @params) => GLPointers.glGetVertexAttribIiv_Lazy(index, (uint)pname, @params);
         
         /// <summary> <b>[requires: v3.0]</b> <b>[entry point: <c>glGetVertexAttribIuiv</c>]</b><br/> Return a generic vertex attribute parameter. </summary>
         /// <param name="index">Specifies the generic vertex attribute parameter to be queried.</param>
         /// <param name="pname">Specifies the symbolic name of the vertex attribute parameter to be queried. Accepted values are GL_VERTEX_ATTRIB_ARRAY_BUFFER_BINDING, GL_VERTEX_ATTRIB_ARRAY_ENABLED, GL_VERTEX_ATTRIB_ARRAY_SIZE, GL_VERTEX_ATTRIB_ARRAY_STRIDE, GL_VERTEX_ATTRIB_ARRAY_TYPE, GL_VERTEX_ATTRIB_ARRAY_NORMALIZED, GL_VERTEX_ATTRIB_ARRAY_INTEGER, GL_VERTEX_ATTRIB_ARRAY_LONG, GL_VERTEX_ATTRIB_ARRAY_DIVISOR, GL_VERTEX_ATTRIB_BINDING, GL_VERTEX_ATTRIB_RELATIVE_OFFSET or GL_CURRENT_VERTEX_ATTRIB.</param>
-        /// <param name="parameters">Returns the requested data.</param>
+        /// <param name="params">Returns the requested data.</param>
         /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/glGetVertexAttrib.xhtml"/></remarks>
-        public static void GetVertexAttribIuiv(uint index, VertexAttribEnum pname, uint* parameters) => GLPointers.glGetVertexAttribIuiv_Lazy(index, (uint)pname, parameters);
+        public static void GetVertexAttribIuiv(uint index, VertexAttribEnum pname, uint* @params) => GLPointers.glGetVertexAttribIuiv_Lazy(index, (uint)pname, @params);
         
         /// <summary> <b>[requires: v2.0]</b> <b>[entry point: <c>glGetVertexAttribiv</c>]</b><br/> Return a generic vertex attribute parameter. </summary>
         /// <param name="index">Specifies the generic vertex attribute parameter to be queried.</param>
         /// <param name="pname">Specifies the symbolic name of the vertex attribute parameter to be queried. Accepted values are GL_VERTEX_ATTRIB_ARRAY_BUFFER_BINDING, GL_VERTEX_ATTRIB_ARRAY_ENABLED, GL_VERTEX_ATTRIB_ARRAY_SIZE, GL_VERTEX_ATTRIB_ARRAY_STRIDE, GL_VERTEX_ATTRIB_ARRAY_TYPE, GL_VERTEX_ATTRIB_ARRAY_NORMALIZED, GL_VERTEX_ATTRIB_ARRAY_INTEGER, GL_VERTEX_ATTRIB_ARRAY_LONG, GL_VERTEX_ATTRIB_ARRAY_DIVISOR, GL_VERTEX_ATTRIB_BINDING, GL_VERTEX_ATTRIB_RELATIVE_OFFSET or GL_CURRENT_VERTEX_ATTRIB.</param>
-        /// <param name="parameters">Returns the requested data.</param>
+        /// <param name="params">Returns the requested data.</param>
         /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/glGetVertexAttrib.xhtml"/></remarks>
-        public static void GetVertexAttribiv(uint index, VertexAttribPropertyARB pname, int* parameters) => GLPointers.glGetVertexAttribiv_Lazy(index, (uint)pname, parameters);
+        public static void GetVertexAttribiv(uint index, VertexAttribPropertyARB pname, int* @params) => GLPointers.glGetVertexAttribiv_Lazy(index, (uint)pname, @params);
         
         /// <summary> <b>[requires: v4.1 | GL_ARB_vertex_attrib_64bit]</b> <b>[entry point: <c>glGetVertexAttribLdv</c>]</b><br/> Return a generic vertex attribute parameter. </summary>
         /// <param name="index">Specifies the generic vertex attribute parameter to be queried.</param>
         /// <param name="pname">Specifies the symbolic name of the vertex attribute parameter to be queried. Accepted values are GL_VERTEX_ATTRIB_ARRAY_BUFFER_BINDING, GL_VERTEX_ATTRIB_ARRAY_ENABLED, GL_VERTEX_ATTRIB_ARRAY_SIZE, GL_VERTEX_ATTRIB_ARRAY_STRIDE, GL_VERTEX_ATTRIB_ARRAY_TYPE, GL_VERTEX_ATTRIB_ARRAY_NORMALIZED, GL_VERTEX_ATTRIB_ARRAY_INTEGER, GL_VERTEX_ATTRIB_ARRAY_LONG, GL_VERTEX_ATTRIB_ARRAY_DIVISOR, GL_VERTEX_ATTRIB_BINDING, GL_VERTEX_ATTRIB_RELATIVE_OFFSET or GL_CURRENT_VERTEX_ATTRIB.</param>
-        /// <param name="parameters">Returns the requested data.</param>
+        /// <param name="params">Returns the requested data.</param>
         /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/glGetVertexAttrib.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_vertex_attrib_64bit.txt"/></remarks>
-        public static void GetVertexAttribLdv(uint index, VertexAttribEnum pname, double* parameters) => GLPointers.glGetVertexAttribLdv_Lazy(index, (uint)pname, parameters);
+        public static void GetVertexAttribLdv(uint index, VertexAttribEnum pname, double* @params) => GLPointers.glGetVertexAttribLdv_Lazy(index, (uint)pname, @params);
         
         /// <summary> <b>[requires: v2.0]</b> <b>[entry point: <c>glGetVertexAttribPointerv</c>]</b><br/> Return the address of the specified generic vertex attribute pointer. </summary>
         /// <param name="index">Specifies the generic vertex attribute parameter to be returned.</param>
@@ -3171,7 +3171,7 @@ namespace OpenTK.Graphics.OpenGL.Compatibility
         public static void Lightf(LightName light, LightParameter pname, float param) => GLPointers.glLightf_Lazy((uint)light, (uint)pname, param);
         
         /// <summary> <b>[requires: v1.0]</b> <b>[removed in: v3.2]</b> <b>[entry point: <c>glLightfv</c>]</b><br/>  </summary>
-        public static void Lightfv(LightName light, LightParameter pname, float* parameters) => GLPointers.glLightfv_Lazy((uint)light, (uint)pname, parameters);
+        public static void Lightfv(LightName light, LightParameter pname, float* @params) => GLPointers.glLightfv_Lazy((uint)light, (uint)pname, @params);
         
         /// <summary> <b>[requires: v1.0]</b> <b>[removed in: v3.2]</b> <b>[entry point: <c>glLighti</c>]</b><br/> Set light source parameters. </summary>
         /// <param name="light"> Specifies a light. The number of lights depends on the implementation, but at least eight lights are supported. They are identified by symbolic names of the form GL_LIGHT i, where i ranges from 0 to the value of GL_MAX_LIGHTS - 1. </param>
@@ -3181,7 +3181,7 @@ namespace OpenTK.Graphics.OpenGL.Compatibility
         public static void Lighti(LightName light, LightParameter pname, int param) => GLPointers.glLighti_Lazy((uint)light, (uint)pname, param);
         
         /// <summary> <b>[requires: v1.0]</b> <b>[removed in: v3.2]</b> <b>[entry point: <c>glLightiv</c>]</b><br/>  </summary>
-        public static void Lightiv(LightName light, LightParameter pname, int* parameters) => GLPointers.glLightiv_Lazy((uint)light, (uint)pname, parameters);
+        public static void Lightiv(LightName light, LightParameter pname, int* @params) => GLPointers.glLightiv_Lazy((uint)light, (uint)pname, @params);
         
         /// <summary> <b>[requires: v1.0]</b> <b>[removed in: v3.2]</b> <b>[entry point: <c>glLightModelf</c>]</b><br/> Set the lighting model parameters. </summary>
         /// <param name="pname"> Specifies a single-valued lighting model parameter. GL_LIGHT_MODEL_LOCAL_VIEWER, GL_LIGHT_MODEL_COLOR_CONTROL, and GL_LIGHT_MODEL_TWO_SIDE are accepted. </param>
@@ -3190,7 +3190,7 @@ namespace OpenTK.Graphics.OpenGL.Compatibility
         public static void LightModelf(LightModelParameter pname, float param) => GLPointers.glLightModelf_Lazy((uint)pname, param);
         
         /// <summary> <b>[requires: v1.0]</b> <b>[removed in: v3.2]</b> <b>[entry point: <c>glLightModelfv</c>]</b><br/>  </summary>
-        public static void LightModelfv(LightModelParameter pname, float* parameters) => GLPointers.glLightModelfv_Lazy((uint)pname, parameters);
+        public static void LightModelfv(LightModelParameter pname, float* @params) => GLPointers.glLightModelfv_Lazy((uint)pname, @params);
         
         /// <summary> <b>[requires: v1.0]</b> <b>[removed in: v3.2]</b> <b>[entry point: <c>glLightModeli</c>]</b><br/> Set the lighting model parameters. </summary>
         /// <param name="pname"> Specifies a single-valued lighting model parameter. GL_LIGHT_MODEL_LOCAL_VIEWER, GL_LIGHT_MODEL_COLOR_CONTROL, and GL_LIGHT_MODEL_TWO_SIDE are accepted. </param>
@@ -3199,7 +3199,7 @@ namespace OpenTK.Graphics.OpenGL.Compatibility
         public static void LightModeli(LightModelParameter pname, int param) => GLPointers.glLightModeli_Lazy((uint)pname, param);
         
         /// <summary> <b>[requires: v1.0]</b> <b>[removed in: v3.2]</b> <b>[entry point: <c>glLightModeliv</c>]</b><br/>  </summary>
-        public static void LightModeliv(LightModelParameter pname, int* parameters) => GLPointers.glLightModeliv_Lazy((uint)pname, parameters);
+        public static void LightModeliv(LightModelParameter pname, int* @params) => GLPointers.glLightModeliv_Lazy((uint)pname, @params);
         
         /// <summary> <b>[requires: v1.0]</b> <b>[removed in: v3.2]</b> <b>[entry point: <c>glLineStipple</c>]</b><br/> Specify the line stipple pattern. </summary>
         /// <param name="factor"> Specifies a multiplier for each bit in the line stipple pattern. If factor is 3, for example, each bit in the pattern is used three times before the next bit in the pattern is used. factor is clamped to the range [1, 256] and defaults to 1. </param>
@@ -3218,7 +3218,7 @@ namespace OpenTK.Graphics.OpenGL.Compatibility
         public static void LinkProgram(int program) => GLPointers.glLinkProgram_Lazy(program);
         
         /// <summary> <b>[requires: v1.0]</b> <b>[removed in: v3.2]</b> <b>[entry point: <c>glListBase</c>]</b><br/> Set the display-list base for glCallLists. </summary>
-        /// <param name="@base"> Specifies an integer offset that will be added to glCallLists offsets to generate display-list names. The initial value is 0. </param>
+        /// <param name="base"> Specifies an integer offset that will be added to glCallLists offsets to generate display-list names. The initial value is 0. </param>
         /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/gl2.1/xhtml/glListBase.xml"/></remarks>
         public static void ListBase(int @base) => GLPointers.glListBase_Lazy(@base);
         
@@ -3374,7 +3374,7 @@ namespace OpenTK.Graphics.OpenGL.Compatibility
         public static void Materialf(TriangleFace face, MaterialParameter pname, float param) => GLPointers.glMaterialf_Lazy((uint)face, (uint)pname, param);
         
         /// <summary> <b>[requires: v1.0]</b> <b>[removed in: v3.2]</b> <b>[entry point: <c>glMaterialfv</c>]</b><br/>  </summary>
-        public static void Materialfv(TriangleFace face, MaterialParameter pname, float* parameters) => GLPointers.glMaterialfv_Lazy((uint)face, (uint)pname, parameters);
+        public static void Materialfv(TriangleFace face, MaterialParameter pname, float* @params) => GLPointers.glMaterialfv_Lazy((uint)face, (uint)pname, @params);
         
         /// <summary> <b>[requires: v1.0]</b> <b>[removed in: v3.2]</b> <b>[entry point: <c>glMateriali</c>]</b><br/> Specify material parameters for the lighting model. </summary>
         /// <param name="face"> Specifies which face or faces are being updated. Must be one of GL_FRONT, GL_BACK, or GL_FRONT_AND_BACK. </param>
@@ -3384,7 +3384,7 @@ namespace OpenTK.Graphics.OpenGL.Compatibility
         public static void Materiali(TriangleFace face, MaterialParameter pname, int param) => GLPointers.glMateriali_Lazy((uint)face, (uint)pname, param);
         
         /// <summary> <b>[requires: v1.0]</b> <b>[removed in: v3.2]</b> <b>[entry point: <c>glMaterialiv</c>]</b><br/>  </summary>
-        public static void Materialiv(TriangleFace face, MaterialParameter pname, int* parameters) => GLPointers.glMaterialiv_Lazy((uint)face, (uint)pname, parameters);
+        public static void Materialiv(TriangleFace face, MaterialParameter pname, int* @params) => GLPointers.glMaterialiv_Lazy((uint)face, (uint)pname, @params);
         
         /// <summary> <b>[requires: v1.0]</b> <b>[removed in: v3.2]</b> <b>[entry point: <c>glMatrixMode</c>]</b><br/> Specify which matrix is the current matrix. </summary>
         /// <param name="mode"> Specifies which matrix stack is the target for subsequent matrix operations. Three values are accepted: GL_MODELVIEW, GL_PROJECTION, and GL_TEXTURE. The initial value is GL_MODELVIEW. Additionally, if the ARB_imaging extension is supported, GL_COLOR is also accepted. </param>
@@ -3944,9 +3944,9 @@ namespace OpenTK.Graphics.OpenGL.Compatibility
         
         /// <summary> <b>[requires: v1.4]</b> <b>[entry point: <c>glPointParameterfv</c>]</b><br/> Specify point parameters. </summary>
         /// <param name="pname"> Specifies a single-valued point parameter. GL_POINT_FADE_THRESHOLD_SIZE, and GL_POINT_SPRITE_COORD_ORIGIN are accepted. </param>
-        /// <param name="parameters"> For glPointParameterfv and glPointParameteriv, specifies a pointer to an array where the value or values to be assigned to pname are stored. </param>
+        /// <param name="params"> For glPointParameterfv and glPointParameteriv, specifies a pointer to an array where the value or values to be assigned to pname are stored. </param>
         /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/glPointParameter.xhtml"/></remarks>
-        public static void PointParameterfv(PointParameterNameARB pname, float* parameters) => GLPointers.glPointParameterfv_Lazy((uint)pname, parameters);
+        public static void PointParameterfv(PointParameterNameARB pname, float* @params) => GLPointers.glPointParameterfv_Lazy((uint)pname, @params);
         
         /// <summary> <b>[requires: v1.4]</b> <b>[entry point: <c>glPointParameteri</c>]</b><br/> Specify point parameters. </summary>
         /// <param name="pname"> Specifies a single-valued point parameter. GL_POINT_FADE_THRESHOLD_SIZE, and GL_POINT_SPRITE_COORD_ORIGIN are accepted. </param>
@@ -3956,9 +3956,9 @@ namespace OpenTK.Graphics.OpenGL.Compatibility
         
         /// <summary> <b>[requires: v1.4]</b> <b>[entry point: <c>glPointParameteriv</c>]</b><br/> Specify point parameters. </summary>
         /// <param name="pname"> Specifies a single-valued point parameter. GL_POINT_FADE_THRESHOLD_SIZE, and GL_POINT_SPRITE_COORD_ORIGIN are accepted. </param>
-        /// <param name="parameters"> For glPointParameterfv and glPointParameteriv, specifies a pointer to an array where the value or values to be assigned to pname are stored. </param>
+        /// <param name="params"> For glPointParameterfv and glPointParameteriv, specifies a pointer to an array where the value or values to be assigned to pname are stored. </param>
         /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/glPointParameter.xhtml"/></remarks>
-        public static void PointParameteriv(PointParameterNameARB pname, int* parameters) => GLPointers.glPointParameteriv_Lazy((uint)pname, parameters);
+        public static void PointParameteriv(PointParameterNameARB pname, int* @params) => GLPointers.glPointParameteriv_Lazy((uint)pname, @params);
         
         /// <summary> <b>[requires: v1.0]</b> <b>[entry point: <c>glPointSize</c>]</b><br/> Specify the diameter of rasterized points. </summary>
         /// <param name="size"> Specifies the diameter of rasterized points. The initial value is 1. </param>
@@ -4869,10 +4869,10 @@ namespace OpenTK.Graphics.OpenGL.Compatibility
         /// <summary> <b>[requires: v2.0]</b> <b>[entry point: <c>glShaderSource</c>]</b><br/> Replaces the source code in a shader object. </summary>
         /// <param name="shader">Specifies the handle of the shader object whose source code is to be replaced.</param>
         /// <param name="count">Specifies the number of elements in the string and length arrays.</param>
-        /// <param name="str">Specifies an array of pointers to strings containing the source code to be loaded into the shader.</param>
+        /// <param name="string">Specifies an array of pointers to strings containing the source code to be loaded into the shader.</param>
         /// <param name="length">Specifies an array of string lengths.</param>
         /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/glShaderSource.xhtml"/></remarks>
-        public static void ShaderSource(int shader, int count, byte** str, int* length) => GLPointers.glShaderSource_Lazy(shader, count, str, length);
+        public static void ShaderSource(int shader, int count, byte** @string, int* length) => GLPointers.glShaderSource_Lazy(shader, count, @string, length);
         
         /// <summary> <b>[requires: v4.3 | GL_ARB_shader_storage_buffer_object]</b> <b>[entry point: <c>glShaderStorageBlockBinding</c>]</b><br/> Change an active shader storage block binding. </summary>
         /// <param name="program"> The name of the program containing the block whose binding to change. </param>
@@ -4886,18 +4886,18 @@ namespace OpenTK.Graphics.OpenGL.Compatibility
         
         /// <summary> <b>[requires: v1.0]</b> <b>[entry point: <c>glStencilFunc</c>]</b><br/> Set front and back function and reference value for stencil testing. </summary>
         /// <param name="func"> Specifies the test function. Eight symbolic constants are valid: GL_NEVER, GL_LESS, GL_LEQUAL, GL_GREATER, GL_GEQUAL, GL_EQUAL, GL_NOTEQUAL, and GL_ALWAYS. The initial value is GL_ALWAYS. </param>
-        /// <param name="reference"> Specifies the reference value for the stencil test. ref is clamped to the range 0 2 n - 1 , where n is the number of bitplanes in the stencil buffer. The initial value is 0. </param>
+        /// <param name="ref"> Specifies the reference value for the stencil test. ref is clamped to the range 0 2 n - 1 , where n is the number of bitplanes in the stencil buffer. The initial value is 0. </param>
         /// <param name="mask"> Specifies a mask that is ANDed with both the reference value and the stored stencil value when the test is done. The initial value is all 1&apos;s. </param>
         /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/glStencilFunc.xhtml"/></remarks>
-        public static void StencilFunc(StencilFunction func, int reference, uint mask) => GLPointers.glStencilFunc_Lazy((uint)func, reference, mask);
+        public static void StencilFunc(StencilFunction func, int @ref, uint mask) => GLPointers.glStencilFunc_Lazy((uint)func, @ref, mask);
         
         /// <summary> <b>[requires: v2.0]</b> <b>[entry point: <c>glStencilFuncSeparate</c>]</b><br/> Set front and/or back function and reference value for stencil testing. </summary>
         /// <param name="face"> Specifies whether front and/or back stencil state is updated. Three symbolic constants are valid: GL_FRONT, GL_BACK, and GL_FRONT_AND_BACK. </param>
         /// <param name="func"> Specifies the test function. Eight symbolic constants are valid: GL_NEVER, GL_LESS, GL_LEQUAL, GL_GREATER, GL_GEQUAL, GL_EQUAL, GL_NOTEQUAL, and GL_ALWAYS. The initial value is GL_ALWAYS. </param>
-        /// <param name="reference"> Specifies the reference value for the stencil test. ref is clamped to the range 0 2 n - 1 , where n is the number of bitplanes in the stencil buffer. The initial value is 0. </param>
+        /// <param name="ref"> Specifies the reference value for the stencil test. ref is clamped to the range 0 2 n - 1 , where n is the number of bitplanes in the stencil buffer. The initial value is 0. </param>
         /// <param name="mask"> Specifies a mask that is ANDed with both the reference value and the stored stencil value when the test is done. The initial value is all 1&apos;s. </param>
         /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/glStencilFuncSeparate.xhtml"/></remarks>
-        public static void StencilFuncSeparate(TriangleFace face, StencilFunction func, int reference, uint mask) => GLPointers.glStencilFuncSeparate_Lazy((uint)face, (uint)func, reference, mask);
+        public static void StencilFuncSeparate(TriangleFace face, StencilFunction func, int @ref, uint mask) => GLPointers.glStencilFuncSeparate_Lazy((uint)face, (uint)func, @ref, mask);
         
         /// <summary> <b>[requires: v1.0]</b> <b>[entry point: <c>glStencilMask</c>]</b><br/> Control the front and back writing of individual bits in the stencil planes. </summary>
         /// <param name="mask"> Specifies a bit mask to enable and disable writing of individual bits in the stencil planes. Initially, the mask is all 1&apos;s. </param>
@@ -5141,7 +5141,7 @@ namespace OpenTK.Graphics.OpenGL.Compatibility
         public static void TexEnvf(TextureEnvTarget target, TextureEnvParameter pname, float param) => GLPointers.glTexEnvf_Lazy((uint)target, (uint)pname, param);
         
         /// <summary> <b>[requires: v1.0]</b> <b>[removed in: v3.2]</b> <b>[entry point: <c>glTexEnvfv</c>]</b><br/>  </summary>
-        public static void TexEnvfv(TextureEnvTarget target, TextureEnvParameter pname, float* parameters) => GLPointers.glTexEnvfv_Lazy((uint)target, (uint)pname, parameters);
+        public static void TexEnvfv(TextureEnvTarget target, TextureEnvParameter pname, float* @params) => GLPointers.glTexEnvfv_Lazy((uint)target, (uint)pname, @params);
         
         /// <summary> <b>[requires: v1.0]</b> <b>[removed in: v3.2]</b> <b>[entry point: <c>glTexEnvi</c>]</b><br/> Set texture environment parameters. </summary>
         /// <param name="target"> Specifies a texture environment. May be GL_TEXTURE_ENV, GL_TEXTURE_FILTER_CONTROL or GL_POINT_SPRITE. </param>
@@ -5151,7 +5151,7 @@ namespace OpenTK.Graphics.OpenGL.Compatibility
         public static void TexEnvi(TextureEnvTarget target, TextureEnvParameter pname, int param) => GLPointers.glTexEnvi_Lazy((uint)target, (uint)pname, param);
         
         /// <summary> <b>[requires: v1.0]</b> <b>[removed in: v3.2]</b> <b>[entry point: <c>glTexEnviv</c>]</b><br/>  </summary>
-        public static void TexEnviv(TextureEnvTarget target, TextureEnvParameter pname, int* parameters) => GLPointers.glTexEnviv_Lazy((uint)target, (uint)pname, parameters);
+        public static void TexEnviv(TextureEnvTarget target, TextureEnvParameter pname, int* @params) => GLPointers.glTexEnviv_Lazy((uint)target, (uint)pname, @params);
         
         /// <summary> <b>[requires: v1.0]</b> <b>[removed in: v3.2]</b> <b>[entry point: <c>glTexGend</c>]</b><br/> Control the generation of texture coordinates. </summary>
         /// <param name="coord"> Specifies a texture coordinate. Must be one of GL_S, GL_T, GL_R, or GL_Q. </param>
@@ -5161,7 +5161,7 @@ namespace OpenTK.Graphics.OpenGL.Compatibility
         public static void TexGend(TextureCoordName coord, TextureGenParameter pname, double param) => GLPointers.glTexGend_Lazy((uint)coord, (uint)pname, param);
         
         /// <summary> <b>[requires: v1.0]</b> <b>[removed in: v3.2]</b> <b>[entry point: <c>glTexGendv</c>]</b><br/>  </summary>
-        public static void TexGendv(TextureCoordName coord, TextureGenParameter pname, double* parameters) => GLPointers.glTexGendv_Lazy((uint)coord, (uint)pname, parameters);
+        public static void TexGendv(TextureCoordName coord, TextureGenParameter pname, double* @params) => GLPointers.glTexGendv_Lazy((uint)coord, (uint)pname, @params);
         
         /// <summary> <b>[requires: v1.0]</b> <b>[removed in: v3.2]</b> <b>[entry point: <c>glTexGenf</c>]</b><br/> Control the generation of texture coordinates. </summary>
         /// <param name="coord"> Specifies a texture coordinate. Must be one of GL_S, GL_T, GL_R, or GL_Q. </param>
@@ -5171,7 +5171,7 @@ namespace OpenTK.Graphics.OpenGL.Compatibility
         public static void TexGenf(TextureCoordName coord, TextureGenParameter pname, float param) => GLPointers.glTexGenf_Lazy((uint)coord, (uint)pname, param);
         
         /// <summary> <b>[requires: v1.0]</b> <b>[removed in: v3.2]</b> <b>[entry point: <c>glTexGenfv</c>]</b><br/>  </summary>
-        public static void TexGenfv(TextureCoordName coord, TextureGenParameter pname, float* parameters) => GLPointers.glTexGenfv_Lazy((uint)coord, (uint)pname, parameters);
+        public static void TexGenfv(TextureCoordName coord, TextureGenParameter pname, float* @params) => GLPointers.glTexGenfv_Lazy((uint)coord, (uint)pname, @params);
         
         /// <summary> <b>[requires: v1.0]</b> <b>[removed in: v3.2]</b> <b>[entry point: <c>glTexGeni</c>]</b><br/> Control the generation of texture coordinates. </summary>
         /// <param name="coord"> Specifies a texture coordinate. Must be one of GL_S, GL_T, GL_R, or GL_Q. </param>
@@ -5181,7 +5181,7 @@ namespace OpenTK.Graphics.OpenGL.Compatibility
         public static void TexGeni(TextureCoordName coord, TextureGenParameter pname, int param) => GLPointers.glTexGeni_Lazy((uint)coord, (uint)pname, param);
         
         /// <summary> <b>[requires: v1.0]</b> <b>[removed in: v3.2]</b> <b>[entry point: <c>glTexGeniv</c>]</b><br/>  </summary>
-        public static void TexGeniv(TextureCoordName coord, TextureGenParameter pname, int* parameters) => GLPointers.glTexGeniv_Lazy((uint)coord, (uint)pname, parameters);
+        public static void TexGeniv(TextureCoordName coord, TextureGenParameter pname, int* @params) => GLPointers.glTexGeniv_Lazy((uint)coord, (uint)pname, @params);
         
         /// <summary> <b>[requires: v1.0]</b> <b>[entry point: <c>glTexImage1D</c>]</b><br/> Specify a one-dimensional texture image. </summary>
         /// <param name="target"> Specifies the target texture. Must be GL_TEXTURE_1D or GL_PROXY_TEXTURE_1D. </param>
@@ -5253,9 +5253,9 @@ namespace OpenTK.Graphics.OpenGL.Compatibility
         /// <summary> <b>[requires: v1.0]</b> <b>[entry point: <c>glTexParameterfv</c>]</b><br/> Set texture parameters. </summary>
         /// <param name="target">Specifies the target to which the texture is bound for glTexParameter functions. Must be one of GL_TEXTURE_1D, GL_TEXTURE_1D_ARRAY, GL_TEXTURE_2D, GL_TEXTURE_2D_ARRAY, GL_TEXTURE_2D_MULTISAMPLE, GL_TEXTURE_2D_MULTISAMPLE_ARRAY, GL_TEXTURE_3D, GL_TEXTURE_CUBE_MAP, GL_TEXTURE_CUBE_MAP_ARRAY, or GL_TEXTURE_RECTANGLE.</param>
         /// <param name="pname">Specifies the symbolic name of a single-valued texture parameter. pname can be one of the following: GL_DEPTH_STENCIL_TEXTURE_MODE, GL_TEXTURE_BASE_LEVEL, GL_TEXTURE_COMPARE_FUNC, GL_TEXTURE_COMPARE_MODE, GL_TEXTURE_LOD_BIAS, GL_TEXTURE_MIN_FILTER, GL_TEXTURE_MAG_FILTER, GL_TEXTURE_MIN_LOD, GL_TEXTURE_MAX_LOD, GL_TEXTURE_MAX_LEVEL, GL_TEXTURE_SWIZZLE_R, GL_TEXTURE_SWIZZLE_G, GL_TEXTURE_SWIZZLE_B, GL_TEXTURE_SWIZZLE_A, GL_TEXTURE_WRAP_S, GL_TEXTURE_WRAP_T, or GL_TEXTURE_WRAP_R.</param>
-        /// <param name="parameters">For the vector commands, specifies a pointer to an array where the value or values of pname are stored.</param>
+        /// <param name="params">For the vector commands, specifies a pointer to an array where the value or values of pname are stored.</param>
         /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/glTexParameter.xhtml"/></remarks>
-        public static void TexParameterfv(TextureTarget target, TextureParameterName pname, float* parameters) => GLPointers.glTexParameterfv_Lazy((uint)target, (uint)pname, parameters);
+        public static void TexParameterfv(TextureTarget target, TextureParameterName pname, float* @params) => GLPointers.glTexParameterfv_Lazy((uint)target, (uint)pname, @params);
         
         /// <summary> <b>[requires: v1.0]</b> <b>[entry point: <c>glTexParameteri</c>]</b><br/> Set texture parameters. </summary>
         /// <param name="target">Specifies the target to which the texture is bound for glTexParameter functions. Must be one of GL_TEXTURE_1D, GL_TEXTURE_1D_ARRAY, GL_TEXTURE_2D, GL_TEXTURE_2D_ARRAY, GL_TEXTURE_2D_MULTISAMPLE, GL_TEXTURE_2D_MULTISAMPLE_ARRAY, GL_TEXTURE_3D, GL_TEXTURE_CUBE_MAP, GL_TEXTURE_CUBE_MAP_ARRAY, or GL_TEXTURE_RECTANGLE.</param>
@@ -5267,23 +5267,23 @@ namespace OpenTK.Graphics.OpenGL.Compatibility
         /// <summary> <b>[requires: v3.0]</b> <b>[entry point: <c>glTexParameterIiv</c>]</b><br/> Set texture parameters. </summary>
         /// <param name="target">Specifies the target to which the texture is bound for glTexParameter functions. Must be one of GL_TEXTURE_1D, GL_TEXTURE_1D_ARRAY, GL_TEXTURE_2D, GL_TEXTURE_2D_ARRAY, GL_TEXTURE_2D_MULTISAMPLE, GL_TEXTURE_2D_MULTISAMPLE_ARRAY, GL_TEXTURE_3D, GL_TEXTURE_CUBE_MAP, GL_TEXTURE_CUBE_MAP_ARRAY, or GL_TEXTURE_RECTANGLE.</param>
         /// <param name="pname">Specifies the symbolic name of a single-valued texture parameter. pname can be one of the following: GL_DEPTH_STENCIL_TEXTURE_MODE, GL_TEXTURE_BASE_LEVEL, GL_TEXTURE_COMPARE_FUNC, GL_TEXTURE_COMPARE_MODE, GL_TEXTURE_LOD_BIAS, GL_TEXTURE_MIN_FILTER, GL_TEXTURE_MAG_FILTER, GL_TEXTURE_MIN_LOD, GL_TEXTURE_MAX_LOD, GL_TEXTURE_MAX_LEVEL, GL_TEXTURE_SWIZZLE_R, GL_TEXTURE_SWIZZLE_G, GL_TEXTURE_SWIZZLE_B, GL_TEXTURE_SWIZZLE_A, GL_TEXTURE_WRAP_S, GL_TEXTURE_WRAP_T, or GL_TEXTURE_WRAP_R.</param>
-        /// <param name="parameters">For the vector commands, specifies a pointer to an array where the value or values of pname are stored.</param>
+        /// <param name="params">For the vector commands, specifies a pointer to an array where the value or values of pname are stored.</param>
         /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/glTexParameter.xhtml"/></remarks>
-        public static void TexParameterIiv(TextureTarget target, TextureParameterName pname, int* parameters) => GLPointers.glTexParameterIiv_Lazy((uint)target, (uint)pname, parameters);
+        public static void TexParameterIiv(TextureTarget target, TextureParameterName pname, int* @params) => GLPointers.glTexParameterIiv_Lazy((uint)target, (uint)pname, @params);
         
         /// <summary> <b>[requires: v3.0]</b> <b>[entry point: <c>glTexParameterIuiv</c>]</b><br/> Set texture parameters. </summary>
         /// <param name="target">Specifies the target to which the texture is bound for glTexParameter functions. Must be one of GL_TEXTURE_1D, GL_TEXTURE_1D_ARRAY, GL_TEXTURE_2D, GL_TEXTURE_2D_ARRAY, GL_TEXTURE_2D_MULTISAMPLE, GL_TEXTURE_2D_MULTISAMPLE_ARRAY, GL_TEXTURE_3D, GL_TEXTURE_CUBE_MAP, GL_TEXTURE_CUBE_MAP_ARRAY, or GL_TEXTURE_RECTANGLE.</param>
         /// <param name="pname">Specifies the symbolic name of a single-valued texture parameter. pname can be one of the following: GL_DEPTH_STENCIL_TEXTURE_MODE, GL_TEXTURE_BASE_LEVEL, GL_TEXTURE_COMPARE_FUNC, GL_TEXTURE_COMPARE_MODE, GL_TEXTURE_LOD_BIAS, GL_TEXTURE_MIN_FILTER, GL_TEXTURE_MAG_FILTER, GL_TEXTURE_MIN_LOD, GL_TEXTURE_MAX_LOD, GL_TEXTURE_MAX_LEVEL, GL_TEXTURE_SWIZZLE_R, GL_TEXTURE_SWIZZLE_G, GL_TEXTURE_SWIZZLE_B, GL_TEXTURE_SWIZZLE_A, GL_TEXTURE_WRAP_S, GL_TEXTURE_WRAP_T, or GL_TEXTURE_WRAP_R.</param>
-        /// <param name="parameters">For the vector commands, specifies a pointer to an array where the value or values of pname are stored.</param>
+        /// <param name="params">For the vector commands, specifies a pointer to an array where the value or values of pname are stored.</param>
         /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/glTexParameter.xhtml"/></remarks>
-        public static void TexParameterIuiv(TextureTarget target, TextureParameterName pname, uint* parameters) => GLPointers.glTexParameterIuiv_Lazy((uint)target, (uint)pname, parameters);
+        public static void TexParameterIuiv(TextureTarget target, TextureParameterName pname, uint* @params) => GLPointers.glTexParameterIuiv_Lazy((uint)target, (uint)pname, @params);
         
         /// <summary> <b>[requires: v1.0]</b> <b>[entry point: <c>glTexParameteriv</c>]</b><br/> Set texture parameters. </summary>
         /// <param name="target">Specifies the target to which the texture is bound for glTexParameter functions. Must be one of GL_TEXTURE_1D, GL_TEXTURE_1D_ARRAY, GL_TEXTURE_2D, GL_TEXTURE_2D_ARRAY, GL_TEXTURE_2D_MULTISAMPLE, GL_TEXTURE_2D_MULTISAMPLE_ARRAY, GL_TEXTURE_3D, GL_TEXTURE_CUBE_MAP, GL_TEXTURE_CUBE_MAP_ARRAY, or GL_TEXTURE_RECTANGLE.</param>
         /// <param name="pname">Specifies the symbolic name of a single-valued texture parameter. pname can be one of the following: GL_DEPTH_STENCIL_TEXTURE_MODE, GL_TEXTURE_BASE_LEVEL, GL_TEXTURE_COMPARE_FUNC, GL_TEXTURE_COMPARE_MODE, GL_TEXTURE_LOD_BIAS, GL_TEXTURE_MIN_FILTER, GL_TEXTURE_MAG_FILTER, GL_TEXTURE_MIN_LOD, GL_TEXTURE_MAX_LOD, GL_TEXTURE_MAX_LEVEL, GL_TEXTURE_SWIZZLE_R, GL_TEXTURE_SWIZZLE_G, GL_TEXTURE_SWIZZLE_B, GL_TEXTURE_SWIZZLE_A, GL_TEXTURE_WRAP_S, GL_TEXTURE_WRAP_T, or GL_TEXTURE_WRAP_R.</param>
-        /// <param name="parameters">For the vector commands, specifies a pointer to an array where the value or values of pname are stored.</param>
+        /// <param name="params">For the vector commands, specifies a pointer to an array where the value or values of pname are stored.</param>
         /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/glTexParameter.xhtml"/></remarks>
-        public static void TexParameteriv(TextureTarget target, TextureParameterName pname, int* parameters) => GLPointers.glTexParameteriv_Lazy((uint)target, (uint)pname, parameters);
+        public static void TexParameteriv(TextureTarget target, TextureParameterName pname, int* @params) => GLPointers.glTexParameteriv_Lazy((uint)target, (uint)pname, @params);
         
         /// <summary> <b>[requires: v4.2 | GL_ARB_texture_storage]</b> <b>[entry point: <c>glTexStorage1D</c>]</b><br/> Simultaneously specify storage for all levels of a one-dimensional texture. </summary>
         /// <param name="target"> Specifies the target to which the texture object is bound for glTexStorage1D. Must be one of GL_TEXTURE_1D or GL_PROXY_TEXTURE_1D. </param>
@@ -5416,16 +5416,16 @@ namespace OpenTK.Graphics.OpenGL.Compatibility
         /// <summary> <b>[requires: v4.5 | GL_ARB_direct_state_access]</b> <b>[entry point: <c>glTextureParameterIiv</c>]</b><br/> Set texture parameters. </summary>
         /// <param name="texture">Specifies the texture object name for glTextureParameter functions.</param>
         /// <param name="pname">Specifies the symbolic name of a single-valued texture parameter. pname can be one of the following: GL_DEPTH_STENCIL_TEXTURE_MODE, GL_TEXTURE_BASE_LEVEL, GL_TEXTURE_COMPARE_FUNC, GL_TEXTURE_COMPARE_MODE, GL_TEXTURE_LOD_BIAS, GL_TEXTURE_MIN_FILTER, GL_TEXTURE_MAG_FILTER, GL_TEXTURE_MIN_LOD, GL_TEXTURE_MAX_LOD, GL_TEXTURE_MAX_LEVEL, GL_TEXTURE_SWIZZLE_R, GL_TEXTURE_SWIZZLE_G, GL_TEXTURE_SWIZZLE_B, GL_TEXTURE_SWIZZLE_A, GL_TEXTURE_WRAP_S, GL_TEXTURE_WRAP_T, or GL_TEXTURE_WRAP_R.</param>
-        /// <param name="parameters">For the vector commands, specifies a pointer to an array where the value or values of pname are stored.</param>
+        /// <param name="params">For the vector commands, specifies a pointer to an array where the value or values of pname are stored.</param>
         /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/glTexParameter.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_direct_state_access.txt"/></remarks>
-        public static void TextureParameterIiv(int texture, TextureParameterName pname, int* parameters) => GLPointers.glTextureParameterIiv_Lazy(texture, (uint)pname, parameters);
+        public static void TextureParameterIiv(int texture, TextureParameterName pname, int* @params) => GLPointers.glTextureParameterIiv_Lazy(texture, (uint)pname, @params);
         
         /// <summary> <b>[requires: v4.5 | GL_ARB_direct_state_access]</b> <b>[entry point: <c>glTextureParameterIuiv</c>]</b><br/> Set texture parameters. </summary>
         /// <param name="texture">Specifies the texture object name for glTextureParameter functions.</param>
         /// <param name="pname">Specifies the symbolic name of a single-valued texture parameter. pname can be one of the following: GL_DEPTH_STENCIL_TEXTURE_MODE, GL_TEXTURE_BASE_LEVEL, GL_TEXTURE_COMPARE_FUNC, GL_TEXTURE_COMPARE_MODE, GL_TEXTURE_LOD_BIAS, GL_TEXTURE_MIN_FILTER, GL_TEXTURE_MAG_FILTER, GL_TEXTURE_MIN_LOD, GL_TEXTURE_MAX_LOD, GL_TEXTURE_MAX_LEVEL, GL_TEXTURE_SWIZZLE_R, GL_TEXTURE_SWIZZLE_G, GL_TEXTURE_SWIZZLE_B, GL_TEXTURE_SWIZZLE_A, GL_TEXTURE_WRAP_S, GL_TEXTURE_WRAP_T, or GL_TEXTURE_WRAP_R.</param>
-        /// <param name="parameters">For the vector commands, specifies a pointer to an array where the value or values of pname are stored.</param>
+        /// <param name="params">For the vector commands, specifies a pointer to an array where the value or values of pname are stored.</param>
         /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/glTexParameter.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_direct_state_access.txt"/></remarks>
-        public static void TextureParameterIuiv(int texture, TextureParameterName pname, uint* parameters) => GLPointers.glTextureParameterIuiv_Lazy(texture, (uint)pname, parameters);
+        public static void TextureParameterIuiv(int texture, TextureParameterName pname, uint* @params) => GLPointers.glTextureParameterIuiv_Lazy(texture, (uint)pname, @params);
         
         /// <summary> <b>[requires: v4.5 | GL_ARB_direct_state_access]</b> <b>[entry point: <c>glTextureParameteriv</c>]</b><br/> Set texture parameters. </summary>
         /// <param name="texture">Specifies the texture object name for glTextureParameter functions.</param>
@@ -6910,11 +6910,11 @@ namespace OpenTK.Graphics.OpenGL.Compatibility
             
             /// <summary> <b>[requires: GL_AMD_gpu_shader_int64 | GL_NV_gpu_shader5]</b> <b>[entry point: <c>glGetUniformi64vNV</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/AMD_gpu_shader_int64.txt"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_gpu_shader5.txt"/></remarks>
-            public static void GetUniformi64vNV(int program, int location, long* parameters) => GLPointers.glGetUniformi64vNV_Lazy(program, location, parameters);
+            public static void GetUniformi64vNV(int program, int location, long* @params) => GLPointers.glGetUniformi64vNV_Lazy(program, location, @params);
             
             /// <summary> <b>[requires: GL_AMD_gpu_shader_int64 | GL_NV_shader_buffer_load]</b> <b>[entry point: <c>glGetUniformui64vNV</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/AMD_gpu_shader_int64.txt"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_shader_buffer_load.txt"/></remarks>
-            public static void GetUniformui64vNV(int program, int location, ulong* parameters) => GLPointers.glGetUniformui64vNV_Lazy(program, location, parameters);
+            public static void GetUniformui64vNV(int program, int location, ulong* @params) => GLPointers.glGetUniformui64vNV_Lazy(program, location, @params);
             
             /// <summary> <b>[requires: GL_AMD_name_gen_delete]</b> <b>[entry point: <c>glIsNameAMD</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/AMD/AMD_name_gen_delete.txt"/></remarks>
@@ -7150,7 +7150,7 @@ namespace OpenTK.Graphics.OpenGL.Compatibility
             
             /// <summary> <b>[requires: GL_APPLE_fence]</b> <b>[entry point: <c>glFinishObjectAPPLE</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/APPLE/APPLE_fence.txt"/></remarks>
-            public static void FinishObjectAPPLE(ObjectTypeAPPLE obj, int name) => GLPointers.glFinishObjectAPPLE_Lazy((uint)obj, name);
+            public static void FinishObjectAPPLE(ObjectTypeAPPLE @object, int name) => GLPointers.glFinishObjectAPPLE_Lazy((uint)@object, name);
             
             /// <summary> <b>[requires: GL_APPLE_flush_buffer_range]</b> <b>[entry point: <c>glFlushMappedBufferRangeAPPLE</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/APPLE/APPLE_flush_buffer_range.txt"/></remarks>
@@ -7170,11 +7170,11 @@ namespace OpenTK.Graphics.OpenGL.Compatibility
             
             /// <summary> <b>[requires: GL_APPLE_object_purgeable]</b> <b>[entry point: <c>glGetObjectParameterivAPPLE</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/APPLE/APPLE_object_purgeable.txt"/></remarks>
-            public static void GetObjectParameterivAPPLE(All objectType, uint name, All pname, int* parameters) => GLPointers.glGetObjectParameterivAPPLE_Lazy((uint)objectType, name, (uint)pname, parameters);
+            public static void GetObjectParameterivAPPLE(All objectType, uint name, All pname, int* @params) => GLPointers.glGetObjectParameterivAPPLE_Lazy((uint)objectType, name, (uint)pname, @params);
             
             /// <summary> <b>[requires: GL_APPLE_texture_range]</b> <b>[entry point: <c>glGetTexParameterPointervAPPLE</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/APPLE/APPLE_texture_range.txt"/></remarks>
-            public static void GetTexParameterPointervAPPLE(All target, All pname, void** parameters) => GLPointers.glGetTexParameterPointervAPPLE_Lazy((uint)target, (uint)pname, parameters);
+            public static void GetTexParameterPointervAPPLE(All target, All pname, void** @params) => GLPointers.glGetTexParameterPointervAPPLE_Lazy((uint)target, (uint)pname, @params);
             
             /// <summary> <b>[requires: GL_APPLE_fence]</b> <b>[entry point: <c>glIsFenceAPPLE</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/APPLE/APPLE_fence.txt"/></remarks>
@@ -7230,7 +7230,7 @@ namespace OpenTK.Graphics.OpenGL.Compatibility
             
             /// <summary> <b>[requires: GL_APPLE_fence]</b> <b>[entry point: <c>glTestObjectAPPLE</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/APPLE/APPLE_fence.txt"/></remarks>
-            public static bool TestObjectAPPLE(ObjectTypeAPPLE obj, uint name) => GLPointers.glTestObjectAPPLE_Lazy((uint)obj, name) != 0;
+            public static bool TestObjectAPPLE(ObjectTypeAPPLE @object, uint name) => GLPointers.glTestObjectAPPLE_Lazy((uint)@object, name) != 0;
             
             /// <summary> <b>[requires: GL_APPLE_texture_range]</b> <b>[entry point: <c>glTextureRangeAPPLE</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/APPLE/APPLE_texture_range.txt"/></remarks>
@@ -7668,16 +7668,16 @@ namespace OpenTK.Graphics.OpenGL.Compatibility
             /// <summary> <b>[requires: GL_ARB_imaging]</b> <b>[entry point: <c>glColorTableParameterfv</c>]</b><br/> Set color lookup table parameters. </summary>
             /// <param name="target"> The target color table. Must be GL_COLOR_TABLE, GL_POST_CONVOLUTION_COLOR_TABLE, or GL_POST_COLOR_MATRIX_COLOR_TABLE. </param>
             /// <param name="pname"> The symbolic name of a texture color lookup table parameter. Must be one of GL_COLOR_TABLE_SCALE or GL_COLOR_TABLE_BIAS. </param>
-            /// <param name="parameters"> A pointer to an array where the values of the parameters are stored. </param>
+            /// <param name="params"> A pointer to an array where the values of the parameters are stored. </param>
             /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/gl2.1/xhtml/glColorTableParameter.xml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_imaging.txt"/></remarks>
-            public static void ColorTableParameterfv(ColorTableTarget target, ColorTableParameterPName pname, float* parameters) => GLPointers.glColorTableParameterfv_Lazy((uint)target, (uint)pname, parameters);
+            public static void ColorTableParameterfv(ColorTableTarget target, ColorTableParameterPName pname, float* @params) => GLPointers.glColorTableParameterfv_Lazy((uint)target, (uint)pname, @params);
             
             /// <summary> <b>[requires: GL_ARB_imaging]</b> <b>[entry point: <c>glColorTableParameteriv</c>]</b><br/> Set color lookup table parameters. </summary>
             /// <param name="target"> The target color table. Must be GL_COLOR_TABLE, GL_POST_CONVOLUTION_COLOR_TABLE, or GL_POST_COLOR_MATRIX_COLOR_TABLE. </param>
             /// <param name="pname"> The symbolic name of a texture color lookup table parameter. Must be one of GL_COLOR_TABLE_SCALE or GL_COLOR_TABLE_BIAS. </param>
-            /// <param name="parameters"> A pointer to an array where the values of the parameters are stored. </param>
+            /// <param name="params"> A pointer to an array where the values of the parameters are stored. </param>
             /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/gl2.1/xhtml/glColorTableParameter.xml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_imaging.txt"/></remarks>
-            public static void ColorTableParameteriv(ColorTableTarget target, ColorTableParameterPName pname, int* parameters) => GLPointers.glColorTableParameteriv_Lazy((uint)target, (uint)pname, parameters);
+            public static void ColorTableParameteriv(ColorTableTarget target, ColorTableParameterPName pname, int* @params) => GLPointers.glColorTableParameteriv_Lazy((uint)target, (uint)pname, @params);
             
             /// <summary> <b>[requires: GL_ARB_shader_objects]</b> <b>[entry point: <c>glCompileShaderARB</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_shader_objects.txt"/></remarks>
@@ -7774,24 +7774,24 @@ namespace OpenTK.Graphics.OpenGL.Compatibility
             /// <summary> <b>[requires: GL_ARB_imaging]</b> <b>[entry point: <c>glConvolutionParameterf</c>]</b><br/> Set convolution parameters. </summary>
             /// <param name="target"> The target for the convolution parameter. Must be one of GL_CONVOLUTION_1D, GL_CONVOLUTION_2D, or GL_SEPARABLE_2D. </param>
             /// <param name="pname"> The parameter to be set. Must be GL_CONVOLUTION_BORDER_MODE. </param>
-            /// <param name="parameters"> The parameter value. Must be one of GL_REDUCE, GL_CONSTANT_BORDER, GL_REPLICATE_BORDER. </param>
+            /// <param name="params"> The parameter value. Must be one of GL_REDUCE, GL_CONSTANT_BORDER, GL_REPLICATE_BORDER. </param>
             /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/gl2.1/xhtml/glConvolutionParameter.xml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_imaging.txt"/></remarks>
-            public static void ConvolutionParameterf(ConvolutionTarget target, ConvolutionParameter pname, float parameters) => GLPointers.glConvolutionParameterf_Lazy((uint)target, (uint)pname, parameters);
+            public static void ConvolutionParameterf(ConvolutionTarget target, ConvolutionParameter pname, float @params) => GLPointers.glConvolutionParameterf_Lazy((uint)target, (uint)pname, @params);
             
             /// <summary> <b>[requires: GL_ARB_imaging]</b> <b>[entry point: <c>glConvolutionParameterfv</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_imaging.txt"/></remarks>
-            public static void ConvolutionParameterfv(ConvolutionTarget target, ConvolutionParameter pname, float* parameters) => GLPointers.glConvolutionParameterfv_Lazy((uint)target, (uint)pname, parameters);
+            public static void ConvolutionParameterfv(ConvolutionTarget target, ConvolutionParameter pname, float* @params) => GLPointers.glConvolutionParameterfv_Lazy((uint)target, (uint)pname, @params);
             
             /// <summary> <b>[requires: GL_ARB_imaging]</b> <b>[entry point: <c>glConvolutionParameteri</c>]</b><br/> Set convolution parameters. </summary>
             /// <param name="target"> The target for the convolution parameter. Must be one of GL_CONVOLUTION_1D, GL_CONVOLUTION_2D, or GL_SEPARABLE_2D. </param>
             /// <param name="pname"> The parameter to be set. Must be GL_CONVOLUTION_BORDER_MODE. </param>
-            /// <param name="parameters"> The parameter value. Must be one of GL_REDUCE, GL_CONSTANT_BORDER, GL_REPLICATE_BORDER. </param>
+            /// <param name="params"> The parameter value. Must be one of GL_REDUCE, GL_CONSTANT_BORDER, GL_REPLICATE_BORDER. </param>
             /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/gl2.1/xhtml/glConvolutionParameter.xml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_imaging.txt"/></remarks>
-            public static void ConvolutionParameteri(ConvolutionTarget target, ConvolutionParameter pname, int parameters) => GLPointers.glConvolutionParameteri_Lazy((uint)target, (uint)pname, parameters);
+            public static void ConvolutionParameteri(ConvolutionTarget target, ConvolutionParameter pname, int @params) => GLPointers.glConvolutionParameteri_Lazy((uint)target, (uint)pname, @params);
             
             /// <summary> <b>[requires: GL_ARB_imaging]</b> <b>[entry point: <c>glConvolutionParameteriv</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_imaging.txt"/></remarks>
-            public static void ConvolutionParameteriv(ConvolutionTarget target, ConvolutionParameter pname, int* parameters) => GLPointers.glConvolutionParameteriv_Lazy((uint)target, (uint)pname, parameters);
+            public static void ConvolutionParameteriv(ConvolutionTarget target, ConvolutionParameter pname, int* @params) => GLPointers.glConvolutionParameteriv_Lazy((uint)target, (uint)pname, @params);
             
             /// <summary> <b>[requires: v3.1 | GL_ARB_copy_buffer]</b> <b>[entry point: <c>glCopyBufferSubData</c>]</b><br/> Copy all or part of the data store of a buffer object to the data store of another buffer object. </summary>
             /// <param name="readTarget"> Specifies the target to which the source buffer object is bound for glCopyBufferSubData </param>
@@ -8399,9 +8399,9 @@ namespace OpenTK.Graphics.OpenGL.Compatibility
             /// <param name="program"> The name of a program object from which to retrieve information. </param>
             /// <param name="bufferIndex"> Specifies index of an active atomic counter buffer. </param>
             /// <param name="pname"> Specifies which parameter of the atomic counter buffer to retrieve. </param>
-            /// <param name="parameters"> Specifies the address of a variable into which to write the retrieved information. </param>
+            /// <param name="params"> Specifies the address of a variable into which to write the retrieved information. </param>
             /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/glGetActiveAtomicCounterBufferiv.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_shader_atomic_counters.txt"/></remarks>
-            public static void GetActiveAtomicCounterBufferiv(int program, uint bufferIndex, AtomicCounterBufferPName pname, int* parameters) => GLPointers.glGetActiveAtomicCounterBufferiv_Lazy(program, bufferIndex, (uint)pname, parameters);
+            public static void GetActiveAtomicCounterBufferiv(int program, uint bufferIndex, AtomicCounterBufferPName pname, int* @params) => GLPointers.glGetActiveAtomicCounterBufferiv_Lazy(program, bufferIndex, (uint)pname, @params);
             
             /// <summary> <b>[requires: GL_ARB_vertex_shader]</b> <b>[entry point: <c>glGetActiveAttribARB</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_vertex_shader.txt"/></remarks>
@@ -8444,9 +8444,9 @@ namespace OpenTK.Graphics.OpenGL.Compatibility
             /// <param name="program"> Specifies the name of a program containing the uniform block. </param>
             /// <param name="uniformBlockIndex"> Specifies the index of the uniform block within program. </param>
             /// <param name="pname"> Specifies the name of the parameter to query. </param>
-            /// <param name="parameters"> Specifies the address of a variable to receive the result of the query. </param>
+            /// <param name="params"> Specifies the address of a variable to receive the result of the query. </param>
             /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/glGetActiveUniformBlock.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_uniform_buffer_object.txt"/></remarks>
-            public static void GetActiveUniformBlockiv(int program, uint uniformBlockIndex, UniformBlockPName pname, int* parameters) => GLPointers.glGetActiveUniformBlockiv_Lazy(program, uniformBlockIndex, (uint)pname, parameters);
+            public static void GetActiveUniformBlockiv(int program, uint uniformBlockIndex, UniformBlockPName pname, int* @params) => GLPointers.glGetActiveUniformBlockiv_Lazy(program, uniformBlockIndex, (uint)pname, @params);
             
             /// <summary> <b>[requires: v3.1 | GL_ARB_uniform_buffer_object]</b> <b>[entry point: <c>glGetActiveUniformBlockName</c>]</b><br/> Retrieve the name of an active uniform block. </summary>
             /// <param name="program"> Specifies the name of a program containing the uniform block. </param>
@@ -8471,9 +8471,9 @@ namespace OpenTK.Graphics.OpenGL.Compatibility
             /// <param name="uniformCount">Specifies both the number of elements in the array of indices uniformIndices and the number of parameters written to params upon successful return.</param>
             /// <param name="uniformIndices">Specifies the address of an array of uniformCount integers containing the indices of uniforms within program whose parameter pname should be queried.</param>
             /// <param name="pname">Specifies the property of each uniform in uniformIndices that should be written into the corresponding element of params.</param>
-            /// <param name="parameters">Specifies the address of an array of uniformCount integers which are to receive the value of pname for each uniform in uniformIndices.</param>
+            /// <param name="params">Specifies the address of an array of uniformCount integers which are to receive the value of pname for each uniform in uniformIndices.</param>
             /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/glGetActiveUniformsiv.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_uniform_buffer_object.txt"/></remarks>
-            public static void GetActiveUniformsiv(int program, int uniformCount, uint* uniformIndices, UniformPName pname, int* parameters) => GLPointers.glGetActiveUniformsiv_Lazy(program, uniformCount, uniformIndices, (uint)pname, parameters);
+            public static void GetActiveUniformsiv(int program, int uniformCount, uint* uniformIndices, UniformPName pname, int* @params) => GLPointers.glGetActiveUniformsiv_Lazy(program, uniformCount, uniformIndices, (uint)pname, @params);
             
             /// <summary> <b>[requires: GL_ARB_shader_objects]</b> <b>[entry point: <c>glGetAttachedObjectsARB</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_shader_objects.txt"/></remarks>
@@ -8485,11 +8485,11 @@ namespace OpenTK.Graphics.OpenGL.Compatibility
             
             /// <summary> <b>[requires: GL_ARB_vertex_buffer_object]</b> <b>[entry point: <c>glGetBufferParameterivARB</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_vertex_buffer_object.txt"/></remarks>
-            public static void GetBufferParameterivARB(BufferTarget target, BufferPName pname, int* parameters) => GLPointers.glGetBufferParameterivARB_Lazy((uint)target, (uint)pname, parameters);
+            public static void GetBufferParameterivARB(BufferTarget target, BufferPName pname, int* @params) => GLPointers.glGetBufferParameterivARB_Lazy((uint)target, (uint)pname, @params);
             
             /// <summary> <b>[requires: GL_ARB_vertex_buffer_object]</b> <b>[entry point: <c>glGetBufferPointervARB</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_vertex_buffer_object.txt"/></remarks>
-            public static void GetBufferPointervARB(BufferTarget target, BufferPointerNameARB pname, void** parameters) => GLPointers.glGetBufferPointervARB_Lazy((uint)target, (uint)pname, parameters);
+            public static void GetBufferPointervARB(BufferTarget target, BufferPointerNameARB pname, void** @params) => GLPointers.glGetBufferPointervARB_Lazy((uint)target, (uint)pname, @params);
             
             /// <summary> <b>[requires: GL_ARB_vertex_buffer_object]</b> <b>[entry point: <c>glGetBufferSubDataARB</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_vertex_buffer_object.txt"/></remarks>
@@ -8506,16 +8506,16 @@ namespace OpenTK.Graphics.OpenGL.Compatibility
             /// <summary> <b>[requires: GL_ARB_imaging]</b> <b>[entry point: <c>glGetColorTableParameterfv</c>]</b><br/> Get color lookup table parameters. </summary>
             /// <param name="target"> The target color table. Must be GL_COLOR_TABLE, GL_POST_CONVOLUTION_COLOR_TABLE, GL_POST_COLOR_MATRIX_COLOR_TABLE, GL_PROXY_COLOR_TABLE, GL_PROXY_POST_CONVOLUTION_COLOR_TABLE, or GL_PROXY_POST_COLOR_MATRIX_COLOR_TABLE. </param>
             /// <param name="pname"> The symbolic name of a color lookup table parameter. Must be one of GL_COLOR_TABLE_BIAS, GL_COLOR_TABLE_SCALE, GL_COLOR_TABLE_FORMAT, GL_COLOR_TABLE_WIDTH, GL_COLOR_TABLE_RED_SIZE, GL_COLOR_TABLE_GREEN_SIZE, GL_COLOR_TABLE_BLUE_SIZE, GL_COLOR_TABLE_ALPHA_SIZE, GL_COLOR_TABLE_LUMINANCE_SIZE, or GL_COLOR_TABLE_INTENSITY_SIZE. </param>
-            /// <param name="parameters"> A pointer to an array where the values of the parameter will be stored. </param>
+            /// <param name="params"> A pointer to an array where the values of the parameter will be stored. </param>
             /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/gl2.1/xhtml/glGetColorTableParameter.xml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_imaging.txt"/></remarks>
-            public static void GetColorTableParameterfv(ColorTableTarget target, ColorTableParameterPName pname, float* parameters) => GLPointers.glGetColorTableParameterfv_Lazy((uint)target, (uint)pname, parameters);
+            public static void GetColorTableParameterfv(ColorTableTarget target, ColorTableParameterPName pname, float* @params) => GLPointers.glGetColorTableParameterfv_Lazy((uint)target, (uint)pname, @params);
             
             /// <summary> <b>[requires: GL_ARB_imaging]</b> <b>[entry point: <c>glGetColorTableParameteriv</c>]</b><br/> Get color lookup table parameters. </summary>
             /// <param name="target"> The target color table. Must be GL_COLOR_TABLE, GL_POST_CONVOLUTION_COLOR_TABLE, GL_POST_COLOR_MATRIX_COLOR_TABLE, GL_PROXY_COLOR_TABLE, GL_PROXY_POST_CONVOLUTION_COLOR_TABLE, or GL_PROXY_POST_COLOR_MATRIX_COLOR_TABLE. </param>
             /// <param name="pname"> The symbolic name of a color lookup table parameter. Must be one of GL_COLOR_TABLE_BIAS, GL_COLOR_TABLE_SCALE, GL_COLOR_TABLE_FORMAT, GL_COLOR_TABLE_WIDTH, GL_COLOR_TABLE_RED_SIZE, GL_COLOR_TABLE_GREEN_SIZE, GL_COLOR_TABLE_BLUE_SIZE, GL_COLOR_TABLE_ALPHA_SIZE, GL_COLOR_TABLE_LUMINANCE_SIZE, or GL_COLOR_TABLE_INTENSITY_SIZE. </param>
-            /// <param name="parameters"> A pointer to an array where the values of the parameter will be stored. </param>
+            /// <param name="params"> A pointer to an array where the values of the parameter will be stored. </param>
             /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/gl2.1/xhtml/glGetColorTableParameter.xml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_imaging.txt"/></remarks>
-            public static void GetColorTableParameteriv(ColorTableTarget target, ColorTableParameterPName pname, int* parameters) => GLPointers.glGetColorTableParameteriv_Lazy((uint)target, (uint)pname, parameters);
+            public static void GetColorTableParameteriv(ColorTableTarget target, ColorTableParameterPName pname, int* @params) => GLPointers.glGetColorTableParameteriv_Lazy((uint)target, (uint)pname, @params);
             
             /// <summary> <b>[requires: GL_ARB_texture_compression]</b> <b>[entry point: <c>glGetCompressedTexImageARB</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_texture_compression.txt"/></remarks>
@@ -8554,16 +8554,16 @@ namespace OpenTK.Graphics.OpenGL.Compatibility
             /// <summary> <b>[requires: GL_ARB_imaging]</b> <b>[entry point: <c>glGetConvolutionParameterfv</c>]</b><br/> Get convolution parameters. </summary>
             /// <param name="target"> The filter whose parameters are to be retrieved. Must be one of GL_CONVOLUTION_1D, GL_CONVOLUTION_2D, or GL_SEPARABLE_2D. </param>
             /// <param name="pname"> The parameter to be retrieved. Must be one of GL_CONVOLUTION_BORDER_MODE, GL_CONVOLUTION_BORDER_COLOR, GL_CONVOLUTION_FILTER_SCALE, GL_CONVOLUTION_FILTER_BIAS, GL_CONVOLUTION_FORMAT, GL_CONVOLUTION_WIDTH, GL_CONVOLUTION_HEIGHT, GL_MAX_CONVOLUTION_WIDTH, or GL_MAX_CONVOLUTION_HEIGHT. </param>
-            /// <param name="parameters"> Pointer to storage for the parameters to be retrieved. </param>
+            /// <param name="params"> Pointer to storage for the parameters to be retrieved. </param>
             /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/gl2.1/xhtml/glGetConvolutionParameter.xml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_imaging.txt"/></remarks>
-            public static void GetConvolutionParameterfv(ConvolutionTarget target, ConvolutionParameter pname, float* parameters) => GLPointers.glGetConvolutionParameterfv_Lazy((uint)target, (uint)pname, parameters);
+            public static void GetConvolutionParameterfv(ConvolutionTarget target, ConvolutionParameter pname, float* @params) => GLPointers.glGetConvolutionParameterfv_Lazy((uint)target, (uint)pname, @params);
             
             /// <summary> <b>[requires: GL_ARB_imaging]</b> <b>[entry point: <c>glGetConvolutionParameteriv</c>]</b><br/> Get convolution parameters. </summary>
             /// <param name="target"> The filter whose parameters are to be retrieved. Must be one of GL_CONVOLUTION_1D, GL_CONVOLUTION_2D, or GL_SEPARABLE_2D. </param>
             /// <param name="pname"> The parameter to be retrieved. Must be one of GL_CONVOLUTION_BORDER_MODE, GL_CONVOLUTION_BORDER_COLOR, GL_CONVOLUTION_FILTER_SCALE, GL_CONVOLUTION_FILTER_BIAS, GL_CONVOLUTION_FORMAT, GL_CONVOLUTION_WIDTH, GL_CONVOLUTION_HEIGHT, GL_MAX_CONVOLUTION_WIDTH, or GL_MAX_CONVOLUTION_HEIGHT. </param>
-            /// <param name="parameters"> Pointer to storage for the parameters to be retrieved. </param>
+            /// <param name="params"> Pointer to storage for the parameters to be retrieved. </param>
             /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/gl2.1/xhtml/glGetConvolutionParameter.xml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_imaging.txt"/></remarks>
-            public static void GetConvolutionParameteriv(ConvolutionTarget target, ConvolutionParameter pname, int* parameters) => GLPointers.glGetConvolutionParameteriv_Lazy((uint)target, (uint)pname, parameters);
+            public static void GetConvolutionParameteriv(ConvolutionTarget target, ConvolutionParameter pname, int* @params) => GLPointers.glGetConvolutionParameteriv_Lazy((uint)target, (uint)pname, @params);
             
             /// <summary> <b>[requires: GL_ARB_debug_output]</b> <b>[entry point: <c>glGetDebugMessageLogARB</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_debug_output.txt"/></remarks>
@@ -8593,16 +8593,16 @@ namespace OpenTK.Graphics.OpenGL.Compatibility
             /// <param name="target"> Specifies the target to which the framebuffer object is bound for glGetFramebufferAttachmentParameteriv. </param>
             /// <param name="attachment"> Specifies the attachment of the framebuffer object to query. </param>
             /// <param name="pname"> Specifies the parameter of attachment to query. </param>
-            /// <param name="parameters"> Returns the value of parameter pname for attachment. </param>
+            /// <param name="params"> Returns the value of parameter pname for attachment. </param>
             /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/glGetFramebufferAttachmentParameter.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_framebuffer_object.txt"/></remarks>
-            public static void GetFramebufferAttachmentParameteriv(FramebufferTarget target, FramebufferAttachment attachment, FramebufferAttachmentParameterName pname, int* parameters) => GLPointers.glGetFramebufferAttachmentParameteriv_Lazy((uint)target, (uint)attachment, (uint)pname, parameters);
+            public static void GetFramebufferAttachmentParameteriv(FramebufferTarget target, FramebufferAttachment attachment, FramebufferAttachmentParameterName pname, int* @params) => GLPointers.glGetFramebufferAttachmentParameteriv_Lazy((uint)target, (uint)attachment, (uint)pname, @params);
             
             /// <summary> <b>[requires: v4.3 | GL_ARB_framebuffer_no_attachments]</b> <b>[entry point: <c>glGetFramebufferParameteriv</c>]</b><br/> Query a named parameter of a framebuffer object. </summary>
             /// <param name="target"> Specifies the target to which the framebuffer object is bound for glGetFramebufferParameteriv. </param>
             /// <param name="pname"> Specifies the parameter of the framebuffer object to query. </param>
-            /// <param name="parameters"> Returns the value of parameter pname for the framebuffer object. </param>
+            /// <param name="params"> Returns the value of parameter pname for the framebuffer object. </param>
             /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/glGetFramebufferParameter.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_framebuffer_no_attachments.txt"/></remarks>
-            public static void GetFramebufferParameteriv(FramebufferTarget target, FramebufferAttachmentParameterName pname, int* parameters) => GLPointers.glGetFramebufferParameteriv_Lazy((uint)target, (uint)pname, parameters);
+            public static void GetFramebufferParameteriv(FramebufferTarget target, FramebufferAttachmentParameterName pname, int* @params) => GLPointers.glGetFramebufferParameteriv_Lazy((uint)target, (uint)pname, @params);
             
             /// <summary> <b>[requires: GL_ARB_robustness]</b> <b>[entry point: <c>glGetGraphicsResetStatusARB</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_robustness.txt"/></remarks>
@@ -8624,16 +8624,16 @@ namespace OpenTK.Graphics.OpenGL.Compatibility
             /// <summary> <b>[requires: GL_ARB_imaging]</b> <b>[entry point: <c>glGetHistogramParameterfv</c>]</b><br/> Get histogram parameters. </summary>
             /// <param name="target"> Must be one of GL_HISTOGRAM or GL_PROXY_HISTOGRAM. </param>
             /// <param name="pname"> The name of the parameter to be retrieved. Must be one of GL_HISTOGRAM_WIDTH, GL_HISTOGRAM_FORMAT, GL_HISTOGRAM_RED_SIZE, GL_HISTOGRAM_GREEN_SIZE, GL_HISTOGRAM_BLUE_SIZE, GL_HISTOGRAM_ALPHA_SIZE, GL_HISTOGRAM_LUMINANCE_SIZE, or GL_HISTOGRAM_SINK. </param>
-            /// <param name="parameters"> Pointer to storage for the returned values. </param>
+            /// <param name="params"> Pointer to storage for the returned values. </param>
             /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/gl2.1/xhtml/glGetHistogramParameter.xml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_imaging.txt"/></remarks>
-            public static void GetHistogramParameterfv(HistogramTargetEXT target, GetHistogramParameterPNameEXT pname, float* parameters) => GLPointers.glGetHistogramParameterfv_Lazy((uint)target, (uint)pname, parameters);
+            public static void GetHistogramParameterfv(HistogramTargetEXT target, GetHistogramParameterPNameEXT pname, float* @params) => GLPointers.glGetHistogramParameterfv_Lazy((uint)target, (uint)pname, @params);
             
             /// <summary> <b>[requires: GL_ARB_imaging]</b> <b>[entry point: <c>glGetHistogramParameteriv</c>]</b><br/> Get histogram parameters. </summary>
             /// <param name="target"> Must be one of GL_HISTOGRAM or GL_PROXY_HISTOGRAM. </param>
             /// <param name="pname"> The name of the parameter to be retrieved. Must be one of GL_HISTOGRAM_WIDTH, GL_HISTOGRAM_FORMAT, GL_HISTOGRAM_RED_SIZE, GL_HISTOGRAM_GREEN_SIZE, GL_HISTOGRAM_BLUE_SIZE, GL_HISTOGRAM_ALPHA_SIZE, GL_HISTOGRAM_LUMINANCE_SIZE, or GL_HISTOGRAM_SINK. </param>
-            /// <param name="parameters"> Pointer to storage for the returned values. </param>
+            /// <param name="params"> Pointer to storage for the returned values. </param>
             /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/gl2.1/xhtml/glGetHistogramParameter.xml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_imaging.txt"/></remarks>
-            public static void GetHistogramParameteriv(HistogramTargetEXT target, GetHistogramParameterPNameEXT pname, int* parameters) => GLPointers.glGetHistogramParameteriv_Lazy((uint)target, (uint)pname, parameters);
+            public static void GetHistogramParameteriv(HistogramTargetEXT target, GetHistogramParameterPNameEXT pname, int* @params) => GLPointers.glGetHistogramParameteriv_Lazy((uint)target, (uint)pname, @params);
             
             /// <summary> <b>[requires: GL_ARB_bindless_texture]</b> <b>[entry point: <c>glGetImageHandleARB</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_bindless_texture.txt"/></remarks>
@@ -8661,18 +8661,18 @@ namespace OpenTK.Graphics.OpenGL.Compatibility
             /// <param name="internalformat"> Specifies the internal format about which to retrieve information. </param>
             /// <param name="pname"> Specifies the type of information to query. </param>
             /// <param name="count"> Specifies the maximum number of integers of the specified width that may be written to params by the function. </param>
-            /// <param name="parameters"> Specifies the address of a variable into which to write the retrieved information. </param>
+            /// <param name="params"> Specifies the address of a variable into which to write the retrieved information. </param>
             /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/glGetInternalformat.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_internalformat_query2.txt"/></remarks>
-            public static void GetInternalformati64v(TextureTarget target, InternalFormat internalformat, InternalFormatPName pname, int count, long* parameters) => GLPointers.glGetInternalformati64v_Lazy((uint)target, (uint)internalformat, (uint)pname, count, parameters);
+            public static void GetInternalformati64v(TextureTarget target, InternalFormat internalformat, InternalFormatPName pname, int count, long* @params) => GLPointers.glGetInternalformati64v_Lazy((uint)target, (uint)internalformat, (uint)pname, count, @params);
             
             /// <summary> <b>[requires: v4.2 | GL_ARB_internalformat_query]</b> <b>[entry point: <c>glGetInternalformativ</c>]</b><br/> Retrieve information about implementation-dependent support for internal formats. </summary>
             /// <param name="target"> Indicates the usage of the internal format. target must be GL_TEXTURE_1D, GL_TEXTURE_1D_ARRAY, GL_TEXTURE_2D, GL_TEXTURE_2D_ARRAY, GL_TEXTURE_3D, GL_TEXTURE_CUBE_MAP, GL_TEXTURE_CUBE_MAP_ARRAY, GL_TEXTURE_RECTANGLE, GL_TEXTURE_BUFFER, GL_RENDERBUFFER, GL_TEXTURE_2D_MULTISAMPLE or GL_TEXTURE_2D_MULTISAMPLE_ARRAY. </param>
             /// <param name="internalformat"> Specifies the internal format about which to retrieve information. </param>
             /// <param name="pname"> Specifies the type of information to query. </param>
             /// <param name="count"> Specifies the maximum number of integers of the specified width that may be written to params by the function. </param>
-            /// <param name="parameters"> Specifies the address of a variable into which to write the retrieved information. </param>
+            /// <param name="params"> Specifies the address of a variable into which to write the retrieved information. </param>
             /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/glGetInternalformat.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_internalformat_query.txt"/></remarks>
-            public static void GetInternalformativ(TextureTarget target, InternalFormat internalformat, InternalFormatPName pname, int count, int* parameters) => GLPointers.glGetInternalformativ_Lazy((uint)target, (uint)internalformat, (uint)pname, count, parameters);
+            public static void GetInternalformativ(TextureTarget target, InternalFormat internalformat, InternalFormatPName pname, int count, int* @params) => GLPointers.glGetInternalformativ_Lazy((uint)target, (uint)internalformat, (uint)pname, count, @params);
             
             /// <summary> <b>[requires: GL_ARB_imaging]</b> <b>[entry point: <c>glGetMinmax</c>]</b><br/> Get minimum and maximum pixel values. </summary>
             /// <param name="target"> Must be GL_MINMAX. </param>
@@ -8686,16 +8686,16 @@ namespace OpenTK.Graphics.OpenGL.Compatibility
             /// <summary> <b>[requires: GL_ARB_imaging]</b> <b>[entry point: <c>glGetMinmaxParameterfv</c>]</b><br/> Get minmax parameters. </summary>
             /// <param name="target"> Must be GL_MINMAX. </param>
             /// <param name="pname"> The parameter to be retrieved. Must be one of GL_MINMAX_FORMAT or GL_MINMAX_SINK. </param>
-            /// <param name="parameters"> A pointer to storage for the retrieved parameters. </param>
+            /// <param name="params"> A pointer to storage for the retrieved parameters. </param>
             /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/gl2.1/xhtml/glGetMinmaxParameter.xml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_imaging.txt"/></remarks>
-            public static void GetMinmaxParameterfv(MinmaxTargetEXT target, GetMinmaxParameterPNameEXT pname, float* parameters) => GLPointers.glGetMinmaxParameterfv_Lazy((uint)target, (uint)pname, parameters);
+            public static void GetMinmaxParameterfv(MinmaxTargetEXT target, GetMinmaxParameterPNameEXT pname, float* @params) => GLPointers.glGetMinmaxParameterfv_Lazy((uint)target, (uint)pname, @params);
             
             /// <summary> <b>[requires: GL_ARB_imaging]</b> <b>[entry point: <c>glGetMinmaxParameteriv</c>]</b><br/> Get minmax parameters. </summary>
             /// <param name="target"> Must be GL_MINMAX. </param>
             /// <param name="pname"> The parameter to be retrieved. Must be one of GL_MINMAX_FORMAT or GL_MINMAX_SINK. </param>
-            /// <param name="parameters"> A pointer to storage for the retrieved parameters. </param>
+            /// <param name="params"> A pointer to storage for the retrieved parameters. </param>
             /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/gl2.1/xhtml/glGetMinmaxParameter.xml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_imaging.txt"/></remarks>
-            public static void GetMinmaxParameteriv(MinmaxTargetEXT target, GetMinmaxParameterPNameEXT pname, int* parameters) => GLPointers.glGetMinmaxParameteriv_Lazy((uint)target, (uint)pname, parameters);
+            public static void GetMinmaxParameteriv(MinmaxTargetEXT target, GetMinmaxParameterPNameEXT pname, int* @params) => GLPointers.glGetMinmaxParameteriv_Lazy((uint)target, (uint)pname, @params);
             
             /// <summary> <b>[requires: v3.2 | GL_ARB_texture_multisample]</b> <b>[entry point: <c>glGetMultisamplefv</c>]</b><br/> Retrieve the location of a sample. </summary>
             /// <param name="pname"> Specifies the sample parameter name. pname must be GL_SAMPLE_POSITION. </param>
@@ -8707,23 +8707,23 @@ namespace OpenTK.Graphics.OpenGL.Compatibility
             /// <summary> <b>[requires: v4.5 | GL_ARB_direct_state_access]</b> <b>[entry point: <c>glGetNamedBufferParameteri64v</c>]</b><br/> Return parameters of a buffer object. </summary>
             /// <param name="buffer"> Specifies the name of the buffer object for glGetNamedBufferParameteriv and glGetNamedBufferParameteri64v. </param>
             /// <param name="pname">!!missing documentation!!</param>
-            /// <param name="parameters">!!missing documentation!!</param>
+            /// <param name="params">!!missing documentation!!</param>
             /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/glGetBufferParameter.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_direct_state_access.txt"/></remarks>
-            public static void GetNamedBufferParameteri64v(int buffer, BufferPName pname, long* parameters) => GLPointers.glGetNamedBufferParameteri64v_Lazy(buffer, (uint)pname, parameters);
+            public static void GetNamedBufferParameteri64v(int buffer, BufferPName pname, long* @params) => GLPointers.glGetNamedBufferParameteri64v_Lazy(buffer, (uint)pname, @params);
             
             /// <summary> <b>[requires: v4.5 | GL_ARB_direct_state_access]</b> <b>[entry point: <c>glGetNamedBufferParameteriv</c>]</b><br/> Return parameters of a buffer object. </summary>
             /// <param name="buffer"> Specifies the name of the buffer object for glGetNamedBufferParameteriv and glGetNamedBufferParameteri64v. </param>
             /// <param name="pname">!!missing documentation!!</param>
-            /// <param name="parameters">!!missing documentation!!</param>
+            /// <param name="params">!!missing documentation!!</param>
             /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/glGetBufferParameter.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_direct_state_access.txt"/></remarks>
-            public static void GetNamedBufferParameteriv(int buffer, BufferPName pname, int* parameters) => GLPointers.glGetNamedBufferParameteriv_Lazy(buffer, (uint)pname, parameters);
+            public static void GetNamedBufferParameteriv(int buffer, BufferPName pname, int* @params) => GLPointers.glGetNamedBufferParameteriv_Lazy(buffer, (uint)pname, @params);
             
             /// <summary> <b>[requires: v4.5 | GL_ARB_direct_state_access]</b> <b>[entry point: <c>glGetNamedBufferPointerv</c>]</b><br/> Return the pointer to a mapped buffer object&apos;s data store. </summary>
             /// <param name="buffer"> Specifies the name of the buffer object for glGetNamedBufferPointerv. </param>
             /// <param name="pname"> Specifies the name of the pointer to be returned. Must be GL_BUFFER_MAP_POINTER. </param>
-            /// <param name="parameters"> Returns the pointer value specified by pname. </param>
+            /// <param name="params"> Returns the pointer value specified by pname. </param>
             /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/glGetBufferPointerv.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_direct_state_access.txt"/></remarks>
-            public static void GetNamedBufferPointerv(int buffer, BufferPointerNameARB pname, void** parameters) => GLPointers.glGetNamedBufferPointerv_Lazy(buffer, (uint)pname, parameters);
+            public static void GetNamedBufferPointerv(int buffer, BufferPointerNameARB pname, void** @params) => GLPointers.glGetNamedBufferPointerv_Lazy(buffer, (uint)pname, @params);
             
             /// <summary> <b>[requires: v4.5 | GL_ARB_direct_state_access]</b> <b>[entry point: <c>glGetNamedBufferSubData</c>]</b><br/> Returns a subset of a buffer object&apos;s data store. </summary>
             /// <param name="buffer"> Specifies the name of the buffer object for glGetNamedBufferSubData. </param>
@@ -8737,9 +8737,9 @@ namespace OpenTK.Graphics.OpenGL.Compatibility
             /// <param name="framebuffer"> Specifies the name of the framebuffer object for glGetNamedFramebufferAttachmentParameteriv. </param>
             /// <param name="attachment"> Specifies the attachment of the framebuffer object to query. </param>
             /// <param name="pname"> Specifies the parameter of attachment to query. </param>
-            /// <param name="parameters"> Returns the value of parameter pname for attachment. </param>
+            /// <param name="params"> Returns the value of parameter pname for attachment. </param>
             /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/glGetFramebufferAttachmentParameter.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_direct_state_access.txt"/></remarks>
-            public static void GetNamedFramebufferAttachmentParameteriv(int framebuffer, FramebufferAttachment attachment, FramebufferAttachmentParameterName pname, int* parameters) => GLPointers.glGetNamedFramebufferAttachmentParameteriv_Lazy(framebuffer, (uint)attachment, (uint)pname, parameters);
+            public static void GetNamedFramebufferAttachmentParameteriv(int framebuffer, FramebufferAttachment attachment, FramebufferAttachmentParameterName pname, int* @params) => GLPointers.glGetNamedFramebufferAttachmentParameteriv_Lazy(framebuffer, (uint)attachment, (uint)pname, @params);
             
             /// <summary> <b>[requires: v4.5 | GL_ARB_direct_state_access]</b> <b>[entry point: <c>glGetNamedFramebufferParameteriv</c>]</b><br/> Query a named parameter of a framebuffer object. </summary>
             /// <param name="framebuffer"> Specifies the name of the framebuffer object for glGetNamedFramebufferParameteriv. </param>
@@ -8751,17 +8751,17 @@ namespace OpenTK.Graphics.OpenGL.Compatibility
             /// <summary> <b>[requires: v4.5 | GL_ARB_direct_state_access]</b> <b>[entry point: <c>glGetNamedRenderbufferParameteriv</c>]</b><br/> Query a named parameter of a renderbuffer object. </summary>
             /// <param name="renderbuffer"> Specifies the name of the renderbuffer object for glGetNamedRenderbufferParameteriv. </param>
             /// <param name="pname"> Specifies the parameter of the renderbuffer object to query. </param>
-            /// <param name="parameters"> Returns the value of parameter pname for the renderbuffer object. </param>
+            /// <param name="params"> Returns the value of parameter pname for the renderbuffer object. </param>
             /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/glGetRenderbufferParameter.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_direct_state_access.txt"/></remarks>
-            public static void GetNamedRenderbufferParameteriv(int renderbuffer, RenderbufferParameterName pname, int* parameters) => GLPointers.glGetNamedRenderbufferParameteriv_Lazy(renderbuffer, (uint)pname, parameters);
+            public static void GetNamedRenderbufferParameteriv(int renderbuffer, RenderbufferParameterName pname, int* @params) => GLPointers.glGetNamedRenderbufferParameteriv_Lazy(renderbuffer, (uint)pname, @params);
             
             /// <summary> <b>[requires: GL_ARB_shading_language_include]</b> <b>[entry point: <c>glGetNamedStringARB</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_shading_language_include.txt"/></remarks>
-            public static void GetNamedStringARB(int namelen, byte* name, int bufSize, int* stringlen, byte* str) => GLPointers.glGetNamedStringARB_Lazy(namelen, name, bufSize, stringlen, str);
+            public static void GetNamedStringARB(int namelen, byte* name, int bufSize, int* stringlen, byte* @string) => GLPointers.glGetNamedStringARB_Lazy(namelen, name, bufSize, stringlen, @string);
             
             /// <summary> <b>[requires: GL_ARB_shading_language_include]</b> <b>[entry point: <c>glGetNamedStringivARB</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_shading_language_include.txt"/></remarks>
-            public static void GetNamedStringivARB(int namelen, byte* name, All pname, int* parameters) => GLPointers.glGetNamedStringivARB_Lazy(namelen, name, (uint)pname, parameters);
+            public static void GetNamedStringivARB(int namelen, byte* name, All pname, int* @params) => GLPointers.glGetNamedStringivARB_Lazy(namelen, name, (uint)pname, @params);
             
             /// <summary> <b>[requires: GL_ARB_robustness]</b> <b>[entry point: <c>glGetnColorTableARB</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_robustness.txt"/></remarks>
@@ -8821,35 +8821,35 @@ namespace OpenTK.Graphics.OpenGL.Compatibility
             
             /// <summary> <b>[requires: GL_ARB_robustness]</b> <b>[entry point: <c>glGetnUniformdvARB</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_robustness.txt"/></remarks>
-            public static void GetnUniformdvARB(int program, int location, int bufSize, double* parameters) => GLPointers.glGetnUniformdvARB_Lazy(program, location, bufSize, parameters);
+            public static void GetnUniformdvARB(int program, int location, int bufSize, double* @params) => GLPointers.glGetnUniformdvARB_Lazy(program, location, bufSize, @params);
             
             /// <summary> <b>[requires: GL_ARB_robustness]</b> <b>[entry point: <c>glGetnUniformfvARB</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_robustness.txt"/></remarks>
-            public static void GetnUniformfvARB(int program, int location, int bufSize, float* parameters) => GLPointers.glGetnUniformfvARB_Lazy(program, location, bufSize, parameters);
+            public static void GetnUniformfvARB(int program, int location, int bufSize, float* @params) => GLPointers.glGetnUniformfvARB_Lazy(program, location, bufSize, @params);
             
             /// <summary> <b>[requires: GL_ARB_gpu_shader_int64]</b> <b>[entry point: <c>glGetnUniformi64vARB</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_gpu_shader_int64.txt"/></remarks>
-            public static void GetnUniformi64vARB(int program, int location, int bufSize, long* parameters) => GLPointers.glGetnUniformi64vARB_Lazy(program, location, bufSize, parameters);
+            public static void GetnUniformi64vARB(int program, int location, int bufSize, long* @params) => GLPointers.glGetnUniformi64vARB_Lazy(program, location, bufSize, @params);
             
             /// <summary> <b>[requires: GL_ARB_robustness]</b> <b>[entry point: <c>glGetnUniformivARB</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_robustness.txt"/></remarks>
-            public static void GetnUniformivARB(int program, int location, int bufSize, int* parameters) => GLPointers.glGetnUniformivARB_Lazy(program, location, bufSize, parameters);
+            public static void GetnUniformivARB(int program, int location, int bufSize, int* @params) => GLPointers.glGetnUniformivARB_Lazy(program, location, bufSize, @params);
             
             /// <summary> <b>[requires: GL_ARB_gpu_shader_int64]</b> <b>[entry point: <c>glGetnUniformui64vARB</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_gpu_shader_int64.txt"/></remarks>
-            public static void GetnUniformui64vARB(int program, int location, int bufSize, ulong* parameters) => GLPointers.glGetnUniformui64vARB_Lazy(program, location, bufSize, parameters);
+            public static void GetnUniformui64vARB(int program, int location, int bufSize, ulong* @params) => GLPointers.glGetnUniformui64vARB_Lazy(program, location, bufSize, @params);
             
             /// <summary> <b>[requires: GL_ARB_robustness]</b> <b>[entry point: <c>glGetnUniformuivARB</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_robustness.txt"/></remarks>
-            public static void GetnUniformuivARB(int program, int location, int bufSize, uint* parameters) => GLPointers.glGetnUniformuivARB_Lazy(program, location, bufSize, parameters);
+            public static void GetnUniformuivARB(int program, int location, int bufSize, uint* @params) => GLPointers.glGetnUniformuivARB_Lazy(program, location, bufSize, @params);
             
             /// <summary> <b>[requires: GL_ARB_shader_objects]</b> <b>[entry point: <c>glGetObjectParameterfvARB</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_shader_objects.txt"/></remarks>
-            public static void GetObjectParameterfvARB(GLHandleARB obj, All pname, float* parameters) => GLPointers.glGetObjectParameterfvARB_Lazy((IntPtr)obj, (uint)pname, parameters);
+            public static void GetObjectParameterfvARB(GLHandleARB obj, All pname, float* @params) => GLPointers.glGetObjectParameterfvARB_Lazy((IntPtr)obj, (uint)pname, @params);
             
             /// <summary> <b>[requires: GL_ARB_shader_objects]</b> <b>[entry point: <c>glGetObjectParameterivARB</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_shader_objects.txt"/></remarks>
-            public static void GetObjectParameterivARB(GLHandleARB obj, All pname, int* parameters) => GLPointers.glGetObjectParameterivARB_Lazy((IntPtr)obj, (uint)pname, parameters);
+            public static void GetObjectParameterivARB(GLHandleARB obj, All pname, int* @params) => GLPointers.glGetObjectParameterivARB_Lazy((IntPtr)obj, (uint)pname, @params);
             
             /// <summary> <b>[requires: v4.1 | GL_ARB_get_program_binary]</b> <b>[entry point: <c>glGetProgramBinary</c>]</b><br/> Return a binary representation of a program object&apos;s compiled and linked executable source. </summary>
             /// <param name="program"> Specifies the name of a program object whose binary representation to retrieve. </param>
@@ -8862,31 +8862,31 @@ namespace OpenTK.Graphics.OpenGL.Compatibility
             
             /// <summary> <b>[requires: GL_ARB_fragment_program | GL_ARB_vertex_program]</b> <b>[entry point: <c>glGetProgramEnvParameterdvARB</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_fragment_program.txt"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_vertex_program.txt"/></remarks>
-            public static void GetProgramEnvParameterdvARB(ProgramTarget target, uint index, double* parameters) => GLPointers.glGetProgramEnvParameterdvARB_Lazy((uint)target, index, parameters);
+            public static void GetProgramEnvParameterdvARB(ProgramTarget target, uint index, double* @params) => GLPointers.glGetProgramEnvParameterdvARB_Lazy((uint)target, index, @params);
             
             /// <summary> <b>[requires: GL_ARB_fragment_program | GL_ARB_vertex_program]</b> <b>[entry point: <c>glGetProgramEnvParameterfvARB</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_fragment_program.txt"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_vertex_program.txt"/></remarks>
-            public static void GetProgramEnvParameterfvARB(ProgramTarget target, uint index, float* parameters) => GLPointers.glGetProgramEnvParameterfvARB_Lazy((uint)target, index, parameters);
+            public static void GetProgramEnvParameterfvARB(ProgramTarget target, uint index, float* @params) => GLPointers.glGetProgramEnvParameterfvARB_Lazy((uint)target, index, @params);
             
             /// <summary> <b>[requires: v4.3 | GL_ARB_program_interface_query]</b> <b>[entry point: <c>glGetProgramInterfaceiv</c>]</b><br/> Query a property of an interface in a program. </summary>
             /// <param name="program"> The name of a program object whose interface to query. </param>
             /// <param name="programInterface"> A token identifying the interface within program to query. </param>
             /// <param name="pname"> The name of the parameter within programInterface to query. </param>
-            /// <param name="parameters"> The address of a variable to retrieve the value of pname for the program interface. </param>
+            /// <param name="params"> The address of a variable to retrieve the value of pname for the program interface. </param>
             /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/glGetProgramInterface.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_program_interface_query.txt"/></remarks>
-            public static void GetProgramInterfaceiv(int program, ProgramInterface programInterface, ProgramInterfacePName pname, int* parameters) => GLPointers.glGetProgramInterfaceiv_Lazy(program, (uint)programInterface, (uint)pname, parameters);
+            public static void GetProgramInterfaceiv(int program, ProgramInterface programInterface, ProgramInterfacePName pname, int* @params) => GLPointers.glGetProgramInterfaceiv_Lazy(program, (uint)programInterface, (uint)pname, @params);
             
             /// <summary> <b>[requires: GL_ARB_fragment_program | GL_ARB_vertex_program]</b> <b>[entry point: <c>glGetProgramivARB</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_fragment_program.txt"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_vertex_program.txt"/></remarks>
-            public static void GetProgramivARB(ProgramTarget target, ProgramProperty pname, int* parameters) => GLPointers.glGetProgramivARB_Lazy((uint)target, (uint)pname, parameters);
+            public static void GetProgramivARB(ProgramTarget target, ProgramProperty pname, int* @params) => GLPointers.glGetProgramivARB_Lazy((uint)target, (uint)pname, @params);
             
             /// <summary> <b>[requires: GL_ARB_fragment_program | GL_ARB_vertex_program]</b> <b>[entry point: <c>glGetProgramLocalParameterdvARB</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_fragment_program.txt"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_vertex_program.txt"/></remarks>
-            public static void GetProgramLocalParameterdvARB(ProgramTarget target, uint index, double* parameters) => GLPointers.glGetProgramLocalParameterdvARB_Lazy((uint)target, index, parameters);
+            public static void GetProgramLocalParameterdvARB(ProgramTarget target, uint index, double* @params) => GLPointers.glGetProgramLocalParameterdvARB_Lazy((uint)target, index, @params);
             
             /// <summary> <b>[requires: GL_ARB_fragment_program | GL_ARB_vertex_program]</b> <b>[entry point: <c>glGetProgramLocalParameterfvARB</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_fragment_program.txt"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_vertex_program.txt"/></remarks>
-            public static void GetProgramLocalParameterfvARB(ProgramTarget target, uint index, float* parameters) => GLPointers.glGetProgramLocalParameterfvARB_Lazy((uint)target, index, parameters);
+            public static void GetProgramLocalParameterfvARB(ProgramTarget target, uint index, float* @params) => GLPointers.glGetProgramLocalParameterfvARB_Lazy((uint)target, index, @params);
             
             /// <summary> <b>[requires: v4.1 | GL_ARB_separate_shader_objects]</b> <b>[entry point: <c>glGetProgramPipelineInfoLog</c>]</b><br/> Retrieve the info log string from a program pipeline object. </summary>
             /// <param name="pipeline"> Specifies the name of a program pipeline object from which to retrieve the info log. </param>
@@ -8899,9 +8899,9 @@ namespace OpenTK.Graphics.OpenGL.Compatibility
             /// <summary> <b>[requires: v4.1 | GL_ARB_separate_shader_objects]</b> <b>[entry point: <c>glGetProgramPipelineiv</c>]</b><br/> Retrieve properties of a program pipeline object. </summary>
             /// <param name="pipeline"> Specifies the name of a program pipeline object whose parameter retrieve. </param>
             /// <param name="pname"> Specifies the name of the parameter to retrieve. </param>
-            /// <param name="parameters"> Specifies the address of a variable into which will be written the value or values of pname for pipeline. </param>
+            /// <param name="params"> Specifies the address of a variable into which will be written the value or values of pname for pipeline. </param>
             /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/glGetProgramPipeline.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_separate_shader_objects.txt"/></remarks>
-            public static void GetProgramPipelineiv(int pipeline, PipelineParameterName pname, int* parameters) => GLPointers.glGetProgramPipelineiv_Lazy(pipeline, (uint)pname, parameters);
+            public static void GetProgramPipelineiv(int pipeline, PipelineParameterName pname, int* @params) => GLPointers.glGetProgramPipelineiv_Lazy(pipeline, (uint)pname, @params);
             
             /// <summary> <b>[requires: v4.3 | GL_ARB_program_interface_query]</b> <b>[entry point: <c>glGetProgramResourceIndex</c>]</b><br/> Query the index of a named resource within a program. </summary>
             /// <param name="program"> The name of a program object whose resources to query. </param>
@@ -8918,9 +8918,9 @@ namespace OpenTK.Graphics.OpenGL.Compatibility
             /// <param name="props">!!missing documentation!!</param>
             /// <param name="count">!!missing documentation!!</param>
             /// <param name="length">!!missing documentation!!</param>
-            /// <param name="parameters">!!missing documentation!!</param>
+            /// <param name="params">!!missing documentation!!</param>
             /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/glGetProgramResource.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_program_interface_query.txt"/></remarks>
-            public static void GetProgramResourceiv(int program, ProgramInterface programInterface, uint index, int propCount, ProgramResourceProperty* props, int count, int* length, int* parameters) => GLPointers.glGetProgramResourceiv_Lazy(program, (uint)programInterface, index, propCount, (uint*)props, count, length, parameters);
+            public static void GetProgramResourceiv(int program, ProgramInterface programInterface, uint index, int propCount, ProgramResourceProperty* props, int count, int* length, int* @params) => GLPointers.glGetProgramResourceiv_Lazy(program, (uint)programInterface, index, propCount, (uint*)props, count, length, @params);
             
             /// <summary> <b>[requires: v4.3 | GL_ARB_program_interface_query]</b> <b>[entry point: <c>glGetProgramResourceLocation</c>]</b><br/> Query the location of a named resource within a program. </summary>
             /// <param name="program"> The name of a program object whose resources to query. </param>
@@ -8956,7 +8956,7 @@ namespace OpenTK.Graphics.OpenGL.Compatibility
             
             /// <summary> <b>[requires: GL_ARB_fragment_program | GL_ARB_vertex_program]</b> <b>[entry point: <c>glGetProgramStringARB</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_fragment_program.txt"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_vertex_program.txt"/></remarks>
-            public static void GetProgramStringARB(ProgramTarget target, ProgramStringProperty pname, void* str) => GLPointers.glGetProgramStringARB_Lazy((uint)target, (uint)pname, str);
+            public static void GetProgramStringARB(ProgramTarget target, ProgramStringProperty pname, void* @string) => GLPointers.glGetProgramStringARB_Lazy((uint)target, (uint)pname, @string);
             
             /// <summary> <b>[requires: v4.5 | GL_ARB_direct_state_access]</b> <b>[entry point: <c>glGetQueryBufferObjecti64v</c>]</b><br/> Return parameters of a query object. </summary>
             /// <param name="id"> Specifies the name of a query object. </param>
@@ -8994,70 +8994,70 @@ namespace OpenTK.Graphics.OpenGL.Compatibility
             /// <param name="target"> Specifies a query object target. Must be GL_SAMPLES_PASSED, GL_ANY_SAMPLES_PASSED, GL_ANY_SAMPLES_PASSED_CONSERVATIVE GL_PRIMITIVES_GENERATED, GL_TRANSFORM_FEEDBACK_PRIMITIVES_WRITTEN, GL_TIME_ELAPSED, or GL_TIMESTAMP. </param>
             /// <param name="index"> Specifies the index of the query object target. </param>
             /// <param name="pname"> Specifies the symbolic name of a query object target parameter. Accepted values are GL_CURRENT_QUERY or GL_QUERY_COUNTER_BITS. </param>
-            /// <param name="parameters"> Returns the requested data. </param>
+            /// <param name="params"> Returns the requested data. </param>
             /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/glGetQueryIndexed.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_transform_feedback3.txt"/></remarks>
-            public static void GetQueryIndexediv(QueryTarget target, uint index, QueryParameterName pname, int* parameters) => GLPointers.glGetQueryIndexediv_Lazy((uint)target, index, (uint)pname, parameters);
+            public static void GetQueryIndexediv(QueryTarget target, uint index, QueryParameterName pname, int* @params) => GLPointers.glGetQueryIndexediv_Lazy((uint)target, index, (uint)pname, @params);
             
             /// <summary> <b>[requires: GL_ARB_occlusion_query]</b> <b>[entry point: <c>glGetQueryivARB</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_occlusion_query.txt"/></remarks>
-            public static void GetQueryivARB(QueryTarget target, QueryParameterName pname, int* parameters) => GLPointers.glGetQueryivARB_Lazy((uint)target, (uint)pname, parameters);
+            public static void GetQueryivARB(QueryTarget target, QueryParameterName pname, int* @params) => GLPointers.glGetQueryivARB_Lazy((uint)target, (uint)pname, @params);
             
             /// <summary> <b>[requires: v3.3 | GL_ARB_timer_query]</b> <b>[entry point: <c>glGetQueryObjecti64v</c>]</b><br/> Return parameters of a query object. </summary>
             /// <param name="id"> Specifies the name of a query object. </param>
             /// <param name="pname"> Specifies the symbolic name of a query object parameter. Accepted values are GL_QUERY_RESULT or GL_QUERY_RESULT_AVAILABLE. </param>
-            /// <param name="parameters"> If a buffer is bound to the GL_QUERY_RESULT_BUFFER target, then params is treated as an offset to a location within that buffer&apos;s data store to receive the result of the query. If no buffer is bound to GL_QUERY_RESULT_BUFFER, then params is treated as an address in client memory of a variable to receive the resulting data. </param>
+            /// <param name="params"> If a buffer is bound to the GL_QUERY_RESULT_BUFFER target, then params is treated as an offset to a location within that buffer&apos;s data store to receive the result of the query. If no buffer is bound to GL_QUERY_RESULT_BUFFER, then params is treated as an address in client memory of a variable to receive the resulting data. </param>
             /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/glGetQueryObject.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_timer_query.txt"/></remarks>
-            public static void GetQueryObjecti64v(int id, QueryObjectParameterName pname, long* parameters) => GLPointers.glGetQueryObjecti64v_Lazy(id, (uint)pname, parameters);
+            public static void GetQueryObjecti64v(int id, QueryObjectParameterName pname, long* @params) => GLPointers.glGetQueryObjecti64v_Lazy(id, (uint)pname, @params);
             
             /// <summary> <b>[requires: GL_ARB_occlusion_query]</b> <b>[entry point: <c>glGetQueryObjectivARB</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_occlusion_query.txt"/></remarks>
-            public static void GetQueryObjectivARB(int id, QueryObjectParameterName pname, int* parameters) => GLPointers.glGetQueryObjectivARB_Lazy(id, (uint)pname, parameters);
+            public static void GetQueryObjectivARB(int id, QueryObjectParameterName pname, int* @params) => GLPointers.glGetQueryObjectivARB_Lazy(id, (uint)pname, @params);
             
             /// <summary> <b>[requires: v3.3 | GL_ARB_timer_query]</b> <b>[entry point: <c>glGetQueryObjectui64v</c>]</b><br/> Return parameters of a query object. </summary>
             /// <param name="id"> Specifies the name of a query object. </param>
             /// <param name="pname"> Specifies the symbolic name of a query object parameter. Accepted values are GL_QUERY_RESULT or GL_QUERY_RESULT_AVAILABLE. </param>
-            /// <param name="parameters"> If a buffer is bound to the GL_QUERY_RESULT_BUFFER target, then params is treated as an offset to a location within that buffer&apos;s data store to receive the result of the query. If no buffer is bound to GL_QUERY_RESULT_BUFFER, then params is treated as an address in client memory of a variable to receive the resulting data. </param>
+            /// <param name="params"> If a buffer is bound to the GL_QUERY_RESULT_BUFFER target, then params is treated as an offset to a location within that buffer&apos;s data store to receive the result of the query. If no buffer is bound to GL_QUERY_RESULT_BUFFER, then params is treated as an address in client memory of a variable to receive the resulting data. </param>
             /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/glGetQueryObject.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_timer_query.txt"/></remarks>
-            public static void GetQueryObjectui64v(int id, QueryObjectParameterName pname, ulong* parameters) => GLPointers.glGetQueryObjectui64v_Lazy(id, (uint)pname, parameters);
+            public static void GetQueryObjectui64v(int id, QueryObjectParameterName pname, ulong* @params) => GLPointers.glGetQueryObjectui64v_Lazy(id, (uint)pname, @params);
             
             /// <summary> <b>[requires: GL_ARB_occlusion_query]</b> <b>[entry point: <c>glGetQueryObjectuivARB</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_occlusion_query.txt"/></remarks>
-            public static void GetQueryObjectuivARB(int id, QueryObjectParameterName pname, uint* parameters) => GLPointers.glGetQueryObjectuivARB_Lazy(id, (uint)pname, parameters);
+            public static void GetQueryObjectuivARB(int id, QueryObjectParameterName pname, uint* @params) => GLPointers.glGetQueryObjectuivARB_Lazy(id, (uint)pname, @params);
             
             /// <summary> <b>[requires: v3.0 | GL_ARB_framebuffer_object]</b> <b>[entry point: <c>glGetRenderbufferParameteriv</c>]</b><br/> Query a named parameter of a renderbuffer object. </summary>
             /// <param name="target"> Specifies the target to which the renderbuffer object is bound for glGetRenderbufferParameteriv. target must be GL_RENDERBUFFER. </param>
             /// <param name="pname"> Specifies the parameter of the renderbuffer object to query. </param>
-            /// <param name="parameters"> Returns the value of parameter pname for the renderbuffer object. </param>
+            /// <param name="params"> Returns the value of parameter pname for the renderbuffer object. </param>
             /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/glGetRenderbufferParameter.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_framebuffer_object.txt"/></remarks>
-            public static void GetRenderbufferParameteriv(RenderbufferTarget target, RenderbufferParameterName pname, int* parameters) => GLPointers.glGetRenderbufferParameteriv_Lazy((uint)target, (uint)pname, parameters);
+            public static void GetRenderbufferParameteriv(RenderbufferTarget target, RenderbufferParameterName pname, int* @params) => GLPointers.glGetRenderbufferParameteriv_Lazy((uint)target, (uint)pname, @params);
             
             /// <summary> <b>[requires: v3.3 | GL_ARB_sampler_objects]</b> <b>[entry point: <c>glGetSamplerParameterfv</c>]</b><br/> Return sampler parameter values. </summary>
             /// <param name="sampler"> Specifies name of the sampler object from which to retrieve parameters. </param>
             /// <param name="pname"> Specifies the symbolic name of a sampler parameter. GL_TEXTURE_MAG_FILTER, GL_TEXTURE_MIN_FILTER, GL_TEXTURE_MIN_LOD, GL_TEXTURE_MAX_LOD, GL_TEXTURE_LOD_BIAS, GL_TEXTURE_WRAP_S, GL_TEXTURE_WRAP_T, GL_TEXTURE_WRAP_R, GL_TEXTURE_BORDER_COLOR, GL_TEXTURE_COMPARE_MODE, and GL_TEXTURE_COMPARE_FUNC are accepted. </param>
-            /// <param name="parameters"> Returns the sampler parameters. </param>
+            /// <param name="params"> Returns the sampler parameters. </param>
             /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/glGetSamplerParameter.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_sampler_objects.txt"/></remarks>
-            public static void GetSamplerParameterfv(int sampler, SamplerParameterF pname, float* parameters) => GLPointers.glGetSamplerParameterfv_Lazy(sampler, (uint)pname, parameters);
+            public static void GetSamplerParameterfv(int sampler, SamplerParameterF pname, float* @params) => GLPointers.glGetSamplerParameterfv_Lazy(sampler, (uint)pname, @params);
             
             /// <summary> <b>[requires: v3.3 | GL_ARB_sampler_objects]</b> <b>[entry point: <c>glGetSamplerParameterIiv</c>]</b><br/> Return sampler parameter values. </summary>
             /// <param name="sampler"> Specifies name of the sampler object from which to retrieve parameters. </param>
             /// <param name="pname"> Specifies the symbolic name of a sampler parameter. GL_TEXTURE_MAG_FILTER, GL_TEXTURE_MIN_FILTER, GL_TEXTURE_MIN_LOD, GL_TEXTURE_MAX_LOD, GL_TEXTURE_LOD_BIAS, GL_TEXTURE_WRAP_S, GL_TEXTURE_WRAP_T, GL_TEXTURE_WRAP_R, GL_TEXTURE_BORDER_COLOR, GL_TEXTURE_COMPARE_MODE, and GL_TEXTURE_COMPARE_FUNC are accepted. </param>
-            /// <param name="parameters"> Returns the sampler parameters. </param>
+            /// <param name="params"> Returns the sampler parameters. </param>
             /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/glGetSamplerParameter.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_sampler_objects.txt"/></remarks>
-            public static void GetSamplerParameterIiv(int sampler, SamplerParameterI pname, int* parameters) => GLPointers.glGetSamplerParameterIiv_Lazy(sampler, (uint)pname, parameters);
+            public static void GetSamplerParameterIiv(int sampler, SamplerParameterI pname, int* @params) => GLPointers.glGetSamplerParameterIiv_Lazy(sampler, (uint)pname, @params);
             
             /// <summary> <b>[requires: v3.3 | GL_ARB_sampler_objects]</b> <b>[entry point: <c>glGetSamplerParameterIuiv</c>]</b><br/> Return sampler parameter values. </summary>
             /// <param name="sampler"> Specifies name of the sampler object from which to retrieve parameters. </param>
             /// <param name="pname"> Specifies the symbolic name of a sampler parameter. GL_TEXTURE_MAG_FILTER, GL_TEXTURE_MIN_FILTER, GL_TEXTURE_MIN_LOD, GL_TEXTURE_MAX_LOD, GL_TEXTURE_LOD_BIAS, GL_TEXTURE_WRAP_S, GL_TEXTURE_WRAP_T, GL_TEXTURE_WRAP_R, GL_TEXTURE_BORDER_COLOR, GL_TEXTURE_COMPARE_MODE, and GL_TEXTURE_COMPARE_FUNC are accepted. </param>
-            /// <param name="parameters"> Returns the sampler parameters. </param>
+            /// <param name="params"> Returns the sampler parameters. </param>
             /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/glGetSamplerParameter.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_sampler_objects.txt"/></remarks>
-            public static void GetSamplerParameterIuiv(int sampler, SamplerParameterI pname, uint* parameters) => GLPointers.glGetSamplerParameterIuiv_Lazy(sampler, (uint)pname, parameters);
+            public static void GetSamplerParameterIuiv(int sampler, SamplerParameterI pname, uint* @params) => GLPointers.glGetSamplerParameterIuiv_Lazy(sampler, (uint)pname, @params);
             
             /// <summary> <b>[requires: v3.3 | GL_ARB_sampler_objects]</b> <b>[entry point: <c>glGetSamplerParameteriv</c>]</b><br/> Return sampler parameter values. </summary>
             /// <param name="sampler"> Specifies name of the sampler object from which to retrieve parameters. </param>
             /// <param name="pname"> Specifies the symbolic name of a sampler parameter. GL_TEXTURE_MAG_FILTER, GL_TEXTURE_MIN_FILTER, GL_TEXTURE_MIN_LOD, GL_TEXTURE_MAX_LOD, GL_TEXTURE_LOD_BIAS, GL_TEXTURE_WRAP_S, GL_TEXTURE_WRAP_T, GL_TEXTURE_WRAP_R, GL_TEXTURE_BORDER_COLOR, GL_TEXTURE_COMPARE_MODE, and GL_TEXTURE_COMPARE_FUNC are accepted. </param>
-            /// <param name="parameters"> Returns the sampler parameters. </param>
+            /// <param name="params"> Returns the sampler parameters. </param>
             /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/glGetSamplerParameter.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_sampler_objects.txt"/></remarks>
-            public static void GetSamplerParameteriv(int sampler, SamplerParameterI pname, int* parameters) => GLPointers.glGetSamplerParameteriv_Lazy(sampler, (uint)pname, parameters);
+            public static void GetSamplerParameteriv(int sampler, SamplerParameterI pname, int* @params) => GLPointers.glGetSamplerParameteriv_Lazy(sampler, (uint)pname, @params);
             
             /// <summary> <b>[requires: GL_ARB_imaging]</b> <b>[entry point: <c>glGetSeparableFilter</c>]</b><br/> Get separable convolution filter kernel images. </summary>
             /// <param name="target"> The separable filter to be retrieved. Must be GL_SEPARABLE_2D. </param>
@@ -9122,45 +9122,45 @@ namespace OpenTK.Graphics.OpenGL.Compatibility
             /// <param name="texture">Specifies the texture object name for glGetTextureLevelParameterfv and glGetTextureLevelParameteriv functions.</param>
             /// <param name="level"> Specifies the level-of-detail number of the desired image. Level 0 is the base image level. Level n is the nth mipmap reduction image. </param>
             /// <param name="pname">Specifies the symbolic name of a texture parameter. GL_TEXTURE_WIDTH, GL_TEXTURE_HEIGHT, GL_TEXTURE_DEPTH, GL_TEXTURE_INTERNAL_FORMAT, GL_TEXTURE_RED_SIZE, GL_TEXTURE_GREEN_SIZE, GL_TEXTURE_BLUE_SIZE, GL_TEXTURE_ALPHA_SIZE, GL_TEXTURE_DEPTH_SIZE, GL_TEXTURE_COMPRESSED, GL_TEXTURE_COMPRESSED_IMAGE_SIZE, and GL_TEXTURE_BUFFER_OFFSET are accepted.</param>
-            /// <param name="parameters">Returns the requested data.</param>
+            /// <param name="params">Returns the requested data.</param>
             /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/glGetTexLevelParameter.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_direct_state_access.txt"/></remarks>
-            public static void GetTextureLevelParameterfv(int texture, int level, GetTextureParameter pname, float* parameters) => GLPointers.glGetTextureLevelParameterfv_Lazy(texture, level, (uint)pname, parameters);
+            public static void GetTextureLevelParameterfv(int texture, int level, GetTextureParameter pname, float* @params) => GLPointers.glGetTextureLevelParameterfv_Lazy(texture, level, (uint)pname, @params);
             
             /// <summary> <b>[requires: v4.5 | GL_ARB_direct_state_access]</b> <b>[entry point: <c>glGetTextureLevelParameteriv</c>]</b><br/> Return texture parameter values for a specific level of    detail. </summary>
             /// <param name="texture">Specifies the texture object name for glGetTextureLevelParameterfv and glGetTextureLevelParameteriv functions.</param>
             /// <param name="level"> Specifies the level-of-detail number of the desired image. Level 0 is the base image level. Level n is the nth mipmap reduction image. </param>
             /// <param name="pname">Specifies the symbolic name of a texture parameter. GL_TEXTURE_WIDTH, GL_TEXTURE_HEIGHT, GL_TEXTURE_DEPTH, GL_TEXTURE_INTERNAL_FORMAT, GL_TEXTURE_RED_SIZE, GL_TEXTURE_GREEN_SIZE, GL_TEXTURE_BLUE_SIZE, GL_TEXTURE_ALPHA_SIZE, GL_TEXTURE_DEPTH_SIZE, GL_TEXTURE_COMPRESSED, GL_TEXTURE_COMPRESSED_IMAGE_SIZE, and GL_TEXTURE_BUFFER_OFFSET are accepted.</param>
-            /// <param name="parameters">Returns the requested data.</param>
+            /// <param name="params">Returns the requested data.</param>
             /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/glGetTexLevelParameter.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_direct_state_access.txt"/></remarks>
-            public static void GetTextureLevelParameteriv(int texture, int level, GetTextureParameter pname, int* parameters) => GLPointers.glGetTextureLevelParameteriv_Lazy(texture, level, (uint)pname, parameters);
+            public static void GetTextureLevelParameteriv(int texture, int level, GetTextureParameter pname, int* @params) => GLPointers.glGetTextureLevelParameteriv_Lazy(texture, level, (uint)pname, @params);
             
             /// <summary> <b>[requires: v4.5 | GL_ARB_direct_state_access]</b> <b>[entry point: <c>glGetTextureParameterfv</c>]</b><br/> Return texture parameter values. </summary>
             /// <param name="texture">Specifies the texture object name for glGetTextureParameterfv, glGetTextureParameteriv, glGetTextureParameterIiv, and glGetTextureParameterIuiv functions.</param>
             /// <param name="pname">Specifies the symbolic name of a texture parameter. GL_DEPTH_STENCIL_TEXTURE_MODE, GL_IMAGE_FORMAT_COMPATIBILITY_TYPE, GL_TEXTURE_BASE_LEVEL, GL_TEXTURE_BORDER_COLOR, GL_TEXTURE_COMPARE_MODE, GL_TEXTURE_COMPARE_FUNC, GL_TEXTURE_IMMUTABLE_FORMAT, GL_TEXTURE_IMMUTABLE_LEVELS, GL_TEXTURE_LOD_BIAS, GL_TEXTURE_MAG_FILTER, GL_TEXTURE_MAX_LEVEL, GL_TEXTURE_MAX_LOD, GL_TEXTURE_MIN_FILTER, GL_TEXTURE_MIN_LOD, GL_TEXTURE_SWIZZLE_R, GL_TEXTURE_SWIZZLE_G, GL_TEXTURE_SWIZZLE_B, GL_TEXTURE_SWIZZLE_A, GL_TEXTURE_SWIZZLE_RGBA, GL_TEXTURE_TARGET, GL_TEXTURE_VIEW_MIN_LAYER, GL_TEXTURE_VIEW_MIN_LEVEL, GL_TEXTURE_VIEW_NUM_LAYERS, GL_TEXTURE_VIEW_NUM_LEVELS, GL_TEXTURE_WRAP_S, GL_TEXTURE_WRAP_T, and GL_TEXTURE_WRAP_R are accepted.</param>
-            /// <param name="parameters">Returns the texture parameters.</param>
+            /// <param name="params">Returns the texture parameters.</param>
             /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/glGetTexParameter.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_direct_state_access.txt"/></remarks>
-            public static void GetTextureParameterfv(int texture, GetTextureParameter pname, float* parameters) => GLPointers.glGetTextureParameterfv_Lazy(texture, (uint)pname, parameters);
+            public static void GetTextureParameterfv(int texture, GetTextureParameter pname, float* @params) => GLPointers.glGetTextureParameterfv_Lazy(texture, (uint)pname, @params);
             
             /// <summary> <b>[requires: v4.5 | GL_ARB_direct_state_access]</b> <b>[entry point: <c>glGetTextureParameterIiv</c>]</b><br/> Return texture parameter values. </summary>
             /// <param name="texture">Specifies the texture object name for glGetTextureParameterfv, glGetTextureParameteriv, glGetTextureParameterIiv, and glGetTextureParameterIuiv functions.</param>
             /// <param name="pname">Specifies the symbolic name of a texture parameter. GL_DEPTH_STENCIL_TEXTURE_MODE, GL_IMAGE_FORMAT_COMPATIBILITY_TYPE, GL_TEXTURE_BASE_LEVEL, GL_TEXTURE_BORDER_COLOR, GL_TEXTURE_COMPARE_MODE, GL_TEXTURE_COMPARE_FUNC, GL_TEXTURE_IMMUTABLE_FORMAT, GL_TEXTURE_IMMUTABLE_LEVELS, GL_TEXTURE_LOD_BIAS, GL_TEXTURE_MAG_FILTER, GL_TEXTURE_MAX_LEVEL, GL_TEXTURE_MAX_LOD, GL_TEXTURE_MIN_FILTER, GL_TEXTURE_MIN_LOD, GL_TEXTURE_SWIZZLE_R, GL_TEXTURE_SWIZZLE_G, GL_TEXTURE_SWIZZLE_B, GL_TEXTURE_SWIZZLE_A, GL_TEXTURE_SWIZZLE_RGBA, GL_TEXTURE_TARGET, GL_TEXTURE_VIEW_MIN_LAYER, GL_TEXTURE_VIEW_MIN_LEVEL, GL_TEXTURE_VIEW_NUM_LAYERS, GL_TEXTURE_VIEW_NUM_LEVELS, GL_TEXTURE_WRAP_S, GL_TEXTURE_WRAP_T, and GL_TEXTURE_WRAP_R are accepted.</param>
-            /// <param name="parameters">Returns the texture parameters.</param>
+            /// <param name="params">Returns the texture parameters.</param>
             /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/glGetTexParameter.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_direct_state_access.txt"/></remarks>
-            public static void GetTextureParameterIiv(int texture, GetTextureParameter pname, int* parameters) => GLPointers.glGetTextureParameterIiv_Lazy(texture, (uint)pname, parameters);
+            public static void GetTextureParameterIiv(int texture, GetTextureParameter pname, int* @params) => GLPointers.glGetTextureParameterIiv_Lazy(texture, (uint)pname, @params);
             
             /// <summary> <b>[requires: v4.5 | GL_ARB_direct_state_access]</b> <b>[entry point: <c>glGetTextureParameterIuiv</c>]</b><br/> Return texture parameter values. </summary>
             /// <param name="texture">Specifies the texture object name for glGetTextureParameterfv, glGetTextureParameteriv, glGetTextureParameterIiv, and glGetTextureParameterIuiv functions.</param>
             /// <param name="pname">Specifies the symbolic name of a texture parameter. GL_DEPTH_STENCIL_TEXTURE_MODE, GL_IMAGE_FORMAT_COMPATIBILITY_TYPE, GL_TEXTURE_BASE_LEVEL, GL_TEXTURE_BORDER_COLOR, GL_TEXTURE_COMPARE_MODE, GL_TEXTURE_COMPARE_FUNC, GL_TEXTURE_IMMUTABLE_FORMAT, GL_TEXTURE_IMMUTABLE_LEVELS, GL_TEXTURE_LOD_BIAS, GL_TEXTURE_MAG_FILTER, GL_TEXTURE_MAX_LEVEL, GL_TEXTURE_MAX_LOD, GL_TEXTURE_MIN_FILTER, GL_TEXTURE_MIN_LOD, GL_TEXTURE_SWIZZLE_R, GL_TEXTURE_SWIZZLE_G, GL_TEXTURE_SWIZZLE_B, GL_TEXTURE_SWIZZLE_A, GL_TEXTURE_SWIZZLE_RGBA, GL_TEXTURE_TARGET, GL_TEXTURE_VIEW_MIN_LAYER, GL_TEXTURE_VIEW_MIN_LEVEL, GL_TEXTURE_VIEW_NUM_LAYERS, GL_TEXTURE_VIEW_NUM_LEVELS, GL_TEXTURE_WRAP_S, GL_TEXTURE_WRAP_T, and GL_TEXTURE_WRAP_R are accepted.</param>
-            /// <param name="parameters">Returns the texture parameters.</param>
+            /// <param name="params">Returns the texture parameters.</param>
             /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/glGetTexParameter.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_direct_state_access.txt"/></remarks>
-            public static void GetTextureParameterIuiv(int texture, GetTextureParameter pname, uint* parameters) => GLPointers.glGetTextureParameterIuiv_Lazy(texture, (uint)pname, parameters);
+            public static void GetTextureParameterIuiv(int texture, GetTextureParameter pname, uint* @params) => GLPointers.glGetTextureParameterIuiv_Lazy(texture, (uint)pname, @params);
             
             /// <summary> <b>[requires: v4.5 | GL_ARB_direct_state_access]</b> <b>[entry point: <c>glGetTextureParameteriv</c>]</b><br/> Return texture parameter values. </summary>
             /// <param name="texture">Specifies the texture object name for glGetTextureParameterfv, glGetTextureParameteriv, glGetTextureParameterIiv, and glGetTextureParameterIuiv functions.</param>
             /// <param name="pname">Specifies the symbolic name of a texture parameter. GL_DEPTH_STENCIL_TEXTURE_MODE, GL_IMAGE_FORMAT_COMPATIBILITY_TYPE, GL_TEXTURE_BASE_LEVEL, GL_TEXTURE_BORDER_COLOR, GL_TEXTURE_COMPARE_MODE, GL_TEXTURE_COMPARE_FUNC, GL_TEXTURE_IMMUTABLE_FORMAT, GL_TEXTURE_IMMUTABLE_LEVELS, GL_TEXTURE_LOD_BIAS, GL_TEXTURE_MAG_FILTER, GL_TEXTURE_MAX_LEVEL, GL_TEXTURE_MAX_LOD, GL_TEXTURE_MIN_FILTER, GL_TEXTURE_MIN_LOD, GL_TEXTURE_SWIZZLE_R, GL_TEXTURE_SWIZZLE_G, GL_TEXTURE_SWIZZLE_B, GL_TEXTURE_SWIZZLE_A, GL_TEXTURE_SWIZZLE_RGBA, GL_TEXTURE_TARGET, GL_TEXTURE_VIEW_MIN_LAYER, GL_TEXTURE_VIEW_MIN_LEVEL, GL_TEXTURE_VIEW_NUM_LAYERS, GL_TEXTURE_VIEW_NUM_LEVELS, GL_TEXTURE_WRAP_S, GL_TEXTURE_WRAP_T, and GL_TEXTURE_WRAP_R are accepted.</param>
-            /// <param name="parameters">Returns the texture parameters.</param>
+            /// <param name="params">Returns the texture parameters.</param>
             /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/glGetTexParameter.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_direct_state_access.txt"/></remarks>
-            public static void GetTextureParameteriv(int texture, GetTextureParameter pname, int* parameters) => GLPointers.glGetTextureParameteriv_Lazy(texture, (uint)pname, parameters);
+            public static void GetTextureParameteriv(int texture, GetTextureParameter pname, int* @params) => GLPointers.glGetTextureParameteriv_Lazy(texture, (uint)pname, @params);
             
             /// <summary> <b>[requires: GL_ARB_bindless_texture]</b> <b>[entry point: <c>glGetTextureSamplerHandleARB</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_bindless_texture.txt"/></remarks>
@@ -9214,17 +9214,17 @@ namespace OpenTK.Graphics.OpenGL.Compatibility
             /// <summary> <b>[requires: v4.0 | GL_ARB_gpu_shader_fp64]</b> <b>[entry point: <c>glGetUniformdv</c>]</b><br/> Returns the value of a uniform variable. </summary>
             /// <param name="program">Specifies the program object to be queried.</param>
             /// <param name="location">Specifies the location of the uniform variable to be queried.</param>
-            /// <param name="parameters">Returns the value of the specified uniform variable.</param>
+            /// <param name="params">Returns the value of the specified uniform variable.</param>
             /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/glGetUniform.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_gpu_shader_fp64.txt"/></remarks>
-            public static void GetUniformdv(int program, int location, double* parameters) => GLPointers.glGetUniformdv_Lazy(program, location, parameters);
+            public static void GetUniformdv(int program, int location, double* @params) => GLPointers.glGetUniformdv_Lazy(program, location, @params);
             
             /// <summary> <b>[requires: GL_ARB_shader_objects]</b> <b>[entry point: <c>glGetUniformfvARB</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_shader_objects.txt"/></remarks>
-            public static void GetUniformfvARB(GLHandleARB programObj, int location, float* parameters) => GLPointers.glGetUniformfvARB_Lazy((IntPtr)programObj, location, parameters);
+            public static void GetUniformfvARB(GLHandleARB programObj, int location, float* @params) => GLPointers.glGetUniformfvARB_Lazy((IntPtr)programObj, location, @params);
             
             /// <summary> <b>[requires: GL_ARB_gpu_shader_int64]</b> <b>[entry point: <c>glGetUniformi64vARB</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_gpu_shader_int64.txt"/></remarks>
-            public static void GetUniformi64vARB(int program, int location, long* parameters) => GLPointers.glGetUniformi64vARB_Lazy(program, location, parameters);
+            public static void GetUniformi64vARB(int program, int location, long* @params) => GLPointers.glGetUniformi64vARB_Lazy(program, location, @params);
             
             /// <summary> <b>[requires: v3.1 | GL_ARB_uniform_buffer_object]</b> <b>[entry point: <c>glGetUniformIndices</c>]</b><br/> Retrieve the index of a named uniform block. </summary>
             /// <param name="program"> Specifies the name of a program containing uniforms whose indices to query. </param>
@@ -9236,7 +9236,7 @@ namespace OpenTK.Graphics.OpenGL.Compatibility
             
             /// <summary> <b>[requires: GL_ARB_shader_objects]</b> <b>[entry point: <c>glGetUniformivARB</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_shader_objects.txt"/></remarks>
-            public static void GetUniformivARB(GLHandleARB programObj, int location, int* parameters) => GLPointers.glGetUniformivARB_Lazy((IntPtr)programObj, location, parameters);
+            public static void GetUniformivARB(GLHandleARB programObj, int location, int* @params) => GLPointers.glGetUniformivARB_Lazy((IntPtr)programObj, location, @params);
             
             /// <summary> <b>[requires: GL_ARB_shader_objects]</b> <b>[entry point: <c>glGetUniformLocationARB</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_shader_objects.txt"/></remarks>
@@ -9245,13 +9245,13 @@ namespace OpenTK.Graphics.OpenGL.Compatibility
             /// <summary> <b>[requires: v4.0 | GL_ARB_shader_subroutine]</b> <b>[entry point: <c>glGetUniformSubroutineuiv</c>]</b><br/> Retrieve the value of a subroutine uniform of a given shader stage of the current program. </summary>
             /// <param name="shadertype"> Specifies the shader stage from which to query for subroutine uniform index. shadertype must be one of GL_VERTEX_SHADER, GL_TESS_CONTROL_SHADER, GL_TESS_EVALUATION_SHADER, GL_GEOMETRY_SHADER or GL_FRAGMENT_SHADER. </param>
             /// <param name="location"> Specifies the location of the subroutine uniform. </param>
-            /// <param name="parameters"> Specifies the address of a variable to receive the value or values of the subroutine uniform. </param>
+            /// <param name="params"> Specifies the address of a variable to receive the value or values of the subroutine uniform. </param>
             /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/glGetUniformSubroutine.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_shader_subroutine.txt"/></remarks>
-            public static void GetUniformSubroutineuiv(ShaderType shadertype, int location, uint* parameters) => GLPointers.glGetUniformSubroutineuiv_Lazy((uint)shadertype, location, parameters);
+            public static void GetUniformSubroutineuiv(ShaderType shadertype, int location, uint* @params) => GLPointers.glGetUniformSubroutineuiv_Lazy((uint)shadertype, location, @params);
             
             /// <summary> <b>[requires: GL_ARB_gpu_shader_int64]</b> <b>[entry point: <c>glGetUniformui64vARB</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_gpu_shader_int64.txt"/></remarks>
-            public static void GetUniformui64vARB(int program, int location, ulong* parameters) => GLPointers.glGetUniformui64vARB_Lazy(program, location, parameters);
+            public static void GetUniformui64vARB(int program, int location, ulong* @params) => GLPointers.glGetUniformui64vARB_Lazy(program, location, @params);
             
             /// <summary> <b>[requires: v4.5 | GL_ARB_direct_state_access]</b> <b>[entry point: <c>glGetVertexArrayIndexed64iv</c>]</b><br/> Retrieve parameters of an attribute of a vertex array    object. </summary>
             /// <param name="vaobj">Specifies the name of a vertex array object.</param>
@@ -9278,26 +9278,26 @@ namespace OpenTK.Graphics.OpenGL.Compatibility
             
             /// <summary> <b>[requires: GL_ARB_vertex_program | GL_ARB_vertex_shader]</b> <b>[entry point: <c>glGetVertexAttribdvARB</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_vertex_program.txt"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_vertex_shader.txt"/></remarks>
-            public static void GetVertexAttribdvARB(uint index, VertexAttribPropertyARB pname, double* parameters) => GLPointers.glGetVertexAttribdvARB_Lazy(index, (uint)pname, parameters);
+            public static void GetVertexAttribdvARB(uint index, VertexAttribPropertyARB pname, double* @params) => GLPointers.glGetVertexAttribdvARB_Lazy(index, (uint)pname, @params);
             
             /// <summary> <b>[requires: GL_ARB_vertex_program | GL_ARB_vertex_shader]</b> <b>[entry point: <c>glGetVertexAttribfvARB</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_vertex_program.txt"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_vertex_shader.txt"/></remarks>
-            public static void GetVertexAttribfvARB(uint index, VertexAttribPropertyARB pname, float* parameters) => GLPointers.glGetVertexAttribfvARB_Lazy(index, (uint)pname, parameters);
+            public static void GetVertexAttribfvARB(uint index, VertexAttribPropertyARB pname, float* @params) => GLPointers.glGetVertexAttribfvARB_Lazy(index, (uint)pname, @params);
             
             /// <summary> <b>[requires: GL_ARB_vertex_program | GL_ARB_vertex_shader]</b> <b>[entry point: <c>glGetVertexAttribivARB</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_vertex_program.txt"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_vertex_shader.txt"/></remarks>
-            public static void GetVertexAttribivARB(uint index, VertexAttribPropertyARB pname, int* parameters) => GLPointers.glGetVertexAttribivARB_Lazy(index, (uint)pname, parameters);
+            public static void GetVertexAttribivARB(uint index, VertexAttribPropertyARB pname, int* @params) => GLPointers.glGetVertexAttribivARB_Lazy(index, (uint)pname, @params);
             
             /// <summary> <b>[requires: v4.1 | GL_ARB_vertex_attrib_64bit]</b> <b>[entry point: <c>glGetVertexAttribLdv</c>]</b><br/> Return a generic vertex attribute parameter. </summary>
             /// <param name="index">Specifies the generic vertex attribute parameter to be queried.</param>
             /// <param name="pname">Specifies the symbolic name of the vertex attribute parameter to be queried. Accepted values are GL_VERTEX_ATTRIB_ARRAY_BUFFER_BINDING, GL_VERTEX_ATTRIB_ARRAY_ENABLED, GL_VERTEX_ATTRIB_ARRAY_SIZE, GL_VERTEX_ATTRIB_ARRAY_STRIDE, GL_VERTEX_ATTRIB_ARRAY_TYPE, GL_VERTEX_ATTRIB_ARRAY_NORMALIZED, GL_VERTEX_ATTRIB_ARRAY_INTEGER, GL_VERTEX_ATTRIB_ARRAY_LONG, GL_VERTEX_ATTRIB_ARRAY_DIVISOR, GL_VERTEX_ATTRIB_BINDING, GL_VERTEX_ATTRIB_RELATIVE_OFFSET or GL_CURRENT_VERTEX_ATTRIB.</param>
-            /// <param name="parameters">Returns the requested data.</param>
+            /// <param name="params">Returns the requested data.</param>
             /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/glGetVertexAttrib.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_vertex_attrib_64bit.txt"/></remarks>
-            public static void GetVertexAttribLdv(uint index, VertexAttribEnum pname, double* parameters) => GLPointers.glGetVertexAttribLdv_Lazy(index, (uint)pname, parameters);
+            public static void GetVertexAttribLdv(uint index, VertexAttribEnum pname, double* @params) => GLPointers.glGetVertexAttribLdv_Lazy(index, (uint)pname, @params);
             
             /// <summary> <b>[requires: GL_ARB_bindless_texture]</b> <b>[entry point: <c>glGetVertexAttribLui64vARB</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_bindless_texture.txt"/></remarks>
-            public static void GetVertexAttribLui64vARB(uint index, VertexAttribEnum pname, ulong* parameters) => GLPointers.glGetVertexAttribLui64vARB_Lazy(index, (uint)pname, parameters);
+            public static void GetVertexAttribLui64vARB(uint index, VertexAttribEnum pname, ulong* @params) => GLPointers.glGetVertexAttribLui64vARB_Lazy(index, (uint)pname, @params);
             
             /// <summary> <b>[requires: GL_ARB_vertex_program | GL_ARB_vertex_shader]</b> <b>[entry point: <c>glGetVertexAttribPointervARB</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_vertex_program.txt"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_vertex_shader.txt"/></remarks>
@@ -9840,7 +9840,7 @@ namespace OpenTK.Graphics.OpenGL.Compatibility
             
             /// <summary> <b>[requires: GL_ARB_shading_language_include]</b> <b>[entry point: <c>glNamedStringARB</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_shading_language_include.txt"/></remarks>
-            public static void NamedStringARB(All type, int namelen, byte* name, int stringlen, byte* str) => GLPointers.glNamedStringARB_Lazy((uint)type, namelen, name, stringlen, str);
+            public static void NamedStringARB(All type, int namelen, byte* name, int stringlen, byte* @string) => GLPointers.glNamedStringARB_Lazy((uint)type, namelen, name, stringlen, @string);
             
             /// <summary> <b>[requires: v3.3 | GL_ARB_vertex_type_2_10_10_10_rev]</b> <b>[entry point: <c>glNormalP3ui</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_vertex_type_2_10_10_10_rev.txt"/></remarks>
@@ -9872,7 +9872,7 @@ namespace OpenTK.Graphics.OpenGL.Compatibility
             
             /// <summary> <b>[requires: GL_ARB_point_parameters]</b> <b>[entry point: <c>glPointParameterfvARB</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_point_parameters.txt"/></remarks>
-            public static void PointParameterfvARB(PointParameterNameARB pname, float* parameters) => GLPointers.glPointParameterfvARB_Lazy((uint)pname, parameters);
+            public static void PointParameterfvARB(PointParameterNameARB pname, float* @params) => GLPointers.glPointParameterfvARB_Lazy((uint)pname, @params);
             
             /// <summary> <b>[requires: v4.6 | GL_ARB_polygon_offset_clamp]</b> <b>[entry point: <c>glPolygonOffsetClamp</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_polygon_offset_clamp.txt"/></remarks>
@@ -9896,7 +9896,7 @@ namespace OpenTK.Graphics.OpenGL.Compatibility
             
             /// <summary> <b>[requires: GL_ARB_fragment_program | GL_ARB_vertex_program]</b> <b>[entry point: <c>glProgramEnvParameter4dvARB</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_fragment_program.txt"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_vertex_program.txt"/></remarks>
-            public static void ProgramEnvParameter4dvARB(ProgramTarget target, uint index, double* parameters) => GLPointers.glProgramEnvParameter4dvARB_Lazy((uint)target, index, parameters);
+            public static void ProgramEnvParameter4dvARB(ProgramTarget target, uint index, double* @params) => GLPointers.glProgramEnvParameter4dvARB_Lazy((uint)target, index, @params);
             
             /// <summary> <b>[requires: GL_ARB_fragment_program | GL_ARB_vertex_program]</b> <b>[entry point: <c>glProgramEnvParameter4fARB</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_fragment_program.txt"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_vertex_program.txt"/></remarks>
@@ -9904,7 +9904,7 @@ namespace OpenTK.Graphics.OpenGL.Compatibility
             
             /// <summary> <b>[requires: GL_ARB_fragment_program | GL_ARB_vertex_program]</b> <b>[entry point: <c>glProgramEnvParameter4fvARB</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_fragment_program.txt"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_vertex_program.txt"/></remarks>
-            public static void ProgramEnvParameter4fvARB(ProgramTarget target, uint index, float* parameters) => GLPointers.glProgramEnvParameter4fvARB_Lazy((uint)target, index, parameters);
+            public static void ProgramEnvParameter4fvARB(ProgramTarget target, uint index, float* @params) => GLPointers.glProgramEnvParameter4fvARB_Lazy((uint)target, index, @params);
             
             /// <summary> <b>[requires: GL_ARB_fragment_program | GL_ARB_vertex_program]</b> <b>[entry point: <c>glProgramLocalParameter4dARB</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_fragment_program.txt"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_vertex_program.txt"/></remarks>
@@ -9912,7 +9912,7 @@ namespace OpenTK.Graphics.OpenGL.Compatibility
             
             /// <summary> <b>[requires: GL_ARB_fragment_program | GL_ARB_vertex_program]</b> <b>[entry point: <c>glProgramLocalParameter4dvARB</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_fragment_program.txt"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_vertex_program.txt"/></remarks>
-            public static void ProgramLocalParameter4dvARB(ProgramTarget target, uint index, double* parameters) => GLPointers.glProgramLocalParameter4dvARB_Lazy((uint)target, index, parameters);
+            public static void ProgramLocalParameter4dvARB(ProgramTarget target, uint index, double* @params) => GLPointers.glProgramLocalParameter4dvARB_Lazy((uint)target, index, @params);
             
             /// <summary> <b>[requires: GL_ARB_fragment_program | GL_ARB_vertex_program]</b> <b>[entry point: <c>glProgramLocalParameter4fARB</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_fragment_program.txt"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_vertex_program.txt"/></remarks>
@@ -9920,7 +9920,7 @@ namespace OpenTK.Graphics.OpenGL.Compatibility
             
             /// <summary> <b>[requires: GL_ARB_fragment_program | GL_ARB_vertex_program]</b> <b>[entry point: <c>glProgramLocalParameter4fvARB</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_fragment_program.txt"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_vertex_program.txt"/></remarks>
-            public static void ProgramLocalParameter4fvARB(ProgramTarget target, uint index, float* parameters) => GLPointers.glProgramLocalParameter4fvARB_Lazy((uint)target, index, parameters);
+            public static void ProgramLocalParameter4fvARB(ProgramTarget target, uint index, float* @params) => GLPointers.glProgramLocalParameter4fvARB_Lazy((uint)target, index, @params);
             
             /// <summary> <b>[requires: v4.1 | GL_ARB_get_program_binary | GL_ARB_separate_shader_objects]</b> <b>[entry point: <c>glProgramParameteri</c>]</b><br/> Specify a parameter for a program object. </summary>
             /// <param name="program"> Specifies the name of a program object whose parameter to modify. </param>
@@ -9935,7 +9935,7 @@ namespace OpenTK.Graphics.OpenGL.Compatibility
             
             /// <summary> <b>[requires: GL_ARB_fragment_program | GL_ARB_vertex_program]</b> <b>[entry point: <c>glProgramStringARB</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_fragment_program.txt"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_vertex_program.txt"/></remarks>
-            public static void ProgramStringARB(ProgramTarget target, ProgramFormat format, int len, void* str) => GLPointers.glProgramStringARB_Lazy((uint)target, (uint)format, len, str);
+            public static void ProgramStringARB(ProgramTarget target, ProgramFormat format, int len, void* @string) => GLPointers.glProgramStringARB_Lazy((uint)target, (uint)format, len, @string);
             
             /// <summary> <b>[requires: v4.1 | GL_ARB_separate_shader_objects]</b> <b>[entry point: <c>glProgramUniform1d</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_separate_shader_objects.txt"/></remarks>
@@ -10511,7 +10511,7 @@ namespace OpenTK.Graphics.OpenGL.Compatibility
             
             /// <summary> <b>[requires: GL_ARB_shader_objects]</b> <b>[entry point: <c>glShaderSourceARB</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_shader_objects.txt"/></remarks>
-            public static void ShaderSourceARB(GLHandleARB shaderObj, int count, byte** str, int* length) => GLPointers.glShaderSourceARB_Lazy((IntPtr)shaderObj, count, str, length);
+            public static void ShaderSourceARB(GLHandleARB shaderObj, int count, byte** @string, int* length) => GLPointers.glShaderSourceARB_Lazy((IntPtr)shaderObj, count, @string, length);
             
             /// <summary> <b>[requires: v4.3 | GL_ARB_shader_storage_buffer_object]</b> <b>[entry point: <c>glShaderStorageBlockBinding</c>]</b><br/> Change an active shader storage block binding. </summary>
             /// <param name="program"> The name of the program containing the block whose binding to change. </param>
@@ -10686,16 +10686,16 @@ namespace OpenTK.Graphics.OpenGL.Compatibility
             /// <summary> <b>[requires: v4.5 | GL_ARB_direct_state_access]</b> <b>[entry point: <c>glTextureParameterIiv</c>]</b><br/> Set texture parameters. </summary>
             /// <param name="texture">Specifies the texture object name for glTextureParameter functions.</param>
             /// <param name="pname">Specifies the symbolic name of a single-valued texture parameter. pname can be one of the following: GL_DEPTH_STENCIL_TEXTURE_MODE, GL_TEXTURE_BASE_LEVEL, GL_TEXTURE_COMPARE_FUNC, GL_TEXTURE_COMPARE_MODE, GL_TEXTURE_LOD_BIAS, GL_TEXTURE_MIN_FILTER, GL_TEXTURE_MAG_FILTER, GL_TEXTURE_MIN_LOD, GL_TEXTURE_MAX_LOD, GL_TEXTURE_MAX_LEVEL, GL_TEXTURE_SWIZZLE_R, GL_TEXTURE_SWIZZLE_G, GL_TEXTURE_SWIZZLE_B, GL_TEXTURE_SWIZZLE_A, GL_TEXTURE_WRAP_S, GL_TEXTURE_WRAP_T, or GL_TEXTURE_WRAP_R.</param>
-            /// <param name="parameters">For the vector commands, specifies a pointer to an array where the value or values of pname are stored.</param>
+            /// <param name="params">For the vector commands, specifies a pointer to an array where the value or values of pname are stored.</param>
             /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/glTexParameter.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_direct_state_access.txt"/></remarks>
-            public static void TextureParameterIiv(int texture, TextureParameterName pname, int* parameters) => GLPointers.glTextureParameterIiv_Lazy(texture, (uint)pname, parameters);
+            public static void TextureParameterIiv(int texture, TextureParameterName pname, int* @params) => GLPointers.glTextureParameterIiv_Lazy(texture, (uint)pname, @params);
             
             /// <summary> <b>[requires: v4.5 | GL_ARB_direct_state_access]</b> <b>[entry point: <c>glTextureParameterIuiv</c>]</b><br/> Set texture parameters. </summary>
             /// <param name="texture">Specifies the texture object name for glTextureParameter functions.</param>
             /// <param name="pname">Specifies the symbolic name of a single-valued texture parameter. pname can be one of the following: GL_DEPTH_STENCIL_TEXTURE_MODE, GL_TEXTURE_BASE_LEVEL, GL_TEXTURE_COMPARE_FUNC, GL_TEXTURE_COMPARE_MODE, GL_TEXTURE_LOD_BIAS, GL_TEXTURE_MIN_FILTER, GL_TEXTURE_MAG_FILTER, GL_TEXTURE_MIN_LOD, GL_TEXTURE_MAX_LOD, GL_TEXTURE_MAX_LEVEL, GL_TEXTURE_SWIZZLE_R, GL_TEXTURE_SWIZZLE_G, GL_TEXTURE_SWIZZLE_B, GL_TEXTURE_SWIZZLE_A, GL_TEXTURE_WRAP_S, GL_TEXTURE_WRAP_T, or GL_TEXTURE_WRAP_R.</param>
-            /// <param name="parameters">For the vector commands, specifies a pointer to an array where the value or values of pname are stored.</param>
+            /// <param name="params">For the vector commands, specifies a pointer to an array where the value or values of pname are stored.</param>
             /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/glTexParameter.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_direct_state_access.txt"/></remarks>
-            public static void TextureParameterIuiv(int texture, TextureParameterName pname, uint* parameters) => GLPointers.glTextureParameterIuiv_Lazy(texture, (uint)pname, parameters);
+            public static void TextureParameterIuiv(int texture, TextureParameterName pname, uint* @params) => GLPointers.glTextureParameterIuiv_Lazy(texture, (uint)pname, @params);
             
             /// <summary> <b>[requires: v4.5 | GL_ARB_direct_state_access]</b> <b>[entry point: <c>glTextureParameteriv</c>]</b><br/> Set texture parameters. </summary>
             /// <param name="texture">Specifies the texture object name for glTextureParameter functions.</param>
@@ -11688,19 +11688,19 @@ namespace OpenTK.Graphics.OpenGL.Compatibility
             
             /// <summary> <b>[requires: GL_ATI_vertex_array_object]</b> <b>[entry point: <c>glGetArrayObjectfvATI</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/ATI/ATI_vertex_array_object.txt"/></remarks>
-            public static void GetArrayObjectfvATI(EnableCap array, ArrayObjectPNameATI pname, float* parameters) => GLPointers.glGetArrayObjectfvATI_Lazy((uint)array, (uint)pname, parameters);
+            public static void GetArrayObjectfvATI(EnableCap array, ArrayObjectPNameATI pname, float* @params) => GLPointers.glGetArrayObjectfvATI_Lazy((uint)array, (uint)pname, @params);
             
             /// <summary> <b>[requires: GL_ATI_vertex_array_object]</b> <b>[entry point: <c>glGetArrayObjectivATI</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/ATI/ATI_vertex_array_object.txt"/></remarks>
-            public static void GetArrayObjectivATI(EnableCap array, ArrayObjectPNameATI pname, int* parameters) => GLPointers.glGetArrayObjectivATI_Lazy((uint)array, (uint)pname, parameters);
+            public static void GetArrayObjectivATI(EnableCap array, ArrayObjectPNameATI pname, int* @params) => GLPointers.glGetArrayObjectivATI_Lazy((uint)array, (uint)pname, @params);
             
             /// <summary> <b>[requires: GL_ATI_vertex_array_object]</b> <b>[entry point: <c>glGetObjectBufferfvATI</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/ATI/ATI_vertex_array_object.txt"/></remarks>
-            public static void GetObjectBufferfvATI(int buffer, ArrayObjectPNameATI pname, float* parameters) => GLPointers.glGetObjectBufferfvATI_Lazy(buffer, (uint)pname, parameters);
+            public static void GetObjectBufferfvATI(int buffer, ArrayObjectPNameATI pname, float* @params) => GLPointers.glGetObjectBufferfvATI_Lazy(buffer, (uint)pname, @params);
             
             /// <summary> <b>[requires: GL_ATI_vertex_array_object]</b> <b>[entry point: <c>glGetObjectBufferivATI</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/ATI/ATI_vertex_array_object.txt"/></remarks>
-            public static void GetObjectBufferivATI(int buffer, ArrayObjectPNameATI pname, int* parameters) => GLPointers.glGetObjectBufferivATI_Lazy(buffer, (uint)pname, parameters);
+            public static void GetObjectBufferivATI(int buffer, ArrayObjectPNameATI pname, int* @params) => GLPointers.glGetObjectBufferivATI_Lazy(buffer, (uint)pname, @params);
             
             /// <summary> <b>[requires: GL_ATI_envmap_bumpmap]</b> <b>[entry point: <c>glGetTexBumpParameterfvATI</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/ATI/ATI_envmap_bumpmap.txt"/></remarks>
@@ -11712,19 +11712,19 @@ namespace OpenTK.Graphics.OpenGL.Compatibility
             
             /// <summary> <b>[requires: GL_ATI_vertex_array_object]</b> <b>[entry point: <c>glGetVariantArrayObjectfvATI</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/ATI/ATI_vertex_array_object.txt"/></remarks>
-            public static void GetVariantArrayObjectfvATI(uint id, ArrayObjectPNameATI pname, float* parameters) => GLPointers.glGetVariantArrayObjectfvATI_Lazy(id, (uint)pname, parameters);
+            public static void GetVariantArrayObjectfvATI(uint id, ArrayObjectPNameATI pname, float* @params) => GLPointers.glGetVariantArrayObjectfvATI_Lazy(id, (uint)pname, @params);
             
             /// <summary> <b>[requires: GL_ATI_vertex_array_object]</b> <b>[entry point: <c>glGetVariantArrayObjectivATI</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/ATI/ATI_vertex_array_object.txt"/></remarks>
-            public static void GetVariantArrayObjectivATI(uint id, ArrayObjectPNameATI pname, int* parameters) => GLPointers.glGetVariantArrayObjectivATI_Lazy(id, (uint)pname, parameters);
+            public static void GetVariantArrayObjectivATI(uint id, ArrayObjectPNameATI pname, int* @params) => GLPointers.glGetVariantArrayObjectivATI_Lazy(id, (uint)pname, @params);
             
             /// <summary> <b>[requires: GL_ATI_vertex_attrib_array_object]</b> <b>[entry point: <c>glGetVertexAttribArrayObjectfvATI</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/ATI/ATI_vertex_attrib_array_object.txt"/></remarks>
-            public static void GetVertexAttribArrayObjectfvATI(uint index, ArrayObjectPNameATI pname, float* parameters) => GLPointers.glGetVertexAttribArrayObjectfvATI_Lazy(index, (uint)pname, parameters);
+            public static void GetVertexAttribArrayObjectfvATI(uint index, ArrayObjectPNameATI pname, float* @params) => GLPointers.glGetVertexAttribArrayObjectfvATI_Lazy(index, (uint)pname, @params);
             
             /// <summary> <b>[requires: GL_ATI_vertex_attrib_array_object]</b> <b>[entry point: <c>glGetVertexAttribArrayObjectivATI</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/ATI/ATI_vertex_attrib_array_object.txt"/></remarks>
-            public static void GetVertexAttribArrayObjectivATI(uint index, ArrayObjectPNameATI pname, int* parameters) => GLPointers.glGetVertexAttribArrayObjectivATI_Lazy(index, (uint)pname, parameters);
+            public static void GetVertexAttribArrayObjectivATI(uint index, ArrayObjectPNameATI pname, int* @params) => GLPointers.glGetVertexAttribArrayObjectivATI_Lazy(index, (uint)pname, @params);
             
             /// <summary> <b>[requires: GL_ATI_vertex_array_object]</b> <b>[entry point: <c>glIsObjectBufferATI</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/ATI/ATI_vertex_array_object.txt"/></remarks>
@@ -11800,7 +11800,7 @@ namespace OpenTK.Graphics.OpenGL.Compatibility
             
             /// <summary> <b>[requires: GL_ATI_separate_stencil]</b> <b>[entry point: <c>glStencilFuncSeparateATI</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/ATI/ATI_separate_stencil.txt"/></remarks>
-            public static void StencilFuncSeparateATI(StencilFunction frontfunc, StencilFunction backfunc, int reference, uint mask) => GLPointers.glStencilFuncSeparateATI_Lazy((uint)frontfunc, (uint)backfunc, reference, mask);
+            public static void StencilFuncSeparateATI(StencilFunction frontfunc, StencilFunction backfunc, int @ref, uint mask) => GLPointers.glStencilFuncSeparateATI_Lazy((uint)frontfunc, (uint)backfunc, @ref, mask);
             
             /// <summary> <b>[requires: GL_ATI_separate_stencil]</b> <b>[entry point: <c>glStencilOpSeparateATI</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/ATI/ATI_separate_stencil.txt"/></remarks>
@@ -12252,19 +12252,19 @@ namespace OpenTK.Graphics.OpenGL.Compatibility
             
             /// <summary> <b>[requires: GL_EXT_convolution]</b> <b>[entry point: <c>glConvolutionParameterfEXT</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_convolution.txt"/></remarks>
-            public static void ConvolutionParameterfEXT(ConvolutionTargetEXT target, ConvolutionParameter pname, float parameters) => GLPointers.glConvolutionParameterfEXT_Lazy((uint)target, (uint)pname, parameters);
+            public static void ConvolutionParameterfEXT(ConvolutionTargetEXT target, ConvolutionParameter pname, float @params) => GLPointers.glConvolutionParameterfEXT_Lazy((uint)target, (uint)pname, @params);
             
             /// <summary> <b>[requires: GL_EXT_convolution]</b> <b>[entry point: <c>glConvolutionParameterfvEXT</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_convolution.txt"/></remarks>
-            public static void ConvolutionParameterfvEXT(ConvolutionTargetEXT target, ConvolutionParameter pname, float* parameters) => GLPointers.glConvolutionParameterfvEXT_Lazy((uint)target, (uint)pname, parameters);
+            public static void ConvolutionParameterfvEXT(ConvolutionTargetEXT target, ConvolutionParameter pname, float* @params) => GLPointers.glConvolutionParameterfvEXT_Lazy((uint)target, (uint)pname, @params);
             
             /// <summary> <b>[requires: GL_EXT_convolution]</b> <b>[entry point: <c>glConvolutionParameteriEXT</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_convolution.txt"/></remarks>
-            public static void ConvolutionParameteriEXT(ConvolutionTargetEXT target, ConvolutionParameter pname, int parameters) => GLPointers.glConvolutionParameteriEXT_Lazy((uint)target, (uint)pname, parameters);
+            public static void ConvolutionParameteriEXT(ConvolutionTargetEXT target, ConvolutionParameter pname, int @params) => GLPointers.glConvolutionParameteriEXT_Lazy((uint)target, (uint)pname, @params);
             
             /// <summary> <b>[requires: GL_EXT_convolution]</b> <b>[entry point: <c>glConvolutionParameterivEXT</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_convolution.txt"/></remarks>
-            public static void ConvolutionParameterivEXT(ConvolutionTargetEXT target, ConvolutionParameter pname, int* parameters) => GLPointers.glConvolutionParameterivEXT_Lazy((uint)target, (uint)pname, parameters);
+            public static void ConvolutionParameterivEXT(ConvolutionTargetEXT target, ConvolutionParameter pname, int* @params) => GLPointers.glConvolutionParameterivEXT_Lazy((uint)target, (uint)pname, @params);
             
             /// <summary> <b>[requires: GL_EXT_color_subtable]</b> <b>[entry point: <c>glCopyColorSubTableEXT</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_color_subtable.txt"/></remarks>
@@ -12344,7 +12344,7 @@ namespace OpenTK.Graphics.OpenGL.Compatibility
             
             /// <summary> <b>[requires: GL_EXT_separate_shader_objects]</b> <b>[entry point: <c>glCreateShaderProgramEXT</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_separate_shader_objects.txt"/></remarks>
-            public static int CreateShaderProgramEXT(ShaderType type, byte* str) => GLPointers.glCreateShaderProgramEXT_Lazy((uint)type, str);
+            public static int CreateShaderProgramEXT(ShaderType type, byte* @string) => GLPointers.glCreateShaderProgramEXT_Lazy((uint)type, @string);
             
             /// <summary> <b>[requires: GL_EXT_separate_shader_objects]</b> <b>[entry point: <c>glCreateShaderProgramvEXT</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_separate_shader_objects.txt"/></remarks>
@@ -12352,11 +12352,11 @@ namespace OpenTK.Graphics.OpenGL.Compatibility
             
             /// <summary> <b>[requires: GL_EXT_cull_vertex]</b> <b>[entry point: <c>glCullParameterdvEXT</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_cull_vertex.txt"/></remarks>
-            public static void CullParameterdvEXT(CullParameterEXT pname, double* parameters) => GLPointers.glCullParameterdvEXT_Lazy((uint)pname, parameters);
+            public static void CullParameterdvEXT(CullParameterEXT pname, double* @params) => GLPointers.glCullParameterdvEXT_Lazy((uint)pname, @params);
             
             /// <summary> <b>[requires: GL_EXT_cull_vertex]</b> <b>[entry point: <c>glCullParameterfvEXT</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_cull_vertex.txt"/></remarks>
-            public static void CullParameterfvEXT(CullParameterEXT pname, float* parameters) => GLPointers.glCullParameterfvEXT_Lazy((uint)pname, parameters);
+            public static void CullParameterfvEXT(CullParameterEXT pname, float* @params) => GLPointers.glCullParameterfvEXT_Lazy((uint)pname, @params);
             
             /// <summary> <b>[requires: GL_EXT_framebuffer_object]</b> <b>[entry point: <c>glDeleteFramebuffersEXT</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_framebuffer_object.txt"/></remarks>
@@ -12588,11 +12588,11 @@ namespace OpenTK.Graphics.OpenGL.Compatibility
             
             /// <summary> <b>[requires: GL_EXT_paletted_texture]</b> <b>[entry point: <c>glGetColorTableParameterfvEXT</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_paletted_texture.txt"/></remarks>
-            public static void GetColorTableParameterfvEXT(ColorTableTarget target, ColorTableParameterPName pname, float* parameters) => GLPointers.glGetColorTableParameterfvEXT_Lazy((uint)target, (uint)pname, parameters);
+            public static void GetColorTableParameterfvEXT(ColorTableTarget target, ColorTableParameterPName pname, float* @params) => GLPointers.glGetColorTableParameterfvEXT_Lazy((uint)target, (uint)pname, @params);
             
             /// <summary> <b>[requires: GL_EXT_paletted_texture]</b> <b>[entry point: <c>glGetColorTableParameterivEXT</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_paletted_texture.txt"/></remarks>
-            public static void GetColorTableParameterivEXT(ColorTableTarget target, ColorTableParameterPName pname, int* parameters) => GLPointers.glGetColorTableParameterivEXT_Lazy((uint)target, (uint)pname, parameters);
+            public static void GetColorTableParameterivEXT(ColorTableTarget target, ColorTableParameterPName pname, int* @params) => GLPointers.glGetColorTableParameterivEXT_Lazy((uint)target, (uint)pname, @params);
             
             /// <summary> <b>[requires: GL_EXT_direct_state_access]</b> <b>[entry point: <c>glGetCompressedMultiTexImageEXT</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_direct_state_access.txt"/></remarks>
@@ -12608,15 +12608,15 @@ namespace OpenTK.Graphics.OpenGL.Compatibility
             
             /// <summary> <b>[requires: GL_EXT_convolution]</b> <b>[entry point: <c>glGetConvolutionParameterfvEXT</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_convolution.txt"/></remarks>
-            public static void GetConvolutionParameterfvEXT(ConvolutionTargetEXT target, ConvolutionParameter pname, float* parameters) => GLPointers.glGetConvolutionParameterfvEXT_Lazy((uint)target, (uint)pname, parameters);
+            public static void GetConvolutionParameterfvEXT(ConvolutionTargetEXT target, ConvolutionParameter pname, float* @params) => GLPointers.glGetConvolutionParameterfvEXT_Lazy((uint)target, (uint)pname, @params);
             
             /// <summary> <b>[requires: GL_EXT_convolution]</b> <b>[entry point: <c>glGetConvolutionParameterivEXT</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_convolution.txt"/></remarks>
-            public static void GetConvolutionParameterivEXT(ConvolutionTargetEXT target, ConvolutionParameter pname, int* parameters) => GLPointers.glGetConvolutionParameterivEXT_Lazy((uint)target, (uint)pname, parameters);
+            public static void GetConvolutionParameterivEXT(ConvolutionTargetEXT target, ConvolutionParameter pname, int* @params) => GLPointers.glGetConvolutionParameterivEXT_Lazy((uint)target, (uint)pname, @params);
             
             /// <summary> <b>[requires: GL_EXT_direct_state_access]</b> <b>[entry point: <c>glGetDoublei_vEXT</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_direct_state_access.txt"/></remarks>
-            public static void GetDoublei_vEXT(GetPName pname, uint index, double* parameters) => GLPointers.glGetDoublei_vEXT_Lazy((uint)pname, index, parameters);
+            public static void GetDoublei_vEXT(GetPName pname, uint index, double* @params) => GLPointers.glGetDoublei_vEXT_Lazy((uint)pname, index, @params);
             
             /// <summary> <b>[requires: GL_EXT_direct_state_access]</b> <b>[entry point: <c>glGetDoubleIndexedvEXT</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_direct_state_access.txt"/></remarks>
@@ -12624,7 +12624,7 @@ namespace OpenTK.Graphics.OpenGL.Compatibility
             
             /// <summary> <b>[requires: GL_EXT_direct_state_access]</b> <b>[entry point: <c>glGetFloati_vEXT</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_direct_state_access.txt"/></remarks>
-            public static void GetFloati_vEXT(GetPName pname, uint index, float* parameters) => GLPointers.glGetFloati_vEXT_Lazy((uint)pname, index, parameters);
+            public static void GetFloati_vEXT(GetPName pname, uint index, float* @params) => GLPointers.glGetFloati_vEXT_Lazy((uint)pname, index, @params);
             
             /// <summary> <b>[requires: GL_EXT_direct_state_access]</b> <b>[entry point: <c>glGetFloatIndexedvEXT</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_direct_state_access.txt"/></remarks>
@@ -12636,11 +12636,11 @@ namespace OpenTK.Graphics.OpenGL.Compatibility
             
             /// <summary> <b>[requires: GL_EXT_framebuffer_object]</b> <b>[entry point: <c>glGetFramebufferAttachmentParameterivEXT</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_framebuffer_object.txt"/></remarks>
-            public static void GetFramebufferAttachmentParameterivEXT(FramebufferTarget target, FramebufferAttachment attachment, FramebufferAttachmentParameterName pname, int* parameters) => GLPointers.glGetFramebufferAttachmentParameterivEXT_Lazy((uint)target, (uint)attachment, (uint)pname, parameters);
+            public static void GetFramebufferAttachmentParameterivEXT(FramebufferTarget target, FramebufferAttachment attachment, FramebufferAttachmentParameterName pname, int* @params) => GLPointers.glGetFramebufferAttachmentParameterivEXT_Lazy((uint)target, (uint)attachment, (uint)pname, @params);
             
             /// <summary> <b>[requires: GL_EXT_direct_state_access]</b> <b>[entry point: <c>glGetFramebufferParameterivEXT</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_direct_state_access.txt"/></remarks>
-            public static void GetFramebufferParameterivEXT(int framebuffer, GetFramebufferParameter pname, int* parameters) => GLPointers.glGetFramebufferParameterivEXT_Lazy(framebuffer, (uint)pname, parameters);
+            public static void GetFramebufferParameterivEXT(int framebuffer, GetFramebufferParameter pname, int* @params) => GLPointers.glGetFramebufferParameterivEXT_Lazy(framebuffer, (uint)pname, @params);
             
             /// <summary> <b>[requires: GL_EXT_histogram]</b> <b>[entry point: <c>glGetHistogramEXT</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_histogram.txt"/></remarks>
@@ -12648,11 +12648,11 @@ namespace OpenTK.Graphics.OpenGL.Compatibility
             
             /// <summary> <b>[requires: GL_EXT_histogram]</b> <b>[entry point: <c>glGetHistogramParameterfvEXT</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_histogram.txt"/></remarks>
-            public static void GetHistogramParameterfvEXT(HistogramTargetEXT target, GetHistogramParameterPNameEXT pname, float* parameters) => GLPointers.glGetHistogramParameterfvEXT_Lazy((uint)target, (uint)pname, parameters);
+            public static void GetHistogramParameterfvEXT(HistogramTargetEXT target, GetHistogramParameterPNameEXT pname, float* @params) => GLPointers.glGetHistogramParameterfvEXT_Lazy((uint)target, (uint)pname, @params);
             
             /// <summary> <b>[requires: GL_EXT_histogram]</b> <b>[entry point: <c>glGetHistogramParameterivEXT</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_histogram.txt"/></remarks>
-            public static void GetHistogramParameterivEXT(HistogramTargetEXT target, GetHistogramParameterPNameEXT pname, int* parameters) => GLPointers.glGetHistogramParameterivEXT_Lazy((uint)target, (uint)pname, parameters);
+            public static void GetHistogramParameterivEXT(HistogramTargetEXT target, GetHistogramParameterPNameEXT pname, int* @params) => GLPointers.glGetHistogramParameterivEXT_Lazy((uint)target, (uint)pname, @params);
             
             /// <summary> <b>[requires: GL_EXT_direct_state_access | GL_EXT_draw_buffers2]</b> <b>[entry point: <c>glGetIntegerIndexedvEXT</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_direct_state_access.txt"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_draw_buffers2.txt"/></remarks>
@@ -12684,7 +12684,7 @@ namespace OpenTK.Graphics.OpenGL.Compatibility
             
             /// <summary> <b>[requires: GL_EXT_memory_object]</b> <b>[entry point: <c>glGetMemoryObjectParameterivEXT</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_memory_object.txt"/></remarks>
-            public static void GetMemoryObjectParameterivEXT(uint memoryObject, MemoryObjectParameterName pname, int* parameters) => GLPointers.glGetMemoryObjectParameterivEXT_Lazy(memoryObject, (uint)pname, parameters);
+            public static void GetMemoryObjectParameterivEXT(uint memoryObject, MemoryObjectParameterName pname, int* @params) => GLPointers.glGetMemoryObjectParameterivEXT_Lazy(memoryObject, (uint)pname, @params);
             
             /// <summary> <b>[requires: GL_EXT_histogram]</b> <b>[entry point: <c>glGetMinmaxEXT</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_histogram.txt"/></remarks>
@@ -12692,31 +12692,31 @@ namespace OpenTK.Graphics.OpenGL.Compatibility
             
             /// <summary> <b>[requires: GL_EXT_histogram]</b> <b>[entry point: <c>glGetMinmaxParameterfvEXT</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_histogram.txt"/></remarks>
-            public static void GetMinmaxParameterfvEXT(MinmaxTargetEXT target, GetMinmaxParameterPNameEXT pname, float* parameters) => GLPointers.glGetMinmaxParameterfvEXT_Lazy((uint)target, (uint)pname, parameters);
+            public static void GetMinmaxParameterfvEXT(MinmaxTargetEXT target, GetMinmaxParameterPNameEXT pname, float* @params) => GLPointers.glGetMinmaxParameterfvEXT_Lazy((uint)target, (uint)pname, @params);
             
             /// <summary> <b>[requires: GL_EXT_histogram]</b> <b>[entry point: <c>glGetMinmaxParameterivEXT</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_histogram.txt"/></remarks>
-            public static void GetMinmaxParameterivEXT(MinmaxTargetEXT target, GetMinmaxParameterPNameEXT pname, int* parameters) => GLPointers.glGetMinmaxParameterivEXT_Lazy((uint)target, (uint)pname, parameters);
+            public static void GetMinmaxParameterivEXT(MinmaxTargetEXT target, GetMinmaxParameterPNameEXT pname, int* @params) => GLPointers.glGetMinmaxParameterivEXT_Lazy((uint)target, (uint)pname, @params);
             
             /// <summary> <b>[requires: GL_EXT_direct_state_access]</b> <b>[entry point: <c>glGetMultiTexEnvfvEXT</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_direct_state_access.txt"/></remarks>
-            public static void GetMultiTexEnvfvEXT(TextureUnit texunit, TextureEnvTarget target, TextureEnvParameter pname, float* parameters) => GLPointers.glGetMultiTexEnvfvEXT_Lazy((uint)texunit, (uint)target, (uint)pname, parameters);
+            public static void GetMultiTexEnvfvEXT(TextureUnit texunit, TextureEnvTarget target, TextureEnvParameter pname, float* @params) => GLPointers.glGetMultiTexEnvfvEXT_Lazy((uint)texunit, (uint)target, (uint)pname, @params);
             
             /// <summary> <b>[requires: GL_EXT_direct_state_access]</b> <b>[entry point: <c>glGetMultiTexEnvivEXT</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_direct_state_access.txt"/></remarks>
-            public static void GetMultiTexEnvivEXT(TextureUnit texunit, TextureEnvTarget target, TextureEnvParameter pname, int* parameters) => GLPointers.glGetMultiTexEnvivEXT_Lazy((uint)texunit, (uint)target, (uint)pname, parameters);
+            public static void GetMultiTexEnvivEXT(TextureUnit texunit, TextureEnvTarget target, TextureEnvParameter pname, int* @params) => GLPointers.glGetMultiTexEnvivEXT_Lazy((uint)texunit, (uint)target, (uint)pname, @params);
             
             /// <summary> <b>[requires: GL_EXT_direct_state_access]</b> <b>[entry point: <c>glGetMultiTexGendvEXT</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_direct_state_access.txt"/></remarks>
-            public static void GetMultiTexGendvEXT(TextureUnit texunit, TextureCoordName coord, TextureGenParameter pname, double* parameters) => GLPointers.glGetMultiTexGendvEXT_Lazy((uint)texunit, (uint)coord, (uint)pname, parameters);
+            public static void GetMultiTexGendvEXT(TextureUnit texunit, TextureCoordName coord, TextureGenParameter pname, double* @params) => GLPointers.glGetMultiTexGendvEXT_Lazy((uint)texunit, (uint)coord, (uint)pname, @params);
             
             /// <summary> <b>[requires: GL_EXT_direct_state_access]</b> <b>[entry point: <c>glGetMultiTexGenfvEXT</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_direct_state_access.txt"/></remarks>
-            public static void GetMultiTexGenfvEXT(TextureUnit texunit, TextureCoordName coord, TextureGenParameter pname, float* parameters) => GLPointers.glGetMultiTexGenfvEXT_Lazy((uint)texunit, (uint)coord, (uint)pname, parameters);
+            public static void GetMultiTexGenfvEXT(TextureUnit texunit, TextureCoordName coord, TextureGenParameter pname, float* @params) => GLPointers.glGetMultiTexGenfvEXT_Lazy((uint)texunit, (uint)coord, (uint)pname, @params);
             
             /// <summary> <b>[requires: GL_EXT_direct_state_access]</b> <b>[entry point: <c>glGetMultiTexGenivEXT</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_direct_state_access.txt"/></remarks>
-            public static void GetMultiTexGenivEXT(TextureUnit texunit, TextureCoordName coord, TextureGenParameter pname, int* parameters) => GLPointers.glGetMultiTexGenivEXT_Lazy((uint)texunit, (uint)coord, (uint)pname, parameters);
+            public static void GetMultiTexGenivEXT(TextureUnit texunit, TextureCoordName coord, TextureGenParameter pname, int* @params) => GLPointers.glGetMultiTexGenivEXT_Lazy((uint)texunit, (uint)coord, (uint)pname, @params);
             
             /// <summary> <b>[requires: GL_EXT_direct_state_access]</b> <b>[entry point: <c>glGetMultiTexImageEXT</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_direct_state_access.txt"/></remarks>
@@ -12724,35 +12724,35 @@ namespace OpenTK.Graphics.OpenGL.Compatibility
             
             /// <summary> <b>[requires: GL_EXT_direct_state_access]</b> <b>[entry point: <c>glGetMultiTexLevelParameterfvEXT</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_direct_state_access.txt"/></remarks>
-            public static void GetMultiTexLevelParameterfvEXT(TextureUnit texunit, TextureTarget target, int level, GetTextureParameter pname, float* parameters) => GLPointers.glGetMultiTexLevelParameterfvEXT_Lazy((uint)texunit, (uint)target, level, (uint)pname, parameters);
+            public static void GetMultiTexLevelParameterfvEXT(TextureUnit texunit, TextureTarget target, int level, GetTextureParameter pname, float* @params) => GLPointers.glGetMultiTexLevelParameterfvEXT_Lazy((uint)texunit, (uint)target, level, (uint)pname, @params);
             
             /// <summary> <b>[requires: GL_EXT_direct_state_access]</b> <b>[entry point: <c>glGetMultiTexLevelParameterivEXT</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_direct_state_access.txt"/></remarks>
-            public static void GetMultiTexLevelParameterivEXT(TextureUnit texunit, TextureTarget target, int level, GetTextureParameter pname, int* parameters) => GLPointers.glGetMultiTexLevelParameterivEXT_Lazy((uint)texunit, (uint)target, level, (uint)pname, parameters);
+            public static void GetMultiTexLevelParameterivEXT(TextureUnit texunit, TextureTarget target, int level, GetTextureParameter pname, int* @params) => GLPointers.glGetMultiTexLevelParameterivEXT_Lazy((uint)texunit, (uint)target, level, (uint)pname, @params);
             
             /// <summary> <b>[requires: GL_EXT_direct_state_access]</b> <b>[entry point: <c>glGetMultiTexParameterfvEXT</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_direct_state_access.txt"/></remarks>
-            public static void GetMultiTexParameterfvEXT(TextureUnit texunit, TextureTarget target, GetTextureParameter pname, float* parameters) => GLPointers.glGetMultiTexParameterfvEXT_Lazy((uint)texunit, (uint)target, (uint)pname, parameters);
+            public static void GetMultiTexParameterfvEXT(TextureUnit texunit, TextureTarget target, GetTextureParameter pname, float* @params) => GLPointers.glGetMultiTexParameterfvEXT_Lazy((uint)texunit, (uint)target, (uint)pname, @params);
             
             /// <summary> <b>[requires: GL_EXT_direct_state_access]</b> <b>[entry point: <c>glGetMultiTexParameterIivEXT</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_direct_state_access.txt"/></remarks>
-            public static void GetMultiTexParameterIivEXT(TextureUnit texunit, TextureTarget target, GetTextureParameter pname, int* parameters) => GLPointers.glGetMultiTexParameterIivEXT_Lazy((uint)texunit, (uint)target, (uint)pname, parameters);
+            public static void GetMultiTexParameterIivEXT(TextureUnit texunit, TextureTarget target, GetTextureParameter pname, int* @params) => GLPointers.glGetMultiTexParameterIivEXT_Lazy((uint)texunit, (uint)target, (uint)pname, @params);
             
             /// <summary> <b>[requires: GL_EXT_direct_state_access]</b> <b>[entry point: <c>glGetMultiTexParameterIuivEXT</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_direct_state_access.txt"/></remarks>
-            public static void GetMultiTexParameterIuivEXT(TextureUnit texunit, TextureTarget target, GetTextureParameter pname, uint* parameters) => GLPointers.glGetMultiTexParameterIuivEXT_Lazy((uint)texunit, (uint)target, (uint)pname, parameters);
+            public static void GetMultiTexParameterIuivEXT(TextureUnit texunit, TextureTarget target, GetTextureParameter pname, uint* @params) => GLPointers.glGetMultiTexParameterIuivEXT_Lazy((uint)texunit, (uint)target, (uint)pname, @params);
             
             /// <summary> <b>[requires: GL_EXT_direct_state_access]</b> <b>[entry point: <c>glGetMultiTexParameterivEXT</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_direct_state_access.txt"/></remarks>
-            public static void GetMultiTexParameterivEXT(TextureUnit texunit, TextureTarget target, GetTextureParameter pname, int* parameters) => GLPointers.glGetMultiTexParameterivEXT_Lazy((uint)texunit, (uint)target, (uint)pname, parameters);
+            public static void GetMultiTexParameterivEXT(TextureUnit texunit, TextureTarget target, GetTextureParameter pname, int* @params) => GLPointers.glGetMultiTexParameterivEXT_Lazy((uint)texunit, (uint)target, (uint)pname, @params);
             
             /// <summary> <b>[requires: GL_EXT_direct_state_access]</b> <b>[entry point: <c>glGetNamedBufferParameterivEXT</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_direct_state_access.txt"/></remarks>
-            public static void GetNamedBufferParameterivEXT(int buffer, BufferPName pname, int* parameters) => GLPointers.glGetNamedBufferParameterivEXT_Lazy(buffer, (uint)pname, parameters);
+            public static void GetNamedBufferParameterivEXT(int buffer, BufferPName pname, int* @params) => GLPointers.glGetNamedBufferParameterivEXT_Lazy(buffer, (uint)pname, @params);
             
             /// <summary> <b>[requires: GL_EXT_direct_state_access]</b> <b>[entry point: <c>glGetNamedBufferPointervEXT</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_direct_state_access.txt"/></remarks>
-            public static void GetNamedBufferPointervEXT(int buffer, BufferPointerNameARB pname, void** parameters) => GLPointers.glGetNamedBufferPointervEXT_Lazy(buffer, (uint)pname, parameters);
+            public static void GetNamedBufferPointervEXT(int buffer, BufferPointerNameARB pname, void** @params) => GLPointers.glGetNamedBufferPointervEXT_Lazy(buffer, (uint)pname, @params);
             
             /// <summary> <b>[requires: GL_EXT_direct_state_access]</b> <b>[entry point: <c>glGetNamedBufferSubDataEXT</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_direct_state_access.txt"/></remarks>
@@ -12760,55 +12760,55 @@ namespace OpenTK.Graphics.OpenGL.Compatibility
             
             /// <summary> <b>[requires: GL_EXT_direct_state_access]</b> <b>[entry point: <c>glGetNamedFramebufferAttachmentParameterivEXT</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_direct_state_access.txt"/></remarks>
-            public static void GetNamedFramebufferAttachmentParameterivEXT(int framebuffer, FramebufferAttachment attachment, FramebufferAttachmentParameterName pname, int* parameters) => GLPointers.glGetNamedFramebufferAttachmentParameterivEXT_Lazy(framebuffer, (uint)attachment, (uint)pname, parameters);
+            public static void GetNamedFramebufferAttachmentParameterivEXT(int framebuffer, FramebufferAttachment attachment, FramebufferAttachmentParameterName pname, int* @params) => GLPointers.glGetNamedFramebufferAttachmentParameterivEXT_Lazy(framebuffer, (uint)attachment, (uint)pname, @params);
             
             /// <summary> <b>[requires: GL_EXT_direct_state_access]</b> <b>[entry point: <c>glGetNamedFramebufferParameterivEXT</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_direct_state_access.txt"/></remarks>
-            public static void GetNamedFramebufferParameterivEXT(int framebuffer, GetFramebufferParameter pname, int* parameters) => GLPointers.glGetNamedFramebufferParameterivEXT_Lazy(framebuffer, (uint)pname, parameters);
+            public static void GetNamedFramebufferParameterivEXT(int framebuffer, GetFramebufferParameter pname, int* @params) => GLPointers.glGetNamedFramebufferParameterivEXT_Lazy(framebuffer, (uint)pname, @params);
             
             /// <summary> <b>[requires: GL_EXT_direct_state_access]</b> <b>[entry point: <c>glGetNamedProgramivEXT</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_direct_state_access.txt"/></remarks>
-            public static void GetNamedProgramivEXT(int program, ProgramTarget target, ProgramProperty pname, int* parameters) => GLPointers.glGetNamedProgramivEXT_Lazy(program, (uint)target, (uint)pname, parameters);
+            public static void GetNamedProgramivEXT(int program, ProgramTarget target, ProgramProperty pname, int* @params) => GLPointers.glGetNamedProgramivEXT_Lazy(program, (uint)target, (uint)pname, @params);
             
             /// <summary> <b>[requires: GL_EXT_direct_state_access]</b> <b>[entry point: <c>glGetNamedProgramLocalParameterdvEXT</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_direct_state_access.txt"/></remarks>
-            public static void GetNamedProgramLocalParameterdvEXT(int program, ProgramTarget target, uint index, double* parameters) => GLPointers.glGetNamedProgramLocalParameterdvEXT_Lazy(program, (uint)target, index, parameters);
+            public static void GetNamedProgramLocalParameterdvEXT(int program, ProgramTarget target, uint index, double* @params) => GLPointers.glGetNamedProgramLocalParameterdvEXT_Lazy(program, (uint)target, index, @params);
             
             /// <summary> <b>[requires: GL_EXT_direct_state_access]</b> <b>[entry point: <c>glGetNamedProgramLocalParameterfvEXT</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_direct_state_access.txt"/></remarks>
-            public static void GetNamedProgramLocalParameterfvEXT(int program, ProgramTarget target, uint index, float* parameters) => GLPointers.glGetNamedProgramLocalParameterfvEXT_Lazy(program, (uint)target, index, parameters);
+            public static void GetNamedProgramLocalParameterfvEXT(int program, ProgramTarget target, uint index, float* @params) => GLPointers.glGetNamedProgramLocalParameterfvEXT_Lazy(program, (uint)target, index, @params);
             
             /// <summary> <b>[requires: GL_EXT_direct_state_access]</b> <b>[entry point: <c>glGetNamedProgramLocalParameterIivEXT</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_direct_state_access.txt"/></remarks>
-            public static void GetNamedProgramLocalParameterIivEXT(int program, ProgramTarget target, uint index, int* parameters) => GLPointers.glGetNamedProgramLocalParameterIivEXT_Lazy(program, (uint)target, index, parameters);
+            public static void GetNamedProgramLocalParameterIivEXT(int program, ProgramTarget target, uint index, int* @params) => GLPointers.glGetNamedProgramLocalParameterIivEXT_Lazy(program, (uint)target, index, @params);
             
             /// <summary> <b>[requires: GL_EXT_direct_state_access]</b> <b>[entry point: <c>glGetNamedProgramLocalParameterIuivEXT</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_direct_state_access.txt"/></remarks>
-            public static void GetNamedProgramLocalParameterIuivEXT(int program, ProgramTarget target, uint index, uint* parameters) => GLPointers.glGetNamedProgramLocalParameterIuivEXT_Lazy(program, (uint)target, index, parameters);
+            public static void GetNamedProgramLocalParameterIuivEXT(int program, ProgramTarget target, uint index, uint* @params) => GLPointers.glGetNamedProgramLocalParameterIuivEXT_Lazy(program, (uint)target, index, @params);
             
             /// <summary> <b>[requires: GL_EXT_direct_state_access]</b> <b>[entry point: <c>glGetNamedProgramStringEXT</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_direct_state_access.txt"/></remarks>
-            public static void GetNamedProgramStringEXT(int program, ProgramTarget target, ProgramStringProperty pname, void* str) => GLPointers.glGetNamedProgramStringEXT_Lazy(program, (uint)target, (uint)pname, str);
+            public static void GetNamedProgramStringEXT(int program, ProgramTarget target, ProgramStringProperty pname, void* @string) => GLPointers.glGetNamedProgramStringEXT_Lazy(program, (uint)target, (uint)pname, @string);
             
             /// <summary> <b>[requires: GL_EXT_direct_state_access]</b> <b>[entry point: <c>glGetNamedRenderbufferParameterivEXT</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_direct_state_access.txt"/></remarks>
-            public static void GetNamedRenderbufferParameterivEXT(int renderbuffer, RenderbufferParameterName pname, int* parameters) => GLPointers.glGetNamedRenderbufferParameterivEXT_Lazy(renderbuffer, (uint)pname, parameters);
+            public static void GetNamedRenderbufferParameterivEXT(int renderbuffer, RenderbufferParameterName pname, int* @params) => GLPointers.glGetNamedRenderbufferParameterivEXT_Lazy(renderbuffer, (uint)pname, @params);
             
             /// <summary> <b>[requires: GL_EXT_debug_label]</b> <b>[entry point: <c>glGetObjectLabelEXT</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_debug_label.txt"/></remarks>
-            public static void GetObjectLabelEXT(All type, uint obj, int bufSize, int* length, byte* label) => GLPointers.glGetObjectLabelEXT_Lazy((uint)type, obj, bufSize, length, label);
+            public static void GetObjectLabelEXT(All type, uint @object, int bufSize, int* length, byte* label) => GLPointers.glGetObjectLabelEXT_Lazy((uint)type, @object, bufSize, length, label);
             
             /// <summary> <b>[requires: GL_EXT_pixel_transform]</b> <b>[entry point: <c>glGetPixelTransformParameterfvEXT</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_pixel_transform.txt"/></remarks>
-            public static void GetPixelTransformParameterfvEXT(All target, All pname, float* parameters) => GLPointers.glGetPixelTransformParameterfvEXT_Lazy((uint)target, (uint)pname, parameters);
+            public static void GetPixelTransformParameterfvEXT(All target, All pname, float* @params) => GLPointers.glGetPixelTransformParameterfvEXT_Lazy((uint)target, (uint)pname, @params);
             
             /// <summary> <b>[requires: GL_EXT_pixel_transform]</b> <b>[entry point: <c>glGetPixelTransformParameterivEXT</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_pixel_transform.txt"/></remarks>
-            public static void GetPixelTransformParameterivEXT(All target, All pname, int* parameters) => GLPointers.glGetPixelTransformParameterivEXT_Lazy((uint)target, (uint)pname, parameters);
+            public static void GetPixelTransformParameterivEXT(All target, All pname, int* @params) => GLPointers.glGetPixelTransformParameterivEXT_Lazy((uint)target, (uint)pname, @params);
             
             /// <summary> <b>[requires: GL_EXT_direct_state_access]</b> <b>[entry point: <c>glGetPointeri_vEXT</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_direct_state_access.txt"/></remarks>
-            public static void GetPointeri_vEXT(All pname, uint index, void** parameters) => GLPointers.glGetPointeri_vEXT_Lazy((uint)pname, index, parameters);
+            public static void GetPointeri_vEXT(All pname, uint index, void** @params) => GLPointers.glGetPointeri_vEXT_Lazy((uint)pname, index, @params);
             
             /// <summary> <b>[requires: GL_EXT_direct_state_access]</b> <b>[entry point: <c>glGetPointerIndexedvEXT</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_direct_state_access.txt"/></remarks>
@@ -12816,7 +12816,7 @@ namespace OpenTK.Graphics.OpenGL.Compatibility
             
             /// <summary> <b>[requires: GL_EXT_vertex_array]</b> <b>[entry point: <c>glGetPointervEXT</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_vertex_array.txt"/></remarks>
-            public static void GetPointervEXT(GetPointervPName pname, void** parameters) => GLPointers.glGetPointervEXT_Lazy((uint)pname, parameters);
+            public static void GetPointervEXT(GetPointervPName pname, void** @params) => GLPointers.glGetPointervEXT_Lazy((uint)pname, @params);
             
             /// <summary> <b>[requires: GL_EXT_separate_shader_objects]</b> <b>[entry point: <c>glGetProgramPipelineInfoLogEXT</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_separate_shader_objects.txt"/></remarks>
@@ -12824,23 +12824,23 @@ namespace OpenTK.Graphics.OpenGL.Compatibility
             
             /// <summary> <b>[requires: GL_EXT_separate_shader_objects]</b> <b>[entry point: <c>glGetProgramPipelineivEXT</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_separate_shader_objects.txt"/></remarks>
-            public static void GetProgramPipelineivEXT(int pipeline, PipelineParameterName pname, int* parameters) => GLPointers.glGetProgramPipelineivEXT_Lazy(pipeline, (uint)pname, parameters);
+            public static void GetProgramPipelineivEXT(int pipeline, PipelineParameterName pname, int* @params) => GLPointers.glGetProgramPipelineivEXT_Lazy(pipeline, (uint)pname, @params);
             
             /// <summary> <b>[requires: GL_EXT_timer_query]</b> <b>[entry point: <c>glGetQueryObjecti64vEXT</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_timer_query.txt"/></remarks>
-            public static void GetQueryObjecti64vEXT(int id, QueryObjectParameterName pname, long* parameters) => GLPointers.glGetQueryObjecti64vEXT_Lazy(id, (uint)pname, parameters);
+            public static void GetQueryObjecti64vEXT(int id, QueryObjectParameterName pname, long* @params) => GLPointers.glGetQueryObjecti64vEXT_Lazy(id, (uint)pname, @params);
             
             /// <summary> <b>[requires: GL_EXT_timer_query]</b> <b>[entry point: <c>glGetQueryObjectui64vEXT</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_timer_query.txt"/></remarks>
-            public static void GetQueryObjectui64vEXT(int id, QueryObjectParameterName pname, ulong* parameters) => GLPointers.glGetQueryObjectui64vEXT_Lazy(id, (uint)pname, parameters);
+            public static void GetQueryObjectui64vEXT(int id, QueryObjectParameterName pname, ulong* @params) => GLPointers.glGetQueryObjectui64vEXT_Lazy(id, (uint)pname, @params);
             
             /// <summary> <b>[requires: GL_EXT_framebuffer_object]</b> <b>[entry point: <c>glGetRenderbufferParameterivEXT</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_framebuffer_object.txt"/></remarks>
-            public static void GetRenderbufferParameterivEXT(RenderbufferTarget target, RenderbufferParameterName pname, int* parameters) => GLPointers.glGetRenderbufferParameterivEXT_Lazy((uint)target, (uint)pname, parameters);
+            public static void GetRenderbufferParameterivEXT(RenderbufferTarget target, RenderbufferParameterName pname, int* @params) => GLPointers.glGetRenderbufferParameterivEXT_Lazy((uint)target, (uint)pname, @params);
             
             /// <summary> <b>[requires: GL_EXT_semaphore]</b> <b>[entry point: <c>glGetSemaphoreParameterui64vEXT</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_semaphore.txt"/></remarks>
-            public static void GetSemaphoreParameterui64vEXT(uint semaphore, SemaphoreParameterName pname, ulong* parameters) => GLPointers.glGetSemaphoreParameterui64vEXT_Lazy(semaphore, (uint)pname, parameters);
+            public static void GetSemaphoreParameterui64vEXT(uint semaphore, SemaphoreParameterName pname, ulong* @params) => GLPointers.glGetSemaphoreParameterui64vEXT_Lazy(semaphore, (uint)pname, @params);
             
             /// <summary> <b>[requires: GL_EXT_convolution]</b> <b>[entry point: <c>glGetSeparableFilterEXT</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_convolution.txt"/></remarks>
@@ -12848,11 +12848,11 @@ namespace OpenTK.Graphics.OpenGL.Compatibility
             
             /// <summary> <b>[requires: GL_EXT_texture_integer]</b> <b>[entry point: <c>glGetTexParameterIivEXT</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_texture_integer.txt"/></remarks>
-            public static void GetTexParameterIivEXT(TextureTarget target, GetTextureParameter pname, int* parameters) => GLPointers.glGetTexParameterIivEXT_Lazy((uint)target, (uint)pname, parameters);
+            public static void GetTexParameterIivEXT(TextureTarget target, GetTextureParameter pname, int* @params) => GLPointers.glGetTexParameterIivEXT_Lazy((uint)target, (uint)pname, @params);
             
             /// <summary> <b>[requires: GL_EXT_texture_integer]</b> <b>[entry point: <c>glGetTexParameterIuivEXT</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_texture_integer.txt"/></remarks>
-            public static void GetTexParameterIuivEXT(TextureTarget target, GetTextureParameter pname, uint* parameters) => GLPointers.glGetTexParameterIuivEXT_Lazy((uint)target, (uint)pname, parameters);
+            public static void GetTexParameterIuivEXT(TextureTarget target, GetTextureParameter pname, uint* @params) => GLPointers.glGetTexParameterIuivEXT_Lazy((uint)target, (uint)pname, @params);
             
             /// <summary> <b>[requires: GL_EXT_direct_state_access]</b> <b>[entry point: <c>glGetTextureImageEXT</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_direct_state_access.txt"/></remarks>
@@ -12860,27 +12860,27 @@ namespace OpenTK.Graphics.OpenGL.Compatibility
             
             /// <summary> <b>[requires: GL_EXT_direct_state_access]</b> <b>[entry point: <c>glGetTextureLevelParameterfvEXT</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_direct_state_access.txt"/></remarks>
-            public static void GetTextureLevelParameterfvEXT(int texture, TextureTarget target, int level, GetTextureParameter pname, float* parameters) => GLPointers.glGetTextureLevelParameterfvEXT_Lazy(texture, (uint)target, level, (uint)pname, parameters);
+            public static void GetTextureLevelParameterfvEXT(int texture, TextureTarget target, int level, GetTextureParameter pname, float* @params) => GLPointers.glGetTextureLevelParameterfvEXT_Lazy(texture, (uint)target, level, (uint)pname, @params);
             
             /// <summary> <b>[requires: GL_EXT_direct_state_access]</b> <b>[entry point: <c>glGetTextureLevelParameterivEXT</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_direct_state_access.txt"/></remarks>
-            public static void GetTextureLevelParameterivEXT(int texture, TextureTarget target, int level, GetTextureParameter pname, int* parameters) => GLPointers.glGetTextureLevelParameterivEXT_Lazy(texture, (uint)target, level, (uint)pname, parameters);
+            public static void GetTextureLevelParameterivEXT(int texture, TextureTarget target, int level, GetTextureParameter pname, int* @params) => GLPointers.glGetTextureLevelParameterivEXT_Lazy(texture, (uint)target, level, (uint)pname, @params);
             
             /// <summary> <b>[requires: GL_EXT_direct_state_access]</b> <b>[entry point: <c>glGetTextureParameterfvEXT</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_direct_state_access.txt"/></remarks>
-            public static void GetTextureParameterfvEXT(int texture, TextureTarget target, GetTextureParameter pname, float* parameters) => GLPointers.glGetTextureParameterfvEXT_Lazy(texture, (uint)target, (uint)pname, parameters);
+            public static void GetTextureParameterfvEXT(int texture, TextureTarget target, GetTextureParameter pname, float* @params) => GLPointers.glGetTextureParameterfvEXT_Lazy(texture, (uint)target, (uint)pname, @params);
             
             /// <summary> <b>[requires: GL_EXT_direct_state_access]</b> <b>[entry point: <c>glGetTextureParameterIivEXT</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_direct_state_access.txt"/></remarks>
-            public static void GetTextureParameterIivEXT(int texture, TextureTarget target, GetTextureParameter pname, int* parameters) => GLPointers.glGetTextureParameterIivEXT_Lazy(texture, (uint)target, (uint)pname, parameters);
+            public static void GetTextureParameterIivEXT(int texture, TextureTarget target, GetTextureParameter pname, int* @params) => GLPointers.glGetTextureParameterIivEXT_Lazy(texture, (uint)target, (uint)pname, @params);
             
             /// <summary> <b>[requires: GL_EXT_direct_state_access]</b> <b>[entry point: <c>glGetTextureParameterIuivEXT</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_direct_state_access.txt"/></remarks>
-            public static void GetTextureParameterIuivEXT(int texture, TextureTarget target, GetTextureParameter pname, uint* parameters) => GLPointers.glGetTextureParameterIuivEXT_Lazy(texture, (uint)target, (uint)pname, parameters);
+            public static void GetTextureParameterIuivEXT(int texture, TextureTarget target, GetTextureParameter pname, uint* @params) => GLPointers.glGetTextureParameterIuivEXT_Lazy(texture, (uint)target, (uint)pname, @params);
             
             /// <summary> <b>[requires: GL_EXT_direct_state_access]</b> <b>[entry point: <c>glGetTextureParameterivEXT</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_direct_state_access.txt"/></remarks>
-            public static void GetTextureParameterivEXT(int texture, TextureTarget target, GetTextureParameter pname, int* parameters) => GLPointers.glGetTextureParameterivEXT_Lazy(texture, (uint)target, (uint)pname, parameters);
+            public static void GetTextureParameterivEXT(int texture, TextureTarget target, GetTextureParameter pname, int* @params) => GLPointers.glGetTextureParameterivEXT_Lazy(texture, (uint)target, (uint)pname, @params);
             
             /// <summary> <b>[requires: GL_EXT_transform_feedback]</b> <b>[entry point: <c>glGetTransformFeedbackVaryingEXT</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_transform_feedback.txt"/></remarks>
@@ -12896,7 +12896,7 @@ namespace OpenTK.Graphics.OpenGL.Compatibility
             
             /// <summary> <b>[requires: GL_EXT_gpu_shader4]</b> <b>[entry point: <c>glGetUniformuivEXT</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_gpu_shader4.txt"/></remarks>
-            public static void GetUniformuivEXT(int program, int location, uint* parameters) => GLPointers.glGetUniformuivEXT_Lazy(program, location, parameters);
+            public static void GetUniformuivEXT(int program, int location, uint* @params) => GLPointers.glGetUniformuivEXT_Lazy(program, location, @params);
             
             /// <summary> <b>[requires: GL_EXT_memory_object | GL_EXT_semaphore]</b> <b>[entry point: <c>glGetUnsignedBytei_vEXT</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_memory_object.txt"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_semaphore.txt"/></remarks>
@@ -12940,15 +12940,15 @@ namespace OpenTK.Graphics.OpenGL.Compatibility
             
             /// <summary> <b>[requires: GL_EXT_gpu_shader4 | GL_NV_vertex_program4]</b> <b>[entry point: <c>glGetVertexAttribIivEXT</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_gpu_shader4.txt"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/EXT/NV_vertex_program4.txt"/></remarks>
-            public static void GetVertexAttribIivEXT(uint index, VertexAttribEnum pname, int* parameters) => GLPointers.glGetVertexAttribIivEXT_Lazy(index, (uint)pname, parameters);
+            public static void GetVertexAttribIivEXT(uint index, VertexAttribEnum pname, int* @params) => GLPointers.glGetVertexAttribIivEXT_Lazy(index, (uint)pname, @params);
             
             /// <summary> <b>[requires: GL_EXT_gpu_shader4 | GL_NV_vertex_program4]</b> <b>[entry point: <c>glGetVertexAttribIuivEXT</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_gpu_shader4.txt"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/EXT/NV_vertex_program4.txt"/></remarks>
-            public static void GetVertexAttribIuivEXT(uint index, VertexAttribEnum pname, uint* parameters) => GLPointers.glGetVertexAttribIuivEXT_Lazy(index, (uint)pname, parameters);
+            public static void GetVertexAttribIuivEXT(uint index, VertexAttribEnum pname, uint* @params) => GLPointers.glGetVertexAttribIuivEXT_Lazy(index, (uint)pname, @params);
             
             /// <summary> <b>[requires: GL_EXT_vertex_attrib_64bit]</b> <b>[entry point: <c>glGetVertexAttribLdvEXT</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_vertex_attrib_64bit.txt"/></remarks>
-            public static void GetVertexAttribLdvEXT(uint index, VertexAttribEnum pname, double* parameters) => GLPointers.glGetVertexAttribLdvEXT_Lazy(index, (uint)pname, parameters);
+            public static void GetVertexAttribLdvEXT(uint index, VertexAttribEnum pname, double* @params) => GLPointers.glGetVertexAttribLdvEXT_Lazy(index, (uint)pname, @params);
             
             /// <summary> <b>[requires: GL_EXT_histogram]</b> <b>[entry point: <c>glHistogramEXT</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_histogram.txt"/></remarks>
@@ -12984,7 +12984,7 @@ namespace OpenTK.Graphics.OpenGL.Compatibility
             
             /// <summary> <b>[requires: GL_EXT_index_func]</b> <b>[entry point: <c>glIndexFuncEXT</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_index_func.txt"/></remarks>
-            public static void IndexFuncEXT(IndexFunctionEXT func, float reference) => GLPointers.glIndexFuncEXT_Lazy((uint)func, reference);
+            public static void IndexFuncEXT(IndexFunctionEXT func, float @ref) => GLPointers.glIndexFuncEXT_Lazy((uint)func, @ref);
             
             /// <summary> <b>[requires: GL_EXT_index_material]</b> <b>[entry point: <c>glIndexMaterialEXT</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_index_material.txt"/></remarks>
@@ -13036,7 +13036,7 @@ namespace OpenTK.Graphics.OpenGL.Compatibility
             
             /// <summary> <b>[requires: GL_EXT_debug_label]</b> <b>[entry point: <c>glLabelObjectEXT</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_debug_label.txt"/></remarks>
-            public static void LabelObjectEXT(All type, uint obj, int length, byte* label) => GLPointers.glLabelObjectEXT_Lazy((uint)type, obj, length, label);
+            public static void LabelObjectEXT(All type, uint @object, int length, byte* label) => GLPointers.glLabelObjectEXT_Lazy((uint)type, @object, length, label);
             
             /// <summary> <b>[requires: GL_EXT_compiled_vertex_array]</b> <b>[entry point: <c>glLockArraysEXT</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_compiled_vertex_array.txt"/></remarks>
@@ -13132,7 +13132,7 @@ namespace OpenTK.Graphics.OpenGL.Compatibility
             
             /// <summary> <b>[requires: GL_EXT_memory_object]</b> <b>[entry point: <c>glMemoryObjectParameterivEXT</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_memory_object.txt"/></remarks>
-            public static void MemoryObjectParameterivEXT(uint memoryObject, MemoryObjectParameterName pname, int* parameters) => GLPointers.glMemoryObjectParameterivEXT_Lazy(memoryObject, (uint)pname, parameters);
+            public static void MemoryObjectParameterivEXT(uint memoryObject, MemoryObjectParameterName pname, int* @params) => GLPointers.glMemoryObjectParameterivEXT_Lazy(memoryObject, (uint)pname, @params);
             
             /// <summary> <b>[requires: GL_EXT_histogram]</b> <b>[entry point: <c>glMinmaxEXT</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_histogram.txt"/></remarks>
@@ -13160,7 +13160,7 @@ namespace OpenTK.Graphics.OpenGL.Compatibility
             
             /// <summary> <b>[requires: GL_EXT_direct_state_access]</b> <b>[entry point: <c>glMultiTexEnvfvEXT</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_direct_state_access.txt"/></remarks>
-            public static void MultiTexEnvfvEXT(TextureUnit texunit, TextureEnvTarget target, TextureEnvParameter pname, float* parameters) => GLPointers.glMultiTexEnvfvEXT_Lazy((uint)texunit, (uint)target, (uint)pname, parameters);
+            public static void MultiTexEnvfvEXT(TextureUnit texunit, TextureEnvTarget target, TextureEnvParameter pname, float* @params) => GLPointers.glMultiTexEnvfvEXT_Lazy((uint)texunit, (uint)target, (uint)pname, @params);
             
             /// <summary> <b>[requires: GL_EXT_direct_state_access]</b> <b>[entry point: <c>glMultiTexEnviEXT</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_direct_state_access.txt"/></remarks>
@@ -13168,7 +13168,7 @@ namespace OpenTK.Graphics.OpenGL.Compatibility
             
             /// <summary> <b>[requires: GL_EXT_direct_state_access]</b> <b>[entry point: <c>glMultiTexEnvivEXT</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_direct_state_access.txt"/></remarks>
-            public static void MultiTexEnvivEXT(TextureUnit texunit, TextureEnvTarget target, TextureEnvParameter pname, int* parameters) => GLPointers.glMultiTexEnvivEXT_Lazy((uint)texunit, (uint)target, (uint)pname, parameters);
+            public static void MultiTexEnvivEXT(TextureUnit texunit, TextureEnvTarget target, TextureEnvParameter pname, int* @params) => GLPointers.glMultiTexEnvivEXT_Lazy((uint)texunit, (uint)target, (uint)pname, @params);
             
             /// <summary> <b>[requires: GL_EXT_direct_state_access]</b> <b>[entry point: <c>glMultiTexGendEXT</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_direct_state_access.txt"/></remarks>
@@ -13176,7 +13176,7 @@ namespace OpenTK.Graphics.OpenGL.Compatibility
             
             /// <summary> <b>[requires: GL_EXT_direct_state_access]</b> <b>[entry point: <c>glMultiTexGendvEXT</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_direct_state_access.txt"/></remarks>
-            public static void MultiTexGendvEXT(TextureUnit texunit, TextureCoordName coord, TextureGenParameter pname, double* parameters) => GLPointers.glMultiTexGendvEXT_Lazy((uint)texunit, (uint)coord, (uint)pname, parameters);
+            public static void MultiTexGendvEXT(TextureUnit texunit, TextureCoordName coord, TextureGenParameter pname, double* @params) => GLPointers.glMultiTexGendvEXT_Lazy((uint)texunit, (uint)coord, (uint)pname, @params);
             
             /// <summary> <b>[requires: GL_EXT_direct_state_access]</b> <b>[entry point: <c>glMultiTexGenfEXT</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_direct_state_access.txt"/></remarks>
@@ -13184,7 +13184,7 @@ namespace OpenTK.Graphics.OpenGL.Compatibility
             
             /// <summary> <b>[requires: GL_EXT_direct_state_access]</b> <b>[entry point: <c>glMultiTexGenfvEXT</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_direct_state_access.txt"/></remarks>
-            public static void MultiTexGenfvEXT(TextureUnit texunit, TextureCoordName coord, TextureGenParameter pname, float* parameters) => GLPointers.glMultiTexGenfvEXT_Lazy((uint)texunit, (uint)coord, (uint)pname, parameters);
+            public static void MultiTexGenfvEXT(TextureUnit texunit, TextureCoordName coord, TextureGenParameter pname, float* @params) => GLPointers.glMultiTexGenfvEXT_Lazy((uint)texunit, (uint)coord, (uint)pname, @params);
             
             /// <summary> <b>[requires: GL_EXT_direct_state_access]</b> <b>[entry point: <c>glMultiTexGeniEXT</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_direct_state_access.txt"/></remarks>
@@ -13192,7 +13192,7 @@ namespace OpenTK.Graphics.OpenGL.Compatibility
             
             /// <summary> <b>[requires: GL_EXT_direct_state_access]</b> <b>[entry point: <c>glMultiTexGenivEXT</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_direct_state_access.txt"/></remarks>
-            public static void MultiTexGenivEXT(TextureUnit texunit, TextureCoordName coord, TextureGenParameter pname, int* parameters) => GLPointers.glMultiTexGenivEXT_Lazy((uint)texunit, (uint)coord, (uint)pname, parameters);
+            public static void MultiTexGenivEXT(TextureUnit texunit, TextureCoordName coord, TextureGenParameter pname, int* @params) => GLPointers.glMultiTexGenivEXT_Lazy((uint)texunit, (uint)coord, (uint)pname, @params);
             
             /// <summary> <b>[requires: GL_EXT_direct_state_access]</b> <b>[entry point: <c>glMultiTexImage1DEXT</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_direct_state_access.txt"/></remarks>
@@ -13212,7 +13212,7 @@ namespace OpenTK.Graphics.OpenGL.Compatibility
             
             /// <summary> <b>[requires: GL_EXT_direct_state_access]</b> <b>[entry point: <c>glMultiTexParameterfvEXT</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_direct_state_access.txt"/></remarks>
-            public static void MultiTexParameterfvEXT(TextureUnit texunit, TextureTarget target, TextureParameterName pname, float* parameters) => GLPointers.glMultiTexParameterfvEXT_Lazy((uint)texunit, (uint)target, (uint)pname, parameters);
+            public static void MultiTexParameterfvEXT(TextureUnit texunit, TextureTarget target, TextureParameterName pname, float* @params) => GLPointers.glMultiTexParameterfvEXT_Lazy((uint)texunit, (uint)target, (uint)pname, @params);
             
             /// <summary> <b>[requires: GL_EXT_direct_state_access]</b> <b>[entry point: <c>glMultiTexParameteriEXT</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_direct_state_access.txt"/></remarks>
@@ -13220,15 +13220,15 @@ namespace OpenTK.Graphics.OpenGL.Compatibility
             
             /// <summary> <b>[requires: GL_EXT_direct_state_access]</b> <b>[entry point: <c>glMultiTexParameterIivEXT</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_direct_state_access.txt"/></remarks>
-            public static void MultiTexParameterIivEXT(TextureUnit texunit, TextureTarget target, TextureParameterName pname, int* parameters) => GLPointers.glMultiTexParameterIivEXT_Lazy((uint)texunit, (uint)target, (uint)pname, parameters);
+            public static void MultiTexParameterIivEXT(TextureUnit texunit, TextureTarget target, TextureParameterName pname, int* @params) => GLPointers.glMultiTexParameterIivEXT_Lazy((uint)texunit, (uint)target, (uint)pname, @params);
             
             /// <summary> <b>[requires: GL_EXT_direct_state_access]</b> <b>[entry point: <c>glMultiTexParameterIuivEXT</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_direct_state_access.txt"/></remarks>
-            public static void MultiTexParameterIuivEXT(TextureUnit texunit, TextureTarget target, TextureParameterName pname, uint* parameters) => GLPointers.glMultiTexParameterIuivEXT_Lazy((uint)texunit, (uint)target, (uint)pname, parameters);
+            public static void MultiTexParameterIuivEXT(TextureUnit texunit, TextureTarget target, TextureParameterName pname, uint* @params) => GLPointers.glMultiTexParameterIuivEXT_Lazy((uint)texunit, (uint)target, (uint)pname, @params);
             
             /// <summary> <b>[requires: GL_EXT_direct_state_access]</b> <b>[entry point: <c>glMultiTexParameterivEXT</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_direct_state_access.txt"/></remarks>
-            public static void MultiTexParameterivEXT(TextureUnit texunit, TextureTarget target, TextureParameterName pname, int* parameters) => GLPointers.glMultiTexParameterivEXT_Lazy((uint)texunit, (uint)target, (uint)pname, parameters);
+            public static void MultiTexParameterivEXT(TextureUnit texunit, TextureTarget target, TextureParameterName pname, int* @params) => GLPointers.glMultiTexParameterivEXT_Lazy((uint)texunit, (uint)target, (uint)pname, @params);
             
             /// <summary> <b>[requires: GL_EXT_direct_state_access]</b> <b>[entry point: <c>glMultiTexRenderbufferEXT</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_direct_state_access.txt"/></remarks>
@@ -13308,7 +13308,7 @@ namespace OpenTK.Graphics.OpenGL.Compatibility
             
             /// <summary> <b>[requires: GL_EXT_direct_state_access]</b> <b>[entry point: <c>glNamedProgramLocalParameter4dvEXT</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_direct_state_access.txt"/></remarks>
-            public static void NamedProgramLocalParameter4dvEXT(int program, ProgramTarget target, uint index, double* parameters) => GLPointers.glNamedProgramLocalParameter4dvEXT_Lazy(program, (uint)target, index, parameters);
+            public static void NamedProgramLocalParameter4dvEXT(int program, ProgramTarget target, uint index, double* @params) => GLPointers.glNamedProgramLocalParameter4dvEXT_Lazy(program, (uint)target, index, @params);
             
             /// <summary> <b>[requires: GL_EXT_direct_state_access]</b> <b>[entry point: <c>glNamedProgramLocalParameter4fEXT</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_direct_state_access.txt"/></remarks>
@@ -13316,7 +13316,7 @@ namespace OpenTK.Graphics.OpenGL.Compatibility
             
             /// <summary> <b>[requires: GL_EXT_direct_state_access]</b> <b>[entry point: <c>glNamedProgramLocalParameter4fvEXT</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_direct_state_access.txt"/></remarks>
-            public static void NamedProgramLocalParameter4fvEXT(int program, ProgramTarget target, uint index, float* parameters) => GLPointers.glNamedProgramLocalParameter4fvEXT_Lazy(program, (uint)target, index, parameters);
+            public static void NamedProgramLocalParameter4fvEXT(int program, ProgramTarget target, uint index, float* @params) => GLPointers.glNamedProgramLocalParameter4fvEXT_Lazy(program, (uint)target, index, @params);
             
             /// <summary> <b>[requires: GL_EXT_direct_state_access]</b> <b>[entry point: <c>glNamedProgramLocalParameterI4iEXT</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_direct_state_access.txt"/></remarks>
@@ -13324,7 +13324,7 @@ namespace OpenTK.Graphics.OpenGL.Compatibility
             
             /// <summary> <b>[requires: GL_EXT_direct_state_access]</b> <b>[entry point: <c>glNamedProgramLocalParameterI4ivEXT</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_direct_state_access.txt"/></remarks>
-            public static void NamedProgramLocalParameterI4ivEXT(int program, ProgramTarget target, uint index, int* parameters) => GLPointers.glNamedProgramLocalParameterI4ivEXT_Lazy(program, (uint)target, index, parameters);
+            public static void NamedProgramLocalParameterI4ivEXT(int program, ProgramTarget target, uint index, int* @params) => GLPointers.glNamedProgramLocalParameterI4ivEXT_Lazy(program, (uint)target, index, @params);
             
             /// <summary> <b>[requires: GL_EXT_direct_state_access]</b> <b>[entry point: <c>glNamedProgramLocalParameterI4uiEXT</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_direct_state_access.txt"/></remarks>
@@ -13332,23 +13332,23 @@ namespace OpenTK.Graphics.OpenGL.Compatibility
             
             /// <summary> <b>[requires: GL_EXT_direct_state_access]</b> <b>[entry point: <c>glNamedProgramLocalParameterI4uivEXT</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_direct_state_access.txt"/></remarks>
-            public static void NamedProgramLocalParameterI4uivEXT(int program, ProgramTarget target, uint index, uint* parameters) => GLPointers.glNamedProgramLocalParameterI4uivEXT_Lazy(program, (uint)target, index, parameters);
+            public static void NamedProgramLocalParameterI4uivEXT(int program, ProgramTarget target, uint index, uint* @params) => GLPointers.glNamedProgramLocalParameterI4uivEXT_Lazy(program, (uint)target, index, @params);
             
             /// <summary> <b>[requires: GL_EXT_direct_state_access]</b> <b>[entry point: <c>glNamedProgramLocalParameters4fvEXT</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_direct_state_access.txt"/></remarks>
-            public static void NamedProgramLocalParameters4fvEXT(int program, ProgramTarget target, uint index, int count, float* parameters) => GLPointers.glNamedProgramLocalParameters4fvEXT_Lazy(program, (uint)target, index, count, parameters);
+            public static void NamedProgramLocalParameters4fvEXT(int program, ProgramTarget target, uint index, int count, float* @params) => GLPointers.glNamedProgramLocalParameters4fvEXT_Lazy(program, (uint)target, index, count, @params);
             
             /// <summary> <b>[requires: GL_EXT_direct_state_access]</b> <b>[entry point: <c>glNamedProgramLocalParametersI4ivEXT</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_direct_state_access.txt"/></remarks>
-            public static void NamedProgramLocalParametersI4ivEXT(int program, ProgramTarget target, uint index, int count, int* parameters) => GLPointers.glNamedProgramLocalParametersI4ivEXT_Lazy(program, (uint)target, index, count, parameters);
+            public static void NamedProgramLocalParametersI4ivEXT(int program, ProgramTarget target, uint index, int count, int* @params) => GLPointers.glNamedProgramLocalParametersI4ivEXT_Lazy(program, (uint)target, index, count, @params);
             
             /// <summary> <b>[requires: GL_EXT_direct_state_access]</b> <b>[entry point: <c>glNamedProgramLocalParametersI4uivEXT</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_direct_state_access.txt"/></remarks>
-            public static void NamedProgramLocalParametersI4uivEXT(int program, ProgramTarget target, uint index, int count, uint* parameters) => GLPointers.glNamedProgramLocalParametersI4uivEXT_Lazy(program, (uint)target, index, count, parameters);
+            public static void NamedProgramLocalParametersI4uivEXT(int program, ProgramTarget target, uint index, int count, uint* @params) => GLPointers.glNamedProgramLocalParametersI4uivEXT_Lazy(program, (uint)target, index, count, @params);
             
             /// <summary> <b>[requires: GL_EXT_direct_state_access]</b> <b>[entry point: <c>glNamedProgramStringEXT</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_direct_state_access.txt"/></remarks>
-            public static void NamedProgramStringEXT(int program, ProgramTarget target, ProgramFormat format, int len, void* str) => GLPointers.glNamedProgramStringEXT_Lazy(program, (uint)target, (uint)format, len, str);
+            public static void NamedProgramStringEXT(int program, ProgramTarget target, ProgramFormat format, int len, void* @string) => GLPointers.glNamedProgramStringEXT_Lazy(program, (uint)target, (uint)format, len, @string);
             
             /// <summary> <b>[requires: GL_EXT_direct_state_access]</b> <b>[entry point: <c>glNamedRenderbufferStorageEXT</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_direct_state_access.txt"/></remarks>
@@ -13372,7 +13372,7 @@ namespace OpenTK.Graphics.OpenGL.Compatibility
             
             /// <summary> <b>[requires: GL_EXT_pixel_transform]</b> <b>[entry point: <c>glPixelTransformParameterfvEXT</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_pixel_transform.txt"/></remarks>
-            public static void PixelTransformParameterfvEXT(PixelTransformTargetEXT target, PixelTransformPNameEXT pname, float* parameters) => GLPointers.glPixelTransformParameterfvEXT_Lazy((uint)target, (uint)pname, parameters);
+            public static void PixelTransformParameterfvEXT(PixelTransformTargetEXT target, PixelTransformPNameEXT pname, float* @params) => GLPointers.glPixelTransformParameterfvEXT_Lazy((uint)target, (uint)pname, @params);
             
             /// <summary> <b>[requires: GL_EXT_pixel_transform]</b> <b>[entry point: <c>glPixelTransformParameteriEXT</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_pixel_transform.txt"/></remarks>
@@ -13380,7 +13380,7 @@ namespace OpenTK.Graphics.OpenGL.Compatibility
             
             /// <summary> <b>[requires: GL_EXT_pixel_transform]</b> <b>[entry point: <c>glPixelTransformParameterivEXT</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_pixel_transform.txt"/></remarks>
-            public static void PixelTransformParameterivEXT(PixelTransformTargetEXT target, PixelTransformPNameEXT pname, int* parameters) => GLPointers.glPixelTransformParameterivEXT_Lazy((uint)target, (uint)pname, parameters);
+            public static void PixelTransformParameterivEXT(PixelTransformTargetEXT target, PixelTransformPNameEXT pname, int* @params) => GLPointers.glPixelTransformParameterivEXT_Lazy((uint)target, (uint)pname, @params);
             
             /// <summary> <b>[requires: GL_EXT_point_parameters]</b> <b>[entry point: <c>glPointParameterfEXT</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_point_parameters.txt"/></remarks>
@@ -13388,7 +13388,7 @@ namespace OpenTK.Graphics.OpenGL.Compatibility
             
             /// <summary> <b>[requires: GL_EXT_point_parameters]</b> <b>[entry point: <c>glPointParameterfvEXT</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_point_parameters.txt"/></remarks>
-            public static void PointParameterfvEXT(PointParameterNameARB pname, float* parameters) => GLPointers.glPointParameterfvEXT_Lazy((uint)pname, parameters);
+            public static void PointParameterfvEXT(PointParameterNameARB pname, float* @params) => GLPointers.glPointParameterfvEXT_Lazy((uint)pname, @params);
             
             /// <summary> <b>[requires: GL_EXT_polygon_offset_clamp]</b> <b>[entry point: <c>glPolygonOffsetClampEXT</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_polygon_offset_clamp.txt"/></remarks>
@@ -13408,11 +13408,11 @@ namespace OpenTK.Graphics.OpenGL.Compatibility
             
             /// <summary> <b>[requires: GL_EXT_gpu_program_parameters]</b> <b>[entry point: <c>glProgramEnvParameters4fvEXT</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_gpu_program_parameters.txt"/></remarks>
-            public static void ProgramEnvParameters4fvEXT(ProgramTarget target, uint index, int count, float* parameters) => GLPointers.glProgramEnvParameters4fvEXT_Lazy((uint)target, index, count, parameters);
+            public static void ProgramEnvParameters4fvEXT(ProgramTarget target, uint index, int count, float* @params) => GLPointers.glProgramEnvParameters4fvEXT_Lazy((uint)target, index, count, @params);
             
             /// <summary> <b>[requires: GL_EXT_gpu_program_parameters]</b> <b>[entry point: <c>glProgramLocalParameters4fvEXT</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_gpu_program_parameters.txt"/></remarks>
-            public static void ProgramLocalParameters4fvEXT(ProgramTarget target, uint index, int count, float* parameters) => GLPointers.glProgramLocalParameters4fvEXT_Lazy((uint)target, index, count, parameters);
+            public static void ProgramLocalParameters4fvEXT(ProgramTarget target, uint index, int count, float* @params) => GLPointers.glProgramLocalParameters4fvEXT_Lazy((uint)target, index, count, @params);
             
             /// <summary> <b>[requires: GL_EXT_geometry_shader4 | GL_EXT_separate_shader_objects]</b> <b>[entry point: <c>glProgramParameteriEXT</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_geometry_shader4.txt"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_separate_shader_objects.txt"/></remarks>
@@ -13732,7 +13732,7 @@ namespace OpenTK.Graphics.OpenGL.Compatibility
             
             /// <summary> <b>[requires: GL_EXT_semaphore]</b> <b>[entry point: <c>glSemaphoreParameterui64vEXT</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_semaphore.txt"/></remarks>
-            public static void SemaphoreParameterui64vEXT(uint semaphore, SemaphoreParameterName pname, ulong* parameters) => GLPointers.glSemaphoreParameterui64vEXT_Lazy(semaphore, (uint)pname, parameters);
+            public static void SemaphoreParameterui64vEXT(uint semaphore, SemaphoreParameterName pname, ulong* @params) => GLPointers.glSemaphoreParameterui64vEXT_Lazy(semaphore, (uint)pname, @params);
             
             /// <summary> <b>[requires: GL_EXT_convolution]</b> <b>[entry point: <c>glSeparableFilter2DEXT</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_convolution.txt"/></remarks>
@@ -13768,7 +13768,7 @@ namespace OpenTK.Graphics.OpenGL.Compatibility
             
             /// <summary> <b>[requires: GL_EXT_vertex_shader]</b> <b>[entry point: <c>glSwizzleEXT</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_vertex_shader.txt"/></remarks>
-            public static void SwizzleEXT(uint res, uint input, VertexShaderCoordOutEXT outX, VertexShaderCoordOutEXT outY, VertexShaderCoordOutEXT outZ, VertexShaderCoordOutEXT outW) => GLPointers.glSwizzleEXT_Lazy(res, input, (uint)outX, (uint)outY, (uint)outZ, (uint)outW);
+            public static void SwizzleEXT(uint res, uint @in, VertexShaderCoordOutEXT outX, VertexShaderCoordOutEXT outY, VertexShaderCoordOutEXT outZ, VertexShaderCoordOutEXT outW) => GLPointers.glSwizzleEXT_Lazy(res, @in, (uint)outX, (uint)outY, (uint)outZ, (uint)outW);
             
             /// <summary> <b>[requires: GL_EXT_coordinate_frame]</b> <b>[entry point: <c>glTangent3bEXT</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_coordinate_frame.txt"/></remarks>
@@ -13828,11 +13828,11 @@ namespace OpenTK.Graphics.OpenGL.Compatibility
             
             /// <summary> <b>[requires: GL_EXT_texture_integer]</b> <b>[entry point: <c>glTexParameterIivEXT</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_texture_integer.txt"/></remarks>
-            public static void TexParameterIivEXT(TextureTarget target, TextureParameterName pname, int* parameters) => GLPointers.glTexParameterIivEXT_Lazy((uint)target, (uint)pname, parameters);
+            public static void TexParameterIivEXT(TextureTarget target, TextureParameterName pname, int* @params) => GLPointers.glTexParameterIivEXT_Lazy((uint)target, (uint)pname, @params);
             
             /// <summary> <b>[requires: GL_EXT_texture_integer]</b> <b>[entry point: <c>glTexParameterIuivEXT</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_texture_integer.txt"/></remarks>
-            public static void TexParameterIuivEXT(TextureTarget target, TextureParameterName pname, uint* parameters) => GLPointers.glTexParameterIuivEXT_Lazy((uint)target, (uint)pname, parameters);
+            public static void TexParameterIuivEXT(TextureTarget target, TextureParameterName pname, uint* @params) => GLPointers.glTexParameterIuivEXT_Lazy((uint)target, (uint)pname, @params);
             
             /// <summary> <b>[requires: GL_EXT_texture_storage]</b> <b>[entry point: <c>glTexStorage1DEXT</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_texture_storage.txt"/></remarks>
@@ -13920,7 +13920,7 @@ namespace OpenTK.Graphics.OpenGL.Compatibility
             
             /// <summary> <b>[requires: GL_EXT_direct_state_access]</b> <b>[entry point: <c>glTextureParameterfvEXT</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_direct_state_access.txt"/></remarks>
-            public static void TextureParameterfvEXT(int texture, TextureTarget target, TextureParameterName pname, float* parameters) => GLPointers.glTextureParameterfvEXT_Lazy(texture, (uint)target, (uint)pname, parameters);
+            public static void TextureParameterfvEXT(int texture, TextureTarget target, TextureParameterName pname, float* @params) => GLPointers.glTextureParameterfvEXT_Lazy(texture, (uint)target, (uint)pname, @params);
             
             /// <summary> <b>[requires: GL_EXT_direct_state_access]</b> <b>[entry point: <c>glTextureParameteriEXT</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_direct_state_access.txt"/></remarks>
@@ -13928,15 +13928,15 @@ namespace OpenTK.Graphics.OpenGL.Compatibility
             
             /// <summary> <b>[requires: GL_EXT_direct_state_access]</b> <b>[entry point: <c>glTextureParameterIivEXT</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_direct_state_access.txt"/></remarks>
-            public static void TextureParameterIivEXT(int texture, TextureTarget target, TextureParameterName pname, int* parameters) => GLPointers.glTextureParameterIivEXT_Lazy(texture, (uint)target, (uint)pname, parameters);
+            public static void TextureParameterIivEXT(int texture, TextureTarget target, TextureParameterName pname, int* @params) => GLPointers.glTextureParameterIivEXT_Lazy(texture, (uint)target, (uint)pname, @params);
             
             /// <summary> <b>[requires: GL_EXT_direct_state_access]</b> <b>[entry point: <c>glTextureParameterIuivEXT</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_direct_state_access.txt"/></remarks>
-            public static void TextureParameterIuivEXT(int texture, TextureTarget target, TextureParameterName pname, uint* parameters) => GLPointers.glTextureParameterIuivEXT_Lazy(texture, (uint)target, (uint)pname, parameters);
+            public static void TextureParameterIuivEXT(int texture, TextureTarget target, TextureParameterName pname, uint* @params) => GLPointers.glTextureParameterIuivEXT_Lazy(texture, (uint)target, (uint)pname, @params);
             
             /// <summary> <b>[requires: GL_EXT_direct_state_access]</b> <b>[entry point: <c>glTextureParameterivEXT</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_direct_state_access.txt"/></remarks>
-            public static void TextureParameterivEXT(int texture, TextureTarget target, TextureParameterName pname, int* parameters) => GLPointers.glTextureParameterivEXT_Lazy(texture, (uint)target, (uint)pname, parameters);
+            public static void TextureParameterivEXT(int texture, TextureTarget target, TextureParameterName pname, int* @params) => GLPointers.glTextureParameterivEXT_Lazy(texture, (uint)target, (uint)pname, @params);
             
             /// <summary> <b>[requires: GL_EXT_direct_state_access]</b> <b>[entry point: <c>glTextureRenderbufferEXT</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_direct_state_access.txt"/></remarks>
@@ -14312,7 +14312,7 @@ namespace OpenTK.Graphics.OpenGL.Compatibility
             
             /// <summary> <b>[requires: GL_EXT_vertex_shader]</b> <b>[entry point: <c>glWriteMaskEXT</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_vertex_shader.txt"/></remarks>
-            public static void WriteMaskEXT(uint res, uint input, VertexShaderWriteMaskEXT outX, VertexShaderWriteMaskEXT outY, VertexShaderWriteMaskEXT outZ, VertexShaderWriteMaskEXT outW) => GLPointers.glWriteMaskEXT_Lazy(res, input, (uint)outX, (uint)outY, (uint)outZ, (uint)outW);
+            public static void WriteMaskEXT(uint res, uint @in, VertexShaderWriteMaskEXT outX, VertexShaderWriteMaskEXT outY, VertexShaderWriteMaskEXT outZ, VertexShaderWriteMaskEXT outW) => GLPointers.glWriteMaskEXT_Lazy(res, @in, (uint)outX, (uint)outY, (uint)outZ, (uint)outW);
             
         }
         /// <summary>GREMEDY extensions.</summary>
@@ -14324,7 +14324,7 @@ namespace OpenTK.Graphics.OpenGL.Compatibility
             
             /// <summary> <b>[requires: GL_GREMEDY_string_marker]</b> <b>[entry point: <c>glStringMarkerGREMEDY</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/GREMEDY/GREMEDY_string_marker.txt"/></remarks>
-            public static void StringMarkerGREMEDY(int len, void* str) => GLPointers.glStringMarkerGREMEDY_Lazy(len, str);
+            public static void StringMarkerGREMEDY(int len, void* @string) => GLPointers.glStringMarkerGREMEDY_Lazy(len, @string);
             
         }
         /// <summary>HP extensions.</summary>
@@ -14332,11 +14332,11 @@ namespace OpenTK.Graphics.OpenGL.Compatibility
         {
             /// <summary> <b>[requires: GL_HP_image_transform]</b> <b>[entry point: <c>glGetImageTransformParameterfvHP</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/HP/HP_image_transform.txt"/></remarks>
-            public static void GetImageTransformParameterfvHP(ImageTransformTargetHP target, ImageTransformPNameHP pname, float* parameters) => GLPointers.glGetImageTransformParameterfvHP_Lazy((uint)target, (uint)pname, parameters);
+            public static void GetImageTransformParameterfvHP(ImageTransformTargetHP target, ImageTransformPNameHP pname, float* @params) => GLPointers.glGetImageTransformParameterfvHP_Lazy((uint)target, (uint)pname, @params);
             
             /// <summary> <b>[requires: GL_HP_image_transform]</b> <b>[entry point: <c>glGetImageTransformParameterivHP</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/HP/HP_image_transform.txt"/></remarks>
-            public static void GetImageTransformParameterivHP(ImageTransformTargetHP target, ImageTransformPNameHP pname, int* parameters) => GLPointers.glGetImageTransformParameterivHP_Lazy((uint)target, (uint)pname, parameters);
+            public static void GetImageTransformParameterivHP(ImageTransformTargetHP target, ImageTransformPNameHP pname, int* @params) => GLPointers.glGetImageTransformParameterivHP_Lazy((uint)target, (uint)pname, @params);
             
             /// <summary> <b>[requires: GL_HP_image_transform]</b> <b>[entry point: <c>glImageTransformParameterfHP</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/HP/HP_image_transform.txt"/></remarks>
@@ -14344,7 +14344,7 @@ namespace OpenTK.Graphics.OpenGL.Compatibility
             
             /// <summary> <b>[requires: GL_HP_image_transform]</b> <b>[entry point: <c>glImageTransformParameterfvHP</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/HP/HP_image_transform.txt"/></remarks>
-            public static void ImageTransformParameterfvHP(ImageTransformTargetHP target, ImageTransformPNameHP pname, float* parameters) => GLPointers.glImageTransformParameterfvHP_Lazy((uint)target, (uint)pname, parameters);
+            public static void ImageTransformParameterfvHP(ImageTransformTargetHP target, ImageTransformPNameHP pname, float* @params) => GLPointers.glImageTransformParameterfvHP_Lazy((uint)target, (uint)pname, @params);
             
             /// <summary> <b>[requires: GL_HP_image_transform]</b> <b>[entry point: <c>glImageTransformParameteriHP</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/HP/HP_image_transform.txt"/></remarks>
@@ -14352,7 +14352,7 @@ namespace OpenTK.Graphics.OpenGL.Compatibility
             
             /// <summary> <b>[requires: GL_HP_image_transform]</b> <b>[entry point: <c>glImageTransformParameterivHP</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/HP/HP_image_transform.txt"/></remarks>
-            public static void ImageTransformParameterivHP(ImageTransformTargetHP target, ImageTransformPNameHP pname, int* parameters) => GLPointers.glImageTransformParameterivHP_Lazy((uint)target, (uint)pname, parameters);
+            public static void ImageTransformParameterivHP(ImageTransformTargetHP target, ImageTransformPNameHP pname, int* @params) => GLPointers.glImageTransformParameterivHP_Lazy((uint)target, (uint)pname, @params);
             
         }
         /// <summary>IBM extensions.</summary>
@@ -14560,37 +14560,37 @@ namespace OpenTK.Graphics.OpenGL.Compatibility
             /// <param name="program">Specifies the program object to be queried.</param>
             /// <param name="location">Specifies the location of the uniform variable to be queried.</param>
             /// <param name="bufSize">Specifies the size of the buffer params.</param>
-            /// <param name="parameters">Returns the value of the specified uniform variable.</param>
+            /// <param name="params">Returns the value of the specified uniform variable.</param>
             /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/glGetUniform.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/KHR/KHR_robustness.txt"/></remarks>
-            public static void GetnUniformfv(int program, int location, int bufSize, float* parameters) => GLPointers.glGetnUniformfv_Lazy(program, location, bufSize, parameters);
+            public static void GetnUniformfv(int program, int location, int bufSize, float* @params) => GLPointers.glGetnUniformfv_Lazy(program, location, bufSize, @params);
             
             /// <summary> <b>[requires: GL_KHR_robustness]</b> <b>[entry point: <c>glGetnUniformfvKHR</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/KHR/KHR_robustness.txt"/></remarks>
-            public static void GetnUniformfvKHR(int program, int location, int bufSize, float* parameters) => GLPointers.glGetnUniformfvKHR_Lazy(program, location, bufSize, parameters);
+            public static void GetnUniformfvKHR(int program, int location, int bufSize, float* @params) => GLPointers.glGetnUniformfvKHR_Lazy(program, location, bufSize, @params);
             
             /// <summary> <b>[requires: v4.5 | GL_KHR_robustness]</b> <b>[entry point: <c>glGetnUniformiv</c>]</b><br/> Returns the value of a uniform variable. </summary>
             /// <param name="program">Specifies the program object to be queried.</param>
             /// <param name="location">Specifies the location of the uniform variable to be queried.</param>
             /// <param name="bufSize">Specifies the size of the buffer params.</param>
-            /// <param name="parameters">Returns the value of the specified uniform variable.</param>
+            /// <param name="params">Returns the value of the specified uniform variable.</param>
             /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/glGetUniform.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/KHR/KHR_robustness.txt"/></remarks>
-            public static void GetnUniformiv(int program, int location, int bufSize, int* parameters) => GLPointers.glGetnUniformiv_Lazy(program, location, bufSize, parameters);
+            public static void GetnUniformiv(int program, int location, int bufSize, int* @params) => GLPointers.glGetnUniformiv_Lazy(program, location, bufSize, @params);
             
             /// <summary> <b>[requires: GL_KHR_robustness]</b> <b>[entry point: <c>glGetnUniformivKHR</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/KHR/KHR_robustness.txt"/></remarks>
-            public static void GetnUniformivKHR(int program, int location, int bufSize, int* parameters) => GLPointers.glGetnUniformivKHR_Lazy(program, location, bufSize, parameters);
+            public static void GetnUniformivKHR(int program, int location, int bufSize, int* @params) => GLPointers.glGetnUniformivKHR_Lazy(program, location, bufSize, @params);
             
             /// <summary> <b>[requires: v4.5 | GL_KHR_robustness]</b> <b>[entry point: <c>glGetnUniformuiv</c>]</b><br/> Returns the value of a uniform variable. </summary>
             /// <param name="program">Specifies the program object to be queried.</param>
             /// <param name="location">Specifies the location of the uniform variable to be queried.</param>
             /// <param name="bufSize">Specifies the size of the buffer params.</param>
-            /// <param name="parameters">Returns the value of the specified uniform variable.</param>
+            /// <param name="params">Returns the value of the specified uniform variable.</param>
             /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/glGetUniform.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/KHR/KHR_robustness.txt"/></remarks>
-            public static void GetnUniformuiv(int program, int location, int bufSize, uint* parameters) => GLPointers.glGetnUniformuiv_Lazy(program, location, bufSize, parameters);
+            public static void GetnUniformuiv(int program, int location, int bufSize, uint* @params) => GLPointers.glGetnUniformuiv_Lazy(program, location, bufSize, @params);
             
             /// <summary> <b>[requires: GL_KHR_robustness]</b> <b>[entry point: <c>glGetnUniformuivKHR</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/KHR/KHR_robustness.txt"/></remarks>
-            public static void GetnUniformuivKHR(int program, int location, int bufSize, uint* parameters) => GLPointers.glGetnUniformuivKHR_Lazy(program, location, bufSize, parameters);
+            public static void GetnUniformuivKHR(int program, int location, int bufSize, uint* @params) => GLPointers.glGetnUniformuivKHR_Lazy(program, location, bufSize, @params);
             
             /// <summary> <b>[requires: v4.3 | GL_KHR_debug]</b> <b>[entry point: <c>glGetObjectLabel</c>]</b><br/> Retrieve the label of a named object identified within a namespace. </summary>
             /// <param name="identifier"> The namespace from which the name of the object is allocated. </param>
@@ -14619,13 +14619,13 @@ namespace OpenTK.Graphics.OpenGL.Compatibility
             
             /// <summary> <b>[requires: v1.1 | GL_KHR_debug]</b> <b>[removed in: v3.2]</b> <b>[entry point: <c>glGetPointerv</c>]</b><br/> Return the address of the specified pointer. </summary>
             /// <param name="pname"> Specifies the pointer to be returned. Must be one of GL_DEBUG_CALLBACK_FUNCTION or GL_DEBUG_CALLBACK_USER_PARAM. </param>
-            /// <param name="parameters"> Returns the pointer value specified by pname. </param>
+            /// <param name="params"> Returns the pointer value specified by pname. </param>
             /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/glGetPointerv.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/KHR/KHR_debug.txt"/></remarks>
-            public static void GetPointerv(GetPointervPName pname, void** parameters) => GLPointers.glGetPointerv_Lazy((uint)pname, parameters);
+            public static void GetPointerv(GetPointervPName pname, void** @params) => GLPointers.glGetPointerv_Lazy((uint)pname, @params);
             
             /// <summary> <b>[requires: GL_KHR_debug]</b> <b>[entry point: <c>glGetPointervKHR</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/KHR/KHR_debug.txt"/></remarks>
-            public static void GetPointervKHR(All pname, void** parameters) => GLPointers.glGetPointervKHR_Lazy((uint)pname, parameters);
+            public static void GetPointervKHR(All pname, void** @params) => GLPointers.glGetPointervKHR_Lazy((uint)pname, @params);
             
             /// <summary> <b>[requires: GL_KHR_parallel_shader_compile]</b> <b>[entry point: <c>glMaxShaderCompilerThreadsKHR</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/KHR/KHR_parallel_shader_compile.txt"/></remarks>
@@ -14700,7 +14700,7 @@ namespace OpenTK.Graphics.OpenGL.Compatibility
             
             /// <summary> <b>[requires: GL_MESA_framebuffer_flip_y]</b> <b>[entry point: <c>glGetFramebufferParameterivMESA</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/MESA/MESA_framebuffer_flip_y.txt"/></remarks>
-            public static void GetFramebufferParameterivMESA(FramebufferTarget target, FramebufferAttachmentParameterName pname, int* parameters) => GLPointers.glGetFramebufferParameterivMESA_Lazy((uint)target, (uint)pname, parameters);
+            public static void GetFramebufferParameterivMESA(FramebufferTarget target, FramebufferAttachmentParameterName pname, int* @params) => GLPointers.glGetFramebufferParameterivMESA_Lazy((uint)target, (uint)pname, @params);
             
             /// <summary> <b>[requires: GL_MESA_resize_buffers]</b> <b>[entry point: <c>glResizeBuffersMESA</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/MESA/MESA_resize_buffers.txt"/></remarks>
@@ -14928,7 +14928,7 @@ namespace OpenTK.Graphics.OpenGL.Compatibility
             
             /// <summary> <b>[requires: GL_NV_register_combiners]</b> <b>[entry point: <c>glCombinerParameterfvNV</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_register_combiners.txt"/></remarks>
-            public static void CombinerParameterfvNV(CombinerParameterNV pname, float* parameters) => GLPointers.glCombinerParameterfvNV_Lazy((uint)pname, parameters);
+            public static void CombinerParameterfvNV(CombinerParameterNV pname, float* @params) => GLPointers.glCombinerParameterfvNV_Lazy((uint)pname, @params);
             
             /// <summary> <b>[requires: GL_NV_register_combiners]</b> <b>[entry point: <c>glCombinerParameteriNV</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_register_combiners.txt"/></remarks>
@@ -14936,11 +14936,11 @@ namespace OpenTK.Graphics.OpenGL.Compatibility
             
             /// <summary> <b>[requires: GL_NV_register_combiners]</b> <b>[entry point: <c>glCombinerParameterivNV</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_register_combiners.txt"/></remarks>
-            public static void CombinerParameterivNV(CombinerParameterNV pname, int* parameters) => GLPointers.glCombinerParameterivNV_Lazy((uint)pname, parameters);
+            public static void CombinerParameterivNV(CombinerParameterNV pname, int* @params) => GLPointers.glCombinerParameterivNV_Lazy((uint)pname, @params);
             
             /// <summary> <b>[requires: GL_NV_register_combiners2]</b> <b>[entry point: <c>glCombinerStageParameterfvNV</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_register_combiners2.txt"/></remarks>
-            public static void CombinerStageParameterfvNV(CombinerStageNV stage, CombinerParameterNV pname, float* parameters) => GLPointers.glCombinerStageParameterfvNV_Lazy((uint)stage, (uint)pname, parameters);
+            public static void CombinerStageParameterfvNV(CombinerStageNV stage, CombinerParameterNV pname, float* @params) => GLPointers.glCombinerStageParameterfvNV_Lazy((uint)stage, (uint)pname, @params);
             
             /// <summary> <b>[requires: GL_NV_command_list]</b> <b>[entry point: <c>glCommandListSegmentsNV</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_command_list.txt"/></remarks>
@@ -15104,7 +15104,7 @@ namespace OpenTK.Graphics.OpenGL.Compatibility
             
             /// <summary> <b>[requires: GL_NV_vertex_program]</b> <b>[entry point: <c>glExecuteProgramNV</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_vertex_program.txt"/></remarks>
-            public static void ExecuteProgramNV(VertexAttribEnumNV target, uint id, float* parameters) => GLPointers.glExecuteProgramNV_Lazy((uint)target, id, parameters);
+            public static void ExecuteProgramNV(VertexAttribEnumNV target, uint id, float* @params) => GLPointers.glExecuteProgramNV_Lazy((uint)target, id, @params);
             
             /// <summary> <b>[requires: GL_NV_register_combiners]</b> <b>[entry point: <c>glFinalCombinerInputNV</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_register_combiners.txt"/></remarks>
@@ -15184,27 +15184,27 @@ namespace OpenTK.Graphics.OpenGL.Compatibility
             
             /// <summary> <b>[requires: GL_NV_shader_buffer_load]</b> <b>[entry point: <c>glGetBufferParameterui64vNV</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_shader_buffer_load.txt"/></remarks>
-            public static void GetBufferParameterui64vNV(BufferTarget target, All pname, ulong* parameters) => GLPointers.glGetBufferParameterui64vNV_Lazy((uint)target, (uint)pname, parameters);
+            public static void GetBufferParameterui64vNV(BufferTarget target, All pname, ulong* @params) => GLPointers.glGetBufferParameterui64vNV_Lazy((uint)target, (uint)pname, @params);
             
             /// <summary> <b>[requires: GL_NV_register_combiners]</b> <b>[entry point: <c>glGetCombinerInputParameterfvNV</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_register_combiners.txt"/></remarks>
-            public static void GetCombinerInputParameterfvNV(CombinerStageNV stage, CombinerPortionNV portion, CombinerVariableNV variable, CombinerParameterNV pname, float* parameters) => GLPointers.glGetCombinerInputParameterfvNV_Lazy((uint)stage, (uint)portion, (uint)variable, (uint)pname, parameters);
+            public static void GetCombinerInputParameterfvNV(CombinerStageNV stage, CombinerPortionNV portion, CombinerVariableNV variable, CombinerParameterNV pname, float* @params) => GLPointers.glGetCombinerInputParameterfvNV_Lazy((uint)stage, (uint)portion, (uint)variable, (uint)pname, @params);
             
             /// <summary> <b>[requires: GL_NV_register_combiners]</b> <b>[entry point: <c>glGetCombinerInputParameterivNV</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_register_combiners.txt"/></remarks>
-            public static void GetCombinerInputParameterivNV(CombinerStageNV stage, CombinerPortionNV portion, CombinerVariableNV variable, CombinerParameterNV pname, int* parameters) => GLPointers.glGetCombinerInputParameterivNV_Lazy((uint)stage, (uint)portion, (uint)variable, (uint)pname, parameters);
+            public static void GetCombinerInputParameterivNV(CombinerStageNV stage, CombinerPortionNV portion, CombinerVariableNV variable, CombinerParameterNV pname, int* @params) => GLPointers.glGetCombinerInputParameterivNV_Lazy((uint)stage, (uint)portion, (uint)variable, (uint)pname, @params);
             
             /// <summary> <b>[requires: GL_NV_register_combiners]</b> <b>[entry point: <c>glGetCombinerOutputParameterfvNV</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_register_combiners.txt"/></remarks>
-            public static void GetCombinerOutputParameterfvNV(CombinerStageNV stage, CombinerPortionNV portion, CombinerParameterNV pname, float* parameters) => GLPointers.glGetCombinerOutputParameterfvNV_Lazy((uint)stage, (uint)portion, (uint)pname, parameters);
+            public static void GetCombinerOutputParameterfvNV(CombinerStageNV stage, CombinerPortionNV portion, CombinerParameterNV pname, float* @params) => GLPointers.glGetCombinerOutputParameterfvNV_Lazy((uint)stage, (uint)portion, (uint)pname, @params);
             
             /// <summary> <b>[requires: GL_NV_register_combiners]</b> <b>[entry point: <c>glGetCombinerOutputParameterivNV</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_register_combiners.txt"/></remarks>
-            public static void GetCombinerOutputParameterivNV(CombinerStageNV stage, CombinerPortionNV portion, CombinerParameterNV pname, int* parameters) => GLPointers.glGetCombinerOutputParameterivNV_Lazy((uint)stage, (uint)portion, (uint)pname, parameters);
+            public static void GetCombinerOutputParameterivNV(CombinerStageNV stage, CombinerPortionNV portion, CombinerParameterNV pname, int* @params) => GLPointers.glGetCombinerOutputParameterivNV_Lazy((uint)stage, (uint)portion, (uint)pname, @params);
             
             /// <summary> <b>[requires: GL_NV_register_combiners2]</b> <b>[entry point: <c>glGetCombinerStageParameterfvNV</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_register_combiners2.txt"/></remarks>
-            public static void GetCombinerStageParameterfvNV(CombinerStageNV stage, CombinerParameterNV pname, float* parameters) => GLPointers.glGetCombinerStageParameterfvNV_Lazy((uint)stage, (uint)pname, parameters);
+            public static void GetCombinerStageParameterfvNV(CombinerStageNV stage, CombinerParameterNV pname, float* @params) => GLPointers.glGetCombinerStageParameterfvNV_Lazy((uint)stage, (uint)pname, @params);
             
             /// <summary> <b>[requires: GL_NV_command_list]</b> <b>[entry point: <c>glGetCommandHeaderNV</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_command_list.txt"/></remarks>
@@ -15216,15 +15216,15 @@ namespace OpenTK.Graphics.OpenGL.Compatibility
             
             /// <summary> <b>[requires: GL_NV_fence]</b> <b>[entry point: <c>glGetFenceivNV</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_fence.txt"/></remarks>
-            public static void GetFenceivNV(uint fence, FenceParameterNameNV pname, int* parameters) => GLPointers.glGetFenceivNV_Lazy(fence, (uint)pname, parameters);
+            public static void GetFenceivNV(uint fence, FenceParameterNameNV pname, int* @params) => GLPointers.glGetFenceivNV_Lazy(fence, (uint)pname, @params);
             
             /// <summary> <b>[requires: GL_NV_register_combiners]</b> <b>[entry point: <c>glGetFinalCombinerInputParameterfvNV</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_register_combiners.txt"/></remarks>
-            public static void GetFinalCombinerInputParameterfvNV(CombinerVariableNV variable, CombinerParameterNV pname, float* parameters) => GLPointers.glGetFinalCombinerInputParameterfvNV_Lazy((uint)variable, (uint)pname, parameters);
+            public static void GetFinalCombinerInputParameterfvNV(CombinerVariableNV variable, CombinerParameterNV pname, float* @params) => GLPointers.glGetFinalCombinerInputParameterfvNV_Lazy((uint)variable, (uint)pname, @params);
             
             /// <summary> <b>[requires: GL_NV_register_combiners]</b> <b>[entry point: <c>glGetFinalCombinerInputParameterivNV</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_register_combiners.txt"/></remarks>
-            public static void GetFinalCombinerInputParameterivNV(CombinerVariableNV variable, CombinerParameterNV pname, int* parameters) => GLPointers.glGetFinalCombinerInputParameterivNV_Lazy((uint)variable, (uint)pname, parameters);
+            public static void GetFinalCombinerInputParameterivNV(CombinerVariableNV variable, CombinerParameterNV pname, int* @params) => GLPointers.glGetFinalCombinerInputParameterivNV_Lazy((uint)variable, (uint)pname, @params);
             
             /// <summary> <b>[requires: GL_NV_bindless_texture]</b> <b>[entry point: <c>glGetImageHandleNV</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_bindless_texture.txt"/></remarks>
@@ -15240,15 +15240,15 @@ namespace OpenTK.Graphics.OpenGL.Compatibility
             
             /// <summary> <b>[requires: GL_NV_internalformat_sample_query]</b> <b>[entry point: <c>glGetInternalformatSampleivNV</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_internalformat_sample_query.txt"/></remarks>
-            public static void GetInternalformatSampleivNV(TextureTarget target, InternalFormat internalformat, int samples, InternalFormatPName pname, int count, int* parameters) => GLPointers.glGetInternalformatSampleivNV_Lazy((uint)target, (uint)internalformat, samples, (uint)pname, count, parameters);
+            public static void GetInternalformatSampleivNV(TextureTarget target, InternalFormat internalformat, int samples, InternalFormatPName pname, int count, int* @params) => GLPointers.glGetInternalformatSampleivNV_Lazy((uint)target, (uint)internalformat, samples, (uint)pname, count, @params);
             
             /// <summary> <b>[requires: GL_NV_evaluators]</b> <b>[entry point: <c>glGetMapAttribParameterfvNV</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_evaluators.txt"/></remarks>
-            public static void GetMapAttribParameterfvNV(EvalTargetNV target, uint index, MapAttribParameterNV pname, float* parameters) => GLPointers.glGetMapAttribParameterfvNV_Lazy((uint)target, index, (uint)pname, parameters);
+            public static void GetMapAttribParameterfvNV(EvalTargetNV target, uint index, MapAttribParameterNV pname, float* @params) => GLPointers.glGetMapAttribParameterfvNV_Lazy((uint)target, index, (uint)pname, @params);
             
             /// <summary> <b>[requires: GL_NV_evaluators]</b> <b>[entry point: <c>glGetMapAttribParameterivNV</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_evaluators.txt"/></remarks>
-            public static void GetMapAttribParameterivNV(EvalTargetNV target, uint index, MapAttribParameterNV pname, int* parameters) => GLPointers.glGetMapAttribParameterivNV_Lazy((uint)target, index, (uint)pname, parameters);
+            public static void GetMapAttribParameterivNV(EvalTargetNV target, uint index, MapAttribParameterNV pname, int* @params) => GLPointers.glGetMapAttribParameterivNV_Lazy((uint)target, index, (uint)pname, @params);
             
             /// <summary> <b>[requires: GL_NV_evaluators]</b> <b>[entry point: <c>glGetMapControlPointsNV</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_evaluators.txt"/></remarks>
@@ -15256,15 +15256,15 @@ namespace OpenTK.Graphics.OpenGL.Compatibility
             
             /// <summary> <b>[requires: GL_NV_evaluators]</b> <b>[entry point: <c>glGetMapParameterfvNV</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_evaluators.txt"/></remarks>
-            public static void GetMapParameterfvNV(EvalTargetNV target, MapParameterNV pname, float* parameters) => GLPointers.glGetMapParameterfvNV_Lazy((uint)target, (uint)pname, parameters);
+            public static void GetMapParameterfvNV(EvalTargetNV target, MapParameterNV pname, float* @params) => GLPointers.glGetMapParameterfvNV_Lazy((uint)target, (uint)pname, @params);
             
             /// <summary> <b>[requires: GL_NV_evaluators]</b> <b>[entry point: <c>glGetMapParameterivNV</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_evaluators.txt"/></remarks>
-            public static void GetMapParameterivNV(EvalTargetNV target, MapParameterNV pname, int* parameters) => GLPointers.glGetMapParameterivNV_Lazy((uint)target, (uint)pname, parameters);
+            public static void GetMapParameterivNV(EvalTargetNV target, MapParameterNV pname, int* @params) => GLPointers.glGetMapParameterivNV_Lazy((uint)target, (uint)pname, @params);
             
             /// <summary> <b>[requires: GL_NV_memory_attachment]</b> <b>[entry point: <c>glGetMemoryObjectDetachedResourcesuivNV</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_memory_attachment.txt"/></remarks>
-            public static void GetMemoryObjectDetachedResourcesuivNV(uint memory, All pname, int first, int count, uint* parameters) => GLPointers.glGetMemoryObjectDetachedResourcesuivNV_Lazy(memory, (uint)pname, first, count, parameters);
+            public static void GetMemoryObjectDetachedResourcesuivNV(uint memory, All pname, int first, int count, uint* @params) => GLPointers.glGetMemoryObjectDetachedResourcesuivNV_Lazy(memory, (uint)pname, first, count, @params);
             
             /// <summary> <b>[requires: GL_NV_explicit_multisample]</b> <b>[entry point: <c>glGetMultisamplefvNV</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_explicit_multisample.txt"/></remarks>
@@ -15272,15 +15272,15 @@ namespace OpenTK.Graphics.OpenGL.Compatibility
             
             /// <summary> <b>[requires: GL_NV_shader_buffer_load]</b> <b>[entry point: <c>glGetNamedBufferParameterui64vNV</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_shader_buffer_load.txt"/></remarks>
-            public static void GetNamedBufferParameterui64vNV(int buffer, BufferPName pname, ulong* parameters) => GLPointers.glGetNamedBufferParameterui64vNV_Lazy(buffer, (uint)pname, parameters);
+            public static void GetNamedBufferParameterui64vNV(int buffer, BufferPName pname, ulong* @params) => GLPointers.glGetNamedBufferParameterui64vNV_Lazy(buffer, (uint)pname, @params);
             
             /// <summary> <b>[requires: GL_NV_occlusion_query]</b> <b>[entry point: <c>glGetOcclusionQueryivNV</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_occlusion_query.txt"/></remarks>
-            public static void GetOcclusionQueryivNV(uint id, OcclusionQueryParameterNameNV pname, int* parameters) => GLPointers.glGetOcclusionQueryivNV_Lazy(id, (uint)pname, parameters);
+            public static void GetOcclusionQueryivNV(uint id, OcclusionQueryParameterNameNV pname, int* @params) => GLPointers.glGetOcclusionQueryivNV_Lazy(id, (uint)pname, @params);
             
             /// <summary> <b>[requires: GL_NV_occlusion_query]</b> <b>[entry point: <c>glGetOcclusionQueryuivNV</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_occlusion_query.txt"/></remarks>
-            public static void GetOcclusionQueryuivNV(uint id, OcclusionQueryParameterNameNV pname, uint* parameters) => GLPointers.glGetOcclusionQueryuivNV_Lazy(id, (uint)pname, parameters);
+            public static void GetOcclusionQueryuivNV(uint id, OcclusionQueryParameterNameNV pname, uint* @params) => GLPointers.glGetOcclusionQueryuivNV_Lazy(id, (uint)pname, @params);
             
             /// <summary> <b>[requires: GL_NV_path_rendering]</b> <b>[entry point: <c>glGetPathColorGenfvNV</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_path_rendering.txt"/></remarks>
@@ -15336,43 +15336,43 @@ namespace OpenTK.Graphics.OpenGL.Compatibility
             
             /// <summary> <b>[requires: GL_NV_gpu_program4]</b> <b>[entry point: <c>glGetProgramEnvParameterIivNV</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_gpu_program4.txt"/></remarks>
-            public static void GetProgramEnvParameterIivNV(ProgramTarget target, uint index, int* parameters) => GLPointers.glGetProgramEnvParameterIivNV_Lazy((uint)target, index, parameters);
+            public static void GetProgramEnvParameterIivNV(ProgramTarget target, uint index, int* @params) => GLPointers.glGetProgramEnvParameterIivNV_Lazy((uint)target, index, @params);
             
             /// <summary> <b>[requires: GL_NV_gpu_program4]</b> <b>[entry point: <c>glGetProgramEnvParameterIuivNV</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_gpu_program4.txt"/></remarks>
-            public static void GetProgramEnvParameterIuivNV(ProgramTarget target, uint index, uint* parameters) => GLPointers.glGetProgramEnvParameterIuivNV_Lazy((uint)target, index, parameters);
+            public static void GetProgramEnvParameterIuivNV(ProgramTarget target, uint index, uint* @params) => GLPointers.glGetProgramEnvParameterIuivNV_Lazy((uint)target, index, @params);
             
             /// <summary> <b>[requires: GL_NV_vertex_program]</b> <b>[entry point: <c>glGetProgramivNV</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_vertex_program.txt"/></remarks>
-            public static void GetProgramivNV(int id, VertexAttribEnumNV pname, int* parameters) => GLPointers.glGetProgramivNV_Lazy(id, (uint)pname, parameters);
+            public static void GetProgramivNV(int id, VertexAttribEnumNV pname, int* @params) => GLPointers.glGetProgramivNV_Lazy(id, (uint)pname, @params);
             
             /// <summary> <b>[requires: GL_NV_gpu_program4]</b> <b>[entry point: <c>glGetProgramLocalParameterIivNV</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_gpu_program4.txt"/></remarks>
-            public static void GetProgramLocalParameterIivNV(ProgramTarget target, uint index, int* parameters) => GLPointers.glGetProgramLocalParameterIivNV_Lazy((uint)target, index, parameters);
+            public static void GetProgramLocalParameterIivNV(ProgramTarget target, uint index, int* @params) => GLPointers.glGetProgramLocalParameterIivNV_Lazy((uint)target, index, @params);
             
             /// <summary> <b>[requires: GL_NV_gpu_program4]</b> <b>[entry point: <c>glGetProgramLocalParameterIuivNV</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_gpu_program4.txt"/></remarks>
-            public static void GetProgramLocalParameterIuivNV(ProgramTarget target, uint index, uint* parameters) => GLPointers.glGetProgramLocalParameterIuivNV_Lazy((uint)target, index, parameters);
+            public static void GetProgramLocalParameterIuivNV(ProgramTarget target, uint index, uint* @params) => GLPointers.glGetProgramLocalParameterIuivNV_Lazy((uint)target, index, @params);
             
             /// <summary> <b>[requires: GL_NV_fragment_program]</b> <b>[entry point: <c>glGetProgramNamedParameterdvNV</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_fragment_program.txt"/></remarks>
-            public static void GetProgramNamedParameterdvNV(int id, int len, byte* name, double* parameters) => GLPointers.glGetProgramNamedParameterdvNV_Lazy(id, len, name, parameters);
+            public static void GetProgramNamedParameterdvNV(int id, int len, byte* name, double* @params) => GLPointers.glGetProgramNamedParameterdvNV_Lazy(id, len, name, @params);
             
             /// <summary> <b>[requires: GL_NV_fragment_program]</b> <b>[entry point: <c>glGetProgramNamedParameterfvNV</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_fragment_program.txt"/></remarks>
-            public static void GetProgramNamedParameterfvNV(int id, int len, byte* name, float* parameters) => GLPointers.glGetProgramNamedParameterfvNV_Lazy(id, len, name, parameters);
+            public static void GetProgramNamedParameterfvNV(int id, int len, byte* name, float* @params) => GLPointers.glGetProgramNamedParameterfvNV_Lazy(id, len, name, @params);
             
             /// <summary> <b>[requires: GL_NV_vertex_program]</b> <b>[entry point: <c>glGetProgramParameterdvNV</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_vertex_program.txt"/></remarks>
-            public static void GetProgramParameterdvNV(VertexAttribEnumNV target, uint index, VertexAttribEnumNV pname, double* parameters) => GLPointers.glGetProgramParameterdvNV_Lazy((uint)target, index, (uint)pname, parameters);
+            public static void GetProgramParameterdvNV(VertexAttribEnumNV target, uint index, VertexAttribEnumNV pname, double* @params) => GLPointers.glGetProgramParameterdvNV_Lazy((uint)target, index, (uint)pname, @params);
             
             /// <summary> <b>[requires: GL_NV_vertex_program]</b> <b>[entry point: <c>glGetProgramParameterfvNV</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_vertex_program.txt"/></remarks>
-            public static void GetProgramParameterfvNV(VertexAttribEnumNV target, uint index, VertexAttribEnumNV pname, float* parameters) => GLPointers.glGetProgramParameterfvNV_Lazy((uint)target, index, (uint)pname, parameters);
+            public static void GetProgramParameterfvNV(VertexAttribEnumNV target, uint index, VertexAttribEnumNV pname, float* @params) => GLPointers.glGetProgramParameterfvNV_Lazy((uint)target, index, (uint)pname, @params);
             
             /// <summary> <b>[requires: GL_NV_path_rendering]</b> <b>[entry point: <c>glGetProgramResourcefvNV</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_path_rendering.txt"/></remarks>
-            public static void GetProgramResourcefvNV(int program, ProgramInterface programInterface, uint index, int propCount, All* props, int count, int* length, float* parameters) => GLPointers.glGetProgramResourcefvNV_Lazy(program, (uint)programInterface, index, propCount, (uint*)props, count, length, parameters);
+            public static void GetProgramResourcefvNV(int program, ProgramInterface programInterface, uint index, int propCount, All* props, int count, int* length, float* @params) => GLPointers.glGetProgramResourcefvNV_Lazy(program, (uint)programInterface, index, propCount, (uint*)props, count, length, @params);
             
             /// <summary> <b>[requires: GL_NV_vertex_program]</b> <b>[entry point: <c>glGetProgramStringNV</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_vertex_program.txt"/></remarks>
@@ -15384,7 +15384,7 @@ namespace OpenTK.Graphics.OpenGL.Compatibility
             
             /// <summary> <b>[requires: GL_NV_timeline_semaphore]</b> <b>[entry point: <c>glGetSemaphoreParameterivNV</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_timeline_semaphore.txt"/></remarks>
-            public static void GetSemaphoreParameterivNV(uint semaphore, SemaphoreParameterName pname, int* parameters) => GLPointers.glGetSemaphoreParameterivNV_Lazy(semaphore, (uint)pname, parameters);
+            public static void GetSemaphoreParameterivNV(uint semaphore, SemaphoreParameterName pname, int* @params) => GLPointers.glGetSemaphoreParameterivNV_Lazy(semaphore, (uint)pname, @params);
             
             /// <summary> <b>[requires: GL_NV_shading_rate_image]</b> <b>[entry point: <c>glGetShadingRateImagePaletteNV</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_shading_rate_image.txt"/></remarks>
@@ -15408,7 +15408,7 @@ namespace OpenTK.Graphics.OpenGL.Compatibility
             
             /// <summary> <b>[requires: GL_NV_vertex_program]</b> <b>[entry point: <c>glGetTrackMatrixivNV</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_vertex_program.txt"/></remarks>
-            public static void GetTrackMatrixivNV(VertexAttribEnumNV target, uint address, VertexAttribEnumNV pname, int* parameters) => GLPointers.glGetTrackMatrixivNV_Lazy((uint)target, address, (uint)pname, parameters);
+            public static void GetTrackMatrixivNV(VertexAttribEnumNV target, uint address, VertexAttribEnumNV pname, int* @params) => GLPointers.glGetTrackMatrixivNV_Lazy((uint)target, address, (uint)pname, @params);
             
             /// <summary> <b>[requires: GL_NV_transform_feedback]</b> <b>[entry point: <c>glGetTransformFeedbackVaryingNV</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_transform_feedback.txt"/></remarks>
@@ -15416,11 +15416,11 @@ namespace OpenTK.Graphics.OpenGL.Compatibility
             
             /// <summary> <b>[requires: GL_AMD_gpu_shader_int64 | GL_NV_gpu_shader5]</b> <b>[entry point: <c>glGetUniformi64vNV</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/AMD_gpu_shader_int64.txt"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_gpu_shader5.txt"/></remarks>
-            public static void GetUniformi64vNV(int program, int location, long* parameters) => GLPointers.glGetUniformi64vNV_Lazy(program, location, parameters);
+            public static void GetUniformi64vNV(int program, int location, long* @params) => GLPointers.glGetUniformi64vNV_Lazy(program, location, @params);
             
             /// <summary> <b>[requires: GL_AMD_gpu_shader_int64 | GL_NV_shader_buffer_load]</b> <b>[entry point: <c>glGetUniformui64vNV</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/AMD_gpu_shader_int64.txt"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_shader_buffer_load.txt"/></remarks>
-            public static void GetUniformui64vNV(int program, int location, ulong* parameters) => GLPointers.glGetUniformui64vNV_Lazy(program, location, parameters);
+            public static void GetUniformui64vNV(int program, int location, ulong* @params) => GLPointers.glGetUniformui64vNV_Lazy(program, location, @params);
             
             /// <summary> <b>[requires: GL_NV_transform_feedback]</b> <b>[entry point: <c>glGetVaryingLocationNV</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_transform_feedback.txt"/></remarks>
@@ -15428,31 +15428,31 @@ namespace OpenTK.Graphics.OpenGL.Compatibility
             
             /// <summary> <b>[requires: GL_NV_vertex_program]</b> <b>[entry point: <c>glGetVertexAttribdvNV</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_vertex_program.txt"/></remarks>
-            public static void GetVertexAttribdvNV(uint index, VertexAttribEnumNV pname, double* parameters) => GLPointers.glGetVertexAttribdvNV_Lazy(index, (uint)pname, parameters);
+            public static void GetVertexAttribdvNV(uint index, VertexAttribEnumNV pname, double* @params) => GLPointers.glGetVertexAttribdvNV_Lazy(index, (uint)pname, @params);
             
             /// <summary> <b>[requires: GL_NV_vertex_program]</b> <b>[entry point: <c>glGetVertexAttribfvNV</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_vertex_program.txt"/></remarks>
-            public static void GetVertexAttribfvNV(uint index, VertexAttribEnumNV pname, float* parameters) => GLPointers.glGetVertexAttribfvNV_Lazy(index, (uint)pname, parameters);
+            public static void GetVertexAttribfvNV(uint index, VertexAttribEnumNV pname, float* @params) => GLPointers.glGetVertexAttribfvNV_Lazy(index, (uint)pname, @params);
             
             /// <summary> <b>[requires: GL_EXT_gpu_shader4 | GL_NV_vertex_program4]</b> <b>[entry point: <c>glGetVertexAttribIivEXT</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_gpu_shader4.txt"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/EXT/NV_vertex_program4.txt"/></remarks>
-            public static void GetVertexAttribIivEXT(uint index, VertexAttribEnum pname, int* parameters) => GLPointers.glGetVertexAttribIivEXT_Lazy(index, (uint)pname, parameters);
+            public static void GetVertexAttribIivEXT(uint index, VertexAttribEnum pname, int* @params) => GLPointers.glGetVertexAttribIivEXT_Lazy(index, (uint)pname, @params);
             
             /// <summary> <b>[requires: GL_EXT_gpu_shader4 | GL_NV_vertex_program4]</b> <b>[entry point: <c>glGetVertexAttribIuivEXT</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_gpu_shader4.txt"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/EXT/NV_vertex_program4.txt"/></remarks>
-            public static void GetVertexAttribIuivEXT(uint index, VertexAttribEnum pname, uint* parameters) => GLPointers.glGetVertexAttribIuivEXT_Lazy(index, (uint)pname, parameters);
+            public static void GetVertexAttribIuivEXT(uint index, VertexAttribEnum pname, uint* @params) => GLPointers.glGetVertexAttribIuivEXT_Lazy(index, (uint)pname, @params);
             
             /// <summary> <b>[requires: GL_NV_vertex_program]</b> <b>[entry point: <c>glGetVertexAttribivNV</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_vertex_program.txt"/></remarks>
-            public static void GetVertexAttribivNV(uint index, VertexAttribEnumNV pname, int* parameters) => GLPointers.glGetVertexAttribivNV_Lazy(index, (uint)pname, parameters);
+            public static void GetVertexAttribivNV(uint index, VertexAttribEnumNV pname, int* @params) => GLPointers.glGetVertexAttribivNV_Lazy(index, (uint)pname, @params);
             
             /// <summary> <b>[requires: GL_NV_vertex_attrib_integer_64bit]</b> <b>[entry point: <c>glGetVertexAttribLi64vNV</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_vertex_attrib_integer_64bit.txt"/></remarks>
-            public static void GetVertexAttribLi64vNV(uint index, VertexAttribEnum pname, long* parameters) => GLPointers.glGetVertexAttribLi64vNV_Lazy(index, (uint)pname, parameters);
+            public static void GetVertexAttribLi64vNV(uint index, VertexAttribEnum pname, long* @params) => GLPointers.glGetVertexAttribLi64vNV_Lazy(index, (uint)pname, @params);
             
             /// <summary> <b>[requires: GL_NV_vertex_attrib_integer_64bit]</b> <b>[entry point: <c>glGetVertexAttribLui64vNV</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_vertex_attrib_integer_64bit.txt"/></remarks>
-            public static void GetVertexAttribLui64vNV(uint index, VertexAttribEnum pname, ulong* parameters) => GLPointers.glGetVertexAttribLui64vNV_Lazy(index, (uint)pname, parameters);
+            public static void GetVertexAttribLui64vNV(uint index, VertexAttribEnum pname, ulong* @params) => GLPointers.glGetVertexAttribLui64vNV_Lazy(index, (uint)pname, @params);
             
             /// <summary> <b>[requires: GL_NV_vertex_program]</b> <b>[entry point: <c>glGetVertexAttribPointervNV</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_vertex_program.txt"/></remarks>
@@ -15460,35 +15460,35 @@ namespace OpenTK.Graphics.OpenGL.Compatibility
             
             /// <summary> <b>[requires: GL_NV_video_capture]</b> <b>[entry point: <c>glGetVideoCaptureivNV</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_video_capture.txt"/></remarks>
-            public static void GetVideoCaptureivNV(uint video_capture_slot, All pname, int* parameters) => GLPointers.glGetVideoCaptureivNV_Lazy(video_capture_slot, (uint)pname, parameters);
+            public static void GetVideoCaptureivNV(uint video_capture_slot, All pname, int* @params) => GLPointers.glGetVideoCaptureivNV_Lazy(video_capture_slot, (uint)pname, @params);
             
             /// <summary> <b>[requires: GL_NV_video_capture]</b> <b>[entry point: <c>glGetVideoCaptureStreamdvNV</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_video_capture.txt"/></remarks>
-            public static void GetVideoCaptureStreamdvNV(uint video_capture_slot, uint stream, All pname, double* parameters) => GLPointers.glGetVideoCaptureStreamdvNV_Lazy(video_capture_slot, stream, (uint)pname, parameters);
+            public static void GetVideoCaptureStreamdvNV(uint video_capture_slot, uint stream, All pname, double* @params) => GLPointers.glGetVideoCaptureStreamdvNV_Lazy(video_capture_slot, stream, (uint)pname, @params);
             
             /// <summary> <b>[requires: GL_NV_video_capture]</b> <b>[entry point: <c>glGetVideoCaptureStreamfvNV</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_video_capture.txt"/></remarks>
-            public static void GetVideoCaptureStreamfvNV(uint video_capture_slot, uint stream, All pname, float* parameters) => GLPointers.glGetVideoCaptureStreamfvNV_Lazy(video_capture_slot, stream, (uint)pname, parameters);
+            public static void GetVideoCaptureStreamfvNV(uint video_capture_slot, uint stream, All pname, float* @params) => GLPointers.glGetVideoCaptureStreamfvNV_Lazy(video_capture_slot, stream, (uint)pname, @params);
             
             /// <summary> <b>[requires: GL_NV_video_capture]</b> <b>[entry point: <c>glGetVideoCaptureStreamivNV</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_video_capture.txt"/></remarks>
-            public static void GetVideoCaptureStreamivNV(uint video_capture_slot, uint stream, All pname, int* parameters) => GLPointers.glGetVideoCaptureStreamivNV_Lazy(video_capture_slot, stream, (uint)pname, parameters);
+            public static void GetVideoCaptureStreamivNV(uint video_capture_slot, uint stream, All pname, int* @params) => GLPointers.glGetVideoCaptureStreamivNV_Lazy(video_capture_slot, stream, (uint)pname, @params);
             
             /// <summary> <b>[requires: GL_NV_present_video]</b> <b>[entry point: <c>glGetVideoi64vNV</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_present_video.txt"/></remarks>
-            public static void GetVideoi64vNV(uint video_slot, All pname, long* parameters) => GLPointers.glGetVideoi64vNV_Lazy(video_slot, (uint)pname, parameters);
+            public static void GetVideoi64vNV(uint video_slot, All pname, long* @params) => GLPointers.glGetVideoi64vNV_Lazy(video_slot, (uint)pname, @params);
             
             /// <summary> <b>[requires: GL_NV_present_video]</b> <b>[entry point: <c>glGetVideoivNV</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_present_video.txt"/></remarks>
-            public static void GetVideoivNV(uint video_slot, All pname, int* parameters) => GLPointers.glGetVideoivNV_Lazy(video_slot, (uint)pname, parameters);
+            public static void GetVideoivNV(uint video_slot, All pname, int* @params) => GLPointers.glGetVideoivNV_Lazy(video_slot, (uint)pname, @params);
             
             /// <summary> <b>[requires: GL_NV_present_video]</b> <b>[entry point: <c>glGetVideoui64vNV</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_present_video.txt"/></remarks>
-            public static void GetVideoui64vNV(uint video_slot, All pname, ulong* parameters) => GLPointers.glGetVideoui64vNV_Lazy(video_slot, (uint)pname, parameters);
+            public static void GetVideoui64vNV(uint video_slot, All pname, ulong* @params) => GLPointers.glGetVideoui64vNV_Lazy(video_slot, (uint)pname, @params);
             
             /// <summary> <b>[requires: GL_NV_present_video]</b> <b>[entry point: <c>glGetVideouivNV</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_present_video.txt"/></remarks>
-            public static void GetVideouivNV(uint video_slot, All pname, uint* parameters) => GLPointers.glGetVideouivNV_Lazy(video_slot, (uint)pname, parameters);
+            public static void GetVideouivNV(uint video_slot, All pname, uint* @params) => GLPointers.glGetVideouivNV_Lazy(video_slot, (uint)pname, @params);
             
             /// <summary> <b>[requires: GL_NV_draw_vulkan_image]</b> <b>[entry point: <c>glGetVkProcAddrNV</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_draw_vulkan_image.txt"/></remarks>
@@ -15600,11 +15600,11 @@ namespace OpenTK.Graphics.OpenGL.Compatibility
             
             /// <summary> <b>[requires: GL_NV_evaluators]</b> <b>[entry point: <c>glMapParameterfvNV</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_evaluators.txt"/></remarks>
-            public static void MapParameterfvNV(EvalTargetNV target, MapParameterNV pname, float* parameters) => GLPointers.glMapParameterfvNV_Lazy((uint)target, (uint)pname, parameters);
+            public static void MapParameterfvNV(EvalTargetNV target, MapParameterNV pname, float* @params) => GLPointers.glMapParameterfvNV_Lazy((uint)target, (uint)pname, @params);
             
             /// <summary> <b>[requires: GL_NV_evaluators]</b> <b>[entry point: <c>glMapParameterivNV</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_evaluators.txt"/></remarks>
-            public static void MapParameterivNV(EvalTargetNV target, MapParameterNV pname, int* parameters) => GLPointers.glMapParameterivNV_Lazy((uint)target, (uint)pname, parameters);
+            public static void MapParameterivNV(EvalTargetNV target, MapParameterNV pname, int* @params) => GLPointers.glMapParameterivNV_Lazy((uint)target, (uint)pname, @params);
             
             /// <summary> <b>[requires: GL_EXT_direct_state_access | GL_NV_path_rendering]</b> <b>[entry point: <c>glMatrixFrustumEXT</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_direct_state_access.txt"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/EXT/NV_path_rendering.txt"/></remarks>
@@ -15732,19 +15732,19 @@ namespace OpenTK.Graphics.OpenGL.Compatibility
             
             /// <summary> <b>[requires: GL_NV_gpu_multicast]</b> <b>[entry point: <c>glMulticastGetQueryObjecti64vNV</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_gpu_multicast.txt"/></remarks>
-            public static void MulticastGetQueryObjecti64vNV(uint gpu, uint id, All pname, long* parameters) => GLPointers.glMulticastGetQueryObjecti64vNV_Lazy(gpu, id, (uint)pname, parameters);
+            public static void MulticastGetQueryObjecti64vNV(uint gpu, uint id, All pname, long* @params) => GLPointers.glMulticastGetQueryObjecti64vNV_Lazy(gpu, id, (uint)pname, @params);
             
             /// <summary> <b>[requires: GL_NV_gpu_multicast]</b> <b>[entry point: <c>glMulticastGetQueryObjectivNV</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_gpu_multicast.txt"/></remarks>
-            public static void MulticastGetQueryObjectivNV(uint gpu, uint id, All pname, int* parameters) => GLPointers.glMulticastGetQueryObjectivNV_Lazy(gpu, id, (uint)pname, parameters);
+            public static void MulticastGetQueryObjectivNV(uint gpu, uint id, All pname, int* @params) => GLPointers.glMulticastGetQueryObjectivNV_Lazy(gpu, id, (uint)pname, @params);
             
             /// <summary> <b>[requires: GL_NV_gpu_multicast]</b> <b>[entry point: <c>glMulticastGetQueryObjectui64vNV</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_gpu_multicast.txt"/></remarks>
-            public static void MulticastGetQueryObjectui64vNV(uint gpu, uint id, All pname, ulong* parameters) => GLPointers.glMulticastGetQueryObjectui64vNV_Lazy(gpu, id, (uint)pname, parameters);
+            public static void MulticastGetQueryObjectui64vNV(uint gpu, uint id, All pname, ulong* @params) => GLPointers.glMulticastGetQueryObjectui64vNV_Lazy(gpu, id, (uint)pname, @params);
             
             /// <summary> <b>[requires: GL_NV_gpu_multicast]</b> <b>[entry point: <c>glMulticastGetQueryObjectuivNV</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_gpu_multicast.txt"/></remarks>
-            public static void MulticastGetQueryObjectuivNV(uint gpu, uint id, All pname, uint* parameters) => GLPointers.glMulticastGetQueryObjectuivNV_Lazy(gpu, id, (uint)pname, parameters);
+            public static void MulticastGetQueryObjectuivNV(uint gpu, uint id, All pname, uint* @params) => GLPointers.glMulticastGetQueryObjectuivNV_Lazy(gpu, id, (uint)pname, @params);
             
             /// <summary> <b>[requires: GL_NV_gpu_multicast]</b> <b>[entry point: <c>glMulticastWaitSyncNV</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_gpu_multicast.txt"/></remarks>
@@ -15896,7 +15896,7 @@ namespace OpenTK.Graphics.OpenGL.Compatibility
             
             /// <summary> <b>[requires: GL_NV_path_rendering]</b> <b>[entry point: <c>glPathStencilFuncNV</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_path_rendering.txt"/></remarks>
-            public static void PathStencilFuncNV(StencilFunction func, int reference, uint mask) => GLPointers.glPathStencilFuncNV_Lazy((uint)func, reference, mask);
+            public static void PathStencilFuncNV(StencilFunction func, int @ref, uint mask) => GLPointers.glPathStencilFuncNV_Lazy((uint)func, @ref, mask);
             
             /// <summary> <b>[requires: GL_NV_path_rendering]</b> <b>[entry point: <c>glPathStringNV</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_path_rendering.txt"/></remarks>
@@ -15932,7 +15932,7 @@ namespace OpenTK.Graphics.OpenGL.Compatibility
             
             /// <summary> <b>[requires: GL_NV_point_sprite]</b> <b>[entry point: <c>glPointParameterivNV</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_point_sprite.txt"/></remarks>
-            public static void PointParameterivNV(PointParameterNameARB pname, int* parameters) => GLPointers.glPointParameterivNV_Lazy((uint)pname, parameters);
+            public static void PointParameterivNV(PointParameterNameARB pname, int* @params) => GLPointers.glPointParameterivNV_Lazy((uint)pname, @params);
             
             /// <summary> <b>[requires: GL_NV_present_video]</b> <b>[entry point: <c>glPresentFrameDualFillNV</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_present_video.txt"/></remarks>
@@ -15952,15 +15952,15 @@ namespace OpenTK.Graphics.OpenGL.Compatibility
             
             /// <summary> <b>[requires: GL_NV_parameter_buffer_object]</b> <b>[entry point: <c>glProgramBufferParametersfvNV</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_parameter_buffer_object.txt"/></remarks>
-            public static void ProgramBufferParametersfvNV(ProgramTarget target, uint bindingIndex, uint wordIndex, int count, float* parameters) => GLPointers.glProgramBufferParametersfvNV_Lazy((uint)target, bindingIndex, wordIndex, count, parameters);
+            public static void ProgramBufferParametersfvNV(ProgramTarget target, uint bindingIndex, uint wordIndex, int count, float* @params) => GLPointers.glProgramBufferParametersfvNV_Lazy((uint)target, bindingIndex, wordIndex, count, @params);
             
             /// <summary> <b>[requires: GL_NV_parameter_buffer_object]</b> <b>[entry point: <c>glProgramBufferParametersIivNV</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_parameter_buffer_object.txt"/></remarks>
-            public static void ProgramBufferParametersIivNV(ProgramTarget target, uint bindingIndex, uint wordIndex, int count, int* parameters) => GLPointers.glProgramBufferParametersIivNV_Lazy((uint)target, bindingIndex, wordIndex, count, parameters);
+            public static void ProgramBufferParametersIivNV(ProgramTarget target, uint bindingIndex, uint wordIndex, int count, int* @params) => GLPointers.glProgramBufferParametersIivNV_Lazy((uint)target, bindingIndex, wordIndex, count, @params);
             
             /// <summary> <b>[requires: GL_NV_parameter_buffer_object]</b> <b>[entry point: <c>glProgramBufferParametersIuivNV</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_parameter_buffer_object.txt"/></remarks>
-            public static void ProgramBufferParametersIuivNV(ProgramTarget target, uint bindingIndex, uint wordIndex, int count, uint* parameters) => GLPointers.glProgramBufferParametersIuivNV_Lazy((uint)target, bindingIndex, wordIndex, count, parameters);
+            public static void ProgramBufferParametersIuivNV(ProgramTarget target, uint bindingIndex, uint wordIndex, int count, uint* @params) => GLPointers.glProgramBufferParametersIuivNV_Lazy((uint)target, bindingIndex, wordIndex, count, @params);
             
             /// <summary> <b>[requires: GL_NV_gpu_program4]</b> <b>[entry point: <c>glProgramEnvParameterI4iNV</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_gpu_program4.txt"/></remarks>
@@ -15968,7 +15968,7 @@ namespace OpenTK.Graphics.OpenGL.Compatibility
             
             /// <summary> <b>[requires: GL_NV_gpu_program4]</b> <b>[entry point: <c>glProgramEnvParameterI4ivNV</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_gpu_program4.txt"/></remarks>
-            public static void ProgramEnvParameterI4ivNV(ProgramTarget target, uint index, int* parameters) => GLPointers.glProgramEnvParameterI4ivNV_Lazy((uint)target, index, parameters);
+            public static void ProgramEnvParameterI4ivNV(ProgramTarget target, uint index, int* @params) => GLPointers.glProgramEnvParameterI4ivNV_Lazy((uint)target, index, @params);
             
             /// <summary> <b>[requires: GL_NV_gpu_program4]</b> <b>[entry point: <c>glProgramEnvParameterI4uiNV</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_gpu_program4.txt"/></remarks>
@@ -15976,15 +15976,15 @@ namespace OpenTK.Graphics.OpenGL.Compatibility
             
             /// <summary> <b>[requires: GL_NV_gpu_program4]</b> <b>[entry point: <c>glProgramEnvParameterI4uivNV</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_gpu_program4.txt"/></remarks>
-            public static void ProgramEnvParameterI4uivNV(ProgramTarget target, uint index, uint* parameters) => GLPointers.glProgramEnvParameterI4uivNV_Lazy((uint)target, index, parameters);
+            public static void ProgramEnvParameterI4uivNV(ProgramTarget target, uint index, uint* @params) => GLPointers.glProgramEnvParameterI4uivNV_Lazy((uint)target, index, @params);
             
             /// <summary> <b>[requires: GL_NV_gpu_program4]</b> <b>[entry point: <c>glProgramEnvParametersI4ivNV</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_gpu_program4.txt"/></remarks>
-            public static void ProgramEnvParametersI4ivNV(ProgramTarget target, uint index, int count, int* parameters) => GLPointers.glProgramEnvParametersI4ivNV_Lazy((uint)target, index, count, parameters);
+            public static void ProgramEnvParametersI4ivNV(ProgramTarget target, uint index, int count, int* @params) => GLPointers.glProgramEnvParametersI4ivNV_Lazy((uint)target, index, count, @params);
             
             /// <summary> <b>[requires: GL_NV_gpu_program4]</b> <b>[entry point: <c>glProgramEnvParametersI4uivNV</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_gpu_program4.txt"/></remarks>
-            public static void ProgramEnvParametersI4uivNV(ProgramTarget target, uint index, int count, uint* parameters) => GLPointers.glProgramEnvParametersI4uivNV_Lazy((uint)target, index, count, parameters);
+            public static void ProgramEnvParametersI4uivNV(ProgramTarget target, uint index, int count, uint* @params) => GLPointers.glProgramEnvParametersI4uivNV_Lazy((uint)target, index, count, @params);
             
             /// <summary> <b>[requires: GL_NV_gpu_program4]</b> <b>[entry point: <c>glProgramLocalParameterI4iNV</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_gpu_program4.txt"/></remarks>
@@ -15992,7 +15992,7 @@ namespace OpenTK.Graphics.OpenGL.Compatibility
             
             /// <summary> <b>[requires: GL_NV_gpu_program4]</b> <b>[entry point: <c>glProgramLocalParameterI4ivNV</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_gpu_program4.txt"/></remarks>
-            public static void ProgramLocalParameterI4ivNV(ProgramTarget target, uint index, int* parameters) => GLPointers.glProgramLocalParameterI4ivNV_Lazy((uint)target, index, parameters);
+            public static void ProgramLocalParameterI4ivNV(ProgramTarget target, uint index, int* @params) => GLPointers.glProgramLocalParameterI4ivNV_Lazy((uint)target, index, @params);
             
             /// <summary> <b>[requires: GL_NV_gpu_program4]</b> <b>[entry point: <c>glProgramLocalParameterI4uiNV</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_gpu_program4.txt"/></remarks>
@@ -16000,15 +16000,15 @@ namespace OpenTK.Graphics.OpenGL.Compatibility
             
             /// <summary> <b>[requires: GL_NV_gpu_program4]</b> <b>[entry point: <c>glProgramLocalParameterI4uivNV</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_gpu_program4.txt"/></remarks>
-            public static void ProgramLocalParameterI4uivNV(ProgramTarget target, uint index, uint* parameters) => GLPointers.glProgramLocalParameterI4uivNV_Lazy((uint)target, index, parameters);
+            public static void ProgramLocalParameterI4uivNV(ProgramTarget target, uint index, uint* @params) => GLPointers.glProgramLocalParameterI4uivNV_Lazy((uint)target, index, @params);
             
             /// <summary> <b>[requires: GL_NV_gpu_program4]</b> <b>[entry point: <c>glProgramLocalParametersI4ivNV</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_gpu_program4.txt"/></remarks>
-            public static void ProgramLocalParametersI4ivNV(ProgramTarget target, uint index, int count, int* parameters) => GLPointers.glProgramLocalParametersI4ivNV_Lazy((uint)target, index, count, parameters);
+            public static void ProgramLocalParametersI4ivNV(ProgramTarget target, uint index, int count, int* @params) => GLPointers.glProgramLocalParametersI4ivNV_Lazy((uint)target, index, count, @params);
             
             /// <summary> <b>[requires: GL_NV_gpu_program4]</b> <b>[entry point: <c>glProgramLocalParametersI4uivNV</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_gpu_program4.txt"/></remarks>
-            public static void ProgramLocalParametersI4uivNV(ProgramTarget target, uint index, int count, uint* parameters) => GLPointers.glProgramLocalParametersI4uivNV_Lazy((uint)target, index, count, parameters);
+            public static void ProgramLocalParametersI4uivNV(ProgramTarget target, uint index, int count, uint* @params) => GLPointers.glProgramLocalParametersI4uivNV_Lazy((uint)target, index, count, @params);
             
             /// <summary> <b>[requires: GL_NV_fragment_program]</b> <b>[entry point: <c>glProgramNamedParameter4dNV</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_fragment_program.txt"/></remarks>
@@ -16056,7 +16056,7 @@ namespace OpenTK.Graphics.OpenGL.Compatibility
             
             /// <summary> <b>[requires: GL_NV_gpu_program5]</b> <b>[entry point: <c>glProgramSubroutineParametersuivNV</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_gpu_program5.txt"/></remarks>
-            public static void ProgramSubroutineParametersuivNV(All target, int count, uint* parameters) => GLPointers.glProgramSubroutineParametersuivNV_Lazy((uint)target, count, parameters);
+            public static void ProgramSubroutineParametersuivNV(All target, int count, uint* @params) => GLPointers.glProgramSubroutineParametersuivNV_Lazy((uint)target, count, @params);
             
             /// <summary> <b>[requires: GL_AMD_gpu_shader_int64 | GL_NV_gpu_shader5]</b> <b>[entry point: <c>glProgramUniform1i64NV</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/AMD_gpu_shader_int64.txt"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_gpu_shader5.txt"/></remarks>
@@ -16204,7 +16204,7 @@ namespace OpenTK.Graphics.OpenGL.Compatibility
             
             /// <summary> <b>[requires: GL_NV_timeline_semaphore]</b> <b>[entry point: <c>glSemaphoreParameterivNV</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_timeline_semaphore.txt"/></remarks>
-            public static void SemaphoreParameterivNV(uint semaphore, SemaphoreParameterName pname, int* parameters) => GLPointers.glSemaphoreParameterivNV_Lazy(semaphore, (uint)pname, parameters);
+            public static void SemaphoreParameterivNV(uint semaphore, SemaphoreParameterName pname, int* @params) => GLPointers.glSemaphoreParameterivNV_Lazy(semaphore, (uint)pname, @params);
             
             /// <summary> <b>[requires: GL_NV_fence]</b> <b>[entry point: <c>glSetFenceNV</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_fence.txt"/></remarks>
@@ -16920,15 +16920,15 @@ namespace OpenTK.Graphics.OpenGL.Compatibility
             
             /// <summary> <b>[requires: GL_NV_video_capture]</b> <b>[entry point: <c>glVideoCaptureStreamParameterdvNV</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_video_capture.txt"/></remarks>
-            public static void VideoCaptureStreamParameterdvNV(uint video_capture_slot, uint stream, All pname, double* parameters) => GLPointers.glVideoCaptureStreamParameterdvNV_Lazy(video_capture_slot, stream, (uint)pname, parameters);
+            public static void VideoCaptureStreamParameterdvNV(uint video_capture_slot, uint stream, All pname, double* @params) => GLPointers.glVideoCaptureStreamParameterdvNV_Lazy(video_capture_slot, stream, (uint)pname, @params);
             
             /// <summary> <b>[requires: GL_NV_video_capture]</b> <b>[entry point: <c>glVideoCaptureStreamParameterfvNV</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_video_capture.txt"/></remarks>
-            public static void VideoCaptureStreamParameterfvNV(uint video_capture_slot, uint stream, All pname, float* parameters) => GLPointers.glVideoCaptureStreamParameterfvNV_Lazy(video_capture_slot, stream, (uint)pname, parameters);
+            public static void VideoCaptureStreamParameterfvNV(uint video_capture_slot, uint stream, All pname, float* @params) => GLPointers.glVideoCaptureStreamParameterfvNV_Lazy(video_capture_slot, stream, (uint)pname, @params);
             
             /// <summary> <b>[requires: GL_NV_video_capture]</b> <b>[entry point: <c>glVideoCaptureStreamParameterivNV</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_video_capture.txt"/></remarks>
-            public static void VideoCaptureStreamParameterivNV(uint video_capture_slot, uint stream, All pname, int* parameters) => GLPointers.glVideoCaptureStreamParameterivNV_Lazy(video_capture_slot, stream, (uint)pname, parameters);
+            public static void VideoCaptureStreamParameterivNV(uint video_capture_slot, uint stream, All pname, int* @params) => GLPointers.glVideoCaptureStreamParameterivNV_Lazy(video_capture_slot, stream, (uint)pname, @params);
             
             /// <summary> <b>[requires: GL_NV_clip_space_w_scaling]</b> <b>[entry point: <c>glViewportPositionWScaleNV</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_clip_space_w_scaling.txt"/></remarks>
@@ -17020,7 +17020,7 @@ namespace OpenTK.Graphics.OpenGL.Compatibility
             
             /// <summary> <b>[requires: GL_OES_fixed_point]</b> <b>[entry point: <c>glAlphaFuncxOES</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/OES/OES_fixed_point.txt"/></remarks>
-            public static void AlphaFuncxOES(AlphaFunction func, int reference) => GLPointers.glAlphaFuncxOES_Lazy((uint)func, reference);
+            public static void AlphaFuncxOES(AlphaFunction func, int @ref) => GLPointers.glAlphaFuncxOES_Lazy((uint)func, @ref);
             
             /// <summary> <b>[requires: GL_OES_fixed_point]</b> <b>[entry point: <c>glBitmapxOES</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/OES/OES_fixed_point.txt"/></remarks>
@@ -17076,7 +17076,7 @@ namespace OpenTK.Graphics.OpenGL.Compatibility
             
             /// <summary> <b>[requires: GL_OES_fixed_point]</b> <b>[entry point: <c>glConvolutionParameterxvOES</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/OES/OES_fixed_point.txt"/></remarks>
-            public static void ConvolutionParameterxvOES(ConvolutionTargetEXT target, ConvolutionParameter pname, int* parameters) => GLPointers.glConvolutionParameterxvOES_Lazy((uint)target, (uint)pname, parameters);
+            public static void ConvolutionParameterxvOES(ConvolutionTargetEXT target, ConvolutionParameter pname, int* @params) => GLPointers.glConvolutionParameterxvOES_Lazy((uint)target, (uint)pname, @params);
             
             /// <summary> <b>[requires: GL_OES_single_precision]</b> <b>[entry point: <c>glDepthRangefOES</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/OES/OES_single_precision.txt"/></remarks>
@@ -17132,23 +17132,23 @@ namespace OpenTK.Graphics.OpenGL.Compatibility
             
             /// <summary> <b>[requires: GL_OES_fixed_point]</b> <b>[entry point: <c>glGetConvolutionParameterxvOES</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/OES/OES_fixed_point.txt"/></remarks>
-            public static void GetConvolutionParameterxvOES(All target, All pname, int* parameters) => GLPointers.glGetConvolutionParameterxvOES_Lazy((uint)target, (uint)pname, parameters);
+            public static void GetConvolutionParameterxvOES(All target, All pname, int* @params) => GLPointers.glGetConvolutionParameterxvOES_Lazy((uint)target, (uint)pname, @params);
             
             /// <summary> <b>[requires: GL_OES_fixed_point]</b> <b>[entry point: <c>glGetFixedvOES</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/OES/OES_fixed_point.txt"/></remarks>
-            public static void GetFixedvOES(GetPName pname, int* parameters) => GLPointers.glGetFixedvOES_Lazy((uint)pname, parameters);
+            public static void GetFixedvOES(GetPName pname, int* @params) => GLPointers.glGetFixedvOES_Lazy((uint)pname, @params);
             
             /// <summary> <b>[requires: GL_OES_fixed_point]</b> <b>[entry point: <c>glGetHistogramParameterxvOES</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/OES/OES_fixed_point.txt"/></remarks>
-            public static void GetHistogramParameterxvOES(HistogramTargetEXT target, GetHistogramParameterPNameEXT pname, int* parameters) => GLPointers.glGetHistogramParameterxvOES_Lazy((uint)target, (uint)pname, parameters);
+            public static void GetHistogramParameterxvOES(HistogramTargetEXT target, GetHistogramParameterPNameEXT pname, int* @params) => GLPointers.glGetHistogramParameterxvOES_Lazy((uint)target, (uint)pname, @params);
             
             /// <summary> <b>[requires: GL_OES_fixed_point]</b> <b>[entry point: <c>glGetLightxOES</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/OES/OES_fixed_point.txt"/></remarks>
-            public static void GetLightxOES(LightName light, LightParameter pname, int* parameters) => GLPointers.glGetLightxOES_Lazy((uint)light, (uint)pname, parameters);
+            public static void GetLightxOES(LightName light, LightParameter pname, int* @params) => GLPointers.glGetLightxOES_Lazy((uint)light, (uint)pname, @params);
             
             /// <summary> <b>[requires: GL_OES_fixed_point]</b> <b>[entry point: <c>glGetLightxvOES</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/OES/OES_fixed_point.txt"/></remarks>
-            public static void GetLightxvOES(LightName light, LightParameter pname, int* parameters) => GLPointers.glGetLightxvOES_Lazy((uint)light, (uint)pname, parameters);
+            public static void GetLightxvOES(LightName light, LightParameter pname, int* @params) => GLPointers.glGetLightxvOES_Lazy((uint)light, (uint)pname, @params);
             
             /// <summary> <b>[requires: GL_OES_fixed_point]</b> <b>[entry point: <c>glGetMapxvOES</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/OES/OES_fixed_point.txt"/></remarks>
@@ -17160,7 +17160,7 @@ namespace OpenTK.Graphics.OpenGL.Compatibility
             
             /// <summary> <b>[requires: GL_OES_fixed_point]</b> <b>[entry point: <c>glGetMaterialxvOES</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/OES/OES_fixed_point.txt"/></remarks>
-            public static void GetMaterialxvOES(TriangleFace face, MaterialParameter pname, int* parameters) => GLPointers.glGetMaterialxvOES_Lazy((uint)face, (uint)pname, parameters);
+            public static void GetMaterialxvOES(TriangleFace face, MaterialParameter pname, int* @params) => GLPointers.glGetMaterialxvOES_Lazy((uint)face, (uint)pname, @params);
             
             /// <summary> <b>[requires: GL_OES_fixed_point]</b> <b>[entry point: <c>glGetPixelMapxv</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/OES/OES_fixed_point.txt"/></remarks>
@@ -17168,19 +17168,19 @@ namespace OpenTK.Graphics.OpenGL.Compatibility
             
             /// <summary> <b>[requires: GL_OES_fixed_point]</b> <b>[entry point: <c>glGetTexEnvxvOES</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/OES/OES_fixed_point.txt"/></remarks>
-            public static void GetTexEnvxvOES(TextureEnvTarget target, TextureEnvParameter pname, int* parameters) => GLPointers.glGetTexEnvxvOES_Lazy((uint)target, (uint)pname, parameters);
+            public static void GetTexEnvxvOES(TextureEnvTarget target, TextureEnvParameter pname, int* @params) => GLPointers.glGetTexEnvxvOES_Lazy((uint)target, (uint)pname, @params);
             
             /// <summary> <b>[requires: GL_OES_fixed_point]</b> <b>[entry point: <c>glGetTexGenxvOES</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/OES/OES_fixed_point.txt"/></remarks>
-            public static void GetTexGenxvOES(TextureCoordName coord, TextureGenParameter pname, int* parameters) => GLPointers.glGetTexGenxvOES_Lazy((uint)coord, (uint)pname, parameters);
+            public static void GetTexGenxvOES(TextureCoordName coord, TextureGenParameter pname, int* @params) => GLPointers.glGetTexGenxvOES_Lazy((uint)coord, (uint)pname, @params);
             
             /// <summary> <b>[requires: GL_OES_fixed_point]</b> <b>[entry point: <c>glGetTexLevelParameterxvOES</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/OES/OES_fixed_point.txt"/></remarks>
-            public static void GetTexLevelParameterxvOES(TextureTarget target, int level, GetTextureParameter pname, int* parameters) => GLPointers.glGetTexLevelParameterxvOES_Lazy((uint)target, level, (uint)pname, parameters);
+            public static void GetTexLevelParameterxvOES(TextureTarget target, int level, GetTextureParameter pname, int* @params) => GLPointers.glGetTexLevelParameterxvOES_Lazy((uint)target, level, (uint)pname, @params);
             
             /// <summary> <b>[requires: GL_OES_fixed_point]</b> <b>[entry point: <c>glGetTexParameterxvOES</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/OES/OES_fixed_point.txt"/></remarks>
-            public static void GetTexParameterxvOES(TextureTarget target, GetTextureParameter pname, int* parameters) => GLPointers.glGetTexParameterxvOES_Lazy((uint)target, (uint)pname, parameters);
+            public static void GetTexParameterxvOES(TextureTarget target, GetTextureParameter pname, int* @params) => GLPointers.glGetTexParameterxvOES_Lazy((uint)target, (uint)pname, @params);
             
             /// <summary> <b>[requires: GL_OES_fixed_point]</b> <b>[entry point: <c>glIndexxOES</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/OES/OES_fixed_point.txt"/></remarks>
@@ -17204,7 +17204,7 @@ namespace OpenTK.Graphics.OpenGL.Compatibility
             
             /// <summary> <b>[requires: GL_OES_fixed_point]</b> <b>[entry point: <c>glLightxvOES</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/OES/OES_fixed_point.txt"/></remarks>
-            public static void LightxvOES(LightName light, LightParameter pname, int* parameters) => GLPointers.glLightxvOES_Lazy((uint)light, (uint)pname, parameters);
+            public static void LightxvOES(LightName light, LightParameter pname, int* @params) => GLPointers.glLightxvOES_Lazy((uint)light, (uint)pname, @params);
             
             /// <summary> <b>[requires: GL_OES_fixed_point]</b> <b>[entry point: <c>glLineWidthxOES</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/OES/OES_fixed_point.txt"/></remarks>
@@ -17356,7 +17356,7 @@ namespace OpenTK.Graphics.OpenGL.Compatibility
             
             /// <summary> <b>[requires: GL_OES_fixed_point]</b> <b>[entry point: <c>glPointParameterxvOES</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/OES/OES_fixed_point.txt"/></remarks>
-            public static void PointParameterxvOES(PointParameterNameARB pname, int* parameters) => GLPointers.glPointParameterxvOES_Lazy((uint)pname, parameters);
+            public static void PointParameterxvOES(PointParameterNameARB pname, int* @params) => GLPointers.glPointParameterxvOES_Lazy((uint)pname, @params);
             
             /// <summary> <b>[requires: GL_OES_fixed_point]</b> <b>[entry point: <c>glPointSizexOES</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/OES/OES_fixed_point.txt"/></remarks>
@@ -17488,7 +17488,7 @@ namespace OpenTK.Graphics.OpenGL.Compatibility
             
             /// <summary> <b>[requires: GL_OES_fixed_point]</b> <b>[entry point: <c>glTexEnvxvOES</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/OES/OES_fixed_point.txt"/></remarks>
-            public static void TexEnvxvOES(TextureEnvTarget target, TextureEnvParameter pname, int* parameters) => GLPointers.glTexEnvxvOES_Lazy((uint)target, (uint)pname, parameters);
+            public static void TexEnvxvOES(TextureEnvTarget target, TextureEnvParameter pname, int* @params) => GLPointers.glTexEnvxvOES_Lazy((uint)target, (uint)pname, @params);
             
             /// <summary> <b>[requires: GL_OES_fixed_point]</b> <b>[entry point: <c>glTexGenxOES</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/OES/OES_fixed_point.txt"/></remarks>
@@ -17496,7 +17496,7 @@ namespace OpenTK.Graphics.OpenGL.Compatibility
             
             /// <summary> <b>[requires: GL_OES_fixed_point]</b> <b>[entry point: <c>glTexGenxvOES</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/OES/OES_fixed_point.txt"/></remarks>
-            public static void TexGenxvOES(TextureCoordName coord, TextureGenParameter pname, int* parameters) => GLPointers.glTexGenxvOES_Lazy((uint)coord, (uint)pname, parameters);
+            public static void TexGenxvOES(TextureCoordName coord, TextureGenParameter pname, int* @params) => GLPointers.glTexGenxvOES_Lazy((uint)coord, (uint)pname, @params);
             
             /// <summary> <b>[requires: GL_OES_fixed_point]</b> <b>[entry point: <c>glTexParameterxOES</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/OES/OES_fixed_point.txt"/></remarks>
@@ -17504,7 +17504,7 @@ namespace OpenTK.Graphics.OpenGL.Compatibility
             
             /// <summary> <b>[requires: GL_OES_fixed_point]</b> <b>[entry point: <c>glTexParameterxvOES</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/OES/OES_fixed_point.txt"/></remarks>
-            public static void TexParameterxvOES(TextureTarget target, GetTextureParameter pname, int* parameters) => GLPointers.glTexParameterxvOES_Lazy((uint)target, (uint)pname, parameters);
+            public static void TexParameterxvOES(TextureTarget target, GetTextureParameter pname, int* @params) => GLPointers.glTexParameterxvOES_Lazy((uint)target, (uint)pname, @params);
             
             /// <summary> <b>[requires: GL_OES_fixed_point]</b> <b>[entry point: <c>glTranslatexOES</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/OES/OES_fixed_point.txt"/></remarks>
@@ -17584,11 +17584,11 @@ namespace OpenTK.Graphics.OpenGL.Compatibility
         {
             /// <summary> <b>[requires: GL_SGI_color_table]</b> <b>[entry point: <c>glColorTableParameterfvSGI</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/SGI/SGI_color_table.txt"/></remarks>
-            public static void ColorTableParameterfvSGI(ColorTableTargetSGI target, ColorTableParameterPName pname, float* parameters) => GLPointers.glColorTableParameterfvSGI_Lazy((uint)target, (uint)pname, parameters);
+            public static void ColorTableParameterfvSGI(ColorTableTargetSGI target, ColorTableParameterPName pname, float* @params) => GLPointers.glColorTableParameterfvSGI_Lazy((uint)target, (uint)pname, @params);
             
             /// <summary> <b>[requires: GL_SGI_color_table]</b> <b>[entry point: <c>glColorTableParameterivSGI</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/SGI/SGI_color_table.txt"/></remarks>
-            public static void ColorTableParameterivSGI(ColorTableTargetSGI target, ColorTableParameterPName pname, int* parameters) => GLPointers.glColorTableParameterivSGI_Lazy((uint)target, (uint)pname, parameters);
+            public static void ColorTableParameterivSGI(ColorTableTargetSGI target, ColorTableParameterPName pname, int* @params) => GLPointers.glColorTableParameterivSGI_Lazy((uint)target, (uint)pname, @params);
             
             /// <summary> <b>[requires: GL_SGI_color_table]</b> <b>[entry point: <c>glColorTableSGI</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/SGI/SGI_color_table.txt"/></remarks>
@@ -17600,11 +17600,11 @@ namespace OpenTK.Graphics.OpenGL.Compatibility
             
             /// <summary> <b>[requires: GL_SGI_color_table]</b> <b>[entry point: <c>glGetColorTableParameterfvSGI</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/SGI/SGI_color_table.txt"/></remarks>
-            public static void GetColorTableParameterfvSGI(ColorTableTargetSGI target, ColorTableParameterPName pname, float* parameters) => GLPointers.glGetColorTableParameterfvSGI_Lazy((uint)target, (uint)pname, parameters);
+            public static void GetColorTableParameterfvSGI(ColorTableTargetSGI target, ColorTableParameterPName pname, float* @params) => GLPointers.glGetColorTableParameterfvSGI_Lazy((uint)target, (uint)pname, @params);
             
             /// <summary> <b>[requires: GL_SGI_color_table]</b> <b>[entry point: <c>glGetColorTableParameterivSGI</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/SGI/SGI_color_table.txt"/></remarks>
-            public static void GetColorTableParameterivSGI(ColorTableTargetSGI target, ColorTableParameterPName pname, int* parameters) => GLPointers.glGetColorTableParameterivSGI_Lazy((uint)target, (uint)pname, parameters);
+            public static void GetColorTableParameterivSGI(ColorTableTargetSGI target, ColorTableParameterPName pname, int* @params) => GLPointers.glGetColorTableParameterivSGI_Lazy((uint)target, (uint)pname, @params);
             
             /// <summary> <b>[requires: GL_SGI_color_table]</b> <b>[entry point: <c>glGetColorTableSGI</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/SGI/SGI_color_table.txt"/></remarks>
@@ -17632,11 +17632,11 @@ namespace OpenTK.Graphics.OpenGL.Compatibility
             
             /// <summary> <b>[requires: GL_SGIS_pixel_texture]</b> <b>[entry point: <c>glGetPixelTexGenParameterfvSGIS</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/SGIS/SGIS_pixel_texture.txt"/></remarks>
-            public static void GetPixelTexGenParameterfvSGIS(PixelTexGenParameterNameSGIS pname, float* parameters) => GLPointers.glGetPixelTexGenParameterfvSGIS_Lazy((uint)pname, parameters);
+            public static void GetPixelTexGenParameterfvSGIS(PixelTexGenParameterNameSGIS pname, float* @params) => GLPointers.glGetPixelTexGenParameterfvSGIS_Lazy((uint)pname, @params);
             
             /// <summary> <b>[requires: GL_SGIS_pixel_texture]</b> <b>[entry point: <c>glGetPixelTexGenParameterivSGIS</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/SGIS/SGIS_pixel_texture.txt"/></remarks>
-            public static void GetPixelTexGenParameterivSGIS(PixelTexGenParameterNameSGIS pname, int* parameters) => GLPointers.glGetPixelTexGenParameterivSGIS_Lazy((uint)pname, parameters);
+            public static void GetPixelTexGenParameterivSGIS(PixelTexGenParameterNameSGIS pname, int* @params) => GLPointers.glGetPixelTexGenParameterivSGIS_Lazy((uint)pname, @params);
             
             /// <summary> <b>[requires: GL_SGIS_sharpen_texture]</b> <b>[entry point: <c>glGetSharpenTexFuncSGIS</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/SGIS/SGIS_sharpen_texture.txt"/></remarks>
@@ -17652,7 +17652,7 @@ namespace OpenTK.Graphics.OpenGL.Compatibility
             
             /// <summary> <b>[requires: GL_SGIS_pixel_texture]</b> <b>[entry point: <c>glPixelTexGenParameterfvSGIS</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/SGIS/SGIS_pixel_texture.txt"/></remarks>
-            public static void PixelTexGenParameterfvSGIS(PixelTexGenParameterNameSGIS pname, float* parameters) => GLPointers.glPixelTexGenParameterfvSGIS_Lazy((uint)pname, parameters);
+            public static void PixelTexGenParameterfvSGIS(PixelTexGenParameterNameSGIS pname, float* @params) => GLPointers.glPixelTexGenParameterfvSGIS_Lazy((uint)pname, @params);
             
             /// <summary> <b>[requires: GL_SGIS_pixel_texture]</b> <b>[entry point: <c>glPixelTexGenParameteriSGIS</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/SGIS/SGIS_pixel_texture.txt"/></remarks>
@@ -17660,7 +17660,7 @@ namespace OpenTK.Graphics.OpenGL.Compatibility
             
             /// <summary> <b>[requires: GL_SGIS_pixel_texture]</b> <b>[entry point: <c>glPixelTexGenParameterivSGIS</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/SGIS/SGIS_pixel_texture.txt"/></remarks>
-            public static void PixelTexGenParameterivSGIS(PixelTexGenParameterNameSGIS pname, int* parameters) => GLPointers.glPixelTexGenParameterivSGIS_Lazy((uint)pname, parameters);
+            public static void PixelTexGenParameterivSGIS(PixelTexGenParameterNameSGIS pname, int* @params) => GLPointers.glPixelTexGenParameterivSGIS_Lazy((uint)pname, @params);
             
             /// <summary> <b>[requires: GL_SGIS_point_parameters]</b> <b>[entry point: <c>glPointParameterfSGIS</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/SGIS/SGIS_point_parameters.txt"/></remarks>
@@ -17668,7 +17668,7 @@ namespace OpenTK.Graphics.OpenGL.Compatibility
             
             /// <summary> <b>[requires: GL_SGIS_point_parameters]</b> <b>[entry point: <c>glPointParameterfvSGIS</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/SGIS/SGIS_point_parameters.txt"/></remarks>
-            public static void PointParameterfvSGIS(PointParameterNameARB pname, float* parameters) => GLPointers.glPointParameterfvSGIS_Lazy((uint)pname, parameters);
+            public static void PointParameterfvSGIS(PointParameterNameARB pname, float* @params) => GLPointers.glPointParameterfvSGIS_Lazy((uint)pname, @params);
             
             /// <summary> <b>[requires: GL_SGIS_multisample]</b> <b>[entry point: <c>glSampleMaskSGIS</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/SGIS/SGIS_multisample.txt"/></remarks>
@@ -17740,7 +17740,7 @@ namespace OpenTK.Graphics.OpenGL.Compatibility
             
             /// <summary> <b>[requires: GL_SGIX_fragment_lighting]</b> <b>[entry point: <c>glFragmentLightfvSGIX</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/SGIX/SGIX_fragment_lighting.txt"/></remarks>
-            public static void FragmentLightfvSGIX(FragmentLightNameSGIX light, FragmentLightParameterSGIX pname, float* parameters) => GLPointers.glFragmentLightfvSGIX_Lazy((uint)light, (uint)pname, parameters);
+            public static void FragmentLightfvSGIX(FragmentLightNameSGIX light, FragmentLightParameterSGIX pname, float* @params) => GLPointers.glFragmentLightfvSGIX_Lazy((uint)light, (uint)pname, @params);
             
             /// <summary> <b>[requires: GL_SGIX_fragment_lighting]</b> <b>[entry point: <c>glFragmentLightiSGIX</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/SGIX/SGIX_fragment_lighting.txt"/></remarks>
@@ -17748,7 +17748,7 @@ namespace OpenTK.Graphics.OpenGL.Compatibility
             
             /// <summary> <b>[requires: GL_SGIX_fragment_lighting]</b> <b>[entry point: <c>glFragmentLightivSGIX</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/SGIX/SGIX_fragment_lighting.txt"/></remarks>
-            public static void FragmentLightivSGIX(FragmentLightNameSGIX light, FragmentLightParameterSGIX pname, int* parameters) => GLPointers.glFragmentLightivSGIX_Lazy((uint)light, (uint)pname, parameters);
+            public static void FragmentLightivSGIX(FragmentLightNameSGIX light, FragmentLightParameterSGIX pname, int* @params) => GLPointers.glFragmentLightivSGIX_Lazy((uint)light, (uint)pname, @params);
             
             /// <summary> <b>[requires: GL_SGIX_fragment_lighting]</b> <b>[entry point: <c>glFragmentLightModelfSGIX</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/SGIX/SGIX_fragment_lighting.txt"/></remarks>
@@ -17756,7 +17756,7 @@ namespace OpenTK.Graphics.OpenGL.Compatibility
             
             /// <summary> <b>[requires: GL_SGIX_fragment_lighting]</b> <b>[entry point: <c>glFragmentLightModelfvSGIX</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/SGIX/SGIX_fragment_lighting.txt"/></remarks>
-            public static void FragmentLightModelfvSGIX(FragmentLightModelParameterSGIX pname, float* parameters) => GLPointers.glFragmentLightModelfvSGIX_Lazy((uint)pname, parameters);
+            public static void FragmentLightModelfvSGIX(FragmentLightModelParameterSGIX pname, float* @params) => GLPointers.glFragmentLightModelfvSGIX_Lazy((uint)pname, @params);
             
             /// <summary> <b>[requires: GL_SGIX_fragment_lighting]</b> <b>[entry point: <c>glFragmentLightModeliSGIX</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/SGIX/SGIX_fragment_lighting.txt"/></remarks>
@@ -17764,7 +17764,7 @@ namespace OpenTK.Graphics.OpenGL.Compatibility
             
             /// <summary> <b>[requires: GL_SGIX_fragment_lighting]</b> <b>[entry point: <c>glFragmentLightModelivSGIX</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/SGIX/SGIX_fragment_lighting.txt"/></remarks>
-            public static void FragmentLightModelivSGIX(FragmentLightModelParameterSGIX pname, int* parameters) => GLPointers.glFragmentLightModelivSGIX_Lazy((uint)pname, parameters);
+            public static void FragmentLightModelivSGIX(FragmentLightModelParameterSGIX pname, int* @params) => GLPointers.glFragmentLightModelivSGIX_Lazy((uint)pname, @params);
             
             /// <summary> <b>[requires: GL_SGIX_fragment_lighting]</b> <b>[entry point: <c>glFragmentMaterialfSGIX</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/SGIX/SGIX_fragment_lighting.txt"/></remarks>
@@ -17772,7 +17772,7 @@ namespace OpenTK.Graphics.OpenGL.Compatibility
             
             /// <summary> <b>[requires: GL_SGIX_fragment_lighting]</b> <b>[entry point: <c>glFragmentMaterialfvSGIX</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/SGIX/SGIX_fragment_lighting.txt"/></remarks>
-            public static void FragmentMaterialfvSGIX(TriangleFace face, MaterialParameter pname, float* parameters) => GLPointers.glFragmentMaterialfvSGIX_Lazy((uint)face, (uint)pname, parameters);
+            public static void FragmentMaterialfvSGIX(TriangleFace face, MaterialParameter pname, float* @params) => GLPointers.glFragmentMaterialfvSGIX_Lazy((uint)face, (uint)pname, @params);
             
             /// <summary> <b>[requires: GL_SGIX_fragment_lighting]</b> <b>[entry point: <c>glFragmentMaterialiSGIX</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/SGIX/SGIX_fragment_lighting.txt"/></remarks>
@@ -17780,7 +17780,7 @@ namespace OpenTK.Graphics.OpenGL.Compatibility
             
             /// <summary> <b>[requires: GL_SGIX_fragment_lighting]</b> <b>[entry point: <c>glFragmentMaterialivSGIX</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/SGIX/SGIX_fragment_lighting.txt"/></remarks>
-            public static void FragmentMaterialivSGIX(TriangleFace face, MaterialParameter pname, int* parameters) => GLPointers.glFragmentMaterialivSGIX_Lazy((uint)face, (uint)pname, parameters);
+            public static void FragmentMaterialivSGIX(TriangleFace face, MaterialParameter pname, int* @params) => GLPointers.glFragmentMaterialivSGIX_Lazy((uint)face, (uint)pname, @params);
             
             /// <summary> <b>[requires: GL_SGIX_framezoom]</b> <b>[entry point: <c>glFrameZoomSGIX</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/SGIX/SGIX_framezoom.txt"/></remarks>
@@ -17792,19 +17792,19 @@ namespace OpenTK.Graphics.OpenGL.Compatibility
             
             /// <summary> <b>[requires: GL_SGIX_fragment_lighting]</b> <b>[entry point: <c>glGetFragmentLightfvSGIX</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/SGIX/SGIX_fragment_lighting.txt"/></remarks>
-            public static void GetFragmentLightfvSGIX(FragmentLightNameSGIX light, FragmentLightParameterSGIX pname, float* parameters) => GLPointers.glGetFragmentLightfvSGIX_Lazy((uint)light, (uint)pname, parameters);
+            public static void GetFragmentLightfvSGIX(FragmentLightNameSGIX light, FragmentLightParameterSGIX pname, float* @params) => GLPointers.glGetFragmentLightfvSGIX_Lazy((uint)light, (uint)pname, @params);
             
             /// <summary> <b>[requires: GL_SGIX_fragment_lighting]</b> <b>[entry point: <c>glGetFragmentLightivSGIX</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/SGIX/SGIX_fragment_lighting.txt"/></remarks>
-            public static void GetFragmentLightivSGIX(FragmentLightNameSGIX light, FragmentLightParameterSGIX pname, int* parameters) => GLPointers.glGetFragmentLightivSGIX_Lazy((uint)light, (uint)pname, parameters);
+            public static void GetFragmentLightivSGIX(FragmentLightNameSGIX light, FragmentLightParameterSGIX pname, int* @params) => GLPointers.glGetFragmentLightivSGIX_Lazy((uint)light, (uint)pname, @params);
             
             /// <summary> <b>[requires: GL_SGIX_fragment_lighting]</b> <b>[entry point: <c>glGetFragmentMaterialfvSGIX</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/SGIX/SGIX_fragment_lighting.txt"/></remarks>
-            public static void GetFragmentMaterialfvSGIX(TriangleFace face, MaterialParameter pname, float* parameters) => GLPointers.glGetFragmentMaterialfvSGIX_Lazy((uint)face, (uint)pname, parameters);
+            public static void GetFragmentMaterialfvSGIX(TriangleFace face, MaterialParameter pname, float* @params) => GLPointers.glGetFragmentMaterialfvSGIX_Lazy((uint)face, (uint)pname, @params);
             
             /// <summary> <b>[requires: GL_SGIX_fragment_lighting]</b> <b>[entry point: <c>glGetFragmentMaterialivSGIX</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/SGIX/SGIX_fragment_lighting.txt"/></remarks>
-            public static void GetFragmentMaterialivSGIX(TriangleFace face, MaterialParameter pname, int* parameters) => GLPointers.glGetFragmentMaterialivSGIX_Lazy((uint)face, (uint)pname, parameters);
+            public static void GetFragmentMaterialivSGIX(TriangleFace face, MaterialParameter pname, int* @params) => GLPointers.glGetFragmentMaterialivSGIX_Lazy((uint)face, (uint)pname, @params);
             
             /// <summary> <b>[requires: GL_SGIX_instruments]</b> <b>[entry point: <c>glGetInstrumentsSGIX</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/SGIX/SGIX_instruments.txt"/></remarks>
@@ -17812,15 +17812,15 @@ namespace OpenTK.Graphics.OpenGL.Compatibility
             
             /// <summary> <b>[requires: GL_SGIX_list_priority]</b> <b>[entry point: <c>glGetListParameterfvSGIX</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/SGIX/SGIX_list_priority.txt"/></remarks>
-            public static void GetListParameterfvSGIX(int list, ListParameterName pname, float* parameters) => GLPointers.glGetListParameterfvSGIX_Lazy(list, (uint)pname, parameters);
+            public static void GetListParameterfvSGIX(int list, ListParameterName pname, float* @params) => GLPointers.glGetListParameterfvSGIX_Lazy(list, (uint)pname, @params);
             
             /// <summary> <b>[requires: GL_SGIX_list_priority]</b> <b>[entry point: <c>glGetListParameterivSGIX</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/SGIX/SGIX_list_priority.txt"/></remarks>
-            public static void GetListParameterivSGIX(int list, ListParameterName pname, int* parameters) => GLPointers.glGetListParameterivSGIX_Lazy(list, (uint)pname, parameters);
+            public static void GetListParameterivSGIX(int list, ListParameterName pname, int* @params) => GLPointers.glGetListParameterivSGIX_Lazy(list, (uint)pname, @params);
             
             /// <summary> <b>[requires: GL_SGIX_igloo_interface]</b> <b>[entry point: <c>glIglooInterfaceSGIX</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/SGIX/SGIX_igloo_interface.txt"/></remarks>
-            public static void IglooInterfaceSGIX(All pname, void* parameters) => GLPointers.glIglooInterfaceSGIX_Lazy((uint)pname, parameters);
+            public static void IglooInterfaceSGIX(All pname, void* @params) => GLPointers.glIglooInterfaceSGIX_Lazy((uint)pname, @params);
             
             /// <summary> <b>[requires: GL_SGIX_instruments]</b> <b>[entry point: <c>glInstrumentsBufferSGIX</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/SGIX/SGIX_instruments.txt"/></remarks>
@@ -17840,7 +17840,7 @@ namespace OpenTK.Graphics.OpenGL.Compatibility
             
             /// <summary> <b>[requires: GL_SGIX_list_priority]</b> <b>[entry point: <c>glListParameterfvSGIX</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/SGIX/SGIX_list_priority.txt"/></remarks>
-            public static void ListParameterfvSGIX(int list, ListParameterName pname, float* parameters) => GLPointers.glListParameterfvSGIX_Lazy(list, (uint)pname, parameters);
+            public static void ListParameterfvSGIX(int list, ListParameterName pname, float* @params) => GLPointers.glListParameterfvSGIX_Lazy(list, (uint)pname, @params);
             
             /// <summary> <b>[requires: GL_SGIX_list_priority]</b> <b>[entry point: <c>glListParameteriSGIX</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/SGIX/SGIX_list_priority.txt"/></remarks>
@@ -17848,7 +17848,7 @@ namespace OpenTK.Graphics.OpenGL.Compatibility
             
             /// <summary> <b>[requires: GL_SGIX_list_priority]</b> <b>[entry point: <c>glListParameterivSGIX</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/SGIX/SGIX_list_priority.txt"/></remarks>
-            public static void ListParameterivSGIX(int list, ListParameterName pname, int* parameters) => GLPointers.glListParameterivSGIX_Lazy(list, (uint)pname, parameters);
+            public static void ListParameterivSGIX(int list, ListParameterName pname, int* @params) => GLPointers.glListParameterivSGIX_Lazy(list, (uint)pname, @params);
             
             /// <summary> <b>[requires: GL_SGIX_polynomial_ffd]</b> <b>[entry point: <c>glLoadIdentityDeformationMapSGIX</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/SGIX/SGIX_polynomial_ffd.txt"/></remarks>
@@ -17880,7 +17880,7 @@ namespace OpenTK.Graphics.OpenGL.Compatibility
             
             /// <summary> <b>[requires: GL_SGIX_sprite]</b> <b>[entry point: <c>glSpriteParameterfvSGIX</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/SGIX/SGIX_sprite.txt"/></remarks>
-            public static void SpriteParameterfvSGIX(SpriteParameterNameSGIX pname, float* parameters) => GLPointers.glSpriteParameterfvSGIX_Lazy((uint)pname, parameters);
+            public static void SpriteParameterfvSGIX(SpriteParameterNameSGIX pname, float* @params) => GLPointers.glSpriteParameterfvSGIX_Lazy((uint)pname, @params);
             
             /// <summary> <b>[requires: GL_SGIX_sprite]</b> <b>[entry point: <c>glSpriteParameteriSGIX</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/SGIX/SGIX_sprite.txt"/></remarks>
@@ -17888,7 +17888,7 @@ namespace OpenTK.Graphics.OpenGL.Compatibility
             
             /// <summary> <b>[requires: GL_SGIX_sprite]</b> <b>[entry point: <c>glSpriteParameterivSGIX</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/SGIX/SGIX_sprite.txt"/></remarks>
-            public static void SpriteParameterivSGIX(SpriteParameterNameSGIX pname, SpriteModeSGIX* parameters) => GLPointers.glSpriteParameterivSGIX_Lazy((uint)pname, (int*)parameters);
+            public static void SpriteParameterivSGIX(SpriteParameterNameSGIX pname, SpriteModeSGIX* @params) => GLPointers.glSpriteParameterivSGIX_Lazy((uint)pname, (int*)@params);
             
             /// <summary> <b>[requires: GL_SGIX_instruments]</b> <b>[entry point: <c>glStartInstrumentsSGIX</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/SGIX/SGIX_instruments.txt"/></remarks>

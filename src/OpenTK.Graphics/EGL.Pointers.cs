@@ -922,11 +922,11 @@ namespace OpenTK.Graphics.Egl
         /// <summary><b>[entry point: <c>eglLabelObjectKHR</c>]</b></summary>
         public static delegate* unmanaged<IntPtr, uint, IntPtr, IntPtr, int> _eglLabelObjectKHR_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static int eglLabelObjectKHR_Lazy(IntPtr display, uint objectType, IntPtr obj, IntPtr label)
+        internal static int eglLabelObjectKHR_Lazy(IntPtr display, uint objectType, IntPtr @object, IntPtr label)
         {
             if (_eglLabelObjectKHR_fnptr == null)
                 _eglLabelObjectKHR_fnptr = (delegate* unmanaged<IntPtr, uint, IntPtr, IntPtr, int>)EGLLoader.BindingsContext.GetProcAddress("eglLabelObjectKHR");
-            return _eglLabelObjectKHR_fnptr(display, objectType, obj, label);
+            return _eglLabelObjectKHR_fnptr(display, objectType, @object, label);
         }
         
         /// <summary><b>[entry point: <c>eglLockSurfaceKHR</c>]</b></summary>

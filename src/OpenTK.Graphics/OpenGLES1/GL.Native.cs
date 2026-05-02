@@ -18,15 +18,15 @@ namespace OpenTK.Graphics.OpenGLES1
         
         /// <summary> <b>[requires: v1.0]</b> <b>[entry point: <c>glAlphaFunc</c>]</b><br/> Specify the alpha test function. </summary>
         /// <param name="func">Specifies the alpha comparison function. Symbolic constants GL_NEVER, GL_LESS, GL_EQUAL, GL_LEQUAL, GL_GREATER, GL_NOTEQUAL, GL_GEQUAL, and GL_ALWAYS are accepted. The initial value is GL_ALWAYS. </param>
-        /// <param name="reference">Specifies the reference value that incoming alpha values are compared to. This value is clamped to the range [0, 1], where 0 represents the lowest possible alpha value and 1 the highest possible value. The initial reference value is 0. </param>
+        /// <param name="ref">Specifies the reference value that incoming alpha values are compared to. This value is clamped to the range [0, 1], where 0 represents the lowest possible alpha value and 1 the highest possible value. The initial reference value is 0. </param>
         /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/es1.1/xhtml/glAlphaFunc.xml"/></remarks>
-        public static void AlphaFunc(AlphaFunction func, float reference) => GLPointers.glAlphaFunc_Lazy((uint)func, reference);
+        public static void AlphaFunc(AlphaFunction func, float @ref) => GLPointers.glAlphaFunc_Lazy((uint)func, @ref);
         
         /// <summary> <b>[requires: v1.0]</b> <b>[entry point: <c>glAlphaFuncx</c>]</b><br/> Specify the alpha test function. </summary>
         /// <param name="func">Specifies the alpha comparison function. Symbolic constants GL_NEVER, GL_LESS, GL_EQUAL, GL_LEQUAL, GL_GREATER, GL_NOTEQUAL, GL_GEQUAL, and GL_ALWAYS are accepted. The initial value is GL_ALWAYS. </param>
-        /// <param name="reference">Specifies the reference value that incoming alpha values are compared to. This value is clamped to the range [0, 1], where 0 represents the lowest possible alpha value and 1 the highest possible value. The initial reference value is 0. </param>
+        /// <param name="ref">Specifies the reference value that incoming alpha values are compared to. This value is clamped to the range [0, 1], where 0 represents the lowest possible alpha value and 1 the highest possible value. The initial reference value is 0. </param>
         /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/es1.1/xhtml/glAlphaFunc.xml"/></remarks>
-        public static void AlphaFuncx(AlphaFunction func, int reference) => GLPointers.glAlphaFuncx_Lazy((uint)func, reference);
+        public static void AlphaFuncx(AlphaFunction func, int @ref) => GLPointers.glAlphaFuncx_Lazy((uint)func, @ref);
         
         /// <summary> <b>[requires: v1.0]</b> <b>[entry point: <c>glBindBuffer</c>]</b><br/> Bind a named buffer to a target. </summary>
         /// <param name="target"> Specifies the target to which the buffer is bound. The symbolic constant must be GL_ARRAY_BUFFER or GL_ELEMENT_ARRAY_BUFFER. </param>
@@ -293,7 +293,7 @@ namespace OpenTK.Graphics.OpenGLES1
         public static void Fogf(FogParameter pname, float param) => GLPointers.glFogf_Lazy((uint)pname, param);
         
         /// <summary> <b>[requires: v1.0]</b> <b>[entry point: <c>glFogfv</c>]</b><br/>  </summary>
-        public static void Fogfv(FogParameter pname, float* parameters) => GLPointers.glFogfv_Lazy((uint)pname, parameters);
+        public static void Fogfv(FogParameter pname, float* @params) => GLPointers.glFogfv_Lazy((uint)pname, @params);
         
         /// <summary> <b>[requires: v1.0]</b> <b>[entry point: <c>glFogx</c>]</b><br/> Specify fog parameters. </summary>
         /// <param name="pname">Specifies a single-valued fog parameter. GL_FOG_MODE, GL_FOG_DENSITY, GL_FOG_START, and GL_FOG_END are accepted.</param>
@@ -350,9 +350,9 @@ namespace OpenTK.Graphics.OpenGLES1
         /// <summary> <b>[requires: v1.0]</b> <b>[entry point: <c>glGetBufferParameteriv</c>]</b><br/> Return parameters of a buffer object. </summary>
         /// <param name="target"> Specifies the target buffer object. The symbolic constant must be GL_ARRAY_BUFFER or GL_ELEMENT_ARRAY_BUFFER. </param>
         /// <param name="pname"> Specifies the symbolic name of a buffer object parameter. Accepted values are GL_BUFFER_SIZE or GL_BUFFER_USAGE. </param>
-        /// <param name="parameters">Returns the requested parameter.</param>
+        /// <param name="params">Returns the requested parameter.</param>
         /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/es1.1/xhtml/glGetBufferParameteriv.xml"/></remarks>
-        public static void GetBufferParameteriv(BufferTarget target, BufferPName pname, int* parameters) => GLPointers.glGetBufferParameteriv_Lazy((uint)target, (uint)pname, parameters);
+        public static void GetBufferParameteriv(BufferTarget target, BufferPName pname, int* @params) => GLPointers.glGetBufferParameteriv_Lazy((uint)target, (uint)pname, @params);
         
         /// <summary> <b>[requires: v1.0]</b> <b>[entry point: <c>glGetClipPlanef</c>]</b><br/> Return the coefficients of the specified clipping    plane. </summary>
         /// <param name="plane">Specifies a clipping plane. The number of clipping planes depends on the implementation, but at least six clipping planes are supported. Symbolic names of the form GL_CLIP_PLANE i, where i is an integer between 0 and GL_MAX_CLIP_PLANES -1 , are accepted.</param>
@@ -372,9 +372,9 @@ namespace OpenTK.Graphics.OpenGLES1
         
         /// <summary> <b>[requires: v1.0]</b> <b>[entry point: <c>glGetFixedv</c>]</b><br/> Return the value or values of a selected parameter. </summary>
         /// <param name="pname">Specifies the parameter value to be returned. The symbolic constants in the list below are accepted.</param>
-        /// <param name="parameters">Returns the value or values of the specified parameter.</param>
+        /// <param name="params">Returns the value or values of the specified parameter.</param>
         /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/es1.1/xhtml/glGet.xml"/></remarks>
-        public static void GetFixedv(GetPName pname, int* parameters) => GLPointers.glGetFixedv_Lazy((uint)pname, parameters);
+        public static void GetFixedv(GetPName pname, int* @params) => GLPointers.glGetFixedv_Lazy((uint)pname, @params);
         
         /// <summary> <b>[requires: v1.0]</b> <b>[entry point: <c>glGetFloatv</c>]</b><br/> Return the value or values of a selected parameter. </summary>
         /// <param name="pname">Specifies the parameter value to be returned. The symbolic constants in the list below are accepted.</param>
@@ -391,36 +391,36 @@ namespace OpenTK.Graphics.OpenGLES1
         /// <summary> <b>[requires: v1.0]</b> <b>[entry point: <c>glGetLightfv</c>]</b><br/> Return light source parameter values. </summary>
         /// <param name="light"> Specifies a light source. The number of possible lights depends on the implementation, but at least eight lights are supported. They are identified by symbolic names of the form GL_LIGHTi where 0&lt;i&lt; GL_MAX_LIGHTS </param>
         /// <param name="pname"> Specifies a light source parameter for light. Accepted symbolic names are GL_AMBIENT, GL_DIFFUSE, GL_SPECULAR, GL_POSITION, GL_SPOT_DIRECTION, GL_SPOT_EXPONENT, GL_SPOT_CUTOFF, GL_CONSTANT_ATTENUATION, GL_LINEAR_ATTENUATION, and GL_QUADRATIC_ATTENUATION. </param>
-        /// <param name="parameters"> Returns the requested data. </param>
+        /// <param name="params"> Returns the requested data. </param>
         /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/es1.1/xhtml/glGetLight.xml"/></remarks>
-        public static void GetLightfv(LightName light, LightParameter pname, float* parameters) => GLPointers.glGetLightfv_Lazy((uint)light, (uint)pname, parameters);
+        public static void GetLightfv(LightName light, LightParameter pname, float* @params) => GLPointers.glGetLightfv_Lazy((uint)light, (uint)pname, @params);
         
         /// <summary> <b>[requires: v1.0]</b> <b>[entry point: <c>glGetLightxv</c>]</b><br/> Return light source parameter values. </summary>
         /// <param name="light"> Specifies a light source. The number of possible lights depends on the implementation, but at least eight lights are supported. They are identified by symbolic names of the form GL_LIGHTi where 0&lt;i&lt; GL_MAX_LIGHTS </param>
         /// <param name="pname"> Specifies a light source parameter for light. Accepted symbolic names are GL_AMBIENT, GL_DIFFUSE, GL_SPECULAR, GL_POSITION, GL_SPOT_DIRECTION, GL_SPOT_EXPONENT, GL_SPOT_CUTOFF, GL_CONSTANT_ATTENUATION, GL_LINEAR_ATTENUATION, and GL_QUADRATIC_ATTENUATION. </param>
-        /// <param name="parameters"> Returns the requested data. </param>
+        /// <param name="params"> Returns the requested data. </param>
         /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/es1.1/xhtml/glGetLight.xml"/></remarks>
-        public static void GetLightxv(LightName light, LightParameter pname, int* parameters) => GLPointers.glGetLightxv_Lazy((uint)light, (uint)pname, parameters);
+        public static void GetLightxv(LightName light, LightParameter pname, int* @params) => GLPointers.glGetLightxv_Lazy((uint)light, (uint)pname, @params);
         
         /// <summary> <b>[requires: v1.0]</b> <b>[entry point: <c>glGetMaterialfv</c>]</b><br/> Return material parameters values. </summary>
         /// <param name="face"> Specifies which of the two materials is being queried. GL_FRONT or GL_BACK are accepted, representing the front and back materials, respectively. </param>
         /// <param name="pname"> Specifies the material parameter to return. Accepted symbolic names are GL_AMBIENT, GL_DIFFUSE, GL_SPECULAR, GL_EMISSION, and GL_SHININESS. </param>
-        /// <param name="parameters"> Returns the requested data. </param>
+        /// <param name="params"> Returns the requested data. </param>
         /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/es1.1/xhtml/glGetMaterial.xml"/></remarks>
-        public static void GetMaterialfv(TriangleFace face, MaterialParameter pname, float* parameters) => GLPointers.glGetMaterialfv_Lazy((uint)face, (uint)pname, parameters);
+        public static void GetMaterialfv(TriangleFace face, MaterialParameter pname, float* @params) => GLPointers.glGetMaterialfv_Lazy((uint)face, (uint)pname, @params);
         
         /// <summary> <b>[requires: v1.0]</b> <b>[entry point: <c>glGetMaterialxv</c>]</b><br/> Return material parameters values. </summary>
         /// <param name="face"> Specifies which of the two materials is being queried. GL_FRONT or GL_BACK are accepted, representing the front and back materials, respectively. </param>
         /// <param name="pname"> Specifies the material parameter to return. Accepted symbolic names are GL_AMBIENT, GL_DIFFUSE, GL_SPECULAR, GL_EMISSION, and GL_SHININESS. </param>
-        /// <param name="parameters"> Returns the requested data. </param>
+        /// <param name="params"> Returns the requested data. </param>
         /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/es1.1/xhtml/glGetMaterial.xml"/></remarks>
-        public static void GetMaterialxv(TriangleFace face, MaterialParameter pname, int* parameters) => GLPointers.glGetMaterialxv_Lazy((uint)face, (uint)pname, parameters);
+        public static void GetMaterialxv(TriangleFace face, MaterialParameter pname, int* @params) => GLPointers.glGetMaterialxv_Lazy((uint)face, (uint)pname, @params);
         
         /// <summary> <b>[requires: v1.0 | GL_KHR_debug]</b> <b>[entry point: <c>glGetPointerv</c>]</b><br/> Return the address of the specified pointer. </summary>
         /// <param name="pname"> Specifies the array or buffer pointer to be returned. Accepted symbolic names are GL_COLOR_ARRAY_POINTER, GL_MATRIX_INDEX_ARRAY_POINTER_OES, GL_NORMAL_ARRAY_POINTER, GL_POINT_SIZE_ARRAY_POINTER_OES, GL_TEXTURE_COORD_ARRAY_POINTER, and GL_VERTEX_ARRAY_POINTER., and GL_WEIGHT_ARRAY_POINTER_OES. </param>
-        /// <param name="parameters"> Returns the pointer value specified by pname. </param>
+        /// <param name="params"> Returns the pointer value specified by pname. </param>
         /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/es1.1/xhtml/glGetPointerv.xml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/KHR/KHR_debug.txt"/></remarks>
-        public static void GetPointerv(GetPointervPName pname, void** parameters) => GLPointers.glGetPointerv_Lazy((uint)pname, parameters);
+        public static void GetPointerv(GetPointervPName pname, void** @params) => GLPointers.glGetPointerv_Lazy((uint)pname, @params);
         
         /// <summary> <b>[requires: v1.0]</b> <b>[entry point: <c>glGetString</c>]</b><br/> Return a string describing the current GL        connection. </summary>
         /// <param name="name">Specifies a symbolic constant, one of GL_VENDOR, GL_RENDERER, GL_VERSION, or GL_EXTENSIONS.</param>
@@ -430,44 +430,44 @@ namespace OpenTK.Graphics.OpenGLES1
         /// <summary> <b>[requires: v1.0]</b> <b>[entry point: <c>glGetTexEnvfv</c>]</b><br/> Return texture environment parameters. </summary>
         /// <param name="target"> Specifies a texture environment. May be GL_TEXTURE_ENV or GL_POINT_SPRITE_OES. </param>
         /// <param name="pname"> Specifies the symbolic name of a texture environment parameter. Accepted values are GL_TEXTURE_ENV_MODE, GL_TEXTURE_ENV_COLOR, GL_COMBINE_RGB, GL_COMBINE_ALPHA, GL_SRC0_RGB, GL_SRC1_RGB, GL_SRC2_RGB, GL_SRC0_ALPHA, GL_SRC1_ALPHA, GL_SRC2_ALPHA, GL_OPERAND0_RGB, GL_OPERAND1_RGB, GL_OPERAND2_RGB, GL_OPERAND0_ALPHA, GL_OPERAND1_ALPHA, GL_OPERAND2_ALPHA, GL_RGB_SCALE, GL_ALPHA_SCALE, or GL_COORD_REPLACE_OES. </param>
-        /// <param name="parameters"> Returns the requested data. </param>
+        /// <param name="params"> Returns the requested data. </param>
         /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/es1.1/xhtml/glGetTexEnv.xml"/></remarks>
-        public static void GetTexEnvfv(TextureEnvTarget target, TextureEnvParameter pname, float* parameters) => GLPointers.glGetTexEnvfv_Lazy((uint)target, (uint)pname, parameters);
+        public static void GetTexEnvfv(TextureEnvTarget target, TextureEnvParameter pname, float* @params) => GLPointers.glGetTexEnvfv_Lazy((uint)target, (uint)pname, @params);
         
         /// <summary> <b>[requires: v1.0]</b> <b>[entry point: <c>glGetTexEnviv</c>]</b><br/> Return texture environment parameters. </summary>
         /// <param name="target"> Specifies a texture environment. May be GL_TEXTURE_ENV or GL_POINT_SPRITE_OES. </param>
         /// <param name="pname"> Specifies the symbolic name of a texture environment parameter. Accepted values are GL_TEXTURE_ENV_MODE, GL_TEXTURE_ENV_COLOR, GL_COMBINE_RGB, GL_COMBINE_ALPHA, GL_SRC0_RGB, GL_SRC1_RGB, GL_SRC2_RGB, GL_SRC0_ALPHA, GL_SRC1_ALPHA, GL_SRC2_ALPHA, GL_OPERAND0_RGB, GL_OPERAND1_RGB, GL_OPERAND2_RGB, GL_OPERAND0_ALPHA, GL_OPERAND1_ALPHA, GL_OPERAND2_ALPHA, GL_RGB_SCALE, GL_ALPHA_SCALE, or GL_COORD_REPLACE_OES. </param>
-        /// <param name="parameters"> Returns the requested data. </param>
+        /// <param name="params"> Returns the requested data. </param>
         /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/es1.1/xhtml/glGetTexEnv.xml"/></remarks>
-        public static void GetTexEnviv(TextureEnvTarget target, TextureEnvParameter pname, int* parameters) => GLPointers.glGetTexEnviv_Lazy((uint)target, (uint)pname, parameters);
+        public static void GetTexEnviv(TextureEnvTarget target, TextureEnvParameter pname, int* @params) => GLPointers.glGetTexEnviv_Lazy((uint)target, (uint)pname, @params);
         
         /// <summary> <b>[requires: v1.0]</b> <b>[entry point: <c>glGetTexEnvxv</c>]</b><br/> Return texture environment parameters. </summary>
         /// <param name="target"> Specifies a texture environment. May be GL_TEXTURE_ENV or GL_POINT_SPRITE_OES. </param>
         /// <param name="pname"> Specifies the symbolic name of a texture environment parameter. Accepted values are GL_TEXTURE_ENV_MODE, GL_TEXTURE_ENV_COLOR, GL_COMBINE_RGB, GL_COMBINE_ALPHA, GL_SRC0_RGB, GL_SRC1_RGB, GL_SRC2_RGB, GL_SRC0_ALPHA, GL_SRC1_ALPHA, GL_SRC2_ALPHA, GL_OPERAND0_RGB, GL_OPERAND1_RGB, GL_OPERAND2_RGB, GL_OPERAND0_ALPHA, GL_OPERAND1_ALPHA, GL_OPERAND2_ALPHA, GL_RGB_SCALE, GL_ALPHA_SCALE, or GL_COORD_REPLACE_OES. </param>
-        /// <param name="parameters"> Returns the requested data. </param>
+        /// <param name="params"> Returns the requested data. </param>
         /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/es1.1/xhtml/glGetTexEnv.xml"/></remarks>
-        public static void GetTexEnvxv(TextureEnvTarget target, TextureEnvParameter pname, int* parameters) => GLPointers.glGetTexEnvxv_Lazy((uint)target, (uint)pname, parameters);
+        public static void GetTexEnvxv(TextureEnvTarget target, TextureEnvParameter pname, int* @params) => GLPointers.glGetTexEnvxv_Lazy((uint)target, (uint)pname, @params);
         
         /// <summary> <b>[requires: v1.0]</b> <b>[entry point: <c>glGetTexParameterfv</c>]</b><br/> Return texture parameter values. </summary>
         /// <param name="target">Specifies the target texture, which must be GL_TEXTURE_2D.</param>
         /// <param name="pname"> Specifies the symbolic name of a texture parameter. Which can be one of the following: GL_TEXTURE_MIN_FILTER, GL_TEXTURE_MAG_FILTER, GL_TEXTURE_WRAP_S, GL_TEXTURE_WRAP_T, or GL_GENERATE_MIPMAP. </param>
-        /// <param name="parameters">Returns texture parameters.</param>
+        /// <param name="params">Returns texture parameters.</param>
         /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/es1.1/xhtml/glGetTexParameter.xml"/></remarks>
-        public static void GetTexParameterfv(TextureTarget target, GetTextureParameter pname, float* parameters) => GLPointers.glGetTexParameterfv_Lazy((uint)target, (uint)pname, parameters);
+        public static void GetTexParameterfv(TextureTarget target, GetTextureParameter pname, float* @params) => GLPointers.glGetTexParameterfv_Lazy((uint)target, (uint)pname, @params);
         
         /// <summary> <b>[requires: v1.0]</b> <b>[entry point: <c>glGetTexParameteriv</c>]</b><br/> Return texture parameter values. </summary>
         /// <param name="target">Specifies the target texture, which must be GL_TEXTURE_2D.</param>
         /// <param name="pname"> Specifies the symbolic name of a texture parameter. Which can be one of the following: GL_TEXTURE_MIN_FILTER, GL_TEXTURE_MAG_FILTER, GL_TEXTURE_WRAP_S, GL_TEXTURE_WRAP_T, or GL_GENERATE_MIPMAP. </param>
-        /// <param name="parameters">Returns texture parameters.</param>
+        /// <param name="params">Returns texture parameters.</param>
         /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/es1.1/xhtml/glGetTexParameter.xml"/></remarks>
-        public static void GetTexParameteriv(TextureTarget target, GetTextureParameter pname, int* parameters) => GLPointers.glGetTexParameteriv_Lazy((uint)target, (uint)pname, parameters);
+        public static void GetTexParameteriv(TextureTarget target, GetTextureParameter pname, int* @params) => GLPointers.glGetTexParameteriv_Lazy((uint)target, (uint)pname, @params);
         
         /// <summary> <b>[requires: v1.0]</b> <b>[entry point: <c>glGetTexParameterxv</c>]</b><br/> Return texture parameter values. </summary>
         /// <param name="target">Specifies the target texture, which must be GL_TEXTURE_2D.</param>
         /// <param name="pname"> Specifies the symbolic name of a texture parameter. Which can be one of the following: GL_TEXTURE_MIN_FILTER, GL_TEXTURE_MAG_FILTER, GL_TEXTURE_WRAP_S, GL_TEXTURE_WRAP_T, or GL_GENERATE_MIPMAP. </param>
-        /// <param name="parameters">Returns texture parameters.</param>
+        /// <param name="params">Returns texture parameters.</param>
         /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/es1.1/xhtml/glGetTexParameter.xml"/></remarks>
-        public static void GetTexParameterxv(TextureTarget target, GetTextureParameter pname, int* parameters) => GLPointers.glGetTexParameterxv_Lazy((uint)target, (uint)pname, parameters);
+        public static void GetTexParameterxv(TextureTarget target, GetTextureParameter pname, int* @params) => GLPointers.glGetTexParameterxv_Lazy((uint)target, (uint)pname, @params);
         
         /// <summary> <b>[requires: v1.0]</b> <b>[entry point: <c>glHint</c>]</b><br/> Specify implementation-specific hints. </summary>
         /// <param name="target">Specifies a symbolic constant indicating the behavior to be controlled. GL_FOG_HINT , GL_GENERATE_MIPMAP_HINT , GL_LINE_SMOOTH_HINT , GL_PERSPECTIVE_CORRECTION_HINT, and GL_POINT_SMOOTH_HINT are accepted.</param>
@@ -498,7 +498,7 @@ namespace OpenTK.Graphics.OpenGLES1
         public static void Lightf(LightName light, LightParameter pname, float param) => GLPointers.glLightf_Lazy((uint)light, (uint)pname, param);
         
         /// <summary> <b>[requires: v1.0]</b> <b>[entry point: <c>glLightfv</c>]</b><br/>  </summary>
-        public static void Lightfv(LightName light, LightParameter pname, float* parameters) => GLPointers.glLightfv_Lazy((uint)light, (uint)pname, parameters);
+        public static void Lightfv(LightName light, LightParameter pname, float* @params) => GLPointers.glLightfv_Lazy((uint)light, (uint)pname, @params);
         
         /// <summary> <b>[requires: v1.0]</b> <b>[entry point: <c>glLightModelf</c>]</b><br/> Set the lighting model parameters. </summary>
         /// <param name="pname">Specifies a single-valued lighting model parameter. Must be GL_LIGHT_MODEL_TWO_SIDE.</param>
@@ -507,7 +507,7 @@ namespace OpenTK.Graphics.OpenGLES1
         public static void LightModelf(LightModelParameter pname, float param) => GLPointers.glLightModelf_Lazy((uint)pname, param);
         
         /// <summary> <b>[requires: v1.0]</b> <b>[entry point: <c>glLightModelfv</c>]</b><br/>  </summary>
-        public static void LightModelfv(LightModelParameter pname, float* parameters) => GLPointers.glLightModelfv_Lazy((uint)pname, parameters);
+        public static void LightModelfv(LightModelParameter pname, float* @params) => GLPointers.glLightModelfv_Lazy((uint)pname, @params);
         
         /// <summary> <b>[requires: v1.0]</b> <b>[entry point: <c>glLightModelx</c>]</b><br/> Set the lighting model parameters. </summary>
         /// <param name="pname">Specifies a single-valued lighting model parameter. Must be GL_LIGHT_MODEL_TWO_SIDE.</param>
@@ -526,7 +526,7 @@ namespace OpenTK.Graphics.OpenGLES1
         public static void Lightx(LightName light, LightParameter pname, int param) => GLPointers.glLightx_Lazy((uint)light, (uint)pname, param);
         
         /// <summary> <b>[requires: v1.0]</b> <b>[entry point: <c>glLightxv</c>]</b><br/>  </summary>
-        public static void Lightxv(LightName light, LightParameter pname, int* parameters) => GLPointers.glLightxv_Lazy((uint)light, (uint)pname, parameters);
+        public static void Lightxv(LightName light, LightParameter pname, int* @params) => GLPointers.glLightxv_Lazy((uint)light, (uint)pname, @params);
         
         /// <summary> <b>[requires: v1.0]</b> <b>[entry point: <c>glLineWidth</c>]</b><br/> Specify the width of rasterized lines. </summary>
         /// <param name="width">Specifies the width of rasterized lines. The initial value is 1.</param>
@@ -565,7 +565,7 @@ namespace OpenTK.Graphics.OpenGLES1
         public static void Materialf(TriangleFace face, MaterialParameter pname, float param) => GLPointers.glMaterialf_Lazy((uint)face, (uint)pname, param);
         
         /// <summary> <b>[requires: v1.0]</b> <b>[entry point: <c>glMaterialfv</c>]</b><br/>  </summary>
-        public static void Materialfv(TriangleFace face, MaterialParameter pname, float* parameters) => GLPointers.glMaterialfv_Lazy((uint)face, (uint)pname, parameters);
+        public static void Materialfv(TriangleFace face, MaterialParameter pname, float* @params) => GLPointers.glMaterialfv_Lazy((uint)face, (uint)pname, @params);
         
         /// <summary> <b>[requires: v1.0]</b> <b>[entry point: <c>glMaterialx</c>]</b><br/> Specify material parameters for the lighting model. </summary>
         /// <param name="face">Specifies which face or faces are being updated. Must be GL_FRONT_AND_BACK.</param>
@@ -664,7 +664,7 @@ namespace OpenTK.Graphics.OpenGLES1
         public static void PointParameterf(PointParameterNameARB pname, float param) => GLPointers.glPointParameterf_Lazy((uint)pname, param);
         
         /// <summary> <b>[requires: v1.0]</b> <b>[entry point: <c>glPointParameterfv</c>]</b><br/>  </summary>
-        public static void PointParameterfv(PointParameterNameARB pname, float* parameters) => GLPointers.glPointParameterfv_Lazy((uint)pname, parameters);
+        public static void PointParameterfv(PointParameterNameARB pname, float* @params) => GLPointers.glPointParameterfv_Lazy((uint)pname, @params);
         
         /// <summary> <b>[requires: v1.0]</b> <b>[entry point: <c>glPointParameterx</c>]</b><br/> Specify parameters for point rasterization. </summary>
         /// <param name="pname"> Specifies the single-valued parameter to be updated. Can be either GL_POINT_SIZE_MIN, GL_POINT_SIZE_MAX, or GL_POINT_FADE_THRESHOLD_SIZE. </param>
@@ -673,7 +673,7 @@ namespace OpenTK.Graphics.OpenGLES1
         public static void PointParameterx(PointParameterNameARB pname, int param) => GLPointers.glPointParameterx_Lazy((uint)pname, param);
         
         /// <summary> <b>[requires: v1.0]</b> <b>[entry point: <c>glPointParameterxv</c>]</b><br/>  </summary>
-        public static void PointParameterxv(PointParameterNameARB pname, int* parameters) => GLPointers.glPointParameterxv_Lazy((uint)pname, parameters);
+        public static void PointParameterxv(PointParameterNameARB pname, int* @params) => GLPointers.glPointParameterxv_Lazy((uint)pname, @params);
         
         /// <summary> <b>[requires: v1.0]</b> <b>[entry point: <c>glPointSize</c>]</b><br/> Specify the diameter of rasterized points. </summary>
         /// <param name="size">Specifies the diameter of rasterized points. The initial value is 1.</param>
@@ -773,10 +773,10 @@ namespace OpenTK.Graphics.OpenGLES1
         
         /// <summary> <b>[requires: v1.0]</b> <b>[entry point: <c>glStencilFunc</c>]</b><br/> Set function and reference value for stencil        testing. </summary>
         /// <param name="func">Specifies the test function. Eight tokens are valid: GL_NEVER, GL_LESS, GL_LEQUAL, GL_GREATER, GL_GEQUAL, GL_EQUAL, GL_NOTEQUAL, and GL_ALWAYS. The initial value is GL_ALWAYS.</param>
-        /// <param name="reference">Specifies the reference value for the stencil test. ref is clamped to the range [ 0 , 2n-1 ] , where n is the number of bitplanes in the stencil buffer. The initial value is 0.</param>
+        /// <param name="ref">Specifies the reference value for the stencil test. ref is clamped to the range [ 0 , 2n-1 ] , where n is the number of bitplanes in the stencil buffer. The initial value is 0.</param>
         /// <param name="mask">Specifies a mask that is ANDed with both the reference value and the stored stencil value when the test is done. The initial value is all 1&apos;s.</param>
         /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/es1.1/xhtml/glStencilFunc.xml"/></remarks>
-        public static void StencilFunc(StencilFunction func, int reference, uint mask) => GLPointers.glStencilFunc_Lazy((uint)func, reference, mask);
+        public static void StencilFunc(StencilFunction func, int @ref, uint mask) => GLPointers.glStencilFunc_Lazy((uint)func, @ref, mask);
         
         /// <summary> <b>[requires: v1.0]</b> <b>[entry point: <c>glStencilMask</c>]</b><br/> Control the writing of individual bits in the        stencil planes. </summary>
         /// <param name="mask">Specifies a bit mask to enable and disable writing of individual bits in the stencil planes. The initial value is all 1&apos;s.</param>
@@ -806,7 +806,7 @@ namespace OpenTK.Graphics.OpenGLES1
         public static void TexEnvf(TextureEnvTarget target, TextureEnvParameter pname, float param) => GLPointers.glTexEnvf_Lazy((uint)target, (uint)pname, param);
         
         /// <summary> <b>[requires: v1.0]</b> <b>[entry point: <c>glTexEnvfv</c>]</b><br/>  </summary>
-        public static void TexEnvfv(TextureEnvTarget target, TextureEnvParameter pname, float* parameters) => GLPointers.glTexEnvfv_Lazy((uint)target, (uint)pname, parameters);
+        public static void TexEnvfv(TextureEnvTarget target, TextureEnvParameter pname, float* @params) => GLPointers.glTexEnvfv_Lazy((uint)target, (uint)pname, @params);
         
         /// <summary> <b>[requires: v1.0]</b> <b>[entry point: <c>glTexEnvi</c>]</b><br/> Set texture environment parameters. </summary>
         /// <param name="target"> Specifies a texture environment. May be GL_TEXTURE_ENV or GL_POINT_SPRITE_OES. </param>
@@ -816,7 +816,7 @@ namespace OpenTK.Graphics.OpenGLES1
         public static void TexEnvi(TextureEnvTarget target, TextureEnvParameter pname, int param) => GLPointers.glTexEnvi_Lazy((uint)target, (uint)pname, param);
         
         /// <summary> <b>[requires: v1.0]</b> <b>[entry point: <c>glTexEnviv</c>]</b><br/>  </summary>
-        public static void TexEnviv(TextureEnvTarget target, TextureEnvParameter pname, int* parameters) => GLPointers.glTexEnviv_Lazy((uint)target, (uint)pname, parameters);
+        public static void TexEnviv(TextureEnvTarget target, TextureEnvParameter pname, int* @params) => GLPointers.glTexEnviv_Lazy((uint)target, (uint)pname, @params);
         
         /// <summary> <b>[requires: v1.0]</b> <b>[entry point: <c>glTexEnvx</c>]</b><br/> Set texture environment parameters. </summary>
         /// <param name="target"> Specifies a texture environment. May be GL_TEXTURE_ENV or GL_POINT_SPRITE_OES. </param>
@@ -826,7 +826,7 @@ namespace OpenTK.Graphics.OpenGLES1
         public static void TexEnvx(TextureEnvTarget target, TextureEnvParameter pname, int param) => GLPointers.glTexEnvx_Lazy((uint)target, (uint)pname, param);
         
         /// <summary> <b>[requires: v1.0]</b> <b>[entry point: <c>glTexEnvxv</c>]</b><br/>  </summary>
-        public static void TexEnvxv(TextureEnvTarget target, TextureEnvParameter pname, int* parameters) => GLPointers.glTexEnvxv_Lazy((uint)target, (uint)pname, parameters);
+        public static void TexEnvxv(TextureEnvTarget target, TextureEnvParameter pname, int* @params) => GLPointers.glTexEnvxv_Lazy((uint)target, (uint)pname, @params);
         
         /// <summary> <b>[requires: v1.0]</b> <b>[entry point: <c>glTexImage2D</c>]</b><br/> Specify a two-dimensional texture image. </summary>
         /// <param name="target">Specifies the target texture. Must be GL_TEXTURE_2D.</param>
@@ -849,7 +849,7 @@ namespace OpenTK.Graphics.OpenGLES1
         public static void TexParameterf(TextureTarget target, TextureParameterName pname, float param) => GLPointers.glTexParameterf_Lazy((uint)target, (uint)pname, param);
         
         /// <summary> <b>[requires: v1.0]</b> <b>[entry point: <c>glTexParameterfv</c>]</b><br/>  </summary>
-        public static void TexParameterfv(TextureTarget target, TextureParameterName pname, float* parameters) => GLPointers.glTexParameterfv_Lazy((uint)target, (uint)pname, parameters);
+        public static void TexParameterfv(TextureTarget target, TextureParameterName pname, float* @params) => GLPointers.glTexParameterfv_Lazy((uint)target, (uint)pname, @params);
         
         /// <summary> <b>[requires: v1.0]</b> <b>[entry point: <c>glTexParameteri</c>]</b><br/> Set texture parameters. </summary>
         /// <param name="target">Specifies the target texture, which must be GL_TEXTURE_2D.</param>
@@ -859,7 +859,7 @@ namespace OpenTK.Graphics.OpenGLES1
         public static void TexParameteri(TextureTarget target, TextureParameterName pname, int param) => GLPointers.glTexParameteri_Lazy((uint)target, (uint)pname, param);
         
         /// <summary> <b>[requires: v1.0]</b> <b>[entry point: <c>glTexParameteriv</c>]</b><br/>  </summary>
-        public static void TexParameteriv(TextureTarget target, TextureParameterName pname, int* parameters) => GLPointers.glTexParameteriv_Lazy((uint)target, (uint)pname, parameters);
+        public static void TexParameteriv(TextureTarget target, TextureParameterName pname, int* @params) => GLPointers.glTexParameteriv_Lazy((uint)target, (uint)pname, @params);
         
         /// <summary> <b>[requires: v1.0]</b> <b>[entry point: <c>glTexParameterx</c>]</b><br/> Set texture parameters. </summary>
         /// <param name="target">Specifies the target texture, which must be GL_TEXTURE_2D.</param>
@@ -869,7 +869,7 @@ namespace OpenTK.Graphics.OpenGLES1
         public static void TexParameterx(TextureTarget target, GetTextureParameter pname, int param) => GLPointers.glTexParameterx_Lazy((uint)target, (uint)pname, param);
         
         /// <summary> <b>[requires: v1.0]</b> <b>[entry point: <c>glTexParameterxv</c>]</b><br/>  </summary>
-        public static void TexParameterxv(TextureTarget target, GetTextureParameter pname, int* parameters) => GLPointers.glTexParameterxv_Lazy((uint)target, (uint)pname, parameters);
+        public static void TexParameterxv(TextureTarget target, GetTextureParameter pname, int* @params) => GLPointers.glTexParameterxv_Lazy((uint)target, (uint)pname, @params);
         
         /// <summary> <b>[requires: v1.0]</b> <b>[entry point: <c>glTexSubImage2D</c>]</b><br/> Specify a two-dimensional texture subimage. </summary>
         /// <param name="target">Specifies the target texture. Must be GL_TEXTURE_2D.</param>
@@ -935,7 +935,7 @@ namespace OpenTK.Graphics.OpenGLES1
             
             /// <summary> <b>[requires: GL_APPLE_sync]</b> <b>[entry point: <c>glGetInteger64vAPPLE</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/APPLE/APPLE_sync.txt"/></remarks>
-            public static void GetInteger64vAPPLE(GetPName pname, long* parameters) => GLPointers.glGetInteger64vAPPLE_Lazy((uint)pname, parameters);
+            public static void GetInteger64vAPPLE(GetPName pname, long* @params) => GLPointers.glGetInteger64vAPPLE_Lazy((uint)pname, @params);
             
             /// <summary> <b>[requires: GL_APPLE_sync]</b> <b>[entry point: <c>glGetSyncivAPPLE</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/APPLE/APPLE_sync.txt"/></remarks>
@@ -983,11 +983,11 @@ namespace OpenTK.Graphics.OpenGLES1
             
             /// <summary> <b>[requires: GL_EXT_robustness]</b> <b>[entry point: <c>glGetnUniformfvEXT</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_robustness.txt"/></remarks>
-            public static void GetnUniformfvEXT(int program, int location, int bufSize, float* parameters) => GLPointers.glGetnUniformfvEXT_Lazy(program, location, bufSize, parameters);
+            public static void GetnUniformfvEXT(int program, int location, int bufSize, float* @params) => GLPointers.glGetnUniformfvEXT_Lazy(program, location, bufSize, @params);
             
             /// <summary> <b>[requires: GL_EXT_robustness]</b> <b>[entry point: <c>glGetnUniformivEXT</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_robustness.txt"/></remarks>
-            public static void GetnUniformivEXT(int program, int location, int bufSize, int* parameters) => GLPointers.glGetnUniformivEXT_Lazy(program, location, bufSize, parameters);
+            public static void GetnUniformivEXT(int program, int location, int bufSize, int* @params) => GLPointers.glGetnUniformivEXT_Lazy(program, location, bufSize, @params);
             
             /// <summary> <b>[requires: GL_EXT_debug_marker]</b> <b>[entry point: <c>glInsertEventMarkerEXT</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_debug_marker.txt"/></remarks>
@@ -1119,13 +1119,13 @@ namespace OpenTK.Graphics.OpenGLES1
             
             /// <summary> <b>[requires: v1.0 | GL_KHR_debug]</b> <b>[entry point: <c>glGetPointerv</c>]</b><br/> Return the address of the specified pointer. </summary>
             /// <param name="pname"> Specifies the array or buffer pointer to be returned. Accepted symbolic names are GL_COLOR_ARRAY_POINTER, GL_MATRIX_INDEX_ARRAY_POINTER_OES, GL_NORMAL_ARRAY_POINTER, GL_POINT_SIZE_ARRAY_POINTER_OES, GL_TEXTURE_COORD_ARRAY_POINTER, and GL_VERTEX_ARRAY_POINTER., and GL_WEIGHT_ARRAY_POINTER_OES. </param>
-            /// <param name="parameters"> Returns the pointer value specified by pname. </param>
+            /// <param name="params"> Returns the pointer value specified by pname. </param>
             /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/es1.1/xhtml/glGetPointerv.xml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/KHR/KHR_debug.txt"/></remarks>
-            public static void GetPointerv(GetPointervPName pname, void** parameters) => GLPointers.glGetPointerv_Lazy((uint)pname, parameters);
+            public static void GetPointerv(GetPointervPName pname, void** @params) => GLPointers.glGetPointerv_Lazy((uint)pname, @params);
             
             /// <summary> <b>[requires: GL_KHR_debug]</b> <b>[entry point: <c>glGetPointervKHR</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/KHR/KHR_debug.txt"/></remarks>
-            public static void GetPointervKHR(All pname, void** parameters) => GLPointers.glGetPointervKHR_Lazy((uint)pname, parameters);
+            public static void GetPointervKHR(All pname, void** @params) => GLPointers.glGetPointervKHR_Lazy((uint)pname, @params);
             
             /// <summary> <b>[requires: GL_KHR_debug]</b> <b>[entry point: <c>glObjectLabel</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/KHR/KHR_debug.txt"/></remarks>
@@ -1177,7 +1177,7 @@ namespace OpenTK.Graphics.OpenGLES1
             
             /// <summary> <b>[requires: GL_NV_fence]</b> <b>[entry point: <c>glGetFenceivNV</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_fence.txt"/></remarks>
-            public static void GetFenceivNV(uint fence, FenceParameterNameNV pname, int* parameters) => GLPointers.glGetFenceivNV_Lazy(fence, (uint)pname, parameters);
+            public static void GetFenceivNV(uint fence, FenceParameterNameNV pname, int* @params) => GLPointers.glGetFenceivNV_Lazy(fence, (uint)pname, @params);
             
             /// <summary> <b>[requires: GL_NV_fence]</b> <b>[entry point: <c>glIsFenceNV</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_fence.txt"/></remarks>
@@ -1201,7 +1201,7 @@ namespace OpenTK.Graphics.OpenGLES1
             
             /// <summary> <b>[requires: GL_OES_fixed_point]</b> <b>[entry point: <c>glAlphaFuncxOES</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/OES/OES_fixed_point.txt"/></remarks>
-            public static void AlphaFuncxOES(AlphaFunction func, int reference) => GLPointers.glAlphaFuncxOES_Lazy((uint)func, reference);
+            public static void AlphaFuncxOES(AlphaFunction func, int @ref) => GLPointers.glAlphaFuncxOES_Lazy((uint)func, @ref);
             
             /// <summary> <b>[requires: GL_OES_framebuffer_object]</b> <b>[entry point: <c>glBindFramebufferOES</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/OES/OES_framebuffer_object.txt"/></remarks>
@@ -1285,7 +1285,7 @@ namespace OpenTK.Graphics.OpenGLES1
             
             /// <summary> <b>[requires: GL_OES_fixed_point]</b> <b>[entry point: <c>glConvolutionParameterxvOES</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/OES/OES_fixed_point.txt"/></remarks>
-            public static void ConvolutionParameterxvOES(ConvolutionTargetEXT target, ConvolutionParameter pname, int* parameters) => GLPointers.glConvolutionParameterxvOES_Lazy((uint)target, (uint)pname, parameters);
+            public static void ConvolutionParameterxvOES(ConvolutionTargetEXT target, ConvolutionParameter pname, int* @params) => GLPointers.glConvolutionParameterxvOES_Lazy((uint)target, (uint)pname, @params);
             
             /// <summary> <b>[requires: GL_OES_matrix_palette]</b> <b>[entry point: <c>glCurrentPaletteMatrixOES</c>]</b><br/>         defines which of the palette&apos;s matrices is affected by        subsequent matrix operations        . </summary>
             /// <param name="matrixpaletteindex"> specifies the index into the palette&apos;s matrices. </param>
@@ -1434,7 +1434,7 @@ namespace OpenTK.Graphics.OpenGLES1
             
             /// <summary> <b>[requires: GL_OES_mapbuffer]</b> <b>[entry point: <c>glGetBufferPointervOES</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/OES/OES_mapbuffer.txt"/></remarks>
-            public static void GetBufferPointervOES(BufferTarget target, BufferPointerNameARB pname, void** parameters) => GLPointers.glGetBufferPointervOES_Lazy((uint)target, (uint)pname, parameters);
+            public static void GetBufferPointervOES(BufferTarget target, BufferPointerNameARB pname, void** @params) => GLPointers.glGetBufferPointervOES_Lazy((uint)target, (uint)pname, @params);
             
             /// <summary> <b>[requires: GL_OES_single_precision]</b> <b>[entry point: <c>glGetClipPlanefOES</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/OES/OES_single_precision.txt"/></remarks>
@@ -1446,27 +1446,27 @@ namespace OpenTK.Graphics.OpenGLES1
             
             /// <summary> <b>[requires: GL_OES_fixed_point]</b> <b>[entry point: <c>glGetConvolutionParameterxvOES</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/OES/OES_fixed_point.txt"/></remarks>
-            public static void GetConvolutionParameterxvOES(All target, All pname, int* parameters) => GLPointers.glGetConvolutionParameterxvOES_Lazy((uint)target, (uint)pname, parameters);
+            public static void GetConvolutionParameterxvOES(All target, All pname, int* @params) => GLPointers.glGetConvolutionParameterxvOES_Lazy((uint)target, (uint)pname, @params);
             
             /// <summary> <b>[requires: GL_OES_fixed_point]</b> <b>[entry point: <c>glGetFixedvOES</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/OES/OES_fixed_point.txt"/></remarks>
-            public static void GetFixedvOES(GetPName pname, int* parameters) => GLPointers.glGetFixedvOES_Lazy((uint)pname, parameters);
+            public static void GetFixedvOES(GetPName pname, int* @params) => GLPointers.glGetFixedvOES_Lazy((uint)pname, @params);
             
             /// <summary> <b>[requires: GL_OES_framebuffer_object]</b> <b>[entry point: <c>glGetFramebufferAttachmentParameterivOES</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/OES/OES_framebuffer_object.txt"/></remarks>
-            public static void GetFramebufferAttachmentParameterivOES(FramebufferTarget target, FramebufferAttachment attachment, FramebufferAttachmentParameterName pname, int* parameters) => GLPointers.glGetFramebufferAttachmentParameterivOES_Lazy((uint)target, (uint)attachment, (uint)pname, parameters);
+            public static void GetFramebufferAttachmentParameterivOES(FramebufferTarget target, FramebufferAttachment attachment, FramebufferAttachmentParameterName pname, int* @params) => GLPointers.glGetFramebufferAttachmentParameterivOES_Lazy((uint)target, (uint)attachment, (uint)pname, @params);
             
             /// <summary> <b>[requires: GL_OES_fixed_point]</b> <b>[entry point: <c>glGetHistogramParameterxvOES</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/OES/OES_fixed_point.txt"/></remarks>
-            public static void GetHistogramParameterxvOES(HistogramTargetEXT target, GetHistogramParameterPNameEXT pname, int* parameters) => GLPointers.glGetHistogramParameterxvOES_Lazy((uint)target, (uint)pname, parameters);
+            public static void GetHistogramParameterxvOES(HistogramTargetEXT target, GetHistogramParameterPNameEXT pname, int* @params) => GLPointers.glGetHistogramParameterxvOES_Lazy((uint)target, (uint)pname, @params);
             
             /// <summary> <b>[requires: GL_OES_fixed_point]</b> <b>[entry point: <c>glGetLightxOES</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/OES/OES_fixed_point.txt"/></remarks>
-            public static void GetLightxOES(LightName light, LightParameter pname, int* parameters) => GLPointers.glGetLightxOES_Lazy((uint)light, (uint)pname, parameters);
+            public static void GetLightxOES(LightName light, LightParameter pname, int* @params) => GLPointers.glGetLightxOES_Lazy((uint)light, (uint)pname, @params);
             
             /// <summary> <b>[requires: GL_OES_fixed_point]</b> <b>[entry point: <c>glGetLightxvOES</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/OES/OES_fixed_point.txt"/></remarks>
-            public static void GetLightxvOES(LightName light, LightParameter pname, int* parameters) => GLPointers.glGetLightxvOES_Lazy((uint)light, (uint)pname, parameters);
+            public static void GetLightxvOES(LightName light, LightParameter pname, int* @params) => GLPointers.glGetLightxvOES_Lazy((uint)light, (uint)pname, @params);
             
             /// <summary> <b>[requires: GL_OES_fixed_point]</b> <b>[entry point: <c>glGetMapxvOES</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/OES/OES_fixed_point.txt"/></remarks>
@@ -1478,7 +1478,7 @@ namespace OpenTK.Graphics.OpenGLES1
             
             /// <summary> <b>[requires: GL_OES_fixed_point]</b> <b>[entry point: <c>glGetMaterialxvOES</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/OES/OES_fixed_point.txt"/></remarks>
-            public static void GetMaterialxvOES(TriangleFace face, MaterialParameter pname, int* parameters) => GLPointers.glGetMaterialxvOES_Lazy((uint)face, (uint)pname, parameters);
+            public static void GetMaterialxvOES(TriangleFace face, MaterialParameter pname, int* @params) => GLPointers.glGetMaterialxvOES_Lazy((uint)face, (uint)pname, @params);
             
             /// <summary> <b>[requires: GL_OES_fixed_point]</b> <b>[entry point: <c>glGetPixelMapxv</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/OES/OES_fixed_point.txt"/></remarks>
@@ -1486,31 +1486,31 @@ namespace OpenTK.Graphics.OpenGLES1
             
             /// <summary> <b>[requires: GL_OES_framebuffer_object]</b> <b>[entry point: <c>glGetRenderbufferParameterivOES</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/OES/OES_framebuffer_object.txt"/></remarks>
-            public static void GetRenderbufferParameterivOES(RenderbufferTarget target, RenderbufferParameterName pname, int* parameters) => GLPointers.glGetRenderbufferParameterivOES_Lazy((uint)target, (uint)pname, parameters);
+            public static void GetRenderbufferParameterivOES(RenderbufferTarget target, RenderbufferParameterName pname, int* @params) => GLPointers.glGetRenderbufferParameterivOES_Lazy((uint)target, (uint)pname, @params);
             
             /// <summary> <b>[requires: GL_OES_fixed_point]</b> <b>[entry point: <c>glGetTexEnvxvOES</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/OES/OES_fixed_point.txt"/></remarks>
-            public static void GetTexEnvxvOES(TextureEnvTarget target, TextureEnvParameter pname, int* parameters) => GLPointers.glGetTexEnvxvOES_Lazy((uint)target, (uint)pname, parameters);
+            public static void GetTexEnvxvOES(TextureEnvTarget target, TextureEnvParameter pname, int* @params) => GLPointers.glGetTexEnvxvOES_Lazy((uint)target, (uint)pname, @params);
             
             /// <summary> <b>[requires: GL_OES_texture_cube_map]</b> <b>[entry point: <c>glGetTexGenfvOES</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/OES/OES_texture_cube_map.txt"/></remarks>
-            public static void GetTexGenfvOES(TextureCoordName coord, TextureGenParameter pname, float* parameters) => GLPointers.glGetTexGenfvOES_Lazy((uint)coord, (uint)pname, parameters);
+            public static void GetTexGenfvOES(TextureCoordName coord, TextureGenParameter pname, float* @params) => GLPointers.glGetTexGenfvOES_Lazy((uint)coord, (uint)pname, @params);
             
             /// <summary> <b>[requires: GL_OES_texture_cube_map]</b> <b>[entry point: <c>glGetTexGenivOES</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/OES/OES_texture_cube_map.txt"/></remarks>
-            public static void GetTexGenivOES(TextureCoordName coord, TextureGenParameter pname, int* parameters) => GLPointers.glGetTexGenivOES_Lazy((uint)coord, (uint)pname, parameters);
+            public static void GetTexGenivOES(TextureCoordName coord, TextureGenParameter pname, int* @params) => GLPointers.glGetTexGenivOES_Lazy((uint)coord, (uint)pname, @params);
             
             /// <summary> <b>[requires: GL_OES_fixed_point | GL_OES_texture_cube_map]</b> <b>[entry point: <c>glGetTexGenxvOES</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/OES/OES_fixed_point.txt"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/OES/OES_texture_cube_map.txt"/></remarks>
-            public static void GetTexGenxvOES(TextureCoordName coord, TextureGenParameter pname, int* parameters) => GLPointers.glGetTexGenxvOES_Lazy((uint)coord, (uint)pname, parameters);
+            public static void GetTexGenxvOES(TextureCoordName coord, TextureGenParameter pname, int* @params) => GLPointers.glGetTexGenxvOES_Lazy((uint)coord, (uint)pname, @params);
             
             /// <summary> <b>[requires: GL_OES_fixed_point]</b> <b>[entry point: <c>glGetTexLevelParameterxvOES</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/OES/OES_fixed_point.txt"/></remarks>
-            public static void GetTexLevelParameterxvOES(TextureTarget target, int level, GetTextureParameter pname, int* parameters) => GLPointers.glGetTexLevelParameterxvOES_Lazy((uint)target, level, (uint)pname, parameters);
+            public static void GetTexLevelParameterxvOES(TextureTarget target, int level, GetTextureParameter pname, int* @params) => GLPointers.glGetTexLevelParameterxvOES_Lazy((uint)target, level, (uint)pname, @params);
             
             /// <summary> <b>[requires: GL_OES_fixed_point]</b> <b>[entry point: <c>glGetTexParameterxvOES</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/OES/OES_fixed_point.txt"/></remarks>
-            public static void GetTexParameterxvOES(TextureTarget target, GetTextureParameter pname, int* parameters) => GLPointers.glGetTexParameterxvOES_Lazy((uint)target, (uint)pname, parameters);
+            public static void GetTexParameterxvOES(TextureTarget target, GetTextureParameter pname, int* @params) => GLPointers.glGetTexParameterxvOES_Lazy((uint)target, (uint)pname, @params);
             
             /// <summary> <b>[requires: GL_OES_fixed_point]</b> <b>[entry point: <c>glIndexxOES</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/OES/OES_fixed_point.txt"/></remarks>
@@ -1546,7 +1546,7 @@ namespace OpenTK.Graphics.OpenGLES1
             
             /// <summary> <b>[requires: GL_OES_fixed_point]</b> <b>[entry point: <c>glLightxvOES</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/OES/OES_fixed_point.txt"/></remarks>
-            public static void LightxvOES(LightName light, LightParameter pname, int* parameters) => GLPointers.glLightxvOES_Lazy((uint)light, (uint)pname, parameters);
+            public static void LightxvOES(LightName light, LightParameter pname, int* @params) => GLPointers.glLightxvOES_Lazy((uint)light, (uint)pname, @params);
             
             /// <summary> <b>[requires: GL_OES_fixed_point]</b> <b>[entry point: <c>glLineWidthxOES</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/OES/OES_fixed_point.txt"/></remarks>
@@ -1714,7 +1714,7 @@ namespace OpenTK.Graphics.OpenGLES1
             
             /// <summary> <b>[requires: GL_OES_fixed_point]</b> <b>[entry point: <c>glPointParameterxvOES</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/OES/OES_fixed_point.txt"/></remarks>
-            public static void PointParameterxvOES(PointParameterNameARB pname, int* parameters) => GLPointers.glPointParameterxvOES_Lazy((uint)pname, parameters);
+            public static void PointParameterxvOES(PointParameterNameARB pname, int* @params) => GLPointers.glPointParameterxvOES_Lazy((uint)pname, @params);
             
             /// <summary> <b>[requires: GL_OES_point_size_array]</b> <b>[entry point: <c>glPointSizePointerOES</c>]</b><br/> Define an array of point sizes. </summary>
             /// <param name="type"> Specifies the data type of each point size in the array. Symbolic constant GL_FIXED is accepted. However, the common profile also accepts the symbolic constant GL_FLOAT. The initial value is GL_FIXED for the common lite profile, or GL_FLOAT for the common profile. </param>
@@ -1859,7 +1859,7 @@ namespace OpenTK.Graphics.OpenGLES1
             
             /// <summary> <b>[requires: GL_OES_fixed_point]</b> <b>[entry point: <c>glTexEnvxvOES</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/OES/OES_fixed_point.txt"/></remarks>
-            public static void TexEnvxvOES(TextureEnvTarget target, TextureEnvParameter pname, int* parameters) => GLPointers.glTexEnvxvOES_Lazy((uint)target, (uint)pname, parameters);
+            public static void TexEnvxvOES(TextureEnvTarget target, TextureEnvParameter pname, int* @params) => GLPointers.glTexEnvxvOES_Lazy((uint)target, (uint)pname, @params);
             
             /// <summary> <b>[requires: GL_OES_texture_cube_map]</b> <b>[entry point: <c>glTexGenfOES</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/OES/OES_texture_cube_map.txt"/></remarks>
@@ -1867,7 +1867,7 @@ namespace OpenTK.Graphics.OpenGLES1
             
             /// <summary> <b>[requires: GL_OES_texture_cube_map]</b> <b>[entry point: <c>glTexGenfvOES</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/OES/OES_texture_cube_map.txt"/></remarks>
-            public static void TexGenfvOES(TextureCoordName coord, TextureGenParameter pname, float* parameters) => GLPointers.glTexGenfvOES_Lazy((uint)coord, (uint)pname, parameters);
+            public static void TexGenfvOES(TextureCoordName coord, TextureGenParameter pname, float* @params) => GLPointers.glTexGenfvOES_Lazy((uint)coord, (uint)pname, @params);
             
             /// <summary> <b>[requires: GL_OES_texture_cube_map]</b> <b>[entry point: <c>glTexGeniOES</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/OES/OES_texture_cube_map.txt"/></remarks>
@@ -1875,7 +1875,7 @@ namespace OpenTK.Graphics.OpenGLES1
             
             /// <summary> <b>[requires: GL_OES_texture_cube_map]</b> <b>[entry point: <c>glTexGenivOES</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/OES/OES_texture_cube_map.txt"/></remarks>
-            public static void TexGenivOES(TextureCoordName coord, TextureGenParameter pname, int* parameters) => GLPointers.glTexGenivOES_Lazy((uint)coord, (uint)pname, parameters);
+            public static void TexGenivOES(TextureCoordName coord, TextureGenParameter pname, int* @params) => GLPointers.glTexGenivOES_Lazy((uint)coord, (uint)pname, @params);
             
             /// <summary> <b>[requires: GL_OES_fixed_point | GL_OES_texture_cube_map]</b> <b>[entry point: <c>glTexGenxOES</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/OES/OES_fixed_point.txt"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/OES/OES_texture_cube_map.txt"/></remarks>
@@ -1883,7 +1883,7 @@ namespace OpenTK.Graphics.OpenGLES1
             
             /// <summary> <b>[requires: GL_OES_fixed_point | GL_OES_texture_cube_map]</b> <b>[entry point: <c>glTexGenxvOES</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/OES/OES_fixed_point.txt"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/OES/OES_texture_cube_map.txt"/></remarks>
-            public static void TexGenxvOES(TextureCoordName coord, TextureGenParameter pname, int* parameters) => GLPointers.glTexGenxvOES_Lazy((uint)coord, (uint)pname, parameters);
+            public static void TexGenxvOES(TextureCoordName coord, TextureGenParameter pname, int* @params) => GLPointers.glTexGenxvOES_Lazy((uint)coord, (uint)pname, @params);
             
             /// <summary> <b>[requires: GL_OES_fixed_point]</b> <b>[entry point: <c>glTexParameterxOES</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/OES/OES_fixed_point.txt"/></remarks>
@@ -1891,7 +1891,7 @@ namespace OpenTK.Graphics.OpenGLES1
             
             /// <summary> <b>[requires: GL_OES_fixed_point]</b> <b>[entry point: <c>glTexParameterxvOES</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/OES/OES_fixed_point.txt"/></remarks>
-            public static void TexParameterxvOES(TextureTarget target, GetTextureParameter pname, int* parameters) => GLPointers.glTexParameterxvOES_Lazy((uint)target, (uint)pname, parameters);
+            public static void TexParameterxvOES(TextureTarget target, GetTextureParameter pname, int* @params) => GLPointers.glTexParameterxvOES_Lazy((uint)target, (uint)pname, @params);
             
             /// <summary> <b>[requires: GL_OES_fixed_point]</b> <b>[entry point: <c>glTranslatexOES</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/OES/OES_fixed_point.txt"/></remarks>
@@ -1975,7 +1975,7 @@ namespace OpenTK.Graphics.OpenGLES1
             
             /// <summary> <b>[requires: GL_QCOM_extended_get]</b> <b>[entry point: <c>glExtGetBufferPointervQCOM</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/QCOM/QCOM_extended_get.txt"/></remarks>
-            public static void ExtGetBufferPointervQCOM(All target, void** parameters) => GLPointers.glExtGetBufferPointervQCOM_Lazy((uint)target, parameters);
+            public static void ExtGetBufferPointervQCOM(All target, void** @params) => GLPointers.glExtGetBufferPointervQCOM_Lazy((uint)target, @params);
             
             /// <summary> <b>[requires: GL_QCOM_extended_get]</b> <b>[entry point: <c>glExtGetBuffersQCOM</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/QCOM/QCOM_extended_get.txt"/></remarks>
@@ -2003,7 +2003,7 @@ namespace OpenTK.Graphics.OpenGLES1
             
             /// <summary> <b>[requires: GL_QCOM_extended_get]</b> <b>[entry point: <c>glExtGetTexLevelParameterivQCOM</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/QCOM/QCOM_extended_get.txt"/></remarks>
-            public static void ExtGetTexLevelParameterivQCOM(int texture, All face, int level, All pname, int* parameters) => GLPointers.glExtGetTexLevelParameterivQCOM_Lazy(texture, (uint)face, level, (uint)pname, parameters);
+            public static void ExtGetTexLevelParameterivQCOM(int texture, All face, int level, All pname, int* @params) => GLPointers.glExtGetTexLevelParameterivQCOM_Lazy(texture, (uint)face, level, (uint)pname, @params);
             
             /// <summary> <b>[requires: GL_QCOM_extended_get]</b> <b>[entry point: <c>glExtGetTexSubImageQCOM</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/QCOM/QCOM_extended_get.txt"/></remarks>

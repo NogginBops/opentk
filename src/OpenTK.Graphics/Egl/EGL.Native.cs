@@ -491,7 +491,7 @@ namespace OpenTK.Graphics.Egl
             
             /// <summary> <b>[requires: EGL_KHR_debug]</b> <b>[entry point: <c>eglLabelObjectKHR</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/EGL/extensions/KHR/EGL_KHR_debug.txt"/></remarks>
-            public static int LabelObjectKHR(EGLDisplay display, All objectType, EGLObjectKHR obj, EGLLabelKHR label) => EglPointers.eglLabelObjectKHR_Lazy((IntPtr)display, (uint)objectType, (IntPtr)obj, (IntPtr)label);
+            public static int LabelObjectKHR(EGLDisplay display, All objectType, EGLObjectKHR @object, EGLLabelKHR label) => EglPointers.eglLabelObjectKHR_Lazy((IntPtr)display, (uint)objectType, (IntPtr)@object, (IntPtr)label);
             
             /// <summary> <b>[requires: EGL_KHR_lock_surface | EGL_KHR_lock_surface3]</b> <b>[entry point: <c>eglLockSurfaceKHR</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/EGL/extensions/KHR/EGL_KHR_lock_surface.txt"/><br/><see href="https://registry.khronos.org/EGL/extensions/KHR/EGL_KHR_lock_surface3.txt"/></remarks>

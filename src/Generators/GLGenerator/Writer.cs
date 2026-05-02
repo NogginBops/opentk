@@ -482,7 +482,7 @@ namespace GLGenerator
                 // we've already warned about this, and using the name the C# documentation
                 // system expects reduces a lot of the warnings that are generated.
                 // - Noggin_bops 2025-08-08
-                writer.WriteLine($"/// <param name=\"{parameter.Name}\">{parameterDoc.Description}</param>");
+                writer.WriteLine($"/// <param name=\"{NameMangler.MaybeRemoveStart(parameter.Name, "@")}\">{parameterDoc.Description}</param>");
             }
 
             if (documentation.RefPagesLinks.Count > 0)

@@ -3082,10 +3082,10 @@ namespace OpenTK.Graphics.Vulkan
         }
         public static delegate* unmanaged<VkInstance, VkDebugReportFlagBitsEXT, VkDebugReportObjectTypeEXT, ulong, nuint, int, byte*, byte*, void> _vkDebugReportMessageEXT_fnptr = &vkDebugReportMessageEXT_Lazy;
         [UnmanagedCallersOnly]
-        private static void vkDebugReportMessageEXT_Lazy(VkInstance instance, VkDebugReportFlagBitsEXT flags, VkDebugReportObjectTypeEXT objectType, ulong obj, nuint location, int messageCode, byte* pLayerPrefix, byte* pMessage)
+        private static void vkDebugReportMessageEXT_Lazy(VkInstance instance, VkDebugReportFlagBitsEXT flags, VkDebugReportObjectTypeEXT objectType, ulong @object, nuint location, int messageCode, byte* pLayerPrefix, byte* pMessage)
         {
             _vkDebugReportMessageEXT_fnptr = (delegate* unmanaged<VkInstance, VkDebugReportFlagBitsEXT, VkDebugReportObjectTypeEXT, ulong, nuint, int, byte*, byte*, void>)VKLoader.GetInstanceProcAddress("vkDebugReportMessageEXT");
-            _vkDebugReportMessageEXT_fnptr(instance, flags, objectType, obj, location, messageCode, pLayerPrefix, pMessage);
+            _vkDebugReportMessageEXT_fnptr(instance, flags, objectType, @object, location, messageCode, pLayerPrefix, pMessage);
         }
         public static delegate* unmanaged<VkDevice, VkDeferredOperationKHR, VkResult> _vkDeferredOperationJoinKHR_fnptr = &vkDeferredOperationJoinKHR_Lazy;
         [UnmanagedCallersOnly]
@@ -4111,10 +4111,10 @@ namespace OpenTK.Graphics.Vulkan
         }
         public static delegate* unmanaged<VkExternalComputeQueueNV, VkExternalComputeQueueDataParamsNV*, void*, void> _vkGetExternalComputeQueueDataNV_fnptr = &vkGetExternalComputeQueueDataNV_Lazy;
         [UnmanagedCallersOnly]
-        private static void vkGetExternalComputeQueueDataNV_Lazy(VkExternalComputeQueueNV externalQueue, VkExternalComputeQueueDataParamsNV* parameters, void* pData)
+        private static void vkGetExternalComputeQueueDataNV_Lazy(VkExternalComputeQueueNV externalQueue, VkExternalComputeQueueDataParamsNV* @params, void* pData)
         {
             _vkGetExternalComputeQueueDataNV_fnptr = (delegate* unmanaged<VkExternalComputeQueueNV, VkExternalComputeQueueDataParamsNV*, void*, void>)VKLoader.GetInstanceProcAddress("vkGetExternalComputeQueueDataNV");
-            _vkGetExternalComputeQueueDataNV_fnptr(externalQueue, parameters, pData);
+            _vkGetExternalComputeQueueDataNV_fnptr(externalQueue, @params, pData);
         }
         public static delegate* unmanaged<VkDevice, VkFaultQueryBehavior, int*, uint*, VkFaultData*, VkResult> _vkGetFaultData_fnptr = &vkGetFaultData_Lazy;
         [UnmanagedCallersOnly]

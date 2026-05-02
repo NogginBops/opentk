@@ -142,41 +142,41 @@ namespace OpenTK.Graphics.OpenGL
         /// <summary><b>[entry point: <c>glAlphaFunc</c>]</b></summary>
         public static delegate* unmanaged<uint, float, void> _glAlphaFunc_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glAlphaFunc_Lazy(uint func, float reference)
+        internal static void glAlphaFunc_Lazy(uint func, float @ref)
         {
             if (_glAlphaFunc_fnptr == null)
                 _glAlphaFunc_fnptr = (delegate* unmanaged<uint, float, void>)GLLoader.BindingsContext.GetProcAddress("glAlphaFunc");
-            _glAlphaFunc_fnptr(func, reference);
+            _glAlphaFunc_fnptr(func, @ref);
         }
         
         /// <summary><b>[entry point: <c>glAlphaFuncQCOM</c>]</b></summary>
         public static delegate* unmanaged<uint, float, void> _glAlphaFuncQCOM_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glAlphaFuncQCOM_Lazy(uint func, float reference)
+        internal static void glAlphaFuncQCOM_Lazy(uint func, float @ref)
         {
             if (_glAlphaFuncQCOM_fnptr == null)
                 _glAlphaFuncQCOM_fnptr = (delegate* unmanaged<uint, float, void>)GLLoader.BindingsContext.GetProcAddress("glAlphaFuncQCOM");
-            _glAlphaFuncQCOM_fnptr(func, reference);
+            _glAlphaFuncQCOM_fnptr(func, @ref);
         }
         
         /// <summary><b>[entry point: <c>glAlphaFuncx</c>]</b></summary>
         public static delegate* unmanaged<uint, int, void> _glAlphaFuncx_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glAlphaFuncx_Lazy(uint func, int reference)
+        internal static void glAlphaFuncx_Lazy(uint func, int @ref)
         {
             if (_glAlphaFuncx_fnptr == null)
                 _glAlphaFuncx_fnptr = (delegate* unmanaged<uint, int, void>)GLLoader.BindingsContext.GetProcAddress("glAlphaFuncx");
-            _glAlphaFuncx_fnptr(func, reference);
+            _glAlphaFuncx_fnptr(func, @ref);
         }
         
         /// <summary><b>[entry point: <c>glAlphaFuncxOES</c>]</b></summary>
         public static delegate* unmanaged<uint, int, void> _glAlphaFuncxOES_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glAlphaFuncxOES_Lazy(uint func, int reference)
+        internal static void glAlphaFuncxOES_Lazy(uint func, int @ref)
         {
             if (_glAlphaFuncxOES_fnptr == null)
                 _glAlphaFuncxOES_fnptr = (delegate* unmanaged<uint, int, void>)GLLoader.BindingsContext.GetProcAddress("glAlphaFuncxOES");
-            _glAlphaFuncxOES_fnptr(func, reference);
+            _glAlphaFuncxOES_fnptr(func, @ref);
         }
         
         /// <summary><b>[entry point: <c>glAlphaToCoverageDitherControlNV</c>]</b></summary>
@@ -3072,41 +3072,41 @@ namespace OpenTK.Graphics.OpenGL
         /// <summary><b>[entry point: <c>glColorTableParameterfv</c>]</b></summary>
         public static delegate* unmanaged<uint, uint, float*, void> _glColorTableParameterfv_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glColorTableParameterfv_Lazy(uint target, uint pname, float* parameters)
+        internal static void glColorTableParameterfv_Lazy(uint target, uint pname, float* @params)
         {
             if (_glColorTableParameterfv_fnptr == null)
                 _glColorTableParameterfv_fnptr = (delegate* unmanaged<uint, uint, float*, void>)GLLoader.BindingsContext.GetProcAddress("glColorTableParameterfv");
-            _glColorTableParameterfv_fnptr(target, pname, parameters);
+            _glColorTableParameterfv_fnptr(target, pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glColorTableParameterfvSGI</c>]</b></summary>
         public static delegate* unmanaged<uint, uint, float*, void> _glColorTableParameterfvSGI_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glColorTableParameterfvSGI_Lazy(uint target, uint pname, float* parameters)
+        internal static void glColorTableParameterfvSGI_Lazy(uint target, uint pname, float* @params)
         {
             if (_glColorTableParameterfvSGI_fnptr == null)
                 _glColorTableParameterfvSGI_fnptr = (delegate* unmanaged<uint, uint, float*, void>)GLLoader.BindingsContext.GetProcAddress("glColorTableParameterfvSGI");
-            _glColorTableParameterfvSGI_fnptr(target, pname, parameters);
+            _glColorTableParameterfvSGI_fnptr(target, pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glColorTableParameteriv</c>]</b></summary>
         public static delegate* unmanaged<uint, uint, int*, void> _glColorTableParameteriv_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glColorTableParameteriv_Lazy(uint target, uint pname, int* parameters)
+        internal static void glColorTableParameteriv_Lazy(uint target, uint pname, int* @params)
         {
             if (_glColorTableParameteriv_fnptr == null)
                 _glColorTableParameteriv_fnptr = (delegate* unmanaged<uint, uint, int*, void>)GLLoader.BindingsContext.GetProcAddress("glColorTableParameteriv");
-            _glColorTableParameteriv_fnptr(target, pname, parameters);
+            _glColorTableParameteriv_fnptr(target, pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glColorTableParameterivSGI</c>]</b></summary>
         public static delegate* unmanaged<uint, uint, int*, void> _glColorTableParameterivSGI_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glColorTableParameterivSGI_Lazy(uint target, uint pname, int* parameters)
+        internal static void glColorTableParameterivSGI_Lazy(uint target, uint pname, int* @params)
         {
             if (_glColorTableParameterivSGI_fnptr == null)
                 _glColorTableParameterivSGI_fnptr = (delegate* unmanaged<uint, uint, int*, void>)GLLoader.BindingsContext.GetProcAddress("glColorTableParameterivSGI");
-            _glColorTableParameterivSGI_fnptr(target, pname, parameters);
+            _glColorTableParameterivSGI_fnptr(target, pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glColorTableSGI</c>]</b></summary>
@@ -3152,11 +3152,11 @@ namespace OpenTK.Graphics.OpenGL
         /// <summary><b>[entry point: <c>glCombinerParameterfvNV</c>]</b></summary>
         public static delegate* unmanaged<uint, float*, void> _glCombinerParameterfvNV_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glCombinerParameterfvNV_Lazy(uint pname, float* parameters)
+        internal static void glCombinerParameterfvNV_Lazy(uint pname, float* @params)
         {
             if (_glCombinerParameterfvNV_fnptr == null)
                 _glCombinerParameterfvNV_fnptr = (delegate* unmanaged<uint, float*, void>)GLLoader.BindingsContext.GetProcAddress("glCombinerParameterfvNV");
-            _glCombinerParameterfvNV_fnptr(pname, parameters);
+            _glCombinerParameterfvNV_fnptr(pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glCombinerParameteriNV</c>]</b></summary>
@@ -3172,21 +3172,21 @@ namespace OpenTK.Graphics.OpenGL
         /// <summary><b>[entry point: <c>glCombinerParameterivNV</c>]</b></summary>
         public static delegate* unmanaged<uint, int*, void> _glCombinerParameterivNV_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glCombinerParameterivNV_Lazy(uint pname, int* parameters)
+        internal static void glCombinerParameterivNV_Lazy(uint pname, int* @params)
         {
             if (_glCombinerParameterivNV_fnptr == null)
                 _glCombinerParameterivNV_fnptr = (delegate* unmanaged<uint, int*, void>)GLLoader.BindingsContext.GetProcAddress("glCombinerParameterivNV");
-            _glCombinerParameterivNV_fnptr(pname, parameters);
+            _glCombinerParameterivNV_fnptr(pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glCombinerStageParameterfvNV</c>]</b></summary>
         public static delegate* unmanaged<uint, uint, float*, void> _glCombinerStageParameterfvNV_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glCombinerStageParameterfvNV_Lazy(uint stage, uint pname, float* parameters)
+        internal static void glCombinerStageParameterfvNV_Lazy(uint stage, uint pname, float* @params)
         {
             if (_glCombinerStageParameterfvNV_fnptr == null)
                 _glCombinerStageParameterfvNV_fnptr = (delegate* unmanaged<uint, uint, float*, void>)GLLoader.BindingsContext.GetProcAddress("glCombinerStageParameterfvNV");
-            _glCombinerStageParameterfvNV_fnptr(stage, pname, parameters);
+            _glCombinerStageParameterfvNV_fnptr(stage, pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glCommandListSegmentsNV</c>]</b></summary>
@@ -3592,81 +3592,81 @@ namespace OpenTK.Graphics.OpenGL
         /// <summary><b>[entry point: <c>glConvolutionParameterf</c>]</b></summary>
         public static delegate* unmanaged<uint, uint, float, void> _glConvolutionParameterf_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glConvolutionParameterf_Lazy(uint target, uint pname, float parameters)
+        internal static void glConvolutionParameterf_Lazy(uint target, uint pname, float @params)
         {
             if (_glConvolutionParameterf_fnptr == null)
                 _glConvolutionParameterf_fnptr = (delegate* unmanaged<uint, uint, float, void>)GLLoader.BindingsContext.GetProcAddress("glConvolutionParameterf");
-            _glConvolutionParameterf_fnptr(target, pname, parameters);
+            _glConvolutionParameterf_fnptr(target, pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glConvolutionParameterfEXT</c>]</b></summary>
         public static delegate* unmanaged<uint, uint, float, void> _glConvolutionParameterfEXT_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glConvolutionParameterfEXT_Lazy(uint target, uint pname, float parameters)
+        internal static void glConvolutionParameterfEXT_Lazy(uint target, uint pname, float @params)
         {
             if (_glConvolutionParameterfEXT_fnptr == null)
                 _glConvolutionParameterfEXT_fnptr = (delegate* unmanaged<uint, uint, float, void>)GLLoader.BindingsContext.GetProcAddress("glConvolutionParameterfEXT");
-            _glConvolutionParameterfEXT_fnptr(target, pname, parameters);
+            _glConvolutionParameterfEXT_fnptr(target, pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glConvolutionParameterfv</c>]</b></summary>
         public static delegate* unmanaged<uint, uint, float*, void> _glConvolutionParameterfv_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glConvolutionParameterfv_Lazy(uint target, uint pname, float* parameters)
+        internal static void glConvolutionParameterfv_Lazy(uint target, uint pname, float* @params)
         {
             if (_glConvolutionParameterfv_fnptr == null)
                 _glConvolutionParameterfv_fnptr = (delegate* unmanaged<uint, uint, float*, void>)GLLoader.BindingsContext.GetProcAddress("glConvolutionParameterfv");
-            _glConvolutionParameterfv_fnptr(target, pname, parameters);
+            _glConvolutionParameterfv_fnptr(target, pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glConvolutionParameterfvEXT</c>]</b></summary>
         public static delegate* unmanaged<uint, uint, float*, void> _glConvolutionParameterfvEXT_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glConvolutionParameterfvEXT_Lazy(uint target, uint pname, float* parameters)
+        internal static void glConvolutionParameterfvEXT_Lazy(uint target, uint pname, float* @params)
         {
             if (_glConvolutionParameterfvEXT_fnptr == null)
                 _glConvolutionParameterfvEXT_fnptr = (delegate* unmanaged<uint, uint, float*, void>)GLLoader.BindingsContext.GetProcAddress("glConvolutionParameterfvEXT");
-            _glConvolutionParameterfvEXT_fnptr(target, pname, parameters);
+            _glConvolutionParameterfvEXT_fnptr(target, pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glConvolutionParameteri</c>]</b></summary>
         public static delegate* unmanaged<uint, uint, int, void> _glConvolutionParameteri_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glConvolutionParameteri_Lazy(uint target, uint pname, int parameters)
+        internal static void glConvolutionParameteri_Lazy(uint target, uint pname, int @params)
         {
             if (_glConvolutionParameteri_fnptr == null)
                 _glConvolutionParameteri_fnptr = (delegate* unmanaged<uint, uint, int, void>)GLLoader.BindingsContext.GetProcAddress("glConvolutionParameteri");
-            _glConvolutionParameteri_fnptr(target, pname, parameters);
+            _glConvolutionParameteri_fnptr(target, pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glConvolutionParameteriEXT</c>]</b></summary>
         public static delegate* unmanaged<uint, uint, int, void> _glConvolutionParameteriEXT_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glConvolutionParameteriEXT_Lazy(uint target, uint pname, int parameters)
+        internal static void glConvolutionParameteriEXT_Lazy(uint target, uint pname, int @params)
         {
             if (_glConvolutionParameteriEXT_fnptr == null)
                 _glConvolutionParameteriEXT_fnptr = (delegate* unmanaged<uint, uint, int, void>)GLLoader.BindingsContext.GetProcAddress("glConvolutionParameteriEXT");
-            _glConvolutionParameteriEXT_fnptr(target, pname, parameters);
+            _glConvolutionParameteriEXT_fnptr(target, pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glConvolutionParameteriv</c>]</b></summary>
         public static delegate* unmanaged<uint, uint, int*, void> _glConvolutionParameteriv_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glConvolutionParameteriv_Lazy(uint target, uint pname, int* parameters)
+        internal static void glConvolutionParameteriv_Lazy(uint target, uint pname, int* @params)
         {
             if (_glConvolutionParameteriv_fnptr == null)
                 _glConvolutionParameteriv_fnptr = (delegate* unmanaged<uint, uint, int*, void>)GLLoader.BindingsContext.GetProcAddress("glConvolutionParameteriv");
-            _glConvolutionParameteriv_fnptr(target, pname, parameters);
+            _glConvolutionParameteriv_fnptr(target, pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glConvolutionParameterivEXT</c>]</b></summary>
         public static delegate* unmanaged<uint, uint, int*, void> _glConvolutionParameterivEXT_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glConvolutionParameterivEXT_Lazy(uint target, uint pname, int* parameters)
+        internal static void glConvolutionParameterivEXT_Lazy(uint target, uint pname, int* @params)
         {
             if (_glConvolutionParameterivEXT_fnptr == null)
                 _glConvolutionParameterivEXT_fnptr = (delegate* unmanaged<uint, uint, int*, void>)GLLoader.BindingsContext.GetProcAddress("glConvolutionParameterivEXT");
-            _glConvolutionParameterivEXT_fnptr(target, pname, parameters);
+            _glConvolutionParameterivEXT_fnptr(target, pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glConvolutionParameterxOES</c>]</b></summary>
@@ -3682,11 +3682,11 @@ namespace OpenTK.Graphics.OpenGL
         /// <summary><b>[entry point: <c>glConvolutionParameterxvOES</c>]</b></summary>
         public static delegate* unmanaged<uint, uint, int*, void> _glConvolutionParameterxvOES_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glConvolutionParameterxvOES_Lazy(uint target, uint pname, int* parameters)
+        internal static void glConvolutionParameterxvOES_Lazy(uint target, uint pname, int* @params)
         {
             if (_glConvolutionParameterxvOES_fnptr == null)
                 _glConvolutionParameterxvOES_fnptr = (delegate* unmanaged<uint, uint, int*, void>)GLLoader.BindingsContext.GetProcAddress("glConvolutionParameterxvOES");
-            _glConvolutionParameterxvOES_fnptr(target, pname, parameters);
+            _glConvolutionParameterxvOES_fnptr(target, pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glCopyBufferSubData</c>]</b></summary>
@@ -4342,11 +4342,11 @@ namespace OpenTK.Graphics.OpenGL
         /// <summary><b>[entry point: <c>glCreateShaderProgramEXT</c>]</b></summary>
         public static delegate* unmanaged<uint, byte*, int> _glCreateShaderProgramEXT_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static int glCreateShaderProgramEXT_Lazy(uint type, byte* str)
+        internal static int glCreateShaderProgramEXT_Lazy(uint type, byte* @string)
         {
             if (_glCreateShaderProgramEXT_fnptr == null)
                 _glCreateShaderProgramEXT_fnptr = (delegate* unmanaged<uint, byte*, int>)GLLoader.BindingsContext.GetProcAddress("glCreateShaderProgramEXT");
-            return _glCreateShaderProgramEXT_fnptr(type, str);
+            return _glCreateShaderProgramEXT_fnptr(type, @string);
         }
         
         /// <summary><b>[entry point: <c>glCreateShaderProgramv</c>]</b></summary>
@@ -4432,21 +4432,21 @@ namespace OpenTK.Graphics.OpenGL
         /// <summary><b>[entry point: <c>glCullParameterdvEXT</c>]</b></summary>
         public static delegate* unmanaged<uint, double*, void> _glCullParameterdvEXT_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glCullParameterdvEXT_Lazy(uint pname, double* parameters)
+        internal static void glCullParameterdvEXT_Lazy(uint pname, double* @params)
         {
             if (_glCullParameterdvEXT_fnptr == null)
                 _glCullParameterdvEXT_fnptr = (delegate* unmanaged<uint, double*, void>)GLLoader.BindingsContext.GetProcAddress("glCullParameterdvEXT");
-            _glCullParameterdvEXT_fnptr(pname, parameters);
+            _glCullParameterdvEXT_fnptr(pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glCullParameterfvEXT</c>]</b></summary>
         public static delegate* unmanaged<uint, float*, void> _glCullParameterfvEXT_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glCullParameterfvEXT_Lazy(uint pname, float* parameters)
+        internal static void glCullParameterfvEXT_Lazy(uint pname, float* @params)
         {
             if (_glCullParameterfvEXT_fnptr == null)
                 _glCullParameterfvEXT_fnptr = (delegate* unmanaged<uint, float*, void>)GLLoader.BindingsContext.GetProcAddress("glCullParameterfvEXT");
-            _glCullParameterfvEXT_fnptr(pname, parameters);
+            _glCullParameterfvEXT_fnptr(pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glCurrentPaletteMatrixARB</c>]</b></summary>
@@ -6832,21 +6832,21 @@ namespace OpenTK.Graphics.OpenGL
         /// <summary><b>[entry point: <c>glExecuteProgramNV</c>]</b></summary>
         public static delegate* unmanaged<uint, uint, float*, void> _glExecuteProgramNV_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glExecuteProgramNV_Lazy(uint target, uint id, float* parameters)
+        internal static void glExecuteProgramNV_Lazy(uint target, uint id, float* @params)
         {
             if (_glExecuteProgramNV_fnptr == null)
                 _glExecuteProgramNV_fnptr = (delegate* unmanaged<uint, uint, float*, void>)GLLoader.BindingsContext.GetProcAddress("glExecuteProgramNV");
-            _glExecuteProgramNV_fnptr(target, id, parameters);
+            _glExecuteProgramNV_fnptr(target, id, @params);
         }
         
         /// <summary><b>[entry point: <c>glExtGetBufferPointervQCOM</c>]</b></summary>
         public static delegate* unmanaged<uint, void**, void> _glExtGetBufferPointervQCOM_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glExtGetBufferPointervQCOM_Lazy(uint target, void** parameters)
+        internal static void glExtGetBufferPointervQCOM_Lazy(uint target, void** @params)
         {
             if (_glExtGetBufferPointervQCOM_fnptr == null)
                 _glExtGetBufferPointervQCOM_fnptr = (delegate* unmanaged<uint, void**, void>)GLLoader.BindingsContext.GetProcAddress("glExtGetBufferPointervQCOM");
-            _glExtGetBufferPointervQCOM_fnptr(target, parameters);
+            _glExtGetBufferPointervQCOM_fnptr(target, @params);
         }
         
         /// <summary><b>[entry point: <c>glExtGetBuffersQCOM</c>]</b></summary>
@@ -6912,11 +6912,11 @@ namespace OpenTK.Graphics.OpenGL
         /// <summary><b>[entry point: <c>glExtGetTexLevelParameterivQCOM</c>]</b></summary>
         public static delegate* unmanaged<int, uint, int, uint, int*, void> _glExtGetTexLevelParameterivQCOM_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glExtGetTexLevelParameterivQCOM_Lazy(int texture, uint face, int level, uint pname, int* parameters)
+        internal static void glExtGetTexLevelParameterivQCOM_Lazy(int texture, uint face, int level, uint pname, int* @params)
         {
             if (_glExtGetTexLevelParameterivQCOM_fnptr == null)
                 _glExtGetTexLevelParameterivQCOM_fnptr = (delegate* unmanaged<int, uint, int, uint, int*, void>)GLLoader.BindingsContext.GetProcAddress("glExtGetTexLevelParameterivQCOM");
-            _glExtGetTexLevelParameterivQCOM_fnptr(texture, face, level, pname, parameters);
+            _glExtGetTexLevelParameterivQCOM_fnptr(texture, face, level, pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glExtGetTexSubImageQCOM</c>]</b></summary>
@@ -7072,11 +7072,11 @@ namespace OpenTK.Graphics.OpenGL
         /// <summary><b>[entry point: <c>glFinishObjectAPPLE</c>]</b></summary>
         public static delegate* unmanaged<uint, int, void> _glFinishObjectAPPLE_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glFinishObjectAPPLE_Lazy(uint obj, int name)
+        internal static void glFinishObjectAPPLE_Lazy(uint @object, int name)
         {
             if (_glFinishObjectAPPLE_fnptr == null)
                 _glFinishObjectAPPLE_fnptr = (delegate* unmanaged<uint, int, void>)GLLoader.BindingsContext.GetProcAddress("glFinishObjectAPPLE");
-            _glFinishObjectAPPLE_fnptr(obj, name);
+            _glFinishObjectAPPLE_fnptr(@object, name);
         }
         
         /// <summary><b>[entry point: <c>glFinishTextureSUNX</c>]</b></summary>
@@ -7362,11 +7362,11 @@ namespace OpenTK.Graphics.OpenGL
         /// <summary><b>[entry point: <c>glFogfv</c>]</b></summary>
         public static delegate* unmanaged<uint, float*, void> _glFogfv_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glFogfv_Lazy(uint pname, float* parameters)
+        internal static void glFogfv_Lazy(uint pname, float* @params)
         {
             if (_glFogfv_fnptr == null)
                 _glFogfv_fnptr = (delegate* unmanaged<uint, float*, void>)GLLoader.BindingsContext.GetProcAddress("glFogfv");
-            _glFogfv_fnptr(pname, parameters);
+            _glFogfv_fnptr(pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glFogi</c>]</b></summary>
@@ -7382,11 +7382,11 @@ namespace OpenTK.Graphics.OpenGL
         /// <summary><b>[entry point: <c>glFogiv</c>]</b></summary>
         public static delegate* unmanaged<uint, int*, void> _glFogiv_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glFogiv_Lazy(uint pname, int* parameters)
+        internal static void glFogiv_Lazy(uint pname, int* @params)
         {
             if (_glFogiv_fnptr == null)
                 _glFogiv_fnptr = (delegate* unmanaged<uint, int*, void>)GLLoader.BindingsContext.GetProcAddress("glFogiv");
-            _glFogiv_fnptr(pname, parameters);
+            _glFogiv_fnptr(pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glFogx</c>]</b></summary>
@@ -7462,11 +7462,11 @@ namespace OpenTK.Graphics.OpenGL
         /// <summary><b>[entry point: <c>glFragmentLightfvSGIX</c>]</b></summary>
         public static delegate* unmanaged<uint, uint, float*, void> _glFragmentLightfvSGIX_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glFragmentLightfvSGIX_Lazy(uint light, uint pname, float* parameters)
+        internal static void glFragmentLightfvSGIX_Lazy(uint light, uint pname, float* @params)
         {
             if (_glFragmentLightfvSGIX_fnptr == null)
                 _glFragmentLightfvSGIX_fnptr = (delegate* unmanaged<uint, uint, float*, void>)GLLoader.BindingsContext.GetProcAddress("glFragmentLightfvSGIX");
-            _glFragmentLightfvSGIX_fnptr(light, pname, parameters);
+            _glFragmentLightfvSGIX_fnptr(light, pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glFragmentLightiSGIX</c>]</b></summary>
@@ -7482,11 +7482,11 @@ namespace OpenTK.Graphics.OpenGL
         /// <summary><b>[entry point: <c>glFragmentLightivSGIX</c>]</b></summary>
         public static delegate* unmanaged<uint, uint, int*, void> _glFragmentLightivSGIX_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glFragmentLightivSGIX_Lazy(uint light, uint pname, int* parameters)
+        internal static void glFragmentLightivSGIX_Lazy(uint light, uint pname, int* @params)
         {
             if (_glFragmentLightivSGIX_fnptr == null)
                 _glFragmentLightivSGIX_fnptr = (delegate* unmanaged<uint, uint, int*, void>)GLLoader.BindingsContext.GetProcAddress("glFragmentLightivSGIX");
-            _glFragmentLightivSGIX_fnptr(light, pname, parameters);
+            _glFragmentLightivSGIX_fnptr(light, pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glFragmentLightModelfSGIX</c>]</b></summary>
@@ -7502,11 +7502,11 @@ namespace OpenTK.Graphics.OpenGL
         /// <summary><b>[entry point: <c>glFragmentLightModelfvSGIX</c>]</b></summary>
         public static delegate* unmanaged<uint, float*, void> _glFragmentLightModelfvSGIX_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glFragmentLightModelfvSGIX_Lazy(uint pname, float* parameters)
+        internal static void glFragmentLightModelfvSGIX_Lazy(uint pname, float* @params)
         {
             if (_glFragmentLightModelfvSGIX_fnptr == null)
                 _glFragmentLightModelfvSGIX_fnptr = (delegate* unmanaged<uint, float*, void>)GLLoader.BindingsContext.GetProcAddress("glFragmentLightModelfvSGIX");
-            _glFragmentLightModelfvSGIX_fnptr(pname, parameters);
+            _glFragmentLightModelfvSGIX_fnptr(pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glFragmentLightModeliSGIX</c>]</b></summary>
@@ -7522,11 +7522,11 @@ namespace OpenTK.Graphics.OpenGL
         /// <summary><b>[entry point: <c>glFragmentLightModelivSGIX</c>]</b></summary>
         public static delegate* unmanaged<uint, int*, void> _glFragmentLightModelivSGIX_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glFragmentLightModelivSGIX_Lazy(uint pname, int* parameters)
+        internal static void glFragmentLightModelivSGIX_Lazy(uint pname, int* @params)
         {
             if (_glFragmentLightModelivSGIX_fnptr == null)
                 _glFragmentLightModelivSGIX_fnptr = (delegate* unmanaged<uint, int*, void>)GLLoader.BindingsContext.GetProcAddress("glFragmentLightModelivSGIX");
-            _glFragmentLightModelivSGIX_fnptr(pname, parameters);
+            _glFragmentLightModelivSGIX_fnptr(pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glFragmentMaterialfSGIX</c>]</b></summary>
@@ -7542,11 +7542,11 @@ namespace OpenTK.Graphics.OpenGL
         /// <summary><b>[entry point: <c>glFragmentMaterialfvSGIX</c>]</b></summary>
         public static delegate* unmanaged<uint, uint, float*, void> _glFragmentMaterialfvSGIX_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glFragmentMaterialfvSGIX_Lazy(uint face, uint pname, float* parameters)
+        internal static void glFragmentMaterialfvSGIX_Lazy(uint face, uint pname, float* @params)
         {
             if (_glFragmentMaterialfvSGIX_fnptr == null)
                 _glFragmentMaterialfvSGIX_fnptr = (delegate* unmanaged<uint, uint, float*, void>)GLLoader.BindingsContext.GetProcAddress("glFragmentMaterialfvSGIX");
-            _glFragmentMaterialfvSGIX_fnptr(face, pname, parameters);
+            _glFragmentMaterialfvSGIX_fnptr(face, pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glFragmentMaterialiSGIX</c>]</b></summary>
@@ -7562,11 +7562,11 @@ namespace OpenTK.Graphics.OpenGL
         /// <summary><b>[entry point: <c>glFragmentMaterialivSGIX</c>]</b></summary>
         public static delegate* unmanaged<uint, uint, int*, void> _glFragmentMaterialivSGIX_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glFragmentMaterialivSGIX_Lazy(uint face, uint pname, int* parameters)
+        internal static void glFragmentMaterialivSGIX_Lazy(uint face, uint pname, int* @params)
         {
             if (_glFragmentMaterialivSGIX_fnptr == null)
                 _glFragmentMaterialivSGIX_fnptr = (delegate* unmanaged<uint, uint, int*, void>)GLLoader.BindingsContext.GetProcAddress("glFragmentMaterialivSGIX");
-            _glFragmentMaterialivSGIX_fnptr(face, pname, parameters);
+            _glFragmentMaterialivSGIX_fnptr(face, pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glFramebufferDrawBufferEXT</c>]</b></summary>
@@ -8482,11 +8482,11 @@ namespace OpenTK.Graphics.OpenGL
         /// <summary><b>[entry point: <c>glGetActiveAtomicCounterBufferiv</c>]</b></summary>
         public static delegate* unmanaged<int, uint, uint, int*, void> _glGetActiveAtomicCounterBufferiv_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glGetActiveAtomicCounterBufferiv_Lazy(int program, uint bufferIndex, uint pname, int* parameters)
+        internal static void glGetActiveAtomicCounterBufferiv_Lazy(int program, uint bufferIndex, uint pname, int* @params)
         {
             if (_glGetActiveAtomicCounterBufferiv_fnptr == null)
                 _glGetActiveAtomicCounterBufferiv_fnptr = (delegate* unmanaged<int, uint, uint, int*, void>)GLLoader.BindingsContext.GetProcAddress("glGetActiveAtomicCounterBufferiv");
-            _glGetActiveAtomicCounterBufferiv_fnptr(program, bufferIndex, pname, parameters);
+            _glGetActiveAtomicCounterBufferiv_fnptr(program, bufferIndex, pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glGetActiveAttrib</c>]</b></summary>
@@ -8562,11 +8562,11 @@ namespace OpenTK.Graphics.OpenGL
         /// <summary><b>[entry point: <c>glGetActiveUniformBlockiv</c>]</b></summary>
         public static delegate* unmanaged<int, uint, uint, int*, void> _glGetActiveUniformBlockiv_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glGetActiveUniformBlockiv_Lazy(int program, uint uniformBlockIndex, uint pname, int* parameters)
+        internal static void glGetActiveUniformBlockiv_Lazy(int program, uint uniformBlockIndex, uint pname, int* @params)
         {
             if (_glGetActiveUniformBlockiv_fnptr == null)
                 _glGetActiveUniformBlockiv_fnptr = (delegate* unmanaged<int, uint, uint, int*, void>)GLLoader.BindingsContext.GetProcAddress("glGetActiveUniformBlockiv");
-            _glGetActiveUniformBlockiv_fnptr(program, uniformBlockIndex, pname, parameters);
+            _glGetActiveUniformBlockiv_fnptr(program, uniformBlockIndex, pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glGetActiveUniformBlockName</c>]</b></summary>
@@ -8592,11 +8592,11 @@ namespace OpenTK.Graphics.OpenGL
         /// <summary><b>[entry point: <c>glGetActiveUniformsiv</c>]</b></summary>
         public static delegate* unmanaged<int, int, uint*, uint, int*, void> _glGetActiveUniformsiv_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glGetActiveUniformsiv_Lazy(int program, int uniformCount, uint* uniformIndices, uint pname, int* parameters)
+        internal static void glGetActiveUniformsiv_Lazy(int program, int uniformCount, uint* uniformIndices, uint pname, int* @params)
         {
             if (_glGetActiveUniformsiv_fnptr == null)
                 _glGetActiveUniformsiv_fnptr = (delegate* unmanaged<int, int, uint*, uint, int*, void>)GLLoader.BindingsContext.GetProcAddress("glGetActiveUniformsiv");
-            _glGetActiveUniformsiv_fnptr(program, uniformCount, uniformIndices, pname, parameters);
+            _glGetActiveUniformsiv_fnptr(program, uniformCount, uniformIndices, pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glGetActiveVaryingNV</c>]</b></summary>
@@ -8612,21 +8612,21 @@ namespace OpenTK.Graphics.OpenGL
         /// <summary><b>[entry point: <c>glGetArrayObjectfvATI</c>]</b></summary>
         public static delegate* unmanaged<uint, uint, float*, void> _glGetArrayObjectfvATI_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glGetArrayObjectfvATI_Lazy(uint array, uint pname, float* parameters)
+        internal static void glGetArrayObjectfvATI_Lazy(uint array, uint pname, float* @params)
         {
             if (_glGetArrayObjectfvATI_fnptr == null)
                 _glGetArrayObjectfvATI_fnptr = (delegate* unmanaged<uint, uint, float*, void>)GLLoader.BindingsContext.GetProcAddress("glGetArrayObjectfvATI");
-            _glGetArrayObjectfvATI_fnptr(array, pname, parameters);
+            _glGetArrayObjectfvATI_fnptr(array, pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glGetArrayObjectivATI</c>]</b></summary>
         public static delegate* unmanaged<uint, uint, int*, void> _glGetArrayObjectivATI_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glGetArrayObjectivATI_Lazy(uint array, uint pname, int* parameters)
+        internal static void glGetArrayObjectivATI_Lazy(uint array, uint pname, int* @params)
         {
             if (_glGetArrayObjectivATI_fnptr == null)
                 _glGetArrayObjectivATI_fnptr = (delegate* unmanaged<uint, uint, int*, void>)GLLoader.BindingsContext.GetProcAddress("glGetArrayObjectivATI");
-            _glGetArrayObjectivATI_fnptr(array, pname, parameters);
+            _glGetArrayObjectivATI_fnptr(array, pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glGetAttachedObjectsARB</c>]</b></summary>
@@ -8702,71 +8702,71 @@ namespace OpenTK.Graphics.OpenGL
         /// <summary><b>[entry point: <c>glGetBufferParameteri64v</c>]</b></summary>
         public static delegate* unmanaged<uint, uint, long*, void> _glGetBufferParameteri64v_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glGetBufferParameteri64v_Lazy(uint target, uint pname, long* parameters)
+        internal static void glGetBufferParameteri64v_Lazy(uint target, uint pname, long* @params)
         {
             if (_glGetBufferParameteri64v_fnptr == null)
                 _glGetBufferParameteri64v_fnptr = (delegate* unmanaged<uint, uint, long*, void>)GLLoader.BindingsContext.GetProcAddress("glGetBufferParameteri64v");
-            _glGetBufferParameteri64v_fnptr(target, pname, parameters);
+            _glGetBufferParameteri64v_fnptr(target, pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glGetBufferParameteriv</c>]</b></summary>
         public static delegate* unmanaged<uint, uint, int*, void> _glGetBufferParameteriv_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glGetBufferParameteriv_Lazy(uint target, uint pname, int* parameters)
+        internal static void glGetBufferParameteriv_Lazy(uint target, uint pname, int* @params)
         {
             if (_glGetBufferParameteriv_fnptr == null)
                 _glGetBufferParameteriv_fnptr = (delegate* unmanaged<uint, uint, int*, void>)GLLoader.BindingsContext.GetProcAddress("glGetBufferParameteriv");
-            _glGetBufferParameteriv_fnptr(target, pname, parameters);
+            _glGetBufferParameteriv_fnptr(target, pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glGetBufferParameterivARB</c>]</b></summary>
         public static delegate* unmanaged<uint, uint, int*, void> _glGetBufferParameterivARB_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glGetBufferParameterivARB_Lazy(uint target, uint pname, int* parameters)
+        internal static void glGetBufferParameterivARB_Lazy(uint target, uint pname, int* @params)
         {
             if (_glGetBufferParameterivARB_fnptr == null)
                 _glGetBufferParameterivARB_fnptr = (delegate* unmanaged<uint, uint, int*, void>)GLLoader.BindingsContext.GetProcAddress("glGetBufferParameterivARB");
-            _glGetBufferParameterivARB_fnptr(target, pname, parameters);
+            _glGetBufferParameterivARB_fnptr(target, pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glGetBufferParameterui64vNV</c>]</b></summary>
         public static delegate* unmanaged<uint, uint, ulong*, void> _glGetBufferParameterui64vNV_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glGetBufferParameterui64vNV_Lazy(uint target, uint pname, ulong* parameters)
+        internal static void glGetBufferParameterui64vNV_Lazy(uint target, uint pname, ulong* @params)
         {
             if (_glGetBufferParameterui64vNV_fnptr == null)
                 _glGetBufferParameterui64vNV_fnptr = (delegate* unmanaged<uint, uint, ulong*, void>)GLLoader.BindingsContext.GetProcAddress("glGetBufferParameterui64vNV");
-            _glGetBufferParameterui64vNV_fnptr(target, pname, parameters);
+            _glGetBufferParameterui64vNV_fnptr(target, pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glGetBufferPointerv</c>]</b></summary>
         public static delegate* unmanaged<uint, uint, void**, void> _glGetBufferPointerv_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glGetBufferPointerv_Lazy(uint target, uint pname, void** parameters)
+        internal static void glGetBufferPointerv_Lazy(uint target, uint pname, void** @params)
         {
             if (_glGetBufferPointerv_fnptr == null)
                 _glGetBufferPointerv_fnptr = (delegate* unmanaged<uint, uint, void**, void>)GLLoader.BindingsContext.GetProcAddress("glGetBufferPointerv");
-            _glGetBufferPointerv_fnptr(target, pname, parameters);
+            _glGetBufferPointerv_fnptr(target, pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glGetBufferPointervARB</c>]</b></summary>
         public static delegate* unmanaged<uint, uint, void**, void> _glGetBufferPointervARB_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glGetBufferPointervARB_Lazy(uint target, uint pname, void** parameters)
+        internal static void glGetBufferPointervARB_Lazy(uint target, uint pname, void** @params)
         {
             if (_glGetBufferPointervARB_fnptr == null)
                 _glGetBufferPointervARB_fnptr = (delegate* unmanaged<uint, uint, void**, void>)GLLoader.BindingsContext.GetProcAddress("glGetBufferPointervARB");
-            _glGetBufferPointervARB_fnptr(target, pname, parameters);
+            _glGetBufferPointervARB_fnptr(target, pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glGetBufferPointervOES</c>]</b></summary>
         public static delegate* unmanaged<uint, uint, void**, void> _glGetBufferPointervOES_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glGetBufferPointervOES_Lazy(uint target, uint pname, void** parameters)
+        internal static void glGetBufferPointervOES_Lazy(uint target, uint pname, void** @params)
         {
             if (_glGetBufferPointervOES_fnptr == null)
                 _glGetBufferPointervOES_fnptr = (delegate* unmanaged<uint, uint, void**, void>)GLLoader.BindingsContext.GetProcAddress("glGetBufferPointervOES");
-            _glGetBufferPointervOES_fnptr(target, pname, parameters);
+            _glGetBufferPointervOES_fnptr(target, pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glGetBufferSubData</c>]</b></summary>
@@ -8862,61 +8862,61 @@ namespace OpenTK.Graphics.OpenGL
         /// <summary><b>[entry point: <c>glGetColorTableParameterfv</c>]</b></summary>
         public static delegate* unmanaged<uint, uint, float*, void> _glGetColorTableParameterfv_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glGetColorTableParameterfv_Lazy(uint target, uint pname, float* parameters)
+        internal static void glGetColorTableParameterfv_Lazy(uint target, uint pname, float* @params)
         {
             if (_glGetColorTableParameterfv_fnptr == null)
                 _glGetColorTableParameterfv_fnptr = (delegate* unmanaged<uint, uint, float*, void>)GLLoader.BindingsContext.GetProcAddress("glGetColorTableParameterfv");
-            _glGetColorTableParameterfv_fnptr(target, pname, parameters);
+            _glGetColorTableParameterfv_fnptr(target, pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glGetColorTableParameterfvEXT</c>]</b></summary>
         public static delegate* unmanaged<uint, uint, float*, void> _glGetColorTableParameterfvEXT_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glGetColorTableParameterfvEXT_Lazy(uint target, uint pname, float* parameters)
+        internal static void glGetColorTableParameterfvEXT_Lazy(uint target, uint pname, float* @params)
         {
             if (_glGetColorTableParameterfvEXT_fnptr == null)
                 _glGetColorTableParameterfvEXT_fnptr = (delegate* unmanaged<uint, uint, float*, void>)GLLoader.BindingsContext.GetProcAddress("glGetColorTableParameterfvEXT");
-            _glGetColorTableParameterfvEXT_fnptr(target, pname, parameters);
+            _glGetColorTableParameterfvEXT_fnptr(target, pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glGetColorTableParameterfvSGI</c>]</b></summary>
         public static delegate* unmanaged<uint, uint, float*, void> _glGetColorTableParameterfvSGI_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glGetColorTableParameterfvSGI_Lazy(uint target, uint pname, float* parameters)
+        internal static void glGetColorTableParameterfvSGI_Lazy(uint target, uint pname, float* @params)
         {
             if (_glGetColorTableParameterfvSGI_fnptr == null)
                 _glGetColorTableParameterfvSGI_fnptr = (delegate* unmanaged<uint, uint, float*, void>)GLLoader.BindingsContext.GetProcAddress("glGetColorTableParameterfvSGI");
-            _glGetColorTableParameterfvSGI_fnptr(target, pname, parameters);
+            _glGetColorTableParameterfvSGI_fnptr(target, pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glGetColorTableParameteriv</c>]</b></summary>
         public static delegate* unmanaged<uint, uint, int*, void> _glGetColorTableParameteriv_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glGetColorTableParameteriv_Lazy(uint target, uint pname, int* parameters)
+        internal static void glGetColorTableParameteriv_Lazy(uint target, uint pname, int* @params)
         {
             if (_glGetColorTableParameteriv_fnptr == null)
                 _glGetColorTableParameteriv_fnptr = (delegate* unmanaged<uint, uint, int*, void>)GLLoader.BindingsContext.GetProcAddress("glGetColorTableParameteriv");
-            _glGetColorTableParameteriv_fnptr(target, pname, parameters);
+            _glGetColorTableParameteriv_fnptr(target, pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glGetColorTableParameterivEXT</c>]</b></summary>
         public static delegate* unmanaged<uint, uint, int*, void> _glGetColorTableParameterivEXT_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glGetColorTableParameterivEXT_Lazy(uint target, uint pname, int* parameters)
+        internal static void glGetColorTableParameterivEXT_Lazy(uint target, uint pname, int* @params)
         {
             if (_glGetColorTableParameterivEXT_fnptr == null)
                 _glGetColorTableParameterivEXT_fnptr = (delegate* unmanaged<uint, uint, int*, void>)GLLoader.BindingsContext.GetProcAddress("glGetColorTableParameterivEXT");
-            _glGetColorTableParameterivEXT_fnptr(target, pname, parameters);
+            _glGetColorTableParameterivEXT_fnptr(target, pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glGetColorTableParameterivSGI</c>]</b></summary>
         public static delegate* unmanaged<uint, uint, int*, void> _glGetColorTableParameterivSGI_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glGetColorTableParameterivSGI_Lazy(uint target, uint pname, int* parameters)
+        internal static void glGetColorTableParameterivSGI_Lazy(uint target, uint pname, int* @params)
         {
             if (_glGetColorTableParameterivSGI_fnptr == null)
                 _glGetColorTableParameterivSGI_fnptr = (delegate* unmanaged<uint, uint, int*, void>)GLLoader.BindingsContext.GetProcAddress("glGetColorTableParameterivSGI");
-            _glGetColorTableParameterivSGI_fnptr(target, pname, parameters);
+            _glGetColorTableParameterivSGI_fnptr(target, pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glGetColorTableSGI</c>]</b></summary>
@@ -8932,51 +8932,51 @@ namespace OpenTK.Graphics.OpenGL
         /// <summary><b>[entry point: <c>glGetCombinerInputParameterfvNV</c>]</b></summary>
         public static delegate* unmanaged<uint, uint, uint, uint, float*, void> _glGetCombinerInputParameterfvNV_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glGetCombinerInputParameterfvNV_Lazy(uint stage, uint portion, uint variable, uint pname, float* parameters)
+        internal static void glGetCombinerInputParameterfvNV_Lazy(uint stage, uint portion, uint variable, uint pname, float* @params)
         {
             if (_glGetCombinerInputParameterfvNV_fnptr == null)
                 _glGetCombinerInputParameterfvNV_fnptr = (delegate* unmanaged<uint, uint, uint, uint, float*, void>)GLLoader.BindingsContext.GetProcAddress("glGetCombinerInputParameterfvNV");
-            _glGetCombinerInputParameterfvNV_fnptr(stage, portion, variable, pname, parameters);
+            _glGetCombinerInputParameterfvNV_fnptr(stage, portion, variable, pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glGetCombinerInputParameterivNV</c>]</b></summary>
         public static delegate* unmanaged<uint, uint, uint, uint, int*, void> _glGetCombinerInputParameterivNV_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glGetCombinerInputParameterivNV_Lazy(uint stage, uint portion, uint variable, uint pname, int* parameters)
+        internal static void glGetCombinerInputParameterivNV_Lazy(uint stage, uint portion, uint variable, uint pname, int* @params)
         {
             if (_glGetCombinerInputParameterivNV_fnptr == null)
                 _glGetCombinerInputParameterivNV_fnptr = (delegate* unmanaged<uint, uint, uint, uint, int*, void>)GLLoader.BindingsContext.GetProcAddress("glGetCombinerInputParameterivNV");
-            _glGetCombinerInputParameterivNV_fnptr(stage, portion, variable, pname, parameters);
+            _glGetCombinerInputParameterivNV_fnptr(stage, portion, variable, pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glGetCombinerOutputParameterfvNV</c>]</b></summary>
         public static delegate* unmanaged<uint, uint, uint, float*, void> _glGetCombinerOutputParameterfvNV_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glGetCombinerOutputParameterfvNV_Lazy(uint stage, uint portion, uint pname, float* parameters)
+        internal static void glGetCombinerOutputParameterfvNV_Lazy(uint stage, uint portion, uint pname, float* @params)
         {
             if (_glGetCombinerOutputParameterfvNV_fnptr == null)
                 _glGetCombinerOutputParameterfvNV_fnptr = (delegate* unmanaged<uint, uint, uint, float*, void>)GLLoader.BindingsContext.GetProcAddress("glGetCombinerOutputParameterfvNV");
-            _glGetCombinerOutputParameterfvNV_fnptr(stage, portion, pname, parameters);
+            _glGetCombinerOutputParameterfvNV_fnptr(stage, portion, pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glGetCombinerOutputParameterivNV</c>]</b></summary>
         public static delegate* unmanaged<uint, uint, uint, int*, void> _glGetCombinerOutputParameterivNV_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glGetCombinerOutputParameterivNV_Lazy(uint stage, uint portion, uint pname, int* parameters)
+        internal static void glGetCombinerOutputParameterivNV_Lazy(uint stage, uint portion, uint pname, int* @params)
         {
             if (_glGetCombinerOutputParameterivNV_fnptr == null)
                 _glGetCombinerOutputParameterivNV_fnptr = (delegate* unmanaged<uint, uint, uint, int*, void>)GLLoader.BindingsContext.GetProcAddress("glGetCombinerOutputParameterivNV");
-            _glGetCombinerOutputParameterivNV_fnptr(stage, portion, pname, parameters);
+            _glGetCombinerOutputParameterivNV_fnptr(stage, portion, pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glGetCombinerStageParameterfvNV</c>]</b></summary>
         public static delegate* unmanaged<uint, uint, float*, void> _glGetCombinerStageParameterfvNV_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glGetCombinerStageParameterfvNV_Lazy(uint stage, uint pname, float* parameters)
+        internal static void glGetCombinerStageParameterfvNV_Lazy(uint stage, uint pname, float* @params)
         {
             if (_glGetCombinerStageParameterfvNV_fnptr == null)
                 _glGetCombinerStageParameterfvNV_fnptr = (delegate* unmanaged<uint, uint, float*, void>)GLLoader.BindingsContext.GetProcAddress("glGetCombinerStageParameterfvNV");
-            _glGetCombinerStageParameterfvNV_fnptr(stage, pname, parameters);
+            _glGetCombinerStageParameterfvNV_fnptr(stage, pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glGetCommandHeaderNV</c>]</b></summary>
@@ -9072,51 +9072,51 @@ namespace OpenTK.Graphics.OpenGL
         /// <summary><b>[entry point: <c>glGetConvolutionParameterfv</c>]</b></summary>
         public static delegate* unmanaged<uint, uint, float*, void> _glGetConvolutionParameterfv_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glGetConvolutionParameterfv_Lazy(uint target, uint pname, float* parameters)
+        internal static void glGetConvolutionParameterfv_Lazy(uint target, uint pname, float* @params)
         {
             if (_glGetConvolutionParameterfv_fnptr == null)
                 _glGetConvolutionParameterfv_fnptr = (delegate* unmanaged<uint, uint, float*, void>)GLLoader.BindingsContext.GetProcAddress("glGetConvolutionParameterfv");
-            _glGetConvolutionParameterfv_fnptr(target, pname, parameters);
+            _glGetConvolutionParameterfv_fnptr(target, pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glGetConvolutionParameterfvEXT</c>]</b></summary>
         public static delegate* unmanaged<uint, uint, float*, void> _glGetConvolutionParameterfvEXT_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glGetConvolutionParameterfvEXT_Lazy(uint target, uint pname, float* parameters)
+        internal static void glGetConvolutionParameterfvEXT_Lazy(uint target, uint pname, float* @params)
         {
             if (_glGetConvolutionParameterfvEXT_fnptr == null)
                 _glGetConvolutionParameterfvEXT_fnptr = (delegate* unmanaged<uint, uint, float*, void>)GLLoader.BindingsContext.GetProcAddress("glGetConvolutionParameterfvEXT");
-            _glGetConvolutionParameterfvEXT_fnptr(target, pname, parameters);
+            _glGetConvolutionParameterfvEXT_fnptr(target, pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glGetConvolutionParameteriv</c>]</b></summary>
         public static delegate* unmanaged<uint, uint, int*, void> _glGetConvolutionParameteriv_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glGetConvolutionParameteriv_Lazy(uint target, uint pname, int* parameters)
+        internal static void glGetConvolutionParameteriv_Lazy(uint target, uint pname, int* @params)
         {
             if (_glGetConvolutionParameteriv_fnptr == null)
                 _glGetConvolutionParameteriv_fnptr = (delegate* unmanaged<uint, uint, int*, void>)GLLoader.BindingsContext.GetProcAddress("glGetConvolutionParameteriv");
-            _glGetConvolutionParameteriv_fnptr(target, pname, parameters);
+            _glGetConvolutionParameteriv_fnptr(target, pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glGetConvolutionParameterivEXT</c>]</b></summary>
         public static delegate* unmanaged<uint, uint, int*, void> _glGetConvolutionParameterivEXT_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glGetConvolutionParameterivEXT_Lazy(uint target, uint pname, int* parameters)
+        internal static void glGetConvolutionParameterivEXT_Lazy(uint target, uint pname, int* @params)
         {
             if (_glGetConvolutionParameterivEXT_fnptr == null)
                 _glGetConvolutionParameterivEXT_fnptr = (delegate* unmanaged<uint, uint, int*, void>)GLLoader.BindingsContext.GetProcAddress("glGetConvolutionParameterivEXT");
-            _glGetConvolutionParameterivEXT_fnptr(target, pname, parameters);
+            _glGetConvolutionParameterivEXT_fnptr(target, pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glGetConvolutionParameterxvOES</c>]</b></summary>
         public static delegate* unmanaged<uint, uint, int*, void> _glGetConvolutionParameterxvOES_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glGetConvolutionParameterxvOES_Lazy(uint target, uint pname, int* parameters)
+        internal static void glGetConvolutionParameterxvOES_Lazy(uint target, uint pname, int* @params)
         {
             if (_glGetConvolutionParameterxvOES_fnptr == null)
                 _glGetConvolutionParameterxvOES_fnptr = (delegate* unmanaged<uint, uint, int*, void>)GLLoader.BindingsContext.GetProcAddress("glGetConvolutionParameterxvOES");
-            _glGetConvolutionParameterxvOES_fnptr(target, pname, parameters);
+            _glGetConvolutionParameterxvOES_fnptr(target, pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glGetCoverageModulationTableNV</c>]</b></summary>
@@ -9192,11 +9192,11 @@ namespace OpenTK.Graphics.OpenGL
         /// <summary><b>[entry point: <c>glGetDoublei_vEXT</c>]</b></summary>
         public static delegate* unmanaged<uint, uint, double*, void> _glGetDoublei_vEXT_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glGetDoublei_vEXT_Lazy(uint pname, uint index, double* parameters)
+        internal static void glGetDoublei_vEXT_Lazy(uint pname, uint index, double* @params)
         {
             if (_glGetDoublei_vEXT_fnptr == null)
                 _glGetDoublei_vEXT_fnptr = (delegate* unmanaged<uint, uint, double*, void>)GLLoader.BindingsContext.GetProcAddress("glGetDoublei_vEXT");
-            _glGetDoublei_vEXT_fnptr(pname, index, parameters);
+            _glGetDoublei_vEXT_fnptr(pname, index, @params);
         }
         
         /// <summary><b>[entry point: <c>glGetDoubleIndexedvEXT</c>]</b></summary>
@@ -9252,31 +9252,31 @@ namespace OpenTK.Graphics.OpenGL
         /// <summary><b>[entry point: <c>glGetFenceivNV</c>]</b></summary>
         public static delegate* unmanaged<uint, uint, int*, void> _glGetFenceivNV_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glGetFenceivNV_Lazy(uint fence, uint pname, int* parameters)
+        internal static void glGetFenceivNV_Lazy(uint fence, uint pname, int* @params)
         {
             if (_glGetFenceivNV_fnptr == null)
                 _glGetFenceivNV_fnptr = (delegate* unmanaged<uint, uint, int*, void>)GLLoader.BindingsContext.GetProcAddress("glGetFenceivNV");
-            _glGetFenceivNV_fnptr(fence, pname, parameters);
+            _glGetFenceivNV_fnptr(fence, pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glGetFinalCombinerInputParameterfvNV</c>]</b></summary>
         public static delegate* unmanaged<uint, uint, float*, void> _glGetFinalCombinerInputParameterfvNV_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glGetFinalCombinerInputParameterfvNV_Lazy(uint variable, uint pname, float* parameters)
+        internal static void glGetFinalCombinerInputParameterfvNV_Lazy(uint variable, uint pname, float* @params)
         {
             if (_glGetFinalCombinerInputParameterfvNV_fnptr == null)
                 _glGetFinalCombinerInputParameterfvNV_fnptr = (delegate* unmanaged<uint, uint, float*, void>)GLLoader.BindingsContext.GetProcAddress("glGetFinalCombinerInputParameterfvNV");
-            _glGetFinalCombinerInputParameterfvNV_fnptr(variable, pname, parameters);
+            _glGetFinalCombinerInputParameterfvNV_fnptr(variable, pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glGetFinalCombinerInputParameterivNV</c>]</b></summary>
         public static delegate* unmanaged<uint, uint, int*, void> _glGetFinalCombinerInputParameterivNV_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glGetFinalCombinerInputParameterivNV_Lazy(uint variable, uint pname, int* parameters)
+        internal static void glGetFinalCombinerInputParameterivNV_Lazy(uint variable, uint pname, int* @params)
         {
             if (_glGetFinalCombinerInputParameterivNV_fnptr == null)
                 _glGetFinalCombinerInputParameterivNV_fnptr = (delegate* unmanaged<uint, uint, int*, void>)GLLoader.BindingsContext.GetProcAddress("glGetFinalCombinerInputParameterivNV");
-            _glGetFinalCombinerInputParameterivNV_fnptr(variable, pname, parameters);
+            _glGetFinalCombinerInputParameterivNV_fnptr(variable, pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glGetFirstPerfQueryIdINTEL</c>]</b></summary>
@@ -9292,21 +9292,21 @@ namespace OpenTK.Graphics.OpenGL
         /// <summary><b>[entry point: <c>glGetFixedv</c>]</b></summary>
         public static delegate* unmanaged<uint, int*, void> _glGetFixedv_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glGetFixedv_Lazy(uint pname, int* parameters)
+        internal static void glGetFixedv_Lazy(uint pname, int* @params)
         {
             if (_glGetFixedv_fnptr == null)
                 _glGetFixedv_fnptr = (delegate* unmanaged<uint, int*, void>)GLLoader.BindingsContext.GetProcAddress("glGetFixedv");
-            _glGetFixedv_fnptr(pname, parameters);
+            _glGetFixedv_fnptr(pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glGetFixedvOES</c>]</b></summary>
         public static delegate* unmanaged<uint, int*, void> _glGetFixedvOES_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glGetFixedvOES_Lazy(uint pname, int* parameters)
+        internal static void glGetFixedvOES_Lazy(uint pname, int* @params)
         {
             if (_glGetFixedvOES_fnptr == null)
                 _glGetFixedvOES_fnptr = (delegate* unmanaged<uint, int*, void>)GLLoader.BindingsContext.GetProcAddress("glGetFixedvOES");
-            _glGetFixedvOES_fnptr(pname, parameters);
+            _glGetFixedvOES_fnptr(pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glGetFloati_v</c>]</b></summary>
@@ -9322,11 +9322,11 @@ namespace OpenTK.Graphics.OpenGL
         /// <summary><b>[entry point: <c>glGetFloati_vEXT</c>]</b></summary>
         public static delegate* unmanaged<uint, uint, float*, void> _glGetFloati_vEXT_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glGetFloati_vEXT_Lazy(uint pname, uint index, float* parameters)
+        internal static void glGetFloati_vEXT_Lazy(uint pname, uint index, float* @params)
         {
             if (_glGetFloati_vEXT_fnptr == null)
                 _glGetFloati_vEXT_fnptr = (delegate* unmanaged<uint, uint, float*, void>)GLLoader.BindingsContext.GetProcAddress("glGetFloati_vEXT");
-            _glGetFloati_vEXT_fnptr(pname, index, parameters);
+            _glGetFloati_vEXT_fnptr(pname, index, @params);
         }
         
         /// <summary><b>[entry point: <c>glGetFloati_vNV</c>]</b></summary>
@@ -9422,41 +9422,41 @@ namespace OpenTK.Graphics.OpenGL
         /// <summary><b>[entry point: <c>glGetFragmentLightfvSGIX</c>]</b></summary>
         public static delegate* unmanaged<uint, uint, float*, void> _glGetFragmentLightfvSGIX_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glGetFragmentLightfvSGIX_Lazy(uint light, uint pname, float* parameters)
+        internal static void glGetFragmentLightfvSGIX_Lazy(uint light, uint pname, float* @params)
         {
             if (_glGetFragmentLightfvSGIX_fnptr == null)
                 _glGetFragmentLightfvSGIX_fnptr = (delegate* unmanaged<uint, uint, float*, void>)GLLoader.BindingsContext.GetProcAddress("glGetFragmentLightfvSGIX");
-            _glGetFragmentLightfvSGIX_fnptr(light, pname, parameters);
+            _glGetFragmentLightfvSGIX_fnptr(light, pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glGetFragmentLightivSGIX</c>]</b></summary>
         public static delegate* unmanaged<uint, uint, int*, void> _glGetFragmentLightivSGIX_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glGetFragmentLightivSGIX_Lazy(uint light, uint pname, int* parameters)
+        internal static void glGetFragmentLightivSGIX_Lazy(uint light, uint pname, int* @params)
         {
             if (_glGetFragmentLightivSGIX_fnptr == null)
                 _glGetFragmentLightivSGIX_fnptr = (delegate* unmanaged<uint, uint, int*, void>)GLLoader.BindingsContext.GetProcAddress("glGetFragmentLightivSGIX");
-            _glGetFragmentLightivSGIX_fnptr(light, pname, parameters);
+            _glGetFragmentLightivSGIX_fnptr(light, pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glGetFragmentMaterialfvSGIX</c>]</b></summary>
         public static delegate* unmanaged<uint, uint, float*, void> _glGetFragmentMaterialfvSGIX_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glGetFragmentMaterialfvSGIX_Lazy(uint face, uint pname, float* parameters)
+        internal static void glGetFragmentMaterialfvSGIX_Lazy(uint face, uint pname, float* @params)
         {
             if (_glGetFragmentMaterialfvSGIX_fnptr == null)
                 _glGetFragmentMaterialfvSGIX_fnptr = (delegate* unmanaged<uint, uint, float*, void>)GLLoader.BindingsContext.GetProcAddress("glGetFragmentMaterialfvSGIX");
-            _glGetFragmentMaterialfvSGIX_fnptr(face, pname, parameters);
+            _glGetFragmentMaterialfvSGIX_fnptr(face, pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glGetFragmentMaterialivSGIX</c>]</b></summary>
         public static delegate* unmanaged<uint, uint, int*, void> _glGetFragmentMaterialivSGIX_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glGetFragmentMaterialivSGIX_Lazy(uint face, uint pname, int* parameters)
+        internal static void glGetFragmentMaterialivSGIX_Lazy(uint face, uint pname, int* @params)
         {
             if (_glGetFragmentMaterialivSGIX_fnptr == null)
                 _glGetFragmentMaterialivSGIX_fnptr = (delegate* unmanaged<uint, uint, int*, void>)GLLoader.BindingsContext.GetProcAddress("glGetFragmentMaterialivSGIX");
-            _glGetFragmentMaterialivSGIX_fnptr(face, pname, parameters);
+            _glGetFragmentMaterialivSGIX_fnptr(face, pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glGetFragmentShadingRatesEXT</c>]</b></summary>
@@ -9472,31 +9472,31 @@ namespace OpenTK.Graphics.OpenGL
         /// <summary><b>[entry point: <c>glGetFramebufferAttachmentParameteriv</c>]</b></summary>
         public static delegate* unmanaged<uint, uint, uint, int*, void> _glGetFramebufferAttachmentParameteriv_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glGetFramebufferAttachmentParameteriv_Lazy(uint target, uint attachment, uint pname, int* parameters)
+        internal static void glGetFramebufferAttachmentParameteriv_Lazy(uint target, uint attachment, uint pname, int* @params)
         {
             if (_glGetFramebufferAttachmentParameteriv_fnptr == null)
                 _glGetFramebufferAttachmentParameteriv_fnptr = (delegate* unmanaged<uint, uint, uint, int*, void>)GLLoader.BindingsContext.GetProcAddress("glGetFramebufferAttachmentParameteriv");
-            _glGetFramebufferAttachmentParameteriv_fnptr(target, attachment, pname, parameters);
+            _glGetFramebufferAttachmentParameteriv_fnptr(target, attachment, pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glGetFramebufferAttachmentParameterivEXT</c>]</b></summary>
         public static delegate* unmanaged<uint, uint, uint, int*, void> _glGetFramebufferAttachmentParameterivEXT_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glGetFramebufferAttachmentParameterivEXT_Lazy(uint target, uint attachment, uint pname, int* parameters)
+        internal static void glGetFramebufferAttachmentParameterivEXT_Lazy(uint target, uint attachment, uint pname, int* @params)
         {
             if (_glGetFramebufferAttachmentParameterivEXT_fnptr == null)
                 _glGetFramebufferAttachmentParameterivEXT_fnptr = (delegate* unmanaged<uint, uint, uint, int*, void>)GLLoader.BindingsContext.GetProcAddress("glGetFramebufferAttachmentParameterivEXT");
-            _glGetFramebufferAttachmentParameterivEXT_fnptr(target, attachment, pname, parameters);
+            _glGetFramebufferAttachmentParameterivEXT_fnptr(target, attachment, pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glGetFramebufferAttachmentParameterivOES</c>]</b></summary>
         public static delegate* unmanaged<uint, uint, uint, int*, void> _glGetFramebufferAttachmentParameterivOES_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glGetFramebufferAttachmentParameterivOES_Lazy(uint target, uint attachment, uint pname, int* parameters)
+        internal static void glGetFramebufferAttachmentParameterivOES_Lazy(uint target, uint attachment, uint pname, int* @params)
         {
             if (_glGetFramebufferAttachmentParameterivOES_fnptr == null)
                 _glGetFramebufferAttachmentParameterivOES_fnptr = (delegate* unmanaged<uint, uint, uint, int*, void>)GLLoader.BindingsContext.GetProcAddress("glGetFramebufferAttachmentParameterivOES");
-            _glGetFramebufferAttachmentParameterivOES_fnptr(target, attachment, pname, parameters);
+            _glGetFramebufferAttachmentParameterivOES_fnptr(target, attachment, pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glGetFramebufferParameterfvAMD</c>]</b></summary>
@@ -9512,31 +9512,31 @@ namespace OpenTK.Graphics.OpenGL
         /// <summary><b>[entry point: <c>glGetFramebufferParameteriv</c>]</b></summary>
         public static delegate* unmanaged<uint, uint, int*, void> _glGetFramebufferParameteriv_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glGetFramebufferParameteriv_Lazy(uint target, uint pname, int* parameters)
+        internal static void glGetFramebufferParameteriv_Lazy(uint target, uint pname, int* @params)
         {
             if (_glGetFramebufferParameteriv_fnptr == null)
                 _glGetFramebufferParameteriv_fnptr = (delegate* unmanaged<uint, uint, int*, void>)GLLoader.BindingsContext.GetProcAddress("glGetFramebufferParameteriv");
-            _glGetFramebufferParameteriv_fnptr(target, pname, parameters);
+            _glGetFramebufferParameteriv_fnptr(target, pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glGetFramebufferParameterivEXT</c>]</b></summary>
         public static delegate* unmanaged<int, uint, int*, void> _glGetFramebufferParameterivEXT_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glGetFramebufferParameterivEXT_Lazy(int framebuffer, uint pname, int* parameters)
+        internal static void glGetFramebufferParameterivEXT_Lazy(int framebuffer, uint pname, int* @params)
         {
             if (_glGetFramebufferParameterivEXT_fnptr == null)
                 _glGetFramebufferParameterivEXT_fnptr = (delegate* unmanaged<int, uint, int*, void>)GLLoader.BindingsContext.GetProcAddress("glGetFramebufferParameterivEXT");
-            _glGetFramebufferParameterivEXT_fnptr(framebuffer, pname, parameters);
+            _glGetFramebufferParameterivEXT_fnptr(framebuffer, pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glGetFramebufferParameterivMESA</c>]</b></summary>
         public static delegate* unmanaged<uint, uint, int*, void> _glGetFramebufferParameterivMESA_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glGetFramebufferParameterivMESA_Lazy(uint target, uint pname, int* parameters)
+        internal static void glGetFramebufferParameterivMESA_Lazy(uint target, uint pname, int* @params)
         {
             if (_glGetFramebufferParameterivMESA_fnptr == null)
                 _glGetFramebufferParameterivMESA_fnptr = (delegate* unmanaged<uint, uint, int*, void>)GLLoader.BindingsContext.GetProcAddress("glGetFramebufferParameterivMESA");
-            _glGetFramebufferParameterivMESA_fnptr(target, pname, parameters);
+            _glGetFramebufferParameterivMESA_fnptr(target, pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glGetFramebufferPixelLocalStorageSizeEXT</c>]</b></summary>
@@ -9622,51 +9622,51 @@ namespace OpenTK.Graphics.OpenGL
         /// <summary><b>[entry point: <c>glGetHistogramParameterfv</c>]</b></summary>
         public static delegate* unmanaged<uint, uint, float*, void> _glGetHistogramParameterfv_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glGetHistogramParameterfv_Lazy(uint target, uint pname, float* parameters)
+        internal static void glGetHistogramParameterfv_Lazy(uint target, uint pname, float* @params)
         {
             if (_glGetHistogramParameterfv_fnptr == null)
                 _glGetHistogramParameterfv_fnptr = (delegate* unmanaged<uint, uint, float*, void>)GLLoader.BindingsContext.GetProcAddress("glGetHistogramParameterfv");
-            _glGetHistogramParameterfv_fnptr(target, pname, parameters);
+            _glGetHistogramParameterfv_fnptr(target, pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glGetHistogramParameterfvEXT</c>]</b></summary>
         public static delegate* unmanaged<uint, uint, float*, void> _glGetHistogramParameterfvEXT_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glGetHistogramParameterfvEXT_Lazy(uint target, uint pname, float* parameters)
+        internal static void glGetHistogramParameterfvEXT_Lazy(uint target, uint pname, float* @params)
         {
             if (_glGetHistogramParameterfvEXT_fnptr == null)
                 _glGetHistogramParameterfvEXT_fnptr = (delegate* unmanaged<uint, uint, float*, void>)GLLoader.BindingsContext.GetProcAddress("glGetHistogramParameterfvEXT");
-            _glGetHistogramParameterfvEXT_fnptr(target, pname, parameters);
+            _glGetHistogramParameterfvEXT_fnptr(target, pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glGetHistogramParameteriv</c>]</b></summary>
         public static delegate* unmanaged<uint, uint, int*, void> _glGetHistogramParameteriv_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glGetHistogramParameteriv_Lazy(uint target, uint pname, int* parameters)
+        internal static void glGetHistogramParameteriv_Lazy(uint target, uint pname, int* @params)
         {
             if (_glGetHistogramParameteriv_fnptr == null)
                 _glGetHistogramParameteriv_fnptr = (delegate* unmanaged<uint, uint, int*, void>)GLLoader.BindingsContext.GetProcAddress("glGetHistogramParameteriv");
-            _glGetHistogramParameteriv_fnptr(target, pname, parameters);
+            _glGetHistogramParameteriv_fnptr(target, pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glGetHistogramParameterivEXT</c>]</b></summary>
         public static delegate* unmanaged<uint, uint, int*, void> _glGetHistogramParameterivEXT_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glGetHistogramParameterivEXT_Lazy(uint target, uint pname, int* parameters)
+        internal static void glGetHistogramParameterivEXT_Lazy(uint target, uint pname, int* @params)
         {
             if (_glGetHistogramParameterivEXT_fnptr == null)
                 _glGetHistogramParameterivEXT_fnptr = (delegate* unmanaged<uint, uint, int*, void>)GLLoader.BindingsContext.GetProcAddress("glGetHistogramParameterivEXT");
-            _glGetHistogramParameterivEXT_fnptr(target, pname, parameters);
+            _glGetHistogramParameterivEXT_fnptr(target, pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glGetHistogramParameterxvOES</c>]</b></summary>
         public static delegate* unmanaged<uint, uint, int*, void> _glGetHistogramParameterxvOES_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glGetHistogramParameterxvOES_Lazy(uint target, uint pname, int* parameters)
+        internal static void glGetHistogramParameterxvOES_Lazy(uint target, uint pname, int* @params)
         {
             if (_glGetHistogramParameterxvOES_fnptr == null)
                 _glGetHistogramParameterxvOES_fnptr = (delegate* unmanaged<uint, uint, int*, void>)GLLoader.BindingsContext.GetProcAddress("glGetHistogramParameterxvOES");
-            _glGetHistogramParameterxvOES_fnptr(target, pname, parameters);
+            _glGetHistogramParameterxvOES_fnptr(target, pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glGetImageHandleARB</c>]</b></summary>
@@ -9692,21 +9692,21 @@ namespace OpenTK.Graphics.OpenGL
         /// <summary><b>[entry point: <c>glGetImageTransformParameterfvHP</c>]</b></summary>
         public static delegate* unmanaged<uint, uint, float*, void> _glGetImageTransformParameterfvHP_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glGetImageTransformParameterfvHP_Lazy(uint target, uint pname, float* parameters)
+        internal static void glGetImageTransformParameterfvHP_Lazy(uint target, uint pname, float* @params)
         {
             if (_glGetImageTransformParameterfvHP_fnptr == null)
                 _glGetImageTransformParameterfvHP_fnptr = (delegate* unmanaged<uint, uint, float*, void>)GLLoader.BindingsContext.GetProcAddress("glGetImageTransformParameterfvHP");
-            _glGetImageTransformParameterfvHP_fnptr(target, pname, parameters);
+            _glGetImageTransformParameterfvHP_fnptr(target, pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glGetImageTransformParameterivHP</c>]</b></summary>
         public static delegate* unmanaged<uint, uint, int*, void> _glGetImageTransformParameterivHP_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glGetImageTransformParameterivHP_Lazy(uint target, uint pname, int* parameters)
+        internal static void glGetImageTransformParameterivHP_Lazy(uint target, uint pname, int* @params)
         {
             if (_glGetImageTransformParameterivHP_fnptr == null)
                 _glGetImageTransformParameterivHP_fnptr = (delegate* unmanaged<uint, uint, int*, void>)GLLoader.BindingsContext.GetProcAddress("glGetImageTransformParameterivHP");
-            _glGetImageTransformParameterivHP_fnptr(target, pname, parameters);
+            _glGetImageTransformParameterivHP_fnptr(target, pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glGetInfoLogARB</c>]</b></summary>
@@ -9752,11 +9752,11 @@ namespace OpenTK.Graphics.OpenGL
         /// <summary><b>[entry point: <c>glGetInteger64vAPPLE</c>]</b></summary>
         public static delegate* unmanaged<uint, long*, void> _glGetInteger64vAPPLE_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glGetInteger64vAPPLE_Lazy(uint pname, long* parameters)
+        internal static void glGetInteger64vAPPLE_Lazy(uint pname, long* @params)
         {
             if (_glGetInteger64vAPPLE_fnptr == null)
                 _glGetInteger64vAPPLE_fnptr = (delegate* unmanaged<uint, long*, void>)GLLoader.BindingsContext.GetProcAddress("glGetInteger64vAPPLE");
-            _glGetInteger64vAPPLE_fnptr(pname, parameters);
+            _glGetInteger64vAPPLE_fnptr(pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glGetInteger64vEXT</c>]</b></summary>
@@ -9832,31 +9832,31 @@ namespace OpenTK.Graphics.OpenGL
         /// <summary><b>[entry point: <c>glGetInternalformati64v</c>]</b></summary>
         public static delegate* unmanaged<uint, uint, uint, int, long*, void> _glGetInternalformati64v_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glGetInternalformati64v_Lazy(uint target, uint internalformat, uint pname, int count, long* parameters)
+        internal static void glGetInternalformati64v_Lazy(uint target, uint internalformat, uint pname, int count, long* @params)
         {
             if (_glGetInternalformati64v_fnptr == null)
                 _glGetInternalformati64v_fnptr = (delegate* unmanaged<uint, uint, uint, int, long*, void>)GLLoader.BindingsContext.GetProcAddress("glGetInternalformati64v");
-            _glGetInternalformati64v_fnptr(target, internalformat, pname, count, parameters);
+            _glGetInternalformati64v_fnptr(target, internalformat, pname, count, @params);
         }
         
         /// <summary><b>[entry point: <c>glGetInternalformativ</c>]</b></summary>
         public static delegate* unmanaged<uint, uint, uint, int, int*, void> _glGetInternalformativ_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glGetInternalformativ_Lazy(uint target, uint internalformat, uint pname, int count, int* parameters)
+        internal static void glGetInternalformativ_Lazy(uint target, uint internalformat, uint pname, int count, int* @params)
         {
             if (_glGetInternalformativ_fnptr == null)
                 _glGetInternalformativ_fnptr = (delegate* unmanaged<uint, uint, uint, int, int*, void>)GLLoader.BindingsContext.GetProcAddress("glGetInternalformativ");
-            _glGetInternalformativ_fnptr(target, internalformat, pname, count, parameters);
+            _glGetInternalformativ_fnptr(target, internalformat, pname, count, @params);
         }
         
         /// <summary><b>[entry point: <c>glGetInternalformatSampleivNV</c>]</b></summary>
         public static delegate* unmanaged<uint, uint, int, uint, int, int*, void> _glGetInternalformatSampleivNV_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glGetInternalformatSampleivNV_Lazy(uint target, uint internalformat, int samples, uint pname, int count, int* parameters)
+        internal static void glGetInternalformatSampleivNV_Lazy(uint target, uint internalformat, int samples, uint pname, int count, int* @params)
         {
             if (_glGetInternalformatSampleivNV_fnptr == null)
                 _glGetInternalformatSampleivNV_fnptr = (delegate* unmanaged<uint, uint, int, uint, int, int*, void>)GLLoader.BindingsContext.GetProcAddress("glGetInternalformatSampleivNV");
-            _glGetInternalformatSampleivNV_fnptr(target, internalformat, samples, pname, count, parameters);
+            _glGetInternalformatSampleivNV_fnptr(target, internalformat, samples, pname, count, @params);
         }
         
         /// <summary><b>[entry point: <c>glGetInvariantBooleanvEXT</c>]</b></summary>
@@ -9892,71 +9892,71 @@ namespace OpenTK.Graphics.OpenGL
         /// <summary><b>[entry point: <c>glGetLightfv</c>]</b></summary>
         public static delegate* unmanaged<uint, uint, float*, void> _glGetLightfv_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glGetLightfv_Lazy(uint light, uint pname, float* parameters)
+        internal static void glGetLightfv_Lazy(uint light, uint pname, float* @params)
         {
             if (_glGetLightfv_fnptr == null)
                 _glGetLightfv_fnptr = (delegate* unmanaged<uint, uint, float*, void>)GLLoader.BindingsContext.GetProcAddress("glGetLightfv");
-            _glGetLightfv_fnptr(light, pname, parameters);
+            _glGetLightfv_fnptr(light, pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glGetLightiv</c>]</b></summary>
         public static delegate* unmanaged<uint, uint, int*, void> _glGetLightiv_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glGetLightiv_Lazy(uint light, uint pname, int* parameters)
+        internal static void glGetLightiv_Lazy(uint light, uint pname, int* @params)
         {
             if (_glGetLightiv_fnptr == null)
                 _glGetLightiv_fnptr = (delegate* unmanaged<uint, uint, int*, void>)GLLoader.BindingsContext.GetProcAddress("glGetLightiv");
-            _glGetLightiv_fnptr(light, pname, parameters);
+            _glGetLightiv_fnptr(light, pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glGetLightxOES</c>]</b></summary>
         public static delegate* unmanaged<uint, uint, int*, void> _glGetLightxOES_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glGetLightxOES_Lazy(uint light, uint pname, int* parameters)
+        internal static void glGetLightxOES_Lazy(uint light, uint pname, int* @params)
         {
             if (_glGetLightxOES_fnptr == null)
                 _glGetLightxOES_fnptr = (delegate* unmanaged<uint, uint, int*, void>)GLLoader.BindingsContext.GetProcAddress("glGetLightxOES");
-            _glGetLightxOES_fnptr(light, pname, parameters);
+            _glGetLightxOES_fnptr(light, pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glGetLightxv</c>]</b></summary>
         public static delegate* unmanaged<uint, uint, int*, void> _glGetLightxv_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glGetLightxv_Lazy(uint light, uint pname, int* parameters)
+        internal static void glGetLightxv_Lazy(uint light, uint pname, int* @params)
         {
             if (_glGetLightxv_fnptr == null)
                 _glGetLightxv_fnptr = (delegate* unmanaged<uint, uint, int*, void>)GLLoader.BindingsContext.GetProcAddress("glGetLightxv");
-            _glGetLightxv_fnptr(light, pname, parameters);
+            _glGetLightxv_fnptr(light, pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glGetLightxvOES</c>]</b></summary>
         public static delegate* unmanaged<uint, uint, int*, void> _glGetLightxvOES_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glGetLightxvOES_Lazy(uint light, uint pname, int* parameters)
+        internal static void glGetLightxvOES_Lazy(uint light, uint pname, int* @params)
         {
             if (_glGetLightxvOES_fnptr == null)
                 _glGetLightxvOES_fnptr = (delegate* unmanaged<uint, uint, int*, void>)GLLoader.BindingsContext.GetProcAddress("glGetLightxvOES");
-            _glGetLightxvOES_fnptr(light, pname, parameters);
+            _glGetLightxvOES_fnptr(light, pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glGetListParameterfvSGIX</c>]</b></summary>
         public static delegate* unmanaged<int, uint, float*, void> _glGetListParameterfvSGIX_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glGetListParameterfvSGIX_Lazy(int list, uint pname, float* parameters)
+        internal static void glGetListParameterfvSGIX_Lazy(int list, uint pname, float* @params)
         {
             if (_glGetListParameterfvSGIX_fnptr == null)
                 _glGetListParameterfvSGIX_fnptr = (delegate* unmanaged<int, uint, float*, void>)GLLoader.BindingsContext.GetProcAddress("glGetListParameterfvSGIX");
-            _glGetListParameterfvSGIX_fnptr(list, pname, parameters);
+            _glGetListParameterfvSGIX_fnptr(list, pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glGetListParameterivSGIX</c>]</b></summary>
         public static delegate* unmanaged<int, uint, int*, void> _glGetListParameterivSGIX_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glGetListParameterivSGIX_Lazy(int list, uint pname, int* parameters)
+        internal static void glGetListParameterivSGIX_Lazy(int list, uint pname, int* @params)
         {
             if (_glGetListParameterivSGIX_fnptr == null)
                 _glGetListParameterivSGIX_fnptr = (delegate* unmanaged<int, uint, int*, void>)GLLoader.BindingsContext.GetProcAddress("glGetListParameterivSGIX");
-            _glGetListParameterivSGIX_fnptr(list, pname, parameters);
+            _glGetListParameterivSGIX_fnptr(list, pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glGetLocalConstantBooleanvEXT</c>]</b></summary>
@@ -9992,21 +9992,21 @@ namespace OpenTK.Graphics.OpenGL
         /// <summary><b>[entry point: <c>glGetMapAttribParameterfvNV</c>]</b></summary>
         public static delegate* unmanaged<uint, uint, uint, float*, void> _glGetMapAttribParameterfvNV_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glGetMapAttribParameterfvNV_Lazy(uint target, uint index, uint pname, float* parameters)
+        internal static void glGetMapAttribParameterfvNV_Lazy(uint target, uint index, uint pname, float* @params)
         {
             if (_glGetMapAttribParameterfvNV_fnptr == null)
                 _glGetMapAttribParameterfvNV_fnptr = (delegate* unmanaged<uint, uint, uint, float*, void>)GLLoader.BindingsContext.GetProcAddress("glGetMapAttribParameterfvNV");
-            _glGetMapAttribParameterfvNV_fnptr(target, index, pname, parameters);
+            _glGetMapAttribParameterfvNV_fnptr(target, index, pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glGetMapAttribParameterivNV</c>]</b></summary>
         public static delegate* unmanaged<uint, uint, uint, int*, void> _glGetMapAttribParameterivNV_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glGetMapAttribParameterivNV_Lazy(uint target, uint index, uint pname, int* parameters)
+        internal static void glGetMapAttribParameterivNV_Lazy(uint target, uint index, uint pname, int* @params)
         {
             if (_glGetMapAttribParameterivNV_fnptr == null)
                 _glGetMapAttribParameterivNV_fnptr = (delegate* unmanaged<uint, uint, uint, int*, void>)GLLoader.BindingsContext.GetProcAddress("glGetMapAttribParameterivNV");
-            _glGetMapAttribParameterivNV_fnptr(target, index, pname, parameters);
+            _glGetMapAttribParameterivNV_fnptr(target, index, pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glGetMapControlPointsNV</c>]</b></summary>
@@ -10052,21 +10052,21 @@ namespace OpenTK.Graphics.OpenGL
         /// <summary><b>[entry point: <c>glGetMapParameterfvNV</c>]</b></summary>
         public static delegate* unmanaged<uint, uint, float*, void> _glGetMapParameterfvNV_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glGetMapParameterfvNV_Lazy(uint target, uint pname, float* parameters)
+        internal static void glGetMapParameterfvNV_Lazy(uint target, uint pname, float* @params)
         {
             if (_glGetMapParameterfvNV_fnptr == null)
                 _glGetMapParameterfvNV_fnptr = (delegate* unmanaged<uint, uint, float*, void>)GLLoader.BindingsContext.GetProcAddress("glGetMapParameterfvNV");
-            _glGetMapParameterfvNV_fnptr(target, pname, parameters);
+            _glGetMapParameterfvNV_fnptr(target, pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glGetMapParameterivNV</c>]</b></summary>
         public static delegate* unmanaged<uint, uint, int*, void> _glGetMapParameterivNV_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glGetMapParameterivNV_Lazy(uint target, uint pname, int* parameters)
+        internal static void glGetMapParameterivNV_Lazy(uint target, uint pname, int* @params)
         {
             if (_glGetMapParameterivNV_fnptr == null)
                 _glGetMapParameterivNV_fnptr = (delegate* unmanaged<uint, uint, int*, void>)GLLoader.BindingsContext.GetProcAddress("glGetMapParameterivNV");
-            _glGetMapParameterivNV_fnptr(target, pname, parameters);
+            _glGetMapParameterivNV_fnptr(target, pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glGetMapxvOES</c>]</b></summary>
@@ -10082,21 +10082,21 @@ namespace OpenTK.Graphics.OpenGL
         /// <summary><b>[entry point: <c>glGetMaterialfv</c>]</b></summary>
         public static delegate* unmanaged<uint, uint, float*, void> _glGetMaterialfv_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glGetMaterialfv_Lazy(uint face, uint pname, float* parameters)
+        internal static void glGetMaterialfv_Lazy(uint face, uint pname, float* @params)
         {
             if (_glGetMaterialfv_fnptr == null)
                 _glGetMaterialfv_fnptr = (delegate* unmanaged<uint, uint, float*, void>)GLLoader.BindingsContext.GetProcAddress("glGetMaterialfv");
-            _glGetMaterialfv_fnptr(face, pname, parameters);
+            _glGetMaterialfv_fnptr(face, pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glGetMaterialiv</c>]</b></summary>
         public static delegate* unmanaged<uint, uint, int*, void> _glGetMaterialiv_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glGetMaterialiv_Lazy(uint face, uint pname, int* parameters)
+        internal static void glGetMaterialiv_Lazy(uint face, uint pname, int* @params)
         {
             if (_glGetMaterialiv_fnptr == null)
                 _glGetMaterialiv_fnptr = (delegate* unmanaged<uint, uint, int*, void>)GLLoader.BindingsContext.GetProcAddress("glGetMaterialiv");
-            _glGetMaterialiv_fnptr(face, pname, parameters);
+            _glGetMaterialiv_fnptr(face, pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glGetMaterialxOES</c>]</b></summary>
@@ -10112,41 +10112,41 @@ namespace OpenTK.Graphics.OpenGL
         /// <summary><b>[entry point: <c>glGetMaterialxv</c>]</b></summary>
         public static delegate* unmanaged<uint, uint, int*, void> _glGetMaterialxv_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glGetMaterialxv_Lazy(uint face, uint pname, int* parameters)
+        internal static void glGetMaterialxv_Lazy(uint face, uint pname, int* @params)
         {
             if (_glGetMaterialxv_fnptr == null)
                 _glGetMaterialxv_fnptr = (delegate* unmanaged<uint, uint, int*, void>)GLLoader.BindingsContext.GetProcAddress("glGetMaterialxv");
-            _glGetMaterialxv_fnptr(face, pname, parameters);
+            _glGetMaterialxv_fnptr(face, pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glGetMaterialxvOES</c>]</b></summary>
         public static delegate* unmanaged<uint, uint, int*, void> _glGetMaterialxvOES_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glGetMaterialxvOES_Lazy(uint face, uint pname, int* parameters)
+        internal static void glGetMaterialxvOES_Lazy(uint face, uint pname, int* @params)
         {
             if (_glGetMaterialxvOES_fnptr == null)
                 _glGetMaterialxvOES_fnptr = (delegate* unmanaged<uint, uint, int*, void>)GLLoader.BindingsContext.GetProcAddress("glGetMaterialxvOES");
-            _glGetMaterialxvOES_fnptr(face, pname, parameters);
+            _glGetMaterialxvOES_fnptr(face, pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glGetMemoryObjectDetachedResourcesuivNV</c>]</b></summary>
         public static delegate* unmanaged<uint, uint, int, int, uint*, void> _glGetMemoryObjectDetachedResourcesuivNV_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glGetMemoryObjectDetachedResourcesuivNV_Lazy(uint memory, uint pname, int first, int count, uint* parameters)
+        internal static void glGetMemoryObjectDetachedResourcesuivNV_Lazy(uint memory, uint pname, int first, int count, uint* @params)
         {
             if (_glGetMemoryObjectDetachedResourcesuivNV_fnptr == null)
                 _glGetMemoryObjectDetachedResourcesuivNV_fnptr = (delegate* unmanaged<uint, uint, int, int, uint*, void>)GLLoader.BindingsContext.GetProcAddress("glGetMemoryObjectDetachedResourcesuivNV");
-            _glGetMemoryObjectDetachedResourcesuivNV_fnptr(memory, pname, first, count, parameters);
+            _glGetMemoryObjectDetachedResourcesuivNV_fnptr(memory, pname, first, count, @params);
         }
         
         /// <summary><b>[entry point: <c>glGetMemoryObjectParameterivEXT</c>]</b></summary>
         public static delegate* unmanaged<uint, uint, int*, void> _glGetMemoryObjectParameterivEXT_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glGetMemoryObjectParameterivEXT_Lazy(uint memoryObject, uint pname, int* parameters)
+        internal static void glGetMemoryObjectParameterivEXT_Lazy(uint memoryObject, uint pname, int* @params)
         {
             if (_glGetMemoryObjectParameterivEXT_fnptr == null)
                 _glGetMemoryObjectParameterivEXT_fnptr = (delegate* unmanaged<uint, uint, int*, void>)GLLoader.BindingsContext.GetProcAddress("glGetMemoryObjectParameterivEXT");
-            _glGetMemoryObjectParameterivEXT_fnptr(memoryObject, pname, parameters);
+            _glGetMemoryObjectParameterivEXT_fnptr(memoryObject, pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glGetMinmax</c>]</b></summary>
@@ -10172,41 +10172,41 @@ namespace OpenTK.Graphics.OpenGL
         /// <summary><b>[entry point: <c>glGetMinmaxParameterfv</c>]</b></summary>
         public static delegate* unmanaged<uint, uint, float*, void> _glGetMinmaxParameterfv_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glGetMinmaxParameterfv_Lazy(uint target, uint pname, float* parameters)
+        internal static void glGetMinmaxParameterfv_Lazy(uint target, uint pname, float* @params)
         {
             if (_glGetMinmaxParameterfv_fnptr == null)
                 _glGetMinmaxParameterfv_fnptr = (delegate* unmanaged<uint, uint, float*, void>)GLLoader.BindingsContext.GetProcAddress("glGetMinmaxParameterfv");
-            _glGetMinmaxParameterfv_fnptr(target, pname, parameters);
+            _glGetMinmaxParameterfv_fnptr(target, pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glGetMinmaxParameterfvEXT</c>]</b></summary>
         public static delegate* unmanaged<uint, uint, float*, void> _glGetMinmaxParameterfvEXT_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glGetMinmaxParameterfvEXT_Lazy(uint target, uint pname, float* parameters)
+        internal static void glGetMinmaxParameterfvEXT_Lazy(uint target, uint pname, float* @params)
         {
             if (_glGetMinmaxParameterfvEXT_fnptr == null)
                 _glGetMinmaxParameterfvEXT_fnptr = (delegate* unmanaged<uint, uint, float*, void>)GLLoader.BindingsContext.GetProcAddress("glGetMinmaxParameterfvEXT");
-            _glGetMinmaxParameterfvEXT_fnptr(target, pname, parameters);
+            _glGetMinmaxParameterfvEXT_fnptr(target, pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glGetMinmaxParameteriv</c>]</b></summary>
         public static delegate* unmanaged<uint, uint, int*, void> _glGetMinmaxParameteriv_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glGetMinmaxParameteriv_Lazy(uint target, uint pname, int* parameters)
+        internal static void glGetMinmaxParameteriv_Lazy(uint target, uint pname, int* @params)
         {
             if (_glGetMinmaxParameteriv_fnptr == null)
                 _glGetMinmaxParameteriv_fnptr = (delegate* unmanaged<uint, uint, int*, void>)GLLoader.BindingsContext.GetProcAddress("glGetMinmaxParameteriv");
-            _glGetMinmaxParameteriv_fnptr(target, pname, parameters);
+            _glGetMinmaxParameteriv_fnptr(target, pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glGetMinmaxParameterivEXT</c>]</b></summary>
         public static delegate* unmanaged<uint, uint, int*, void> _glGetMinmaxParameterivEXT_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glGetMinmaxParameterivEXT_Lazy(uint target, uint pname, int* parameters)
+        internal static void glGetMinmaxParameterivEXT_Lazy(uint target, uint pname, int* @params)
         {
             if (_glGetMinmaxParameterivEXT_fnptr == null)
                 _glGetMinmaxParameterivEXT_fnptr = (delegate* unmanaged<uint, uint, int*, void>)GLLoader.BindingsContext.GetProcAddress("glGetMinmaxParameterivEXT");
-            _glGetMinmaxParameterivEXT_fnptr(target, pname, parameters);
+            _glGetMinmaxParameterivEXT_fnptr(target, pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glGetMultisamplefv</c>]</b></summary>
@@ -10232,51 +10232,51 @@ namespace OpenTK.Graphics.OpenGL
         /// <summary><b>[entry point: <c>glGetMultiTexEnvfvEXT</c>]</b></summary>
         public static delegate* unmanaged<uint, uint, uint, float*, void> _glGetMultiTexEnvfvEXT_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glGetMultiTexEnvfvEXT_Lazy(uint texunit, uint target, uint pname, float* parameters)
+        internal static void glGetMultiTexEnvfvEXT_Lazy(uint texunit, uint target, uint pname, float* @params)
         {
             if (_glGetMultiTexEnvfvEXT_fnptr == null)
                 _glGetMultiTexEnvfvEXT_fnptr = (delegate* unmanaged<uint, uint, uint, float*, void>)GLLoader.BindingsContext.GetProcAddress("glGetMultiTexEnvfvEXT");
-            _glGetMultiTexEnvfvEXT_fnptr(texunit, target, pname, parameters);
+            _glGetMultiTexEnvfvEXT_fnptr(texunit, target, pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glGetMultiTexEnvivEXT</c>]</b></summary>
         public static delegate* unmanaged<uint, uint, uint, int*, void> _glGetMultiTexEnvivEXT_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glGetMultiTexEnvivEXT_Lazy(uint texunit, uint target, uint pname, int* parameters)
+        internal static void glGetMultiTexEnvivEXT_Lazy(uint texunit, uint target, uint pname, int* @params)
         {
             if (_glGetMultiTexEnvivEXT_fnptr == null)
                 _glGetMultiTexEnvivEXT_fnptr = (delegate* unmanaged<uint, uint, uint, int*, void>)GLLoader.BindingsContext.GetProcAddress("glGetMultiTexEnvivEXT");
-            _glGetMultiTexEnvivEXT_fnptr(texunit, target, pname, parameters);
+            _glGetMultiTexEnvivEXT_fnptr(texunit, target, pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glGetMultiTexGendvEXT</c>]</b></summary>
         public static delegate* unmanaged<uint, uint, uint, double*, void> _glGetMultiTexGendvEXT_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glGetMultiTexGendvEXT_Lazy(uint texunit, uint coord, uint pname, double* parameters)
+        internal static void glGetMultiTexGendvEXT_Lazy(uint texunit, uint coord, uint pname, double* @params)
         {
             if (_glGetMultiTexGendvEXT_fnptr == null)
                 _glGetMultiTexGendvEXT_fnptr = (delegate* unmanaged<uint, uint, uint, double*, void>)GLLoader.BindingsContext.GetProcAddress("glGetMultiTexGendvEXT");
-            _glGetMultiTexGendvEXT_fnptr(texunit, coord, pname, parameters);
+            _glGetMultiTexGendvEXT_fnptr(texunit, coord, pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glGetMultiTexGenfvEXT</c>]</b></summary>
         public static delegate* unmanaged<uint, uint, uint, float*, void> _glGetMultiTexGenfvEXT_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glGetMultiTexGenfvEXT_Lazy(uint texunit, uint coord, uint pname, float* parameters)
+        internal static void glGetMultiTexGenfvEXT_Lazy(uint texunit, uint coord, uint pname, float* @params)
         {
             if (_glGetMultiTexGenfvEXT_fnptr == null)
                 _glGetMultiTexGenfvEXT_fnptr = (delegate* unmanaged<uint, uint, uint, float*, void>)GLLoader.BindingsContext.GetProcAddress("glGetMultiTexGenfvEXT");
-            _glGetMultiTexGenfvEXT_fnptr(texunit, coord, pname, parameters);
+            _glGetMultiTexGenfvEXT_fnptr(texunit, coord, pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glGetMultiTexGenivEXT</c>]</b></summary>
         public static delegate* unmanaged<uint, uint, uint, int*, void> _glGetMultiTexGenivEXT_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glGetMultiTexGenivEXT_Lazy(uint texunit, uint coord, uint pname, int* parameters)
+        internal static void glGetMultiTexGenivEXT_Lazy(uint texunit, uint coord, uint pname, int* @params)
         {
             if (_glGetMultiTexGenivEXT_fnptr == null)
                 _glGetMultiTexGenivEXT_fnptr = (delegate* unmanaged<uint, uint, uint, int*, void>)GLLoader.BindingsContext.GetProcAddress("glGetMultiTexGenivEXT");
-            _glGetMultiTexGenivEXT_fnptr(texunit, coord, pname, parameters);
+            _glGetMultiTexGenivEXT_fnptr(texunit, coord, pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glGetMultiTexImageEXT</c>]</b></summary>
@@ -10292,121 +10292,121 @@ namespace OpenTK.Graphics.OpenGL
         /// <summary><b>[entry point: <c>glGetMultiTexLevelParameterfvEXT</c>]</b></summary>
         public static delegate* unmanaged<uint, uint, int, uint, float*, void> _glGetMultiTexLevelParameterfvEXT_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glGetMultiTexLevelParameterfvEXT_Lazy(uint texunit, uint target, int level, uint pname, float* parameters)
+        internal static void glGetMultiTexLevelParameterfvEXT_Lazy(uint texunit, uint target, int level, uint pname, float* @params)
         {
             if (_glGetMultiTexLevelParameterfvEXT_fnptr == null)
                 _glGetMultiTexLevelParameterfvEXT_fnptr = (delegate* unmanaged<uint, uint, int, uint, float*, void>)GLLoader.BindingsContext.GetProcAddress("glGetMultiTexLevelParameterfvEXT");
-            _glGetMultiTexLevelParameterfvEXT_fnptr(texunit, target, level, pname, parameters);
+            _glGetMultiTexLevelParameterfvEXT_fnptr(texunit, target, level, pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glGetMultiTexLevelParameterivEXT</c>]</b></summary>
         public static delegate* unmanaged<uint, uint, int, uint, int*, void> _glGetMultiTexLevelParameterivEXT_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glGetMultiTexLevelParameterivEXT_Lazy(uint texunit, uint target, int level, uint pname, int* parameters)
+        internal static void glGetMultiTexLevelParameterivEXT_Lazy(uint texunit, uint target, int level, uint pname, int* @params)
         {
             if (_glGetMultiTexLevelParameterivEXT_fnptr == null)
                 _glGetMultiTexLevelParameterivEXT_fnptr = (delegate* unmanaged<uint, uint, int, uint, int*, void>)GLLoader.BindingsContext.GetProcAddress("glGetMultiTexLevelParameterivEXT");
-            _glGetMultiTexLevelParameterivEXT_fnptr(texunit, target, level, pname, parameters);
+            _glGetMultiTexLevelParameterivEXT_fnptr(texunit, target, level, pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glGetMultiTexParameterfvEXT</c>]</b></summary>
         public static delegate* unmanaged<uint, uint, uint, float*, void> _glGetMultiTexParameterfvEXT_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glGetMultiTexParameterfvEXT_Lazy(uint texunit, uint target, uint pname, float* parameters)
+        internal static void glGetMultiTexParameterfvEXT_Lazy(uint texunit, uint target, uint pname, float* @params)
         {
             if (_glGetMultiTexParameterfvEXT_fnptr == null)
                 _glGetMultiTexParameterfvEXT_fnptr = (delegate* unmanaged<uint, uint, uint, float*, void>)GLLoader.BindingsContext.GetProcAddress("glGetMultiTexParameterfvEXT");
-            _glGetMultiTexParameterfvEXT_fnptr(texunit, target, pname, parameters);
+            _glGetMultiTexParameterfvEXT_fnptr(texunit, target, pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glGetMultiTexParameterIivEXT</c>]</b></summary>
         public static delegate* unmanaged<uint, uint, uint, int*, void> _glGetMultiTexParameterIivEXT_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glGetMultiTexParameterIivEXT_Lazy(uint texunit, uint target, uint pname, int* parameters)
+        internal static void glGetMultiTexParameterIivEXT_Lazy(uint texunit, uint target, uint pname, int* @params)
         {
             if (_glGetMultiTexParameterIivEXT_fnptr == null)
                 _glGetMultiTexParameterIivEXT_fnptr = (delegate* unmanaged<uint, uint, uint, int*, void>)GLLoader.BindingsContext.GetProcAddress("glGetMultiTexParameterIivEXT");
-            _glGetMultiTexParameterIivEXT_fnptr(texunit, target, pname, parameters);
+            _glGetMultiTexParameterIivEXT_fnptr(texunit, target, pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glGetMultiTexParameterIuivEXT</c>]</b></summary>
         public static delegate* unmanaged<uint, uint, uint, uint*, void> _glGetMultiTexParameterIuivEXT_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glGetMultiTexParameterIuivEXT_Lazy(uint texunit, uint target, uint pname, uint* parameters)
+        internal static void glGetMultiTexParameterIuivEXT_Lazy(uint texunit, uint target, uint pname, uint* @params)
         {
             if (_glGetMultiTexParameterIuivEXT_fnptr == null)
                 _glGetMultiTexParameterIuivEXT_fnptr = (delegate* unmanaged<uint, uint, uint, uint*, void>)GLLoader.BindingsContext.GetProcAddress("glGetMultiTexParameterIuivEXT");
-            _glGetMultiTexParameterIuivEXT_fnptr(texunit, target, pname, parameters);
+            _glGetMultiTexParameterIuivEXT_fnptr(texunit, target, pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glGetMultiTexParameterivEXT</c>]</b></summary>
         public static delegate* unmanaged<uint, uint, uint, int*, void> _glGetMultiTexParameterivEXT_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glGetMultiTexParameterivEXT_Lazy(uint texunit, uint target, uint pname, int* parameters)
+        internal static void glGetMultiTexParameterivEXT_Lazy(uint texunit, uint target, uint pname, int* @params)
         {
             if (_glGetMultiTexParameterivEXT_fnptr == null)
                 _glGetMultiTexParameterivEXT_fnptr = (delegate* unmanaged<uint, uint, uint, int*, void>)GLLoader.BindingsContext.GetProcAddress("glGetMultiTexParameterivEXT");
-            _glGetMultiTexParameterivEXT_fnptr(texunit, target, pname, parameters);
+            _glGetMultiTexParameterivEXT_fnptr(texunit, target, pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glGetNamedBufferParameteri64v</c>]</b></summary>
         public static delegate* unmanaged<int, uint, long*, void> _glGetNamedBufferParameteri64v_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glGetNamedBufferParameteri64v_Lazy(int buffer, uint pname, long* parameters)
+        internal static void glGetNamedBufferParameteri64v_Lazy(int buffer, uint pname, long* @params)
         {
             if (_glGetNamedBufferParameteri64v_fnptr == null)
                 _glGetNamedBufferParameteri64v_fnptr = (delegate* unmanaged<int, uint, long*, void>)GLLoader.BindingsContext.GetProcAddress("glGetNamedBufferParameteri64v");
-            _glGetNamedBufferParameteri64v_fnptr(buffer, pname, parameters);
+            _glGetNamedBufferParameteri64v_fnptr(buffer, pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glGetNamedBufferParameteriv</c>]</b></summary>
         public static delegate* unmanaged<int, uint, int*, void> _glGetNamedBufferParameteriv_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glGetNamedBufferParameteriv_Lazy(int buffer, uint pname, int* parameters)
+        internal static void glGetNamedBufferParameteriv_Lazy(int buffer, uint pname, int* @params)
         {
             if (_glGetNamedBufferParameteriv_fnptr == null)
                 _glGetNamedBufferParameteriv_fnptr = (delegate* unmanaged<int, uint, int*, void>)GLLoader.BindingsContext.GetProcAddress("glGetNamedBufferParameteriv");
-            _glGetNamedBufferParameteriv_fnptr(buffer, pname, parameters);
+            _glGetNamedBufferParameteriv_fnptr(buffer, pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glGetNamedBufferParameterivEXT</c>]</b></summary>
         public static delegate* unmanaged<int, uint, int*, void> _glGetNamedBufferParameterivEXT_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glGetNamedBufferParameterivEXT_Lazy(int buffer, uint pname, int* parameters)
+        internal static void glGetNamedBufferParameterivEXT_Lazy(int buffer, uint pname, int* @params)
         {
             if (_glGetNamedBufferParameterivEXT_fnptr == null)
                 _glGetNamedBufferParameterivEXT_fnptr = (delegate* unmanaged<int, uint, int*, void>)GLLoader.BindingsContext.GetProcAddress("glGetNamedBufferParameterivEXT");
-            _glGetNamedBufferParameterivEXT_fnptr(buffer, pname, parameters);
+            _glGetNamedBufferParameterivEXT_fnptr(buffer, pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glGetNamedBufferParameterui64vNV</c>]</b></summary>
         public static delegate* unmanaged<int, uint, ulong*, void> _glGetNamedBufferParameterui64vNV_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glGetNamedBufferParameterui64vNV_Lazy(int buffer, uint pname, ulong* parameters)
+        internal static void glGetNamedBufferParameterui64vNV_Lazy(int buffer, uint pname, ulong* @params)
         {
             if (_glGetNamedBufferParameterui64vNV_fnptr == null)
                 _glGetNamedBufferParameterui64vNV_fnptr = (delegate* unmanaged<int, uint, ulong*, void>)GLLoader.BindingsContext.GetProcAddress("glGetNamedBufferParameterui64vNV");
-            _glGetNamedBufferParameterui64vNV_fnptr(buffer, pname, parameters);
+            _glGetNamedBufferParameterui64vNV_fnptr(buffer, pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glGetNamedBufferPointerv</c>]</b></summary>
         public static delegate* unmanaged<int, uint, void**, void> _glGetNamedBufferPointerv_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glGetNamedBufferPointerv_Lazy(int buffer, uint pname, void** parameters)
+        internal static void glGetNamedBufferPointerv_Lazy(int buffer, uint pname, void** @params)
         {
             if (_glGetNamedBufferPointerv_fnptr == null)
                 _glGetNamedBufferPointerv_fnptr = (delegate* unmanaged<int, uint, void**, void>)GLLoader.BindingsContext.GetProcAddress("glGetNamedBufferPointerv");
-            _glGetNamedBufferPointerv_fnptr(buffer, pname, parameters);
+            _glGetNamedBufferPointerv_fnptr(buffer, pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glGetNamedBufferPointervEXT</c>]</b></summary>
         public static delegate* unmanaged<int, uint, void**, void> _glGetNamedBufferPointervEXT_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glGetNamedBufferPointervEXT_Lazy(int buffer, uint pname, void** parameters)
+        internal static void glGetNamedBufferPointervEXT_Lazy(int buffer, uint pname, void** @params)
         {
             if (_glGetNamedBufferPointervEXT_fnptr == null)
                 _glGetNamedBufferPointervEXT_fnptr = (delegate* unmanaged<int, uint, void**, void>)GLLoader.BindingsContext.GetProcAddress("glGetNamedBufferPointervEXT");
-            _glGetNamedBufferPointervEXT_fnptr(buffer, pname, parameters);
+            _glGetNamedBufferPointervEXT_fnptr(buffer, pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glGetNamedBufferSubData</c>]</b></summary>
@@ -10432,21 +10432,21 @@ namespace OpenTK.Graphics.OpenGL
         /// <summary><b>[entry point: <c>glGetNamedFramebufferAttachmentParameteriv</c>]</b></summary>
         public static delegate* unmanaged<int, uint, uint, int*, void> _glGetNamedFramebufferAttachmentParameteriv_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glGetNamedFramebufferAttachmentParameteriv_Lazy(int framebuffer, uint attachment, uint pname, int* parameters)
+        internal static void glGetNamedFramebufferAttachmentParameteriv_Lazy(int framebuffer, uint attachment, uint pname, int* @params)
         {
             if (_glGetNamedFramebufferAttachmentParameteriv_fnptr == null)
                 _glGetNamedFramebufferAttachmentParameteriv_fnptr = (delegate* unmanaged<int, uint, uint, int*, void>)GLLoader.BindingsContext.GetProcAddress("glGetNamedFramebufferAttachmentParameteriv");
-            _glGetNamedFramebufferAttachmentParameteriv_fnptr(framebuffer, attachment, pname, parameters);
+            _glGetNamedFramebufferAttachmentParameteriv_fnptr(framebuffer, attachment, pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glGetNamedFramebufferAttachmentParameterivEXT</c>]</b></summary>
         public static delegate* unmanaged<int, uint, uint, int*, void> _glGetNamedFramebufferAttachmentParameterivEXT_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glGetNamedFramebufferAttachmentParameterivEXT_Lazy(int framebuffer, uint attachment, uint pname, int* parameters)
+        internal static void glGetNamedFramebufferAttachmentParameterivEXT_Lazy(int framebuffer, uint attachment, uint pname, int* @params)
         {
             if (_glGetNamedFramebufferAttachmentParameterivEXT_fnptr == null)
                 _glGetNamedFramebufferAttachmentParameterivEXT_fnptr = (delegate* unmanaged<int, uint, uint, int*, void>)GLLoader.BindingsContext.GetProcAddress("glGetNamedFramebufferAttachmentParameterivEXT");
-            _glGetNamedFramebufferAttachmentParameterivEXT_fnptr(framebuffer, attachment, pname, parameters);
+            _glGetNamedFramebufferAttachmentParameterivEXT_fnptr(framebuffer, attachment, pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glGetNamedFramebufferParameterfvAMD</c>]</b></summary>
@@ -10472,111 +10472,111 @@ namespace OpenTK.Graphics.OpenGL
         /// <summary><b>[entry point: <c>glGetNamedFramebufferParameterivEXT</c>]</b></summary>
         public static delegate* unmanaged<int, uint, int*, void> _glGetNamedFramebufferParameterivEXT_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glGetNamedFramebufferParameterivEXT_Lazy(int framebuffer, uint pname, int* parameters)
+        internal static void glGetNamedFramebufferParameterivEXT_Lazy(int framebuffer, uint pname, int* @params)
         {
             if (_glGetNamedFramebufferParameterivEXT_fnptr == null)
                 _glGetNamedFramebufferParameterivEXT_fnptr = (delegate* unmanaged<int, uint, int*, void>)GLLoader.BindingsContext.GetProcAddress("glGetNamedFramebufferParameterivEXT");
-            _glGetNamedFramebufferParameterivEXT_fnptr(framebuffer, pname, parameters);
+            _glGetNamedFramebufferParameterivEXT_fnptr(framebuffer, pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glGetNamedProgramivEXT</c>]</b></summary>
         public static delegate* unmanaged<int, uint, uint, int*, void> _glGetNamedProgramivEXT_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glGetNamedProgramivEXT_Lazy(int program, uint target, uint pname, int* parameters)
+        internal static void glGetNamedProgramivEXT_Lazy(int program, uint target, uint pname, int* @params)
         {
             if (_glGetNamedProgramivEXT_fnptr == null)
                 _glGetNamedProgramivEXT_fnptr = (delegate* unmanaged<int, uint, uint, int*, void>)GLLoader.BindingsContext.GetProcAddress("glGetNamedProgramivEXT");
-            _glGetNamedProgramivEXT_fnptr(program, target, pname, parameters);
+            _glGetNamedProgramivEXT_fnptr(program, target, pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glGetNamedProgramLocalParameterdvEXT</c>]</b></summary>
         public static delegate* unmanaged<int, uint, uint, double*, void> _glGetNamedProgramLocalParameterdvEXT_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glGetNamedProgramLocalParameterdvEXT_Lazy(int program, uint target, uint index, double* parameters)
+        internal static void glGetNamedProgramLocalParameterdvEXT_Lazy(int program, uint target, uint index, double* @params)
         {
             if (_glGetNamedProgramLocalParameterdvEXT_fnptr == null)
                 _glGetNamedProgramLocalParameterdvEXT_fnptr = (delegate* unmanaged<int, uint, uint, double*, void>)GLLoader.BindingsContext.GetProcAddress("glGetNamedProgramLocalParameterdvEXT");
-            _glGetNamedProgramLocalParameterdvEXT_fnptr(program, target, index, parameters);
+            _glGetNamedProgramLocalParameterdvEXT_fnptr(program, target, index, @params);
         }
         
         /// <summary><b>[entry point: <c>glGetNamedProgramLocalParameterfvEXT</c>]</b></summary>
         public static delegate* unmanaged<int, uint, uint, float*, void> _glGetNamedProgramLocalParameterfvEXT_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glGetNamedProgramLocalParameterfvEXT_Lazy(int program, uint target, uint index, float* parameters)
+        internal static void glGetNamedProgramLocalParameterfvEXT_Lazy(int program, uint target, uint index, float* @params)
         {
             if (_glGetNamedProgramLocalParameterfvEXT_fnptr == null)
                 _glGetNamedProgramLocalParameterfvEXT_fnptr = (delegate* unmanaged<int, uint, uint, float*, void>)GLLoader.BindingsContext.GetProcAddress("glGetNamedProgramLocalParameterfvEXT");
-            _glGetNamedProgramLocalParameterfvEXT_fnptr(program, target, index, parameters);
+            _glGetNamedProgramLocalParameterfvEXT_fnptr(program, target, index, @params);
         }
         
         /// <summary><b>[entry point: <c>glGetNamedProgramLocalParameterIivEXT</c>]</b></summary>
         public static delegate* unmanaged<int, uint, uint, int*, void> _glGetNamedProgramLocalParameterIivEXT_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glGetNamedProgramLocalParameterIivEXT_Lazy(int program, uint target, uint index, int* parameters)
+        internal static void glGetNamedProgramLocalParameterIivEXT_Lazy(int program, uint target, uint index, int* @params)
         {
             if (_glGetNamedProgramLocalParameterIivEXT_fnptr == null)
                 _glGetNamedProgramLocalParameterIivEXT_fnptr = (delegate* unmanaged<int, uint, uint, int*, void>)GLLoader.BindingsContext.GetProcAddress("glGetNamedProgramLocalParameterIivEXT");
-            _glGetNamedProgramLocalParameterIivEXT_fnptr(program, target, index, parameters);
+            _glGetNamedProgramLocalParameterIivEXT_fnptr(program, target, index, @params);
         }
         
         /// <summary><b>[entry point: <c>glGetNamedProgramLocalParameterIuivEXT</c>]</b></summary>
         public static delegate* unmanaged<int, uint, uint, uint*, void> _glGetNamedProgramLocalParameterIuivEXT_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glGetNamedProgramLocalParameterIuivEXT_Lazy(int program, uint target, uint index, uint* parameters)
+        internal static void glGetNamedProgramLocalParameterIuivEXT_Lazy(int program, uint target, uint index, uint* @params)
         {
             if (_glGetNamedProgramLocalParameterIuivEXT_fnptr == null)
                 _glGetNamedProgramLocalParameterIuivEXT_fnptr = (delegate* unmanaged<int, uint, uint, uint*, void>)GLLoader.BindingsContext.GetProcAddress("glGetNamedProgramLocalParameterIuivEXT");
-            _glGetNamedProgramLocalParameterIuivEXT_fnptr(program, target, index, parameters);
+            _glGetNamedProgramLocalParameterIuivEXT_fnptr(program, target, index, @params);
         }
         
         /// <summary><b>[entry point: <c>glGetNamedProgramStringEXT</c>]</b></summary>
         public static delegate* unmanaged<int, uint, uint, void*, void> _glGetNamedProgramStringEXT_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glGetNamedProgramStringEXT_Lazy(int program, uint target, uint pname, void* str)
+        internal static void glGetNamedProgramStringEXT_Lazy(int program, uint target, uint pname, void* @string)
         {
             if (_glGetNamedProgramStringEXT_fnptr == null)
                 _glGetNamedProgramStringEXT_fnptr = (delegate* unmanaged<int, uint, uint, void*, void>)GLLoader.BindingsContext.GetProcAddress("glGetNamedProgramStringEXT");
-            _glGetNamedProgramStringEXT_fnptr(program, target, pname, str);
+            _glGetNamedProgramStringEXT_fnptr(program, target, pname, @string);
         }
         
         /// <summary><b>[entry point: <c>glGetNamedRenderbufferParameteriv</c>]</b></summary>
         public static delegate* unmanaged<int, uint, int*, void> _glGetNamedRenderbufferParameteriv_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glGetNamedRenderbufferParameteriv_Lazy(int renderbuffer, uint pname, int* parameters)
+        internal static void glGetNamedRenderbufferParameteriv_Lazy(int renderbuffer, uint pname, int* @params)
         {
             if (_glGetNamedRenderbufferParameteriv_fnptr == null)
                 _glGetNamedRenderbufferParameteriv_fnptr = (delegate* unmanaged<int, uint, int*, void>)GLLoader.BindingsContext.GetProcAddress("glGetNamedRenderbufferParameteriv");
-            _glGetNamedRenderbufferParameteriv_fnptr(renderbuffer, pname, parameters);
+            _glGetNamedRenderbufferParameteriv_fnptr(renderbuffer, pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glGetNamedRenderbufferParameterivEXT</c>]</b></summary>
         public static delegate* unmanaged<int, uint, int*, void> _glGetNamedRenderbufferParameterivEXT_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glGetNamedRenderbufferParameterivEXT_Lazy(int renderbuffer, uint pname, int* parameters)
+        internal static void glGetNamedRenderbufferParameterivEXT_Lazy(int renderbuffer, uint pname, int* @params)
         {
             if (_glGetNamedRenderbufferParameterivEXT_fnptr == null)
                 _glGetNamedRenderbufferParameterivEXT_fnptr = (delegate* unmanaged<int, uint, int*, void>)GLLoader.BindingsContext.GetProcAddress("glGetNamedRenderbufferParameterivEXT");
-            _glGetNamedRenderbufferParameterivEXT_fnptr(renderbuffer, pname, parameters);
+            _glGetNamedRenderbufferParameterivEXT_fnptr(renderbuffer, pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glGetNamedStringARB</c>]</b></summary>
         public static delegate* unmanaged<int, byte*, int, int*, byte*, void> _glGetNamedStringARB_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glGetNamedStringARB_Lazy(int namelen, byte* name, int bufSize, int* stringlen, byte* str)
+        internal static void glGetNamedStringARB_Lazy(int namelen, byte* name, int bufSize, int* stringlen, byte* @string)
         {
             if (_glGetNamedStringARB_fnptr == null)
                 _glGetNamedStringARB_fnptr = (delegate* unmanaged<int, byte*, int, int*, byte*, void>)GLLoader.BindingsContext.GetProcAddress("glGetNamedStringARB");
-            _glGetNamedStringARB_fnptr(namelen, name, bufSize, stringlen, str);
+            _glGetNamedStringARB_fnptr(namelen, name, bufSize, stringlen, @string);
         }
         
         /// <summary><b>[entry point: <c>glGetNamedStringivARB</c>]</b></summary>
         public static delegate* unmanaged<int, byte*, uint, int*, void> _glGetNamedStringivARB_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glGetNamedStringivARB_Lazy(int namelen, byte* name, uint pname, int* parameters)
+        internal static void glGetNamedStringivARB_Lazy(int namelen, byte* name, uint pname, int* @params)
         {
             if (_glGetNamedStringivARB_fnptr == null)
                 _glGetNamedStringivARB_fnptr = (delegate* unmanaged<int, byte*, uint, int*, void>)GLLoader.BindingsContext.GetProcAddress("glGetNamedStringivARB");
-            _glGetNamedStringivARB_fnptr(namelen, name, pname, parameters);
+            _glGetNamedStringivARB_fnptr(namelen, name, pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glGetnColorTable</c>]</b></summary>
@@ -10872,171 +10872,171 @@ namespace OpenTK.Graphics.OpenGL
         /// <summary><b>[entry point: <c>glGetnUniformdv</c>]</b></summary>
         public static delegate* unmanaged<int, int, int, double*, void> _glGetnUniformdv_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glGetnUniformdv_Lazy(int program, int location, int bufSize, double* parameters)
+        internal static void glGetnUniformdv_Lazy(int program, int location, int bufSize, double* @params)
         {
             if (_glGetnUniformdv_fnptr == null)
                 _glGetnUniformdv_fnptr = (delegate* unmanaged<int, int, int, double*, void>)GLLoader.BindingsContext.GetProcAddress("glGetnUniformdv");
-            _glGetnUniformdv_fnptr(program, location, bufSize, parameters);
+            _glGetnUniformdv_fnptr(program, location, bufSize, @params);
         }
         
         /// <summary><b>[entry point: <c>glGetnUniformdvARB</c>]</b></summary>
         public static delegate* unmanaged<int, int, int, double*, void> _glGetnUniformdvARB_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glGetnUniformdvARB_Lazy(int program, int location, int bufSize, double* parameters)
+        internal static void glGetnUniformdvARB_Lazy(int program, int location, int bufSize, double* @params)
         {
             if (_glGetnUniformdvARB_fnptr == null)
                 _glGetnUniformdvARB_fnptr = (delegate* unmanaged<int, int, int, double*, void>)GLLoader.BindingsContext.GetProcAddress("glGetnUniformdvARB");
-            _glGetnUniformdvARB_fnptr(program, location, bufSize, parameters);
+            _glGetnUniformdvARB_fnptr(program, location, bufSize, @params);
         }
         
         /// <summary><b>[entry point: <c>glGetnUniformfv</c>]</b></summary>
         public static delegate* unmanaged<int, int, int, float*, void> _glGetnUniformfv_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glGetnUniformfv_Lazy(int program, int location, int bufSize, float* parameters)
+        internal static void glGetnUniformfv_Lazy(int program, int location, int bufSize, float* @params)
         {
             if (_glGetnUniformfv_fnptr == null)
                 _glGetnUniformfv_fnptr = (delegate* unmanaged<int, int, int, float*, void>)GLLoader.BindingsContext.GetProcAddress("glGetnUniformfv");
-            _glGetnUniformfv_fnptr(program, location, bufSize, parameters);
+            _glGetnUniformfv_fnptr(program, location, bufSize, @params);
         }
         
         /// <summary><b>[entry point: <c>glGetnUniformfvARB</c>]</b></summary>
         public static delegate* unmanaged<int, int, int, float*, void> _glGetnUniformfvARB_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glGetnUniformfvARB_Lazy(int program, int location, int bufSize, float* parameters)
+        internal static void glGetnUniformfvARB_Lazy(int program, int location, int bufSize, float* @params)
         {
             if (_glGetnUniformfvARB_fnptr == null)
                 _glGetnUniformfvARB_fnptr = (delegate* unmanaged<int, int, int, float*, void>)GLLoader.BindingsContext.GetProcAddress("glGetnUniformfvARB");
-            _glGetnUniformfvARB_fnptr(program, location, bufSize, parameters);
+            _glGetnUniformfvARB_fnptr(program, location, bufSize, @params);
         }
         
         /// <summary><b>[entry point: <c>glGetnUniformfvEXT</c>]</b></summary>
         public static delegate* unmanaged<int, int, int, float*, void> _glGetnUniformfvEXT_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glGetnUniformfvEXT_Lazy(int program, int location, int bufSize, float* parameters)
+        internal static void glGetnUniformfvEXT_Lazy(int program, int location, int bufSize, float* @params)
         {
             if (_glGetnUniformfvEXT_fnptr == null)
                 _glGetnUniformfvEXT_fnptr = (delegate* unmanaged<int, int, int, float*, void>)GLLoader.BindingsContext.GetProcAddress("glGetnUniformfvEXT");
-            _glGetnUniformfvEXT_fnptr(program, location, bufSize, parameters);
+            _glGetnUniformfvEXT_fnptr(program, location, bufSize, @params);
         }
         
         /// <summary><b>[entry point: <c>glGetnUniformfvKHR</c>]</b></summary>
         public static delegate* unmanaged<int, int, int, float*, void> _glGetnUniformfvKHR_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glGetnUniformfvKHR_Lazy(int program, int location, int bufSize, float* parameters)
+        internal static void glGetnUniformfvKHR_Lazy(int program, int location, int bufSize, float* @params)
         {
             if (_glGetnUniformfvKHR_fnptr == null)
                 _glGetnUniformfvKHR_fnptr = (delegate* unmanaged<int, int, int, float*, void>)GLLoader.BindingsContext.GetProcAddress("glGetnUniformfvKHR");
-            _glGetnUniformfvKHR_fnptr(program, location, bufSize, parameters);
+            _glGetnUniformfvKHR_fnptr(program, location, bufSize, @params);
         }
         
         /// <summary><b>[entry point: <c>glGetnUniformi64vARB</c>]</b></summary>
         public static delegate* unmanaged<int, int, int, long*, void> _glGetnUniformi64vARB_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glGetnUniformi64vARB_Lazy(int program, int location, int bufSize, long* parameters)
+        internal static void glGetnUniformi64vARB_Lazy(int program, int location, int bufSize, long* @params)
         {
             if (_glGetnUniformi64vARB_fnptr == null)
                 _glGetnUniformi64vARB_fnptr = (delegate* unmanaged<int, int, int, long*, void>)GLLoader.BindingsContext.GetProcAddress("glGetnUniformi64vARB");
-            _glGetnUniformi64vARB_fnptr(program, location, bufSize, parameters);
+            _glGetnUniformi64vARB_fnptr(program, location, bufSize, @params);
         }
         
         /// <summary><b>[entry point: <c>glGetnUniformiv</c>]</b></summary>
         public static delegate* unmanaged<int, int, int, int*, void> _glGetnUniformiv_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glGetnUniformiv_Lazy(int program, int location, int bufSize, int* parameters)
+        internal static void glGetnUniformiv_Lazy(int program, int location, int bufSize, int* @params)
         {
             if (_glGetnUniformiv_fnptr == null)
                 _glGetnUniformiv_fnptr = (delegate* unmanaged<int, int, int, int*, void>)GLLoader.BindingsContext.GetProcAddress("glGetnUniformiv");
-            _glGetnUniformiv_fnptr(program, location, bufSize, parameters);
+            _glGetnUniformiv_fnptr(program, location, bufSize, @params);
         }
         
         /// <summary><b>[entry point: <c>glGetnUniformivARB</c>]</b></summary>
         public static delegate* unmanaged<int, int, int, int*, void> _glGetnUniformivARB_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glGetnUniformivARB_Lazy(int program, int location, int bufSize, int* parameters)
+        internal static void glGetnUniformivARB_Lazy(int program, int location, int bufSize, int* @params)
         {
             if (_glGetnUniformivARB_fnptr == null)
                 _glGetnUniformivARB_fnptr = (delegate* unmanaged<int, int, int, int*, void>)GLLoader.BindingsContext.GetProcAddress("glGetnUniformivARB");
-            _glGetnUniformivARB_fnptr(program, location, bufSize, parameters);
+            _glGetnUniformivARB_fnptr(program, location, bufSize, @params);
         }
         
         /// <summary><b>[entry point: <c>glGetnUniformivEXT</c>]</b></summary>
         public static delegate* unmanaged<int, int, int, int*, void> _glGetnUniformivEXT_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glGetnUniformivEXT_Lazy(int program, int location, int bufSize, int* parameters)
+        internal static void glGetnUniformivEXT_Lazy(int program, int location, int bufSize, int* @params)
         {
             if (_glGetnUniformivEXT_fnptr == null)
                 _glGetnUniformivEXT_fnptr = (delegate* unmanaged<int, int, int, int*, void>)GLLoader.BindingsContext.GetProcAddress("glGetnUniformivEXT");
-            _glGetnUniformivEXT_fnptr(program, location, bufSize, parameters);
+            _glGetnUniformivEXT_fnptr(program, location, bufSize, @params);
         }
         
         /// <summary><b>[entry point: <c>glGetnUniformivKHR</c>]</b></summary>
         public static delegate* unmanaged<int, int, int, int*, void> _glGetnUniformivKHR_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glGetnUniformivKHR_Lazy(int program, int location, int bufSize, int* parameters)
+        internal static void glGetnUniformivKHR_Lazy(int program, int location, int bufSize, int* @params)
         {
             if (_glGetnUniformivKHR_fnptr == null)
                 _glGetnUniformivKHR_fnptr = (delegate* unmanaged<int, int, int, int*, void>)GLLoader.BindingsContext.GetProcAddress("glGetnUniformivKHR");
-            _glGetnUniformivKHR_fnptr(program, location, bufSize, parameters);
+            _glGetnUniformivKHR_fnptr(program, location, bufSize, @params);
         }
         
         /// <summary><b>[entry point: <c>glGetnUniformui64vARB</c>]</b></summary>
         public static delegate* unmanaged<int, int, int, ulong*, void> _glGetnUniformui64vARB_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glGetnUniformui64vARB_Lazy(int program, int location, int bufSize, ulong* parameters)
+        internal static void glGetnUniformui64vARB_Lazy(int program, int location, int bufSize, ulong* @params)
         {
             if (_glGetnUniformui64vARB_fnptr == null)
                 _glGetnUniformui64vARB_fnptr = (delegate* unmanaged<int, int, int, ulong*, void>)GLLoader.BindingsContext.GetProcAddress("glGetnUniformui64vARB");
-            _glGetnUniformui64vARB_fnptr(program, location, bufSize, parameters);
+            _glGetnUniformui64vARB_fnptr(program, location, bufSize, @params);
         }
         
         /// <summary><b>[entry point: <c>glGetnUniformuiv</c>]</b></summary>
         public static delegate* unmanaged<int, int, int, uint*, void> _glGetnUniformuiv_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glGetnUniformuiv_Lazy(int program, int location, int bufSize, uint* parameters)
+        internal static void glGetnUniformuiv_Lazy(int program, int location, int bufSize, uint* @params)
         {
             if (_glGetnUniformuiv_fnptr == null)
                 _glGetnUniformuiv_fnptr = (delegate* unmanaged<int, int, int, uint*, void>)GLLoader.BindingsContext.GetProcAddress("glGetnUniformuiv");
-            _glGetnUniformuiv_fnptr(program, location, bufSize, parameters);
+            _glGetnUniformuiv_fnptr(program, location, bufSize, @params);
         }
         
         /// <summary><b>[entry point: <c>glGetnUniformuivARB</c>]</b></summary>
         public static delegate* unmanaged<int, int, int, uint*, void> _glGetnUniformuivARB_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glGetnUniformuivARB_Lazy(int program, int location, int bufSize, uint* parameters)
+        internal static void glGetnUniformuivARB_Lazy(int program, int location, int bufSize, uint* @params)
         {
             if (_glGetnUniformuivARB_fnptr == null)
                 _glGetnUniformuivARB_fnptr = (delegate* unmanaged<int, int, int, uint*, void>)GLLoader.BindingsContext.GetProcAddress("glGetnUniformuivARB");
-            _glGetnUniformuivARB_fnptr(program, location, bufSize, parameters);
+            _glGetnUniformuivARB_fnptr(program, location, bufSize, @params);
         }
         
         /// <summary><b>[entry point: <c>glGetnUniformuivKHR</c>]</b></summary>
         public static delegate* unmanaged<int, int, int, uint*, void> _glGetnUniformuivKHR_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glGetnUniformuivKHR_Lazy(int program, int location, int bufSize, uint* parameters)
+        internal static void glGetnUniformuivKHR_Lazy(int program, int location, int bufSize, uint* @params)
         {
             if (_glGetnUniformuivKHR_fnptr == null)
                 _glGetnUniformuivKHR_fnptr = (delegate* unmanaged<int, int, int, uint*, void>)GLLoader.BindingsContext.GetProcAddress("glGetnUniformuivKHR");
-            _glGetnUniformuivKHR_fnptr(program, location, bufSize, parameters);
+            _glGetnUniformuivKHR_fnptr(program, location, bufSize, @params);
         }
         
         /// <summary><b>[entry point: <c>glGetObjectBufferfvATI</c>]</b></summary>
         public static delegate* unmanaged<int, uint, float*, void> _glGetObjectBufferfvATI_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glGetObjectBufferfvATI_Lazy(int buffer, uint pname, float* parameters)
+        internal static void glGetObjectBufferfvATI_Lazy(int buffer, uint pname, float* @params)
         {
             if (_glGetObjectBufferfvATI_fnptr == null)
                 _glGetObjectBufferfvATI_fnptr = (delegate* unmanaged<int, uint, float*, void>)GLLoader.BindingsContext.GetProcAddress("glGetObjectBufferfvATI");
-            _glGetObjectBufferfvATI_fnptr(buffer, pname, parameters);
+            _glGetObjectBufferfvATI_fnptr(buffer, pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glGetObjectBufferivATI</c>]</b></summary>
         public static delegate* unmanaged<int, uint, int*, void> _glGetObjectBufferivATI_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glGetObjectBufferivATI_Lazy(int buffer, uint pname, int* parameters)
+        internal static void glGetObjectBufferivATI_Lazy(int buffer, uint pname, int* @params)
         {
             if (_glGetObjectBufferivATI_fnptr == null)
                 _glGetObjectBufferivATI_fnptr = (delegate* unmanaged<int, uint, int*, void>)GLLoader.BindingsContext.GetProcAddress("glGetObjectBufferivATI");
-            _glGetObjectBufferivATI_fnptr(buffer, pname, parameters);
+            _glGetObjectBufferivATI_fnptr(buffer, pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glGetObjectLabel</c>]</b></summary>
@@ -11052,11 +11052,11 @@ namespace OpenTK.Graphics.OpenGL
         /// <summary><b>[entry point: <c>glGetObjectLabelEXT</c>]</b></summary>
         public static delegate* unmanaged<uint, uint, int, int*, byte*, void> _glGetObjectLabelEXT_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glGetObjectLabelEXT_Lazy(uint type, uint obj, int bufSize, int* length, byte* label)
+        internal static void glGetObjectLabelEXT_Lazy(uint type, uint @object, int bufSize, int* length, byte* label)
         {
             if (_glGetObjectLabelEXT_fnptr == null)
                 _glGetObjectLabelEXT_fnptr = (delegate* unmanaged<uint, uint, int, int*, byte*, void>)GLLoader.BindingsContext.GetProcAddress("glGetObjectLabelEXT");
-            _glGetObjectLabelEXT_fnptr(type, obj, bufSize, length, label);
+            _glGetObjectLabelEXT_fnptr(type, @object, bufSize, length, label);
         }
         
         /// <summary><b>[entry point: <c>glGetObjectLabelKHR</c>]</b></summary>
@@ -11072,31 +11072,31 @@ namespace OpenTK.Graphics.OpenGL
         /// <summary><b>[entry point: <c>glGetObjectParameterfvARB</c>]</b></summary>
         public static delegate* unmanaged<IntPtr, uint, float*, void> _glGetObjectParameterfvARB_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glGetObjectParameterfvARB_Lazy(IntPtr obj, uint pname, float* parameters)
+        internal static void glGetObjectParameterfvARB_Lazy(IntPtr obj, uint pname, float* @params)
         {
             if (_glGetObjectParameterfvARB_fnptr == null)
                 _glGetObjectParameterfvARB_fnptr = (delegate* unmanaged<IntPtr, uint, float*, void>)GLLoader.BindingsContext.GetProcAddress("glGetObjectParameterfvARB");
-            _glGetObjectParameterfvARB_fnptr(obj, pname, parameters);
+            _glGetObjectParameterfvARB_fnptr(obj, pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glGetObjectParameterivAPPLE</c>]</b></summary>
         public static delegate* unmanaged<uint, uint, uint, int*, void> _glGetObjectParameterivAPPLE_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glGetObjectParameterivAPPLE_Lazy(uint objectType, uint name, uint pname, int* parameters)
+        internal static void glGetObjectParameterivAPPLE_Lazy(uint objectType, uint name, uint pname, int* @params)
         {
             if (_glGetObjectParameterivAPPLE_fnptr == null)
                 _glGetObjectParameterivAPPLE_fnptr = (delegate* unmanaged<uint, uint, uint, int*, void>)GLLoader.BindingsContext.GetProcAddress("glGetObjectParameterivAPPLE");
-            _glGetObjectParameterivAPPLE_fnptr(objectType, name, pname, parameters);
+            _glGetObjectParameterivAPPLE_fnptr(objectType, name, pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glGetObjectParameterivARB</c>]</b></summary>
         public static delegate* unmanaged<IntPtr, uint, int*, void> _glGetObjectParameterivARB_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glGetObjectParameterivARB_Lazy(IntPtr obj, uint pname, int* parameters)
+        internal static void glGetObjectParameterivARB_Lazy(IntPtr obj, uint pname, int* @params)
         {
             if (_glGetObjectParameterivARB_fnptr == null)
                 _glGetObjectParameterivARB_fnptr = (delegate* unmanaged<IntPtr, uint, int*, void>)GLLoader.BindingsContext.GetProcAddress("glGetObjectParameterivARB");
-            _glGetObjectParameterivARB_fnptr(obj, pname, parameters);
+            _glGetObjectParameterivARB_fnptr(obj, pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glGetObjectPtrLabel</c>]</b></summary>
@@ -11122,21 +11122,21 @@ namespace OpenTK.Graphics.OpenGL
         /// <summary><b>[entry point: <c>glGetOcclusionQueryivNV</c>]</b></summary>
         public static delegate* unmanaged<uint, uint, int*, void> _glGetOcclusionQueryivNV_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glGetOcclusionQueryivNV_Lazy(uint id, uint pname, int* parameters)
+        internal static void glGetOcclusionQueryivNV_Lazy(uint id, uint pname, int* @params)
         {
             if (_glGetOcclusionQueryivNV_fnptr == null)
                 _glGetOcclusionQueryivNV_fnptr = (delegate* unmanaged<uint, uint, int*, void>)GLLoader.BindingsContext.GetProcAddress("glGetOcclusionQueryivNV");
-            _glGetOcclusionQueryivNV_fnptr(id, pname, parameters);
+            _glGetOcclusionQueryivNV_fnptr(id, pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glGetOcclusionQueryuivNV</c>]</b></summary>
         public static delegate* unmanaged<uint, uint, uint*, void> _glGetOcclusionQueryuivNV_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glGetOcclusionQueryuivNV_Lazy(uint id, uint pname, uint* parameters)
+        internal static void glGetOcclusionQueryuivNV_Lazy(uint id, uint pname, uint* @params)
         {
             if (_glGetOcclusionQueryuivNV_fnptr == null)
                 _glGetOcclusionQueryuivNV_fnptr = (delegate* unmanaged<uint, uint, uint*, void>)GLLoader.BindingsContext.GetProcAddress("glGetOcclusionQueryuivNV");
-            _glGetOcclusionQueryuivNV_fnptr(id, pname, parameters);
+            _glGetOcclusionQueryuivNV_fnptr(id, pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glGetPathColorGenfvNV</c>]</b></summary>
@@ -11412,51 +11412,51 @@ namespace OpenTK.Graphics.OpenGL
         /// <summary><b>[entry point: <c>glGetPixelTexGenParameterfvSGIS</c>]</b></summary>
         public static delegate* unmanaged<uint, float*, void> _glGetPixelTexGenParameterfvSGIS_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glGetPixelTexGenParameterfvSGIS_Lazy(uint pname, float* parameters)
+        internal static void glGetPixelTexGenParameterfvSGIS_Lazy(uint pname, float* @params)
         {
             if (_glGetPixelTexGenParameterfvSGIS_fnptr == null)
                 _glGetPixelTexGenParameterfvSGIS_fnptr = (delegate* unmanaged<uint, float*, void>)GLLoader.BindingsContext.GetProcAddress("glGetPixelTexGenParameterfvSGIS");
-            _glGetPixelTexGenParameterfvSGIS_fnptr(pname, parameters);
+            _glGetPixelTexGenParameterfvSGIS_fnptr(pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glGetPixelTexGenParameterivSGIS</c>]</b></summary>
         public static delegate* unmanaged<uint, int*, void> _glGetPixelTexGenParameterivSGIS_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glGetPixelTexGenParameterivSGIS_Lazy(uint pname, int* parameters)
+        internal static void glGetPixelTexGenParameterivSGIS_Lazy(uint pname, int* @params)
         {
             if (_glGetPixelTexGenParameterivSGIS_fnptr == null)
                 _glGetPixelTexGenParameterivSGIS_fnptr = (delegate* unmanaged<uint, int*, void>)GLLoader.BindingsContext.GetProcAddress("glGetPixelTexGenParameterivSGIS");
-            _glGetPixelTexGenParameterivSGIS_fnptr(pname, parameters);
+            _glGetPixelTexGenParameterivSGIS_fnptr(pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glGetPixelTransformParameterfvEXT</c>]</b></summary>
         public static delegate* unmanaged<uint, uint, float*, void> _glGetPixelTransformParameterfvEXT_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glGetPixelTransformParameterfvEXT_Lazy(uint target, uint pname, float* parameters)
+        internal static void glGetPixelTransformParameterfvEXT_Lazy(uint target, uint pname, float* @params)
         {
             if (_glGetPixelTransformParameterfvEXT_fnptr == null)
                 _glGetPixelTransformParameterfvEXT_fnptr = (delegate* unmanaged<uint, uint, float*, void>)GLLoader.BindingsContext.GetProcAddress("glGetPixelTransformParameterfvEXT");
-            _glGetPixelTransformParameterfvEXT_fnptr(target, pname, parameters);
+            _glGetPixelTransformParameterfvEXT_fnptr(target, pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glGetPixelTransformParameterivEXT</c>]</b></summary>
         public static delegate* unmanaged<uint, uint, int*, void> _glGetPixelTransformParameterivEXT_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glGetPixelTransformParameterivEXT_Lazy(uint target, uint pname, int* parameters)
+        internal static void glGetPixelTransformParameterivEXT_Lazy(uint target, uint pname, int* @params)
         {
             if (_glGetPixelTransformParameterivEXT_fnptr == null)
                 _glGetPixelTransformParameterivEXT_fnptr = (delegate* unmanaged<uint, uint, int*, void>)GLLoader.BindingsContext.GetProcAddress("glGetPixelTransformParameterivEXT");
-            _glGetPixelTransformParameterivEXT_fnptr(target, pname, parameters);
+            _glGetPixelTransformParameterivEXT_fnptr(target, pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glGetPointeri_vEXT</c>]</b></summary>
         public static delegate* unmanaged<uint, uint, void**, void> _glGetPointeri_vEXT_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glGetPointeri_vEXT_Lazy(uint pname, uint index, void** parameters)
+        internal static void glGetPointeri_vEXT_Lazy(uint pname, uint index, void** @params)
         {
             if (_glGetPointeri_vEXT_fnptr == null)
                 _glGetPointeri_vEXT_fnptr = (delegate* unmanaged<uint, uint, void**, void>)GLLoader.BindingsContext.GetProcAddress("glGetPointeri_vEXT");
-            _glGetPointeri_vEXT_fnptr(pname, index, parameters);
+            _glGetPointeri_vEXT_fnptr(pname, index, @params);
         }
         
         /// <summary><b>[entry point: <c>glGetPointerIndexedvEXT</c>]</b></summary>
@@ -11472,31 +11472,31 @@ namespace OpenTK.Graphics.OpenGL
         /// <summary><b>[entry point: <c>glGetPointerv</c>]</b></summary>
         public static delegate* unmanaged<uint, void**, void> _glGetPointerv_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glGetPointerv_Lazy(uint pname, void** parameters)
+        internal static void glGetPointerv_Lazy(uint pname, void** @params)
         {
             if (_glGetPointerv_fnptr == null)
                 _glGetPointerv_fnptr = (delegate* unmanaged<uint, void**, void>)GLLoader.BindingsContext.GetProcAddress("glGetPointerv");
-            _glGetPointerv_fnptr(pname, parameters);
+            _glGetPointerv_fnptr(pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glGetPointervEXT</c>]</b></summary>
         public static delegate* unmanaged<uint, void**, void> _glGetPointervEXT_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glGetPointervEXT_Lazy(uint pname, void** parameters)
+        internal static void glGetPointervEXT_Lazy(uint pname, void** @params)
         {
             if (_glGetPointervEXT_fnptr == null)
                 _glGetPointervEXT_fnptr = (delegate* unmanaged<uint, void**, void>)GLLoader.BindingsContext.GetProcAddress("glGetPointervEXT");
-            _glGetPointervEXT_fnptr(pname, parameters);
+            _glGetPointervEXT_fnptr(pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glGetPointervKHR</c>]</b></summary>
         public static delegate* unmanaged<uint, void**, void> _glGetPointervKHR_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glGetPointervKHR_Lazy(uint pname, void** parameters)
+        internal static void glGetPointervKHR_Lazy(uint pname, void** @params)
         {
             if (_glGetPointervKHR_fnptr == null)
                 _glGetPointervKHR_fnptr = (delegate* unmanaged<uint, void**, void>)GLLoader.BindingsContext.GetProcAddress("glGetPointervKHR");
-            _glGetPointervKHR_fnptr(pname, parameters);
+            _glGetPointervKHR_fnptr(pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glGetPolygonStipple</c>]</b></summary>
@@ -11532,41 +11532,41 @@ namespace OpenTK.Graphics.OpenGL
         /// <summary><b>[entry point: <c>glGetProgramEnvParameterdvARB</c>]</b></summary>
         public static delegate* unmanaged<uint, uint, double*, void> _glGetProgramEnvParameterdvARB_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glGetProgramEnvParameterdvARB_Lazy(uint target, uint index, double* parameters)
+        internal static void glGetProgramEnvParameterdvARB_Lazy(uint target, uint index, double* @params)
         {
             if (_glGetProgramEnvParameterdvARB_fnptr == null)
                 _glGetProgramEnvParameterdvARB_fnptr = (delegate* unmanaged<uint, uint, double*, void>)GLLoader.BindingsContext.GetProcAddress("glGetProgramEnvParameterdvARB");
-            _glGetProgramEnvParameterdvARB_fnptr(target, index, parameters);
+            _glGetProgramEnvParameterdvARB_fnptr(target, index, @params);
         }
         
         /// <summary><b>[entry point: <c>glGetProgramEnvParameterfvARB</c>]</b></summary>
         public static delegate* unmanaged<uint, uint, float*, void> _glGetProgramEnvParameterfvARB_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glGetProgramEnvParameterfvARB_Lazy(uint target, uint index, float* parameters)
+        internal static void glGetProgramEnvParameterfvARB_Lazy(uint target, uint index, float* @params)
         {
             if (_glGetProgramEnvParameterfvARB_fnptr == null)
                 _glGetProgramEnvParameterfvARB_fnptr = (delegate* unmanaged<uint, uint, float*, void>)GLLoader.BindingsContext.GetProcAddress("glGetProgramEnvParameterfvARB");
-            _glGetProgramEnvParameterfvARB_fnptr(target, index, parameters);
+            _glGetProgramEnvParameterfvARB_fnptr(target, index, @params);
         }
         
         /// <summary><b>[entry point: <c>glGetProgramEnvParameterIivNV</c>]</b></summary>
         public static delegate* unmanaged<uint, uint, int*, void> _glGetProgramEnvParameterIivNV_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glGetProgramEnvParameterIivNV_Lazy(uint target, uint index, int* parameters)
+        internal static void glGetProgramEnvParameterIivNV_Lazy(uint target, uint index, int* @params)
         {
             if (_glGetProgramEnvParameterIivNV_fnptr == null)
                 _glGetProgramEnvParameterIivNV_fnptr = (delegate* unmanaged<uint, uint, int*, void>)GLLoader.BindingsContext.GetProcAddress("glGetProgramEnvParameterIivNV");
-            _glGetProgramEnvParameterIivNV_fnptr(target, index, parameters);
+            _glGetProgramEnvParameterIivNV_fnptr(target, index, @params);
         }
         
         /// <summary><b>[entry point: <c>glGetProgramEnvParameterIuivNV</c>]</b></summary>
         public static delegate* unmanaged<uint, uint, uint*, void> _glGetProgramEnvParameterIuivNV_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glGetProgramEnvParameterIuivNV_Lazy(uint target, uint index, uint* parameters)
+        internal static void glGetProgramEnvParameterIuivNV_Lazy(uint target, uint index, uint* @params)
         {
             if (_glGetProgramEnvParameterIuivNV_fnptr == null)
                 _glGetProgramEnvParameterIuivNV_fnptr = (delegate* unmanaged<uint, uint, uint*, void>)GLLoader.BindingsContext.GetProcAddress("glGetProgramEnvParameterIuivNV");
-            _glGetProgramEnvParameterIuivNV_fnptr(target, index, parameters);
+            _glGetProgramEnvParameterIuivNV_fnptr(target, index, @params);
         }
         
         /// <summary><b>[entry point: <c>glGetProgramInfoLog</c>]</b></summary>
@@ -11582,121 +11582,121 @@ namespace OpenTK.Graphics.OpenGL
         /// <summary><b>[entry point: <c>glGetProgramInterfaceiv</c>]</b></summary>
         public static delegate* unmanaged<int, uint, uint, int*, void> _glGetProgramInterfaceiv_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glGetProgramInterfaceiv_Lazy(int program, uint programInterface, uint pname, int* parameters)
+        internal static void glGetProgramInterfaceiv_Lazy(int program, uint programInterface, uint pname, int* @params)
         {
             if (_glGetProgramInterfaceiv_fnptr == null)
                 _glGetProgramInterfaceiv_fnptr = (delegate* unmanaged<int, uint, uint, int*, void>)GLLoader.BindingsContext.GetProcAddress("glGetProgramInterfaceiv");
-            _glGetProgramInterfaceiv_fnptr(program, programInterface, pname, parameters);
+            _glGetProgramInterfaceiv_fnptr(program, programInterface, pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glGetProgramiv</c>]</b></summary>
         public static delegate* unmanaged<int, uint, int*, void> _glGetProgramiv_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glGetProgramiv_Lazy(int program, uint pname, int* parameters)
+        internal static void glGetProgramiv_Lazy(int program, uint pname, int* @params)
         {
             if (_glGetProgramiv_fnptr == null)
                 _glGetProgramiv_fnptr = (delegate* unmanaged<int, uint, int*, void>)GLLoader.BindingsContext.GetProcAddress("glGetProgramiv");
-            _glGetProgramiv_fnptr(program, pname, parameters);
+            _glGetProgramiv_fnptr(program, pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glGetProgramivARB</c>]</b></summary>
         public static delegate* unmanaged<uint, uint, int*, void> _glGetProgramivARB_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glGetProgramivARB_Lazy(uint target, uint pname, int* parameters)
+        internal static void glGetProgramivARB_Lazy(uint target, uint pname, int* @params)
         {
             if (_glGetProgramivARB_fnptr == null)
                 _glGetProgramivARB_fnptr = (delegate* unmanaged<uint, uint, int*, void>)GLLoader.BindingsContext.GetProcAddress("glGetProgramivARB");
-            _glGetProgramivARB_fnptr(target, pname, parameters);
+            _glGetProgramivARB_fnptr(target, pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glGetProgramivNV</c>]</b></summary>
         public static delegate* unmanaged<int, uint, int*, void> _glGetProgramivNV_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glGetProgramivNV_Lazy(int id, uint pname, int* parameters)
+        internal static void glGetProgramivNV_Lazy(int id, uint pname, int* @params)
         {
             if (_glGetProgramivNV_fnptr == null)
                 _glGetProgramivNV_fnptr = (delegate* unmanaged<int, uint, int*, void>)GLLoader.BindingsContext.GetProcAddress("glGetProgramivNV");
-            _glGetProgramivNV_fnptr(id, pname, parameters);
+            _glGetProgramivNV_fnptr(id, pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glGetProgramLocalParameterdvARB</c>]</b></summary>
         public static delegate* unmanaged<uint, uint, double*, void> _glGetProgramLocalParameterdvARB_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glGetProgramLocalParameterdvARB_Lazy(uint target, uint index, double* parameters)
+        internal static void glGetProgramLocalParameterdvARB_Lazy(uint target, uint index, double* @params)
         {
             if (_glGetProgramLocalParameterdvARB_fnptr == null)
                 _glGetProgramLocalParameterdvARB_fnptr = (delegate* unmanaged<uint, uint, double*, void>)GLLoader.BindingsContext.GetProcAddress("glGetProgramLocalParameterdvARB");
-            _glGetProgramLocalParameterdvARB_fnptr(target, index, parameters);
+            _glGetProgramLocalParameterdvARB_fnptr(target, index, @params);
         }
         
         /// <summary><b>[entry point: <c>glGetProgramLocalParameterfvARB</c>]</b></summary>
         public static delegate* unmanaged<uint, uint, float*, void> _glGetProgramLocalParameterfvARB_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glGetProgramLocalParameterfvARB_Lazy(uint target, uint index, float* parameters)
+        internal static void glGetProgramLocalParameterfvARB_Lazy(uint target, uint index, float* @params)
         {
             if (_glGetProgramLocalParameterfvARB_fnptr == null)
                 _glGetProgramLocalParameterfvARB_fnptr = (delegate* unmanaged<uint, uint, float*, void>)GLLoader.BindingsContext.GetProcAddress("glGetProgramLocalParameterfvARB");
-            _glGetProgramLocalParameterfvARB_fnptr(target, index, parameters);
+            _glGetProgramLocalParameterfvARB_fnptr(target, index, @params);
         }
         
         /// <summary><b>[entry point: <c>glGetProgramLocalParameterIivNV</c>]</b></summary>
         public static delegate* unmanaged<uint, uint, int*, void> _glGetProgramLocalParameterIivNV_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glGetProgramLocalParameterIivNV_Lazy(uint target, uint index, int* parameters)
+        internal static void glGetProgramLocalParameterIivNV_Lazy(uint target, uint index, int* @params)
         {
             if (_glGetProgramLocalParameterIivNV_fnptr == null)
                 _glGetProgramLocalParameterIivNV_fnptr = (delegate* unmanaged<uint, uint, int*, void>)GLLoader.BindingsContext.GetProcAddress("glGetProgramLocalParameterIivNV");
-            _glGetProgramLocalParameterIivNV_fnptr(target, index, parameters);
+            _glGetProgramLocalParameterIivNV_fnptr(target, index, @params);
         }
         
         /// <summary><b>[entry point: <c>glGetProgramLocalParameterIuivNV</c>]</b></summary>
         public static delegate* unmanaged<uint, uint, uint*, void> _glGetProgramLocalParameterIuivNV_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glGetProgramLocalParameterIuivNV_Lazy(uint target, uint index, uint* parameters)
+        internal static void glGetProgramLocalParameterIuivNV_Lazy(uint target, uint index, uint* @params)
         {
             if (_glGetProgramLocalParameterIuivNV_fnptr == null)
                 _glGetProgramLocalParameterIuivNV_fnptr = (delegate* unmanaged<uint, uint, uint*, void>)GLLoader.BindingsContext.GetProcAddress("glGetProgramLocalParameterIuivNV");
-            _glGetProgramLocalParameterIuivNV_fnptr(target, index, parameters);
+            _glGetProgramLocalParameterIuivNV_fnptr(target, index, @params);
         }
         
         /// <summary><b>[entry point: <c>glGetProgramNamedParameterdvNV</c>]</b></summary>
         public static delegate* unmanaged<int, int, byte*, double*, void> _glGetProgramNamedParameterdvNV_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glGetProgramNamedParameterdvNV_Lazy(int id, int len, byte* name, double* parameters)
+        internal static void glGetProgramNamedParameterdvNV_Lazy(int id, int len, byte* name, double* @params)
         {
             if (_glGetProgramNamedParameterdvNV_fnptr == null)
                 _glGetProgramNamedParameterdvNV_fnptr = (delegate* unmanaged<int, int, byte*, double*, void>)GLLoader.BindingsContext.GetProcAddress("glGetProgramNamedParameterdvNV");
-            _glGetProgramNamedParameterdvNV_fnptr(id, len, name, parameters);
+            _glGetProgramNamedParameterdvNV_fnptr(id, len, name, @params);
         }
         
         /// <summary><b>[entry point: <c>glGetProgramNamedParameterfvNV</c>]</b></summary>
         public static delegate* unmanaged<int, int, byte*, float*, void> _glGetProgramNamedParameterfvNV_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glGetProgramNamedParameterfvNV_Lazy(int id, int len, byte* name, float* parameters)
+        internal static void glGetProgramNamedParameterfvNV_Lazy(int id, int len, byte* name, float* @params)
         {
             if (_glGetProgramNamedParameterfvNV_fnptr == null)
                 _glGetProgramNamedParameterfvNV_fnptr = (delegate* unmanaged<int, int, byte*, float*, void>)GLLoader.BindingsContext.GetProcAddress("glGetProgramNamedParameterfvNV");
-            _glGetProgramNamedParameterfvNV_fnptr(id, len, name, parameters);
+            _glGetProgramNamedParameterfvNV_fnptr(id, len, name, @params);
         }
         
         /// <summary><b>[entry point: <c>glGetProgramParameterdvNV</c>]</b></summary>
         public static delegate* unmanaged<uint, uint, uint, double*, void> _glGetProgramParameterdvNV_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glGetProgramParameterdvNV_Lazy(uint target, uint index, uint pname, double* parameters)
+        internal static void glGetProgramParameterdvNV_Lazy(uint target, uint index, uint pname, double* @params)
         {
             if (_glGetProgramParameterdvNV_fnptr == null)
                 _glGetProgramParameterdvNV_fnptr = (delegate* unmanaged<uint, uint, uint, double*, void>)GLLoader.BindingsContext.GetProcAddress("glGetProgramParameterdvNV");
-            _glGetProgramParameterdvNV_fnptr(target, index, pname, parameters);
+            _glGetProgramParameterdvNV_fnptr(target, index, pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glGetProgramParameterfvNV</c>]</b></summary>
         public static delegate* unmanaged<uint, uint, uint, float*, void> _glGetProgramParameterfvNV_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glGetProgramParameterfvNV_Lazy(uint target, uint index, uint pname, float* parameters)
+        internal static void glGetProgramParameterfvNV_Lazy(uint target, uint index, uint pname, float* @params)
         {
             if (_glGetProgramParameterfvNV_fnptr == null)
                 _glGetProgramParameterfvNV_fnptr = (delegate* unmanaged<uint, uint, uint, float*, void>)GLLoader.BindingsContext.GetProcAddress("glGetProgramParameterfvNV");
-            _glGetProgramParameterfvNV_fnptr(target, index, pname, parameters);
+            _glGetProgramParameterfvNV_fnptr(target, index, pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glGetProgramPipelineInfoLog</c>]</b></summary>
@@ -11722,31 +11722,31 @@ namespace OpenTK.Graphics.OpenGL
         /// <summary><b>[entry point: <c>glGetProgramPipelineiv</c>]</b></summary>
         public static delegate* unmanaged<int, uint, int*, void> _glGetProgramPipelineiv_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glGetProgramPipelineiv_Lazy(int pipeline, uint pname, int* parameters)
+        internal static void glGetProgramPipelineiv_Lazy(int pipeline, uint pname, int* @params)
         {
             if (_glGetProgramPipelineiv_fnptr == null)
                 _glGetProgramPipelineiv_fnptr = (delegate* unmanaged<int, uint, int*, void>)GLLoader.BindingsContext.GetProcAddress("glGetProgramPipelineiv");
-            _glGetProgramPipelineiv_fnptr(pipeline, pname, parameters);
+            _glGetProgramPipelineiv_fnptr(pipeline, pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glGetProgramPipelineivEXT</c>]</b></summary>
         public static delegate* unmanaged<int, uint, int*, void> _glGetProgramPipelineivEXT_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glGetProgramPipelineivEXT_Lazy(int pipeline, uint pname, int* parameters)
+        internal static void glGetProgramPipelineivEXT_Lazy(int pipeline, uint pname, int* @params)
         {
             if (_glGetProgramPipelineivEXT_fnptr == null)
                 _glGetProgramPipelineivEXT_fnptr = (delegate* unmanaged<int, uint, int*, void>)GLLoader.BindingsContext.GetProcAddress("glGetProgramPipelineivEXT");
-            _glGetProgramPipelineivEXT_fnptr(pipeline, pname, parameters);
+            _glGetProgramPipelineivEXT_fnptr(pipeline, pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glGetProgramResourcefvNV</c>]</b></summary>
         public static delegate* unmanaged<int, uint, uint, int, uint*, int, int*, float*, void> _glGetProgramResourcefvNV_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glGetProgramResourcefvNV_Lazy(int program, uint programInterface, uint index, int propCount, uint* props, int count, int* length, float* parameters)
+        internal static void glGetProgramResourcefvNV_Lazy(int program, uint programInterface, uint index, int propCount, uint* props, int count, int* length, float* @params)
         {
             if (_glGetProgramResourcefvNV_fnptr == null)
                 _glGetProgramResourcefvNV_fnptr = (delegate* unmanaged<int, uint, uint, int, uint*, int, int*, float*, void>)GLLoader.BindingsContext.GetProcAddress("glGetProgramResourcefvNV");
-            _glGetProgramResourcefvNV_fnptr(program, programInterface, index, propCount, props, count, length, parameters);
+            _glGetProgramResourcefvNV_fnptr(program, programInterface, index, propCount, props, count, length, @params);
         }
         
         /// <summary><b>[entry point: <c>glGetProgramResourceIndex</c>]</b></summary>
@@ -11762,11 +11762,11 @@ namespace OpenTK.Graphics.OpenGL
         /// <summary><b>[entry point: <c>glGetProgramResourceiv</c>]</b></summary>
         public static delegate* unmanaged<int, uint, uint, int, uint*, int, int*, int*, void> _glGetProgramResourceiv_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glGetProgramResourceiv_Lazy(int program, uint programInterface, uint index, int propCount, uint* props, int count, int* length, int* parameters)
+        internal static void glGetProgramResourceiv_Lazy(int program, uint programInterface, uint index, int propCount, uint* props, int count, int* length, int* @params)
         {
             if (_glGetProgramResourceiv_fnptr == null)
                 _glGetProgramResourceiv_fnptr = (delegate* unmanaged<int, uint, uint, int, uint*, int, int*, int*, void>)GLLoader.BindingsContext.GetProcAddress("glGetProgramResourceiv");
-            _glGetProgramResourceiv_fnptr(program, programInterface, index, propCount, props, count, length, parameters);
+            _glGetProgramResourceiv_fnptr(program, programInterface, index, propCount, props, count, length, @params);
         }
         
         /// <summary><b>[entry point: <c>glGetProgramResourceLocation</c>]</b></summary>
@@ -11822,11 +11822,11 @@ namespace OpenTK.Graphics.OpenGL
         /// <summary><b>[entry point: <c>glGetProgramStringARB</c>]</b></summary>
         public static delegate* unmanaged<uint, uint, void*, void> _glGetProgramStringARB_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glGetProgramStringARB_Lazy(uint target, uint pname, void* str)
+        internal static void glGetProgramStringARB_Lazy(uint target, uint pname, void* @string)
         {
             if (_glGetProgramStringARB_fnptr == null)
                 _glGetProgramStringARB_fnptr = (delegate* unmanaged<uint, uint, void*, void>)GLLoader.BindingsContext.GetProcAddress("glGetProgramStringARB");
-            _glGetProgramStringARB_fnptr(target, pname, str);
+            _glGetProgramStringARB_fnptr(target, pname, @string);
         }
         
         /// <summary><b>[entry point: <c>glGetProgramStringNV</c>]</b></summary>
@@ -11892,271 +11892,271 @@ namespace OpenTK.Graphics.OpenGL
         /// <summary><b>[entry point: <c>glGetQueryIndexediv</c>]</b></summary>
         public static delegate* unmanaged<uint, uint, uint, int*, void> _glGetQueryIndexediv_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glGetQueryIndexediv_Lazy(uint target, uint index, uint pname, int* parameters)
+        internal static void glGetQueryIndexediv_Lazy(uint target, uint index, uint pname, int* @params)
         {
             if (_glGetQueryIndexediv_fnptr == null)
                 _glGetQueryIndexediv_fnptr = (delegate* unmanaged<uint, uint, uint, int*, void>)GLLoader.BindingsContext.GetProcAddress("glGetQueryIndexediv");
-            _glGetQueryIndexediv_fnptr(target, index, pname, parameters);
+            _glGetQueryIndexediv_fnptr(target, index, pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glGetQueryiv</c>]</b></summary>
         public static delegate* unmanaged<uint, uint, int*, void> _glGetQueryiv_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glGetQueryiv_Lazy(uint target, uint pname, int* parameters)
+        internal static void glGetQueryiv_Lazy(uint target, uint pname, int* @params)
         {
             if (_glGetQueryiv_fnptr == null)
                 _glGetQueryiv_fnptr = (delegate* unmanaged<uint, uint, int*, void>)GLLoader.BindingsContext.GetProcAddress("glGetQueryiv");
-            _glGetQueryiv_fnptr(target, pname, parameters);
+            _glGetQueryiv_fnptr(target, pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glGetQueryivARB</c>]</b></summary>
         public static delegate* unmanaged<uint, uint, int*, void> _glGetQueryivARB_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glGetQueryivARB_Lazy(uint target, uint pname, int* parameters)
+        internal static void glGetQueryivARB_Lazy(uint target, uint pname, int* @params)
         {
             if (_glGetQueryivARB_fnptr == null)
                 _glGetQueryivARB_fnptr = (delegate* unmanaged<uint, uint, int*, void>)GLLoader.BindingsContext.GetProcAddress("glGetQueryivARB");
-            _glGetQueryivARB_fnptr(target, pname, parameters);
+            _glGetQueryivARB_fnptr(target, pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glGetQueryivEXT</c>]</b></summary>
         public static delegate* unmanaged<uint, uint, int*, void> _glGetQueryivEXT_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glGetQueryivEXT_Lazy(uint target, uint pname, int* parameters)
+        internal static void glGetQueryivEXT_Lazy(uint target, uint pname, int* @params)
         {
             if (_glGetQueryivEXT_fnptr == null)
                 _glGetQueryivEXT_fnptr = (delegate* unmanaged<uint, uint, int*, void>)GLLoader.BindingsContext.GetProcAddress("glGetQueryivEXT");
-            _glGetQueryivEXT_fnptr(target, pname, parameters);
+            _glGetQueryivEXT_fnptr(target, pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glGetQueryObjecti64v</c>]</b></summary>
         public static delegate* unmanaged<int, uint, long*, void> _glGetQueryObjecti64v_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glGetQueryObjecti64v_Lazy(int id, uint pname, long* parameters)
+        internal static void glGetQueryObjecti64v_Lazy(int id, uint pname, long* @params)
         {
             if (_glGetQueryObjecti64v_fnptr == null)
                 _glGetQueryObjecti64v_fnptr = (delegate* unmanaged<int, uint, long*, void>)GLLoader.BindingsContext.GetProcAddress("glGetQueryObjecti64v");
-            _glGetQueryObjecti64v_fnptr(id, pname, parameters);
+            _glGetQueryObjecti64v_fnptr(id, pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glGetQueryObjecti64vEXT</c>]</b></summary>
         public static delegate* unmanaged<int, uint, long*, void> _glGetQueryObjecti64vEXT_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glGetQueryObjecti64vEXT_Lazy(int id, uint pname, long* parameters)
+        internal static void glGetQueryObjecti64vEXT_Lazy(int id, uint pname, long* @params)
         {
             if (_glGetQueryObjecti64vEXT_fnptr == null)
                 _glGetQueryObjecti64vEXT_fnptr = (delegate* unmanaged<int, uint, long*, void>)GLLoader.BindingsContext.GetProcAddress("glGetQueryObjecti64vEXT");
-            _glGetQueryObjecti64vEXT_fnptr(id, pname, parameters);
+            _glGetQueryObjecti64vEXT_fnptr(id, pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glGetQueryObjectiv</c>]</b></summary>
         public static delegate* unmanaged<int, uint, int*, void> _glGetQueryObjectiv_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glGetQueryObjectiv_Lazy(int id, uint pname, int* parameters)
+        internal static void glGetQueryObjectiv_Lazy(int id, uint pname, int* @params)
         {
             if (_glGetQueryObjectiv_fnptr == null)
                 _glGetQueryObjectiv_fnptr = (delegate* unmanaged<int, uint, int*, void>)GLLoader.BindingsContext.GetProcAddress("glGetQueryObjectiv");
-            _glGetQueryObjectiv_fnptr(id, pname, parameters);
+            _glGetQueryObjectiv_fnptr(id, pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glGetQueryObjectivARB</c>]</b></summary>
         public static delegate* unmanaged<int, uint, int*, void> _glGetQueryObjectivARB_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glGetQueryObjectivARB_Lazy(int id, uint pname, int* parameters)
+        internal static void glGetQueryObjectivARB_Lazy(int id, uint pname, int* @params)
         {
             if (_glGetQueryObjectivARB_fnptr == null)
                 _glGetQueryObjectivARB_fnptr = (delegate* unmanaged<int, uint, int*, void>)GLLoader.BindingsContext.GetProcAddress("glGetQueryObjectivARB");
-            _glGetQueryObjectivARB_fnptr(id, pname, parameters);
+            _glGetQueryObjectivARB_fnptr(id, pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glGetQueryObjectivEXT</c>]</b></summary>
         public static delegate* unmanaged<int, uint, int*, void> _glGetQueryObjectivEXT_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glGetQueryObjectivEXT_Lazy(int id, uint pname, int* parameters)
+        internal static void glGetQueryObjectivEXT_Lazy(int id, uint pname, int* @params)
         {
             if (_glGetQueryObjectivEXT_fnptr == null)
                 _glGetQueryObjectivEXT_fnptr = (delegate* unmanaged<int, uint, int*, void>)GLLoader.BindingsContext.GetProcAddress("glGetQueryObjectivEXT");
-            _glGetQueryObjectivEXT_fnptr(id, pname, parameters);
+            _glGetQueryObjectivEXT_fnptr(id, pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glGetQueryObjectui64v</c>]</b></summary>
         public static delegate* unmanaged<int, uint, ulong*, void> _glGetQueryObjectui64v_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glGetQueryObjectui64v_Lazy(int id, uint pname, ulong* parameters)
+        internal static void glGetQueryObjectui64v_Lazy(int id, uint pname, ulong* @params)
         {
             if (_glGetQueryObjectui64v_fnptr == null)
                 _glGetQueryObjectui64v_fnptr = (delegate* unmanaged<int, uint, ulong*, void>)GLLoader.BindingsContext.GetProcAddress("glGetQueryObjectui64v");
-            _glGetQueryObjectui64v_fnptr(id, pname, parameters);
+            _glGetQueryObjectui64v_fnptr(id, pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glGetQueryObjectui64vEXT</c>]</b></summary>
         public static delegate* unmanaged<int, uint, ulong*, void> _glGetQueryObjectui64vEXT_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glGetQueryObjectui64vEXT_Lazy(int id, uint pname, ulong* parameters)
+        internal static void glGetQueryObjectui64vEXT_Lazy(int id, uint pname, ulong* @params)
         {
             if (_glGetQueryObjectui64vEXT_fnptr == null)
                 _glGetQueryObjectui64vEXT_fnptr = (delegate* unmanaged<int, uint, ulong*, void>)GLLoader.BindingsContext.GetProcAddress("glGetQueryObjectui64vEXT");
-            _glGetQueryObjectui64vEXT_fnptr(id, pname, parameters);
+            _glGetQueryObjectui64vEXT_fnptr(id, pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glGetQueryObjectuiv</c>]</b></summary>
         public static delegate* unmanaged<int, uint, uint*, void> _glGetQueryObjectuiv_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glGetQueryObjectuiv_Lazy(int id, uint pname, uint* parameters)
+        internal static void glGetQueryObjectuiv_Lazy(int id, uint pname, uint* @params)
         {
             if (_glGetQueryObjectuiv_fnptr == null)
                 _glGetQueryObjectuiv_fnptr = (delegate* unmanaged<int, uint, uint*, void>)GLLoader.BindingsContext.GetProcAddress("glGetQueryObjectuiv");
-            _glGetQueryObjectuiv_fnptr(id, pname, parameters);
+            _glGetQueryObjectuiv_fnptr(id, pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glGetQueryObjectuivARB</c>]</b></summary>
         public static delegate* unmanaged<int, uint, uint*, void> _glGetQueryObjectuivARB_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glGetQueryObjectuivARB_Lazy(int id, uint pname, uint* parameters)
+        internal static void glGetQueryObjectuivARB_Lazy(int id, uint pname, uint* @params)
         {
             if (_glGetQueryObjectuivARB_fnptr == null)
                 _glGetQueryObjectuivARB_fnptr = (delegate* unmanaged<int, uint, uint*, void>)GLLoader.BindingsContext.GetProcAddress("glGetQueryObjectuivARB");
-            _glGetQueryObjectuivARB_fnptr(id, pname, parameters);
+            _glGetQueryObjectuivARB_fnptr(id, pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glGetQueryObjectuivEXT</c>]</b></summary>
         public static delegate* unmanaged<int, uint, uint*, void> _glGetQueryObjectuivEXT_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glGetQueryObjectuivEXT_Lazy(int id, uint pname, uint* parameters)
+        internal static void glGetQueryObjectuivEXT_Lazy(int id, uint pname, uint* @params)
         {
             if (_glGetQueryObjectuivEXT_fnptr == null)
                 _glGetQueryObjectuivEXT_fnptr = (delegate* unmanaged<int, uint, uint*, void>)GLLoader.BindingsContext.GetProcAddress("glGetQueryObjectuivEXT");
-            _glGetQueryObjectuivEXT_fnptr(id, pname, parameters);
+            _glGetQueryObjectuivEXT_fnptr(id, pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glGetRenderbufferParameteriv</c>]</b></summary>
         public static delegate* unmanaged<uint, uint, int*, void> _glGetRenderbufferParameteriv_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glGetRenderbufferParameteriv_Lazy(uint target, uint pname, int* parameters)
+        internal static void glGetRenderbufferParameteriv_Lazy(uint target, uint pname, int* @params)
         {
             if (_glGetRenderbufferParameteriv_fnptr == null)
                 _glGetRenderbufferParameteriv_fnptr = (delegate* unmanaged<uint, uint, int*, void>)GLLoader.BindingsContext.GetProcAddress("glGetRenderbufferParameteriv");
-            _glGetRenderbufferParameteriv_fnptr(target, pname, parameters);
+            _glGetRenderbufferParameteriv_fnptr(target, pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glGetRenderbufferParameterivEXT</c>]</b></summary>
         public static delegate* unmanaged<uint, uint, int*, void> _glGetRenderbufferParameterivEXT_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glGetRenderbufferParameterivEXT_Lazy(uint target, uint pname, int* parameters)
+        internal static void glGetRenderbufferParameterivEXT_Lazy(uint target, uint pname, int* @params)
         {
             if (_glGetRenderbufferParameterivEXT_fnptr == null)
                 _glGetRenderbufferParameterivEXT_fnptr = (delegate* unmanaged<uint, uint, int*, void>)GLLoader.BindingsContext.GetProcAddress("glGetRenderbufferParameterivEXT");
-            _glGetRenderbufferParameterivEXT_fnptr(target, pname, parameters);
+            _glGetRenderbufferParameterivEXT_fnptr(target, pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glGetRenderbufferParameterivOES</c>]</b></summary>
         public static delegate* unmanaged<uint, uint, int*, void> _glGetRenderbufferParameterivOES_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glGetRenderbufferParameterivOES_Lazy(uint target, uint pname, int* parameters)
+        internal static void glGetRenderbufferParameterivOES_Lazy(uint target, uint pname, int* @params)
         {
             if (_glGetRenderbufferParameterivOES_fnptr == null)
                 _glGetRenderbufferParameterivOES_fnptr = (delegate* unmanaged<uint, uint, int*, void>)GLLoader.BindingsContext.GetProcAddress("glGetRenderbufferParameterivOES");
-            _glGetRenderbufferParameterivOES_fnptr(target, pname, parameters);
+            _glGetRenderbufferParameterivOES_fnptr(target, pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glGetSamplerParameterfv</c>]</b></summary>
         public static delegate* unmanaged<int, uint, float*, void> _glGetSamplerParameterfv_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glGetSamplerParameterfv_Lazy(int sampler, uint pname, float* parameters)
+        internal static void glGetSamplerParameterfv_Lazy(int sampler, uint pname, float* @params)
         {
             if (_glGetSamplerParameterfv_fnptr == null)
                 _glGetSamplerParameterfv_fnptr = (delegate* unmanaged<int, uint, float*, void>)GLLoader.BindingsContext.GetProcAddress("glGetSamplerParameterfv");
-            _glGetSamplerParameterfv_fnptr(sampler, pname, parameters);
+            _glGetSamplerParameterfv_fnptr(sampler, pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glGetSamplerParameterIiv</c>]</b></summary>
         public static delegate* unmanaged<int, uint, int*, void> _glGetSamplerParameterIiv_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glGetSamplerParameterIiv_Lazy(int sampler, uint pname, int* parameters)
+        internal static void glGetSamplerParameterIiv_Lazy(int sampler, uint pname, int* @params)
         {
             if (_glGetSamplerParameterIiv_fnptr == null)
                 _glGetSamplerParameterIiv_fnptr = (delegate* unmanaged<int, uint, int*, void>)GLLoader.BindingsContext.GetProcAddress("glGetSamplerParameterIiv");
-            _glGetSamplerParameterIiv_fnptr(sampler, pname, parameters);
+            _glGetSamplerParameterIiv_fnptr(sampler, pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glGetSamplerParameterIivEXT</c>]</b></summary>
         public static delegate* unmanaged<int, uint, int*, void> _glGetSamplerParameterIivEXT_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glGetSamplerParameterIivEXT_Lazy(int sampler, uint pname, int* parameters)
+        internal static void glGetSamplerParameterIivEXT_Lazy(int sampler, uint pname, int* @params)
         {
             if (_glGetSamplerParameterIivEXT_fnptr == null)
                 _glGetSamplerParameterIivEXT_fnptr = (delegate* unmanaged<int, uint, int*, void>)GLLoader.BindingsContext.GetProcAddress("glGetSamplerParameterIivEXT");
-            _glGetSamplerParameterIivEXT_fnptr(sampler, pname, parameters);
+            _glGetSamplerParameterIivEXT_fnptr(sampler, pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glGetSamplerParameterIivOES</c>]</b></summary>
         public static delegate* unmanaged<int, uint, int*, void> _glGetSamplerParameterIivOES_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glGetSamplerParameterIivOES_Lazy(int sampler, uint pname, int* parameters)
+        internal static void glGetSamplerParameterIivOES_Lazy(int sampler, uint pname, int* @params)
         {
             if (_glGetSamplerParameterIivOES_fnptr == null)
                 _glGetSamplerParameterIivOES_fnptr = (delegate* unmanaged<int, uint, int*, void>)GLLoader.BindingsContext.GetProcAddress("glGetSamplerParameterIivOES");
-            _glGetSamplerParameterIivOES_fnptr(sampler, pname, parameters);
+            _glGetSamplerParameterIivOES_fnptr(sampler, pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glGetSamplerParameterIuiv</c>]</b></summary>
         public static delegate* unmanaged<int, uint, uint*, void> _glGetSamplerParameterIuiv_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glGetSamplerParameterIuiv_Lazy(int sampler, uint pname, uint* parameters)
+        internal static void glGetSamplerParameterIuiv_Lazy(int sampler, uint pname, uint* @params)
         {
             if (_glGetSamplerParameterIuiv_fnptr == null)
                 _glGetSamplerParameterIuiv_fnptr = (delegate* unmanaged<int, uint, uint*, void>)GLLoader.BindingsContext.GetProcAddress("glGetSamplerParameterIuiv");
-            _glGetSamplerParameterIuiv_fnptr(sampler, pname, parameters);
+            _glGetSamplerParameterIuiv_fnptr(sampler, pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glGetSamplerParameterIuivEXT</c>]</b></summary>
         public static delegate* unmanaged<int, uint, uint*, void> _glGetSamplerParameterIuivEXT_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glGetSamplerParameterIuivEXT_Lazy(int sampler, uint pname, uint* parameters)
+        internal static void glGetSamplerParameterIuivEXT_Lazy(int sampler, uint pname, uint* @params)
         {
             if (_glGetSamplerParameterIuivEXT_fnptr == null)
                 _glGetSamplerParameterIuivEXT_fnptr = (delegate* unmanaged<int, uint, uint*, void>)GLLoader.BindingsContext.GetProcAddress("glGetSamplerParameterIuivEXT");
-            _glGetSamplerParameterIuivEXT_fnptr(sampler, pname, parameters);
+            _glGetSamplerParameterIuivEXT_fnptr(sampler, pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glGetSamplerParameterIuivOES</c>]</b></summary>
         public static delegate* unmanaged<int, uint, uint*, void> _glGetSamplerParameterIuivOES_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glGetSamplerParameterIuivOES_Lazy(int sampler, uint pname, uint* parameters)
+        internal static void glGetSamplerParameterIuivOES_Lazy(int sampler, uint pname, uint* @params)
         {
             if (_glGetSamplerParameterIuivOES_fnptr == null)
                 _glGetSamplerParameterIuivOES_fnptr = (delegate* unmanaged<int, uint, uint*, void>)GLLoader.BindingsContext.GetProcAddress("glGetSamplerParameterIuivOES");
-            _glGetSamplerParameterIuivOES_fnptr(sampler, pname, parameters);
+            _glGetSamplerParameterIuivOES_fnptr(sampler, pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glGetSamplerParameteriv</c>]</b></summary>
         public static delegate* unmanaged<int, uint, int*, void> _glGetSamplerParameteriv_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glGetSamplerParameteriv_Lazy(int sampler, uint pname, int* parameters)
+        internal static void glGetSamplerParameteriv_Lazy(int sampler, uint pname, int* @params)
         {
             if (_glGetSamplerParameteriv_fnptr == null)
                 _glGetSamplerParameteriv_fnptr = (delegate* unmanaged<int, uint, int*, void>)GLLoader.BindingsContext.GetProcAddress("glGetSamplerParameteriv");
-            _glGetSamplerParameteriv_fnptr(sampler, pname, parameters);
+            _glGetSamplerParameteriv_fnptr(sampler, pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glGetSemaphoreParameterivNV</c>]</b></summary>
         public static delegate* unmanaged<uint, uint, int*, void> _glGetSemaphoreParameterivNV_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glGetSemaphoreParameterivNV_Lazy(uint semaphore, uint pname, int* parameters)
+        internal static void glGetSemaphoreParameterivNV_Lazy(uint semaphore, uint pname, int* @params)
         {
             if (_glGetSemaphoreParameterivNV_fnptr == null)
                 _glGetSemaphoreParameterivNV_fnptr = (delegate* unmanaged<uint, uint, int*, void>)GLLoader.BindingsContext.GetProcAddress("glGetSemaphoreParameterivNV");
-            _glGetSemaphoreParameterivNV_fnptr(semaphore, pname, parameters);
+            _glGetSemaphoreParameterivNV_fnptr(semaphore, pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glGetSemaphoreParameterui64vEXT</c>]</b></summary>
         public static delegate* unmanaged<uint, uint, ulong*, void> _glGetSemaphoreParameterui64vEXT_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glGetSemaphoreParameterui64vEXT_Lazy(uint semaphore, uint pname, ulong* parameters)
+        internal static void glGetSemaphoreParameterui64vEXT_Lazy(uint semaphore, uint pname, ulong* @params)
         {
             if (_glGetSemaphoreParameterui64vEXT_fnptr == null)
                 _glGetSemaphoreParameterui64vEXT_fnptr = (delegate* unmanaged<uint, uint, ulong*, void>)GLLoader.BindingsContext.GetProcAddress("glGetSemaphoreParameterui64vEXT");
-            _glGetSemaphoreParameterui64vEXT_fnptr(semaphore, pname, parameters);
+            _glGetSemaphoreParameterui64vEXT_fnptr(semaphore, pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glGetSeparableFilter</c>]</b></summary>
@@ -12192,11 +12192,11 @@ namespace OpenTK.Graphics.OpenGL
         /// <summary><b>[entry point: <c>glGetShaderiv</c>]</b></summary>
         public static delegate* unmanaged<int, uint, int*, void> _glGetShaderiv_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glGetShaderiv_Lazy(int shader, uint pname, int* parameters)
+        internal static void glGetShaderiv_Lazy(int shader, uint pname, int* @params)
         {
             if (_glGetShaderiv_fnptr == null)
                 _glGetShaderiv_fnptr = (delegate* unmanaged<int, uint, int*, void>)GLLoader.BindingsContext.GetProcAddress("glGetShaderiv");
-            _glGetShaderiv_fnptr(shader, pname, parameters);
+            _glGetShaderiv_fnptr(shader, pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glGetShaderPrecisionFormat</c>]</b></summary>
@@ -12352,41 +12352,41 @@ namespace OpenTK.Graphics.OpenGL
         /// <summary><b>[entry point: <c>glGetTexEnvfv</c>]</b></summary>
         public static delegate* unmanaged<uint, uint, float*, void> _glGetTexEnvfv_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glGetTexEnvfv_Lazy(uint target, uint pname, float* parameters)
+        internal static void glGetTexEnvfv_Lazy(uint target, uint pname, float* @params)
         {
             if (_glGetTexEnvfv_fnptr == null)
                 _glGetTexEnvfv_fnptr = (delegate* unmanaged<uint, uint, float*, void>)GLLoader.BindingsContext.GetProcAddress("glGetTexEnvfv");
-            _glGetTexEnvfv_fnptr(target, pname, parameters);
+            _glGetTexEnvfv_fnptr(target, pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glGetTexEnviv</c>]</b></summary>
         public static delegate* unmanaged<uint, uint, int*, void> _glGetTexEnviv_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glGetTexEnviv_Lazy(uint target, uint pname, int* parameters)
+        internal static void glGetTexEnviv_Lazy(uint target, uint pname, int* @params)
         {
             if (_glGetTexEnviv_fnptr == null)
                 _glGetTexEnviv_fnptr = (delegate* unmanaged<uint, uint, int*, void>)GLLoader.BindingsContext.GetProcAddress("glGetTexEnviv");
-            _glGetTexEnviv_fnptr(target, pname, parameters);
+            _glGetTexEnviv_fnptr(target, pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glGetTexEnvxv</c>]</b></summary>
         public static delegate* unmanaged<uint, uint, int*, void> _glGetTexEnvxv_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glGetTexEnvxv_Lazy(uint target, uint pname, int* parameters)
+        internal static void glGetTexEnvxv_Lazy(uint target, uint pname, int* @params)
         {
             if (_glGetTexEnvxv_fnptr == null)
                 _glGetTexEnvxv_fnptr = (delegate* unmanaged<uint, uint, int*, void>)GLLoader.BindingsContext.GetProcAddress("glGetTexEnvxv");
-            _glGetTexEnvxv_fnptr(target, pname, parameters);
+            _glGetTexEnvxv_fnptr(target, pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glGetTexEnvxvOES</c>]</b></summary>
         public static delegate* unmanaged<uint, uint, int*, void> _glGetTexEnvxvOES_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glGetTexEnvxvOES_Lazy(uint target, uint pname, int* parameters)
+        internal static void glGetTexEnvxvOES_Lazy(uint target, uint pname, int* @params)
         {
             if (_glGetTexEnvxvOES_fnptr == null)
                 _glGetTexEnvxvOES_fnptr = (delegate* unmanaged<uint, uint, int*, void>)GLLoader.BindingsContext.GetProcAddress("glGetTexEnvxvOES");
-            _glGetTexEnvxvOES_fnptr(target, pname, parameters);
+            _glGetTexEnvxvOES_fnptr(target, pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glGetTexFilterFuncSGIS</c>]</b></summary>
@@ -12402,61 +12402,61 @@ namespace OpenTK.Graphics.OpenGL
         /// <summary><b>[entry point: <c>glGetTexGendv</c>]</b></summary>
         public static delegate* unmanaged<uint, uint, double*, void> _glGetTexGendv_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glGetTexGendv_Lazy(uint coord, uint pname, double* parameters)
+        internal static void glGetTexGendv_Lazy(uint coord, uint pname, double* @params)
         {
             if (_glGetTexGendv_fnptr == null)
                 _glGetTexGendv_fnptr = (delegate* unmanaged<uint, uint, double*, void>)GLLoader.BindingsContext.GetProcAddress("glGetTexGendv");
-            _glGetTexGendv_fnptr(coord, pname, parameters);
+            _glGetTexGendv_fnptr(coord, pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glGetTexGenfv</c>]</b></summary>
         public static delegate* unmanaged<uint, uint, float*, void> _glGetTexGenfv_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glGetTexGenfv_Lazy(uint coord, uint pname, float* parameters)
+        internal static void glGetTexGenfv_Lazy(uint coord, uint pname, float* @params)
         {
             if (_glGetTexGenfv_fnptr == null)
                 _glGetTexGenfv_fnptr = (delegate* unmanaged<uint, uint, float*, void>)GLLoader.BindingsContext.GetProcAddress("glGetTexGenfv");
-            _glGetTexGenfv_fnptr(coord, pname, parameters);
+            _glGetTexGenfv_fnptr(coord, pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glGetTexGenfvOES</c>]</b></summary>
         public static delegate* unmanaged<uint, uint, float*, void> _glGetTexGenfvOES_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glGetTexGenfvOES_Lazy(uint coord, uint pname, float* parameters)
+        internal static void glGetTexGenfvOES_Lazy(uint coord, uint pname, float* @params)
         {
             if (_glGetTexGenfvOES_fnptr == null)
                 _glGetTexGenfvOES_fnptr = (delegate* unmanaged<uint, uint, float*, void>)GLLoader.BindingsContext.GetProcAddress("glGetTexGenfvOES");
-            _glGetTexGenfvOES_fnptr(coord, pname, parameters);
+            _glGetTexGenfvOES_fnptr(coord, pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glGetTexGeniv</c>]</b></summary>
         public static delegate* unmanaged<uint, uint, int*, void> _glGetTexGeniv_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glGetTexGeniv_Lazy(uint coord, uint pname, int* parameters)
+        internal static void glGetTexGeniv_Lazy(uint coord, uint pname, int* @params)
         {
             if (_glGetTexGeniv_fnptr == null)
                 _glGetTexGeniv_fnptr = (delegate* unmanaged<uint, uint, int*, void>)GLLoader.BindingsContext.GetProcAddress("glGetTexGeniv");
-            _glGetTexGeniv_fnptr(coord, pname, parameters);
+            _glGetTexGeniv_fnptr(coord, pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glGetTexGenivOES</c>]</b></summary>
         public static delegate* unmanaged<uint, uint, int*, void> _glGetTexGenivOES_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glGetTexGenivOES_Lazy(uint coord, uint pname, int* parameters)
+        internal static void glGetTexGenivOES_Lazy(uint coord, uint pname, int* @params)
         {
             if (_glGetTexGenivOES_fnptr == null)
                 _glGetTexGenivOES_fnptr = (delegate* unmanaged<uint, uint, int*, void>)GLLoader.BindingsContext.GetProcAddress("glGetTexGenivOES");
-            _glGetTexGenivOES_fnptr(coord, pname, parameters);
+            _glGetTexGenivOES_fnptr(coord, pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glGetTexGenxvOES</c>]</b></summary>
         public static delegate* unmanaged<uint, uint, int*, void> _glGetTexGenxvOES_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glGetTexGenxvOES_Lazy(uint coord, uint pname, int* parameters)
+        internal static void glGetTexGenxvOES_Lazy(uint coord, uint pname, int* @params)
         {
             if (_glGetTexGenxvOES_fnptr == null)
                 _glGetTexGenxvOES_fnptr = (delegate* unmanaged<uint, uint, int*, void>)GLLoader.BindingsContext.GetProcAddress("glGetTexGenxvOES");
-            _glGetTexGenxvOES_fnptr(coord, pname, parameters);
+            _glGetTexGenxvOES_fnptr(coord, pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glGetTexImage</c>]</b></summary>
@@ -12472,141 +12472,141 @@ namespace OpenTK.Graphics.OpenGL
         /// <summary><b>[entry point: <c>glGetTexLevelParameterfv</c>]</b></summary>
         public static delegate* unmanaged<uint, int, uint, float*, void> _glGetTexLevelParameterfv_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glGetTexLevelParameterfv_Lazy(uint target, int level, uint pname, float* parameters)
+        internal static void glGetTexLevelParameterfv_Lazy(uint target, int level, uint pname, float* @params)
         {
             if (_glGetTexLevelParameterfv_fnptr == null)
                 _glGetTexLevelParameterfv_fnptr = (delegate* unmanaged<uint, int, uint, float*, void>)GLLoader.BindingsContext.GetProcAddress("glGetTexLevelParameterfv");
-            _glGetTexLevelParameterfv_fnptr(target, level, pname, parameters);
+            _glGetTexLevelParameterfv_fnptr(target, level, pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glGetTexLevelParameteriv</c>]</b></summary>
         public static delegate* unmanaged<uint, int, uint, int*, void> _glGetTexLevelParameteriv_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glGetTexLevelParameteriv_Lazy(uint target, int level, uint pname, int* parameters)
+        internal static void glGetTexLevelParameteriv_Lazy(uint target, int level, uint pname, int* @params)
         {
             if (_glGetTexLevelParameteriv_fnptr == null)
                 _glGetTexLevelParameteriv_fnptr = (delegate* unmanaged<uint, int, uint, int*, void>)GLLoader.BindingsContext.GetProcAddress("glGetTexLevelParameteriv");
-            _glGetTexLevelParameteriv_fnptr(target, level, pname, parameters);
+            _glGetTexLevelParameteriv_fnptr(target, level, pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glGetTexLevelParameterxvOES</c>]</b></summary>
         public static delegate* unmanaged<uint, int, uint, int*, void> _glGetTexLevelParameterxvOES_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glGetTexLevelParameterxvOES_Lazy(uint target, int level, uint pname, int* parameters)
+        internal static void glGetTexLevelParameterxvOES_Lazy(uint target, int level, uint pname, int* @params)
         {
             if (_glGetTexLevelParameterxvOES_fnptr == null)
                 _glGetTexLevelParameterxvOES_fnptr = (delegate* unmanaged<uint, int, uint, int*, void>)GLLoader.BindingsContext.GetProcAddress("glGetTexLevelParameterxvOES");
-            _glGetTexLevelParameterxvOES_fnptr(target, level, pname, parameters);
+            _glGetTexLevelParameterxvOES_fnptr(target, level, pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glGetTexParameterfv</c>]</b></summary>
         public static delegate* unmanaged<uint, uint, float*, void> _glGetTexParameterfv_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glGetTexParameterfv_Lazy(uint target, uint pname, float* parameters)
+        internal static void glGetTexParameterfv_Lazy(uint target, uint pname, float* @params)
         {
             if (_glGetTexParameterfv_fnptr == null)
                 _glGetTexParameterfv_fnptr = (delegate* unmanaged<uint, uint, float*, void>)GLLoader.BindingsContext.GetProcAddress("glGetTexParameterfv");
-            _glGetTexParameterfv_fnptr(target, pname, parameters);
+            _glGetTexParameterfv_fnptr(target, pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glGetTexParameterIiv</c>]</b></summary>
         public static delegate* unmanaged<uint, uint, int*, void> _glGetTexParameterIiv_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glGetTexParameterIiv_Lazy(uint target, uint pname, int* parameters)
+        internal static void glGetTexParameterIiv_Lazy(uint target, uint pname, int* @params)
         {
             if (_glGetTexParameterIiv_fnptr == null)
                 _glGetTexParameterIiv_fnptr = (delegate* unmanaged<uint, uint, int*, void>)GLLoader.BindingsContext.GetProcAddress("glGetTexParameterIiv");
-            _glGetTexParameterIiv_fnptr(target, pname, parameters);
+            _glGetTexParameterIiv_fnptr(target, pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glGetTexParameterIivEXT</c>]</b></summary>
         public static delegate* unmanaged<uint, uint, int*, void> _glGetTexParameterIivEXT_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glGetTexParameterIivEXT_Lazy(uint target, uint pname, int* parameters)
+        internal static void glGetTexParameterIivEXT_Lazy(uint target, uint pname, int* @params)
         {
             if (_glGetTexParameterIivEXT_fnptr == null)
                 _glGetTexParameterIivEXT_fnptr = (delegate* unmanaged<uint, uint, int*, void>)GLLoader.BindingsContext.GetProcAddress("glGetTexParameterIivEXT");
-            _glGetTexParameterIivEXT_fnptr(target, pname, parameters);
+            _glGetTexParameterIivEXT_fnptr(target, pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glGetTexParameterIivOES</c>]</b></summary>
         public static delegate* unmanaged<uint, uint, int*, void> _glGetTexParameterIivOES_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glGetTexParameterIivOES_Lazy(uint target, uint pname, int* parameters)
+        internal static void glGetTexParameterIivOES_Lazy(uint target, uint pname, int* @params)
         {
             if (_glGetTexParameterIivOES_fnptr == null)
                 _glGetTexParameterIivOES_fnptr = (delegate* unmanaged<uint, uint, int*, void>)GLLoader.BindingsContext.GetProcAddress("glGetTexParameterIivOES");
-            _glGetTexParameterIivOES_fnptr(target, pname, parameters);
+            _glGetTexParameterIivOES_fnptr(target, pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glGetTexParameterIuiv</c>]</b></summary>
         public static delegate* unmanaged<uint, uint, uint*, void> _glGetTexParameterIuiv_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glGetTexParameterIuiv_Lazy(uint target, uint pname, uint* parameters)
+        internal static void glGetTexParameterIuiv_Lazy(uint target, uint pname, uint* @params)
         {
             if (_glGetTexParameterIuiv_fnptr == null)
                 _glGetTexParameterIuiv_fnptr = (delegate* unmanaged<uint, uint, uint*, void>)GLLoader.BindingsContext.GetProcAddress("glGetTexParameterIuiv");
-            _glGetTexParameterIuiv_fnptr(target, pname, parameters);
+            _glGetTexParameterIuiv_fnptr(target, pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glGetTexParameterIuivEXT</c>]</b></summary>
         public static delegate* unmanaged<uint, uint, uint*, void> _glGetTexParameterIuivEXT_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glGetTexParameterIuivEXT_Lazy(uint target, uint pname, uint* parameters)
+        internal static void glGetTexParameterIuivEXT_Lazy(uint target, uint pname, uint* @params)
         {
             if (_glGetTexParameterIuivEXT_fnptr == null)
                 _glGetTexParameterIuivEXT_fnptr = (delegate* unmanaged<uint, uint, uint*, void>)GLLoader.BindingsContext.GetProcAddress("glGetTexParameterIuivEXT");
-            _glGetTexParameterIuivEXT_fnptr(target, pname, parameters);
+            _glGetTexParameterIuivEXT_fnptr(target, pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glGetTexParameterIuivOES</c>]</b></summary>
         public static delegate* unmanaged<uint, uint, uint*, void> _glGetTexParameterIuivOES_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glGetTexParameterIuivOES_Lazy(uint target, uint pname, uint* parameters)
+        internal static void glGetTexParameterIuivOES_Lazy(uint target, uint pname, uint* @params)
         {
             if (_glGetTexParameterIuivOES_fnptr == null)
                 _glGetTexParameterIuivOES_fnptr = (delegate* unmanaged<uint, uint, uint*, void>)GLLoader.BindingsContext.GetProcAddress("glGetTexParameterIuivOES");
-            _glGetTexParameterIuivOES_fnptr(target, pname, parameters);
+            _glGetTexParameterIuivOES_fnptr(target, pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glGetTexParameteriv</c>]</b></summary>
         public static delegate* unmanaged<uint, uint, int*, void> _glGetTexParameteriv_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glGetTexParameteriv_Lazy(uint target, uint pname, int* parameters)
+        internal static void glGetTexParameteriv_Lazy(uint target, uint pname, int* @params)
         {
             if (_glGetTexParameteriv_fnptr == null)
                 _glGetTexParameteriv_fnptr = (delegate* unmanaged<uint, uint, int*, void>)GLLoader.BindingsContext.GetProcAddress("glGetTexParameteriv");
-            _glGetTexParameteriv_fnptr(target, pname, parameters);
+            _glGetTexParameteriv_fnptr(target, pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glGetTexParameterPointervAPPLE</c>]</b></summary>
         public static delegate* unmanaged<uint, uint, void**, void> _glGetTexParameterPointervAPPLE_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glGetTexParameterPointervAPPLE_Lazy(uint target, uint pname, void** parameters)
+        internal static void glGetTexParameterPointervAPPLE_Lazy(uint target, uint pname, void** @params)
         {
             if (_glGetTexParameterPointervAPPLE_fnptr == null)
                 _glGetTexParameterPointervAPPLE_fnptr = (delegate* unmanaged<uint, uint, void**, void>)GLLoader.BindingsContext.GetProcAddress("glGetTexParameterPointervAPPLE");
-            _glGetTexParameterPointervAPPLE_fnptr(target, pname, parameters);
+            _glGetTexParameterPointervAPPLE_fnptr(target, pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glGetTexParameterxv</c>]</b></summary>
         public static delegate* unmanaged<uint, uint, int*, void> _glGetTexParameterxv_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glGetTexParameterxv_Lazy(uint target, uint pname, int* parameters)
+        internal static void glGetTexParameterxv_Lazy(uint target, uint pname, int* @params)
         {
             if (_glGetTexParameterxv_fnptr == null)
                 _glGetTexParameterxv_fnptr = (delegate* unmanaged<uint, uint, int*, void>)GLLoader.BindingsContext.GetProcAddress("glGetTexParameterxv");
-            _glGetTexParameterxv_fnptr(target, pname, parameters);
+            _glGetTexParameterxv_fnptr(target, pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glGetTexParameterxvOES</c>]</b></summary>
         public static delegate* unmanaged<uint, uint, int*, void> _glGetTexParameterxvOES_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glGetTexParameterxvOES_Lazy(uint target, uint pname, int* parameters)
+        internal static void glGetTexParameterxvOES_Lazy(uint target, uint pname, int* @params)
         {
             if (_glGetTexParameterxvOES_fnptr == null)
                 _glGetTexParameterxvOES_fnptr = (delegate* unmanaged<uint, uint, int*, void>)GLLoader.BindingsContext.GetProcAddress("glGetTexParameterxvOES");
-            _glGetTexParameterxvOES_fnptr(target, pname, parameters);
+            _glGetTexParameterxvOES_fnptr(target, pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glGetTextureHandleARB</c>]</b></summary>
@@ -12662,121 +12662,121 @@ namespace OpenTK.Graphics.OpenGL
         /// <summary><b>[entry point: <c>glGetTextureLevelParameterfv</c>]</b></summary>
         public static delegate* unmanaged<int, int, uint, float*, void> _glGetTextureLevelParameterfv_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glGetTextureLevelParameterfv_Lazy(int texture, int level, uint pname, float* parameters)
+        internal static void glGetTextureLevelParameterfv_Lazy(int texture, int level, uint pname, float* @params)
         {
             if (_glGetTextureLevelParameterfv_fnptr == null)
                 _glGetTextureLevelParameterfv_fnptr = (delegate* unmanaged<int, int, uint, float*, void>)GLLoader.BindingsContext.GetProcAddress("glGetTextureLevelParameterfv");
-            _glGetTextureLevelParameterfv_fnptr(texture, level, pname, parameters);
+            _glGetTextureLevelParameterfv_fnptr(texture, level, pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glGetTextureLevelParameterfvEXT</c>]</b></summary>
         public static delegate* unmanaged<int, uint, int, uint, float*, void> _glGetTextureLevelParameterfvEXT_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glGetTextureLevelParameterfvEXT_Lazy(int texture, uint target, int level, uint pname, float* parameters)
+        internal static void glGetTextureLevelParameterfvEXT_Lazy(int texture, uint target, int level, uint pname, float* @params)
         {
             if (_glGetTextureLevelParameterfvEXT_fnptr == null)
                 _glGetTextureLevelParameterfvEXT_fnptr = (delegate* unmanaged<int, uint, int, uint, float*, void>)GLLoader.BindingsContext.GetProcAddress("glGetTextureLevelParameterfvEXT");
-            _glGetTextureLevelParameterfvEXT_fnptr(texture, target, level, pname, parameters);
+            _glGetTextureLevelParameterfvEXT_fnptr(texture, target, level, pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glGetTextureLevelParameteriv</c>]</b></summary>
         public static delegate* unmanaged<int, int, uint, int*, void> _glGetTextureLevelParameteriv_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glGetTextureLevelParameteriv_Lazy(int texture, int level, uint pname, int* parameters)
+        internal static void glGetTextureLevelParameteriv_Lazy(int texture, int level, uint pname, int* @params)
         {
             if (_glGetTextureLevelParameteriv_fnptr == null)
                 _glGetTextureLevelParameteriv_fnptr = (delegate* unmanaged<int, int, uint, int*, void>)GLLoader.BindingsContext.GetProcAddress("glGetTextureLevelParameteriv");
-            _glGetTextureLevelParameteriv_fnptr(texture, level, pname, parameters);
+            _glGetTextureLevelParameteriv_fnptr(texture, level, pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glGetTextureLevelParameterivEXT</c>]</b></summary>
         public static delegate* unmanaged<int, uint, int, uint, int*, void> _glGetTextureLevelParameterivEXT_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glGetTextureLevelParameterivEXT_Lazy(int texture, uint target, int level, uint pname, int* parameters)
+        internal static void glGetTextureLevelParameterivEXT_Lazy(int texture, uint target, int level, uint pname, int* @params)
         {
             if (_glGetTextureLevelParameterivEXT_fnptr == null)
                 _glGetTextureLevelParameterivEXT_fnptr = (delegate* unmanaged<int, uint, int, uint, int*, void>)GLLoader.BindingsContext.GetProcAddress("glGetTextureLevelParameterivEXT");
-            _glGetTextureLevelParameterivEXT_fnptr(texture, target, level, pname, parameters);
+            _glGetTextureLevelParameterivEXT_fnptr(texture, target, level, pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glGetTextureParameterfv</c>]</b></summary>
         public static delegate* unmanaged<int, uint, float*, void> _glGetTextureParameterfv_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glGetTextureParameterfv_Lazy(int texture, uint pname, float* parameters)
+        internal static void glGetTextureParameterfv_Lazy(int texture, uint pname, float* @params)
         {
             if (_glGetTextureParameterfv_fnptr == null)
                 _glGetTextureParameterfv_fnptr = (delegate* unmanaged<int, uint, float*, void>)GLLoader.BindingsContext.GetProcAddress("glGetTextureParameterfv");
-            _glGetTextureParameterfv_fnptr(texture, pname, parameters);
+            _glGetTextureParameterfv_fnptr(texture, pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glGetTextureParameterfvEXT</c>]</b></summary>
         public static delegate* unmanaged<int, uint, uint, float*, void> _glGetTextureParameterfvEXT_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glGetTextureParameterfvEXT_Lazy(int texture, uint target, uint pname, float* parameters)
+        internal static void glGetTextureParameterfvEXT_Lazy(int texture, uint target, uint pname, float* @params)
         {
             if (_glGetTextureParameterfvEXT_fnptr == null)
                 _glGetTextureParameterfvEXT_fnptr = (delegate* unmanaged<int, uint, uint, float*, void>)GLLoader.BindingsContext.GetProcAddress("glGetTextureParameterfvEXT");
-            _glGetTextureParameterfvEXT_fnptr(texture, target, pname, parameters);
+            _glGetTextureParameterfvEXT_fnptr(texture, target, pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glGetTextureParameterIiv</c>]</b></summary>
         public static delegate* unmanaged<int, uint, int*, void> _glGetTextureParameterIiv_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glGetTextureParameterIiv_Lazy(int texture, uint pname, int* parameters)
+        internal static void glGetTextureParameterIiv_Lazy(int texture, uint pname, int* @params)
         {
             if (_glGetTextureParameterIiv_fnptr == null)
                 _glGetTextureParameterIiv_fnptr = (delegate* unmanaged<int, uint, int*, void>)GLLoader.BindingsContext.GetProcAddress("glGetTextureParameterIiv");
-            _glGetTextureParameterIiv_fnptr(texture, pname, parameters);
+            _glGetTextureParameterIiv_fnptr(texture, pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glGetTextureParameterIivEXT</c>]</b></summary>
         public static delegate* unmanaged<int, uint, uint, int*, void> _glGetTextureParameterIivEXT_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glGetTextureParameterIivEXT_Lazy(int texture, uint target, uint pname, int* parameters)
+        internal static void glGetTextureParameterIivEXT_Lazy(int texture, uint target, uint pname, int* @params)
         {
             if (_glGetTextureParameterIivEXT_fnptr == null)
                 _glGetTextureParameterIivEXT_fnptr = (delegate* unmanaged<int, uint, uint, int*, void>)GLLoader.BindingsContext.GetProcAddress("glGetTextureParameterIivEXT");
-            _glGetTextureParameterIivEXT_fnptr(texture, target, pname, parameters);
+            _glGetTextureParameterIivEXT_fnptr(texture, target, pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glGetTextureParameterIuiv</c>]</b></summary>
         public static delegate* unmanaged<int, uint, uint*, void> _glGetTextureParameterIuiv_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glGetTextureParameterIuiv_Lazy(int texture, uint pname, uint* parameters)
+        internal static void glGetTextureParameterIuiv_Lazy(int texture, uint pname, uint* @params)
         {
             if (_glGetTextureParameterIuiv_fnptr == null)
                 _glGetTextureParameterIuiv_fnptr = (delegate* unmanaged<int, uint, uint*, void>)GLLoader.BindingsContext.GetProcAddress("glGetTextureParameterIuiv");
-            _glGetTextureParameterIuiv_fnptr(texture, pname, parameters);
+            _glGetTextureParameterIuiv_fnptr(texture, pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glGetTextureParameterIuivEXT</c>]</b></summary>
         public static delegate* unmanaged<int, uint, uint, uint*, void> _glGetTextureParameterIuivEXT_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glGetTextureParameterIuivEXT_Lazy(int texture, uint target, uint pname, uint* parameters)
+        internal static void glGetTextureParameterIuivEXT_Lazy(int texture, uint target, uint pname, uint* @params)
         {
             if (_glGetTextureParameterIuivEXT_fnptr == null)
                 _glGetTextureParameterIuivEXT_fnptr = (delegate* unmanaged<int, uint, uint, uint*, void>)GLLoader.BindingsContext.GetProcAddress("glGetTextureParameterIuivEXT");
-            _glGetTextureParameterIuivEXT_fnptr(texture, target, pname, parameters);
+            _glGetTextureParameterIuivEXT_fnptr(texture, target, pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glGetTextureParameteriv</c>]</b></summary>
         public static delegate* unmanaged<int, uint, int*, void> _glGetTextureParameteriv_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glGetTextureParameteriv_Lazy(int texture, uint pname, int* parameters)
+        internal static void glGetTextureParameteriv_Lazy(int texture, uint pname, int* @params)
         {
             if (_glGetTextureParameteriv_fnptr == null)
                 _glGetTextureParameteriv_fnptr = (delegate* unmanaged<int, uint, int*, void>)GLLoader.BindingsContext.GetProcAddress("glGetTextureParameteriv");
-            _glGetTextureParameteriv_fnptr(texture, pname, parameters);
+            _glGetTextureParameteriv_fnptr(texture, pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glGetTextureParameterivEXT</c>]</b></summary>
         public static delegate* unmanaged<int, uint, uint, int*, void> _glGetTextureParameterivEXT_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glGetTextureParameterivEXT_Lazy(int texture, uint target, uint pname, int* parameters)
+        internal static void glGetTextureParameterivEXT_Lazy(int texture, uint target, uint pname, int* @params)
         {
             if (_glGetTextureParameterivEXT_fnptr == null)
                 _glGetTextureParameterivEXT_fnptr = (delegate* unmanaged<int, uint, uint, int*, void>)GLLoader.BindingsContext.GetProcAddress("glGetTextureParameterivEXT");
-            _glGetTextureParameterivEXT_fnptr(texture, target, pname, parameters);
+            _glGetTextureParameterivEXT_fnptr(texture, target, pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glGetTextureSamplerHandleARB</c>]</b></summary>
@@ -12822,11 +12822,11 @@ namespace OpenTK.Graphics.OpenGL
         /// <summary><b>[entry point: <c>glGetTrackMatrixivNV</c>]</b></summary>
         public static delegate* unmanaged<uint, uint, uint, int*, void> _glGetTrackMatrixivNV_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glGetTrackMatrixivNV_Lazy(uint target, uint address, uint pname, int* parameters)
+        internal static void glGetTrackMatrixivNV_Lazy(uint target, uint address, uint pname, int* @params)
         {
             if (_glGetTrackMatrixivNV_fnptr == null)
                 _glGetTrackMatrixivNV_fnptr = (delegate* unmanaged<uint, uint, uint, int*, void>)GLLoader.BindingsContext.GetProcAddress("glGetTrackMatrixivNV");
-            _glGetTrackMatrixivNV_fnptr(target, address, pname, parameters);
+            _glGetTrackMatrixivNV_fnptr(target, address, pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glGetTransformFeedbacki_v</c>]</b></summary>
@@ -12922,51 +12922,51 @@ namespace OpenTK.Graphics.OpenGL
         /// <summary><b>[entry point: <c>glGetUniformdv</c>]</b></summary>
         public static delegate* unmanaged<int, int, double*, void> _glGetUniformdv_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glGetUniformdv_Lazy(int program, int location, double* parameters)
+        internal static void glGetUniformdv_Lazy(int program, int location, double* @params)
         {
             if (_glGetUniformdv_fnptr == null)
                 _glGetUniformdv_fnptr = (delegate* unmanaged<int, int, double*, void>)GLLoader.BindingsContext.GetProcAddress("glGetUniformdv");
-            _glGetUniformdv_fnptr(program, location, parameters);
+            _glGetUniformdv_fnptr(program, location, @params);
         }
         
         /// <summary><b>[entry point: <c>glGetUniformfv</c>]</b></summary>
         public static delegate* unmanaged<int, int, float*, void> _glGetUniformfv_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glGetUniformfv_Lazy(int program, int location, float* parameters)
+        internal static void glGetUniformfv_Lazy(int program, int location, float* @params)
         {
             if (_glGetUniformfv_fnptr == null)
                 _glGetUniformfv_fnptr = (delegate* unmanaged<int, int, float*, void>)GLLoader.BindingsContext.GetProcAddress("glGetUniformfv");
-            _glGetUniformfv_fnptr(program, location, parameters);
+            _glGetUniformfv_fnptr(program, location, @params);
         }
         
         /// <summary><b>[entry point: <c>glGetUniformfvARB</c>]</b></summary>
         public static delegate* unmanaged<IntPtr, int, float*, void> _glGetUniformfvARB_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glGetUniformfvARB_Lazy(IntPtr programObj, int location, float* parameters)
+        internal static void glGetUniformfvARB_Lazy(IntPtr programObj, int location, float* @params)
         {
             if (_glGetUniformfvARB_fnptr == null)
                 _glGetUniformfvARB_fnptr = (delegate* unmanaged<IntPtr, int, float*, void>)GLLoader.BindingsContext.GetProcAddress("glGetUniformfvARB");
-            _glGetUniformfvARB_fnptr(programObj, location, parameters);
+            _glGetUniformfvARB_fnptr(programObj, location, @params);
         }
         
         /// <summary><b>[entry point: <c>glGetUniformi64vARB</c>]</b></summary>
         public static delegate* unmanaged<int, int, long*, void> _glGetUniformi64vARB_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glGetUniformi64vARB_Lazy(int program, int location, long* parameters)
+        internal static void glGetUniformi64vARB_Lazy(int program, int location, long* @params)
         {
             if (_glGetUniformi64vARB_fnptr == null)
                 _glGetUniformi64vARB_fnptr = (delegate* unmanaged<int, int, long*, void>)GLLoader.BindingsContext.GetProcAddress("glGetUniformi64vARB");
-            _glGetUniformi64vARB_fnptr(program, location, parameters);
+            _glGetUniformi64vARB_fnptr(program, location, @params);
         }
         
         /// <summary><b>[entry point: <c>glGetUniformi64vNV</c>]</b></summary>
         public static delegate* unmanaged<int, int, long*, void> _glGetUniformi64vNV_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glGetUniformi64vNV_Lazy(int program, int location, long* parameters)
+        internal static void glGetUniformi64vNV_Lazy(int program, int location, long* @params)
         {
             if (_glGetUniformi64vNV_fnptr == null)
                 _glGetUniformi64vNV_fnptr = (delegate* unmanaged<int, int, long*, void>)GLLoader.BindingsContext.GetProcAddress("glGetUniformi64vNV");
-            _glGetUniformi64vNV_fnptr(program, location, parameters);
+            _glGetUniformi64vNV_fnptr(program, location, @params);
         }
         
         /// <summary><b>[entry point: <c>glGetUniformIndices</c>]</b></summary>
@@ -12982,21 +12982,21 @@ namespace OpenTK.Graphics.OpenGL
         /// <summary><b>[entry point: <c>glGetUniformiv</c>]</b></summary>
         public static delegate* unmanaged<int, int, int*, void> _glGetUniformiv_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glGetUniformiv_Lazy(int program, int location, int* parameters)
+        internal static void glGetUniformiv_Lazy(int program, int location, int* @params)
         {
             if (_glGetUniformiv_fnptr == null)
                 _glGetUniformiv_fnptr = (delegate* unmanaged<int, int, int*, void>)GLLoader.BindingsContext.GetProcAddress("glGetUniformiv");
-            _glGetUniformiv_fnptr(program, location, parameters);
+            _glGetUniformiv_fnptr(program, location, @params);
         }
         
         /// <summary><b>[entry point: <c>glGetUniformivARB</c>]</b></summary>
         public static delegate* unmanaged<IntPtr, int, int*, void> _glGetUniformivARB_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glGetUniformivARB_Lazy(IntPtr programObj, int location, int* parameters)
+        internal static void glGetUniformivARB_Lazy(IntPtr programObj, int location, int* @params)
         {
             if (_glGetUniformivARB_fnptr == null)
                 _glGetUniformivARB_fnptr = (delegate* unmanaged<IntPtr, int, int*, void>)GLLoader.BindingsContext.GetProcAddress("glGetUniformivARB");
-            _glGetUniformivARB_fnptr(programObj, location, parameters);
+            _glGetUniformivARB_fnptr(programObj, location, @params);
         }
         
         /// <summary><b>[entry point: <c>glGetUniformLocation</c>]</b></summary>
@@ -13032,51 +13032,51 @@ namespace OpenTK.Graphics.OpenGL
         /// <summary><b>[entry point: <c>glGetUniformSubroutineuiv</c>]</b></summary>
         public static delegate* unmanaged<uint, int, uint*, void> _glGetUniformSubroutineuiv_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glGetUniformSubroutineuiv_Lazy(uint shadertype, int location, uint* parameters)
+        internal static void glGetUniformSubroutineuiv_Lazy(uint shadertype, int location, uint* @params)
         {
             if (_glGetUniformSubroutineuiv_fnptr == null)
                 _glGetUniformSubroutineuiv_fnptr = (delegate* unmanaged<uint, int, uint*, void>)GLLoader.BindingsContext.GetProcAddress("glGetUniformSubroutineuiv");
-            _glGetUniformSubroutineuiv_fnptr(shadertype, location, parameters);
+            _glGetUniformSubroutineuiv_fnptr(shadertype, location, @params);
         }
         
         /// <summary><b>[entry point: <c>glGetUniformui64vARB</c>]</b></summary>
         public static delegate* unmanaged<int, int, ulong*, void> _glGetUniformui64vARB_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glGetUniformui64vARB_Lazy(int program, int location, ulong* parameters)
+        internal static void glGetUniformui64vARB_Lazy(int program, int location, ulong* @params)
         {
             if (_glGetUniformui64vARB_fnptr == null)
                 _glGetUniformui64vARB_fnptr = (delegate* unmanaged<int, int, ulong*, void>)GLLoader.BindingsContext.GetProcAddress("glGetUniformui64vARB");
-            _glGetUniformui64vARB_fnptr(program, location, parameters);
+            _glGetUniformui64vARB_fnptr(program, location, @params);
         }
         
         /// <summary><b>[entry point: <c>glGetUniformui64vNV</c>]</b></summary>
         public static delegate* unmanaged<int, int, ulong*, void> _glGetUniformui64vNV_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glGetUniformui64vNV_Lazy(int program, int location, ulong* parameters)
+        internal static void glGetUniformui64vNV_Lazy(int program, int location, ulong* @params)
         {
             if (_glGetUniformui64vNV_fnptr == null)
                 _glGetUniformui64vNV_fnptr = (delegate* unmanaged<int, int, ulong*, void>)GLLoader.BindingsContext.GetProcAddress("glGetUniformui64vNV");
-            _glGetUniformui64vNV_fnptr(program, location, parameters);
+            _glGetUniformui64vNV_fnptr(program, location, @params);
         }
         
         /// <summary><b>[entry point: <c>glGetUniformuiv</c>]</b></summary>
         public static delegate* unmanaged<int, int, uint*, void> _glGetUniformuiv_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glGetUniformuiv_Lazy(int program, int location, uint* parameters)
+        internal static void glGetUniformuiv_Lazy(int program, int location, uint* @params)
         {
             if (_glGetUniformuiv_fnptr == null)
                 _glGetUniformuiv_fnptr = (delegate* unmanaged<int, int, uint*, void>)GLLoader.BindingsContext.GetProcAddress("glGetUniformuiv");
-            _glGetUniformuiv_fnptr(program, location, parameters);
+            _glGetUniformuiv_fnptr(program, location, @params);
         }
         
         /// <summary><b>[entry point: <c>glGetUniformuivEXT</c>]</b></summary>
         public static delegate* unmanaged<int, int, uint*, void> _glGetUniformuivEXT_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glGetUniformuivEXT_Lazy(int program, int location, uint* parameters)
+        internal static void glGetUniformuivEXT_Lazy(int program, int location, uint* @params)
         {
             if (_glGetUniformuivEXT_fnptr == null)
                 _glGetUniformuivEXT_fnptr = (delegate* unmanaged<int, int, uint*, void>)GLLoader.BindingsContext.GetProcAddress("glGetUniformuivEXT");
-            _glGetUniformuivEXT_fnptr(program, location, parameters);
+            _glGetUniformuivEXT_fnptr(program, location, @params);
         }
         
         /// <summary><b>[entry point: <c>glGetUnsignedBytei_vEXT</c>]</b></summary>
@@ -13102,21 +13102,21 @@ namespace OpenTK.Graphics.OpenGL
         /// <summary><b>[entry point: <c>glGetVariantArrayObjectfvATI</c>]</b></summary>
         public static delegate* unmanaged<uint, uint, float*, void> _glGetVariantArrayObjectfvATI_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glGetVariantArrayObjectfvATI_Lazy(uint id, uint pname, float* parameters)
+        internal static void glGetVariantArrayObjectfvATI_Lazy(uint id, uint pname, float* @params)
         {
             if (_glGetVariantArrayObjectfvATI_fnptr == null)
                 _glGetVariantArrayObjectfvATI_fnptr = (delegate* unmanaged<uint, uint, float*, void>)GLLoader.BindingsContext.GetProcAddress("glGetVariantArrayObjectfvATI");
-            _glGetVariantArrayObjectfvATI_fnptr(id, pname, parameters);
+            _glGetVariantArrayObjectfvATI_fnptr(id, pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glGetVariantArrayObjectivATI</c>]</b></summary>
         public static delegate* unmanaged<uint, uint, int*, void> _glGetVariantArrayObjectivATI_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glGetVariantArrayObjectivATI_Lazy(uint id, uint pname, int* parameters)
+        internal static void glGetVariantArrayObjectivATI_Lazy(uint id, uint pname, int* @params)
         {
             if (_glGetVariantArrayObjectivATI_fnptr == null)
                 _glGetVariantArrayObjectivATI_fnptr = (delegate* unmanaged<uint, uint, int*, void>)GLLoader.BindingsContext.GetProcAddress("glGetVariantArrayObjectivATI");
-            _glGetVariantArrayObjectivATI_fnptr(id, pname, parameters);
+            _glGetVariantArrayObjectivATI_fnptr(id, pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glGetVariantBooleanvEXT</c>]</b></summary>
@@ -13242,201 +13242,201 @@ namespace OpenTK.Graphics.OpenGL
         /// <summary><b>[entry point: <c>glGetVertexAttribArrayObjectfvATI</c>]</b></summary>
         public static delegate* unmanaged<uint, uint, float*, void> _glGetVertexAttribArrayObjectfvATI_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glGetVertexAttribArrayObjectfvATI_Lazy(uint index, uint pname, float* parameters)
+        internal static void glGetVertexAttribArrayObjectfvATI_Lazy(uint index, uint pname, float* @params)
         {
             if (_glGetVertexAttribArrayObjectfvATI_fnptr == null)
                 _glGetVertexAttribArrayObjectfvATI_fnptr = (delegate* unmanaged<uint, uint, float*, void>)GLLoader.BindingsContext.GetProcAddress("glGetVertexAttribArrayObjectfvATI");
-            _glGetVertexAttribArrayObjectfvATI_fnptr(index, pname, parameters);
+            _glGetVertexAttribArrayObjectfvATI_fnptr(index, pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glGetVertexAttribArrayObjectivATI</c>]</b></summary>
         public static delegate* unmanaged<uint, uint, int*, void> _glGetVertexAttribArrayObjectivATI_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glGetVertexAttribArrayObjectivATI_Lazy(uint index, uint pname, int* parameters)
+        internal static void glGetVertexAttribArrayObjectivATI_Lazy(uint index, uint pname, int* @params)
         {
             if (_glGetVertexAttribArrayObjectivATI_fnptr == null)
                 _glGetVertexAttribArrayObjectivATI_fnptr = (delegate* unmanaged<uint, uint, int*, void>)GLLoader.BindingsContext.GetProcAddress("glGetVertexAttribArrayObjectivATI");
-            _glGetVertexAttribArrayObjectivATI_fnptr(index, pname, parameters);
+            _glGetVertexAttribArrayObjectivATI_fnptr(index, pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glGetVertexAttribdv</c>]</b></summary>
         public static delegate* unmanaged<uint, uint, double*, void> _glGetVertexAttribdv_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glGetVertexAttribdv_Lazy(uint index, uint pname, double* parameters)
+        internal static void glGetVertexAttribdv_Lazy(uint index, uint pname, double* @params)
         {
             if (_glGetVertexAttribdv_fnptr == null)
                 _glGetVertexAttribdv_fnptr = (delegate* unmanaged<uint, uint, double*, void>)GLLoader.BindingsContext.GetProcAddress("glGetVertexAttribdv");
-            _glGetVertexAttribdv_fnptr(index, pname, parameters);
+            _glGetVertexAttribdv_fnptr(index, pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glGetVertexAttribdvARB</c>]</b></summary>
         public static delegate* unmanaged<uint, uint, double*, void> _glGetVertexAttribdvARB_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glGetVertexAttribdvARB_Lazy(uint index, uint pname, double* parameters)
+        internal static void glGetVertexAttribdvARB_Lazy(uint index, uint pname, double* @params)
         {
             if (_glGetVertexAttribdvARB_fnptr == null)
                 _glGetVertexAttribdvARB_fnptr = (delegate* unmanaged<uint, uint, double*, void>)GLLoader.BindingsContext.GetProcAddress("glGetVertexAttribdvARB");
-            _glGetVertexAttribdvARB_fnptr(index, pname, parameters);
+            _glGetVertexAttribdvARB_fnptr(index, pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glGetVertexAttribdvNV</c>]</b></summary>
         public static delegate* unmanaged<uint, uint, double*, void> _glGetVertexAttribdvNV_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glGetVertexAttribdvNV_Lazy(uint index, uint pname, double* parameters)
+        internal static void glGetVertexAttribdvNV_Lazy(uint index, uint pname, double* @params)
         {
             if (_glGetVertexAttribdvNV_fnptr == null)
                 _glGetVertexAttribdvNV_fnptr = (delegate* unmanaged<uint, uint, double*, void>)GLLoader.BindingsContext.GetProcAddress("glGetVertexAttribdvNV");
-            _glGetVertexAttribdvNV_fnptr(index, pname, parameters);
+            _glGetVertexAttribdvNV_fnptr(index, pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glGetVertexAttribfv</c>]</b></summary>
         public static delegate* unmanaged<uint, uint, float*, void> _glGetVertexAttribfv_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glGetVertexAttribfv_Lazy(uint index, uint pname, float* parameters)
+        internal static void glGetVertexAttribfv_Lazy(uint index, uint pname, float* @params)
         {
             if (_glGetVertexAttribfv_fnptr == null)
                 _glGetVertexAttribfv_fnptr = (delegate* unmanaged<uint, uint, float*, void>)GLLoader.BindingsContext.GetProcAddress("glGetVertexAttribfv");
-            _glGetVertexAttribfv_fnptr(index, pname, parameters);
+            _glGetVertexAttribfv_fnptr(index, pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glGetVertexAttribfvARB</c>]</b></summary>
         public static delegate* unmanaged<uint, uint, float*, void> _glGetVertexAttribfvARB_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glGetVertexAttribfvARB_Lazy(uint index, uint pname, float* parameters)
+        internal static void glGetVertexAttribfvARB_Lazy(uint index, uint pname, float* @params)
         {
             if (_glGetVertexAttribfvARB_fnptr == null)
                 _glGetVertexAttribfvARB_fnptr = (delegate* unmanaged<uint, uint, float*, void>)GLLoader.BindingsContext.GetProcAddress("glGetVertexAttribfvARB");
-            _glGetVertexAttribfvARB_fnptr(index, pname, parameters);
+            _glGetVertexAttribfvARB_fnptr(index, pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glGetVertexAttribfvNV</c>]</b></summary>
         public static delegate* unmanaged<uint, uint, float*, void> _glGetVertexAttribfvNV_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glGetVertexAttribfvNV_Lazy(uint index, uint pname, float* parameters)
+        internal static void glGetVertexAttribfvNV_Lazy(uint index, uint pname, float* @params)
         {
             if (_glGetVertexAttribfvNV_fnptr == null)
                 _glGetVertexAttribfvNV_fnptr = (delegate* unmanaged<uint, uint, float*, void>)GLLoader.BindingsContext.GetProcAddress("glGetVertexAttribfvNV");
-            _glGetVertexAttribfvNV_fnptr(index, pname, parameters);
+            _glGetVertexAttribfvNV_fnptr(index, pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glGetVertexAttribIiv</c>]</b></summary>
         public static delegate* unmanaged<uint, uint, int*, void> _glGetVertexAttribIiv_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glGetVertexAttribIiv_Lazy(uint index, uint pname, int* parameters)
+        internal static void glGetVertexAttribIiv_Lazy(uint index, uint pname, int* @params)
         {
             if (_glGetVertexAttribIiv_fnptr == null)
                 _glGetVertexAttribIiv_fnptr = (delegate* unmanaged<uint, uint, int*, void>)GLLoader.BindingsContext.GetProcAddress("glGetVertexAttribIiv");
-            _glGetVertexAttribIiv_fnptr(index, pname, parameters);
+            _glGetVertexAttribIiv_fnptr(index, pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glGetVertexAttribIivEXT</c>]</b></summary>
         public static delegate* unmanaged<uint, uint, int*, void> _glGetVertexAttribIivEXT_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glGetVertexAttribIivEXT_Lazy(uint index, uint pname, int* parameters)
+        internal static void glGetVertexAttribIivEXT_Lazy(uint index, uint pname, int* @params)
         {
             if (_glGetVertexAttribIivEXT_fnptr == null)
                 _glGetVertexAttribIivEXT_fnptr = (delegate* unmanaged<uint, uint, int*, void>)GLLoader.BindingsContext.GetProcAddress("glGetVertexAttribIivEXT");
-            _glGetVertexAttribIivEXT_fnptr(index, pname, parameters);
+            _glGetVertexAttribIivEXT_fnptr(index, pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glGetVertexAttribIuiv</c>]</b></summary>
         public static delegate* unmanaged<uint, uint, uint*, void> _glGetVertexAttribIuiv_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glGetVertexAttribIuiv_Lazy(uint index, uint pname, uint* parameters)
+        internal static void glGetVertexAttribIuiv_Lazy(uint index, uint pname, uint* @params)
         {
             if (_glGetVertexAttribIuiv_fnptr == null)
                 _glGetVertexAttribIuiv_fnptr = (delegate* unmanaged<uint, uint, uint*, void>)GLLoader.BindingsContext.GetProcAddress("glGetVertexAttribIuiv");
-            _glGetVertexAttribIuiv_fnptr(index, pname, parameters);
+            _glGetVertexAttribIuiv_fnptr(index, pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glGetVertexAttribIuivEXT</c>]</b></summary>
         public static delegate* unmanaged<uint, uint, uint*, void> _glGetVertexAttribIuivEXT_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glGetVertexAttribIuivEXT_Lazy(uint index, uint pname, uint* parameters)
+        internal static void glGetVertexAttribIuivEXT_Lazy(uint index, uint pname, uint* @params)
         {
             if (_glGetVertexAttribIuivEXT_fnptr == null)
                 _glGetVertexAttribIuivEXT_fnptr = (delegate* unmanaged<uint, uint, uint*, void>)GLLoader.BindingsContext.GetProcAddress("glGetVertexAttribIuivEXT");
-            _glGetVertexAttribIuivEXT_fnptr(index, pname, parameters);
+            _glGetVertexAttribIuivEXT_fnptr(index, pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glGetVertexAttribiv</c>]</b></summary>
         public static delegate* unmanaged<uint, uint, int*, void> _glGetVertexAttribiv_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glGetVertexAttribiv_Lazy(uint index, uint pname, int* parameters)
+        internal static void glGetVertexAttribiv_Lazy(uint index, uint pname, int* @params)
         {
             if (_glGetVertexAttribiv_fnptr == null)
                 _glGetVertexAttribiv_fnptr = (delegate* unmanaged<uint, uint, int*, void>)GLLoader.BindingsContext.GetProcAddress("glGetVertexAttribiv");
-            _glGetVertexAttribiv_fnptr(index, pname, parameters);
+            _glGetVertexAttribiv_fnptr(index, pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glGetVertexAttribivARB</c>]</b></summary>
         public static delegate* unmanaged<uint, uint, int*, void> _glGetVertexAttribivARB_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glGetVertexAttribivARB_Lazy(uint index, uint pname, int* parameters)
+        internal static void glGetVertexAttribivARB_Lazy(uint index, uint pname, int* @params)
         {
             if (_glGetVertexAttribivARB_fnptr == null)
                 _glGetVertexAttribivARB_fnptr = (delegate* unmanaged<uint, uint, int*, void>)GLLoader.BindingsContext.GetProcAddress("glGetVertexAttribivARB");
-            _glGetVertexAttribivARB_fnptr(index, pname, parameters);
+            _glGetVertexAttribivARB_fnptr(index, pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glGetVertexAttribivNV</c>]</b></summary>
         public static delegate* unmanaged<uint, uint, int*, void> _glGetVertexAttribivNV_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glGetVertexAttribivNV_Lazy(uint index, uint pname, int* parameters)
+        internal static void glGetVertexAttribivNV_Lazy(uint index, uint pname, int* @params)
         {
             if (_glGetVertexAttribivNV_fnptr == null)
                 _glGetVertexAttribivNV_fnptr = (delegate* unmanaged<uint, uint, int*, void>)GLLoader.BindingsContext.GetProcAddress("glGetVertexAttribivNV");
-            _glGetVertexAttribivNV_fnptr(index, pname, parameters);
+            _glGetVertexAttribivNV_fnptr(index, pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glGetVertexAttribLdv</c>]</b></summary>
         public static delegate* unmanaged<uint, uint, double*, void> _glGetVertexAttribLdv_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glGetVertexAttribLdv_Lazy(uint index, uint pname, double* parameters)
+        internal static void glGetVertexAttribLdv_Lazy(uint index, uint pname, double* @params)
         {
             if (_glGetVertexAttribLdv_fnptr == null)
                 _glGetVertexAttribLdv_fnptr = (delegate* unmanaged<uint, uint, double*, void>)GLLoader.BindingsContext.GetProcAddress("glGetVertexAttribLdv");
-            _glGetVertexAttribLdv_fnptr(index, pname, parameters);
+            _glGetVertexAttribLdv_fnptr(index, pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glGetVertexAttribLdvEXT</c>]</b></summary>
         public static delegate* unmanaged<uint, uint, double*, void> _glGetVertexAttribLdvEXT_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glGetVertexAttribLdvEXT_Lazy(uint index, uint pname, double* parameters)
+        internal static void glGetVertexAttribLdvEXT_Lazy(uint index, uint pname, double* @params)
         {
             if (_glGetVertexAttribLdvEXT_fnptr == null)
                 _glGetVertexAttribLdvEXT_fnptr = (delegate* unmanaged<uint, uint, double*, void>)GLLoader.BindingsContext.GetProcAddress("glGetVertexAttribLdvEXT");
-            _glGetVertexAttribLdvEXT_fnptr(index, pname, parameters);
+            _glGetVertexAttribLdvEXT_fnptr(index, pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glGetVertexAttribLi64vNV</c>]</b></summary>
         public static delegate* unmanaged<uint, uint, long*, void> _glGetVertexAttribLi64vNV_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glGetVertexAttribLi64vNV_Lazy(uint index, uint pname, long* parameters)
+        internal static void glGetVertexAttribLi64vNV_Lazy(uint index, uint pname, long* @params)
         {
             if (_glGetVertexAttribLi64vNV_fnptr == null)
                 _glGetVertexAttribLi64vNV_fnptr = (delegate* unmanaged<uint, uint, long*, void>)GLLoader.BindingsContext.GetProcAddress("glGetVertexAttribLi64vNV");
-            _glGetVertexAttribLi64vNV_fnptr(index, pname, parameters);
+            _glGetVertexAttribLi64vNV_fnptr(index, pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glGetVertexAttribLui64vARB</c>]</b></summary>
         public static delegate* unmanaged<uint, uint, ulong*, void> _glGetVertexAttribLui64vARB_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glGetVertexAttribLui64vARB_Lazy(uint index, uint pname, ulong* parameters)
+        internal static void glGetVertexAttribLui64vARB_Lazy(uint index, uint pname, ulong* @params)
         {
             if (_glGetVertexAttribLui64vARB_fnptr == null)
                 _glGetVertexAttribLui64vARB_fnptr = (delegate* unmanaged<uint, uint, ulong*, void>)GLLoader.BindingsContext.GetProcAddress("glGetVertexAttribLui64vARB");
-            _glGetVertexAttribLui64vARB_fnptr(index, pname, parameters);
+            _glGetVertexAttribLui64vARB_fnptr(index, pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glGetVertexAttribLui64vNV</c>]</b></summary>
         public static delegate* unmanaged<uint, uint, ulong*, void> _glGetVertexAttribLui64vNV_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glGetVertexAttribLui64vNV_Lazy(uint index, uint pname, ulong* parameters)
+        internal static void glGetVertexAttribLui64vNV_Lazy(uint index, uint pname, ulong* @params)
         {
             if (_glGetVertexAttribLui64vNV_fnptr == null)
                 _glGetVertexAttribLui64vNV_fnptr = (delegate* unmanaged<uint, uint, ulong*, void>)GLLoader.BindingsContext.GetProcAddress("glGetVertexAttribLui64vNV");
-            _glGetVertexAttribLui64vNV_fnptr(index, pname, parameters);
+            _glGetVertexAttribLui64vNV_fnptr(index, pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glGetVertexAttribPointerv</c>]</b></summary>
@@ -13472,81 +13472,81 @@ namespace OpenTK.Graphics.OpenGL
         /// <summary><b>[entry point: <c>glGetVideoCaptureivNV</c>]</b></summary>
         public static delegate* unmanaged<uint, uint, int*, void> _glGetVideoCaptureivNV_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glGetVideoCaptureivNV_Lazy(uint video_capture_slot, uint pname, int* parameters)
+        internal static void glGetVideoCaptureivNV_Lazy(uint video_capture_slot, uint pname, int* @params)
         {
             if (_glGetVideoCaptureivNV_fnptr == null)
                 _glGetVideoCaptureivNV_fnptr = (delegate* unmanaged<uint, uint, int*, void>)GLLoader.BindingsContext.GetProcAddress("glGetVideoCaptureivNV");
-            _glGetVideoCaptureivNV_fnptr(video_capture_slot, pname, parameters);
+            _glGetVideoCaptureivNV_fnptr(video_capture_slot, pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glGetVideoCaptureStreamdvNV</c>]</b></summary>
         public static delegate* unmanaged<uint, uint, uint, double*, void> _glGetVideoCaptureStreamdvNV_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glGetVideoCaptureStreamdvNV_Lazy(uint video_capture_slot, uint stream, uint pname, double* parameters)
+        internal static void glGetVideoCaptureStreamdvNV_Lazy(uint video_capture_slot, uint stream, uint pname, double* @params)
         {
             if (_glGetVideoCaptureStreamdvNV_fnptr == null)
                 _glGetVideoCaptureStreamdvNV_fnptr = (delegate* unmanaged<uint, uint, uint, double*, void>)GLLoader.BindingsContext.GetProcAddress("glGetVideoCaptureStreamdvNV");
-            _glGetVideoCaptureStreamdvNV_fnptr(video_capture_slot, stream, pname, parameters);
+            _glGetVideoCaptureStreamdvNV_fnptr(video_capture_slot, stream, pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glGetVideoCaptureStreamfvNV</c>]</b></summary>
         public static delegate* unmanaged<uint, uint, uint, float*, void> _glGetVideoCaptureStreamfvNV_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glGetVideoCaptureStreamfvNV_Lazy(uint video_capture_slot, uint stream, uint pname, float* parameters)
+        internal static void glGetVideoCaptureStreamfvNV_Lazy(uint video_capture_slot, uint stream, uint pname, float* @params)
         {
             if (_glGetVideoCaptureStreamfvNV_fnptr == null)
                 _glGetVideoCaptureStreamfvNV_fnptr = (delegate* unmanaged<uint, uint, uint, float*, void>)GLLoader.BindingsContext.GetProcAddress("glGetVideoCaptureStreamfvNV");
-            _glGetVideoCaptureStreamfvNV_fnptr(video_capture_slot, stream, pname, parameters);
+            _glGetVideoCaptureStreamfvNV_fnptr(video_capture_slot, stream, pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glGetVideoCaptureStreamivNV</c>]</b></summary>
         public static delegate* unmanaged<uint, uint, uint, int*, void> _glGetVideoCaptureStreamivNV_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glGetVideoCaptureStreamivNV_Lazy(uint video_capture_slot, uint stream, uint pname, int* parameters)
+        internal static void glGetVideoCaptureStreamivNV_Lazy(uint video_capture_slot, uint stream, uint pname, int* @params)
         {
             if (_glGetVideoCaptureStreamivNV_fnptr == null)
                 _glGetVideoCaptureStreamivNV_fnptr = (delegate* unmanaged<uint, uint, uint, int*, void>)GLLoader.BindingsContext.GetProcAddress("glGetVideoCaptureStreamivNV");
-            _glGetVideoCaptureStreamivNV_fnptr(video_capture_slot, stream, pname, parameters);
+            _glGetVideoCaptureStreamivNV_fnptr(video_capture_slot, stream, pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glGetVideoi64vNV</c>]</b></summary>
         public static delegate* unmanaged<uint, uint, long*, void> _glGetVideoi64vNV_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glGetVideoi64vNV_Lazy(uint video_slot, uint pname, long* parameters)
+        internal static void glGetVideoi64vNV_Lazy(uint video_slot, uint pname, long* @params)
         {
             if (_glGetVideoi64vNV_fnptr == null)
                 _glGetVideoi64vNV_fnptr = (delegate* unmanaged<uint, uint, long*, void>)GLLoader.BindingsContext.GetProcAddress("glGetVideoi64vNV");
-            _glGetVideoi64vNV_fnptr(video_slot, pname, parameters);
+            _glGetVideoi64vNV_fnptr(video_slot, pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glGetVideoivNV</c>]</b></summary>
         public static delegate* unmanaged<uint, uint, int*, void> _glGetVideoivNV_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glGetVideoivNV_Lazy(uint video_slot, uint pname, int* parameters)
+        internal static void glGetVideoivNV_Lazy(uint video_slot, uint pname, int* @params)
         {
             if (_glGetVideoivNV_fnptr == null)
                 _glGetVideoivNV_fnptr = (delegate* unmanaged<uint, uint, int*, void>)GLLoader.BindingsContext.GetProcAddress("glGetVideoivNV");
-            _glGetVideoivNV_fnptr(video_slot, pname, parameters);
+            _glGetVideoivNV_fnptr(video_slot, pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glGetVideoui64vNV</c>]</b></summary>
         public static delegate* unmanaged<uint, uint, ulong*, void> _glGetVideoui64vNV_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glGetVideoui64vNV_Lazy(uint video_slot, uint pname, ulong* parameters)
+        internal static void glGetVideoui64vNV_Lazy(uint video_slot, uint pname, ulong* @params)
         {
             if (_glGetVideoui64vNV_fnptr == null)
                 _glGetVideoui64vNV_fnptr = (delegate* unmanaged<uint, uint, ulong*, void>)GLLoader.BindingsContext.GetProcAddress("glGetVideoui64vNV");
-            _glGetVideoui64vNV_fnptr(video_slot, pname, parameters);
+            _glGetVideoui64vNV_fnptr(video_slot, pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glGetVideouivNV</c>]</b></summary>
         public static delegate* unmanaged<uint, uint, uint*, void> _glGetVideouivNV_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glGetVideouivNV_Lazy(uint video_slot, uint pname, uint* parameters)
+        internal static void glGetVideouivNV_Lazy(uint video_slot, uint pname, uint* @params)
         {
             if (_glGetVideouivNV_fnptr == null)
                 _glGetVideouivNV_fnptr = (delegate* unmanaged<uint, uint, uint*, void>)GLLoader.BindingsContext.GetProcAddress("glGetVideouivNV");
-            _glGetVideouivNV_fnptr(video_slot, pname, parameters);
+            _glGetVideouivNV_fnptr(video_slot, pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glGetVkProcAddrNV</c>]</b></summary>
@@ -13682,11 +13682,11 @@ namespace OpenTK.Graphics.OpenGL
         /// <summary><b>[entry point: <c>glIglooInterfaceSGIX</c>]</b></summary>
         public static delegate* unmanaged<uint, void*, void> _glIglooInterfaceSGIX_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glIglooInterfaceSGIX_Lazy(uint pname, void* parameters)
+        internal static void glIglooInterfaceSGIX_Lazy(uint pname, void* @params)
         {
             if (_glIglooInterfaceSGIX_fnptr == null)
                 _glIglooInterfaceSGIX_fnptr = (delegate* unmanaged<uint, void*, void>)GLLoader.BindingsContext.GetProcAddress("glIglooInterfaceSGIX");
-            _glIglooInterfaceSGIX_fnptr(pname, parameters);
+            _glIglooInterfaceSGIX_fnptr(pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glImageTransformParameterfHP</c>]</b></summary>
@@ -13702,11 +13702,11 @@ namespace OpenTK.Graphics.OpenGL
         /// <summary><b>[entry point: <c>glImageTransformParameterfvHP</c>]</b></summary>
         public static delegate* unmanaged<uint, uint, float*, void> _glImageTransformParameterfvHP_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glImageTransformParameterfvHP_Lazy(uint target, uint pname, float* parameters)
+        internal static void glImageTransformParameterfvHP_Lazy(uint target, uint pname, float* @params)
         {
             if (_glImageTransformParameterfvHP_fnptr == null)
                 _glImageTransformParameterfvHP_fnptr = (delegate* unmanaged<uint, uint, float*, void>)GLLoader.BindingsContext.GetProcAddress("glImageTransformParameterfvHP");
-            _glImageTransformParameterfvHP_fnptr(target, pname, parameters);
+            _glImageTransformParameterfvHP_fnptr(target, pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glImageTransformParameteriHP</c>]</b></summary>
@@ -13722,11 +13722,11 @@ namespace OpenTK.Graphics.OpenGL
         /// <summary><b>[entry point: <c>glImageTransformParameterivHP</c>]</b></summary>
         public static delegate* unmanaged<uint, uint, int*, void> _glImageTransformParameterivHP_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glImageTransformParameterivHP_Lazy(uint target, uint pname, int* parameters)
+        internal static void glImageTransformParameterivHP_Lazy(uint target, uint pname, int* @params)
         {
             if (_glImageTransformParameterivHP_fnptr == null)
                 _glImageTransformParameterivHP_fnptr = (delegate* unmanaged<uint, uint, int*, void>)GLLoader.BindingsContext.GetProcAddress("glImageTransformParameterivHP");
-            _glImageTransformParameterivHP_fnptr(target, pname, parameters);
+            _glImageTransformParameterivHP_fnptr(target, pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glImportMemoryFdEXT</c>]</b></summary>
@@ -13842,11 +13842,11 @@ namespace OpenTK.Graphics.OpenGL
         /// <summary><b>[entry point: <c>glIndexFuncEXT</c>]</b></summary>
         public static delegate* unmanaged<uint, float, void> _glIndexFuncEXT_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glIndexFuncEXT_Lazy(uint func, float reference)
+        internal static void glIndexFuncEXT_Lazy(uint func, float @ref)
         {
             if (_glIndexFuncEXT_fnptr == null)
                 _glIndexFuncEXT_fnptr = (delegate* unmanaged<uint, float, void>)GLLoader.BindingsContext.GetProcAddress("glIndexFuncEXT");
-            _glIndexFuncEXT_fnptr(func, reference);
+            _glIndexFuncEXT_fnptr(func, @ref);
         }
         
         /// <summary><b>[entry point: <c>glIndexfv</c>]</b></summary>
@@ -14692,11 +14692,11 @@ namespace OpenTK.Graphics.OpenGL
         /// <summary><b>[entry point: <c>glLabelObjectEXT</c>]</b></summary>
         public static delegate* unmanaged<uint, uint, int, byte*, void> _glLabelObjectEXT_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glLabelObjectEXT_Lazy(uint type, uint obj, int length, byte* label)
+        internal static void glLabelObjectEXT_Lazy(uint type, uint @object, int length, byte* label)
         {
             if (_glLabelObjectEXT_fnptr == null)
                 _glLabelObjectEXT_fnptr = (delegate* unmanaged<uint, uint, int, byte*, void>)GLLoader.BindingsContext.GetProcAddress("glLabelObjectEXT");
-            _glLabelObjectEXT_fnptr(type, obj, length, label);
+            _glLabelObjectEXT_fnptr(type, @object, length, label);
         }
         
         /// <summary><b>[entry point: <c>glLGPUCopyImageSubDataNVX</c>]</b></summary>
@@ -14752,11 +14752,11 @@ namespace OpenTK.Graphics.OpenGL
         /// <summary><b>[entry point: <c>glLightfv</c>]</b></summary>
         public static delegate* unmanaged<uint, uint, float*, void> _glLightfv_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glLightfv_Lazy(uint light, uint pname, float* parameters)
+        internal static void glLightfv_Lazy(uint light, uint pname, float* @params)
         {
             if (_glLightfv_fnptr == null)
                 _glLightfv_fnptr = (delegate* unmanaged<uint, uint, float*, void>)GLLoader.BindingsContext.GetProcAddress("glLightfv");
-            _glLightfv_fnptr(light, pname, parameters);
+            _glLightfv_fnptr(light, pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glLighti</c>]</b></summary>
@@ -14772,11 +14772,11 @@ namespace OpenTK.Graphics.OpenGL
         /// <summary><b>[entry point: <c>glLightiv</c>]</b></summary>
         public static delegate* unmanaged<uint, uint, int*, void> _glLightiv_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glLightiv_Lazy(uint light, uint pname, int* parameters)
+        internal static void glLightiv_Lazy(uint light, uint pname, int* @params)
         {
             if (_glLightiv_fnptr == null)
                 _glLightiv_fnptr = (delegate* unmanaged<uint, uint, int*, void>)GLLoader.BindingsContext.GetProcAddress("glLightiv");
-            _glLightiv_fnptr(light, pname, parameters);
+            _glLightiv_fnptr(light, pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glLightModelf</c>]</b></summary>
@@ -14792,11 +14792,11 @@ namespace OpenTK.Graphics.OpenGL
         /// <summary><b>[entry point: <c>glLightModelfv</c>]</b></summary>
         public static delegate* unmanaged<uint, float*, void> _glLightModelfv_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glLightModelfv_Lazy(uint pname, float* parameters)
+        internal static void glLightModelfv_Lazy(uint pname, float* @params)
         {
             if (_glLightModelfv_fnptr == null)
                 _glLightModelfv_fnptr = (delegate* unmanaged<uint, float*, void>)GLLoader.BindingsContext.GetProcAddress("glLightModelfv");
-            _glLightModelfv_fnptr(pname, parameters);
+            _glLightModelfv_fnptr(pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glLightModeli</c>]</b></summary>
@@ -14812,11 +14812,11 @@ namespace OpenTK.Graphics.OpenGL
         /// <summary><b>[entry point: <c>glLightModeliv</c>]</b></summary>
         public static delegate* unmanaged<uint, int*, void> _glLightModeliv_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glLightModeliv_Lazy(uint pname, int* parameters)
+        internal static void glLightModeliv_Lazy(uint pname, int* @params)
         {
             if (_glLightModeliv_fnptr == null)
                 _glLightModeliv_fnptr = (delegate* unmanaged<uint, int*, void>)GLLoader.BindingsContext.GetProcAddress("glLightModeliv");
-            _glLightModeliv_fnptr(pname, parameters);
+            _glLightModeliv_fnptr(pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glLightModelx</c>]</b></summary>
@@ -14882,21 +14882,21 @@ namespace OpenTK.Graphics.OpenGL
         /// <summary><b>[entry point: <c>glLightxv</c>]</b></summary>
         public static delegate* unmanaged<uint, uint, int*, void> _glLightxv_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glLightxv_Lazy(uint light, uint pname, int* parameters)
+        internal static void glLightxv_Lazy(uint light, uint pname, int* @params)
         {
             if (_glLightxv_fnptr == null)
                 _glLightxv_fnptr = (delegate* unmanaged<uint, uint, int*, void>)GLLoader.BindingsContext.GetProcAddress("glLightxv");
-            _glLightxv_fnptr(light, pname, parameters);
+            _glLightxv_fnptr(light, pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glLightxvOES</c>]</b></summary>
         public static delegate* unmanaged<uint, uint, int*, void> _glLightxvOES_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glLightxvOES_Lazy(uint light, uint pname, int* parameters)
+        internal static void glLightxvOES_Lazy(uint light, uint pname, int* @params)
         {
             if (_glLightxvOES_fnptr == null)
                 _glLightxvOES_fnptr = (delegate* unmanaged<uint, uint, int*, void>)GLLoader.BindingsContext.GetProcAddress("glLightxvOES");
-            _glLightxvOES_fnptr(light, pname, parameters);
+            _glLightxvOES_fnptr(light, pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glLineStipple</c>]</b></summary>
@@ -14992,11 +14992,11 @@ namespace OpenTK.Graphics.OpenGL
         /// <summary><b>[entry point: <c>glListParameterfvSGIX</c>]</b></summary>
         public static delegate* unmanaged<int, uint, float*, void> _glListParameterfvSGIX_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glListParameterfvSGIX_Lazy(int list, uint pname, float* parameters)
+        internal static void glListParameterfvSGIX_Lazy(int list, uint pname, float* @params)
         {
             if (_glListParameterfvSGIX_fnptr == null)
                 _glListParameterfvSGIX_fnptr = (delegate* unmanaged<int, uint, float*, void>)GLLoader.BindingsContext.GetProcAddress("glListParameterfvSGIX");
-            _glListParameterfvSGIX_fnptr(list, pname, parameters);
+            _glListParameterfvSGIX_fnptr(list, pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glListParameteriSGIX</c>]</b></summary>
@@ -15012,11 +15012,11 @@ namespace OpenTK.Graphics.OpenGL
         /// <summary><b>[entry point: <c>glListParameterivSGIX</c>]</b></summary>
         public static delegate* unmanaged<int, uint, int*, void> _glListParameterivSGIX_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glListParameterivSGIX_Lazy(int list, uint pname, int* parameters)
+        internal static void glListParameterivSGIX_Lazy(int list, uint pname, int* @params)
         {
             if (_glListParameterivSGIX_fnptr == null)
                 _glListParameterivSGIX_fnptr = (delegate* unmanaged<int, uint, int*, void>)GLLoader.BindingsContext.GetProcAddress("glListParameterivSGIX");
-            _glListParameterivSGIX_fnptr(list, pname, parameters);
+            _glListParameterivSGIX_fnptr(list, pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glLoadIdentity</c>]</b></summary>
@@ -15532,21 +15532,21 @@ namespace OpenTK.Graphics.OpenGL
         /// <summary><b>[entry point: <c>glMapParameterfvNV</c>]</b></summary>
         public static delegate* unmanaged<uint, uint, float*, void> _glMapParameterfvNV_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glMapParameterfvNV_Lazy(uint target, uint pname, float* parameters)
+        internal static void glMapParameterfvNV_Lazy(uint target, uint pname, float* @params)
         {
             if (_glMapParameterfvNV_fnptr == null)
                 _glMapParameterfvNV_fnptr = (delegate* unmanaged<uint, uint, float*, void>)GLLoader.BindingsContext.GetProcAddress("glMapParameterfvNV");
-            _glMapParameterfvNV_fnptr(target, pname, parameters);
+            _glMapParameterfvNV_fnptr(target, pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glMapParameterivNV</c>]</b></summary>
         public static delegate* unmanaged<uint, uint, int*, void> _glMapParameterivNV_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glMapParameterivNV_Lazy(uint target, uint pname, int* parameters)
+        internal static void glMapParameterivNV_Lazy(uint target, uint pname, int* @params)
         {
             if (_glMapParameterivNV_fnptr == null)
                 _glMapParameterivNV_fnptr = (delegate* unmanaged<uint, uint, int*, void>)GLLoader.BindingsContext.GetProcAddress("glMapParameterivNV");
-            _glMapParameterivNV_fnptr(target, pname, parameters);
+            _glMapParameterivNV_fnptr(target, pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glMapTexture2DINTEL</c>]</b></summary>
@@ -15612,11 +15612,11 @@ namespace OpenTK.Graphics.OpenGL
         /// <summary><b>[entry point: <c>glMaterialfv</c>]</b></summary>
         public static delegate* unmanaged<uint, uint, float*, void> _glMaterialfv_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glMaterialfv_Lazy(uint face, uint pname, float* parameters)
+        internal static void glMaterialfv_Lazy(uint face, uint pname, float* @params)
         {
             if (_glMaterialfv_fnptr == null)
                 _glMaterialfv_fnptr = (delegate* unmanaged<uint, uint, float*, void>)GLLoader.BindingsContext.GetProcAddress("glMaterialfv");
-            _glMaterialfv_fnptr(face, pname, parameters);
+            _glMaterialfv_fnptr(face, pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glMateriali</c>]</b></summary>
@@ -15632,11 +15632,11 @@ namespace OpenTK.Graphics.OpenGL
         /// <summary><b>[entry point: <c>glMaterialiv</c>]</b></summary>
         public static delegate* unmanaged<uint, uint, int*, void> _glMaterialiv_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glMaterialiv_Lazy(uint face, uint pname, int* parameters)
+        internal static void glMaterialiv_Lazy(uint face, uint pname, int* @params)
         {
             if (_glMaterialiv_fnptr == null)
                 _glMaterialiv_fnptr = (delegate* unmanaged<uint, uint, int*, void>)GLLoader.BindingsContext.GetProcAddress("glMaterialiv");
-            _glMaterialiv_fnptr(face, pname, parameters);
+            _glMaterialiv_fnptr(face, pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glMaterialx</c>]</b></summary>
@@ -16052,11 +16052,11 @@ namespace OpenTK.Graphics.OpenGL
         /// <summary><b>[entry point: <c>glMemoryObjectParameterivEXT</c>]</b></summary>
         public static delegate* unmanaged<uint, uint, int*, void> _glMemoryObjectParameterivEXT_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glMemoryObjectParameterivEXT_Lazy(uint memoryObject, uint pname, int* parameters)
+        internal static void glMemoryObjectParameterivEXT_Lazy(uint memoryObject, uint pname, int* @params)
         {
             if (_glMemoryObjectParameterivEXT_fnptr == null)
                 _glMemoryObjectParameterivEXT_fnptr = (delegate* unmanaged<uint, uint, int*, void>)GLLoader.BindingsContext.GetProcAddress("glMemoryObjectParameterivEXT");
-            _glMemoryObjectParameterivEXT_fnptr(memoryObject, pname, parameters);
+            _glMemoryObjectParameterivEXT_fnptr(memoryObject, pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glMinmax</c>]</b></summary>
@@ -16172,41 +16172,41 @@ namespace OpenTK.Graphics.OpenGL
         /// <summary><b>[entry point: <c>glMulticastGetQueryObjecti64vNV</c>]</b></summary>
         public static delegate* unmanaged<uint, uint, uint, long*, void> _glMulticastGetQueryObjecti64vNV_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glMulticastGetQueryObjecti64vNV_Lazy(uint gpu, uint id, uint pname, long* parameters)
+        internal static void glMulticastGetQueryObjecti64vNV_Lazy(uint gpu, uint id, uint pname, long* @params)
         {
             if (_glMulticastGetQueryObjecti64vNV_fnptr == null)
                 _glMulticastGetQueryObjecti64vNV_fnptr = (delegate* unmanaged<uint, uint, uint, long*, void>)GLLoader.BindingsContext.GetProcAddress("glMulticastGetQueryObjecti64vNV");
-            _glMulticastGetQueryObjecti64vNV_fnptr(gpu, id, pname, parameters);
+            _glMulticastGetQueryObjecti64vNV_fnptr(gpu, id, pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glMulticastGetQueryObjectivNV</c>]</b></summary>
         public static delegate* unmanaged<uint, uint, uint, int*, void> _glMulticastGetQueryObjectivNV_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glMulticastGetQueryObjectivNV_Lazy(uint gpu, uint id, uint pname, int* parameters)
+        internal static void glMulticastGetQueryObjectivNV_Lazy(uint gpu, uint id, uint pname, int* @params)
         {
             if (_glMulticastGetQueryObjectivNV_fnptr == null)
                 _glMulticastGetQueryObjectivNV_fnptr = (delegate* unmanaged<uint, uint, uint, int*, void>)GLLoader.BindingsContext.GetProcAddress("glMulticastGetQueryObjectivNV");
-            _glMulticastGetQueryObjectivNV_fnptr(gpu, id, pname, parameters);
+            _glMulticastGetQueryObjectivNV_fnptr(gpu, id, pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glMulticastGetQueryObjectui64vNV</c>]</b></summary>
         public static delegate* unmanaged<uint, uint, uint, ulong*, void> _glMulticastGetQueryObjectui64vNV_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glMulticastGetQueryObjectui64vNV_Lazy(uint gpu, uint id, uint pname, ulong* parameters)
+        internal static void glMulticastGetQueryObjectui64vNV_Lazy(uint gpu, uint id, uint pname, ulong* @params)
         {
             if (_glMulticastGetQueryObjectui64vNV_fnptr == null)
                 _glMulticastGetQueryObjectui64vNV_fnptr = (delegate* unmanaged<uint, uint, uint, ulong*, void>)GLLoader.BindingsContext.GetProcAddress("glMulticastGetQueryObjectui64vNV");
-            _glMulticastGetQueryObjectui64vNV_fnptr(gpu, id, pname, parameters);
+            _glMulticastGetQueryObjectui64vNV_fnptr(gpu, id, pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glMulticastGetQueryObjectuivNV</c>]</b></summary>
         public static delegate* unmanaged<uint, uint, uint, uint*, void> _glMulticastGetQueryObjectuivNV_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glMulticastGetQueryObjectuivNV_Lazy(uint gpu, uint id, uint pname, uint* parameters)
+        internal static void glMulticastGetQueryObjectuivNV_Lazy(uint gpu, uint id, uint pname, uint* @params)
         {
             if (_glMulticastGetQueryObjectuivNV_fnptr == null)
                 _glMulticastGetQueryObjectuivNV_fnptr = (delegate* unmanaged<uint, uint, uint, uint*, void>)GLLoader.BindingsContext.GetProcAddress("glMulticastGetQueryObjectuivNV");
-            _glMulticastGetQueryObjectuivNV_fnptr(gpu, id, pname, parameters);
+            _glMulticastGetQueryObjectuivNV_fnptr(gpu, id, pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glMulticastScissorArrayvNVX</c>]</b></summary>
@@ -17512,11 +17512,11 @@ namespace OpenTK.Graphics.OpenGL
         /// <summary><b>[entry point: <c>glMultiTexEnvfvEXT</c>]</b></summary>
         public static delegate* unmanaged<uint, uint, uint, float*, void> _glMultiTexEnvfvEXT_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glMultiTexEnvfvEXT_Lazy(uint texunit, uint target, uint pname, float* parameters)
+        internal static void glMultiTexEnvfvEXT_Lazy(uint texunit, uint target, uint pname, float* @params)
         {
             if (_glMultiTexEnvfvEXT_fnptr == null)
                 _glMultiTexEnvfvEXT_fnptr = (delegate* unmanaged<uint, uint, uint, float*, void>)GLLoader.BindingsContext.GetProcAddress("glMultiTexEnvfvEXT");
-            _glMultiTexEnvfvEXT_fnptr(texunit, target, pname, parameters);
+            _glMultiTexEnvfvEXT_fnptr(texunit, target, pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glMultiTexEnviEXT</c>]</b></summary>
@@ -17532,11 +17532,11 @@ namespace OpenTK.Graphics.OpenGL
         /// <summary><b>[entry point: <c>glMultiTexEnvivEXT</c>]</b></summary>
         public static delegate* unmanaged<uint, uint, uint, int*, void> _glMultiTexEnvivEXT_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glMultiTexEnvivEXT_Lazy(uint texunit, uint target, uint pname, int* parameters)
+        internal static void glMultiTexEnvivEXT_Lazy(uint texunit, uint target, uint pname, int* @params)
         {
             if (_glMultiTexEnvivEXT_fnptr == null)
                 _glMultiTexEnvivEXT_fnptr = (delegate* unmanaged<uint, uint, uint, int*, void>)GLLoader.BindingsContext.GetProcAddress("glMultiTexEnvivEXT");
-            _glMultiTexEnvivEXT_fnptr(texunit, target, pname, parameters);
+            _glMultiTexEnvivEXT_fnptr(texunit, target, pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glMultiTexGendEXT</c>]</b></summary>
@@ -17552,11 +17552,11 @@ namespace OpenTK.Graphics.OpenGL
         /// <summary><b>[entry point: <c>glMultiTexGendvEXT</c>]</b></summary>
         public static delegate* unmanaged<uint, uint, uint, double*, void> _glMultiTexGendvEXT_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glMultiTexGendvEXT_Lazy(uint texunit, uint coord, uint pname, double* parameters)
+        internal static void glMultiTexGendvEXT_Lazy(uint texunit, uint coord, uint pname, double* @params)
         {
             if (_glMultiTexGendvEXT_fnptr == null)
                 _glMultiTexGendvEXT_fnptr = (delegate* unmanaged<uint, uint, uint, double*, void>)GLLoader.BindingsContext.GetProcAddress("glMultiTexGendvEXT");
-            _glMultiTexGendvEXT_fnptr(texunit, coord, pname, parameters);
+            _glMultiTexGendvEXT_fnptr(texunit, coord, pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glMultiTexGenfEXT</c>]</b></summary>
@@ -17572,11 +17572,11 @@ namespace OpenTK.Graphics.OpenGL
         /// <summary><b>[entry point: <c>glMultiTexGenfvEXT</c>]</b></summary>
         public static delegate* unmanaged<uint, uint, uint, float*, void> _glMultiTexGenfvEXT_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glMultiTexGenfvEXT_Lazy(uint texunit, uint coord, uint pname, float* parameters)
+        internal static void glMultiTexGenfvEXT_Lazy(uint texunit, uint coord, uint pname, float* @params)
         {
             if (_glMultiTexGenfvEXT_fnptr == null)
                 _glMultiTexGenfvEXT_fnptr = (delegate* unmanaged<uint, uint, uint, float*, void>)GLLoader.BindingsContext.GetProcAddress("glMultiTexGenfvEXT");
-            _glMultiTexGenfvEXT_fnptr(texunit, coord, pname, parameters);
+            _glMultiTexGenfvEXT_fnptr(texunit, coord, pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glMultiTexGeniEXT</c>]</b></summary>
@@ -17592,11 +17592,11 @@ namespace OpenTK.Graphics.OpenGL
         /// <summary><b>[entry point: <c>glMultiTexGenivEXT</c>]</b></summary>
         public static delegate* unmanaged<uint, uint, uint, int*, void> _glMultiTexGenivEXT_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glMultiTexGenivEXT_Lazy(uint texunit, uint coord, uint pname, int* parameters)
+        internal static void glMultiTexGenivEXT_Lazy(uint texunit, uint coord, uint pname, int* @params)
         {
             if (_glMultiTexGenivEXT_fnptr == null)
                 _glMultiTexGenivEXT_fnptr = (delegate* unmanaged<uint, uint, uint, int*, void>)GLLoader.BindingsContext.GetProcAddress("glMultiTexGenivEXT");
-            _glMultiTexGenivEXT_fnptr(texunit, coord, pname, parameters);
+            _glMultiTexGenivEXT_fnptr(texunit, coord, pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glMultiTexImage1DEXT</c>]</b></summary>
@@ -17642,11 +17642,11 @@ namespace OpenTK.Graphics.OpenGL
         /// <summary><b>[entry point: <c>glMultiTexParameterfvEXT</c>]</b></summary>
         public static delegate* unmanaged<uint, uint, uint, float*, void> _glMultiTexParameterfvEXT_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glMultiTexParameterfvEXT_Lazy(uint texunit, uint target, uint pname, float* parameters)
+        internal static void glMultiTexParameterfvEXT_Lazy(uint texunit, uint target, uint pname, float* @params)
         {
             if (_glMultiTexParameterfvEXT_fnptr == null)
                 _glMultiTexParameterfvEXT_fnptr = (delegate* unmanaged<uint, uint, uint, float*, void>)GLLoader.BindingsContext.GetProcAddress("glMultiTexParameterfvEXT");
-            _glMultiTexParameterfvEXT_fnptr(texunit, target, pname, parameters);
+            _glMultiTexParameterfvEXT_fnptr(texunit, target, pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glMultiTexParameteriEXT</c>]</b></summary>
@@ -17662,31 +17662,31 @@ namespace OpenTK.Graphics.OpenGL
         /// <summary><b>[entry point: <c>glMultiTexParameterIivEXT</c>]</b></summary>
         public static delegate* unmanaged<uint, uint, uint, int*, void> _glMultiTexParameterIivEXT_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glMultiTexParameterIivEXT_Lazy(uint texunit, uint target, uint pname, int* parameters)
+        internal static void glMultiTexParameterIivEXT_Lazy(uint texunit, uint target, uint pname, int* @params)
         {
             if (_glMultiTexParameterIivEXT_fnptr == null)
                 _glMultiTexParameterIivEXT_fnptr = (delegate* unmanaged<uint, uint, uint, int*, void>)GLLoader.BindingsContext.GetProcAddress("glMultiTexParameterIivEXT");
-            _glMultiTexParameterIivEXT_fnptr(texunit, target, pname, parameters);
+            _glMultiTexParameterIivEXT_fnptr(texunit, target, pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glMultiTexParameterIuivEXT</c>]</b></summary>
         public static delegate* unmanaged<uint, uint, uint, uint*, void> _glMultiTexParameterIuivEXT_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glMultiTexParameterIuivEXT_Lazy(uint texunit, uint target, uint pname, uint* parameters)
+        internal static void glMultiTexParameterIuivEXT_Lazy(uint texunit, uint target, uint pname, uint* @params)
         {
             if (_glMultiTexParameterIuivEXT_fnptr == null)
                 _glMultiTexParameterIuivEXT_fnptr = (delegate* unmanaged<uint, uint, uint, uint*, void>)GLLoader.BindingsContext.GetProcAddress("glMultiTexParameterIuivEXT");
-            _glMultiTexParameterIuivEXT_fnptr(texunit, target, pname, parameters);
+            _glMultiTexParameterIuivEXT_fnptr(texunit, target, pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glMultiTexParameterivEXT</c>]</b></summary>
         public static delegate* unmanaged<uint, uint, uint, int*, void> _glMultiTexParameterivEXT_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glMultiTexParameterivEXT_Lazy(uint texunit, uint target, uint pname, int* parameters)
+        internal static void glMultiTexParameterivEXT_Lazy(uint texunit, uint target, uint pname, int* @params)
         {
             if (_glMultiTexParameterivEXT_fnptr == null)
                 _glMultiTexParameterivEXT_fnptr = (delegate* unmanaged<uint, uint, uint, int*, void>)GLLoader.BindingsContext.GetProcAddress("glMultiTexParameterivEXT");
-            _glMultiTexParameterivEXT_fnptr(texunit, target, pname, parameters);
+            _glMultiTexParameterivEXT_fnptr(texunit, target, pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glMultiTexRenderbufferEXT</c>]</b></summary>
@@ -18152,11 +18152,11 @@ namespace OpenTK.Graphics.OpenGL
         /// <summary><b>[entry point: <c>glNamedProgramLocalParameter4dvEXT</c>]</b></summary>
         public static delegate* unmanaged<int, uint, uint, double*, void> _glNamedProgramLocalParameter4dvEXT_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glNamedProgramLocalParameter4dvEXT_Lazy(int program, uint target, uint index, double* parameters)
+        internal static void glNamedProgramLocalParameter4dvEXT_Lazy(int program, uint target, uint index, double* @params)
         {
             if (_glNamedProgramLocalParameter4dvEXT_fnptr == null)
                 _glNamedProgramLocalParameter4dvEXT_fnptr = (delegate* unmanaged<int, uint, uint, double*, void>)GLLoader.BindingsContext.GetProcAddress("glNamedProgramLocalParameter4dvEXT");
-            _glNamedProgramLocalParameter4dvEXT_fnptr(program, target, index, parameters);
+            _glNamedProgramLocalParameter4dvEXT_fnptr(program, target, index, @params);
         }
         
         /// <summary><b>[entry point: <c>glNamedProgramLocalParameter4fEXT</c>]</b></summary>
@@ -18172,11 +18172,11 @@ namespace OpenTK.Graphics.OpenGL
         /// <summary><b>[entry point: <c>glNamedProgramLocalParameter4fvEXT</c>]</b></summary>
         public static delegate* unmanaged<int, uint, uint, float*, void> _glNamedProgramLocalParameter4fvEXT_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glNamedProgramLocalParameter4fvEXT_Lazy(int program, uint target, uint index, float* parameters)
+        internal static void glNamedProgramLocalParameter4fvEXT_Lazy(int program, uint target, uint index, float* @params)
         {
             if (_glNamedProgramLocalParameter4fvEXT_fnptr == null)
                 _glNamedProgramLocalParameter4fvEXT_fnptr = (delegate* unmanaged<int, uint, uint, float*, void>)GLLoader.BindingsContext.GetProcAddress("glNamedProgramLocalParameter4fvEXT");
-            _glNamedProgramLocalParameter4fvEXT_fnptr(program, target, index, parameters);
+            _glNamedProgramLocalParameter4fvEXT_fnptr(program, target, index, @params);
         }
         
         /// <summary><b>[entry point: <c>glNamedProgramLocalParameterI4iEXT</c>]</b></summary>
@@ -18192,11 +18192,11 @@ namespace OpenTK.Graphics.OpenGL
         /// <summary><b>[entry point: <c>glNamedProgramLocalParameterI4ivEXT</c>]</b></summary>
         public static delegate* unmanaged<int, uint, uint, int*, void> _glNamedProgramLocalParameterI4ivEXT_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glNamedProgramLocalParameterI4ivEXT_Lazy(int program, uint target, uint index, int* parameters)
+        internal static void glNamedProgramLocalParameterI4ivEXT_Lazy(int program, uint target, uint index, int* @params)
         {
             if (_glNamedProgramLocalParameterI4ivEXT_fnptr == null)
                 _glNamedProgramLocalParameterI4ivEXT_fnptr = (delegate* unmanaged<int, uint, uint, int*, void>)GLLoader.BindingsContext.GetProcAddress("glNamedProgramLocalParameterI4ivEXT");
-            _glNamedProgramLocalParameterI4ivEXT_fnptr(program, target, index, parameters);
+            _glNamedProgramLocalParameterI4ivEXT_fnptr(program, target, index, @params);
         }
         
         /// <summary><b>[entry point: <c>glNamedProgramLocalParameterI4uiEXT</c>]</b></summary>
@@ -18212,51 +18212,51 @@ namespace OpenTK.Graphics.OpenGL
         /// <summary><b>[entry point: <c>glNamedProgramLocalParameterI4uivEXT</c>]</b></summary>
         public static delegate* unmanaged<int, uint, uint, uint*, void> _glNamedProgramLocalParameterI4uivEXT_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glNamedProgramLocalParameterI4uivEXT_Lazy(int program, uint target, uint index, uint* parameters)
+        internal static void glNamedProgramLocalParameterI4uivEXT_Lazy(int program, uint target, uint index, uint* @params)
         {
             if (_glNamedProgramLocalParameterI4uivEXT_fnptr == null)
                 _glNamedProgramLocalParameterI4uivEXT_fnptr = (delegate* unmanaged<int, uint, uint, uint*, void>)GLLoader.BindingsContext.GetProcAddress("glNamedProgramLocalParameterI4uivEXT");
-            _glNamedProgramLocalParameterI4uivEXT_fnptr(program, target, index, parameters);
+            _glNamedProgramLocalParameterI4uivEXT_fnptr(program, target, index, @params);
         }
         
         /// <summary><b>[entry point: <c>glNamedProgramLocalParameters4fvEXT</c>]</b></summary>
         public static delegate* unmanaged<int, uint, uint, int, float*, void> _glNamedProgramLocalParameters4fvEXT_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glNamedProgramLocalParameters4fvEXT_Lazy(int program, uint target, uint index, int count, float* parameters)
+        internal static void glNamedProgramLocalParameters4fvEXT_Lazy(int program, uint target, uint index, int count, float* @params)
         {
             if (_glNamedProgramLocalParameters4fvEXT_fnptr == null)
                 _glNamedProgramLocalParameters4fvEXT_fnptr = (delegate* unmanaged<int, uint, uint, int, float*, void>)GLLoader.BindingsContext.GetProcAddress("glNamedProgramLocalParameters4fvEXT");
-            _glNamedProgramLocalParameters4fvEXT_fnptr(program, target, index, count, parameters);
+            _glNamedProgramLocalParameters4fvEXT_fnptr(program, target, index, count, @params);
         }
         
         /// <summary><b>[entry point: <c>glNamedProgramLocalParametersI4ivEXT</c>]</b></summary>
         public static delegate* unmanaged<int, uint, uint, int, int*, void> _glNamedProgramLocalParametersI4ivEXT_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glNamedProgramLocalParametersI4ivEXT_Lazy(int program, uint target, uint index, int count, int* parameters)
+        internal static void glNamedProgramLocalParametersI4ivEXT_Lazy(int program, uint target, uint index, int count, int* @params)
         {
             if (_glNamedProgramLocalParametersI4ivEXT_fnptr == null)
                 _glNamedProgramLocalParametersI4ivEXT_fnptr = (delegate* unmanaged<int, uint, uint, int, int*, void>)GLLoader.BindingsContext.GetProcAddress("glNamedProgramLocalParametersI4ivEXT");
-            _glNamedProgramLocalParametersI4ivEXT_fnptr(program, target, index, count, parameters);
+            _glNamedProgramLocalParametersI4ivEXT_fnptr(program, target, index, count, @params);
         }
         
         /// <summary><b>[entry point: <c>glNamedProgramLocalParametersI4uivEXT</c>]</b></summary>
         public static delegate* unmanaged<int, uint, uint, int, uint*, void> _glNamedProgramLocalParametersI4uivEXT_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glNamedProgramLocalParametersI4uivEXT_Lazy(int program, uint target, uint index, int count, uint* parameters)
+        internal static void glNamedProgramLocalParametersI4uivEXT_Lazy(int program, uint target, uint index, int count, uint* @params)
         {
             if (_glNamedProgramLocalParametersI4uivEXT_fnptr == null)
                 _glNamedProgramLocalParametersI4uivEXT_fnptr = (delegate* unmanaged<int, uint, uint, int, uint*, void>)GLLoader.BindingsContext.GetProcAddress("glNamedProgramLocalParametersI4uivEXT");
-            _glNamedProgramLocalParametersI4uivEXT_fnptr(program, target, index, count, parameters);
+            _glNamedProgramLocalParametersI4uivEXT_fnptr(program, target, index, count, @params);
         }
         
         /// <summary><b>[entry point: <c>glNamedProgramStringEXT</c>]</b></summary>
         public static delegate* unmanaged<int, uint, uint, int, void*, void> _glNamedProgramStringEXT_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glNamedProgramStringEXT_Lazy(int program, uint target, uint format, int len, void* str)
+        internal static void glNamedProgramStringEXT_Lazy(int program, uint target, uint format, int len, void* @string)
         {
             if (_glNamedProgramStringEXT_fnptr == null)
                 _glNamedProgramStringEXT_fnptr = (delegate* unmanaged<int, uint, uint, int, void*, void>)GLLoader.BindingsContext.GetProcAddress("glNamedProgramStringEXT");
-            _glNamedProgramStringEXT_fnptr(program, target, format, len, str);
+            _glNamedProgramStringEXT_fnptr(program, target, format, len, @string);
         }
         
         /// <summary><b>[entry point: <c>glNamedRenderbufferStorage</c>]</b></summary>
@@ -18322,11 +18322,11 @@ namespace OpenTK.Graphics.OpenGL
         /// <summary><b>[entry point: <c>glNamedStringARB</c>]</b></summary>
         public static delegate* unmanaged<uint, int, byte*, int, byte*, void> _glNamedStringARB_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glNamedStringARB_Lazy(uint type, int namelen, byte* name, int stringlen, byte* str)
+        internal static void glNamedStringARB_Lazy(uint type, int namelen, byte* name, int stringlen, byte* @string)
         {
             if (_glNamedStringARB_fnptr == null)
                 _glNamedStringARB_fnptr = (delegate* unmanaged<uint, int, byte*, int, byte*, void>)GLLoader.BindingsContext.GetProcAddress("glNamedStringARB");
-            _glNamedStringARB_fnptr(type, namelen, name, stringlen, str);
+            _glNamedStringARB_fnptr(type, namelen, name, stringlen, @string);
         }
         
         /// <summary><b>[entry point: <c>glNewList</c>]</b></summary>
@@ -19032,11 +19032,11 @@ namespace OpenTK.Graphics.OpenGL
         /// <summary><b>[entry point: <c>glPathStencilFuncNV</c>]</b></summary>
         public static delegate* unmanaged<uint, int, uint, void> _glPathStencilFuncNV_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glPathStencilFuncNV_Lazy(uint func, int reference, uint mask)
+        internal static void glPathStencilFuncNV_Lazy(uint func, int @ref, uint mask)
         {
             if (_glPathStencilFuncNV_fnptr == null)
                 _glPathStencilFuncNV_fnptr = (delegate* unmanaged<uint, int, uint, void>)GLLoader.BindingsContext.GetProcAddress("glPathStencilFuncNV");
-            _glPathStencilFuncNV_fnptr(func, reference, mask);
+            _glPathStencilFuncNV_fnptr(func, @ref, mask);
         }
         
         /// <summary><b>[entry point: <c>glPathStringNV</c>]</b></summary>
@@ -19192,11 +19192,11 @@ namespace OpenTK.Graphics.OpenGL
         /// <summary><b>[entry point: <c>glPixelTexGenParameterfvSGIS</c>]</b></summary>
         public static delegate* unmanaged<uint, float*, void> _glPixelTexGenParameterfvSGIS_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glPixelTexGenParameterfvSGIS_Lazy(uint pname, float* parameters)
+        internal static void glPixelTexGenParameterfvSGIS_Lazy(uint pname, float* @params)
         {
             if (_glPixelTexGenParameterfvSGIS_fnptr == null)
                 _glPixelTexGenParameterfvSGIS_fnptr = (delegate* unmanaged<uint, float*, void>)GLLoader.BindingsContext.GetProcAddress("glPixelTexGenParameterfvSGIS");
-            _glPixelTexGenParameterfvSGIS_fnptr(pname, parameters);
+            _glPixelTexGenParameterfvSGIS_fnptr(pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glPixelTexGenParameteriSGIS</c>]</b></summary>
@@ -19212,11 +19212,11 @@ namespace OpenTK.Graphics.OpenGL
         /// <summary><b>[entry point: <c>glPixelTexGenParameterivSGIS</c>]</b></summary>
         public static delegate* unmanaged<uint, int*, void> _glPixelTexGenParameterivSGIS_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glPixelTexGenParameterivSGIS_Lazy(uint pname, int* parameters)
+        internal static void glPixelTexGenParameterivSGIS_Lazy(uint pname, int* @params)
         {
             if (_glPixelTexGenParameterivSGIS_fnptr == null)
                 _glPixelTexGenParameterivSGIS_fnptr = (delegate* unmanaged<uint, int*, void>)GLLoader.BindingsContext.GetProcAddress("glPixelTexGenParameterivSGIS");
-            _glPixelTexGenParameterivSGIS_fnptr(pname, parameters);
+            _glPixelTexGenParameterivSGIS_fnptr(pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glPixelTexGenSGIX</c>]</b></summary>
@@ -19272,11 +19272,11 @@ namespace OpenTK.Graphics.OpenGL
         /// <summary><b>[entry point: <c>glPixelTransformParameterfvEXT</c>]</b></summary>
         public static delegate* unmanaged<uint, uint, float*, void> _glPixelTransformParameterfvEXT_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glPixelTransformParameterfvEXT_Lazy(uint target, uint pname, float* parameters)
+        internal static void glPixelTransformParameterfvEXT_Lazy(uint target, uint pname, float* @params)
         {
             if (_glPixelTransformParameterfvEXT_fnptr == null)
                 _glPixelTransformParameterfvEXT_fnptr = (delegate* unmanaged<uint, uint, float*, void>)GLLoader.BindingsContext.GetProcAddress("glPixelTransformParameterfvEXT");
-            _glPixelTransformParameterfvEXT_fnptr(target, pname, parameters);
+            _glPixelTransformParameterfvEXT_fnptr(target, pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glPixelTransformParameteriEXT</c>]</b></summary>
@@ -19292,11 +19292,11 @@ namespace OpenTK.Graphics.OpenGL
         /// <summary><b>[entry point: <c>glPixelTransformParameterivEXT</c>]</b></summary>
         public static delegate* unmanaged<uint, uint, int*, void> _glPixelTransformParameterivEXT_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glPixelTransformParameterivEXT_Lazy(uint target, uint pname, int* parameters)
+        internal static void glPixelTransformParameterivEXT_Lazy(uint target, uint pname, int* @params)
         {
             if (_glPixelTransformParameterivEXT_fnptr == null)
                 _glPixelTransformParameterivEXT_fnptr = (delegate* unmanaged<uint, uint, int*, void>)GLLoader.BindingsContext.GetProcAddress("glPixelTransformParameterivEXT");
-            _glPixelTransformParameterivEXT_fnptr(target, pname, parameters);
+            _glPixelTransformParameterivEXT_fnptr(target, pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glPixelZoom</c>]</b></summary>
@@ -19392,41 +19392,41 @@ namespace OpenTK.Graphics.OpenGL
         /// <summary><b>[entry point: <c>glPointParameterfv</c>]</b></summary>
         public static delegate* unmanaged<uint, float*, void> _glPointParameterfv_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glPointParameterfv_Lazy(uint pname, float* parameters)
+        internal static void glPointParameterfv_Lazy(uint pname, float* @params)
         {
             if (_glPointParameterfv_fnptr == null)
                 _glPointParameterfv_fnptr = (delegate* unmanaged<uint, float*, void>)GLLoader.BindingsContext.GetProcAddress("glPointParameterfv");
-            _glPointParameterfv_fnptr(pname, parameters);
+            _glPointParameterfv_fnptr(pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glPointParameterfvARB</c>]</b></summary>
         public static delegate* unmanaged<uint, float*, void> _glPointParameterfvARB_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glPointParameterfvARB_Lazy(uint pname, float* parameters)
+        internal static void glPointParameterfvARB_Lazy(uint pname, float* @params)
         {
             if (_glPointParameterfvARB_fnptr == null)
                 _glPointParameterfvARB_fnptr = (delegate* unmanaged<uint, float*, void>)GLLoader.BindingsContext.GetProcAddress("glPointParameterfvARB");
-            _glPointParameterfvARB_fnptr(pname, parameters);
+            _glPointParameterfvARB_fnptr(pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glPointParameterfvEXT</c>]</b></summary>
         public static delegate* unmanaged<uint, float*, void> _glPointParameterfvEXT_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glPointParameterfvEXT_Lazy(uint pname, float* parameters)
+        internal static void glPointParameterfvEXT_Lazy(uint pname, float* @params)
         {
             if (_glPointParameterfvEXT_fnptr == null)
                 _glPointParameterfvEXT_fnptr = (delegate* unmanaged<uint, float*, void>)GLLoader.BindingsContext.GetProcAddress("glPointParameterfvEXT");
-            _glPointParameterfvEXT_fnptr(pname, parameters);
+            _glPointParameterfvEXT_fnptr(pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glPointParameterfvSGIS</c>]</b></summary>
         public static delegate* unmanaged<uint, float*, void> _glPointParameterfvSGIS_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glPointParameterfvSGIS_Lazy(uint pname, float* parameters)
+        internal static void glPointParameterfvSGIS_Lazy(uint pname, float* @params)
         {
             if (_glPointParameterfvSGIS_fnptr == null)
                 _glPointParameterfvSGIS_fnptr = (delegate* unmanaged<uint, float*, void>)GLLoader.BindingsContext.GetProcAddress("glPointParameterfvSGIS");
-            _glPointParameterfvSGIS_fnptr(pname, parameters);
+            _glPointParameterfvSGIS_fnptr(pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glPointParameteri</c>]</b></summary>
@@ -19452,21 +19452,21 @@ namespace OpenTK.Graphics.OpenGL
         /// <summary><b>[entry point: <c>glPointParameteriv</c>]</b></summary>
         public static delegate* unmanaged<uint, int*, void> _glPointParameteriv_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glPointParameteriv_Lazy(uint pname, int* parameters)
+        internal static void glPointParameteriv_Lazy(uint pname, int* @params)
         {
             if (_glPointParameteriv_fnptr == null)
                 _glPointParameteriv_fnptr = (delegate* unmanaged<uint, int*, void>)GLLoader.BindingsContext.GetProcAddress("glPointParameteriv");
-            _glPointParameteriv_fnptr(pname, parameters);
+            _glPointParameteriv_fnptr(pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glPointParameterivNV</c>]</b></summary>
         public static delegate* unmanaged<uint, int*, void> _glPointParameterivNV_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glPointParameterivNV_Lazy(uint pname, int* parameters)
+        internal static void glPointParameterivNV_Lazy(uint pname, int* @params)
         {
             if (_glPointParameterivNV_fnptr == null)
                 _glPointParameterivNV_fnptr = (delegate* unmanaged<uint, int*, void>)GLLoader.BindingsContext.GetProcAddress("glPointParameterivNV");
-            _glPointParameterivNV_fnptr(pname, parameters);
+            _glPointParameterivNV_fnptr(pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glPointParameterx</c>]</b></summary>
@@ -19492,21 +19492,21 @@ namespace OpenTK.Graphics.OpenGL
         /// <summary><b>[entry point: <c>glPointParameterxv</c>]</b></summary>
         public static delegate* unmanaged<uint, int*, void> _glPointParameterxv_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glPointParameterxv_Lazy(uint pname, int* parameters)
+        internal static void glPointParameterxv_Lazy(uint pname, int* @params)
         {
             if (_glPointParameterxv_fnptr == null)
                 _glPointParameterxv_fnptr = (delegate* unmanaged<uint, int*, void>)GLLoader.BindingsContext.GetProcAddress("glPointParameterxv");
-            _glPointParameterxv_fnptr(pname, parameters);
+            _glPointParameterxv_fnptr(pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glPointParameterxvOES</c>]</b></summary>
         public static delegate* unmanaged<uint, int*, void> _glPointParameterxvOES_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glPointParameterxvOES_Lazy(uint pname, int* parameters)
+        internal static void glPointParameterxvOES_Lazy(uint pname, int* @params)
         {
             if (_glPointParameterxvOES_fnptr == null)
                 _glPointParameterxvOES_fnptr = (delegate* unmanaged<uint, int*, void>)GLLoader.BindingsContext.GetProcAddress("glPointParameterxvOES");
-            _glPointParameterxvOES_fnptr(pname, parameters);
+            _glPointParameterxvOES_fnptr(pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glPointSize</c>]</b></summary>
@@ -19872,31 +19872,31 @@ namespace OpenTK.Graphics.OpenGL
         /// <summary><b>[entry point: <c>glProgramBufferParametersfvNV</c>]</b></summary>
         public static delegate* unmanaged<uint, uint, uint, int, float*, void> _glProgramBufferParametersfvNV_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glProgramBufferParametersfvNV_Lazy(uint target, uint bindingIndex, uint wordIndex, int count, float* parameters)
+        internal static void glProgramBufferParametersfvNV_Lazy(uint target, uint bindingIndex, uint wordIndex, int count, float* @params)
         {
             if (_glProgramBufferParametersfvNV_fnptr == null)
                 _glProgramBufferParametersfvNV_fnptr = (delegate* unmanaged<uint, uint, uint, int, float*, void>)GLLoader.BindingsContext.GetProcAddress("glProgramBufferParametersfvNV");
-            _glProgramBufferParametersfvNV_fnptr(target, bindingIndex, wordIndex, count, parameters);
+            _glProgramBufferParametersfvNV_fnptr(target, bindingIndex, wordIndex, count, @params);
         }
         
         /// <summary><b>[entry point: <c>glProgramBufferParametersIivNV</c>]</b></summary>
         public static delegate* unmanaged<uint, uint, uint, int, int*, void> _glProgramBufferParametersIivNV_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glProgramBufferParametersIivNV_Lazy(uint target, uint bindingIndex, uint wordIndex, int count, int* parameters)
+        internal static void glProgramBufferParametersIivNV_Lazy(uint target, uint bindingIndex, uint wordIndex, int count, int* @params)
         {
             if (_glProgramBufferParametersIivNV_fnptr == null)
                 _glProgramBufferParametersIivNV_fnptr = (delegate* unmanaged<uint, uint, uint, int, int*, void>)GLLoader.BindingsContext.GetProcAddress("glProgramBufferParametersIivNV");
-            _glProgramBufferParametersIivNV_fnptr(target, bindingIndex, wordIndex, count, parameters);
+            _glProgramBufferParametersIivNV_fnptr(target, bindingIndex, wordIndex, count, @params);
         }
         
         /// <summary><b>[entry point: <c>glProgramBufferParametersIuivNV</c>]</b></summary>
         public static delegate* unmanaged<uint, uint, uint, int, uint*, void> _glProgramBufferParametersIuivNV_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glProgramBufferParametersIuivNV_Lazy(uint target, uint bindingIndex, uint wordIndex, int count, uint* parameters)
+        internal static void glProgramBufferParametersIuivNV_Lazy(uint target, uint bindingIndex, uint wordIndex, int count, uint* @params)
         {
             if (_glProgramBufferParametersIuivNV_fnptr == null)
                 _glProgramBufferParametersIuivNV_fnptr = (delegate* unmanaged<uint, uint, uint, int, uint*, void>)GLLoader.BindingsContext.GetProcAddress("glProgramBufferParametersIuivNV");
-            _glProgramBufferParametersIuivNV_fnptr(target, bindingIndex, wordIndex, count, parameters);
+            _glProgramBufferParametersIuivNV_fnptr(target, bindingIndex, wordIndex, count, @params);
         }
         
         /// <summary><b>[entry point: <c>glProgramEnvParameter4dARB</c>]</b></summary>
@@ -19912,11 +19912,11 @@ namespace OpenTK.Graphics.OpenGL
         /// <summary><b>[entry point: <c>glProgramEnvParameter4dvARB</c>]</b></summary>
         public static delegate* unmanaged<uint, uint, double*, void> _glProgramEnvParameter4dvARB_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glProgramEnvParameter4dvARB_Lazy(uint target, uint index, double* parameters)
+        internal static void glProgramEnvParameter4dvARB_Lazy(uint target, uint index, double* @params)
         {
             if (_glProgramEnvParameter4dvARB_fnptr == null)
                 _glProgramEnvParameter4dvARB_fnptr = (delegate* unmanaged<uint, uint, double*, void>)GLLoader.BindingsContext.GetProcAddress("glProgramEnvParameter4dvARB");
-            _glProgramEnvParameter4dvARB_fnptr(target, index, parameters);
+            _glProgramEnvParameter4dvARB_fnptr(target, index, @params);
         }
         
         /// <summary><b>[entry point: <c>glProgramEnvParameter4fARB</c>]</b></summary>
@@ -19932,11 +19932,11 @@ namespace OpenTK.Graphics.OpenGL
         /// <summary><b>[entry point: <c>glProgramEnvParameter4fvARB</c>]</b></summary>
         public static delegate* unmanaged<uint, uint, float*, void> _glProgramEnvParameter4fvARB_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glProgramEnvParameter4fvARB_Lazy(uint target, uint index, float* parameters)
+        internal static void glProgramEnvParameter4fvARB_Lazy(uint target, uint index, float* @params)
         {
             if (_glProgramEnvParameter4fvARB_fnptr == null)
                 _glProgramEnvParameter4fvARB_fnptr = (delegate* unmanaged<uint, uint, float*, void>)GLLoader.BindingsContext.GetProcAddress("glProgramEnvParameter4fvARB");
-            _glProgramEnvParameter4fvARB_fnptr(target, index, parameters);
+            _glProgramEnvParameter4fvARB_fnptr(target, index, @params);
         }
         
         /// <summary><b>[entry point: <c>glProgramEnvParameterI4iNV</c>]</b></summary>
@@ -19952,11 +19952,11 @@ namespace OpenTK.Graphics.OpenGL
         /// <summary><b>[entry point: <c>glProgramEnvParameterI4ivNV</c>]</b></summary>
         public static delegate* unmanaged<uint, uint, int*, void> _glProgramEnvParameterI4ivNV_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glProgramEnvParameterI4ivNV_Lazy(uint target, uint index, int* parameters)
+        internal static void glProgramEnvParameterI4ivNV_Lazy(uint target, uint index, int* @params)
         {
             if (_glProgramEnvParameterI4ivNV_fnptr == null)
                 _glProgramEnvParameterI4ivNV_fnptr = (delegate* unmanaged<uint, uint, int*, void>)GLLoader.BindingsContext.GetProcAddress("glProgramEnvParameterI4ivNV");
-            _glProgramEnvParameterI4ivNV_fnptr(target, index, parameters);
+            _glProgramEnvParameterI4ivNV_fnptr(target, index, @params);
         }
         
         /// <summary><b>[entry point: <c>glProgramEnvParameterI4uiNV</c>]</b></summary>
@@ -19972,41 +19972,41 @@ namespace OpenTK.Graphics.OpenGL
         /// <summary><b>[entry point: <c>glProgramEnvParameterI4uivNV</c>]</b></summary>
         public static delegate* unmanaged<uint, uint, uint*, void> _glProgramEnvParameterI4uivNV_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glProgramEnvParameterI4uivNV_Lazy(uint target, uint index, uint* parameters)
+        internal static void glProgramEnvParameterI4uivNV_Lazy(uint target, uint index, uint* @params)
         {
             if (_glProgramEnvParameterI4uivNV_fnptr == null)
                 _glProgramEnvParameterI4uivNV_fnptr = (delegate* unmanaged<uint, uint, uint*, void>)GLLoader.BindingsContext.GetProcAddress("glProgramEnvParameterI4uivNV");
-            _glProgramEnvParameterI4uivNV_fnptr(target, index, parameters);
+            _glProgramEnvParameterI4uivNV_fnptr(target, index, @params);
         }
         
         /// <summary><b>[entry point: <c>glProgramEnvParameters4fvEXT</c>]</b></summary>
         public static delegate* unmanaged<uint, uint, int, float*, void> _glProgramEnvParameters4fvEXT_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glProgramEnvParameters4fvEXT_Lazy(uint target, uint index, int count, float* parameters)
+        internal static void glProgramEnvParameters4fvEXT_Lazy(uint target, uint index, int count, float* @params)
         {
             if (_glProgramEnvParameters4fvEXT_fnptr == null)
                 _glProgramEnvParameters4fvEXT_fnptr = (delegate* unmanaged<uint, uint, int, float*, void>)GLLoader.BindingsContext.GetProcAddress("glProgramEnvParameters4fvEXT");
-            _glProgramEnvParameters4fvEXT_fnptr(target, index, count, parameters);
+            _glProgramEnvParameters4fvEXT_fnptr(target, index, count, @params);
         }
         
         /// <summary><b>[entry point: <c>glProgramEnvParametersI4ivNV</c>]</b></summary>
         public static delegate* unmanaged<uint, uint, int, int*, void> _glProgramEnvParametersI4ivNV_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glProgramEnvParametersI4ivNV_Lazy(uint target, uint index, int count, int* parameters)
+        internal static void glProgramEnvParametersI4ivNV_Lazy(uint target, uint index, int count, int* @params)
         {
             if (_glProgramEnvParametersI4ivNV_fnptr == null)
                 _glProgramEnvParametersI4ivNV_fnptr = (delegate* unmanaged<uint, uint, int, int*, void>)GLLoader.BindingsContext.GetProcAddress("glProgramEnvParametersI4ivNV");
-            _glProgramEnvParametersI4ivNV_fnptr(target, index, count, parameters);
+            _glProgramEnvParametersI4ivNV_fnptr(target, index, count, @params);
         }
         
         /// <summary><b>[entry point: <c>glProgramEnvParametersI4uivNV</c>]</b></summary>
         public static delegate* unmanaged<uint, uint, int, uint*, void> _glProgramEnvParametersI4uivNV_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glProgramEnvParametersI4uivNV_Lazy(uint target, uint index, int count, uint* parameters)
+        internal static void glProgramEnvParametersI4uivNV_Lazy(uint target, uint index, int count, uint* @params)
         {
             if (_glProgramEnvParametersI4uivNV_fnptr == null)
                 _glProgramEnvParametersI4uivNV_fnptr = (delegate* unmanaged<uint, uint, int, uint*, void>)GLLoader.BindingsContext.GetProcAddress("glProgramEnvParametersI4uivNV");
-            _glProgramEnvParametersI4uivNV_fnptr(target, index, count, parameters);
+            _glProgramEnvParametersI4uivNV_fnptr(target, index, count, @params);
         }
         
         /// <summary><b>[entry point: <c>glProgramLocalParameter4dARB</c>]</b></summary>
@@ -20022,11 +20022,11 @@ namespace OpenTK.Graphics.OpenGL
         /// <summary><b>[entry point: <c>glProgramLocalParameter4dvARB</c>]</b></summary>
         public static delegate* unmanaged<uint, uint, double*, void> _glProgramLocalParameter4dvARB_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glProgramLocalParameter4dvARB_Lazy(uint target, uint index, double* parameters)
+        internal static void glProgramLocalParameter4dvARB_Lazy(uint target, uint index, double* @params)
         {
             if (_glProgramLocalParameter4dvARB_fnptr == null)
                 _glProgramLocalParameter4dvARB_fnptr = (delegate* unmanaged<uint, uint, double*, void>)GLLoader.BindingsContext.GetProcAddress("glProgramLocalParameter4dvARB");
-            _glProgramLocalParameter4dvARB_fnptr(target, index, parameters);
+            _glProgramLocalParameter4dvARB_fnptr(target, index, @params);
         }
         
         /// <summary><b>[entry point: <c>glProgramLocalParameter4fARB</c>]</b></summary>
@@ -20042,11 +20042,11 @@ namespace OpenTK.Graphics.OpenGL
         /// <summary><b>[entry point: <c>glProgramLocalParameter4fvARB</c>]</b></summary>
         public static delegate* unmanaged<uint, uint, float*, void> _glProgramLocalParameter4fvARB_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glProgramLocalParameter4fvARB_Lazy(uint target, uint index, float* parameters)
+        internal static void glProgramLocalParameter4fvARB_Lazy(uint target, uint index, float* @params)
         {
             if (_glProgramLocalParameter4fvARB_fnptr == null)
                 _glProgramLocalParameter4fvARB_fnptr = (delegate* unmanaged<uint, uint, float*, void>)GLLoader.BindingsContext.GetProcAddress("glProgramLocalParameter4fvARB");
-            _glProgramLocalParameter4fvARB_fnptr(target, index, parameters);
+            _glProgramLocalParameter4fvARB_fnptr(target, index, @params);
         }
         
         /// <summary><b>[entry point: <c>glProgramLocalParameterI4iNV</c>]</b></summary>
@@ -20062,11 +20062,11 @@ namespace OpenTK.Graphics.OpenGL
         /// <summary><b>[entry point: <c>glProgramLocalParameterI4ivNV</c>]</b></summary>
         public static delegate* unmanaged<uint, uint, int*, void> _glProgramLocalParameterI4ivNV_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glProgramLocalParameterI4ivNV_Lazy(uint target, uint index, int* parameters)
+        internal static void glProgramLocalParameterI4ivNV_Lazy(uint target, uint index, int* @params)
         {
             if (_glProgramLocalParameterI4ivNV_fnptr == null)
                 _glProgramLocalParameterI4ivNV_fnptr = (delegate* unmanaged<uint, uint, int*, void>)GLLoader.BindingsContext.GetProcAddress("glProgramLocalParameterI4ivNV");
-            _glProgramLocalParameterI4ivNV_fnptr(target, index, parameters);
+            _glProgramLocalParameterI4ivNV_fnptr(target, index, @params);
         }
         
         /// <summary><b>[entry point: <c>glProgramLocalParameterI4uiNV</c>]</b></summary>
@@ -20082,41 +20082,41 @@ namespace OpenTK.Graphics.OpenGL
         /// <summary><b>[entry point: <c>glProgramLocalParameterI4uivNV</c>]</b></summary>
         public static delegate* unmanaged<uint, uint, uint*, void> _glProgramLocalParameterI4uivNV_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glProgramLocalParameterI4uivNV_Lazy(uint target, uint index, uint* parameters)
+        internal static void glProgramLocalParameterI4uivNV_Lazy(uint target, uint index, uint* @params)
         {
             if (_glProgramLocalParameterI4uivNV_fnptr == null)
                 _glProgramLocalParameterI4uivNV_fnptr = (delegate* unmanaged<uint, uint, uint*, void>)GLLoader.BindingsContext.GetProcAddress("glProgramLocalParameterI4uivNV");
-            _glProgramLocalParameterI4uivNV_fnptr(target, index, parameters);
+            _glProgramLocalParameterI4uivNV_fnptr(target, index, @params);
         }
         
         /// <summary><b>[entry point: <c>glProgramLocalParameters4fvEXT</c>]</b></summary>
         public static delegate* unmanaged<uint, uint, int, float*, void> _glProgramLocalParameters4fvEXT_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glProgramLocalParameters4fvEXT_Lazy(uint target, uint index, int count, float* parameters)
+        internal static void glProgramLocalParameters4fvEXT_Lazy(uint target, uint index, int count, float* @params)
         {
             if (_glProgramLocalParameters4fvEXT_fnptr == null)
                 _glProgramLocalParameters4fvEXT_fnptr = (delegate* unmanaged<uint, uint, int, float*, void>)GLLoader.BindingsContext.GetProcAddress("glProgramLocalParameters4fvEXT");
-            _glProgramLocalParameters4fvEXT_fnptr(target, index, count, parameters);
+            _glProgramLocalParameters4fvEXT_fnptr(target, index, count, @params);
         }
         
         /// <summary><b>[entry point: <c>glProgramLocalParametersI4ivNV</c>]</b></summary>
         public static delegate* unmanaged<uint, uint, int, int*, void> _glProgramLocalParametersI4ivNV_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glProgramLocalParametersI4ivNV_Lazy(uint target, uint index, int count, int* parameters)
+        internal static void glProgramLocalParametersI4ivNV_Lazy(uint target, uint index, int count, int* @params)
         {
             if (_glProgramLocalParametersI4ivNV_fnptr == null)
                 _glProgramLocalParametersI4ivNV_fnptr = (delegate* unmanaged<uint, uint, int, int*, void>)GLLoader.BindingsContext.GetProcAddress("glProgramLocalParametersI4ivNV");
-            _glProgramLocalParametersI4ivNV_fnptr(target, index, count, parameters);
+            _glProgramLocalParametersI4ivNV_fnptr(target, index, count, @params);
         }
         
         /// <summary><b>[entry point: <c>glProgramLocalParametersI4uivNV</c>]</b></summary>
         public static delegate* unmanaged<uint, uint, int, uint*, void> _glProgramLocalParametersI4uivNV_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glProgramLocalParametersI4uivNV_Lazy(uint target, uint index, int count, uint* parameters)
+        internal static void glProgramLocalParametersI4uivNV_Lazy(uint target, uint index, int count, uint* @params)
         {
             if (_glProgramLocalParametersI4uivNV_fnptr == null)
                 _glProgramLocalParametersI4uivNV_fnptr = (delegate* unmanaged<uint, uint, int, uint*, void>)GLLoader.BindingsContext.GetProcAddress("glProgramLocalParametersI4uivNV");
-            _glProgramLocalParametersI4uivNV_fnptr(target, index, count, parameters);
+            _glProgramLocalParametersI4uivNV_fnptr(target, index, count, @params);
         }
         
         /// <summary><b>[entry point: <c>glProgramNamedParameter4dNV</c>]</b></summary>
@@ -20262,21 +20262,21 @@ namespace OpenTK.Graphics.OpenGL
         /// <summary><b>[entry point: <c>glProgramStringARB</c>]</b></summary>
         public static delegate* unmanaged<uint, uint, int, void*, void> _glProgramStringARB_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glProgramStringARB_Lazy(uint target, uint format, int len, void* str)
+        internal static void glProgramStringARB_Lazy(uint target, uint format, int len, void* @string)
         {
             if (_glProgramStringARB_fnptr == null)
                 _glProgramStringARB_fnptr = (delegate* unmanaged<uint, uint, int, void*, void>)GLLoader.BindingsContext.GetProcAddress("glProgramStringARB");
-            _glProgramStringARB_fnptr(target, format, len, str);
+            _glProgramStringARB_fnptr(target, format, len, @string);
         }
         
         /// <summary><b>[entry point: <c>glProgramSubroutineParametersuivNV</c>]</b></summary>
         public static delegate* unmanaged<uint, int, uint*, void> _glProgramSubroutineParametersuivNV_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glProgramSubroutineParametersuivNV_Lazy(uint target, int count, uint* parameters)
+        internal static void glProgramSubroutineParametersuivNV_Lazy(uint target, int count, uint* @params)
         {
             if (_glProgramSubroutineParametersuivNV_fnptr == null)
                 _glProgramSubroutineParametersuivNV_fnptr = (delegate* unmanaged<uint, int, uint*, void>)GLLoader.BindingsContext.GetProcAddress("glProgramSubroutineParametersuivNV");
-            _glProgramSubroutineParametersuivNV_fnptr(target, count, parameters);
+            _glProgramSubroutineParametersuivNV_fnptr(target, count, @params);
         }
         
         /// <summary><b>[entry point: <c>glProgramUniform1d</c>]</b></summary>
@@ -23682,21 +23682,21 @@ namespace OpenTK.Graphics.OpenGL
         /// <summary><b>[entry point: <c>glSemaphoreParameterivNV</c>]</b></summary>
         public static delegate* unmanaged<uint, uint, int*, void> _glSemaphoreParameterivNV_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glSemaphoreParameterivNV_Lazy(uint semaphore, uint pname, int* parameters)
+        internal static void glSemaphoreParameterivNV_Lazy(uint semaphore, uint pname, int* @params)
         {
             if (_glSemaphoreParameterivNV_fnptr == null)
                 _glSemaphoreParameterivNV_fnptr = (delegate* unmanaged<uint, uint, int*, void>)GLLoader.BindingsContext.GetProcAddress("glSemaphoreParameterivNV");
-            _glSemaphoreParameterivNV_fnptr(semaphore, pname, parameters);
+            _glSemaphoreParameterivNV_fnptr(semaphore, pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glSemaphoreParameterui64vEXT</c>]</b></summary>
         public static delegate* unmanaged<uint, uint, ulong*, void> _glSemaphoreParameterui64vEXT_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glSemaphoreParameterui64vEXT_Lazy(uint semaphore, uint pname, ulong* parameters)
+        internal static void glSemaphoreParameterui64vEXT_Lazy(uint semaphore, uint pname, ulong* @params)
         {
             if (_glSemaphoreParameterui64vEXT_fnptr == null)
                 _glSemaphoreParameterui64vEXT_fnptr = (delegate* unmanaged<uint, uint, ulong*, void>)GLLoader.BindingsContext.GetProcAddress("glSemaphoreParameterui64vEXT");
-            _glSemaphoreParameterui64vEXT_fnptr(semaphore, pname, parameters);
+            _glSemaphoreParameterui64vEXT_fnptr(semaphore, pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glSeparableFilter2D</c>]</b></summary>
@@ -23832,21 +23832,21 @@ namespace OpenTK.Graphics.OpenGL
         /// <summary><b>[entry point: <c>glShaderSource</c>]</b></summary>
         public static delegate* unmanaged<int, int, byte**, int*, void> _glShaderSource_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glShaderSource_Lazy(int shader, int count, byte** str, int* length)
+        internal static void glShaderSource_Lazy(int shader, int count, byte** @string, int* length)
         {
             if (_glShaderSource_fnptr == null)
                 _glShaderSource_fnptr = (delegate* unmanaged<int, int, byte**, int*, void>)GLLoader.BindingsContext.GetProcAddress("glShaderSource");
-            _glShaderSource_fnptr(shader, count, str, length);
+            _glShaderSource_fnptr(shader, count, @string, length);
         }
         
         /// <summary><b>[entry point: <c>glShaderSourceARB</c>]</b></summary>
         public static delegate* unmanaged<IntPtr, int, byte**, int*, void> _glShaderSourceARB_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glShaderSourceARB_Lazy(IntPtr shaderObj, int count, byte** str, int* length)
+        internal static void glShaderSourceARB_Lazy(IntPtr shaderObj, int count, byte** @string, int* length)
         {
             if (_glShaderSourceARB_fnptr == null)
                 _glShaderSourceARB_fnptr = (delegate* unmanaged<IntPtr, int, byte**, int*, void>)GLLoader.BindingsContext.GetProcAddress("glShaderSourceARB");
-            _glShaderSourceARB_fnptr(shaderObj, count, str, length);
+            _glShaderSourceARB_fnptr(shaderObj, count, @string, length);
         }
         
         /// <summary><b>[entry point: <c>glShaderStorageBlockBinding</c>]</b></summary>
@@ -24012,11 +24012,11 @@ namespace OpenTK.Graphics.OpenGL
         /// <summary><b>[entry point: <c>glSpriteParameterfvSGIX</c>]</b></summary>
         public static delegate* unmanaged<uint, float*, void> _glSpriteParameterfvSGIX_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glSpriteParameterfvSGIX_Lazy(uint pname, float* parameters)
+        internal static void glSpriteParameterfvSGIX_Lazy(uint pname, float* @params)
         {
             if (_glSpriteParameterfvSGIX_fnptr == null)
                 _glSpriteParameterfvSGIX_fnptr = (delegate* unmanaged<uint, float*, void>)GLLoader.BindingsContext.GetProcAddress("glSpriteParameterfvSGIX");
-            _glSpriteParameterfvSGIX_fnptr(pname, parameters);
+            _glSpriteParameterfvSGIX_fnptr(pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glSpriteParameteriSGIX</c>]</b></summary>
@@ -24032,11 +24032,11 @@ namespace OpenTK.Graphics.OpenGL
         /// <summary><b>[entry point: <c>glSpriteParameterivSGIX</c>]</b></summary>
         public static delegate* unmanaged<uint, int*, void> _glSpriteParameterivSGIX_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glSpriteParameterivSGIX_Lazy(uint pname, int* parameters)
+        internal static void glSpriteParameterivSGIX_Lazy(uint pname, int* @params)
         {
             if (_glSpriteParameterivSGIX_fnptr == null)
                 _glSpriteParameterivSGIX_fnptr = (delegate* unmanaged<uint, int*, void>)GLLoader.BindingsContext.GetProcAddress("glSpriteParameterivSGIX");
-            _glSpriteParameterivSGIX_fnptr(pname, parameters);
+            _glSpriteParameterivSGIX_fnptr(pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glStartInstrumentsSGIX</c>]</b></summary>
@@ -24102,31 +24102,31 @@ namespace OpenTK.Graphics.OpenGL
         /// <summary><b>[entry point: <c>glStencilFunc</c>]</b></summary>
         public static delegate* unmanaged<uint, int, uint, void> _glStencilFunc_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glStencilFunc_Lazy(uint func, int reference, uint mask)
+        internal static void glStencilFunc_Lazy(uint func, int @ref, uint mask)
         {
             if (_glStencilFunc_fnptr == null)
                 _glStencilFunc_fnptr = (delegate* unmanaged<uint, int, uint, void>)GLLoader.BindingsContext.GetProcAddress("glStencilFunc");
-            _glStencilFunc_fnptr(func, reference, mask);
+            _glStencilFunc_fnptr(func, @ref, mask);
         }
         
         /// <summary><b>[entry point: <c>glStencilFuncSeparate</c>]</b></summary>
         public static delegate* unmanaged<uint, uint, int, uint, void> _glStencilFuncSeparate_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glStencilFuncSeparate_Lazy(uint face, uint func, int reference, uint mask)
+        internal static void glStencilFuncSeparate_Lazy(uint face, uint func, int @ref, uint mask)
         {
             if (_glStencilFuncSeparate_fnptr == null)
                 _glStencilFuncSeparate_fnptr = (delegate* unmanaged<uint, uint, int, uint, void>)GLLoader.BindingsContext.GetProcAddress("glStencilFuncSeparate");
-            _glStencilFuncSeparate_fnptr(face, func, reference, mask);
+            _glStencilFuncSeparate_fnptr(face, func, @ref, mask);
         }
         
         /// <summary><b>[entry point: <c>glStencilFuncSeparateATI</c>]</b></summary>
         public static delegate* unmanaged<uint, uint, int, uint, void> _glStencilFuncSeparateATI_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glStencilFuncSeparateATI_Lazy(uint frontfunc, uint backfunc, int reference, uint mask)
+        internal static void glStencilFuncSeparateATI_Lazy(uint frontfunc, uint backfunc, int @ref, uint mask)
         {
             if (_glStencilFuncSeparateATI_fnptr == null)
                 _glStencilFuncSeparateATI_fnptr = (delegate* unmanaged<uint, uint, int, uint, void>)GLLoader.BindingsContext.GetProcAddress("glStencilFuncSeparateATI");
-            _glStencilFuncSeparateATI_fnptr(frontfunc, backfunc, reference, mask);
+            _glStencilFuncSeparateATI_fnptr(frontfunc, backfunc, @ref, mask);
         }
         
         /// <summary><b>[entry point: <c>glStencilMask</c>]</b></summary>
@@ -24262,11 +24262,11 @@ namespace OpenTK.Graphics.OpenGL
         /// <summary><b>[entry point: <c>glStringMarkerGREMEDY</c>]</b></summary>
         public static delegate* unmanaged<int, void*, void> _glStringMarkerGREMEDY_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glStringMarkerGREMEDY_Lazy(int len, void* str)
+        internal static void glStringMarkerGREMEDY_Lazy(int len, void* @string)
         {
             if (_glStringMarkerGREMEDY_fnptr == null)
                 _glStringMarkerGREMEDY_fnptr = (delegate* unmanaged<int, void*, void>)GLLoader.BindingsContext.GetProcAddress("glStringMarkerGREMEDY");
-            _glStringMarkerGREMEDY_fnptr(len, str);
+            _glStringMarkerGREMEDY_fnptr(len, @string);
         }
         
         /// <summary><b>[entry point: <c>glSubpixelPrecisionBiasNV</c>]</b></summary>
@@ -24282,11 +24282,11 @@ namespace OpenTK.Graphics.OpenGL
         /// <summary><b>[entry point: <c>glSwizzleEXT</c>]</b></summary>
         public static delegate* unmanaged<uint, uint, uint, uint, uint, uint, void> _glSwizzleEXT_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glSwizzleEXT_Lazy(uint res, uint input, uint outX, uint outY, uint outZ, uint outW)
+        internal static void glSwizzleEXT_Lazy(uint res, uint @in, uint outX, uint outY, uint outZ, uint outW)
         {
             if (_glSwizzleEXT_fnptr == null)
                 _glSwizzleEXT_fnptr = (delegate* unmanaged<uint, uint, uint, uint, uint, uint, void>)GLLoader.BindingsContext.GetProcAddress("glSwizzleEXT");
-            _glSwizzleEXT_fnptr(res, input, outX, outY, outZ, outW);
+            _glSwizzleEXT_fnptr(res, @in, outX, outY, outZ, outW);
         }
         
         /// <summary><b>[entry point: <c>glSyncTextureINTEL</c>]</b></summary>
@@ -24472,11 +24472,11 @@ namespace OpenTK.Graphics.OpenGL
         /// <summary><b>[entry point: <c>glTestObjectAPPLE</c>]</b></summary>
         public static delegate* unmanaged<uint, uint, byte> _glTestObjectAPPLE_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static byte glTestObjectAPPLE_Lazy(uint obj, uint name)
+        internal static byte glTestObjectAPPLE_Lazy(uint @object, uint name)
         {
             if (_glTestObjectAPPLE_fnptr == null)
                 _glTestObjectAPPLE_fnptr = (delegate* unmanaged<uint, uint, byte>)GLLoader.BindingsContext.GetProcAddress("glTestObjectAPPLE");
-            return _glTestObjectAPPLE_fnptr(obj, name);
+            return _glTestObjectAPPLE_fnptr(@object, name);
         }
         
         /// <summary><b>[entry point: <c>glTexAttachMemoryNV</c>]</b></summary>
@@ -25422,11 +25422,11 @@ namespace OpenTK.Graphics.OpenGL
         /// <summary><b>[entry point: <c>glTexEnvfv</c>]</b></summary>
         public static delegate* unmanaged<uint, uint, float*, void> _glTexEnvfv_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glTexEnvfv_Lazy(uint target, uint pname, float* parameters)
+        internal static void glTexEnvfv_Lazy(uint target, uint pname, float* @params)
         {
             if (_glTexEnvfv_fnptr == null)
                 _glTexEnvfv_fnptr = (delegate* unmanaged<uint, uint, float*, void>)GLLoader.BindingsContext.GetProcAddress("glTexEnvfv");
-            _glTexEnvfv_fnptr(target, pname, parameters);
+            _glTexEnvfv_fnptr(target, pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glTexEnvi</c>]</b></summary>
@@ -25442,11 +25442,11 @@ namespace OpenTK.Graphics.OpenGL
         /// <summary><b>[entry point: <c>glTexEnviv</c>]</b></summary>
         public static delegate* unmanaged<uint, uint, int*, void> _glTexEnviv_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glTexEnviv_Lazy(uint target, uint pname, int* parameters)
+        internal static void glTexEnviv_Lazy(uint target, uint pname, int* @params)
         {
             if (_glTexEnviv_fnptr == null)
                 _glTexEnviv_fnptr = (delegate* unmanaged<uint, uint, int*, void>)GLLoader.BindingsContext.GetProcAddress("glTexEnviv");
-            _glTexEnviv_fnptr(target, pname, parameters);
+            _glTexEnviv_fnptr(target, pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glTexEnvx</c>]</b></summary>
@@ -25472,41 +25472,41 @@ namespace OpenTK.Graphics.OpenGL
         /// <summary><b>[entry point: <c>glTexEnvxv</c>]</b></summary>
         public static delegate* unmanaged<uint, uint, int*, void> _glTexEnvxv_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glTexEnvxv_Lazy(uint target, uint pname, int* parameters)
+        internal static void glTexEnvxv_Lazy(uint target, uint pname, int* @params)
         {
             if (_glTexEnvxv_fnptr == null)
                 _glTexEnvxv_fnptr = (delegate* unmanaged<uint, uint, int*, void>)GLLoader.BindingsContext.GetProcAddress("glTexEnvxv");
-            _glTexEnvxv_fnptr(target, pname, parameters);
+            _glTexEnvxv_fnptr(target, pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glTexEnvxvOES</c>]</b></summary>
         public static delegate* unmanaged<uint, uint, int*, void> _glTexEnvxvOES_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glTexEnvxvOES_Lazy(uint target, uint pname, int* parameters)
+        internal static void glTexEnvxvOES_Lazy(uint target, uint pname, int* @params)
         {
             if (_glTexEnvxvOES_fnptr == null)
                 _glTexEnvxvOES_fnptr = (delegate* unmanaged<uint, uint, int*, void>)GLLoader.BindingsContext.GetProcAddress("glTexEnvxvOES");
-            _glTexEnvxvOES_fnptr(target, pname, parameters);
+            _glTexEnvxvOES_fnptr(target, pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glTexEstimateMotionQCOM</c>]</b></summary>
         public static delegate* unmanaged<int, int, int, void> _glTexEstimateMotionQCOM_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glTexEstimateMotionQCOM_Lazy(int reference, int target, int output)
+        internal static void glTexEstimateMotionQCOM_Lazy(int @ref, int target, int output)
         {
             if (_glTexEstimateMotionQCOM_fnptr == null)
                 _glTexEstimateMotionQCOM_fnptr = (delegate* unmanaged<int, int, int, void>)GLLoader.BindingsContext.GetProcAddress("glTexEstimateMotionQCOM");
-            _glTexEstimateMotionQCOM_fnptr(reference, target, output);
+            _glTexEstimateMotionQCOM_fnptr(@ref, target, output);
         }
         
         /// <summary><b>[entry point: <c>glTexEstimateMotionRegionsQCOM</c>]</b></summary>
         public static delegate* unmanaged<int, int, int, int, void> _glTexEstimateMotionRegionsQCOM_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glTexEstimateMotionRegionsQCOM_Lazy(int reference, int target, int output, int mask)
+        internal static void glTexEstimateMotionRegionsQCOM_Lazy(int @ref, int target, int output, int mask)
         {
             if (_glTexEstimateMotionRegionsQCOM_fnptr == null)
                 _glTexEstimateMotionRegionsQCOM_fnptr = (delegate* unmanaged<int, int, int, int, void>)GLLoader.BindingsContext.GetProcAddress("glTexEstimateMotionRegionsQCOM");
-            _glTexEstimateMotionRegionsQCOM_fnptr(reference, target, output, mask);
+            _glTexEstimateMotionRegionsQCOM_fnptr(@ref, target, output, mask);
         }
         
         /// <summary><b>[entry point: <c>glTexFilterFuncSGIS</c>]</b></summary>
@@ -25532,11 +25532,11 @@ namespace OpenTK.Graphics.OpenGL
         /// <summary><b>[entry point: <c>glTexGendv</c>]</b></summary>
         public static delegate* unmanaged<uint, uint, double*, void> _glTexGendv_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glTexGendv_Lazy(uint coord, uint pname, double* parameters)
+        internal static void glTexGendv_Lazy(uint coord, uint pname, double* @params)
         {
             if (_glTexGendv_fnptr == null)
                 _glTexGendv_fnptr = (delegate* unmanaged<uint, uint, double*, void>)GLLoader.BindingsContext.GetProcAddress("glTexGendv");
-            _glTexGendv_fnptr(coord, pname, parameters);
+            _glTexGendv_fnptr(coord, pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glTexGenf</c>]</b></summary>
@@ -25562,21 +25562,21 @@ namespace OpenTK.Graphics.OpenGL
         /// <summary><b>[entry point: <c>glTexGenfv</c>]</b></summary>
         public static delegate* unmanaged<uint, uint, float*, void> _glTexGenfv_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glTexGenfv_Lazy(uint coord, uint pname, float* parameters)
+        internal static void glTexGenfv_Lazy(uint coord, uint pname, float* @params)
         {
             if (_glTexGenfv_fnptr == null)
                 _glTexGenfv_fnptr = (delegate* unmanaged<uint, uint, float*, void>)GLLoader.BindingsContext.GetProcAddress("glTexGenfv");
-            _glTexGenfv_fnptr(coord, pname, parameters);
+            _glTexGenfv_fnptr(coord, pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glTexGenfvOES</c>]</b></summary>
         public static delegate* unmanaged<uint, uint, float*, void> _glTexGenfvOES_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glTexGenfvOES_Lazy(uint coord, uint pname, float* parameters)
+        internal static void glTexGenfvOES_Lazy(uint coord, uint pname, float* @params)
         {
             if (_glTexGenfvOES_fnptr == null)
                 _glTexGenfvOES_fnptr = (delegate* unmanaged<uint, uint, float*, void>)GLLoader.BindingsContext.GetProcAddress("glTexGenfvOES");
-            _glTexGenfvOES_fnptr(coord, pname, parameters);
+            _glTexGenfvOES_fnptr(coord, pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glTexGeni</c>]</b></summary>
@@ -25602,21 +25602,21 @@ namespace OpenTK.Graphics.OpenGL
         /// <summary><b>[entry point: <c>glTexGeniv</c>]</b></summary>
         public static delegate* unmanaged<uint, uint, int*, void> _glTexGeniv_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glTexGeniv_Lazy(uint coord, uint pname, int* parameters)
+        internal static void glTexGeniv_Lazy(uint coord, uint pname, int* @params)
         {
             if (_glTexGeniv_fnptr == null)
                 _glTexGeniv_fnptr = (delegate* unmanaged<uint, uint, int*, void>)GLLoader.BindingsContext.GetProcAddress("glTexGeniv");
-            _glTexGeniv_fnptr(coord, pname, parameters);
+            _glTexGeniv_fnptr(coord, pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glTexGenivOES</c>]</b></summary>
         public static delegate* unmanaged<uint, uint, int*, void> _glTexGenivOES_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glTexGenivOES_Lazy(uint coord, uint pname, int* parameters)
+        internal static void glTexGenivOES_Lazy(uint coord, uint pname, int* @params)
         {
             if (_glTexGenivOES_fnptr == null)
                 _glTexGenivOES_fnptr = (delegate* unmanaged<uint, uint, int*, void>)GLLoader.BindingsContext.GetProcAddress("glTexGenivOES");
-            _glTexGenivOES_fnptr(coord, pname, parameters);
+            _glTexGenivOES_fnptr(coord, pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glTexGenxOES</c>]</b></summary>
@@ -25632,11 +25632,11 @@ namespace OpenTK.Graphics.OpenGL
         /// <summary><b>[entry point: <c>glTexGenxvOES</c>]</b></summary>
         public static delegate* unmanaged<uint, uint, int*, void> _glTexGenxvOES_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glTexGenxvOES_Lazy(uint coord, uint pname, int* parameters)
+        internal static void glTexGenxvOES_Lazy(uint coord, uint pname, int* @params)
         {
             if (_glTexGenxvOES_fnptr == null)
                 _glTexGenxvOES_fnptr = (delegate* unmanaged<uint, uint, int*, void>)GLLoader.BindingsContext.GetProcAddress("glTexGenxvOES");
-            _glTexGenxvOES_fnptr(coord, pname, parameters);
+            _glTexGenxvOES_fnptr(coord, pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glTexImage1D</c>]</b></summary>
@@ -25782,11 +25782,11 @@ namespace OpenTK.Graphics.OpenGL
         /// <summary><b>[entry point: <c>glTexParameterfv</c>]</b></summary>
         public static delegate* unmanaged<uint, uint, float*, void> _glTexParameterfv_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glTexParameterfv_Lazy(uint target, uint pname, float* parameters)
+        internal static void glTexParameterfv_Lazy(uint target, uint pname, float* @params)
         {
             if (_glTexParameterfv_fnptr == null)
                 _glTexParameterfv_fnptr = (delegate* unmanaged<uint, uint, float*, void>)GLLoader.BindingsContext.GetProcAddress("glTexParameterfv");
-            _glTexParameterfv_fnptr(target, pname, parameters);
+            _glTexParameterfv_fnptr(target, pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glTexParameteri</c>]</b></summary>
@@ -25802,71 +25802,71 @@ namespace OpenTK.Graphics.OpenGL
         /// <summary><b>[entry point: <c>glTexParameterIiv</c>]</b></summary>
         public static delegate* unmanaged<uint, uint, int*, void> _glTexParameterIiv_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glTexParameterIiv_Lazy(uint target, uint pname, int* parameters)
+        internal static void glTexParameterIiv_Lazy(uint target, uint pname, int* @params)
         {
             if (_glTexParameterIiv_fnptr == null)
                 _glTexParameterIiv_fnptr = (delegate* unmanaged<uint, uint, int*, void>)GLLoader.BindingsContext.GetProcAddress("glTexParameterIiv");
-            _glTexParameterIiv_fnptr(target, pname, parameters);
+            _glTexParameterIiv_fnptr(target, pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glTexParameterIivEXT</c>]</b></summary>
         public static delegate* unmanaged<uint, uint, int*, void> _glTexParameterIivEXT_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glTexParameterIivEXT_Lazy(uint target, uint pname, int* parameters)
+        internal static void glTexParameterIivEXT_Lazy(uint target, uint pname, int* @params)
         {
             if (_glTexParameterIivEXT_fnptr == null)
                 _glTexParameterIivEXT_fnptr = (delegate* unmanaged<uint, uint, int*, void>)GLLoader.BindingsContext.GetProcAddress("glTexParameterIivEXT");
-            _glTexParameterIivEXT_fnptr(target, pname, parameters);
+            _glTexParameterIivEXT_fnptr(target, pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glTexParameterIivOES</c>]</b></summary>
         public static delegate* unmanaged<uint, uint, int*, void> _glTexParameterIivOES_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glTexParameterIivOES_Lazy(uint target, uint pname, int* parameters)
+        internal static void glTexParameterIivOES_Lazy(uint target, uint pname, int* @params)
         {
             if (_glTexParameterIivOES_fnptr == null)
                 _glTexParameterIivOES_fnptr = (delegate* unmanaged<uint, uint, int*, void>)GLLoader.BindingsContext.GetProcAddress("glTexParameterIivOES");
-            _glTexParameterIivOES_fnptr(target, pname, parameters);
+            _glTexParameterIivOES_fnptr(target, pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glTexParameterIuiv</c>]</b></summary>
         public static delegate* unmanaged<uint, uint, uint*, void> _glTexParameterIuiv_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glTexParameterIuiv_Lazy(uint target, uint pname, uint* parameters)
+        internal static void glTexParameterIuiv_Lazy(uint target, uint pname, uint* @params)
         {
             if (_glTexParameterIuiv_fnptr == null)
                 _glTexParameterIuiv_fnptr = (delegate* unmanaged<uint, uint, uint*, void>)GLLoader.BindingsContext.GetProcAddress("glTexParameterIuiv");
-            _glTexParameterIuiv_fnptr(target, pname, parameters);
+            _glTexParameterIuiv_fnptr(target, pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glTexParameterIuivEXT</c>]</b></summary>
         public static delegate* unmanaged<uint, uint, uint*, void> _glTexParameterIuivEXT_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glTexParameterIuivEXT_Lazy(uint target, uint pname, uint* parameters)
+        internal static void glTexParameterIuivEXT_Lazy(uint target, uint pname, uint* @params)
         {
             if (_glTexParameterIuivEXT_fnptr == null)
                 _glTexParameterIuivEXT_fnptr = (delegate* unmanaged<uint, uint, uint*, void>)GLLoader.BindingsContext.GetProcAddress("glTexParameterIuivEXT");
-            _glTexParameterIuivEXT_fnptr(target, pname, parameters);
+            _glTexParameterIuivEXT_fnptr(target, pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glTexParameterIuivOES</c>]</b></summary>
         public static delegate* unmanaged<uint, uint, uint*, void> _glTexParameterIuivOES_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glTexParameterIuivOES_Lazy(uint target, uint pname, uint* parameters)
+        internal static void glTexParameterIuivOES_Lazy(uint target, uint pname, uint* @params)
         {
             if (_glTexParameterIuivOES_fnptr == null)
                 _glTexParameterIuivOES_fnptr = (delegate* unmanaged<uint, uint, uint*, void>)GLLoader.BindingsContext.GetProcAddress("glTexParameterIuivOES");
-            _glTexParameterIuivOES_fnptr(target, pname, parameters);
+            _glTexParameterIuivOES_fnptr(target, pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glTexParameteriv</c>]</b></summary>
         public static delegate* unmanaged<uint, uint, int*, void> _glTexParameteriv_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glTexParameteriv_Lazy(uint target, uint pname, int* parameters)
+        internal static void glTexParameteriv_Lazy(uint target, uint pname, int* @params)
         {
             if (_glTexParameteriv_fnptr == null)
                 _glTexParameteriv_fnptr = (delegate* unmanaged<uint, uint, int*, void>)GLLoader.BindingsContext.GetProcAddress("glTexParameteriv");
-            _glTexParameteriv_fnptr(target, pname, parameters);
+            _glTexParameteriv_fnptr(target, pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glTexParameterx</c>]</b></summary>
@@ -25892,21 +25892,21 @@ namespace OpenTK.Graphics.OpenGL
         /// <summary><b>[entry point: <c>glTexParameterxv</c>]</b></summary>
         public static delegate* unmanaged<uint, uint, int*, void> _glTexParameterxv_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glTexParameterxv_Lazy(uint target, uint pname, int* parameters)
+        internal static void glTexParameterxv_Lazy(uint target, uint pname, int* @params)
         {
             if (_glTexParameterxv_fnptr == null)
                 _glTexParameterxv_fnptr = (delegate* unmanaged<uint, uint, int*, void>)GLLoader.BindingsContext.GetProcAddress("glTexParameterxv");
-            _glTexParameterxv_fnptr(target, pname, parameters);
+            _glTexParameterxv_fnptr(target, pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glTexParameterxvOES</c>]</b></summary>
         public static delegate* unmanaged<uint, uint, int*, void> _glTexParameterxvOES_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glTexParameterxvOES_Lazy(uint target, uint pname, int* parameters)
+        internal static void glTexParameterxvOES_Lazy(uint target, uint pname, int* @params)
         {
             if (_glTexParameterxvOES_fnptr == null)
                 _glTexParameterxvOES_fnptr = (delegate* unmanaged<uint, uint, int*, void>)GLLoader.BindingsContext.GetProcAddress("glTexParameterxvOES");
-            _glTexParameterxvOES_fnptr(target, pname, parameters);
+            _glTexParameterxvOES_fnptr(target, pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glTexRenderbufferNV</c>]</b></summary>
@@ -26412,11 +26412,11 @@ namespace OpenTK.Graphics.OpenGL
         /// <summary><b>[entry point: <c>glTextureParameterfvEXT</c>]</b></summary>
         public static delegate* unmanaged<int, uint, uint, float*, void> _glTextureParameterfvEXT_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glTextureParameterfvEXT_Lazy(int texture, uint target, uint pname, float* parameters)
+        internal static void glTextureParameterfvEXT_Lazy(int texture, uint target, uint pname, float* @params)
         {
             if (_glTextureParameterfvEXT_fnptr == null)
                 _glTextureParameterfvEXT_fnptr = (delegate* unmanaged<int, uint, uint, float*, void>)GLLoader.BindingsContext.GetProcAddress("glTextureParameterfvEXT");
-            _glTextureParameterfvEXT_fnptr(texture, target, pname, parameters);
+            _glTextureParameterfvEXT_fnptr(texture, target, pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glTextureParameteri</c>]</b></summary>
@@ -26442,41 +26442,41 @@ namespace OpenTK.Graphics.OpenGL
         /// <summary><b>[entry point: <c>glTextureParameterIiv</c>]</b></summary>
         public static delegate* unmanaged<int, uint, int*, void> _glTextureParameterIiv_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glTextureParameterIiv_Lazy(int texture, uint pname, int* parameters)
+        internal static void glTextureParameterIiv_Lazy(int texture, uint pname, int* @params)
         {
             if (_glTextureParameterIiv_fnptr == null)
                 _glTextureParameterIiv_fnptr = (delegate* unmanaged<int, uint, int*, void>)GLLoader.BindingsContext.GetProcAddress("glTextureParameterIiv");
-            _glTextureParameterIiv_fnptr(texture, pname, parameters);
+            _glTextureParameterIiv_fnptr(texture, pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glTextureParameterIivEXT</c>]</b></summary>
         public static delegate* unmanaged<int, uint, uint, int*, void> _glTextureParameterIivEXT_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glTextureParameterIivEXT_Lazy(int texture, uint target, uint pname, int* parameters)
+        internal static void glTextureParameterIivEXT_Lazy(int texture, uint target, uint pname, int* @params)
         {
             if (_glTextureParameterIivEXT_fnptr == null)
                 _glTextureParameterIivEXT_fnptr = (delegate* unmanaged<int, uint, uint, int*, void>)GLLoader.BindingsContext.GetProcAddress("glTextureParameterIivEXT");
-            _glTextureParameterIivEXT_fnptr(texture, target, pname, parameters);
+            _glTextureParameterIivEXT_fnptr(texture, target, pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glTextureParameterIuiv</c>]</b></summary>
         public static delegate* unmanaged<int, uint, uint*, void> _glTextureParameterIuiv_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glTextureParameterIuiv_Lazy(int texture, uint pname, uint* parameters)
+        internal static void glTextureParameterIuiv_Lazy(int texture, uint pname, uint* @params)
         {
             if (_glTextureParameterIuiv_fnptr == null)
                 _glTextureParameterIuiv_fnptr = (delegate* unmanaged<int, uint, uint*, void>)GLLoader.BindingsContext.GetProcAddress("glTextureParameterIuiv");
-            _glTextureParameterIuiv_fnptr(texture, pname, parameters);
+            _glTextureParameterIuiv_fnptr(texture, pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glTextureParameterIuivEXT</c>]</b></summary>
         public static delegate* unmanaged<int, uint, uint, uint*, void> _glTextureParameterIuivEXT_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glTextureParameterIuivEXT_Lazy(int texture, uint target, uint pname, uint* parameters)
+        internal static void glTextureParameterIuivEXT_Lazy(int texture, uint target, uint pname, uint* @params)
         {
             if (_glTextureParameterIuivEXT_fnptr == null)
                 _glTextureParameterIuivEXT_fnptr = (delegate* unmanaged<int, uint, uint, uint*, void>)GLLoader.BindingsContext.GetProcAddress("glTextureParameterIuivEXT");
-            _glTextureParameterIuivEXT_fnptr(texture, target, pname, parameters);
+            _glTextureParameterIuivEXT_fnptr(texture, target, pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glTextureParameteriv</c>]</b></summary>
@@ -26492,11 +26492,11 @@ namespace OpenTK.Graphics.OpenGL
         /// <summary><b>[entry point: <c>glTextureParameterivEXT</c>]</b></summary>
         public static delegate* unmanaged<int, uint, uint, int*, void> _glTextureParameterivEXT_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glTextureParameterivEXT_Lazy(int texture, uint target, uint pname, int* parameters)
+        internal static void glTextureParameterivEXT_Lazy(int texture, uint target, uint pname, int* @params)
         {
             if (_glTextureParameterivEXT_fnptr == null)
                 _glTextureParameterivEXT_fnptr = (delegate* unmanaged<int, uint, uint, int*, void>)GLLoader.BindingsContext.GetProcAddress("glTextureParameterivEXT");
-            _glTextureParameterivEXT_fnptr(texture, target, pname, parameters);
+            _glTextureParameterivEXT_fnptr(texture, target, pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glTextureRangeAPPLE</c>]</b></summary>
@@ -32072,31 +32072,31 @@ namespace OpenTK.Graphics.OpenGL
         /// <summary><b>[entry point: <c>glVideoCaptureStreamParameterdvNV</c>]</b></summary>
         public static delegate* unmanaged<uint, uint, uint, double*, void> _glVideoCaptureStreamParameterdvNV_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glVideoCaptureStreamParameterdvNV_Lazy(uint video_capture_slot, uint stream, uint pname, double* parameters)
+        internal static void glVideoCaptureStreamParameterdvNV_Lazy(uint video_capture_slot, uint stream, uint pname, double* @params)
         {
             if (_glVideoCaptureStreamParameterdvNV_fnptr == null)
                 _glVideoCaptureStreamParameterdvNV_fnptr = (delegate* unmanaged<uint, uint, uint, double*, void>)GLLoader.BindingsContext.GetProcAddress("glVideoCaptureStreamParameterdvNV");
-            _glVideoCaptureStreamParameterdvNV_fnptr(video_capture_slot, stream, pname, parameters);
+            _glVideoCaptureStreamParameterdvNV_fnptr(video_capture_slot, stream, pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glVideoCaptureStreamParameterfvNV</c>]</b></summary>
         public static delegate* unmanaged<uint, uint, uint, float*, void> _glVideoCaptureStreamParameterfvNV_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glVideoCaptureStreamParameterfvNV_Lazy(uint video_capture_slot, uint stream, uint pname, float* parameters)
+        internal static void glVideoCaptureStreamParameterfvNV_Lazy(uint video_capture_slot, uint stream, uint pname, float* @params)
         {
             if (_glVideoCaptureStreamParameterfvNV_fnptr == null)
                 _glVideoCaptureStreamParameterfvNV_fnptr = (delegate* unmanaged<uint, uint, uint, float*, void>)GLLoader.BindingsContext.GetProcAddress("glVideoCaptureStreamParameterfvNV");
-            _glVideoCaptureStreamParameterfvNV_fnptr(video_capture_slot, stream, pname, parameters);
+            _glVideoCaptureStreamParameterfvNV_fnptr(video_capture_slot, stream, pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glVideoCaptureStreamParameterivNV</c>]</b></summary>
         public static delegate* unmanaged<uint, uint, uint, int*, void> _glVideoCaptureStreamParameterivNV_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glVideoCaptureStreamParameterivNV_Lazy(uint video_capture_slot, uint stream, uint pname, int* parameters)
+        internal static void glVideoCaptureStreamParameterivNV_Lazy(uint video_capture_slot, uint stream, uint pname, int* @params)
         {
             if (_glVideoCaptureStreamParameterivNV_fnptr == null)
                 _glVideoCaptureStreamParameterivNV_fnptr = (delegate* unmanaged<uint, uint, uint, int*, void>)GLLoader.BindingsContext.GetProcAddress("glVideoCaptureStreamParameterivNV");
-            _glVideoCaptureStreamParameterivNV_fnptr(video_capture_slot, stream, pname, parameters);
+            _glVideoCaptureStreamParameterivNV_fnptr(video_capture_slot, stream, pname, @params);
         }
         
         /// <summary><b>[entry point: <c>glViewport</c>]</b></summary>
@@ -32952,11 +32952,11 @@ namespace OpenTK.Graphics.OpenGL
         /// <summary><b>[entry point: <c>glWriteMaskEXT</c>]</b></summary>
         public static delegate* unmanaged<uint, uint, uint, uint, uint, uint, void> _glWriteMaskEXT_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static void glWriteMaskEXT_Lazy(uint res, uint input, uint outX, uint outY, uint outZ, uint outW)
+        internal static void glWriteMaskEXT_Lazy(uint res, uint @in, uint outX, uint outY, uint outZ, uint outW)
         {
             if (_glWriteMaskEXT_fnptr == null)
                 _glWriteMaskEXT_fnptr = (delegate* unmanaged<uint, uint, uint, uint, uint, uint, void>)GLLoader.BindingsContext.GetProcAddress("glWriteMaskEXT");
-            _glWriteMaskEXT_fnptr(res, input, outX, outY, outZ, outW);
+            _glWriteMaskEXT_fnptr(res, @in, outX, outY, outZ, outW);
         }
         
     }

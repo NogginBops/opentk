@@ -6351,16 +6351,16 @@ namespace OpenTK.Graphics.Vulkan
         /// <summary>The type of the object</summary>
         public VkDebugReportObjectTypeEXT objectType;
         /// <summary>[extern sync: always] The handle of the object, cast to uint64_t</summary>
-        public ulong obj;
+        public ulong @object;
         /// <summary>Name to apply to the object</summary>
         public byte* pObjectName;
         public VkDebugMarkerObjectNameInfoEXT() { }
-        public VkDebugMarkerObjectNameInfoEXT(VkStructureType sType, void* pNext, VkDebugReportObjectTypeEXT objectType, ulong obj, byte* pObjectName)
+        public VkDebugMarkerObjectNameInfoEXT(VkStructureType sType, void* pNext, VkDebugReportObjectTypeEXT objectType, ulong @object, byte* pObjectName)
         {
             this.sType = sType;
             this.pNext = pNext;
             this.objectType = objectType;
-            this.obj = obj;
+            this.@object = @object;
             this.pObjectName = pObjectName;
         }
     }
@@ -6375,7 +6375,7 @@ namespace OpenTK.Graphics.Vulkan
         /// <summary>The type of the object</summary>
         public VkDebugReportObjectTypeEXT objectType;
         /// <summary>[extern sync: always] The handle of the object, cast to uint64_t</summary>
-        public ulong obj;
+        public ulong @object;
         /// <summary>The name of the tag to set on the object</summary>
         public ulong tagName;
         /// <summary>The length in bytes of the tag data</summary>
@@ -6383,12 +6383,12 @@ namespace OpenTK.Graphics.Vulkan
         /// <summary>Tag data to attach to the object</summary>
         public void* pTag;
         public VkDebugMarkerObjectTagInfoEXT() { }
-        public VkDebugMarkerObjectTagInfoEXT(VkStructureType sType, void* pNext, VkDebugReportObjectTypeEXT objectType, ulong obj, ulong tagName, nuint tagSize, void* pTag)
+        public VkDebugMarkerObjectTagInfoEXT(VkStructureType sType, void* pNext, VkDebugReportObjectTypeEXT objectType, ulong @object, ulong tagName, nuint tagSize, void* pTag)
         {
             this.sType = sType;
             this.pNext = pNext;
             this.objectType = objectType;
-            this.obj = obj;
+            this.@object = @object;
             this.tagName = tagName;
             this.tagSize = tagSize;
             this.pTag = pTag;
