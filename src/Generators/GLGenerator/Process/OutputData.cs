@@ -20,38 +20,4 @@ namespace GLGenerator.Process
         List<VendorFunctions> VendorFunctions,
         List<EnumType> EnumGroups,
         Dictionary<Function, FunctionDocumentation> Documentation);
-
-    internal record FunctionDocumentationOld(
-        string Name,
-        string Purpose,
-        ParameterDocumentation[] Parameters,
-        List<string> RefPagesLinks,
-        List<string> AddedIn,
-        List<string>? RemovedIn
-        );
-
-    internal enum OutputApi
-    {
-        Invalid,
-        GL,
-        GLCompat,
-        GLES1,
-        GLES2,
-        WGL,
-        GLX,
-        EGL,
-    }
-
-    [Flags]
-    internal enum OutputApiFlags
-    {
-        None = 0,
-        GL = 1 << 0,
-        GLCompat = 1 << 1,
-        GLES1 = 1 << 2,
-        GLES2 = 1 << 3,
-        WGL = 1 << 4,
-        GLX = 1 << 5,
-        EGL = 1 << 6,
-    }
 }

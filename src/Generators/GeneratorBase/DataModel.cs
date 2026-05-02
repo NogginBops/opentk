@@ -322,20 +322,47 @@ namespace GeneratorBase
         public BaseCSType? StrongType { get; set; }
     }
 
-    public interface IEnum : IReferable
+    public enum OutputApi
     {
-        public string Name { get; }
-        public List<IEnumMember> Members { get; }
+        Invalid,
 
-        public BaseCSType? StrongUnderlyingType { get; set; }
+        // OpenGL
+        GL,
+        GLCompat,
+        GLES1,
+        GLES2,
+        WGL,
+        GLX,
+        EGL,
+
+        // OpenAL
+        AL,
+        ALC,
+
+        // Vulkan
+        Vulkan,
     }
 
-    public interface IEnumMember
+    [Flags]
+    public enum OutputApiFlags
     {
-        public string Name { get; }
-        public ulong Value { get; }
+        None = 0,
 
-        public VersionInfo? VersionInfo { get; set; }
+        // OpenGL
+        GL = 1 << OutputApi.GL,
+        GLCompat = 1 << OutputApi.GLCompat,
+        GLES1 = 1 << OutputApi.GLES1,
+        GLES2 = 1 << OutputApi.GLES2,
+        WGL = 1 << OutputApi.WGL,
+        GLX = 1 << OutputApi.GLX,
+        EGL = 1 << OutputApi.EGL,
+
+        // OpenAL
+        AL = 1 << OutputApi.AL,
+        ALC = 1 << OutputApi.ALC,
+
+        // Vulkan
+        Vulkan = 1 << OutputApi.Vulkan,
     }
 
     public enum ApiFile
