@@ -3161,6 +3161,21 @@ namespace OpenTK.Platform.Native.Windows
         NoMoveCaret = 0x4000,
     }
 
+    internal enum GMMP : uint
+    {
+        /// <summary>
+        /// Retrieves the points using the display resolution.
+        /// </summary>
+        UseDisplayPoints = 1,
+
+        /// <summary>
+        /// Retrieves high resolution points.
+        /// Points can range from zero to 65,535 (0xFFFF) in both x-and y-coordinates.
+        /// This is the resolution provided by absolute coordinate pointing devices such as drawing tablets.
+        /// </summary>
+        UseHighResolutionPoints = 2,
+    }
+
     // FIXME: There are additional values for when the hWnd is a dialog box.
     // See DWL values:
     // https://docs.microsoft.com/en-us/windows/win32/api/winuser/nf-winuser-getwindowlongw

@@ -270,9 +270,9 @@ namespace OpenTK.Platform.Native.Windows
             public WM message;
             public UIntPtr wParam;
             public IntPtr lParam;
-            public int time;
+            public uint time;
             public POINT pt;
-            public int lPrivate;
+            public uint lPrivate;
         }
 
         [DllImport("user32.dll", CharSet = CharSet.Auto, SetLastError = true)]
@@ -2219,6 +2219,20 @@ namespace OpenTK.Platform.Native.Windows
 
         [DllImport("user32.dll", SetLastError = false)]
         internal static extern uint GetQueueStatus(QS flags);
+
+        internal struct MOUSEMOVEPOINT
+        {
+            public int x;
+            public int y;
+            public uint time;
+            public nuint dwExtraInfo;
+        }
+
+        [DllImport("user32.dll", SetLastError = true)]
+        internal static unsafe extern int GetMouseMovePointsEx(uint cbSize, ref MOUSEMOVEPOINT lppt, MOUSEMOVEPOINT* lpptBuf, int nBufPoints, GMMP resolution);
+
+        [DllImport("kernel32.dll", SetLastError = false)]
+        internal static extern uint GetTickCount();
     }
 #pragma warning restore CS0649 // Field 'field' is never assigned to, and will always have its default value 'value'
 }

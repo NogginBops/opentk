@@ -401,6 +401,18 @@ namespace OpenTK.Platform
         }
     }
 
+    public class MouseHistoryEventArgs : WindowEventArgs
+    {
+        public List<Vector2i> MessagePositions;
+        public List<Vector2i> BufferPositions;
+
+        public MouseHistoryEventArgs(WindowHandle window, List<Vector2i> messagePositions, List<Vector2i> bufferPositions) : base(window)
+        {
+            MessagePositions = messagePositions;
+            BufferPositions = bufferPositions;
+        }
+    }
+
     /// <summary>
     /// This event is triggered when the mouse moves and raw mouse motion is enabled.
     /// </summary>
