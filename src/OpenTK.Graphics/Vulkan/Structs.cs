@@ -5550,7 +5550,7 @@ namespace OpenTK.Graphics.Vulkan
     public unsafe struct VkD3D12FenceSubmitInfoKHR
     {
         /// <summary></summary>
-        public VkStructureType sType = VkStructureType.StructureTypeD3d12FenceSubmitInfoKhr;
+        public VkStructureType sType = VkStructureType.StructureTypeD3D12FenceSubmitInfoKhr;
         /// <summary></summary>
         public void* pNext;
         /// <summary></summary>
@@ -20499,7 +20499,7 @@ namespace OpenTK.Graphics.Vulkan
     public unsafe struct VkPhysicalDeviceImage2DViewOf3DFeaturesEXT
     {
         /// <summary></summary>
-        public VkStructureType sType = VkStructureType.StructureTypePhysicalDeviceImage2dViewOf3dFeaturesExt;
+        public VkStructureType sType = VkStructureType.StructureTypePhysicalDeviceImage2DViewOf3DFeaturesExt;
         /// <summary></summary>
         public void* pNext;
         /// <summary></summary>
@@ -20838,7 +20838,7 @@ namespace OpenTK.Graphics.Vulkan
     public unsafe struct VkPhysicalDeviceImageSlicedViewOf3DFeaturesEXT
     {
         /// <summary></summary>
-        public VkStructureType sType = VkStructureType.StructureTypePhysicalDeviceImageSlicedViewOf3dFeaturesExt;
+        public VkStructureType sType = VkStructureType.StructureTypePhysicalDeviceImageSlicedViewOf3DFeaturesExt;
         /// <summary></summary>
         public void* pNext;
         /// <summary></summary>
@@ -26709,7 +26709,7 @@ namespace OpenTK.Graphics.Vulkan
     public unsafe struct VkPhysicalDeviceTextureCompressionASTC3DFeaturesEXT
     {
         /// <summary></summary>
-        public VkStructureType sType = VkStructureType.StructureTypePhysicalDeviceTextureCompressionAstc3dFeaturesExt;
+        public VkStructureType sType = VkStructureType.StructureTypePhysicalDeviceTextureCompressionAstc3DFeaturesExt;
         /// <summary></summary>
         public void* pNext;
         /// <summary></summary>
