@@ -293,6 +293,17 @@ namespace GeneratorBase
         }
     }
 
+    public record EnumEntry(
+        string Name,
+        string OriginalName,
+        ulong Value,
+        OutputApiFlags Apis,
+        bool IsFlags,
+        string? Vendor,
+        string? Alias,
+        GroupRef[] Groups,
+        EnumSize UnderlyingSize);
+
     public record class FunctionPoiner : IReferable
     {
         // We don't need function pointer aliases yet. - Noggin_bops 2026-02-07
@@ -306,6 +317,15 @@ namespace GeneratorBase
 
         public BaseCSType? StrongReturnType { get; set; }
         public VersionInfo? VersionInfo { get; set; }
+    }
+
+    public enum EnumSize
+    {
+        Invalid,
+        Int32,
+        Uint32,
+        Int64,
+        Uint64,
     }
 
     public enum ConstantType

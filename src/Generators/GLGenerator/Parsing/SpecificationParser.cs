@@ -841,9 +841,9 @@ namespace GLGenerator.Parsing
                         throw new Exception($"Enum {name} did not pass correctly");
                     }
 
-                    TypeSuffix suffix = ParseEnumTypeSuffix(@enum.Attribute("type")?.Value);
+                    EnumSize size = ParseEnumTypeSuffix(@enum.Attribute("type")?.Value);
 
-                    ulong value = ConvertToUInt64(valueStr, suffix);
+                    ulong value = ConvertToUInt64(valueStr, size);
 
                     string? alias = @enum.Attribute("alias")?.Value;
 
@@ -904,7 +904,7 @@ namespace GLGenerator.Parsing
                         }
                     }
 
-                    enumsEntries.Add(new EnumEntry(name, nameMangler.MangleEnumName(name), value, enumApi, isFlags, vendor, alias, groups, suffix));
+                    enumsEntries.Add(new EnumEntry(nameMangler.MangleEnumName(name), name, value, enumApi, isFlags, vendor, alias, groups, size));
                 }
             }
 
@@ -917,15 +917,17 @@ namespace GLGenerator.Parsing
                 _ => throw new Exception(),
             };
 
-            static TypeSuffix ParseEnumTypeSuffix(string? suffix) => suffix switch
+            static EnumSize ParseEnumTypeSuffix(string? suffix) => suffix switch
             {
-                null or "" => TypeSuffix.None,
-                "u" => TypeSuffix.U,
-                "ull" => TypeSuffix.Ull,
-                _ => TypeSuffix.Invalid,
+                // See https://github.com/KhronosGroup/OpenGL-Registry/blob/0dc24166d162723781f1bf9fe433f71fa03a7aa0/xml/readme.tex#L383
+                // 2020-11-22
+                null or "" => EnumSize.Int32,
+                "u" => EnumSize.Uint32,
+                "ull" => EnumSize.Uint64,
+                _ => EnumSize.Invalid,
             };
 
-            static ulong ConvertToUInt64(string val, TypeSuffix type)
+            static ulong ConvertToUInt64(string val, EnumSize type)
             {
                 if (val.StartsWith("EGL_CAST("))
                 {
@@ -935,10 +937,11 @@ namespace GLGenerator.Parsing
 
                 return type switch
                 {
-                    TypeSuffix.None => (uint)(int)new Int32Converter().ConvertFromString(val)!,
-                    TypeSuffix.Ull => (ulong)new UInt64Converter().ConvertFromString(val)!,
-                    TypeSuffix.U => (uint)new UInt32Converter().ConvertFromString(val)!,
-                    TypeSuffix.Invalid or _ => throw new Exception($"Invalid suffix '{type}'!"),
+                    EnumSize.Int32 => (uint)(int)new Int32Converter().ConvertFromString(val)!,
+                    EnumSize.Uint32 => (uint)new UInt32Converter().ConvertFromString(val)!,
+                    EnumSize.Int64 => (ulong)new Int64Converter().ConvertFromString(val)!,
+                    EnumSize.Uint64 => (ulong)new UInt64Converter().ConvertFromString(val)!,
+                    EnumSize.Invalid or _ => throw new Exception($"Invalid suffix '{type}'!"),
                 };
             }
         }

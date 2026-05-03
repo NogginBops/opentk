@@ -65,17 +65,6 @@ namespace GLGenerator.Parsing
         List<string> EntryPoints,
         List<string> EnumValues);
 
-    internal record EnumEntry(
-        string Name,
-        string MangledName,
-        ulong Value,
-        OutputApiFlags Apis,
-        bool IsFlags,
-        string? Vendor,
-        string? Alias,
-        GroupRef[] Groups,
-        TypeSuffix Suffix);
-
     internal enum HandleType
     {
         AnyHandle,
@@ -92,24 +81,5 @@ namespace GLGenerator.Parsing
         VertexArrayHandle,
         DisplayListHandle,
         PerfQueryHandle,
-    }
-
-    /// <summary>
-    /// "
-    /// Legal C suffix for the value to force it to a specific type.
-    /// Currently only \code{u} and \code{ull} are used,
-    /// for \code{unsigned} 32 - and 64 - bit integer values, respectively.
-    /// Separated from the \attr{value} field since this eases parsing and
-    /// sorting of values, and is rarely used.
-    /// "
-    /// <br/>
-    /// Taken from <see href="https://github.com/KhronosGroup/OpenGL-Registry/blob/0dc24166d162723781f1bf9fe433f71fa03a7aa0/xml/readme.tex#L383">KhronosGroup/OpenGL-Registry/xml/readme.tex#L383</see> 2020-11-22
-    /// </summary>
-    internal enum TypeSuffix
-    {
-        Invalid,
-        None,
-        U,
-        Ull,
     }
 }

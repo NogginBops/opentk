@@ -113,8 +113,8 @@ namespace GLGenerator.Process
 
                 EnumMember member = new EnumMember()
                 {
-                    Name = @enum.MangledName,
-                    OriginalName = @enum.Name,
+                    Name = @enum.Name,
+                    OriginalName = @enum.OriginalName,
                     Value = @enum.Value,
                     Groups = @enum.Groups,
                     IsFlag = @enum.IsFlags,
@@ -127,37 +127,37 @@ namespace GLGenerator.Process
 
                 if (@enum.Apis.HasFlag(OutputApiFlags.GL))
                 {
-                    allEnumsPerAPI.AddToNestedDict(OutputApi.GL, @enum.Name, member);
+                    allEnumsPerAPI.AddToNestedDict(OutputApi.GL, @enum.OriginalName, member);
                 }
 
                 if (@enum.Apis.HasFlag(OutputApiFlags.GLCompat))
                 {
-                    allEnumsPerAPI.AddToNestedDict(OutputApi.GLCompat, @enum.Name, member);
+                    allEnumsPerAPI.AddToNestedDict(OutputApi.GLCompat, @enum.OriginalName, member);
                 }
 
                 if (@enum.Apis.HasFlag(OutputApiFlags.GLES1))
                 {
-                    allEnumsPerAPI.AddToNestedDict(OutputApi.GLES1, @enum.Name, member);
+                    allEnumsPerAPI.AddToNestedDict(OutputApi.GLES1, @enum.OriginalName, member);
                 }
 
                 if (@enum.Apis.HasFlag(OutputApiFlags.GLES2))
                 {
-                    allEnumsPerAPI.AddToNestedDict(OutputApi.GLES2, @enum.Name, member);
+                    allEnumsPerAPI.AddToNestedDict(OutputApi.GLES2, @enum.OriginalName, member);
                 }
 
                 if (@enum.Apis.HasFlag(OutputApiFlags.WGL))
                 {
-                    allEnumsPerAPI.AddToNestedDict(OutputApi.WGL, @enum.Name, member);
+                    allEnumsPerAPI.AddToNestedDict(OutputApi.WGL, @enum.OriginalName, member);
                 }
 
                 if (@enum.Apis.HasFlag(OutputApiFlags.GLX))
                 {
-                    allEnumsPerAPI.AddToNestedDict(OutputApi.GLX, @enum.Name, member);
+                    allEnumsPerAPI.AddToNestedDict(OutputApi.GLX, @enum.OriginalName, member);
                 }
 
                 if (@enum.Apis.HasFlag(OutputApiFlags.EGL))
                 {
-                    allEnumsPerAPI.AddToNestedDict(OutputApi.EGL, @enum.Name, member);
+                    allEnumsPerAPI.AddToNestedDict(OutputApi.EGL, @enum.OriginalName, member);
                 }
             }
 

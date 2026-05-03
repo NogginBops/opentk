@@ -147,7 +147,7 @@ namespace ALGenerator
                                 bool found = false;
                                 foreach (var @ref in api.Enums)
                                 {
-                                    if (@ref.EnumName == @enum.Name)
+                                    if (@ref.EnumName == @enum.OriginalName)
                                     {
                                         found = true;
                                         break;

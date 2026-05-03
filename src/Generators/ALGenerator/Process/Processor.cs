@@ -102,8 +102,8 @@ namespace ALGenerator.Process
 
                 EnumMember member = new EnumMember()
                 {
-                    Name =  @enum.MangledName,
-                    OriginalName = @enum.Name,
+                    Name =  @enum.Name,
+                    OriginalName = @enum.OriginalName,
                     Value = @enum.Value,
                     Groups = @enum.Groups,
                     IsFlag = @enum.IsFlags,
@@ -116,12 +116,12 @@ namespace ALGenerator.Process
 
                 if (@enum.Apis.HasFlag(OutputApiFlags.AL))
                 {
-                    allEnumsPerAPI.AddToNestedDictIfNotPresent(OutputApi.AL, @enum.Name, member);
+                    allEnumsPerAPI.AddToNestedDictIfNotPresent(OutputApi.AL, @enum.OriginalName, member);
                 }
 
                 if (@enum.Apis.HasFlag(OutputApiFlags.ALC))
                 {
-                    allEnumsPerAPI.AddToNestedDictIfNotPresent(OutputApi.ALC, @enum.Name, member);
+                    allEnumsPerAPI.AddToNestedDictIfNotPresent(OutputApi.ALC, @enum.OriginalName, member);
                 }
             }
 
