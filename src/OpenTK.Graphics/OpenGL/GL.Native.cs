@@ -204,7 +204,7 @@ namespace OpenTK.Graphics.OpenGL
         /// <param name="count"> Specifies the number of buffers to bind. </param>
         /// <param name="buffers"> Specifies the address of an array of names of existing buffer objects. </param>
         /// <param name="offsets"> Specifies the address of an array of offsets to associate with the binding points. </param>
-        /// <param name="strides">!!missing documentation!!</param>
+        /// <param name="strides"> Specifies the address of an array of strides to associate with the binding points. </param>
         /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/glBindVertexBuffers.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_multi_bind.txt">ARB_multi_bind.txt</see></remarks>
         public static void BindVertexBuffers(uint first, int count, int* buffers, IntPtr* offsets, int* strides) => GLPointers.glBindVertexBuffers_Lazy(first, count, buffers, offsets, strides);
         
@@ -595,7 +595,7 @@ namespace OpenTK.Graphics.OpenGL
         /// <param name="level">Specifies the level-of-detail number. Level 0 is the base image level. Level n is the nth mipmap reduction image.</param>
         /// <param name="xoffset">Specifies a texel offset in the x direction within the texture array.</param>
         /// <param name="yoffset">Specifies a texel offset in the y direction within the texture array.</param>
-        /// <param name="zoffset">!!missing documentation!!</param>
+        /// <param name="zoffset">Specifies a texel offset in the z direction within the texture array.</param>
         /// <param name="width">Specifies the width of the texture subimage.</param>
         /// <param name="height">Specifies the height of the texture subimage.</param>
         /// <param name="depth">Specifies the depth of the texture subimage.</param>
@@ -634,7 +634,7 @@ namespace OpenTK.Graphics.OpenGL
         /// <param name="level">Specifies the level-of-detail number. Level 0 is the base image level. Level n is the nth mipmap reduction image.</param>
         /// <param name="xoffset">Specifies a texel offset in the x direction within the texture array.</param>
         /// <param name="yoffset">Specifies a texel offset in the y direction within the texture array.</param>
-        /// <param name="zoffset">!!missing documentation!!</param>
+        /// <param name="zoffset">Specifies a texel offset in the z direction within the texture array.</param>
         /// <param name="width">Specifies the width of the texture subimage.</param>
         /// <param name="height">Specifies the height of the texture subimage.</param>
         /// <param name="depth">Specifies the depth of the texture subimage.</param>
@@ -1031,7 +1031,7 @@ namespace OpenTK.Graphics.OpenGL
         
         /// <summary> <b>[requires: v4.0 | GL_ARB_draw_indirect]</b> <b>[entry point: <c>glDrawArraysIndirect</c>]</b><br/> Render primitives from array data, taking parameters from memory. </summary>
         /// <param name="mode"> Specifies what kind of primitives to render. Symbolic constants GL_POINTS, GL_LINE_STRIP, GL_LINE_LOOP, GL_LINES, GL_LINE_STRIP_ADJACENCY, GL_LINES_ADJACENCY, GL_TRIANGLE_STRIP, GL_TRIANGLE_FAN, GL_TRIANGLES, GL_TRIANGLE_STRIP_ADJACENCY, GL_TRIANGLES_ADJACENCY, and GL_PATCHES are accepted. </param>
-        /// <param name="indirect"> Specifies the address of a structure containing the draw parameters. </param>
+        /// <param name="indirect"> Specifies a byte offset (cast to a pointer type) into the buffer bound to GL_DRAW_INDIRECT_BUFFER to start reading indirect draw parameters from. </param>
         /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/glDrawArraysIndirect.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_draw_indirect.txt">ARB_draw_indirect.txt</see></remarks>
         public static void DrawArraysIndirect(PrimitiveType mode, void* indirect) => GLPointers.glDrawArraysIndirect_Lazy((uint)mode, indirect);
         
@@ -1067,7 +1067,7 @@ namespace OpenTK.Graphics.OpenGL
         /// <param name="mode"> Specifies what kind of primitives to render. Symbolic constants GL_POINTS, GL_LINE_STRIP, GL_LINE_LOOP, GL_LINES, GL_LINE_STRIP_ADJACENCY, GL_LINES_ADJACENCY, GL_TRIANGLE_STRIP, GL_TRIANGLE_FAN, GL_TRIANGLES, GL_TRIANGLE_STRIP_ADJACENCY, GL_TRIANGLES_ADJACENCY and GL_PATCHES are accepted. </param>
         /// <param name="count"> Specifies the number of elements to be rendered. </param>
         /// <param name="type"> Specifies the type of the values in indices. Must be one of GL_UNSIGNED_BYTE, GL_UNSIGNED_SHORT, or GL_UNSIGNED_INT. </param>
-        /// <param name="indices"> Specifies a pointer to the location where the indices are stored. </param>
+        /// <param name="indices"> Specifies a byte offset (cast to a pointer type) into the buffer bound to GL_ELEMENT_ARRAY_BUFFER to start reading indices from. </param>
         /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/glDrawElements.xhtml"/></remarks>
         public static void DrawElements(PrimitiveType mode, int count, DrawElementsType type, void* indices) => GLPointers.glDrawElements_Lazy((uint)mode, count, (uint)type, indices);
         
@@ -1075,7 +1075,7 @@ namespace OpenTK.Graphics.OpenGL
         /// <param name="mode"> Specifies what kind of primitives to render. Symbolic constants GL_POINTS, GL_LINE_STRIP, GL_LINE_LOOP, GL_LINES, GL_TRIANGLE_STRIP, GL_TRIANGLE_FAN, GL_TRIANGLES, GL_LINES_ADJACENCY, GL_LINE_STRIP_ADJACENCY, GL_TRIANGLES_ADJACENCY, GL_TRIANGLE_STRIP_ADJACENCY and GL_PATCHES are accepted. </param>
         /// <param name="count"> Specifies the number of elements to be rendered. </param>
         /// <param name="type"> Specifies the type of the values in indices. Must be one of GL_UNSIGNED_BYTE, GL_UNSIGNED_SHORT, or GL_UNSIGNED_INT. </param>
-        /// <param name="indices"> Specifies a pointer to the location where the indices are stored. </param>
+        /// <param name="indices"> Specifies a byte offset (cast to a pointer type) into the buffer bound to GL_ELEMENT_ARRAY_BUFFER to start reading indices from. </param>
         /// <param name="basevertex"> Specifies a constant that should be added to each element of indices when chosing elements from the enabled vertex arrays. </param>
         /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/glDrawElementsBaseVertex.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_draw_elements_base_vertex.txt">ARB_draw_elements_base_vertex.txt</see></remarks>
         public static void DrawElementsBaseVertex(PrimitiveType mode, int count, DrawElementsType type, void* indices, int basevertex) => GLPointers.glDrawElementsBaseVertex_Lazy((uint)mode, count, (uint)type, indices, basevertex);
@@ -1083,7 +1083,7 @@ namespace OpenTK.Graphics.OpenGL
         /// <summary> <b>[requires: v4.0 | GL_ARB_draw_indirect]</b> <b>[entry point: <c>glDrawElementsIndirect</c>]</b><br/> Render indexed primitives from array data, taking parameters from memory. </summary>
         /// <param name="mode"> Specifies what kind of primitives to render. Symbolic constants GL_POINTS, GL_LINE_STRIP, GL_LINE_LOOP, GL_LINES, GL_LINE_STRIP_ADJACENCY, GL_LINES_ADJACENCY, GL_TRIANGLE_STRIP, GL_TRIANGLE_FAN, GL_TRIANGLES, GL_TRIANGLE_STRIP_ADJACENCY, GL_TRIANGLES_ADJACENCY, and GL_PATCHES are accepted. </param>
         /// <param name="type"> Specifies the type of data in the buffer bound to the GL_ELEMENT_ARRAY_BUFFER binding. </param>
-        /// <param name="indirect"> Specifies the address of a structure containing the draw parameters. </param>
+        /// <param name="indirect"> Specifies a byte offset (cast to a pointer type) into the buffer bound to GL_DRAW_INDIRECT_BUFFER to start reading indirect draw parameters from. </param>
         /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/glDrawElementsIndirect.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_draw_indirect.txt">ARB_draw_indirect.txt</see></remarks>
         public static void DrawElementsIndirect(PrimitiveType mode, DrawElementsType type, void* indirect) => GLPointers.glDrawElementsIndirect_Lazy((uint)mode, (uint)type, indirect);
         
@@ -1091,7 +1091,7 @@ namespace OpenTK.Graphics.OpenGL
         /// <param name="mode"> Specifies what kind of primitives to render. Symbolic constants GL_POINTS, GL_LINE_STRIP, GL_LINE_LOOP, GL_LINES, GL_LINE_STRIP_ADJACENCY, GL_LINES_ADJACENCY, GL_TRIANGLE_STRIP, GL_TRIANGLE_FAN, GL_TRIANGLES, GL_TRIANGLE_STRIP_ADJACENCY, GL_TRIANGLES_ADJACENCY and GL_PATCHES are accepted. </param>
         /// <param name="count"> Specifies the number of elements to be rendered. </param>
         /// <param name="type"> Specifies the type of the values in indices. Must be one of GL_UNSIGNED_BYTE, GL_UNSIGNED_SHORT, or GL_UNSIGNED_INT. </param>
-        /// <param name="indices"> Specifies a pointer to the location where the indices are stored. </param>
+        /// <param name="indices"> Specifies a byte offset (cast to a pointer type) into the buffer bound to GL_ELEMENT_ARRAY_BUFFER to start reading indices from. </param>
         /// <param name="instancecount"> Specifies the number of instances of the specified range of indices to be rendered. </param>
         /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/glDrawElementsInstanced.xhtml"/></remarks>
         public static void DrawElementsInstanced(PrimitiveType mode, int count, DrawElementsType type, void* indices, int instancecount) => GLPointers.glDrawElementsInstanced_Lazy((uint)mode, count, (uint)type, indices, instancecount);
@@ -1100,7 +1100,7 @@ namespace OpenTK.Graphics.OpenGL
         /// <param name="mode"> Specifies what kind of primitives to render. Symbolic constants GL_POINTS, GL_LINE_STRIP, GL_LINE_LOOP, GL_LINES, GL_LINE_STRIP_ADJACENCY, GL_LINES_ADJACENCY, GL_TRIANGLE_STRIP, GL_TRIANGLE_FAN, GL_TRIANGLES, GL_TRIANGLE_STRIP_ADJACENCY, GL_TRIANGLES_ADJACENCY and GL_PATCHES are accepted. </param>
         /// <param name="count"> Specifies the number of elements to be rendered. </param>
         /// <param name="type"> Specifies the type of the values in indices. Must be one of GL_UNSIGNED_BYTE, GL_UNSIGNED_SHORT, or GL_UNSIGNED_INT. </param>
-        /// <param name="indices"> Specifies a pointer to the location where the indices are stored. </param>
+        /// <param name="indices"> Specifies a byte offset (cast to a pointer type) into the buffer bound to GL_ELEMENT_ARRAY_BUFFER to start reading indices from. </param>
         /// <param name="instancecount"> Specifies the number of instances of the specified range of indices to be rendered. </param>
         /// <param name="baseinstance"> Specifies the base instance for use in fetching instanced vertex attributes. </param>
         /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/glDrawElementsInstancedBaseInstance.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_base_instance.txt">ARB_base_instance.txt</see></remarks>
@@ -1110,7 +1110,7 @@ namespace OpenTK.Graphics.OpenGL
         /// <param name="mode"> Specifies what kind of primitives to render. Symbolic constants GL_POINTS, GL_LINE_STRIP, GL_LINE_LOOP, GL_LINES, GL_TRIANGLE_STRIP, GL_TRIANGLE_FAN, GL_TRIANGLES, GL_LINES_ADJACENCY, GL_LINE_STRIP_ADJACENCY, GL_TRIANGLES_ADJACENCY, GL_TRIANGLE_STRIP_ADJACENCY and GL_PATCHES are accepted. </param>
         /// <param name="count"> Specifies the number of elements to be rendered. </param>
         /// <param name="type"> Specifies the type of the values in indices. Must be one of GL_UNSIGNED_BYTE, GL_UNSIGNED_SHORT, or GL_UNSIGNED_INT. </param>
-        /// <param name="indices"> Specifies a pointer to the location where the indices are stored. </param>
+        /// <param name="indices"> Specifies a byte offset (cast to a pointer type) into the buffer bound to GL_ELEMENT_ARRAY_BUFFER to start reading indices from. </param>
         /// <param name="instancecount"> Specifies the number of instances of the indexed geometry that should be drawn. </param>
         /// <param name="basevertex"> Specifies a constant that should be added to each element of indices when chosing elements from the enabled vertex arrays. </param>
         /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/glDrawElementsInstancedBaseVertex.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_draw_elements_base_vertex.txt">ARB_draw_elements_base_vertex.txt</see></remarks>
@@ -1120,7 +1120,7 @@ namespace OpenTK.Graphics.OpenGL
         /// <param name="mode"> Specifies what kind of primitives to render. Symbolic constants GL_POINTS, GL_LINE_STRIP, GL_LINE_LOOP, GL_LINES, GL_TRIANGLE_STRIP, GL_TRIANGLE_FAN, GL_TRIANGLES, GL_LINES_ADJACENCY, GL_LINE_STRIP_ADJACENCY, GL_TRIANGLES_ADJACENCY, GL_TRIANGLE_STRIP_ADJACENCY and GL_PATCHES are accepted. </param>
         /// <param name="count"> Specifies the number of elements to be rendered. </param>
         /// <param name="type"> Specifies the type of the values in indices. Must be one of GL_UNSIGNED_BYTE, GL_UNSIGNED_SHORT, or GL_UNSIGNED_INT. </param>
-        /// <param name="indices"> Specifies a pointer to the location where the indices are stored. </param>
+        /// <param name="indices"> Specifies a byte offset (cast to a pointer type) into the buffer bound to GL_ELEMENT_ARRAY_BUFFER to start reading indices from. </param>
         /// <param name="instancecount"> Specifies the number of instances of the indexed geometry that should be drawn. </param>
         /// <param name="basevertex"> Specifies a constant that should be added to each element of indices when chosing elements from the enabled vertex arrays. </param>
         /// <param name="baseinstance"> Specifies the base instance for use in fetching instanced vertex attributes. </param>
@@ -1133,7 +1133,7 @@ namespace OpenTK.Graphics.OpenGL
         /// <param name="end"> Specifies the maximum array index contained in indices. </param>
         /// <param name="count"> Specifies the number of elements to be rendered. </param>
         /// <param name="type"> Specifies the type of the values in indices. Must be one of GL_UNSIGNED_BYTE, GL_UNSIGNED_SHORT, or GL_UNSIGNED_INT. </param>
-        /// <param name="indices"> Specifies a pointer to the location where the indices are stored. </param>
+        /// <param name="indices"> Specifies a byte offset (cast to a pointer type) into the buffer bound to GL_ELEMENT_ARRAY_BUFFER to start reading indices from. </param>
         /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/glDrawRangeElements.xhtml"/></remarks>
         public static void DrawRangeElements(PrimitiveType mode, uint start, uint end, int count, DrawElementsType type, void* indices) => GLPointers.glDrawRangeElements_Lazy((uint)mode, start, end, count, (uint)type, indices);
         
@@ -1143,7 +1143,7 @@ namespace OpenTK.Graphics.OpenGL
         /// <param name="end"> Specifies the maximum array index contained in indices. </param>
         /// <param name="count"> Specifies the number of elements to be rendered. </param>
         /// <param name="type"> Specifies the type of the values in indices. Must be one of GL_UNSIGNED_BYTE, GL_UNSIGNED_SHORT, or GL_UNSIGNED_INT. </param>
-        /// <param name="indices"> Specifies a pointer to the location where the indices are stored. </param>
+        /// <param name="indices"> Specifies a byte offset (cast to a pointer type) into the buffer bound to GL_ELEMENT_ARRAY_BUFFER to start reading indices from. </param>
         /// <param name="basevertex"> Specifies a constant that should be added to each element of indices when chosing elements from the enabled vertex arrays. </param>
         /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/glDrawRangeElementsBaseVertex.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_draw_elements_base_vertex.txt">ARB_draw_elements_base_vertex.txt</see></remarks>
         public static void DrawRangeElementsBaseVertex(PrimitiveType mode, uint start, uint end, int count, DrawElementsType type, void* indices, int basevertex) => GLPointers.glDrawRangeElementsBaseVertex_Lazy((uint)mode, start, end, count, (uint)type, indices, basevertex);
@@ -1822,7 +1822,7 @@ namespace OpenTK.Graphics.OpenGL
         
         /// <summary> <b>[requires: v2.0]</b> <b>[entry point: <c>glGetProgramiv</c>]</b><br/> Returns a parameter from a program object. </summary>
         /// <param name="program">Specifies the program object to be queried.</param>
-        /// <param name="pname">Specifies the object parameter. Accepted symbolic names are GL_DELETE_STATUS, GL_LINK_STATUS, GL_VALIDATE_STATUS, GL_INFO_LOG_LENGTH, GL_ATTACHED_SHADERS, GL_ACTIVE_ATOMIC_COUNTER_BUFFERS, GL_ACTIVE_ATTRIBUTES, GL_ACTIVE_ATTRIBUTE_MAX_LENGTH, GL_ACTIVE_UNIFORMS, GL_ACTIVE_UNIFORM_BLOCKS, GL_ACTIVE_UNIFORM_BLOCK_MAX_NAME_LENGTH, GL_ACTIVE_UNIFORM_MAX_LENGTH, GL_COMPUTE_WORK_GROUP_SIZE GL_PROGRAM_BINARY_LENGTH, GL_TRANSFORM_FEEDBACK_BUFFER_MODE, GL_TRANSFORM_FEEDBACK_VARYINGS, GL_TRANSFORM_FEEDBACK_VARYING_MAX_LENGTH, GL_GEOMETRY_VERTICES_OUT, GL_GEOMETRY_INPUT_TYPE, and GL_GEOMETRY_OUTPUT_TYPE.</param>
+        /// <param name="pname">Specifies the object parameter. Accepted symbolic names are GL_DELETE_STATUS, GL_LINK_STATUS, GL_VALIDATE_STATUS, GL_INFO_LOG_LENGTH, GL_ATTACHED_SHADERS, GL_ACTIVE_ATOMIC_COUNTER_BUFFERS, GL_ACTIVE_ATTRIBUTES, GL_ACTIVE_ATTRIBUTE_MAX_LENGTH, GL_ACTIVE_UNIFORMS, GL_ACTIVE_UNIFORM_BLOCKS, GL_ACTIVE_UNIFORM_BLOCK_MAX_NAME_LENGTH, GL_ACTIVE_UNIFORM_MAX_LENGTH, GL_COMPUTE_WORK_GROUP_SIZE, GL_PROGRAM_BINARY_LENGTH, GL_TRANSFORM_FEEDBACK_BUFFER_MODE, GL_TRANSFORM_FEEDBACK_VARYINGS, GL_TRANSFORM_FEEDBACK_VARYING_MAX_LENGTH, GL_GEOMETRY_VERTICES_OUT, GL_GEOMETRY_INPUT_TYPE, and GL_GEOMETRY_OUTPUT_TYPE.</param>
         /// <param name="params">Returns the requested object parameter.</param>
         /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/glGetProgram.xhtml"/></remarks>
         public static void GetProgramiv(int program, ProgramProperty pname, int* @params) => GLPointers.glGetProgramiv_Lazy(program, (uint)pname, @params);
@@ -1896,7 +1896,7 @@ namespace OpenTK.Graphics.OpenGL
         /// <summary> <b>[requires: v4.5 | GL_ARB_direct_state_access]</b> <b>[entry point: <c>glGetQueryBufferObjecti64v</c>]</b><br/> Return parameters of a query object. </summary>
         /// <param name="id"> Specifies the name of a query object. </param>
         /// <param name="buffer"> Specifies the name of a buffer object. </param>
-        /// <param name="pname"> Specifies the symbolic name of a query object parameter. Accepted values are GL_QUERY_RESULT or GL_QUERY_RESULT_AVAILABLE. </param>
+        /// <param name="pname"> Specifies the symbolic name of a query object parameter. Accepted values are GL_QUERY_RESULT, GL_QUERY_RESULT_AVAILABLE, GL_QUERY_RESULT_NO_WAIT, or GL_QUERY_TARGET. </param>
         /// <param name="offset"> Specifies the byte offset into buffer&apos;s data store where the queried result will be written. </param>
         /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/glGetQueryObject.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_direct_state_access.txt">ARB_direct_state_access.txt</see></remarks>
         public static void GetQueryBufferObjecti64v(int id, int buffer, QueryObjectParameterName pname, IntPtr offset) => GLPointers.glGetQueryBufferObjecti64v_Lazy(id, buffer, (uint)pname, offset);
@@ -1904,7 +1904,7 @@ namespace OpenTK.Graphics.OpenGL
         /// <summary> <b>[requires: v4.5 | GL_ARB_direct_state_access]</b> <b>[entry point: <c>glGetQueryBufferObjectiv</c>]</b><br/> Return parameters of a query object. </summary>
         /// <param name="id"> Specifies the name of a query object. </param>
         /// <param name="buffer"> Specifies the name of a buffer object. </param>
-        /// <param name="pname"> Specifies the symbolic name of a query object parameter. Accepted values are GL_QUERY_RESULT or GL_QUERY_RESULT_AVAILABLE. </param>
+        /// <param name="pname"> Specifies the symbolic name of a query object parameter. Accepted values are GL_QUERY_RESULT, GL_QUERY_RESULT_AVAILABLE, GL_QUERY_RESULT_NO_WAIT, or GL_QUERY_TARGET. </param>
         /// <param name="offset"> Specifies the byte offset into buffer&apos;s data store where the queried result will be written. </param>
         /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/glGetQueryObject.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_direct_state_access.txt">ARB_direct_state_access.txt</see></remarks>
         public static void GetQueryBufferObjectiv(int id, int buffer, QueryObjectParameterName pname, IntPtr offset) => GLPointers.glGetQueryBufferObjectiv_Lazy(id, buffer, (uint)pname, offset);
@@ -1912,7 +1912,7 @@ namespace OpenTK.Graphics.OpenGL
         /// <summary> <b>[requires: v4.5 | GL_ARB_direct_state_access]</b> <b>[entry point: <c>glGetQueryBufferObjectui64v</c>]</b><br/> Return parameters of a query object. </summary>
         /// <param name="id"> Specifies the name of a query object. </param>
         /// <param name="buffer"> Specifies the name of a buffer object. </param>
-        /// <param name="pname"> Specifies the symbolic name of a query object parameter. Accepted values are GL_QUERY_RESULT or GL_QUERY_RESULT_AVAILABLE. </param>
+        /// <param name="pname"> Specifies the symbolic name of a query object parameter. Accepted values are GL_QUERY_RESULT, GL_QUERY_RESULT_AVAILABLE, GL_QUERY_RESULT_NO_WAIT, or GL_QUERY_TARGET. </param>
         /// <param name="offset"> Specifies the byte offset into buffer&apos;s data store where the queried result will be written. </param>
         /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/glGetQueryObject.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_direct_state_access.txt">ARB_direct_state_access.txt</see></remarks>
         public static void GetQueryBufferObjectui64v(int id, int buffer, QueryObjectParameterName pname, IntPtr offset) => GLPointers.glGetQueryBufferObjectui64v_Lazy(id, buffer, (uint)pname, offset);
@@ -1920,7 +1920,7 @@ namespace OpenTK.Graphics.OpenGL
         /// <summary> <b>[requires: v4.5 | GL_ARB_direct_state_access]</b> <b>[entry point: <c>glGetQueryBufferObjectuiv</c>]</b><br/> Return parameters of a query object. </summary>
         /// <param name="id"> Specifies the name of a query object. </param>
         /// <param name="buffer"> Specifies the name of a buffer object. </param>
-        /// <param name="pname"> Specifies the symbolic name of a query object parameter. Accepted values are GL_QUERY_RESULT or GL_QUERY_RESULT_AVAILABLE. </param>
+        /// <param name="pname"> Specifies the symbolic name of a query object parameter. Accepted values are GL_QUERY_RESULT, GL_QUERY_RESULT_AVAILABLE, GL_QUERY_RESULT_NO_WAIT, or GL_QUERY_TARGET. </param>
         /// <param name="offset"> Specifies the byte offset into buffer&apos;s data store where the queried result will be written. </param>
         /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/glGetQueryObject.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_direct_state_access.txt">ARB_direct_state_access.txt</see></remarks>
         public static void GetQueryBufferObjectuiv(int id, int buffer, QueryObjectParameterName pname, IntPtr offset) => GLPointers.glGetQueryBufferObjectuiv_Lazy(id, buffer, (uint)pname, offset);
@@ -1942,28 +1942,28 @@ namespace OpenTK.Graphics.OpenGL
         
         /// <summary> <b>[requires: v3.3 | GL_ARB_timer_query]</b> <b>[entry point: <c>glGetQueryObjecti64v</c>]</b><br/> Return parameters of a query object. </summary>
         /// <param name="id"> Specifies the name of a query object. </param>
-        /// <param name="pname"> Specifies the symbolic name of a query object parameter. Accepted values are GL_QUERY_RESULT or GL_QUERY_RESULT_AVAILABLE. </param>
+        /// <param name="pname"> Specifies the symbolic name of a query object parameter. Accepted values are GL_QUERY_RESULT, GL_QUERY_RESULT_AVAILABLE, GL_QUERY_RESULT_NO_WAIT, or GL_QUERY_TARGET. </param>
         /// <param name="params"> If a buffer is bound to the GL_QUERY_RESULT_BUFFER target, then params is treated as an offset to a location within that buffer&apos;s data store to receive the result of the query. If no buffer is bound to GL_QUERY_RESULT_BUFFER, then params is treated as an address in client memory of a variable to receive the resulting data. </param>
         /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/glGetQueryObject.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_timer_query.txt">ARB_timer_query.txt</see></remarks>
         public static void GetQueryObjecti64v(int id, QueryObjectParameterName pname, long* @params) => GLPointers.glGetQueryObjecti64v_Lazy(id, (uint)pname, @params);
         
         /// <summary> <b>[requires: v1.5]</b> <b>[entry point: <c>glGetQueryObjectiv</c>]</b><br/> Return parameters of a query object. </summary>
         /// <param name="id"> Specifies the name of a query object. </param>
-        /// <param name="pname"> Specifies the symbolic name of a query object parameter. Accepted values are GL_QUERY_RESULT or GL_QUERY_RESULT_AVAILABLE. </param>
+        /// <param name="pname"> Specifies the symbolic name of a query object parameter. Accepted values are GL_QUERY_RESULT, GL_QUERY_RESULT_AVAILABLE, GL_QUERY_RESULT_NO_WAIT, or GL_QUERY_TARGET. </param>
         /// <param name="params"> If a buffer is bound to the GL_QUERY_RESULT_BUFFER target, then params is treated as an offset to a location within that buffer&apos;s data store to receive the result of the query. If no buffer is bound to GL_QUERY_RESULT_BUFFER, then params is treated as an address in client memory of a variable to receive the resulting data. </param>
         /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/glGetQueryObject.xhtml"/></remarks>
         public static void GetQueryObjectiv(int id, QueryObjectParameterName pname, int* @params) => GLPointers.glGetQueryObjectiv_Lazy(id, (uint)pname, @params);
         
         /// <summary> <b>[requires: v3.3 | GL_ARB_timer_query]</b> <b>[entry point: <c>glGetQueryObjectui64v</c>]</b><br/> Return parameters of a query object. </summary>
         /// <param name="id"> Specifies the name of a query object. </param>
-        /// <param name="pname"> Specifies the symbolic name of a query object parameter. Accepted values are GL_QUERY_RESULT or GL_QUERY_RESULT_AVAILABLE. </param>
+        /// <param name="pname"> Specifies the symbolic name of a query object parameter. Accepted values are GL_QUERY_RESULT, GL_QUERY_RESULT_AVAILABLE, GL_QUERY_RESULT_NO_WAIT, or GL_QUERY_TARGET. </param>
         /// <param name="params"> If a buffer is bound to the GL_QUERY_RESULT_BUFFER target, then params is treated as an offset to a location within that buffer&apos;s data store to receive the result of the query. If no buffer is bound to GL_QUERY_RESULT_BUFFER, then params is treated as an address in client memory of a variable to receive the resulting data. </param>
         /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/glGetQueryObject.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_timer_query.txt">ARB_timer_query.txt</see></remarks>
         public static void GetQueryObjectui64v(int id, QueryObjectParameterName pname, ulong* @params) => GLPointers.glGetQueryObjectui64v_Lazy(id, (uint)pname, @params);
         
         /// <summary> <b>[requires: v1.5]</b> <b>[entry point: <c>glGetQueryObjectuiv</c>]</b><br/> Return parameters of a query object. </summary>
         /// <param name="id"> Specifies the name of a query object. </param>
-        /// <param name="pname"> Specifies the symbolic name of a query object parameter. Accepted values are GL_QUERY_RESULT or GL_QUERY_RESULT_AVAILABLE. </param>
+        /// <param name="pname"> Specifies the symbolic name of a query object parameter. Accepted values are GL_QUERY_RESULT, GL_QUERY_RESULT_AVAILABLE, GL_QUERY_RESULT_NO_WAIT, or GL_QUERY_TARGET. </param>
         /// <param name="params"> If a buffer is bound to the GL_QUERY_RESULT_BUFFER target, then params is treated as an offset to a location within that buffer&apos;s data store to receive the result of the query. If no buffer is bound to GL_QUERY_RESULT_BUFFER, then params is treated as an address in client memory of a variable to receive the resulting data. </param>
         /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/glGetQueryObject.xhtml"/></remarks>
         public static void GetQueryObjectuiv(int id, QueryObjectParameterName pname, uint* @params) => GLPointers.glGetQueryObjectuiv_Lazy(id, (uint)pname, @params);
@@ -2563,20 +2563,26 @@ namespace OpenTK.Graphics.OpenGL
         
         /// <summary> <b>[requires: v4.3 | GL_ARB_multi_draw_indirect]</b> <b>[entry point: <c>glMultiDrawArraysIndirect</c>]</b><br/> Render multiple sets of primitives from array data, taking parameters from memory. </summary>
         /// <param name="mode"> Specifies what kind of primitives to render. Symbolic constants GL_POINTS, GL_LINE_STRIP, GL_LINE_LOOP, GL_LINES, GL_LINE_STRIP_ADJACENCY, GL_LINES_ADJACENCY, GL_TRIANGLE_STRIP, GL_TRIANGLE_FAN, GL_TRIANGLES, GL_TRIANGLE_STRIP_ADJACENCY, GL_TRIANGLES_ADJACENCY, and GL_PATCHES are accepted. </param>
-        /// <param name="indirect"> Specifies the address of an array of structures containing the draw parameters. </param>
+        /// <param name="indirect"> Specifies a byte offset (cast to a pointer type) into the buffer bound to GL_DRAW_INDIRECT_BUFFER to start reading indirect draw parameters from. </param>
         /// <param name="drawcount"> Specifies the number of elements in the array of draw parameter structures. </param>
         /// <param name="stride"> Specifies the distance in basic machine units between elements of the draw parameter array. </param>
         /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/glMultiDrawArraysIndirect.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_multi_draw_indirect.txt">ARB_multi_draw_indirect.txt</see></remarks>
         public static void MultiDrawArraysIndirect(PrimitiveType mode, void* indirect, int drawcount, int stride) => GLPointers.glMultiDrawArraysIndirect_Lazy((uint)mode, indirect, drawcount, stride);
         
-        /// <summary> <b>[requires: v4.6]</b> <b>[entry point: <c>glMultiDrawArraysIndirectCount</c>]</b><br/>  </summary>
+        /// <summary> <b>[requires: v4.6]</b> <b>[entry point: <c>glMultiDrawArraysIndirectCount</c>]</b><br/> Render multiple sets of primitives from array data, taking parameters and count from memory. </summary>
+        /// <param name="mode"> Specifies what kind of primitives to render. Symbolic constants GL_POINTS, GL_LINE_STRIP, GL_LINE_LOOP, GL_LINES, GL_LINE_STRIP_ADJACENCY, GL_LINES_ADJACENCY, GL_TRIANGLE_STRIP, GL_TRIANGLE_FAN, GL_TRIANGLES, GL_TRIANGLE_STRIP_ADJACENCY, GL_TRIANGLES_ADJACENCY, and GL_PATCHES are accepted. </param>
+        /// <param name="indirect"> Specifies the address of an array of structures containing the draw parameters. </param>
+        /// <param name="drawcount"> Specifies an offset (in bytes) into the buffer object bound to the GL_PARAMETER_BUFFER binding point at which a single sizei typed value is stored. Must be a multiple of four. </param>
+        /// <param name="maxdrawcount"> Specifies the maximum number of draws that are expected to be stored in the buffer. If the value stored at drawcount into the buffer is greater than maxdrawcount, the implementation stops processing draws after maxdrawcount parameter sets. </param>
+        /// <param name="stride"> Specifies the distance in basic machine units between elements of the draw parameter array. </param>
+        /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/glMultiDrawArraysIndirectCount.xhtml"/></remarks>
         public static void MultiDrawArraysIndirectCount(PrimitiveType mode, void* indirect, IntPtr drawcount, int maxdrawcount, int stride) => GLPointers.glMultiDrawArraysIndirectCount_Lazy((uint)mode, indirect, drawcount, maxdrawcount, stride);
         
         /// <summary> <b>[requires: v1.4]</b> <b>[entry point: <c>glMultiDrawElements</c>]</b><br/> Render multiple sets of primitives by specifying indices of array data elements. </summary>
         /// <param name="mode"> Specifies what kind of primitives to render. Symbolic constants GL_POINTS, GL_LINE_STRIP, GL_LINE_LOOP, GL_LINES, GL_LINE_STRIP_ADJACENCY, GL_LINES_ADJACENCY, GL_TRIANGLE_STRIP, GL_TRIANGLE_FAN, GL_TRIANGLES, GL_TRIANGLE_STRIP_ADJACENCY, GL_TRIANGLES_ADJACENCY and GL_PATCHES are accepted. </param>
         /// <param name="count"> Points to an array of the elements counts. </param>
         /// <param name="type"> Specifies the type of the values in indices. Must be one of GL_UNSIGNED_BYTE, GL_UNSIGNED_SHORT, or GL_UNSIGNED_INT. </param>
-        /// <param name="indices"> Specifies a pointer to the location where the indices are stored. </param>
+        /// <param name="indices"> Points to an array of byte offsets (cast to a pointer type) into the buffer bound to GL_ELEMENT_ARRAY_BUFFER to start reading indices from. </param>
         /// <param name="drawcount"> Specifies the size of the count and indices arrays. </param>
         /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/glMultiDrawElements.xhtml"/></remarks>
         public static void MultiDrawElements(PrimitiveType mode, int* count, DrawElementsType type, void** indices, int drawcount) => GLPointers.glMultiDrawElements_Lazy((uint)mode, count, (uint)type, indices, drawcount);
@@ -2585,7 +2591,7 @@ namespace OpenTK.Graphics.OpenGL
         /// <param name="mode"> Specifies what kind of primitives to render. Symbolic constants GL_POINTS, GL_LINE_STRIP, GL_LINE_LOOP, GL_LINES, GL_LINE_STRIP_ADJACENCY, GL_LINES_ADJACENCY, GL_TRIANGLE_STRIP, GL_TRIANGLE_FAN, GL_TRIANGLES, GL_TRIANGLE_STRIP_ADJACENCY, GL_TRIANGLES_ADJACENCY and GL_PATCHES are accepted. </param>
         /// <param name="count"> Points to an array of the elements counts. </param>
         /// <param name="type"> Specifies the type of the values in indices. Must be one of GL_UNSIGNED_BYTE, GL_UNSIGNED_SHORT, or GL_UNSIGNED_INT. </param>
-        /// <param name="indices"> Specifies a pointer to the location where the indices are stored. </param>
+        /// <param name="indices"> Points to an array of byte offsets (cast to a pointer type) into the buffer bound to GL_ELEMENT_ARRAY_BUFFER to start reading indices from. </param>
         /// <param name="drawcount"> Specifies the size of the count, indices and basevertex arrays. </param>
         /// <param name="basevertex"> Specifies a pointer to the location where the base vertices are stored. </param>
         /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/glMultiDrawElementsBaseVertex.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_draw_elements_base_vertex.txt">ARB_draw_elements_base_vertex.txt</see></remarks>
@@ -2593,14 +2599,21 @@ namespace OpenTK.Graphics.OpenGL
         
         /// <summary> <b>[requires: v4.3 | GL_ARB_multi_draw_indirect]</b> <b>[entry point: <c>glMultiDrawElementsIndirect</c>]</b><br/> Render indexed primitives from array data, taking parameters from memory. </summary>
         /// <param name="mode"> Specifies what kind of primitives to render. Symbolic constants GL_POINTS, GL_LINE_STRIP, GL_LINE_LOOP, GL_LINES, GL_LINE_STRIP_ADJACENCY, GL_LINES_ADJACENCY, GL_TRIANGLE_STRIP, GL_TRIANGLE_FAN, GL_TRIANGLES, GL_TRIANGLE_STRIP_ADJACENCY, GL_TRIANGLES_ADJACENCY, and GL_PATCHES are accepted. </param>
-        /// <param name="type"> Specifies the type of data in the buffer bound to the GL_ELEMENT_ARRAY_BUFFER binding. </param>
-        /// <param name="indirect"> Specifies the address of a structure containing an array of draw parameters. </param>
+        /// <param name="type"> Specifies the type of data in the buffer bound to the GL_ELEMENT_ARRAY_BUFFER binding. Must be one of GL_UNSIGNED_BYTE, GL_UNSIGNED_SHORT, or GL_UNSIGNED_INT. </param>
+        /// <param name="indirect"> Specifies a byte offset (cast to a pointer type) into the buffer bound to GL_DRAW_INDIRECT_BUFFER to start reading indirect draw parameters from. </param>
         /// <param name="drawcount"> Specifies the number of elements in the array addressed by indirect. </param>
         /// <param name="stride"> Specifies the distance in basic machine units between elements of the draw parameter array. </param>
         /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/glMultiDrawElementsIndirect.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_multi_draw_indirect.txt">ARB_multi_draw_indirect.txt</see></remarks>
         public static void MultiDrawElementsIndirect(PrimitiveType mode, DrawElementsType type, void* indirect, int drawcount, int stride) => GLPointers.glMultiDrawElementsIndirect_Lazy((uint)mode, (uint)type, indirect, drawcount, stride);
         
-        /// <summary> <b>[requires: v4.6]</b> <b>[entry point: <c>glMultiDrawElementsIndirectCount</c>]</b><br/>  </summary>
+        /// <summary> <b>[requires: v4.6]</b> <b>[entry point: <c>glMultiDrawElementsIndirectCount</c>]</b><br/> Render indexed primitives from array data, taking parameters and count from memory. </summary>
+        /// <param name="mode"> Specifies what kind of primitives to render. Symbolic constants GL_POINTS, GL_LINE_STRIP, GL_LINE_LOOP, GL_LINES, GL_LINE_STRIP_ADJACENCY, GL_LINES_ADJACENCY, GL_TRIANGLE_STRIP, GL_TRIANGLE_FAN, GL_TRIANGLES, GL_TRIANGLE_STRIP_ADJACENCY, GL_TRIANGLES_ADJACENCY, and GL_PATCHES are accepted. </param>
+        /// <param name="type"> Specifies the type of data in the buffer bound to the GL_ELEMENT_ARRAY_BUFFER binding. Must be one of GL_UNSIGNED_BYTE, GL_UNSIGNED_SHORT, or GL_UNSIGNED_INT. </param>
+        /// <param name="indirect"> Specifies the address of a structure containing an array of draw parameters. </param>
+        /// <param name="drawcount"> Specifies an offset (in bytes) into the buffer object bound to the GL_PARAMETER_BUFFER binding point at which a single sizei typed value is stored. Must be a multiple of four. </param>
+        /// <param name="maxdrawcount"> Specifies the maximum number of draws that are expected to be stored in the buffer. If the value stored at drawcount into the buffer is greater than maxdrawcount, the implementation stops processing draws after maxdrawcount parameter sets. </param>
+        /// <param name="stride"> Specifies the distance in basic machine units between elements of the draw parameter array. </param>
+        /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/glMultiDrawElementsIndirectCount.xhtml"/></remarks>
         public static void MultiDrawElementsIndirectCount(PrimitiveType mode, DrawElementsType type, void* indirect, IntPtr drawcount, int maxdrawcount, int stride) => GLPointers.glMultiDrawElementsIndirectCount_Lazy((uint)mode, (uint)type, indirect, drawcount, maxdrawcount, stride);
         
         /// <summary> <b>[requires: v4.5 | GL_ARB_direct_state_access]</b> <b>[entry point: <c>glNamedBufferData</c>]</b><br/> Creates and initializes a buffer object&apos;s data    store. </summary>
@@ -2779,8 +2792,11 @@ namespace OpenTK.Graphics.OpenGL
         /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/glPolygonOffset.xhtml"/></remarks>
         public static void PolygonOffset(float factor, float units) => GLPointers.glPolygonOffset_Lazy(factor, units);
         
-        /// <summary> <b>[requires: v4.6 | GL_ARB_polygon_offset_clamp]</b> <b>[entry point: <c>glPolygonOffsetClamp</c>]</b><br/>  </summary>
-        /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_polygon_offset_clamp.txt">ARB_polygon_offset_clamp.txt</see></remarks>
+        /// <summary> <b>[requires: v4.6 | GL_ARB_polygon_offset_clamp]</b> <b>[entry point: <c>glPolygonOffsetClamp</c>]</b><br/> Set the scale, units and clamp used to calculate depth values. </summary>
+        /// <param name="factor"> Specifies a scale factor that is used to create a variable depth offset for each polygon. The initial value is 0. </param>
+        /// <param name="units"> Is multiplied by an implementation-specific value to create a constant depth offset. The initial value is 0. </param>
+        /// <param name="clamp"> Used to set a maximum or minimum value for the offset calculation. </param>
+        /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/glPolygonOffsetClamp.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_polygon_offset_clamp.txt">ARB_polygon_offset_clamp.txt</see></remarks>
         public static void PolygonOffsetClamp(float factor, float units, float clamp) => GLPointers.glPolygonOffsetClamp_Lazy(factor, units, clamp);
         
         /// <summary> <b>[requires: v4.3 | GL_KHR_debug]</b> <b>[entry point: <c>glPopDebugGroup</c>]</b><br/> Pop the active debug group. </summary>
@@ -4141,7 +4157,7 @@ namespace OpenTK.Graphics.OpenGL
         /// <param name="size">The number of values per vertex that are stored in the array.</param>
         /// <param name="type">The type of the data stored in the array.</param>
         /// <param name="normalized"> Specifies whether fixed-point data values should be normalized (GL_TRUE) or converted directly as fixed-point values (GL_FALSE) when they are accessed. This parameter is ignored if type is GL_FIXED. </param>
-        /// <param name="relativeoffset">The distance between elements within the buffer.</param>
+        /// <param name="relativeoffset">A byte offset of the first element relative to the start of the vertex buffer binding this attribute fetches from.</param>
         /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/glVertexAttribFormat.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_direct_state_access.txt">ARB_direct_state_access.txt</see></remarks>
         public static void VertexArrayAttribFormat(int vaobj, uint attribindex, int size, VertexAttribType type, bool normalized, uint relativeoffset) => GLPointers.glVertexArrayAttribFormat_Lazy(vaobj, attribindex, size, (uint)type, (byte)(normalized ? 1 : 0), relativeoffset);
         
@@ -4150,7 +4166,7 @@ namespace OpenTK.Graphics.OpenGL
         /// <param name="attribindex">The generic vertex attribute array being described.</param>
         /// <param name="size">The number of values per vertex that are stored in the array.</param>
         /// <param name="type">The type of the data stored in the array.</param>
-        /// <param name="relativeoffset">The distance between elements within the buffer.</param>
+        /// <param name="relativeoffset">A byte offset of the first element relative to the start of the vertex buffer binding this attribute fetches from.</param>
         /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/glVertexAttribFormat.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_direct_state_access.txt">ARB_direct_state_access.txt</see></remarks>
         public static void VertexArrayAttribIFormat(int vaobj, uint attribindex, int size, VertexAttribIType type, uint relativeoffset) => GLPointers.glVertexArrayAttribIFormat_Lazy(vaobj, attribindex, size, (uint)type, relativeoffset);
         
@@ -4159,7 +4175,7 @@ namespace OpenTK.Graphics.OpenGL
         /// <param name="attribindex">The generic vertex attribute array being described.</param>
         /// <param name="size">The number of values per vertex that are stored in the array.</param>
         /// <param name="type">The type of the data stored in the array.</param>
-        /// <param name="relativeoffset">The distance between elements within the buffer.</param>
+        /// <param name="relativeoffset">A byte offset of the first element relative to the start of the vertex buffer binding this attribute fetches from.</param>
         /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/glVertexAttribFormat.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_direct_state_access.txt">ARB_direct_state_access.txt</see></remarks>
         public static void VertexArrayAttribLFormat(int vaobj, uint attribindex, int size, VertexAttribLType type, uint relativeoffset) => GLPointers.glVertexArrayAttribLFormat_Lazy(vaobj, attribindex, size, (uint)type, relativeoffset);
         
@@ -4191,7 +4207,7 @@ namespace OpenTK.Graphics.OpenGL
         /// <param name="count"> Specifies the number of buffers to bind. </param>
         /// <param name="buffers"> Specifies the address of an array of names of existing buffer objects. </param>
         /// <param name="offsets"> Specifies the address of an array of offsets to associate with the binding points. </param>
-        /// <param name="strides">!!missing documentation!!</param>
+        /// <param name="strides"> Specifies the address of an array of strides to associate with the binding points. </param>
         /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/glBindVertexBuffers.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_direct_state_access.txt">ARB_direct_state_access.txt</see></remarks>
         public static void VertexArrayVertexBuffers(int vaobj, uint first, int count, int* buffers, IntPtr* offsets, int* strides) => GLPointers.glVertexArrayVertexBuffers_Lazy(vaobj, first, count, buffers, offsets, strides);
         
@@ -4449,7 +4465,7 @@ namespace OpenTK.Graphics.OpenGL
         /// <param name="size">The number of values per vertex that are stored in the array.</param>
         /// <param name="type">The type of the data stored in the array.</param>
         /// <param name="normalized"> Specifies whether fixed-point data values should be normalized (GL_TRUE) or converted directly as fixed-point values (GL_FALSE) when they are accessed. This parameter is ignored if type is GL_FIXED. </param>
-        /// <param name="relativeoffset">The distance between elements within the buffer.</param>
+        /// <param name="relativeoffset">A byte offset of the first element relative to the start of the vertex buffer binding this attribute fetches from.</param>
         /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/glVertexAttribFormat.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_vertex_attrib_binding.txt">ARB_vertex_attrib_binding.txt</see></remarks>
         public static void VertexAttribFormat(uint attribindex, int size, VertexAttribType type, bool normalized, uint relativeoffset) => GLPointers.glVertexAttribFormat_Lazy(attribindex, size, (uint)type, (byte)(normalized ? 1 : 0), relativeoffset);
         
@@ -4589,7 +4605,7 @@ namespace OpenTK.Graphics.OpenGL
         /// <param name="attribindex">The generic vertex attribute array being described.</param>
         /// <param name="size">The number of values per vertex that are stored in the array.</param>
         /// <param name="type">The type of the data stored in the array.</param>
-        /// <param name="relativeoffset">The distance between elements within the buffer.</param>
+        /// <param name="relativeoffset">A byte offset of the first element relative to the start of the vertex buffer binding this attribute fetches from.</param>
         /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/glVertexAttribFormat.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_vertex_attrib_binding.txt">ARB_vertex_attrib_binding.txt</see></remarks>
         public static void VertexAttribIFormat(uint attribindex, int size, VertexAttribIType type, uint relativeoffset) => GLPointers.glVertexAttribIFormat_Lazy(attribindex, size, (uint)type, relativeoffset);
         
@@ -4598,7 +4614,7 @@ namespace OpenTK.Graphics.OpenGL
         /// <param name="size">Specifies the number of components per generic vertex attribute. Must be 1, 2, 3, 4. Additionally, the symbolic constant GL_BGRA is accepted by glVertexAttribPointer. The initial value is 4.</param>
         /// <param name="type">Specifies the data type of each component in the array. The symbolic constants GL_BYTE, GL_UNSIGNED_BYTE, GL_SHORT, GL_UNSIGNED_SHORT, GL_INT, and GL_UNSIGNED_INT are accepted by glVertexAttribPointer and glVertexAttribIPointer. Additionally GL_HALF_FLOAT, GL_FLOAT, GL_DOUBLE, GL_FIXED, GL_INT_2_10_10_10_REV, GL_UNSIGNED_INT_2_10_10_10_REV and GL_UNSIGNED_INT_10F_11F_11F_REV are accepted by glVertexAttribPointer. GL_DOUBLE is also accepted by glVertexAttribLPointer and is the only token accepted by the type parameter for that function. The initial value is GL_FLOAT.</param>
         /// <param name="stride">Specifies the byte offset between consecutive generic vertex attributes. If stride is 0, the generic vertex attributes are understood to be tightly packed in the array. The initial value is 0.</param>
-        /// <param name="pointer">Specifies a offset of the first component of the first generic vertex attribute in the array in the data store of the buffer currently bound to the GL_ARRAY_BUFFER target. The initial value is 0.</param>
+        /// <param name="pointer">Specifies the offset of the first component of the first generic vertex attribute in the array in the data store of the buffer currently bound to the GL_ARRAY_BUFFER target. The initial value is 0.</param>
         /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/glVertexAttribPointer.xhtml"/></remarks>
         public static void VertexAttribIPointer(uint index, int size, VertexAttribIType type, int stride, void* pointer) => GLPointers.glVertexAttribIPointer_Lazy(index, size, (uint)type, stride, pointer);
         
@@ -4660,7 +4676,7 @@ namespace OpenTK.Graphics.OpenGL
         /// <param name="attribindex">The generic vertex attribute array being described.</param>
         /// <param name="size">The number of values per vertex that are stored in the array.</param>
         /// <param name="type">The type of the data stored in the array.</param>
-        /// <param name="relativeoffset">The distance between elements within the buffer.</param>
+        /// <param name="relativeoffset">A byte offset of the first element relative to the start of the vertex buffer binding this attribute fetches from.</param>
         /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/glVertexAttribFormat.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_vertex_attrib_binding.txt">ARB_vertex_attrib_binding.txt</see></remarks>
         public static void VertexAttribLFormat(uint attribindex, int size, VertexAttribLType type, uint relativeoffset) => GLPointers.glVertexAttribLFormat_Lazy(attribindex, size, (uint)type, relativeoffset);
         
@@ -4669,7 +4685,7 @@ namespace OpenTK.Graphics.OpenGL
         /// <param name="size">Specifies the number of components per generic vertex attribute. Must be 1, 2, 3, 4. Additionally, the symbolic constant GL_BGRA is accepted by glVertexAttribPointer. The initial value is 4.</param>
         /// <param name="type">Specifies the data type of each component in the array. The symbolic constants GL_BYTE, GL_UNSIGNED_BYTE, GL_SHORT, GL_UNSIGNED_SHORT, GL_INT, and GL_UNSIGNED_INT are accepted by glVertexAttribPointer and glVertexAttribIPointer. Additionally GL_HALF_FLOAT, GL_FLOAT, GL_DOUBLE, GL_FIXED, GL_INT_2_10_10_10_REV, GL_UNSIGNED_INT_2_10_10_10_REV and GL_UNSIGNED_INT_10F_11F_11F_REV are accepted by glVertexAttribPointer. GL_DOUBLE is also accepted by glVertexAttribLPointer and is the only token accepted by the type parameter for that function. The initial value is GL_FLOAT.</param>
         /// <param name="stride">Specifies the byte offset between consecutive generic vertex attributes. If stride is 0, the generic vertex attributes are understood to be tightly packed in the array. The initial value is 0.</param>
-        /// <param name="pointer">Specifies a offset of the first component of the first generic vertex attribute in the array in the data store of the buffer currently bound to the GL_ARRAY_BUFFER target. The initial value is 0.</param>
+        /// <param name="pointer">Specifies the offset of the first component of the first generic vertex attribute in the array in the data store of the buffer currently bound to the GL_ARRAY_BUFFER target. The initial value is 0.</param>
         /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/glVertexAttribPointer.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_vertex_attrib_64bit.txt">ARB_vertex_attrib_64bit.txt</see></remarks>
         public static void VertexAttribLPointer(uint index, int size, VertexAttribLType type, int stride, void* pointer) => GLPointers.glVertexAttribLPointer_Lazy(index, size, (uint)type, stride, pointer);
         
@@ -4727,7 +4743,7 @@ namespace OpenTK.Graphics.OpenGL
         /// <param name="type">Specifies the data type of each component in the array. The symbolic constants GL_BYTE, GL_UNSIGNED_BYTE, GL_SHORT, GL_UNSIGNED_SHORT, GL_INT, and GL_UNSIGNED_INT are accepted by glVertexAttribPointer and glVertexAttribIPointer. Additionally GL_HALF_FLOAT, GL_FLOAT, GL_DOUBLE, GL_FIXED, GL_INT_2_10_10_10_REV, GL_UNSIGNED_INT_2_10_10_10_REV and GL_UNSIGNED_INT_10F_11F_11F_REV are accepted by glVertexAttribPointer. GL_DOUBLE is also accepted by glVertexAttribLPointer and is the only token accepted by the type parameter for that function. The initial value is GL_FLOAT.</param>
         /// <param name="normalized">For glVertexAttribPointer, specifies whether fixed-point data values should be normalized (GL_TRUE) or converted directly as fixed-point values (GL_FALSE) when they are accessed.</param>
         /// <param name="stride">Specifies the byte offset between consecutive generic vertex attributes. If stride is 0, the generic vertex attributes are understood to be tightly packed in the array. The initial value is 0.</param>
-        /// <param name="pointer">Specifies a offset of the first component of the first generic vertex attribute in the array in the data store of the buffer currently bound to the GL_ARRAY_BUFFER target. The initial value is 0.</param>
+        /// <param name="pointer">Specifies the offset of the first component of the first generic vertex attribute in the array in the data store of the buffer currently bound to the GL_ARRAY_BUFFER target. The initial value is 0.</param>
         /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/glVertexAttribPointer.xhtml"/></remarks>
         public static void VertexAttribPointer(uint index, int size, VertexAttribPointerType type, bool normalized, int stride, void* pointer) => GLPointers.glVertexAttribPointer_Lazy(index, size, (uint)type, (byte)(normalized ? 1 : 0), stride, pointer);
         
@@ -5381,7 +5397,7 @@ namespace OpenTK.Graphics.OpenGL
             /// <param name="count"> Specifies the number of buffers to bind. </param>
             /// <param name="buffers"> Specifies the address of an array of names of existing buffer objects. </param>
             /// <param name="offsets"> Specifies the address of an array of offsets to associate with the binding points. </param>
-            /// <param name="strides">!!missing documentation!!</param>
+            /// <param name="strides"> Specifies the address of an array of strides to associate with the binding points. </param>
             /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/glBindVertexBuffers.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_multi_bind.txt">ARB_multi_bind.txt</see></remarks>
             public static void BindVertexBuffers(uint first, int count, int* buffers, IntPtr* offsets, int* strides) => GLPointers.glBindVertexBuffers_Lazy(first, count, buffers, offsets, strides);
             
@@ -5659,7 +5675,7 @@ namespace OpenTK.Graphics.OpenGL
             /// <param name="level">Specifies the level-of-detail number. Level 0 is the base image level. Level n is the nth mipmap reduction image.</param>
             /// <param name="xoffset">Specifies a texel offset in the x direction within the texture array.</param>
             /// <param name="yoffset">Specifies a texel offset in the y direction within the texture array.</param>
-            /// <param name="zoffset">!!missing documentation!!</param>
+            /// <param name="zoffset">Specifies a texel offset in the z direction within the texture array.</param>
             /// <param name="width">Specifies the width of the texture subimage.</param>
             /// <param name="height">Specifies the height of the texture subimage.</param>
             /// <param name="depth">Specifies the depth of the texture subimage.</param>
@@ -5953,7 +5969,7 @@ namespace OpenTK.Graphics.OpenGL
             
             /// <summary> <b>[requires: v4.0 | GL_ARB_draw_indirect]</b> <b>[entry point: <c>glDrawArraysIndirect</c>]</b><br/> Render primitives from array data, taking parameters from memory. </summary>
             /// <param name="mode"> Specifies what kind of primitives to render. Symbolic constants GL_POINTS, GL_LINE_STRIP, GL_LINE_LOOP, GL_LINES, GL_LINE_STRIP_ADJACENCY, GL_LINES_ADJACENCY, GL_TRIANGLE_STRIP, GL_TRIANGLE_FAN, GL_TRIANGLES, GL_TRIANGLE_STRIP_ADJACENCY, GL_TRIANGLES_ADJACENCY, and GL_PATCHES are accepted. </param>
-            /// <param name="indirect"> Specifies the address of a structure containing the draw parameters. </param>
+            /// <param name="indirect"> Specifies a byte offset (cast to a pointer type) into the buffer bound to GL_DRAW_INDIRECT_BUFFER to start reading indirect draw parameters from. </param>
             /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/glDrawArraysIndirect.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_draw_indirect.txt">ARB_draw_indirect.txt</see></remarks>
             public static void DrawArraysIndirect(PrimitiveType mode, void* indirect) => GLPointers.glDrawArraysIndirect_Lazy((uint)mode, indirect);
             
@@ -5978,7 +5994,7 @@ namespace OpenTK.Graphics.OpenGL
             /// <param name="mode"> Specifies what kind of primitives to render. Symbolic constants GL_POINTS, GL_LINE_STRIP, GL_LINE_LOOP, GL_LINES, GL_TRIANGLE_STRIP, GL_TRIANGLE_FAN, GL_TRIANGLES, GL_LINES_ADJACENCY, GL_LINE_STRIP_ADJACENCY, GL_TRIANGLES_ADJACENCY, GL_TRIANGLE_STRIP_ADJACENCY and GL_PATCHES are accepted. </param>
             /// <param name="count"> Specifies the number of elements to be rendered. </param>
             /// <param name="type"> Specifies the type of the values in indices. Must be one of GL_UNSIGNED_BYTE, GL_UNSIGNED_SHORT, or GL_UNSIGNED_INT. </param>
-            /// <param name="indices"> Specifies a pointer to the location where the indices are stored. </param>
+            /// <param name="indices"> Specifies a byte offset (cast to a pointer type) into the buffer bound to GL_ELEMENT_ARRAY_BUFFER to start reading indices from. </param>
             /// <param name="basevertex"> Specifies a constant that should be added to each element of indices when chosing elements from the enabled vertex arrays. </param>
             /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/glDrawElementsBaseVertex.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_draw_elements_base_vertex.txt">ARB_draw_elements_base_vertex.txt</see></remarks>
             public static void DrawElementsBaseVertex(PrimitiveType mode, int count, DrawElementsType type, void* indices, int basevertex) => GLPointers.glDrawElementsBaseVertex_Lazy((uint)mode, count, (uint)type, indices, basevertex);
@@ -5986,7 +6002,7 @@ namespace OpenTK.Graphics.OpenGL
             /// <summary> <b>[requires: v4.0 | GL_ARB_draw_indirect]</b> <b>[entry point: <c>glDrawElementsIndirect</c>]</b><br/> Render indexed primitives from array data, taking parameters from memory. </summary>
             /// <param name="mode"> Specifies what kind of primitives to render. Symbolic constants GL_POINTS, GL_LINE_STRIP, GL_LINE_LOOP, GL_LINES, GL_LINE_STRIP_ADJACENCY, GL_LINES_ADJACENCY, GL_TRIANGLE_STRIP, GL_TRIANGLE_FAN, GL_TRIANGLES, GL_TRIANGLE_STRIP_ADJACENCY, GL_TRIANGLES_ADJACENCY, and GL_PATCHES are accepted. </param>
             /// <param name="type"> Specifies the type of data in the buffer bound to the GL_ELEMENT_ARRAY_BUFFER binding. </param>
-            /// <param name="indirect"> Specifies the address of a structure containing the draw parameters. </param>
+            /// <param name="indirect"> Specifies a byte offset (cast to a pointer type) into the buffer bound to GL_DRAW_INDIRECT_BUFFER to start reading indirect draw parameters from. </param>
             /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/glDrawElementsIndirect.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_draw_indirect.txt">ARB_draw_indirect.txt</see></remarks>
             public static void DrawElementsIndirect(PrimitiveType mode, DrawElementsType type, void* indirect) => GLPointers.glDrawElementsIndirect_Lazy((uint)mode, (uint)type, indirect);
             
@@ -5998,7 +6014,7 @@ namespace OpenTK.Graphics.OpenGL
             /// <param name="mode"> Specifies what kind of primitives to render. Symbolic constants GL_POINTS, GL_LINE_STRIP, GL_LINE_LOOP, GL_LINES, GL_LINE_STRIP_ADJACENCY, GL_LINES_ADJACENCY, GL_TRIANGLE_STRIP, GL_TRIANGLE_FAN, GL_TRIANGLES, GL_TRIANGLE_STRIP_ADJACENCY, GL_TRIANGLES_ADJACENCY and GL_PATCHES are accepted. </param>
             /// <param name="count"> Specifies the number of elements to be rendered. </param>
             /// <param name="type"> Specifies the type of the values in indices. Must be one of GL_UNSIGNED_BYTE, GL_UNSIGNED_SHORT, or GL_UNSIGNED_INT. </param>
-            /// <param name="indices"> Specifies a pointer to the location where the indices are stored. </param>
+            /// <param name="indices"> Specifies a byte offset (cast to a pointer type) into the buffer bound to GL_ELEMENT_ARRAY_BUFFER to start reading indices from. </param>
             /// <param name="instancecount"> Specifies the number of instances of the specified range of indices to be rendered. </param>
             /// <param name="baseinstance"> Specifies the base instance for use in fetching instanced vertex attributes. </param>
             /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/glDrawElementsInstancedBaseInstance.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_base_instance.txt">ARB_base_instance.txt</see></remarks>
@@ -6008,7 +6024,7 @@ namespace OpenTK.Graphics.OpenGL
             /// <param name="mode"> Specifies what kind of primitives to render. Symbolic constants GL_POINTS, GL_LINE_STRIP, GL_LINE_LOOP, GL_LINES, GL_TRIANGLE_STRIP, GL_TRIANGLE_FAN, GL_TRIANGLES, GL_LINES_ADJACENCY, GL_LINE_STRIP_ADJACENCY, GL_TRIANGLES_ADJACENCY, GL_TRIANGLE_STRIP_ADJACENCY and GL_PATCHES are accepted. </param>
             /// <param name="count"> Specifies the number of elements to be rendered. </param>
             /// <param name="type"> Specifies the type of the values in indices. Must be one of GL_UNSIGNED_BYTE, GL_UNSIGNED_SHORT, or GL_UNSIGNED_INT. </param>
-            /// <param name="indices"> Specifies a pointer to the location where the indices are stored. </param>
+            /// <param name="indices"> Specifies a byte offset (cast to a pointer type) into the buffer bound to GL_ELEMENT_ARRAY_BUFFER to start reading indices from. </param>
             /// <param name="instancecount"> Specifies the number of instances of the indexed geometry that should be drawn. </param>
             /// <param name="basevertex"> Specifies a constant that should be added to each element of indices when chosing elements from the enabled vertex arrays. </param>
             /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/glDrawElementsInstancedBaseVertex.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_draw_elements_base_vertex.txt">ARB_draw_elements_base_vertex.txt</see></remarks>
@@ -6018,7 +6034,7 @@ namespace OpenTK.Graphics.OpenGL
             /// <param name="mode"> Specifies what kind of primitives to render. Symbolic constants GL_POINTS, GL_LINE_STRIP, GL_LINE_LOOP, GL_LINES, GL_TRIANGLE_STRIP, GL_TRIANGLE_FAN, GL_TRIANGLES, GL_LINES_ADJACENCY, GL_LINE_STRIP_ADJACENCY, GL_TRIANGLES_ADJACENCY, GL_TRIANGLE_STRIP_ADJACENCY and GL_PATCHES are accepted. </param>
             /// <param name="count"> Specifies the number of elements to be rendered. </param>
             /// <param name="type"> Specifies the type of the values in indices. Must be one of GL_UNSIGNED_BYTE, GL_UNSIGNED_SHORT, or GL_UNSIGNED_INT. </param>
-            /// <param name="indices"> Specifies a pointer to the location where the indices are stored. </param>
+            /// <param name="indices"> Specifies a byte offset (cast to a pointer type) into the buffer bound to GL_ELEMENT_ARRAY_BUFFER to start reading indices from. </param>
             /// <param name="instancecount"> Specifies the number of instances of the indexed geometry that should be drawn. </param>
             /// <param name="basevertex"> Specifies a constant that should be added to each element of indices when chosing elements from the enabled vertex arrays. </param>
             /// <param name="baseinstance"> Specifies the base instance for use in fetching instanced vertex attributes. </param>
@@ -6031,7 +6047,7 @@ namespace OpenTK.Graphics.OpenGL
             /// <param name="end"> Specifies the maximum array index contained in indices. </param>
             /// <param name="count"> Specifies the number of elements to be rendered. </param>
             /// <param name="type"> Specifies the type of the values in indices. Must be one of GL_UNSIGNED_BYTE, GL_UNSIGNED_SHORT, or GL_UNSIGNED_INT. </param>
-            /// <param name="indices"> Specifies a pointer to the location where the indices are stored. </param>
+            /// <param name="indices"> Specifies a byte offset (cast to a pointer type) into the buffer bound to GL_ELEMENT_ARRAY_BUFFER to start reading indices from. </param>
             /// <param name="basevertex"> Specifies a constant that should be added to each element of indices when chosing elements from the enabled vertex arrays. </param>
             /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/glDrawRangeElementsBaseVertex.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_draw_elements_base_vertex.txt">ARB_draw_elements_base_vertex.txt</see></remarks>
             public static void DrawRangeElementsBaseVertex(PrimitiveType mode, uint start, uint end, int count, DrawElementsType type, void* indices, int basevertex) => GLPointers.glDrawRangeElementsBaseVertex_Lazy((uint)mode, start, end, count, (uint)type, indices, basevertex);
@@ -6662,7 +6678,7 @@ namespace OpenTK.Graphics.OpenGL
             /// <summary> <b>[requires: v4.5 | GL_ARB_direct_state_access]</b> <b>[entry point: <c>glGetQueryBufferObjecti64v</c>]</b><br/> Return parameters of a query object. </summary>
             /// <param name="id"> Specifies the name of a query object. </param>
             /// <param name="buffer"> Specifies the name of a buffer object. </param>
-            /// <param name="pname"> Specifies the symbolic name of a query object parameter. Accepted values are GL_QUERY_RESULT or GL_QUERY_RESULT_AVAILABLE. </param>
+            /// <param name="pname"> Specifies the symbolic name of a query object parameter. Accepted values are GL_QUERY_RESULT, GL_QUERY_RESULT_AVAILABLE, GL_QUERY_RESULT_NO_WAIT, or GL_QUERY_TARGET. </param>
             /// <param name="offset"> Specifies the byte offset into buffer&apos;s data store where the queried result will be written. </param>
             /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/glGetQueryObject.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_direct_state_access.txt">ARB_direct_state_access.txt</see></remarks>
             public static void GetQueryBufferObjecti64v(int id, int buffer, QueryObjectParameterName pname, IntPtr offset) => GLPointers.glGetQueryBufferObjecti64v_Lazy(id, buffer, (uint)pname, offset);
@@ -6670,7 +6686,7 @@ namespace OpenTK.Graphics.OpenGL
             /// <summary> <b>[requires: v4.5 | GL_ARB_direct_state_access]</b> <b>[entry point: <c>glGetQueryBufferObjectiv</c>]</b><br/> Return parameters of a query object. </summary>
             /// <param name="id"> Specifies the name of a query object. </param>
             /// <param name="buffer"> Specifies the name of a buffer object. </param>
-            /// <param name="pname"> Specifies the symbolic name of a query object parameter. Accepted values are GL_QUERY_RESULT or GL_QUERY_RESULT_AVAILABLE. </param>
+            /// <param name="pname"> Specifies the symbolic name of a query object parameter. Accepted values are GL_QUERY_RESULT, GL_QUERY_RESULT_AVAILABLE, GL_QUERY_RESULT_NO_WAIT, or GL_QUERY_TARGET. </param>
             /// <param name="offset"> Specifies the byte offset into buffer&apos;s data store where the queried result will be written. </param>
             /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/glGetQueryObject.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_direct_state_access.txt">ARB_direct_state_access.txt</see></remarks>
             public static void GetQueryBufferObjectiv(int id, int buffer, QueryObjectParameterName pname, IntPtr offset) => GLPointers.glGetQueryBufferObjectiv_Lazy(id, buffer, (uint)pname, offset);
@@ -6678,7 +6694,7 @@ namespace OpenTK.Graphics.OpenGL
             /// <summary> <b>[requires: v4.5 | GL_ARB_direct_state_access]</b> <b>[entry point: <c>glGetQueryBufferObjectui64v</c>]</b><br/> Return parameters of a query object. </summary>
             /// <param name="id"> Specifies the name of a query object. </param>
             /// <param name="buffer"> Specifies the name of a buffer object. </param>
-            /// <param name="pname"> Specifies the symbolic name of a query object parameter. Accepted values are GL_QUERY_RESULT or GL_QUERY_RESULT_AVAILABLE. </param>
+            /// <param name="pname"> Specifies the symbolic name of a query object parameter. Accepted values are GL_QUERY_RESULT, GL_QUERY_RESULT_AVAILABLE, GL_QUERY_RESULT_NO_WAIT, or GL_QUERY_TARGET. </param>
             /// <param name="offset"> Specifies the byte offset into buffer&apos;s data store where the queried result will be written. </param>
             /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/glGetQueryObject.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_direct_state_access.txt">ARB_direct_state_access.txt</see></remarks>
             public static void GetQueryBufferObjectui64v(int id, int buffer, QueryObjectParameterName pname, IntPtr offset) => GLPointers.glGetQueryBufferObjectui64v_Lazy(id, buffer, (uint)pname, offset);
@@ -6686,7 +6702,7 @@ namespace OpenTK.Graphics.OpenGL
             /// <summary> <b>[requires: v4.5 | GL_ARB_direct_state_access]</b> <b>[entry point: <c>glGetQueryBufferObjectuiv</c>]</b><br/> Return parameters of a query object. </summary>
             /// <param name="id"> Specifies the name of a query object. </param>
             /// <param name="buffer"> Specifies the name of a buffer object. </param>
-            /// <param name="pname"> Specifies the symbolic name of a query object parameter. Accepted values are GL_QUERY_RESULT or GL_QUERY_RESULT_AVAILABLE. </param>
+            /// <param name="pname"> Specifies the symbolic name of a query object parameter. Accepted values are GL_QUERY_RESULT, GL_QUERY_RESULT_AVAILABLE, GL_QUERY_RESULT_NO_WAIT, or GL_QUERY_TARGET. </param>
             /// <param name="offset"> Specifies the byte offset into buffer&apos;s data store where the queried result will be written. </param>
             /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/glGetQueryObject.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_direct_state_access.txt">ARB_direct_state_access.txt</see></remarks>
             public static void GetQueryBufferObjectuiv(int id, int buffer, QueryObjectParameterName pname, IntPtr offset) => GLPointers.glGetQueryBufferObjectuiv_Lazy(id, buffer, (uint)pname, offset);
@@ -6705,7 +6721,7 @@ namespace OpenTK.Graphics.OpenGL
             
             /// <summary> <b>[requires: v3.3 | GL_ARB_timer_query]</b> <b>[entry point: <c>glGetQueryObjecti64v</c>]</b><br/> Return parameters of a query object. </summary>
             /// <param name="id"> Specifies the name of a query object. </param>
-            /// <param name="pname"> Specifies the symbolic name of a query object parameter. Accepted values are GL_QUERY_RESULT or GL_QUERY_RESULT_AVAILABLE. </param>
+            /// <param name="pname"> Specifies the symbolic name of a query object parameter. Accepted values are GL_QUERY_RESULT, GL_QUERY_RESULT_AVAILABLE, GL_QUERY_RESULT_NO_WAIT, or GL_QUERY_TARGET. </param>
             /// <param name="params"> If a buffer is bound to the GL_QUERY_RESULT_BUFFER target, then params is treated as an offset to a location within that buffer&apos;s data store to receive the result of the query. If no buffer is bound to GL_QUERY_RESULT_BUFFER, then params is treated as an address in client memory of a variable to receive the resulting data. </param>
             /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/glGetQueryObject.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_timer_query.txt">ARB_timer_query.txt</see></remarks>
             public static void GetQueryObjecti64v(int id, QueryObjectParameterName pname, long* @params) => GLPointers.glGetQueryObjecti64v_Lazy(id, (uint)pname, @params);
@@ -6716,7 +6732,7 @@ namespace OpenTK.Graphics.OpenGL
             
             /// <summary> <b>[requires: v3.3 | GL_ARB_timer_query]</b> <b>[entry point: <c>glGetQueryObjectui64v</c>]</b><br/> Return parameters of a query object. </summary>
             /// <param name="id"> Specifies the name of a query object. </param>
-            /// <param name="pname"> Specifies the symbolic name of a query object parameter. Accepted values are GL_QUERY_RESULT or GL_QUERY_RESULT_AVAILABLE. </param>
+            /// <param name="pname"> Specifies the symbolic name of a query object parameter. Accepted values are GL_QUERY_RESULT, GL_QUERY_RESULT_AVAILABLE, GL_QUERY_RESULT_NO_WAIT, or GL_QUERY_TARGET. </param>
             /// <param name="params"> If a buffer is bound to the GL_QUERY_RESULT_BUFFER target, then params is treated as an offset to a location within that buffer&apos;s data store to receive the result of the query. If no buffer is bound to GL_QUERY_RESULT_BUFFER, then params is treated as an address in client memory of a variable to receive the resulting data. </param>
             /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/glGetQueryObject.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_timer_query.txt">ARB_timer_query.txt</see></remarks>
             public static void GetQueryObjectui64v(int id, QueryObjectParameterName pname, ulong* @params) => GLPointers.glGetQueryObjectui64v_Lazy(id, (uint)pname, @params);
@@ -7209,7 +7225,7 @@ namespace OpenTK.Graphics.OpenGL
             
             /// <summary> <b>[requires: v4.3 | GL_ARB_multi_draw_indirect]</b> <b>[entry point: <c>glMultiDrawArraysIndirect</c>]</b><br/> Render multiple sets of primitives from array data, taking parameters from memory. </summary>
             /// <param name="mode"> Specifies what kind of primitives to render. Symbolic constants GL_POINTS, GL_LINE_STRIP, GL_LINE_LOOP, GL_LINES, GL_LINE_STRIP_ADJACENCY, GL_LINES_ADJACENCY, GL_TRIANGLE_STRIP, GL_TRIANGLE_FAN, GL_TRIANGLES, GL_TRIANGLE_STRIP_ADJACENCY, GL_TRIANGLES_ADJACENCY, and GL_PATCHES are accepted. </param>
-            /// <param name="indirect"> Specifies the address of an array of structures containing the draw parameters. </param>
+            /// <param name="indirect"> Specifies a byte offset (cast to a pointer type) into the buffer bound to GL_DRAW_INDIRECT_BUFFER to start reading indirect draw parameters from. </param>
             /// <param name="drawcount"> Specifies the number of elements in the array of draw parameter structures. </param>
             /// <param name="stride"> Specifies the distance in basic machine units between elements of the draw parameter array. </param>
             /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/glMultiDrawArraysIndirect.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_multi_draw_indirect.txt">ARB_multi_draw_indirect.txt</see></remarks>
@@ -7223,7 +7239,7 @@ namespace OpenTK.Graphics.OpenGL
             /// <param name="mode"> Specifies what kind of primitives to render. Symbolic constants GL_POINTS, GL_LINE_STRIP, GL_LINE_LOOP, GL_LINES, GL_LINE_STRIP_ADJACENCY, GL_LINES_ADJACENCY, GL_TRIANGLE_STRIP, GL_TRIANGLE_FAN, GL_TRIANGLES, GL_TRIANGLE_STRIP_ADJACENCY, GL_TRIANGLES_ADJACENCY and GL_PATCHES are accepted. </param>
             /// <param name="count"> Points to an array of the elements counts. </param>
             /// <param name="type"> Specifies the type of the values in indices. Must be one of GL_UNSIGNED_BYTE, GL_UNSIGNED_SHORT, or GL_UNSIGNED_INT. </param>
-            /// <param name="indices"> Specifies a pointer to the location where the indices are stored. </param>
+            /// <param name="indices"> Points to an array of byte offsets (cast to a pointer type) into the buffer bound to GL_ELEMENT_ARRAY_BUFFER to start reading indices from. </param>
             /// <param name="drawcount"> Specifies the size of the count, indices and basevertex arrays. </param>
             /// <param name="basevertex"> Specifies a pointer to the location where the base vertices are stored. </param>
             /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/glMultiDrawElementsBaseVertex.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_draw_elements_base_vertex.txt">ARB_draw_elements_base_vertex.txt</see></remarks>
@@ -7231,8 +7247,8 @@ namespace OpenTK.Graphics.OpenGL
             
             /// <summary> <b>[requires: v4.3 | GL_ARB_multi_draw_indirect]</b> <b>[entry point: <c>glMultiDrawElementsIndirect</c>]</b><br/> Render indexed primitives from array data, taking parameters from memory. </summary>
             /// <param name="mode"> Specifies what kind of primitives to render. Symbolic constants GL_POINTS, GL_LINE_STRIP, GL_LINE_LOOP, GL_LINES, GL_LINE_STRIP_ADJACENCY, GL_LINES_ADJACENCY, GL_TRIANGLE_STRIP, GL_TRIANGLE_FAN, GL_TRIANGLES, GL_TRIANGLE_STRIP_ADJACENCY, GL_TRIANGLES_ADJACENCY, and GL_PATCHES are accepted. </param>
-            /// <param name="type"> Specifies the type of data in the buffer bound to the GL_ELEMENT_ARRAY_BUFFER binding. </param>
-            /// <param name="indirect"> Specifies the address of a structure containing an array of draw parameters. </param>
+            /// <param name="type"> Specifies the type of data in the buffer bound to the GL_ELEMENT_ARRAY_BUFFER binding. Must be one of GL_UNSIGNED_BYTE, GL_UNSIGNED_SHORT, or GL_UNSIGNED_INT. </param>
+            /// <param name="indirect"> Specifies a byte offset (cast to a pointer type) into the buffer bound to GL_DRAW_INDIRECT_BUFFER to start reading indirect draw parameters from. </param>
             /// <param name="drawcount"> Specifies the number of elements in the array addressed by indirect. </param>
             /// <param name="stride"> Specifies the distance in basic machine units between elements of the draw parameter array. </param>
             /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/glMultiDrawElementsIndirect.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_multi_draw_indirect.txt">ARB_multi_draw_indirect.txt</see></remarks>
@@ -7510,8 +7526,11 @@ namespace OpenTK.Graphics.OpenGL
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_point_parameters.txt">ARB_point_parameters.txt</see></remarks>
             public static void PointParameterfvARB(PointParameterNameARB pname, float* @params) => GLPointers.glPointParameterfvARB_Lazy((uint)pname, @params);
             
-            /// <summary> <b>[requires: v4.6 | GL_ARB_polygon_offset_clamp]</b> <b>[entry point: <c>glPolygonOffsetClamp</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_polygon_offset_clamp.txt">ARB_polygon_offset_clamp.txt</see></remarks>
+            /// <summary> <b>[requires: v4.6 | GL_ARB_polygon_offset_clamp]</b> <b>[entry point: <c>glPolygonOffsetClamp</c>]</b><br/> Set the scale, units and clamp used to calculate depth values. </summary>
+            /// <param name="factor"> Specifies a scale factor that is used to create a variable depth offset for each polygon. The initial value is 0. </param>
+            /// <param name="units"> Is multiplied by an implementation-specific value to create a constant depth offset. The initial value is 0. </param>
+            /// <param name="clamp"> Used to set a maximum or minimum value for the offset calculation. </param>
+            /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/glPolygonOffsetClamp.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_polygon_offset_clamp.txt">ARB_polygon_offset_clamp.txt</see></remarks>
             public static void PolygonOffsetClamp(float factor, float units, float clamp) => GLPointers.glPolygonOffsetClamp_Lazy(factor, units, clamp);
             
             /// <summary> <b>[requires: GL_ARB_ES3_2_compatibility]</b> <b>[entry point: <c>glPrimitiveBoundingBoxARB</c>]</b><br/>  </summary>
@@ -8665,7 +8684,7 @@ namespace OpenTK.Graphics.OpenGL
             /// <param name="size">The number of values per vertex that are stored in the array.</param>
             /// <param name="type">The type of the data stored in the array.</param>
             /// <param name="normalized"> Specifies whether fixed-point data values should be normalized (GL_TRUE) or converted directly as fixed-point values (GL_FALSE) when they are accessed. This parameter is ignored if type is GL_FIXED. </param>
-            /// <param name="relativeoffset">The distance between elements within the buffer.</param>
+            /// <param name="relativeoffset">A byte offset of the first element relative to the start of the vertex buffer binding this attribute fetches from.</param>
             /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/glVertexAttribFormat.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_direct_state_access.txt">ARB_direct_state_access.txt</see></remarks>
             public static void VertexArrayAttribFormat(int vaobj, uint attribindex, int size, VertexAttribType type, bool normalized, uint relativeoffset) => GLPointers.glVertexArrayAttribFormat_Lazy(vaobj, attribindex, size, (uint)type, (byte)(normalized ? 1 : 0), relativeoffset);
             
@@ -8674,7 +8693,7 @@ namespace OpenTK.Graphics.OpenGL
             /// <param name="attribindex">The generic vertex attribute array being described.</param>
             /// <param name="size">The number of values per vertex that are stored in the array.</param>
             /// <param name="type">The type of the data stored in the array.</param>
-            /// <param name="relativeoffset">The distance between elements within the buffer.</param>
+            /// <param name="relativeoffset">A byte offset of the first element relative to the start of the vertex buffer binding this attribute fetches from.</param>
             /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/glVertexAttribFormat.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_direct_state_access.txt">ARB_direct_state_access.txt</see></remarks>
             public static void VertexArrayAttribIFormat(int vaobj, uint attribindex, int size, VertexAttribIType type, uint relativeoffset) => GLPointers.glVertexArrayAttribIFormat_Lazy(vaobj, attribindex, size, (uint)type, relativeoffset);
             
@@ -8683,7 +8702,7 @@ namespace OpenTK.Graphics.OpenGL
             /// <param name="attribindex">The generic vertex attribute array being described.</param>
             /// <param name="size">The number of values per vertex that are stored in the array.</param>
             /// <param name="type">The type of the data stored in the array.</param>
-            /// <param name="relativeoffset">The distance between elements within the buffer.</param>
+            /// <param name="relativeoffset">A byte offset of the first element relative to the start of the vertex buffer binding this attribute fetches from.</param>
             /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/glVertexAttribFormat.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_direct_state_access.txt">ARB_direct_state_access.txt</see></remarks>
             public static void VertexArrayAttribLFormat(int vaobj, uint attribindex, int size, VertexAttribLType type, uint relativeoffset) => GLPointers.glVertexArrayAttribLFormat_Lazy(vaobj, attribindex, size, (uint)type, relativeoffset);
             
@@ -8715,7 +8734,7 @@ namespace OpenTK.Graphics.OpenGL
             /// <param name="count"> Specifies the number of buffers to bind. </param>
             /// <param name="buffers"> Specifies the address of an array of names of existing buffer objects. </param>
             /// <param name="offsets"> Specifies the address of an array of offsets to associate with the binding points. </param>
-            /// <param name="strides">!!missing documentation!!</param>
+            /// <param name="strides"> Specifies the address of an array of strides to associate with the binding points. </param>
             /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/glBindVertexBuffers.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_direct_state_access.txt">ARB_direct_state_access.txt</see></remarks>
             public static void VertexArrayVertexBuffers(int vaobj, uint first, int count, int* buffers, IntPtr* offsets, int* strides) => GLPointers.glVertexArrayVertexBuffers_Lazy(vaobj, first, count, buffers, offsets, strides);
             
@@ -8878,7 +8897,7 @@ namespace OpenTK.Graphics.OpenGL
             /// <param name="size">The number of values per vertex that are stored in the array.</param>
             /// <param name="type">The type of the data stored in the array.</param>
             /// <param name="normalized"> Specifies whether fixed-point data values should be normalized (GL_TRUE) or converted directly as fixed-point values (GL_FALSE) when they are accessed. This parameter is ignored if type is GL_FIXED. </param>
-            /// <param name="relativeoffset">The distance between elements within the buffer.</param>
+            /// <param name="relativeoffset">A byte offset of the first element relative to the start of the vertex buffer binding this attribute fetches from.</param>
             /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/glVertexAttribFormat.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_vertex_attrib_binding.txt">ARB_vertex_attrib_binding.txt</see></remarks>
             public static void VertexAttribFormat(uint attribindex, int size, VertexAttribType type, bool normalized, uint relativeoffset) => GLPointers.glVertexAttribFormat_Lazy(attribindex, size, (uint)type, (byte)(normalized ? 1 : 0), relativeoffset);
             
@@ -8886,7 +8905,7 @@ namespace OpenTK.Graphics.OpenGL
             /// <param name="attribindex">The generic vertex attribute array being described.</param>
             /// <param name="size">The number of values per vertex that are stored in the array.</param>
             /// <param name="type">The type of the data stored in the array.</param>
-            /// <param name="relativeoffset">The distance between elements within the buffer.</param>
+            /// <param name="relativeoffset">A byte offset of the first element relative to the start of the vertex buffer binding this attribute fetches from.</param>
             /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/glVertexAttribFormat.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_vertex_attrib_binding.txt">ARB_vertex_attrib_binding.txt</see></remarks>
             public static void VertexAttribIFormat(uint attribindex, int size, VertexAttribIType type, uint relativeoffset) => GLPointers.glVertexAttribIFormat_Lazy(attribindex, size, (uint)type, relativeoffset);
             
@@ -8956,7 +8975,7 @@ namespace OpenTK.Graphics.OpenGL
             /// <param name="attribindex">The generic vertex attribute array being described.</param>
             /// <param name="size">The number of values per vertex that are stored in the array.</param>
             /// <param name="type">The type of the data stored in the array.</param>
-            /// <param name="relativeoffset">The distance between elements within the buffer.</param>
+            /// <param name="relativeoffset">A byte offset of the first element relative to the start of the vertex buffer binding this attribute fetches from.</param>
             /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/glVertexAttribFormat.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_vertex_attrib_binding.txt">ARB_vertex_attrib_binding.txt</see></remarks>
             public static void VertexAttribLFormat(uint attribindex, int size, VertexAttribLType type, uint relativeoffset) => GLPointers.glVertexAttribLFormat_Lazy(attribindex, size, (uint)type, relativeoffset);
             
@@ -8965,7 +8984,7 @@ namespace OpenTK.Graphics.OpenGL
             /// <param name="size">Specifies the number of components per generic vertex attribute. Must be 1, 2, 3, 4. Additionally, the symbolic constant GL_BGRA is accepted by glVertexAttribPointer. The initial value is 4.</param>
             /// <param name="type">Specifies the data type of each component in the array. The symbolic constants GL_BYTE, GL_UNSIGNED_BYTE, GL_SHORT, GL_UNSIGNED_SHORT, GL_INT, and GL_UNSIGNED_INT are accepted by glVertexAttribPointer and glVertexAttribIPointer. Additionally GL_HALF_FLOAT, GL_FLOAT, GL_DOUBLE, GL_FIXED, GL_INT_2_10_10_10_REV, GL_UNSIGNED_INT_2_10_10_10_REV and GL_UNSIGNED_INT_10F_11F_11F_REV are accepted by glVertexAttribPointer. GL_DOUBLE is also accepted by glVertexAttribLPointer and is the only token accepted by the type parameter for that function. The initial value is GL_FLOAT.</param>
             /// <param name="stride">Specifies the byte offset between consecutive generic vertex attributes. If stride is 0, the generic vertex attributes are understood to be tightly packed in the array. The initial value is 0.</param>
-            /// <param name="pointer">Specifies a offset of the first component of the first generic vertex attribute in the array in the data store of the buffer currently bound to the GL_ARRAY_BUFFER target. The initial value is 0.</param>
+            /// <param name="pointer">Specifies the offset of the first component of the first generic vertex attribute in the array in the data store of the buffer currently bound to the GL_ARRAY_BUFFER target. The initial value is 0.</param>
             /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/glVertexAttribPointer.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_vertex_attrib_64bit.txt">ARB_vertex_attrib_64bit.txt</see></remarks>
             public static void VertexAttribLPointer(uint index, int size, VertexAttribLType type, int stride, void* pointer) => GLPointers.glVertexAttribLPointer_Lazy(index, size, (uint)type, stride, pointer);
             
