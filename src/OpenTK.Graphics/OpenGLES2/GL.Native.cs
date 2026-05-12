@@ -632,7 +632,7 @@ namespace OpenTK.Graphics.OpenGLES2
         /// <param name="mode"> Specifies what kind of primitives to render. Symbolic constants GL_POINTS, GL_LINE_STRIP, GL_LINE_LOOP, GL_LINES, GL_TRIANGLE_STRIP, GL_TRIANGLE_FAN, GL_TRIANGLES, GL_LINES_ADJACENCY, GL_LINE_STRIP_ADJACENCY, GL_TRIANGLES_ADJACENCY, GL_TRIANGLE_STRIP_ADJACENCY and GL_PATCHES are accepted. </param>
         /// <param name="count"> Specifies the number of elements to be rendered. </param>
         /// <param name="type"> Specifies the type of the values in indices. Must be one of GL_UNSIGNED_BYTE, GL_UNSIGNED_SHORT, or GL_UNSIGNED_INT. </param>
-        /// <param name="indices"> Specifies a pointer to the location where the indices are stored. </param>
+        /// <param name="indices"> Specifies a byte offset (cast to a pointer type) into the buffer bound to GL_ELEMENT_ARRAY_BUFFER to start reading indices from. If no buffer is bound, specifies a pointer to the location where the indices are stored. </param>
         /// <param name="basevertex"> Specifies a constant that should be added to each element of indices when chosing elements from the enabled vertex arrays. </param>
         /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/es3.0/html/glDrawElementsBaseVertex.xhtml"/></remarks>
         public static void DrawElementsBaseVertex(PrimitiveType mode, int count, DrawElementsType type, void* indices, int basevertex) => GLPointers.glDrawElementsBaseVertex_Lazy((uint)mode, count, (uint)type, indices, basevertex);
@@ -657,7 +657,7 @@ namespace OpenTK.Graphics.OpenGLES2
         /// <param name="mode"> Specifies what kind of primitives to render. Symbolic constants GL_POINTS, GL_LINE_STRIP, GL_LINE_LOOP, GL_LINES, GL_TRIANGLE_STRIP, GL_TRIANGLE_FAN, GL_TRIANGLES, GL_LINES_ADJACENCY, GL_LINE_STRIP_ADJACENCY, GL_TRIANGLES_ADJACENCY, GL_TRIANGLE_STRIP_ADJACENCY and GL_PATCHES are accepted. </param>
         /// <param name="count"> Specifies the number of elements to be rendered. </param>
         /// <param name="type"> Specifies the type of the values in indices. Must be one of GL_UNSIGNED_BYTE, GL_UNSIGNED_SHORT, or GL_UNSIGNED_INT. </param>
-        /// <param name="indices"> Specifies a pointer to the location where the indices are stored. </param>
+        /// <param name="indices"> Specifies a byte offset (cast to a pointer type) into the buffer bound to GL_ELEMENT_ARRAY_BUFFER to start reading indices from. If no buffer is bound, specifies a pointer to the location where the indices are stored. </param>
         /// <param name="instancecount"> Specifies the number of instances of the indexed geometry that should be drawn. </param>
         /// <param name="basevertex"> Specifies a constant that should be added to each element of indices when chosing elements from the enabled vertex arrays. </param>
         /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/es3.0/html/glDrawElementsInstancedBaseVertex.xhtml"/></remarks>
@@ -679,7 +679,7 @@ namespace OpenTK.Graphics.OpenGLES2
         /// <param name="end"> Specifies the maximum array index contained in indices. </param>
         /// <param name="count"> Specifies the number of elements to be rendered. </param>
         /// <param name="type"> Specifies the type of the values in indices. Must be one of GL_UNSIGNED_BYTE, GL_UNSIGNED_SHORT, or GL_UNSIGNED_INT. </param>
-        /// <param name="indices"> Specifies a pointer to the location where the indices are stored. </param>
+        /// <param name="indices"> Specifies a byte offset (cast to a pointer type) into the buffer bound to GL_ELEMENT_ARRAY_BUFFER to start reading indices from. If no buffer is bound, specifies a pointer to the location where the indices are stored. </param>
         /// <param name="basevertex"> Specifies a constant that should be added to each element of indices when chosing elements from the enabled vertex arrays. </param>
         /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/es3.0/html/glDrawRangeElementsBaseVertex.xhtml"/></remarks>
         public static void DrawRangeElementsBaseVertex(PrimitiveType mode, uint start, uint end, int count, DrawElementsType type, void* indices, int basevertex) => GLPointers.glDrawRangeElementsBaseVertex_Lazy((uint)mode, start, end, count, (uint)type, indices, basevertex);
@@ -1551,14 +1551,14 @@ namespace OpenTK.Graphics.OpenGLES2
         public static void PopDebugGroup() => GLPointers.glPopDebugGroup_Lazy();
         
         /// <summary> <b>[requires: v3.2]</b> <b>[entry point: <c>glPrimitiveBoundingBox</c>]</b><br/> Set the bounding box for a primitive. </summary>
-        /// <param name="minX"> Specify the minimum clip space cooridnate of the bounding box. The initial value is (-1, -1, -1, -1). </param>
-        /// <param name="minY"> Specify the minimum clip space cooridnate of the bounding box. The initial value is (-1, -1, -1, -1). </param>
-        /// <param name="minZ"> Specify the minimum clip space cooridnate of the bounding box. The initial value is (-1, -1, -1, -1). </param>
-        /// <param name="minW"> Specify the minimum clip space cooridnate of the bounding box. The initial value is (-1, -1, -1, -1). </param>
-        /// <param name="maxX"> Specify the maximum clip space cooridnate of the bounding box. The initial value is (1, 1, 1, 1). </param>
-        /// <param name="maxY"> Specify the maximum clip space cooridnate of the bounding box. The initial value is (1, 1, 1, 1). </param>
-        /// <param name="maxZ"> Specify the maximum clip space cooridnate of the bounding box. The initial value is (1, 1, 1, 1). </param>
-        /// <param name="maxW"> Specify the maximum clip space cooridnate of the bounding box. The initial value is (1, 1, 1, 1). </param>
+        /// <param name="minX"> Specify the minimum clip space coordinate of the bounding box. The initial value is (-1, -1, -1, 1). </param>
+        /// <param name="minY"> Specify the minimum clip space coordinate of the bounding box. The initial value is (-1, -1, -1, 1). </param>
+        /// <param name="minZ"> Specify the minimum clip space coordinate of the bounding box. The initial value is (-1, -1, -1, 1). </param>
+        /// <param name="minW"> Specify the minimum clip space coordinate of the bounding box. The initial value is (-1, -1, -1, 1). </param>
+        /// <param name="maxX"> Specify the maximum clip space coordinate of the bounding box. The initial value is (1, 1, 1, 1). </param>
+        /// <param name="maxY"> Specify the maximum clip space coordinate of the bounding box. The initial value is (1, 1, 1, 1). </param>
+        /// <param name="maxZ"> Specify the maximum clip space coordinate of the bounding box. The initial value is (1, 1, 1, 1). </param>
+        /// <param name="maxW"> Specify the maximum clip space coordinate of the bounding box. The initial value is (1, 1, 1, 1). </param>
         /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/es3.0/html/glPrimitiveBoundingBox.xhtml"/></remarks>
         public static void PrimitiveBoundingBox(float minX, float minY, float minZ, float minW, float maxX, float maxY, float maxZ, float maxW) => GLPointers.glPrimitiveBoundingBox_Lazy(minX, minY, minZ, minW, maxX, maxY, maxZ, maxW);
         
