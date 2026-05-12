@@ -41,23 +41,122 @@ namespace ALGenerator.Parsing
                 CreateDirectContextCommands(functions, extensions);
             }
 
+            Dictionary<OutputApi, List<Function>> functionsPerApi = ResolveFunctionVersionInfo(functions, features, extensions);
+
             List<API> APIs = MakeAPIs(features, extensions);
 
             return new Specification(functions, enums, APIs);
         }
 
-        private static List<API> MakeAPIs(List<Feature> features, List<Extension> extensions)
+        private static Dictionary<OutputApi, List<Function>> ResolveFunctionVersionInfo(List<Function> functions, List<Feature> features, List<Extension> extensions)
         {
-            Dictionary<ALAPI, List<Feature>> FeaturesPerAPI = new Dictionary<ALAPI, List<Feature>>();
-            foreach (var feature in features)
+            Dictionary<OutputApi, List<Function>> functionsPerApi = [];
+
+            foreach (Feature feature in features)
             {
-                FeaturesPerAPI.AddToNestedList(feature.ALApi, feature);
+                OutputApi api = feature.Api;
+                foreach (RequireTag requires in feature.RequireTags)
+                {
+                    Debug.Assert(requires.Api != feature.Api);
+                    foreach (CommandRef command in requires.Commands)
+                    {
+                        Function? function = functions.Find(f => f.EntryPoint == command.Name);
+                        Debug.Assert(function != null);
+                        functionsPerApi.AddToNestedList(api, function with { VersionInfo = new VersionInfo(feature.Version, []) });
+                    }
+                }
+
+                foreach (DeprecateTag deprecates in feature.DeprecateTags)
+                {
+                    foreach (CommandRef command in deprecates.Commands)
+                    {
+                        List<Function> apiFunctions = functionsPerApi.GetNestedList(api);
+                        Function? apiFunction = apiFunctions.Find(f => f.EntryPoint == command.Name);
+                        Debug.Assert(apiFunction != null, "To deprecate a function it needs to have been added first.");
+                        apiFunction.VersionInfo!.Deprecate(new DeprecationReason(feature.Version, null, null));
+                    }
+                }
+
+                foreach (RemoveTag removes in feature.RemoveTags)
+                {
+                    foreach (CommandRef command in removes.Commands)
+                    {
+                        List<Function> apiFunctions = functionsPerApi.GetNestedList(api);
+                        Function? apiFunction = apiFunctions.Find(f => f.EntryPoint == command.Name);
+                        Debug.Assert(apiFunction != null, "To remove a function it needs to have been added first.");
+                        apiFunction.VersionInfo!.Remove(new RemoveReason(feature.Version, null, null));
+                    }
+                }
             }
 
-            Dictionary<ALAPI, List<Extension>> ExtensionsPerAPI = new Dictionary<ALAPI, List<Extension>>();
+            foreach (Extension extension in extensions)
+            {
+                foreach (RequireTag requires in extension.RequireTags)
+                {
+                    foreach (CommandRef command in requires.Commands)
+                    {
+                        Function? function = functions.Find(f => f.EntryPoint == command.Name);
+                        Debug.Assert(function != null);
+                        foreach (OutputApi api in extension.SupportedApis)
+                        {
+                            List<Function> apiFunctions = functionsPerApi.GetNestedList(api);
+                            Function? apiFunction = apiFunctions.Find(f => f.EntryPoint == function.EntryPoint);
+                            if (apiFunction != null)
+                            {
+                                apiFunction.VersionInfo!.Extensions.Add(new ExtensionInfo(extension.Name, extension.Vendor));
+                            }
+                            else
+                            {
+                                apiFunctions.Add(function with { VersionInfo = new VersionInfo(null, [new ExtensionInfo(extension.Name, extension.Vendor)]) });
+                            }
+                        }
+                    }
+                }
+
+                foreach (DeprecateTag deprecates in extension.DeprecateTags)
+                {
+                    foreach (CommandRef command in deprecates.Commands)
+                    {
+                        foreach (OutputApi api in extension.SupportedApis)
+                        {
+                            List<Function> apiFunctions = functionsPerApi.GetNestedList(api);
+                            Function? apiFunction = apiFunctions.Find(f => f.EntryPoint == command.Name);
+                            Debug.Assert(apiFunction != null, "To deprecate a function it needs to have been added first.");
+                            apiFunction.VersionInfo!.Deprecate(new DeprecationReason(null, extension.Name, null));
+                        }
+                    }
+                }
+
+                foreach (RemoveTag removes in extension.RemoveTags)
+                {
+                    foreach (CommandRef command in removes.Commands)
+                    {
+                        foreach (OutputApi api in extension.SupportedApis)
+                        {
+                            List<Function> apiFunctions = functionsPerApi.GetNestedList(api);
+                            Function? apiFunction = apiFunctions.Find(f => f.EntryPoint == command.Name);
+                            Debug.Assert(apiFunction != null, "To remove a function it needs to have been added first.");
+                            apiFunction.VersionInfo!.Remove(new RemoveReason(null, extension.Name, null));
+                        }
+                    }
+                }
+            }
+
+            return functionsPerApi;
+        }
+
+        private static List<API> MakeAPIs(List<Feature> features, List<Extension> extensions)
+        {
+            Dictionary<OutputApi, List<Feature>> FeaturesPerAPI = new Dictionary<OutputApi, List<Feature>>();
+            foreach (var feature in features)
+            {
+                FeaturesPerAPI.AddToNestedList(feature.Api, feature);
+            }
+
+            Dictionary<OutputApi, List<Extension>> ExtensionsPerAPI = new Dictionary<OutputApi, List<Extension>>();
             foreach (var extension in extensions)
             {
-                foreach (var supportedAPI in extension.SupportedALApis)
+                foreach (var supportedAPI in extension.SupportedApis)
                 {
                     ExtensionsPerAPI.AddToNestedList(supportedAPI, extension);
                 }
@@ -69,14 +168,14 @@ namespace ALGenerator.Parsing
                 // We use GetValueOrDefault in case we have zero features or extensions,
                 // this happens in egl_angle_ext.xml which doesn't define any features.
                 // - Noggin_bops 2024-11-11
-                List<FunctionReference> functions = MakeFunctionReferences(FeaturesPerAPI.GetValueOrDefault(api, new List<Feature>()), ExtensionsPerAPI.GetValueOrDefault(api, new List<Extension>()), api);
+                List<FunctionReference> functions = MakeFunctionReferences(FeaturesPerAPI.GetValueOrDefault(api, []), ExtensionsPerAPI.GetValueOrDefault(api, []), api);
                 // FIXME: Here we miss the enums that where not defined in this file. for example wgl::ObjectTypeDX
-                List<EnumReference> enums = MakeEnumReferences(FeaturesPerAPI.GetValueOrDefault(api, new List<Feature>()), ExtensionsPerAPI.GetValueOrDefault(api, new List<Extension>()), api);
+                List<EnumReference> enums = MakeEnumReferences(FeaturesPerAPI.GetValueOrDefault(api, []), ExtensionsPerAPI.GetValueOrDefault(api, []), api);
 
-                InputAPI inAPI = api switch
+                InputApi inAPI = api switch
                 {
-                    ALAPI.AL => InputAPI.AL,
-                    ALAPI.ALC => InputAPI.ALC,
+                    OutputApi.AL => InputApi.AL,
+                    OutputApi.ALC => InputApi.ALC,
 
                     _ => throw new Exception(),
                 };
@@ -86,7 +185,7 @@ namespace ALGenerator.Parsing
 
             return APIs;
 
-            static List<FunctionReference> MakeFunctionReferences(List<Feature> features, List<Extension> extensions, ALAPI api)
+            static List<FunctionReference> MakeFunctionReferences(List<Feature> features, List<Extension> extensions, OutputApi api)
             {
                 Dictionary<string, FunctionReference> entryPointToReference = new Dictionary<string, FunctionReference>();
 
@@ -94,7 +193,7 @@ namespace ALGenerator.Parsing
                 {
                     foreach (var requires in feature.RequireTags)
                     {
-                        Debug.Assert(requires.ALApi != feature.ALApi);
+                        Debug.Assert(requires.Api != feature.Api);
 
                         foreach (var entryPoint in requires.Commands)
                         {
@@ -135,11 +234,11 @@ namespace ALGenerator.Parsing
 
                 foreach (var extension in extensions)
                 {
-                    Debug.Assert(extension.SupportedALApis.Contains(api));
+                    Debug.Assert(extension.SupportedApis.Contains(api));
 
                     foreach (var requires in extension.RequireTags)
                     {
-                        Debug.Assert(extension.SupportedALApis.Contains(requires.ALApi) || requires.ALApi == ALAPI.None);
+                        Debug.Assert(extension.SupportedApis.Contains(requires.Api));
 
                         foreach (var entryPoint in requires.Commands)
                         {
@@ -162,7 +261,7 @@ namespace ALGenerator.Parsing
                 return entryPointToReference.Values.ToList();
             }
 
-            static List<EnumReference> MakeEnumReferences(List<Feature> features, List<Extension> extensions, ALAPI api)
+            static List<EnumReference> MakeEnumReferences(List<Feature> features, List<Extension> extensions, OutputApi api)
             {
                 Dictionary<string, EnumReference> enumNameToReference = new Dictionary<string, EnumReference>();
 
@@ -170,7 +269,7 @@ namespace ALGenerator.Parsing
                 {
                     foreach (var requires in feature.RequireTags)
                     {
-                        Debug.Assert(requires.ALApi != feature.ALApi);
+                        Debug.Assert(requires.Api != feature.Api);
 
                         foreach (var enumName in requires.Enums)
                         {
@@ -220,11 +319,11 @@ namespace ALGenerator.Parsing
 
                 foreach (var extension in extensions)
                 {
-                    Debug.Assert(extension.SupportedALApis.Contains(api));
+                    Debug.Assert(extension.SupportedApis.Contains(api));
 
                     foreach (var requires in extension.RequireTags)
                     {
-                        Debug.Assert(extension.SupportedALApis.Contains(requires.ALApi) || requires.ALApi == ALAPI.None);
+                        Debug.Assert(extension.SupportedApis.Contains(requires.Api));
 
                         foreach (var enumName in requires.Enums)
                         {
@@ -303,7 +402,7 @@ namespace ALGenerator.Parsing
 
                 Comment = "All AL_EXT_direct_context functions",
 
-                ALApi = ALAPI.AL,
+                Api = OutputApi.AL,
             });
         }
 
@@ -761,9 +860,9 @@ namespace ALGenerator.Parsing
 
                     string? enumComment = @enum.Attribute("comment")?.Value;
 
-                    ALAPI api = ParseApi(@enum.Attribute("api")?.Value);
+                    OutputApi api = ParseApi(@enum.Attribute("api")?.Value);
                     OutputApiFlags enumApi;
-                    if (api == ALAPI.None)
+                    if (api == OutputApi.Invalid)
                     {
                         enumApi = currentFile switch
                         {
@@ -775,10 +874,11 @@ namespace ALGenerator.Parsing
                     }
                     else 
                     {
+                        // This never happens in the AL generator - Noggin_bops 2026-05-03
                         enumApi = api switch
                         {
-                            ALAPI.AL => OutputApiFlags.AL,
-                            ALAPI.ALC => OutputApiFlags.ALC,
+                            OutputApi.AL => OutputApiFlags.AL,
+                            OutputApi.ALC => OutputApiFlags.ALC,
 
                             _ => throw new Exception(),
                         };
@@ -898,12 +998,14 @@ namespace ALGenerator.Parsing
                 }
 
                 Version? version = Version.Parse(number);
-                ALAPI api = FileToAPI(currentFile);
+                OutputApi api = FileToAPI(currentFile);
 
                 List<RequireTag> requireTags = new List<RequireTag>();
                 foreach (XElement? require in feature.Elements("require"))
                 {
                     RequireTag reqTag = ParseRequire(require);
+                    if (reqTag.Api == OutputApi.Invalid)
+                        continue;
                     requireTags.Add(reqTag);
                 }
 
@@ -922,7 +1024,7 @@ namespace ALGenerator.Parsing
                     DeprecateTags = [],
                     RemoveTags = removeTags,
 
-                    ALApi = api,
+                    Api = api,
                 });
             }
 
@@ -962,10 +1064,13 @@ namespace ALGenerator.Parsing
                 List<RequireTag> requires = new List<RequireTag>();
                 foreach (XElement? require in extension.Elements("require"))
                 {
-                    requires.Add(ParseRequire(require));
+                    RequireTag reqTag = ParseRequire(require);
+                    if (reqTag.Api == OutputApi.Invalid)
+                        continue;
+                    requires.Add(reqTag);
                 }
 
-                ALAPI supportedApi = FileToAPI(currentFile);
+                OutputApi supportedApi = FileToAPI(currentFile);
 
                 extensions.Add(new Extension()
                 {
@@ -977,7 +1082,7 @@ namespace ALGenerator.Parsing
                     Comment = comment,
 
                     Vendor = vendor,
-                    SupportedALApis = [supportedApi],
+                    SupportedApis = [supportedApi],
                 });
             }
 
@@ -986,7 +1091,7 @@ namespace ALGenerator.Parsing
 
         internal static RequireTag ParseRequire(XElement requires)
         {
-            ALAPI api = ParseApi(requires.Attribute("api")?.Value);
+            OutputApi api = ParseApi(requires.Attribute("api")?.Value);
             string? comment = requires.Attribute("comment")?.Value;
 
             List<CommandRef> reqCommands = new List<CommandRef>();
@@ -1025,7 +1130,7 @@ namespace ALGenerator.Parsing
 
                 Comment = comment,
 
-                ALApi = api,
+                Api = api,
             };
         }
 
@@ -1065,27 +1170,27 @@ namespace ALGenerator.Parsing
             };
         }
 
-        internal static ALAPI FileToAPI(ApiFile file)
+        internal static OutputApi FileToAPI(ApiFile file)
         {
             switch (file)
             {
                 case ApiFile.AL:
-                    return ALAPI.AL;
+                    return OutputApi.AL;
                 case ApiFile.ALC:
-                    return ALAPI.ALC;
+                    return OutputApi.ALC;
                 default:
                     throw new Exception();
             }
         }
 
-        internal static ALAPI ParseApi(string? api) => api switch
+        internal static OutputApi ParseApi(string? api) => api switch
         {
-            null or "" or "disabled" => ALAPI.None,
+            null or "" or "disabled" => OutputApi.Invalid,
 
-            "al" => ALAPI.AL,
-            "alc" => ALAPI.ALC,
+            "al" => OutputApi.AL,
+            "alc" => OutputApi.ALC,
 
-            _ => ALAPI.Invalid,
+            _ => OutputApi.Invalid,
         };
 
 

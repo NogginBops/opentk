@@ -549,6 +549,16 @@ namespace OpenTK.Graphics.Egl
             return _eglDestroySyncNV_fnptr(sync);
         }
         
+        /// <summary><b>[entry point: <c>eglDisplayAttribANGLE</c>]</b></summary>
+        public static delegate* unmanaged<IntPtr, int, IntPtr*, int> _eglDisplayAttribANGLE_fnptr;
+        [MethodImpl(MethodImplOptions.NoInlining)]
+        internal static int eglDisplayAttribANGLE_Lazy(IntPtr dpy, int attribute, IntPtr* value)
+        {
+            if (_eglDisplayAttribANGLE_fnptr == null)
+                _eglDisplayAttribANGLE_fnptr = (delegate* unmanaged<IntPtr, int, IntPtr*, int>)EGLLoader.BindingsContext.GetProcAddress("eglDisplayAttribANGLE");
+            return _eglDisplayAttribANGLE_fnptr(dpy, attribute, value);
+        }
+        
         /// <summary><b>[entry point: <c>eglDupNativeFenceFDANDROID</c>]</b></summary>
         public static delegate* unmanaged<IntPtr, IntPtr, int> _eglDupNativeFenceFDANDROID_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]

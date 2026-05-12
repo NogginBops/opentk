@@ -39,17 +39,14 @@ namespace OpenTK.Graphics.OpenGL
         VertexAttribArrayBarrierBit = 1,
         VertexAttribArrayBarrierBitExt = 1,
         VertexShaderBit = 1,
-        VertexShaderBitExt = 1,
         _4xBitAti = 2,
         CompBitAti = 2,
         ContextCompatibilityProfileBit = 2,
         ContextFlagDebugBit = 2,
-        ContextFlagDebugBitKhr = 2,
         DrawElementsCommandNv = 2,
         ElementArrayBarrierBit = 2,
         ElementArrayBarrierBitExt = 2,
         FragmentShaderBit = 2,
-        FragmentShaderBitExt = 2,
         GeometryDeformationBitSgix = 2,
         GlyphHeightBitNv = 2,
         GreenBitAti = 2,
@@ -236,14 +233,11 @@ namespace OpenTK.Graphics.OpenGL
         InvalidValue = 1281,
         InvalidOperation = 1282,
         StackOverflow = 1283,
-        StackOverflowKhr = 1283,
         StackUnderflow = 1284,
-        StackUnderflowKhr = 1284,
         OutOfMemory = 1285,
         InvalidFramebufferOperation = 1286,
         InvalidFramebufferOperationExt = 1286,
         ContextLost = 1287,
-        ContextLostKhr = 1287,
         LgpuSeparateStorageBitNvx = 2048,
         PerGpuStorageBitNv = 2048,
         TransformFeedbackBarrierBit = 2048,
@@ -266,6 +260,7 @@ namespace OpenTK.Graphics.OpenGL
         CullFace = 2884,
         CullFaceMode = 2885,
         FrontFace = 2886,
+        Fog = 2912,
         DepthRange = 2928,
         DepthTest = 2929,
         DepthWritemask = 2930,
@@ -321,7 +316,7 @@ namespace OpenTK.Graphics.OpenGL
         PathMaxProjectionStackDepthNv = 3384,
         MaxViewportDims = 3386,
         SubpixelBits = 3408,
-        Texture1d = 3552,
+        Texture1D = 3552,
         Texture2D = 3553,
         AtomicCounterBarrierBit = 4096,
         AtomicCounterBarrierBitExt = 4096,
@@ -399,6 +394,7 @@ namespace OpenTK.Graphics.OpenGL
         Version = 7938,
         Extensions = 7939,
         ShaderStorageBarrierBit = 8192,
+        EyePlane = 9474,
         Nearest = 9728,
         Linear = 9729,
         NearestMipmapNearest = 9984,
@@ -454,7 +450,7 @@ namespace OpenTK.Graphics.OpenGL
         CmykaExt = 32781,
         PackCmykHintExt = 32782,
         UnpackCmykHintExt = 32783,
-        Convolution1dExt = 32784,
+        Convolution1DExt = 32784,
         Convolution2DExt = 32785,
         Separable2DExt = 32786,
         ConvolutionBorderModeExt = 32787,
@@ -561,15 +557,15 @@ namespace OpenTK.Graphics.OpenGL
         TextureLuminanceSizeExt = 32864,
         TextureIntensitySizeExt = 32865,
         ReplaceExt = 32866,
-        ProxyTexture1d = 32867,
-        ProxyTexture1dExt = 32867,
+        ProxyTexture1D = 32867,
+        ProxyTexture1DExt = 32867,
         ProxyTexture2D = 32868,
         ProxyTexture2DExt = 32868,
         TextureTooLargeExt = 32869,
         TexturePriorityExt = 32870,
         TextureResidentExt = 32871,
-        Texture1dBindingExt = 32872,
-        TextureBinding1d = 32872,
+        Texture1DBindingExt = 32872,
+        TextureBinding1D = 32872,
         Texture2DBindingExt = 32873,
         TextureBinding2D = 32873,
         Texture3DBindingExt = 32874,
@@ -594,7 +590,6 @@ namespace OpenTK.Graphics.OpenGL
         Max3DTextureSizeExt = 32883,
         VertexArray = 32884,
         VertexArrayExt = 32884,
-        VertexArrayKhr = 32884,
         NormalArrayExt = 32885,
         ColorArrayExt = 32886,
         IndexArrayExt = 32887,
@@ -999,73 +994,50 @@ namespace OpenTK.Graphics.OpenGL
         SyncClEventCompleteArb = 33345,
         DebugOutputSynchronous = 33346,
         DebugOutputSynchronousArb = 33346,
-        DebugOutputSynchronousKhr = 33346,
         DebugNextLoggedMessageLength = 33347,
         DebugNextLoggedMessageLengthArb = 33347,
-        DebugNextLoggedMessageLengthKhr = 33347,
         DebugCallbackFunction = 33348,
         DebugCallbackFunctionArb = 33348,
-        DebugCallbackFunctionKhr = 33348,
         DebugCallbackUserParam = 33349,
         DebugCallbackUserParamArb = 33349,
-        DebugCallbackUserParamKhr = 33349,
         DebugSourceApi = 33350,
         DebugSourceApiArb = 33350,
-        DebugSourceApiKhr = 33350,
         DebugSourceWindowSystem = 33351,
         DebugSourceWindowSystemArb = 33351,
-        DebugSourceWindowSystemKhr = 33351,
         DebugSourceShaderCompiler = 33352,
         DebugSourceShaderCompilerArb = 33352,
-        DebugSourceShaderCompilerKhr = 33352,
         DebugSourceThirdParty = 33353,
         DebugSourceThirdPartyArb = 33353,
-        DebugSourceThirdPartyKhr = 33353,
         DebugSourceApplication = 33354,
         DebugSourceApplicationArb = 33354,
-        DebugSourceApplicationKhr = 33354,
         DebugSourceOther = 33355,
         DebugSourceOtherArb = 33355,
-        DebugSourceOtherKhr = 33355,
         DebugTypeError = 33356,
         DebugTypeErrorArb = 33356,
-        DebugTypeErrorKhr = 33356,
         DebugTypeDeprecatedBehavior = 33357,
         DebugTypeDeprecatedBehaviorArb = 33357,
-        DebugTypeDeprecatedBehaviorKhr = 33357,
         DebugTypeUndefinedBehavior = 33358,
         DebugTypeUndefinedBehaviorArb = 33358,
-        DebugTypeUndefinedBehaviorKhr = 33358,
         DebugTypePortability = 33359,
         DebugTypePortabilityArb = 33359,
-        DebugTypePortabilityKhr = 33359,
         DebugTypePerformance = 33360,
         DebugTypePerformanceArb = 33360,
-        DebugTypePerformanceKhr = 33360,
         DebugTypeOther = 33361,
         DebugTypeOtherArb = 33361,
-        DebugTypeOtherKhr = 33361,
         LoseContextOnReset = 33362,
         LoseContextOnResetArb = 33362,
-        LoseContextOnResetKhr = 33362,
         GuiltyContextReset = 33363,
         GuiltyContextResetArb = 33363,
-        GuiltyContextResetKhr = 33363,
         InnocentContextReset = 33364,
         InnocentContextResetArb = 33364,
-        InnocentContextResetKhr = 33364,
         UnknownContextReset = 33365,
         UnknownContextResetArb = 33365,
-        UnknownContextResetKhr = 33365,
         ResetNotificationStrategy = 33366,
         ResetNotificationStrategyArb = 33366,
-        ResetNotificationStrategyKhr = 33366,
         ProgramBinaryRetrievableHint = 33367,
         ProgramSeparable = 33368,
-        ProgramSeparableExt = 33368,
         ActiveProgram = 33369,
         ProgramPipelineBinding = 33370,
-        ProgramPipelineBindingExt = 33370,
         MaxViewports = 33371,
         ViewportSubpixelBits = 33372,
         ViewportBoundsRange = 33373,
@@ -1074,7 +1046,6 @@ namespace OpenTK.Graphics.OpenGL
         UndefinedVertex = 33376,
         NoResetNotification = 33377,
         NoResetNotificationArb = 33377,
-        NoResetNotificationKhr = 33377,
         MaxComputeSharedMemorySize = 33378,
         MaxComputeUniformComponents = 33379,
         MaxComputeAtomicCounterBuffers = 33380,
@@ -1082,17 +1053,11 @@ namespace OpenTK.Graphics.OpenGL
         MaxCombinedComputeUniformComponents = 33382,
         ComputeWorkGroupSize = 33383,
         DebugTypeMarker = 33384,
-        DebugTypeMarkerKhr = 33384,
         DebugTypePushGroup = 33385,
-        DebugTypePushGroupKhr = 33385,
         DebugTypePopGroup = 33386,
-        DebugTypePopGroupKhr = 33386,
         DebugSeverityNotification = 33387,
-        DebugSeverityNotificationKhr = 33387,
         MaxDebugGroupStackDepth = 33388,
-        MaxDebugGroupStackDepthKhr = 33388,
         DebugGroupStackDepth = 33389,
-        DebugGroupStackDepthKhr = 33389,
         MaxUniformLocations = 33390,
         InternalformatSupported = 33391,
         InternalformatPreferred = 33392,
@@ -1206,20 +1171,13 @@ namespace OpenTK.Graphics.OpenGL
         TextureViewNumLayers = 33502,
         TextureImmutableLevels = 33503,
         Buffer = 33504,
-        BufferKhr = 33504,
         Shader = 33505,
-        ShaderKhr = 33505,
         Program = 33506,
-        ProgramKhr = 33506,
         Query = 33507,
-        QueryKhr = 33507,
         ProgramPipeline = 33508,
-        ProgramPipelineKhr = 33508,
         MaxVertexAttribStride = 33509,
         Sampler = 33510,
-        SamplerKhr = 33510,
         MaxLabelLength = 33512,
-        MaxLabelLengthKhr = 33512,
         NumShadingLanguageVersions = 33513,
         QueryTarget = 33514,
         TransformFeedbackOverflow = 33516,
@@ -1250,9 +1208,7 @@ namespace OpenTK.Graphics.OpenGL
         MaxCullDistances = 33529,
         MaxCombinedClipAndCullDistances = 33530,
         ContextReleaseBehavior = 33531,
-        ContextReleaseBehaviorKhr = 33531,
         ContextReleaseBehaviorFlush = 33532,
-        ContextReleaseBehaviorFlushKhr = 33532,
         ConvolutionHintSgix = 33558,
         YcrcbSgix = 33560,
         YcrcbaSgix = 33561,
@@ -2016,11 +1972,11 @@ namespace OpenTK.Graphics.OpenGL
         OcclusionQueryEventMaskAmd = 34639,
         YcbcrMesa = 34647,
         PackInvertMesa = 34648,
-        Texture1dStackMesax = 34649,
+        Texture1DStackMesax = 34649,
         Texture2DStackMesax = 34650,
-        ProxyTexture1dStackMesax = 34651,
+        ProxyTexture1DStackMesax = 34651,
         ProxyTexture2DStackMesax = 34652,
-        Texture1dStackBindingMesax = 34653,
+        Texture1DStackBindingMesax = 34653,
         Texture2DStackBindingMesax = 34654,
         ProgramBinaryFormatMesa = 34655,
         StaticAti = 34656,
@@ -2341,7 +2297,7 @@ namespace OpenTK.Graphics.OpenGL
         DependentRgbTexture3DNv = 34905,
         DependentRgbTextureCubeMapNv = 34906,
         DotProductPassThroughNv = 34907,
-        DotProductTexture1dNv = 34908,
+        DotProductTexture1DNv = 34908,
         DotProductAffineDepthReplaceNv = 34909,
         Hilo8Nv = 34910,
         SignedHilo8Nv = 34911,
@@ -2792,16 +2748,16 @@ namespace OpenTK.Graphics.OpenGL
         FloatMat3Arb = 35675,
         FloatMat4 = 35676,
         FloatMat4Arb = 35676,
-        Sampler1d = 35677,
-        Sampler1dArb = 35677,
+        Sampler1D = 35677,
+        Sampler1DArb = 35677,
         Sampler2D = 35678,
         Sampler2DArb = 35678,
         Sampler3D = 35679,
         Sampler3DArb = 35679,
         SamplerCube = 35680,
         SamplerCubeArb = 35680,
-        Sampler1dShadow = 35681,
-        Sampler1dShadowArb = 35681,
+        Sampler1DShadow = 35681,
+        Sampler1DShadowArb = 35681,
         Sampler2DShadow = 35682,
         Sampler2DShadowArb = 35682,
         Sampler2DRect = 35683,
@@ -2883,16 +2839,16 @@ namespace OpenTK.Graphics.OpenGL
         TextureDepthTypeArb = 35862,
         UnsignedNormalized = 35863,
         UnsignedNormalizedArb = 35863,
-        Texture1dArray = 35864,
-        Texture1dArrayExt = 35864,
-        ProxyTexture1dArray = 35865,
-        ProxyTexture1dArrayExt = 35865,
+        Texture1DArray = 35864,
+        Texture1DArrayExt = 35864,
+        ProxyTexture1DArray = 35865,
+        ProxyTexture1DArrayExt = 35865,
         Texture2DArray = 35866,
         Texture2DArrayExt = 35866,
         ProxyTexture2DArray = 35867,
         ProxyTexture2DArrayExt = 35867,
-        TextureBinding1dArray = 35868,
-        TextureBinding1dArrayExt = 35868,
+        TextureBinding1DArray = 35868,
+        TextureBinding1DArrayExt = 35868,
         TextureBinding2DArray = 35869,
         TextureBinding2DArrayExt = 35869,
         GeometryProgramNv = 35878,
@@ -3255,14 +3211,14 @@ namespace OpenTK.Graphics.OpenGL
         CompressedRgRgtc2 = 36285,
         CompressedSignedRedGreenRgtc2Ext = 36286,
         CompressedSignedRgRgtc2 = 36286,
-        Sampler1dArray = 36288,
-        Sampler1dArrayExt = 36288,
+        Sampler1DArray = 36288,
+        Sampler1DArrayExt = 36288,
         Sampler2DArray = 36289,
         Sampler2DArrayExt = 36289,
         SamplerBuffer = 36290,
         SamplerBufferExt = 36290,
-        Sampler1dArrayShadow = 36291,
-        Sampler1dArrayShadowExt = 36291,
+        Sampler1DArrayShadow = 36291,
+        Sampler1DArrayShadowExt = 36291,
         Sampler2DArrayShadow = 36292,
         Sampler2DArrayShadowExt = 36292,
         SamplerCubeShadow = 36293,
@@ -3273,8 +3229,8 @@ namespace OpenTK.Graphics.OpenGL
         UnsignedIntVec3Ext = 36295,
         UnsignedIntVec4 = 36296,
         UnsignedIntVec4Ext = 36296,
-        IntSampler1d = 36297,
-        IntSampler1dExt = 36297,
+        IntSampler1D = 36297,
+        IntSampler1DExt = 36297,
         IntSampler2D = 36298,
         IntSampler2DExt = 36298,
         IntSampler3D = 36299,
@@ -3283,14 +3239,14 @@ namespace OpenTK.Graphics.OpenGL
         IntSamplerCubeExt = 36300,
         IntSampler2DRect = 36301,
         IntSampler2DRectExt = 36301,
-        IntSampler1dArray = 36302,
-        IntSampler1dArrayExt = 36302,
+        IntSampler1DArray = 36302,
+        IntSampler1DArrayExt = 36302,
         IntSampler2DArray = 36303,
         IntSampler2DArrayExt = 36303,
         IntSamplerBuffer = 36304,
         IntSamplerBufferExt = 36304,
-        UnsignedIntSampler1d = 36305,
-        UnsignedIntSampler1dExt = 36305,
+        UnsignedIntSampler1D = 36305,
+        UnsignedIntSampler1DExt = 36305,
         UnsignedIntSampler2D = 36306,
         UnsignedIntSampler2DExt = 36306,
         UnsignedIntSampler3D = 36307,
@@ -3299,8 +3255,8 @@ namespace OpenTK.Graphics.OpenGL
         UnsignedIntSamplerCubeExt = 36308,
         UnsignedIntSampler2DRect = 36309,
         UnsignedIntSampler2DRectExt = 36309,
-        UnsignedIntSampler1dArray = 36310,
-        UnsignedIntSampler1dArrayExt = 36310,
+        UnsignedIntSampler1DArray = 36310,
+        UnsignedIntSampler1DArrayExt = 36310,
         UnsignedIntSampler2DArray = 36311,
         UnsignedIntSampler2DArrayExt = 36311,
         UnsignedIntSamplerBuffer = 36312,
@@ -3700,8 +3656,8 @@ namespace OpenTK.Graphics.OpenGL
         GpuMemoryInfoCurrentAvailableVidmemNvx = 36937,
         GpuMemoryInfoEvictionCountNvx = 36938,
         GpuMemoryInfoEvictedMemoryNvx = 36939,
-        Image1d = 36940,
-        Image1dExt = 36940,
+        Image1D = 36940,
+        Image1DExt = 36940,
         Image2D = 36941,
         Image2DExt = 36941,
         Image3D = 36942,
@@ -3712,8 +3668,8 @@ namespace OpenTK.Graphics.OpenGL
         ImageCubeExt = 36944,
         ImageBuffer = 36945,
         ImageBufferExt = 36945,
-        Image1dArray = 36946,
-        Image1dArrayExt = 36946,
+        Image1DArray = 36946,
+        Image1DArrayExt = 36946,
         Image2DArray = 36947,
         Image2DArrayExt = 36947,
         ImageCubeMapArray = 36948,
@@ -3722,8 +3678,8 @@ namespace OpenTK.Graphics.OpenGL
         Image2DMultisampleExt = 36949,
         Image2DMultisampleArray = 36950,
         Image2DMultisampleArrayExt = 36950,
-        IntImage1d = 36951,
-        IntImage1dExt = 36951,
+        IntImage1D = 36951,
+        IntImage1DExt = 36951,
         IntImage2D = 36952,
         IntImage2DExt = 36952,
         IntImage3D = 36953,
@@ -3734,8 +3690,8 @@ namespace OpenTK.Graphics.OpenGL
         IntImageCubeExt = 36955,
         IntImageBuffer = 36956,
         IntImageBufferExt = 36956,
-        IntImage1dArray = 36957,
-        IntImage1dArrayExt = 36957,
+        IntImage1DArray = 36957,
+        IntImage1DArrayExt = 36957,
         IntImage2DArray = 36958,
         IntImage2DArrayExt = 36958,
         IntImageCubeMapArray = 36959,
@@ -3744,8 +3700,8 @@ namespace OpenTK.Graphics.OpenGL
         IntImage2DMultisampleExt = 36960,
         IntImage2DMultisampleArray = 36961,
         IntImage2DMultisampleArrayExt = 36961,
-        UnsignedIntImage1d = 36962,
-        UnsignedIntImage1dExt = 36962,
+        UnsignedIntImage1D = 36962,
+        UnsignedIntImage1DExt = 36962,
         UnsignedIntImage2D = 36963,
         UnsignedIntImage2DExt = 36963,
         UnsignedIntImage3D = 36964,
@@ -3756,8 +3712,8 @@ namespace OpenTK.Graphics.OpenGL
         UnsignedIntImageCubeExt = 36966,
         UnsignedIntImageBuffer = 36967,
         UnsignedIntImageBufferExt = 36967,
-        UnsignedIntImage1dArray = 36968,
-        UnsignedIntImage1dArrayExt = 36968,
+        UnsignedIntImage1DArray = 36968,
+        UnsignedIntImage1DArrayExt = 36968,
         UnsignedIntImage2DArray = 36969,
         UnsignedIntImage2DArrayExt = 36969,
         UnsignedIntImageCubeMapArray = 36970,
@@ -3875,7 +3831,6 @@ namespace OpenTK.Graphics.OpenGL
         DispatchIndirectBuffer = 37102,
         DispatchIndirectBufferBinding = 37103,
         ContextRobustAccess = 37107,
-        ContextRobustAccessKhr = 37107,
         ComputeProgramNv = 37115,
         ComputeProgramParameterBufferNv = 37116,
         Texture2DMultisample = 37120,
@@ -3929,27 +3884,21 @@ namespace OpenTK.Graphics.OpenGL
         MaxDebugMessageLength = 37187,
         MaxDebugMessageLengthAmd = 37187,
         MaxDebugMessageLengthArb = 37187,
-        MaxDebugMessageLengthKhr = 37187,
         MaxDebugLoggedMessages = 37188,
         MaxDebugLoggedMessagesAmd = 37188,
         MaxDebugLoggedMessagesArb = 37188,
-        MaxDebugLoggedMessagesKhr = 37188,
         DebugLoggedMessages = 37189,
         DebugLoggedMessagesAmd = 37189,
         DebugLoggedMessagesArb = 37189,
-        DebugLoggedMessagesKhr = 37189,
         DebugSeverityHigh = 37190,
         DebugSeverityHighAmd = 37190,
         DebugSeverityHighArb = 37190,
-        DebugSeverityHighKhr = 37190,
         DebugSeverityMedium = 37191,
         DebugSeverityMediumAmd = 37191,
         DebugSeverityMediumArb = 37191,
-        DebugSeverityMediumKhr = 37191,
         DebugSeverityLow = 37192,
         DebugSeverityLowAmd = 37192,
         DebugSeverityLowArb = 37192,
-        DebugSeverityLowKhr = 37192,
         DebugCategoryApiErrorAmd = 37193,
         DebugCategoryWindowSystemAmd = 37194,
         DebugCategoryDeprecationAmd = 37195,
@@ -4136,7 +4085,6 @@ namespace OpenTK.Graphics.OpenGL
         FragmentCoverageColorNv = 37598,
         MeshOutputPerVertexGranularityNv = 37599,
         DebugOutput = 37600,
-        DebugOutputKhr = 37600,
         Uniform = 37601,
         UniformBlock = 37602,
         ProgramInput = 37603,
@@ -4556,7 +4504,6 @@ namespace OpenTK.Graphics.OpenGL
         AllBarrierBitsExt = 4294967295,
         AllPixelsAmd = 4294967295,
         AllShaderBits = 4294967295,
-        AllShaderBitsExt = 4294967295,
         InvalidIndex = 4294967295,
         QueryAllEventBitsAmd = 4294967295,
     }
@@ -4645,16 +4592,16 @@ namespace OpenTK.Graphics.OpenGL
         FloatMat3Arb = 35675,
         FloatMat4 = 35676,
         FloatMat4Arb = 35676,
-        Sampler1d = 35677,
-        Sampler1dArb = 35677,
+        Sampler1D = 35677,
+        Sampler1DArb = 35677,
         Sampler2D = 35678,
         Sampler2DArb = 35678,
         Sampler3D = 35679,
         Sampler3DArb = 35679,
         SamplerCube = 35680,
         SamplerCubeArb = 35680,
-        Sampler1dShadow = 35681,
-        Sampler1dShadowArb = 35681,
+        Sampler1DShadow = 35681,
+        Sampler1DShadowArb = 35681,
         Sampler2DShadow = 35682,
         Sampler2DShadowArb = 35682,
         Sampler2DRect = 35683,
@@ -4668,26 +4615,26 @@ namespace OpenTK.Graphics.OpenGL
         FloatMat4x2 = 35689,
         FloatMat4x3 = 35690,
         SamplerBuffer = 36290,
-        Sampler1dArrayShadow = 36291,
+        Sampler1DArrayShadow = 36291,
         Sampler2DArrayShadow = 36292,
         SamplerCubeShadow = 36293,
         UnsignedIntVec2 = 36294,
         UnsignedIntVec3 = 36295,
         UnsignedIntVec4 = 36296,
-        IntSampler1d = 36297,
+        IntSampler1D = 36297,
         IntSampler2D = 36298,
         IntSampler3D = 36299,
         IntSamplerCube = 36300,
         IntSampler2DRect = 36301,
-        IntSampler1dArray = 36302,
+        IntSampler1DArray = 36302,
         IntSampler2DArray = 36303,
         IntSamplerBuffer = 36304,
-        UnsignedIntSampler1d = 36305,
+        UnsignedIntSampler1D = 36305,
         UnsignedIntSampler2D = 36306,
         UnsignedIntSampler3D = 36307,
         UnsignedIntSamplerCube = 36308,
         UnsignedIntSampler2DRect = 36309,
-        UnsignedIntSampler1dArray = 36310,
+        UnsignedIntSampler1DArray = 36310,
         UnsignedIntSampler2DArray = 36311,
         UnsignedIntSamplerBuffer = 36312,
         DoubleMat2 = 36678,
@@ -4712,35 +4659,35 @@ namespace OpenTK.Graphics.OpenGL
         SamplerCubeMapArrayShadow = 36877,
         IntSamplerCubeMapArray = 36878,
         UnsignedIntSamplerCubeMapArray = 36879,
-        Image1d = 36940,
+        Image1D = 36940,
         Image2D = 36941,
         Image3D = 36942,
         Image2DRect = 36943,
         ImageCube = 36944,
         ImageBuffer = 36945,
-        Image1dArray = 36946,
+        Image1DArray = 36946,
         Image2DArray = 36947,
         ImageCubeMapArray = 36948,
         Image2DMultisample = 36949,
         Image2DMultisampleArray = 36950,
-        IntImage1d = 36951,
+        IntImage1D = 36951,
         IntImage2D = 36952,
         IntImage3D = 36953,
         IntImage2DRect = 36954,
         IntImageCube = 36955,
         IntImageBuffer = 36956,
-        IntImage1dArray = 36957,
+        IntImage1DArray = 36957,
         IntImage2DArray = 36958,
         IntImageCubeMapArray = 36959,
         IntImage2DMultisample = 36960,
         IntImage2DMultisampleArray = 36961,
-        UnsignedIntImage1d = 36962,
+        UnsignedIntImage1D = 36962,
         UnsignedIntImage2D = 36963,
         UnsignedIntImage3D = 36964,
         UnsignedIntImage2DRect = 36965,
         UnsignedIntImageCube = 36966,
         UnsignedIntImageBuffer = 36967,
-        UnsignedIntImage1dArray = 36968,
+        UnsignedIntImage1DArray = 36968,
         UnsignedIntImage2DArray = 36969,
         UnsignedIntImageCubeMapArray = 36970,
         UnsignedIntImage2DMultisample = 36971,
@@ -4942,7 +4889,6 @@ namespace OpenTK.Graphics.OpenGL
         ColorBufferBit = 16384,
     }
     ///<summary>Used in <see cref="GL.EXT.ClientAttribDefaultEXT" />, <see cref="GL.EXT.PushClientAttribDefaultEXT" /></summary>
-    [Flags]
     public enum ClientAttribMask : uint
     {
     }
@@ -5016,7 +4962,7 @@ namespace OpenTK.Graphics.OpenGL
         ColorAttachment30 = 36094,
         ColorAttachment31 = 36095,
     }
-    ///<summary>Used in <see cref="GL.NV.ColorFormatNV" />, <see cref="GL.ARB.ColorP3ui" />, <see cref="GL.ARB.ColorP3uiv" />, ...</summary>
+    ///<summary>Used in <see cref="GL.NV.ColorFormatNV" />, <see cref="GL.EXT.ColorPointerEXT" />, <see cref="GL.IBM.ColorPointerListIBM" />, ...</summary>
     public enum ColorPointerType : uint
     {
         Byte = 5120,
@@ -5028,7 +4974,7 @@ namespace OpenTK.Graphics.OpenGL
         Float = 5126,
         Double = 5130,
     }
-    ///<summary>Used in <see cref="GL.ARB.ColorTableParameterfv" />, <see cref="GL.SGI.ColorTableParameterfvSGI" />, <see cref="GL.ARB.ColorTableParameteriv" />, ...</summary>
+    ///<summary>Used in <see cref="GL.SGI.ColorTableParameterfvSGI" />, <see cref="GL.SGI.ColorTableParameterivSGI" />, <see cref="GL.EXT.GetColorTableParameterfvEXT" />, ...</summary>
     public enum ColorTableParameterPName : uint
     {
         ColorTableScaleSgi = 32982,
@@ -5042,7 +4988,7 @@ namespace OpenTK.Graphics.OpenGL
         ColorTableLuminanceSizeSgi = 32990,
         ColorTableIntensitySizeSgi = 32991,
     }
-    ///<summary>Used in <see cref="GL.ARB.ColorSubTable" />, <see cref="GL.EXT.ColorSubTableEXT" />, <see cref="GL.ARB.ColorTable" />, ...</summary>
+    ///<summary>Used in <see cref="GL.EXT.ColorSubTableEXT" />, <see cref="GL.EXT.ColorTableEXT" />, <see cref="GL.EXT.CopyColorSubTableEXT" />, ...</summary>
     public enum ColorTableTarget : uint
     {
     }
@@ -5184,7 +5130,6 @@ namespace OpenTK.Graphics.OpenGL
     {
         ContextFlagForwardCompatibleBit = 1,
         ContextFlagDebugBit = 2,
-        ContextFlagDebugBitKhr = 2,
         ContextFlagRobustAccessBit = 4,
         ContextFlagRobustAccessBitArb = 4,
         ContextFlagNoErrorBit = 8,
@@ -5200,7 +5145,7 @@ namespace OpenTK.Graphics.OpenGL
     {
         ReduceExt = 32790,
     }
-    ///<summary>Used in <see cref="GL.ARB.ConvolutionParameterf" />, <see cref="GL.EXT.ConvolutionParameterfEXT" />, <see cref="GL.ARB.ConvolutionParameterfv" />, ...</summary>
+    ///<summary>Used in <see cref="GL.EXT.ConvolutionParameterfEXT" />, <see cref="GL.EXT.ConvolutionParameterfvEXT" />, <see cref="GL.EXT.ConvolutionParameteriEXT" />, ...</summary>
     public enum ConvolutionParameter : uint
     {
         ConvolutionBorderModeExt = 32787,
@@ -5212,14 +5157,10 @@ namespace OpenTK.Graphics.OpenGL
         MaxConvolutionWidthExt = 32794,
         MaxConvolutionHeightExt = 32795,
     }
-    ///<summary>Used in <see cref="GL.ARB.ConvolutionFilter1D" />, <see cref="GL.ARB.ConvolutionFilter2D" />, <see cref="GL.ARB.ConvolutionParameterf" />, ...</summary>
-    public enum ConvolutionTarget : uint
-    {
-    }
     ///<summary>Used in <see cref="GL.EXT.ConvolutionFilter1DEXT" />, <see cref="GL.EXT.ConvolutionFilter2DEXT" />, <see cref="GL.EXT.ConvolutionParameterfEXT" />, ...</summary>
     public enum ConvolutionTargetEXT : uint
     {
-        Convolution1dExt = 32784,
+        Convolution1DExt = 32784,
         Convolution2DExt = 32785,
     }
     ///<summary>Used in <see cref="GL.CopyBufferSubData" />, <see cref="GL.ARB.CopyBufferSubData" />, <see cref="GL.NV.CopyImageSubDataNV" /></summary>
@@ -5243,12 +5184,12 @@ namespace OpenTK.Graphics.OpenGL
     ///<summary>Used in <see cref="GL.CopyImageSubData" />, <see cref="GL.ARB.CopyImageSubData" /></summary>
     public enum CopyImageSubDataTarget : uint
     {
-        Texture1d = 3552,
+        Texture1D = 3552,
         Texture2D = 3553,
         Texture3D = 32879,
         TextureRectangle = 34037,
         TextureCubeMap = 34067,
-        Texture1dArray = 35864,
+        Texture1DArray = 35864,
         Texture2DArray = 35866,
         Renderbuffer = 36161,
         TextureCubeMapArray = 36873,
@@ -5385,13 +5326,14 @@ namespace OpenTK.Graphics.OpenGL
         LineSmooth = 2848,
         PolygonSmooth = 2881,
         CullFace = 2884,
+        Fog = 2912,
         DepthTest = 2929,
         StencilTest = 2960,
         Dither = 3024,
         Blend = 3042,
         ColorLogicOp = 3058,
         ScissorTest = 3089,
-        Texture1d = 3552,
+        Texture1D = 3552,
         Texture2D = 3553,
         PolygonOffsetPoint = 10753,
         PolygonOffsetLine = 10754,
@@ -5403,7 +5345,7 @@ namespace OpenTK.Graphics.OpenGL
         ClipDistance5 = 12293,
         ClipDistance6 = 12294,
         ClipDistance7 = 12295,
-        Convolution1dExt = 32784,
+        Convolution1DExt = 32784,
         Convolution2DExt = 32785,
         Separable2DExt = 32786,
         HistogramExt = 32804,
@@ -5982,7 +5924,7 @@ namespace OpenTK.Graphics.OpenGL
         FramebufferDefaultSamples = 37651,
         FramebufferDefaultFixedSampleLocations = 37652,
     }
-    ///<summary>Used in <see cref="GL.ARB.GetHistogramParameterfv" />, <see cref="GL.EXT.GetHistogramParameterfvEXT" />, <see cref="GL.ARB.GetHistogramParameteriv" />, ...</summary>
+    ///<summary>Used in <see cref="GL.EXT.GetHistogramParameterfvEXT" />, <see cref="GL.EXT.GetHistogramParameterivEXT" />, <see cref="GL.OES.GetHistogramParameterxvOES" /></summary>
     public enum GetHistogramParameterPNameEXT : uint
     {
         HistogramWidthExt = 32806,
@@ -5998,7 +5940,7 @@ namespace OpenTK.Graphics.OpenGL
     public enum GetMapQuery : uint
     {
     }
-    ///<summary>Used in <see cref="GL.ARB.GetMinmaxParameterfv" />, <see cref="GL.EXT.GetMinmaxParameterfvEXT" />, <see cref="GL.ARB.GetMinmaxParameteriv" />, ...</summary>
+    ///<summary>Used in <see cref="GL.EXT.GetMinmaxParameterfvEXT" />, <see cref="GL.EXT.GetMinmaxParameterivEXT" /></summary>
     public enum GetMinmaxParameterPNameEXT : uint
     {
         MinmaxFormatExt = 32815,
@@ -6030,6 +5972,7 @@ namespace OpenTK.Graphics.OpenGL
         CullFace = 2884,
         CullFaceMode = 2885,
         FrontFace = 2886,
+        Fog = 2912,
         DepthRange = 2928,
         DepthTest = 2929,
         DepthWritemask = 2930,
@@ -6079,7 +6022,7 @@ namespace OpenTK.Graphics.OpenGL
         MaxTextureSize = 3379,
         MaxViewportDims = 3386,
         SubpixelBits = 3408,
-        Texture1d = 3552,
+        Texture1D = 3552,
         Texture2D = 3553,
         PolygonOffsetUnits = 10752,
         PolygonOffsetPoint = 10753,
@@ -6091,7 +6034,7 @@ namespace OpenTK.Graphics.OpenGL
         BlendEquationRgb = 32777,
         PackCmykHintExt = 32782,
         UnpackCmykHintExt = 32783,
-        Convolution1dExt = 32784,
+        Convolution1DExt = 32784,
         Convolution2DExt = 32785,
         Separable2DExt = 32786,
         PostConvolutionRedScaleExt = 32796,
@@ -6108,7 +6051,7 @@ namespace OpenTK.Graphics.OpenGL
         PolygonOffsetFactor = 32824,
         PolygonOffsetBiasExt = 32825,
         RescaleNormalExt = 32826,
-        TextureBinding1d = 32872,
+        TextureBinding1D = 32872,
         TextureBinding2D = 32873,
         Texture3DBindingExt = 32874,
         TextureBinding3D = 32874,
@@ -6333,7 +6276,7 @@ namespace OpenTK.Graphics.OpenGL
         CurrentProgram = 35725,
         ImplementationColorReadType = 35738,
         ImplementationColorReadFormat = 35739,
-        TextureBinding1dArray = 35868,
+        TextureBinding1DArray = 35868,
         TextureBinding2DArray = 35869,
         MaxGeometryTextureImageUnits = 35881,
         MaxTextureBufferSize = 35883,
@@ -6451,6 +6394,7 @@ namespace OpenTK.Graphics.OpenGL
         TextureGreenSize = 32861,
         TextureBlueSize = 32862,
         TextureAlphaSize = 32863,
+        TextureDepth = 32881,
         TextureDepthExt = 32881,
         TextureWrapRExt = 32882,
         DetailTextureLevelSgis = 32922,
@@ -6501,7 +6445,7 @@ namespace OpenTK.Graphics.OpenGL
         VariantArrayStrideExt = 34790,
         VariantArrayTypeExt = 34791,
     }
-    ///<summary>Used in <see cref="GL.GetGraphicsResetStatus" />, <see cref="GL.KHR.GetGraphicsResetStatus" />, <see cref="GL.ARB.GetGraphicsResetStatusARB" />, ...</summary>
+    ///<summary>Used in <see cref="GL.GetGraphicsResetStatus" />, <see cref="GL.KHR.GetGraphicsResetStatus" />, <see cref="GL.ARB.GetGraphicsResetStatusARB" /></summary>
     public enum GraphicsResetStatus : uint
     {
         NoError = 0,
@@ -6572,7 +6516,7 @@ namespace OpenTK.Graphics.OpenGL
         MaterialSideHintPgi = 107052,
         MaxVertexHintPgi = 107053,
     }
-    ///<summary>Used in <see cref="GL.ARB.GetHistogram" />, <see cref="GL.EXT.GetHistogramEXT" />, <see cref="GL.ARB.GetHistogramParameterfv" />, ...</summary>
+    ///<summary>Used in <see cref="GL.EXT.GetHistogramEXT" />, <see cref="GL.EXT.GetHistogramParameterfvEXT" />, <see cref="GL.EXT.GetHistogramParameterivEXT" />, ...</summary>
     public enum HistogramTargetEXT : uint
     {
         HistogramExt = 32804,
@@ -7062,7 +7006,7 @@ namespace OpenTK.Graphics.OpenGL
     {
         LightModelColorControlExt = 33272,
     }
-    ///<summary>Used in <see cref="GL.EXT.BindLightParameterEXT" />, <see cref="GL.OES.GetLightxOES" />, <see cref="GL.OES.GetLightxvOES" />, ...</summary>
+    ///<summary>Used in <see cref="GL.EXT.BindLightParameterEXT" />, <see cref="GL.OES.GetLightxOES" />, <see cref="GL.OES.LightxOES" />, ...</summary>
     public enum LightName : uint
     {
         FragmentLight0Sgix = 33804,
@@ -7074,7 +7018,7 @@ namespace OpenTK.Graphics.OpenGL
         FragmentLight6Sgix = 33810,
         FragmentLight7Sgix = 33811,
     }
-    ///<summary>Used in <see cref="GL.EXT.BindLightParameterEXT" />, <see cref="GL.OES.GetLightxOES" />, <see cref="GL.OES.GetLightxvOES" />, ...</summary>
+    ///<summary>Used in <see cref="GL.EXT.BindLightParameterEXT" />, <see cref="GL.OES.GetLightxOES" />, <see cref="GL.OES.LightxOES" />, ...</summary>
     public enum LightParameter : uint
     {
     }
@@ -7151,11 +7095,7 @@ namespace OpenTK.Graphics.OpenGL
     {
         MapTessellationNv = 34498,
     }
-    ///<summary>Used in <see cref="GL.ARB.GetnMapdvARB" />, <see cref="GL.ARB.GetnMapfvARB" />, <see cref="GL.ARB.GetnMapivARB" /></summary>
-    public enum MapQuery : uint
-    {
-    }
-    ///<summary>Used in <see cref="GL.OES.GetMapxvOES" />, <see cref="GL.ARB.GetnMapdvARB" />, <see cref="GL.ARB.GetnMapfvARB" />, ...</summary>
+    ///<summary>Used in <see cref="GL.OES.GetMapxvOES" />, <see cref="GL.OES.Map1xOES" />, <see cref="GL.OES.Map2xOES" /></summary>
     public enum MapTarget : uint
     {
         GeometryDeformationSgix = 33172,
@@ -7184,7 +7124,7 @@ namespace OpenTK.Graphics.OpenGL
         UnsignedShort = 5123,
         UnsignedInt = 5125,
     }
-    ///<summary>Used in <see cref="GL.EXT.MatrixFrustumEXT" />, <see cref="GL.NV.MatrixFrustumEXT" />, <see cref="GL.NV.MatrixLoaddEXT" />, ...</summary>
+    ///<summary>Used in <see cref="GL.EXT.MatrixFrustumEXT" />, <see cref="GL.NV.MatrixFrustumEXT" />, <see cref="GL.EXT.MatrixLoaddEXT" />, ...</summary>
     public enum MatrixMode : uint
     {
         Modelview0Ext = 5888,
@@ -7242,12 +7182,12 @@ namespace OpenTK.Graphics.OpenGL
         Line = 6913,
         Fill = 6914,
     }
-    ///<summary>Used in <see cref="GL.ARB.GetMinmax" />, <see cref="GL.EXT.GetMinmaxEXT" />, <see cref="GL.ARB.GetMinmaxParameterfv" />, ...</summary>
+    ///<summary>Used in <see cref="GL.EXT.GetMinmaxEXT" />, <see cref="GL.EXT.GetMinmaxParameterfvEXT" />, <see cref="GL.EXT.GetMinmaxParameterivEXT" />, ...</summary>
     public enum MinmaxTargetEXT : uint
     {
         MinmaxExt = 32814,
     }
-    ///<summary>Used in <see cref="GL.ARB.NormalP3ui" />, <see cref="GL.ARB.NormalP3uiv" />, <see cref="GL.EXT.NormalPointerEXT" />, ...</summary>
+    ///<summary>Used in <see cref="GL.EXT.NormalPointerEXT" />, <see cref="GL.IBM.NormalPointerListIBM" />, <see cref="GL.INTEL.NormalPointervINTEL" />, ...</summary>
     public enum NormalPointerType : uint
     {
         Byte = 5120,
@@ -7306,13 +7246,11 @@ namespace OpenTK.Graphics.OpenGL
         PatchDefaultInnerLevel = 36467,
         PatchDefaultOuterLevel = 36468,
     }
-    ///<summary>Used in <see cref="GL.NV.GetPathColorGenfvNV" />, <see cref="GL.NV.GetPathColorGenivNV" />, <see cref="GL.NV.PathColorGenNV" />, ...</summary>
     public enum PathColor : uint
     {
         PrimaryColorNv = 34092,
         SecondaryColorNv = 34093,
     }
-    ///<summary>Used in <see cref="GL.NV.PathColorGenNV" /></summary>
     public enum PathColorFormat : uint
     {
         None = 0,
@@ -7405,7 +7343,6 @@ namespace OpenTK.Graphics.OpenGL
         SystemFontNameNv = 36979,
         FileNameNv = 36980,
     }
-    ///<summary>Used in <see cref="GL.NV.GetPathColorGenfvNV" />, <see cref="GL.NV.GetPathColorGenivNV" />, <see cref="GL.NV.GetPathTexGenfvNV" />, ...</summary>
     public enum PathGenMode : uint
     {
         None = 0,
@@ -7562,7 +7499,7 @@ namespace OpenTK.Graphics.OpenGL
         PerfqueryFlushIntel = 33786,
         PerfqueryWaitIntel = 33787,
     }
-    ///<summary>Used in <see cref="GL.GetProgramPipelineiv" />, <see cref="GL.ARB.GetProgramPipelineiv" />, <see cref="GL.EXT.GetProgramPipelineivEXT" /></summary>
+    ///<summary>Used in <see cref="GL.GetProgramPipelineiv" />, <see cref="GL.ARB.GetProgramPipelineiv" /></summary>
     public enum PipelineParameterName : uint
     {
         ActiveProgram = 33369,
@@ -7618,7 +7555,7 @@ namespace OpenTK.Graphics.OpenGL
         BgrInteger = 36250,
         BgraInteger = 36251,
     }
-    ///<summary>Used in <see cref="GL.ARB.GetnPixelMapfvARB" />, <see cref="GL.ARB.GetnPixelMapuivARB" />, <see cref="GL.ARB.GetnPixelMapusvARB" />, ...</summary>
+    ///<summary>Used in <see cref="GL.OES.GetPixelMapxv" />, <see cref="GL.OES.PixelMapx" /></summary>
     public enum PixelMap : uint
     {
     }
@@ -8138,7 +8075,7 @@ namespace OpenTK.Graphics.OpenGL
         SemaphoreTypeBinaryNv = 38324,
         SemaphoreTypeTimelineNv = 38325,
     }
-    ///<summary>Used in <see cref="GL.ARB.GetnSeparableFilterARB" />, <see cref="GL.ARB.GetSeparableFilter" />, <see cref="GL.EXT.GetSeparableFilterEXT" />, ...</summary>
+    ///<summary>Used in <see cref="GL.EXT.GetSeparableFilterEXT" />, <see cref="GL.EXT.SeparableFilter2DEXT" /></summary>
     public enum SeparableTargetEXT : uint
     {
         Separable2DExt = 32786,
@@ -8528,7 +8465,7 @@ namespace OpenTK.Graphics.OpenGL
     {
         BumpRotMatrixAti = 34677,
     }
-    ///<summary>Used in <see cref="GL.ARB.MultiTexCoordP1ui" />, <see cref="GL.ARB.MultiTexCoordP1uiv" />, <see cref="GL.ARB.MultiTexCoordP2ui" />, ...</summary>
+    ///<summary>Used in <see cref="GL.EXT.MultiTexCoordPointerEXT" />, <see cref="GL.EXT.TexCoordPointerEXT" />, <see cref="GL.IBM.TexCoordPointerListIBM" />, ...</summary>
     public enum TexCoordPointerType : uint
     {
         Short = 5122,
@@ -8623,6 +8560,7 @@ namespace OpenTK.Graphics.OpenGL
     ///<summary>Used in <see cref="GL.EXT.BindTexGenParameterEXT" />, <see cref="GL.EXT.GetMultiTexGendvEXT" />, <see cref="GL.EXT.GetMultiTexGenfvEXT" />, ...</summary>
     public enum TextureGenParameter : uint
     {
+        EyePlane = 9474,
         EyePointSgis = 33268,
         ObjectPointSgis = 33269,
         EyeLineSgis = 33270,
@@ -8675,9 +8613,6 @@ namespace OpenTK.Graphics.OpenGL
     ///<summary>Used in <see cref="GL.TexParameterf" />, <see cref="GL.TexParameterfv" />, <see cref="GL.TexParameteri" />, ...</summary>
     public enum TextureParameterName : uint
     {
-        TextureWidth = 4096,
-        TextureHeight = 4097,
-        TextureInternalFormat = 4099,
         TextureBorderColor = 4100,
         TextureMagFilter = 10240,
         TextureMinFilter = 10241,
@@ -8759,10 +8694,10 @@ namespace OpenTK.Graphics.OpenGL
     ///<summary>Used in <see cref="GL.BindTexture" />, <see cref="GL.CompressedTexImage1D" />, <see cref="GL.CompressedTexImage2D" />, ...</summary>
     public enum TextureTarget : uint
     {
-        Texture1d = 3552,
+        Texture1D = 3552,
         Texture2D = 3553,
-        ProxyTexture1d = 32867,
-        ProxyTexture1dExt = 32867,
+        ProxyTexture1D = 32867,
+        ProxyTexture1DExt = 32867,
         ProxyTexture2D = 32868,
         ProxyTexture2DExt = 32868,
         Texture3D = 32879,
@@ -8802,9 +8737,9 @@ namespace OpenTK.Graphics.OpenGL
         ProxyTextureCubeMap = 34075,
         ProxyTextureCubeMapArb = 34075,
         ProxyTextureCubeMapExt = 34075,
-        Texture1dArray = 35864,
-        ProxyTexture1dArray = 35865,
-        ProxyTexture1dArrayExt = 35865,
+        Texture1DArray = 35864,
+        ProxyTexture1DArray = 35865,
+        ProxyTexture1DArrayExt = 35865,
         Texture2DArray = 35866,
         ProxyTexture2DArray = 35867,
         ProxyTexture2DArrayExt = 35867,
@@ -8953,11 +8888,11 @@ namespace OpenTK.Graphics.OpenGL
         FloatMat2 = 35674,
         FloatMat3 = 35675,
         FloatMat4 = 35676,
-        Sampler1d = 35677,
+        Sampler1D = 35677,
         Sampler2D = 35678,
         Sampler3D = 35679,
         SamplerCube = 35680,
-        Sampler1dShadow = 35681,
+        Sampler1DShadow = 35681,
         Sampler2DShadow = 35682,
         Sampler2DRect = 35683,
         Sampler2DRectShadow = 35684,
@@ -8967,29 +8902,29 @@ namespace OpenTK.Graphics.OpenGL
         FloatMat3x4 = 35688,
         FloatMat4x2 = 35689,
         FloatMat4x3 = 35690,
-        Sampler1dArray = 36288,
+        Sampler1DArray = 36288,
         Sampler2DArray = 36289,
         SamplerBuffer = 36290,
-        Sampler1dArrayShadow = 36291,
+        Sampler1DArrayShadow = 36291,
         Sampler2DArrayShadow = 36292,
         SamplerCubeShadow = 36293,
         UnsignedIntVec2 = 36294,
         UnsignedIntVec3 = 36295,
         UnsignedIntVec4 = 36296,
-        IntSampler1d = 36297,
+        IntSampler1D = 36297,
         IntSampler2D = 36298,
         IntSampler3D = 36299,
         IntSamplerCube = 36300,
         IntSampler2DRect = 36301,
-        IntSampler1dArray = 36302,
+        IntSampler1DArray = 36302,
         IntSampler2DArray = 36303,
         IntSamplerBuffer = 36304,
-        UnsignedIntSampler1d = 36305,
+        UnsignedIntSampler1D = 36305,
         UnsignedIntSampler2D = 36306,
         UnsignedIntSampler3D = 36307,
         UnsignedIntSamplerCube = 36308,
         UnsignedIntSampler2DRect = 36309,
-        UnsignedIntSampler1dArray = 36310,
+        UnsignedIntSampler1DArray = 36310,
         UnsignedIntSampler2DArray = 36311,
         UnsignedIntSamplerBuffer = 36312,
         DoubleMat2 = 36678,
@@ -9015,14 +8950,12 @@ namespace OpenTK.Graphics.OpenGL
         IntSampler2DMultisampleArray = 37132,
         UnsignedIntSampler2DMultisampleArray = 37133,
     }
-    ///<summary>Used in <see cref="GL.UseProgramStages" />, <see cref="GL.ARB.UseProgramStages" />, <see cref="GL.EXT.UseProgramStagesEXT" /></summary>
+    ///<summary>Used in <see cref="GL.UseProgramStages" />, <see cref="GL.ARB.UseProgramStages" /></summary>
     [Flags]
     public enum UseProgramStageMask : uint
     {
         VertexShaderBit = 1,
-        VertexShaderBitExt = 1,
         FragmentShaderBit = 2,
-        FragmentShaderBitExt = 2,
         GeometryShaderBit = 4,
         TessControlShaderBit = 8,
         TessEvaluationShaderBit = 16,
@@ -9030,7 +8963,6 @@ namespace OpenTK.Graphics.OpenGL
         MeshShaderBitNv = 64,
         TaskShaderBitNv = 128,
         AllShaderBits = 4294967295,
-        AllShaderBitsExt = 4294967295,
     }
     ///<summary>Used in <see cref="GL.EXT.IsVariantEnabledEXT" /></summary>
     public enum VariantCapEXT : uint

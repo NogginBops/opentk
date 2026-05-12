@@ -12552,121 +12552,6 @@ namespace OpenTK.Graphics.OpenGL
                     ClearTexSubImage(texture, level, xoffset, yoffset, zoffset, width, height, depth, format, type, data_ptr);
                 }
             }
-            /// <inheritdoc cref="ColorP3uiv(ColorPointerType, uint*)"/>
-            public static unsafe void ColorP3ui(ColorPointerType type, ref readonly uint color)
-            {
-                fixed (uint* color_ptr = &color)
-                {
-                    ColorP3uiv(type, color_ptr);
-                }
-            }
-            /// <inheritdoc cref="ColorP4uiv(ColorPointerType, uint*)"/>
-            public static unsafe void ColorP4ui(ColorPointerType type, ref readonly uint color)
-            {
-                fixed (uint* color_ptr = &color)
-                {
-                    ColorP4uiv(type, color_ptr);
-                }
-            }
-            /// <inheritdoc cref="ColorSubTable(ColorTableTarget, int, int, PixelFormat, PixelType, void*)"/>
-            public static unsafe void ColorSubTable(ColorTableTarget target, int start, int count, PixelFormat format, PixelType type, IntPtr data)
-            {
-                void* data_vptr = (void*)data;
-                ColorSubTable(target, start, count, format, type, data_vptr);
-            }
-            /// <inheritdoc cref="ColorSubTable(ColorTableTarget, int, int, PixelFormat, PixelType, void*)"/>
-            public static unsafe void ColorSubTable<T1>(ColorTableTarget target, int start, int count, PixelFormat format, PixelType type, ReadOnlySpan<T1> data)
-                where T1 : unmanaged
-            {
-                fixed (void* data_ptr = data)
-                {
-                    ColorSubTable(target, start, count, format, type, data_ptr);
-                }
-            }
-            /// <inheritdoc cref="ColorSubTable(ColorTableTarget, int, int, PixelFormat, PixelType, void*)"/>
-            public static unsafe void ColorSubTable<T1>(ColorTableTarget target, int start, int count, PixelFormat format, PixelType type, T1[] data)
-                where T1 : unmanaged
-            {
-                fixed (void* data_ptr = data)
-                {
-                    ColorSubTable(target, start, count, format, type, data_ptr);
-                }
-            }
-            /// <inheritdoc cref="ColorSubTable(ColorTableTarget, int, int, PixelFormat, PixelType, void*)"/>
-            public static unsafe void ColorSubTable<T1>(ColorTableTarget target, int start, int count, PixelFormat format, PixelType type, ref readonly T1 data)
-                where T1 : unmanaged
-            {
-                fixed (void* data_ptr = &data)
-                {
-                    ColorSubTable(target, start, count, format, type, data_ptr);
-                }
-            }
-            /// <inheritdoc cref="ColorTable(ColorTableTarget, InternalFormat, int, PixelFormat, PixelType, void*)"/>
-            public static unsafe void ColorTable(ColorTableTarget target, InternalFormat internalformat, int width, PixelFormat format, PixelType type, IntPtr table)
-            {
-                void* table_vptr = (void*)table;
-                ColorTable(target, internalformat, width, format, type, table_vptr);
-            }
-            /// <inheritdoc cref="ColorTable(ColorTableTarget, InternalFormat, int, PixelFormat, PixelType, void*)"/>
-            public static unsafe void ColorTable<T1>(ColorTableTarget target, InternalFormat internalformat, int width, PixelFormat format, PixelType type, ReadOnlySpan<T1> table)
-                where T1 : unmanaged
-            {
-                fixed (void* table_ptr = table)
-                {
-                    ColorTable(target, internalformat, width, format, type, table_ptr);
-                }
-            }
-            /// <inheritdoc cref="ColorTable(ColorTableTarget, InternalFormat, int, PixelFormat, PixelType, void*)"/>
-            public static unsafe void ColorTable<T1>(ColorTableTarget target, InternalFormat internalformat, int width, PixelFormat format, PixelType type, T1[] table)
-                where T1 : unmanaged
-            {
-                fixed (void* table_ptr = table)
-                {
-                    ColorTable(target, internalformat, width, format, type, table_ptr);
-                }
-            }
-            /// <inheritdoc cref="ColorTable(ColorTableTarget, InternalFormat, int, PixelFormat, PixelType, void*)"/>
-            public static unsafe void ColorTable<T1>(ColorTableTarget target, InternalFormat internalformat, int width, PixelFormat format, PixelType type, ref readonly T1 table)
-                where T1 : unmanaged
-            {
-                fixed (void* table_ptr = &table)
-                {
-                    ColorTable(target, internalformat, width, format, type, table_ptr);
-                }
-            }
-            /// <inheritdoc cref="ColorTableParameterfv(ColorTableTarget, ColorTableParameterPName, float*)"/>
-            public static unsafe void ColorTableParameterf(ColorTableTarget target, ColorTableParameterPName pname, ref readonly Color4<Rgba> @params)
-            {
-                fixed (Color4<Rgba>* tmp_params = &@params)
-                {
-                    float* @params_ptr = (float*)tmp_params;
-                    ColorTableParameterfv(target, pname, @params_ptr);
-                }
-            }
-            /// <inheritdoc cref="ColorTableParameteriv(ColorTableTarget, ColorTableParameterPName, int*)"/>
-            public static unsafe void ColorTableParameteri(ColorTableTarget target, ColorTableParameterPName pname, ReadOnlySpan<int> @params)
-            {
-                fixed (int* @params_ptr = @params)
-                {
-                    ColorTableParameteriv(target, pname, @params_ptr);
-                }
-            }
-            /// <inheritdoc cref="ColorTableParameteriv(ColorTableTarget, ColorTableParameterPName, int*)"/>
-            public static unsafe void ColorTableParameteri(ColorTableTarget target, ColorTableParameterPName pname, int[] @params)
-            {
-                fixed (int* @params_ptr = @params)
-                {
-                    ColorTableParameteriv(target, pname, @params_ptr);
-                }
-            }
-            /// <inheritdoc cref="ColorTableParameteriv(ColorTableTarget, ColorTableParameterPName, int*)"/>
-            public static unsafe void ColorTableParameteri(ColorTableTarget target, ColorTableParameterPName pname, ref readonly int @params)
-            {
-                fixed (int* @params_ptr = &@params)
-                {
-                    ColorTableParameteriv(target, pname, @params_ptr);
-                }
-            }
             /// <inheritdoc cref="CompileShaderIncludeARB(int, int, byte**, int*)"/>
             public static unsafe void CompileShaderIncludeARB(int shader, int count, string[] path, ReadOnlySpan<int> length)
             {
@@ -12992,120 +12877,6 @@ namespace OpenTK.Graphics.OpenGL
                 fixed (void* data_ptr = &data)
                 {
                     CompressedTextureSubImage3D(texture, level, xoffset, yoffset, zoffset, width, height, depth, format, imageSize, data_ptr);
-                }
-            }
-            /// <inheritdoc cref="ConvolutionFilter1D(ConvolutionTarget, InternalFormat, int, PixelFormat, PixelType, void*)"/>
-            public static unsafe void ConvolutionFilter1D(ConvolutionTarget target, InternalFormat internalformat, int width, PixelFormat format, PixelType type, IntPtr image)
-            {
-                void* image_vptr = (void*)image;
-                ConvolutionFilter1D(target, internalformat, width, format, type, image_vptr);
-            }
-            /// <inheritdoc cref="ConvolutionFilter1D(ConvolutionTarget, InternalFormat, int, PixelFormat, PixelType, void*)"/>
-            public static unsafe void ConvolutionFilter1D<T1>(ConvolutionTarget target, InternalFormat internalformat, int width, PixelFormat format, PixelType type, ReadOnlySpan<T1> image)
-                where T1 : unmanaged
-            {
-                fixed (void* image_ptr = image)
-                {
-                    ConvolutionFilter1D(target, internalformat, width, format, type, image_ptr);
-                }
-            }
-            /// <inheritdoc cref="ConvolutionFilter1D(ConvolutionTarget, InternalFormat, int, PixelFormat, PixelType, void*)"/>
-            public static unsafe void ConvolutionFilter1D<T1>(ConvolutionTarget target, InternalFormat internalformat, int width, PixelFormat format, PixelType type, T1[] image)
-                where T1 : unmanaged
-            {
-                fixed (void* image_ptr = image)
-                {
-                    ConvolutionFilter1D(target, internalformat, width, format, type, image_ptr);
-                }
-            }
-            /// <inheritdoc cref="ConvolutionFilter1D(ConvolutionTarget, InternalFormat, int, PixelFormat, PixelType, void*)"/>
-            public static unsafe void ConvolutionFilter1D<T1>(ConvolutionTarget target, InternalFormat internalformat, int width, PixelFormat format, PixelType type, ref readonly T1 image)
-                where T1 : unmanaged
-            {
-                fixed (void* image_ptr = &image)
-                {
-                    ConvolutionFilter1D(target, internalformat, width, format, type, image_ptr);
-                }
-            }
-            /// <inheritdoc cref="ConvolutionFilter2D(ConvolutionTarget, InternalFormat, int, int, PixelFormat, PixelType, void*)"/>
-            public static unsafe void ConvolutionFilter2D(ConvolutionTarget target, InternalFormat internalformat, int width, int height, PixelFormat format, PixelType type, IntPtr image)
-            {
-                void* image_vptr = (void*)image;
-                ConvolutionFilter2D(target, internalformat, width, height, format, type, image_vptr);
-            }
-            /// <inheritdoc cref="ConvolutionFilter2D(ConvolutionTarget, InternalFormat, int, int, PixelFormat, PixelType, void*)"/>
-            public static unsafe void ConvolutionFilter2D<T1>(ConvolutionTarget target, InternalFormat internalformat, int width, int height, PixelFormat format, PixelType type, ReadOnlySpan<T1> image)
-                where T1 : unmanaged
-            {
-                fixed (void* image_ptr = image)
-                {
-                    ConvolutionFilter2D(target, internalformat, width, height, format, type, image_ptr);
-                }
-            }
-            /// <inheritdoc cref="ConvolutionFilter2D(ConvolutionTarget, InternalFormat, int, int, PixelFormat, PixelType, void*)"/>
-            public static unsafe void ConvolutionFilter2D<T1>(ConvolutionTarget target, InternalFormat internalformat, int width, int height, PixelFormat format, PixelType type, T1[] image)
-                where T1 : unmanaged
-            {
-                fixed (void* image_ptr = image)
-                {
-                    ConvolutionFilter2D(target, internalformat, width, height, format, type, image_ptr);
-                }
-            }
-            /// <inheritdoc cref="ConvolutionFilter2D(ConvolutionTarget, InternalFormat, int, int, PixelFormat, PixelType, void*)"/>
-            public static unsafe void ConvolutionFilter2D<T1>(ConvolutionTarget target, InternalFormat internalformat, int width, int height, PixelFormat format, PixelType type, ref readonly T1 image)
-                where T1 : unmanaged
-            {
-                fixed (void* image_ptr = &image)
-                {
-                    ConvolutionFilter2D(target, internalformat, width, height, format, type, image_ptr);
-                }
-            }
-            /// <inheritdoc cref="ConvolutionParameterfv(ConvolutionTarget, ConvolutionParameter, float*)"/>
-            public static unsafe void ConvolutionParameterf(ConvolutionTarget target, ConvolutionParameter pname, ReadOnlySpan<float> @params)
-            {
-                fixed (float* @params_ptr = @params)
-                {
-                    ConvolutionParameterfv(target, pname, @params_ptr);
-                }
-            }
-            /// <inheritdoc cref="ConvolutionParameterfv(ConvolutionTarget, ConvolutionParameter, float*)"/>
-            public static unsafe void ConvolutionParameterf(ConvolutionTarget target, ConvolutionParameter pname, float[] @params)
-            {
-                fixed (float* @params_ptr = @params)
-                {
-                    ConvolutionParameterfv(target, pname, @params_ptr);
-                }
-            }
-            /// <inheritdoc cref="ConvolutionParameterfv(ConvolutionTarget, ConvolutionParameter, float*)"/>
-            public static unsafe void ConvolutionParameterf(ConvolutionTarget target, ConvolutionParameter pname, ref readonly float @params)
-            {
-                fixed (float* @params_ptr = &@params)
-                {
-                    ConvolutionParameterfv(target, pname, @params_ptr);
-                }
-            }
-            /// <inheritdoc cref="ConvolutionParameteriv(ConvolutionTarget, ConvolutionParameter, int*)"/>
-            public static unsafe void ConvolutionParameteri(ConvolutionTarget target, ConvolutionParameter pname, ReadOnlySpan<int> @params)
-            {
-                fixed (int* @params_ptr = @params)
-                {
-                    ConvolutionParameteriv(target, pname, @params_ptr);
-                }
-            }
-            /// <inheritdoc cref="ConvolutionParameteriv(ConvolutionTarget, ConvolutionParameter, int*)"/>
-            public static unsafe void ConvolutionParameteri(ConvolutionTarget target, ConvolutionParameter pname, int[] @params)
-            {
-                fixed (int* @params_ptr = @params)
-                {
-                    ConvolutionParameteriv(target, pname, @params_ptr);
-                }
-            }
-            /// <inheritdoc cref="ConvolutionParameteriv(ConvolutionTarget, ConvolutionParameter, int*)"/>
-            public static unsafe void ConvolutionParameteri(ConvolutionTarget target, ConvolutionParameter pname, ref readonly int @params)
-            {
-                fixed (int* @params_ptr = &@params)
-                {
-                    ConvolutionParameteriv(target, pname, @params_ptr);
                 }
             }
             /// <inheritdoc cref="CreateBuffers(int, int*)"/>
@@ -14820,118 +14591,6 @@ namespace OpenTK.Graphics.OpenGL
                     GetBufferSubDataARB(target, offset, size, data_ptr);
                 }
             }
-            /// <inheritdoc cref="GetColorTable(ColorTableTarget, PixelFormat, PixelType, void*)"/>
-            public static unsafe void GetColorTable(ColorTableTarget target, PixelFormat format, PixelType type, IntPtr table)
-            {
-                void* table_vptr = (void*)table;
-                GetColorTable(target, format, type, table_vptr);
-            }
-            /// <inheritdoc cref="GetColorTable(ColorTableTarget, PixelFormat, PixelType, void*)"/>
-            public static unsafe void GetColorTable<T1>(ColorTableTarget target, PixelFormat format, PixelType type, Span<T1> table)
-                where T1 : unmanaged
-            {
-                fixed (void* table_ptr = table)
-                {
-                    GetColorTable(target, format, type, table_ptr);
-                }
-            }
-            /// <inheritdoc cref="GetColorTable(ColorTableTarget, PixelFormat, PixelType, void*)"/>
-            public static unsafe void GetColorTable<T1>(ColorTableTarget target, PixelFormat format, PixelType type, T1[] table)
-                where T1 : unmanaged
-            {
-                fixed (void* table_ptr = table)
-                {
-                    GetColorTable(target, format, type, table_ptr);
-                }
-            }
-            /// <inheritdoc cref="GetColorTable(ColorTableTarget, PixelFormat, PixelType, void*)"/>
-            public static unsafe T1 GetColorTable<T1>(ColorTableTarget target, PixelFormat format, PixelType type)
-                where T1 : unmanaged
-            {
-                T1 table;
-                void* table_ptr = &table;
-                {
-                    GetColorTable(target, format, type, table_ptr);
-                }
-                return table;
-            }
-            /// <inheritdoc cref="GetColorTable(ColorTableTarget, PixelFormat, PixelType, void*)"/>
-            public static unsafe void GetColorTable<T1>(ColorTableTarget target, PixelFormat format, PixelType type, out T1 table)
-                where T1 : unmanaged
-            {
-                fixed (void* table_ptr = &table)
-                {
-                    GetColorTable(target, format, type, table_ptr);
-                }
-            }
-            /// <inheritdoc cref="GetColorTableParameterfv(ColorTableTarget, ColorTableParameterPName, float*)"/>
-            public static unsafe void GetColorTableParameterf(ColorTableTarget target, ColorTableParameterPName pname, Span<float> @params)
-            {
-                fixed (float* @params_ptr = @params)
-                {
-                    GetColorTableParameterfv(target, pname, @params_ptr);
-                }
-            }
-            /// <inheritdoc cref="GetColorTableParameterfv(ColorTableTarget, ColorTableParameterPName, float*)"/>
-            public static unsafe void GetColorTableParameterf(ColorTableTarget target, ColorTableParameterPName pname, float[] @params)
-            {
-                fixed (float* @params_ptr = @params)
-                {
-                    GetColorTableParameterfv(target, pname, @params_ptr);
-                }
-            }
-            /// <inheritdoc cref="GetColorTableParameterfv(ColorTableTarget, ColorTableParameterPName, float*)"/>
-            public static unsafe float GetColorTableParameterf(ColorTableTarget target, ColorTableParameterPName pname)
-            {
-                float @params;
-                float* @params_ptr = &@params;
-                {
-                    GetColorTableParameterfv(target, pname, @params_ptr);
-                }
-                return @params;
-            }
-            /// <inheritdoc cref="GetColorTableParameterfv(ColorTableTarget, ColorTableParameterPName, float*)"/>
-            public static unsafe void GetColorTableParameterf(ColorTableTarget target, ColorTableParameterPName pname, out float @params)
-            {
-                fixed (float* @params_ptr = &@params)
-                {
-                    GetColorTableParameterfv(target, pname, @params_ptr);
-                }
-            }
-            /// <inheritdoc cref="GetColorTableParameteriv(ColorTableTarget, ColorTableParameterPName, int*)"/>
-            public static unsafe void GetColorTableParameteri(ColorTableTarget target, ColorTableParameterPName pname, Span<int> @params)
-            {
-                fixed (int* @params_ptr = @params)
-                {
-                    GetColorTableParameteriv(target, pname, @params_ptr);
-                }
-            }
-            /// <inheritdoc cref="GetColorTableParameteriv(ColorTableTarget, ColorTableParameterPName, int*)"/>
-            public static unsafe void GetColorTableParameteri(ColorTableTarget target, ColorTableParameterPName pname, int[] @params)
-            {
-                fixed (int* @params_ptr = @params)
-                {
-                    GetColorTableParameteriv(target, pname, @params_ptr);
-                }
-            }
-            /// <inheritdoc cref="GetColorTableParameteriv(ColorTableTarget, ColorTableParameterPName, int*)"/>
-            public static unsafe int GetColorTableParameteri(ColorTableTarget target, ColorTableParameterPName pname)
-            {
-                int @params;
-                int* @params_ptr = &@params;
-                {
-                    GetColorTableParameteriv(target, pname, @params_ptr);
-                }
-                return @params;
-            }
-            /// <inheritdoc cref="GetColorTableParameteriv(ColorTableTarget, ColorTableParameterPName, int*)"/>
-            public static unsafe void GetColorTableParameteri(ColorTableTarget target, ColorTableParameterPName pname, out int @params)
-            {
-                fixed (int* @params_ptr = &@params)
-                {
-                    GetColorTableParameteriv(target, pname, @params_ptr);
-                }
-            }
             /// <inheritdoc cref="GetCompressedTexImageARB(TextureTarget, int, void*)"/>
             public static unsafe void GetCompressedTexImageARB(TextureTarget target, int level, IntPtr img)
             {
@@ -15040,118 +14699,6 @@ namespace OpenTK.Graphics.OpenGL
                 fixed (void* pixels_ptr = &pixels)
                 {
                     GetCompressedTextureSubImage(texture, level, xoffset, yoffset, zoffset, width, height, depth, bufSize, pixels_ptr);
-                }
-            }
-            /// <inheritdoc cref="GetConvolutionFilter(ConvolutionTarget, PixelFormat, PixelType, void*)"/>
-            public static unsafe void GetConvolutionFilter(ConvolutionTarget target, PixelFormat format, PixelType type, IntPtr image)
-            {
-                void* image_vptr = (void*)image;
-                GetConvolutionFilter(target, format, type, image_vptr);
-            }
-            /// <inheritdoc cref="GetConvolutionFilter(ConvolutionTarget, PixelFormat, PixelType, void*)"/>
-            public static unsafe void GetConvolutionFilter<T1>(ConvolutionTarget target, PixelFormat format, PixelType type, Span<T1> image)
-                where T1 : unmanaged
-            {
-                fixed (void* image_ptr = image)
-                {
-                    GetConvolutionFilter(target, format, type, image_ptr);
-                }
-            }
-            /// <inheritdoc cref="GetConvolutionFilter(ConvolutionTarget, PixelFormat, PixelType, void*)"/>
-            public static unsafe void GetConvolutionFilter<T1>(ConvolutionTarget target, PixelFormat format, PixelType type, T1[] image)
-                where T1 : unmanaged
-            {
-                fixed (void* image_ptr = image)
-                {
-                    GetConvolutionFilter(target, format, type, image_ptr);
-                }
-            }
-            /// <inheritdoc cref="GetConvolutionFilter(ConvolutionTarget, PixelFormat, PixelType, void*)"/>
-            public static unsafe T1 GetConvolutionFilter<T1>(ConvolutionTarget target, PixelFormat format, PixelType type)
-                where T1 : unmanaged
-            {
-                T1 image;
-                void* image_ptr = &image;
-                {
-                    GetConvolutionFilter(target, format, type, image_ptr);
-                }
-                return image;
-            }
-            /// <inheritdoc cref="GetConvolutionFilter(ConvolutionTarget, PixelFormat, PixelType, void*)"/>
-            public static unsafe void GetConvolutionFilter<T1>(ConvolutionTarget target, PixelFormat format, PixelType type, out T1 image)
-                where T1 : unmanaged
-            {
-                fixed (void* image_ptr = &image)
-                {
-                    GetConvolutionFilter(target, format, type, image_ptr);
-                }
-            }
-            /// <inheritdoc cref="GetConvolutionParameterfv(ConvolutionTarget, ConvolutionParameter, float*)"/>
-            public static unsafe void GetConvolutionParameterf(ConvolutionTarget target, ConvolutionParameter pname, Span<float> @params)
-            {
-                fixed (float* @params_ptr = @params)
-                {
-                    GetConvolutionParameterfv(target, pname, @params_ptr);
-                }
-            }
-            /// <inheritdoc cref="GetConvolutionParameterfv(ConvolutionTarget, ConvolutionParameter, float*)"/>
-            public static unsafe void GetConvolutionParameterf(ConvolutionTarget target, ConvolutionParameter pname, float[] @params)
-            {
-                fixed (float* @params_ptr = @params)
-                {
-                    GetConvolutionParameterfv(target, pname, @params_ptr);
-                }
-            }
-            /// <inheritdoc cref="GetConvolutionParameterfv(ConvolutionTarget, ConvolutionParameter, float*)"/>
-            public static unsafe float GetConvolutionParameterf(ConvolutionTarget target, ConvolutionParameter pname)
-            {
-                float @params;
-                float* @params_ptr = &@params;
-                {
-                    GetConvolutionParameterfv(target, pname, @params_ptr);
-                }
-                return @params;
-            }
-            /// <inheritdoc cref="GetConvolutionParameterfv(ConvolutionTarget, ConvolutionParameter, float*)"/>
-            public static unsafe void GetConvolutionParameterf(ConvolutionTarget target, ConvolutionParameter pname, out float @params)
-            {
-                fixed (float* @params_ptr = &@params)
-                {
-                    GetConvolutionParameterfv(target, pname, @params_ptr);
-                }
-            }
-            /// <inheritdoc cref="GetConvolutionParameteriv(ConvolutionTarget, ConvolutionParameter, int*)"/>
-            public static unsafe void GetConvolutionParameteri(ConvolutionTarget target, ConvolutionParameter pname, Span<int> @params)
-            {
-                fixed (int* @params_ptr = @params)
-                {
-                    GetConvolutionParameteriv(target, pname, @params_ptr);
-                }
-            }
-            /// <inheritdoc cref="GetConvolutionParameteriv(ConvolutionTarget, ConvolutionParameter, int*)"/>
-            public static unsafe void GetConvolutionParameteri(ConvolutionTarget target, ConvolutionParameter pname, int[] @params)
-            {
-                fixed (int* @params_ptr = @params)
-                {
-                    GetConvolutionParameteriv(target, pname, @params_ptr);
-                }
-            }
-            /// <inheritdoc cref="GetConvolutionParameteriv(ConvolutionTarget, ConvolutionParameter, int*)"/>
-            public static unsafe int GetConvolutionParameteri(ConvolutionTarget target, ConvolutionParameter pname)
-            {
-                int @params;
-                int* @params_ptr = &@params;
-                {
-                    GetConvolutionParameteriv(target, pname, @params_ptr);
-                }
-                return @params;
-            }
-            /// <inheritdoc cref="GetConvolutionParameteriv(ConvolutionTarget, ConvolutionParameter, int*)"/>
-            public static unsafe void GetConvolutionParameteri(ConvolutionTarget target, ConvolutionParameter pname, out int @params)
-            {
-                fixed (int* @params_ptr = &@params)
-                {
-                    GetConvolutionParameteriv(target, pname, @params_ptr);
                 }
             }
             /// <inheritdoc cref="GetDebugMessageLogARB(uint, int, DebugSource*, DebugType*, uint*, DebugSeverity*, int*, byte*)"/>
@@ -15366,118 +14913,6 @@ namespace OpenTK.Graphics.OpenGL
                     GetFramebufferParameteriv(target, pname, @params_ptr);
                 }
             }
-            /// <inheritdoc cref="GetHistogram(HistogramTargetEXT, bool, PixelFormat, PixelType, void*)"/>
-            public static unsafe void GetHistogram(HistogramTargetEXT target, bool reset, PixelFormat format, PixelType type, IntPtr values)
-            {
-                void* values_vptr = (void*)values;
-                GetHistogram(target, reset, format, type, values_vptr);
-            }
-            /// <inheritdoc cref="GetHistogram(HistogramTargetEXT, bool, PixelFormat, PixelType, void*)"/>
-            public static unsafe void GetHistogram<T1>(HistogramTargetEXT target, bool reset, PixelFormat format, PixelType type, Span<T1> values)
-                where T1 : unmanaged
-            {
-                fixed (void* values_ptr = values)
-                {
-                    GetHistogram(target, reset, format, type, values_ptr);
-                }
-            }
-            /// <inheritdoc cref="GetHistogram(HistogramTargetEXT, bool, PixelFormat, PixelType, void*)"/>
-            public static unsafe void GetHistogram<T1>(HistogramTargetEXT target, bool reset, PixelFormat format, PixelType type, T1[] values)
-                where T1 : unmanaged
-            {
-                fixed (void* values_ptr = values)
-                {
-                    GetHistogram(target, reset, format, type, values_ptr);
-                }
-            }
-            /// <inheritdoc cref="GetHistogram(HistogramTargetEXT, bool, PixelFormat, PixelType, void*)"/>
-            public static unsafe T1 GetHistogram<T1>(HistogramTargetEXT target, bool reset, PixelFormat format, PixelType type)
-                where T1 : unmanaged
-            {
-                T1 values;
-                void* values_ptr = &values;
-                {
-                    GetHistogram(target, reset, format, type, values_ptr);
-                }
-                return values;
-            }
-            /// <inheritdoc cref="GetHistogram(HistogramTargetEXT, bool, PixelFormat, PixelType, void*)"/>
-            public static unsafe void GetHistogram<T1>(HistogramTargetEXT target, bool reset, PixelFormat format, PixelType type, out T1 values)
-                where T1 : unmanaged
-            {
-                fixed (void* values_ptr = &values)
-                {
-                    GetHistogram(target, reset, format, type, values_ptr);
-                }
-            }
-            /// <inheritdoc cref="GetHistogramParameterfv(HistogramTargetEXT, GetHistogramParameterPNameEXT, float*)"/>
-            public static unsafe void GetHistogramParameterf(HistogramTargetEXT target, GetHistogramParameterPNameEXT pname, Span<float> @params)
-            {
-                fixed (float* @params_ptr = @params)
-                {
-                    GetHistogramParameterfv(target, pname, @params_ptr);
-                }
-            }
-            /// <inheritdoc cref="GetHistogramParameterfv(HistogramTargetEXT, GetHistogramParameterPNameEXT, float*)"/>
-            public static unsafe void GetHistogramParameterf(HistogramTargetEXT target, GetHistogramParameterPNameEXT pname, float[] @params)
-            {
-                fixed (float* @params_ptr = @params)
-                {
-                    GetHistogramParameterfv(target, pname, @params_ptr);
-                }
-            }
-            /// <inheritdoc cref="GetHistogramParameterfv(HistogramTargetEXT, GetHistogramParameterPNameEXT, float*)"/>
-            public static unsafe float GetHistogramParameterf(HistogramTargetEXT target, GetHistogramParameterPNameEXT pname)
-            {
-                float @params;
-                float* @params_ptr = &@params;
-                {
-                    GetHistogramParameterfv(target, pname, @params_ptr);
-                }
-                return @params;
-            }
-            /// <inheritdoc cref="GetHistogramParameterfv(HistogramTargetEXT, GetHistogramParameterPNameEXT, float*)"/>
-            public static unsafe void GetHistogramParameterf(HistogramTargetEXT target, GetHistogramParameterPNameEXT pname, out float @params)
-            {
-                fixed (float* @params_ptr = &@params)
-                {
-                    GetHistogramParameterfv(target, pname, @params_ptr);
-                }
-            }
-            /// <inheritdoc cref="GetHistogramParameteriv(HistogramTargetEXT, GetHistogramParameterPNameEXT, int*)"/>
-            public static unsafe void GetHistogramParameteri(HistogramTargetEXT target, GetHistogramParameterPNameEXT pname, Span<int> @params)
-            {
-                fixed (int* @params_ptr = @params)
-                {
-                    GetHistogramParameteriv(target, pname, @params_ptr);
-                }
-            }
-            /// <inheritdoc cref="GetHistogramParameteriv(HistogramTargetEXT, GetHistogramParameterPNameEXT, int*)"/>
-            public static unsafe void GetHistogramParameteri(HistogramTargetEXT target, GetHistogramParameterPNameEXT pname, int[] @params)
-            {
-                fixed (int* @params_ptr = @params)
-                {
-                    GetHistogramParameteriv(target, pname, @params_ptr);
-                }
-            }
-            /// <inheritdoc cref="GetHistogramParameteriv(HistogramTargetEXT, GetHistogramParameterPNameEXT, int*)"/>
-            public static unsafe int GetHistogramParameteri(HistogramTargetEXT target, GetHistogramParameterPNameEXT pname)
-            {
-                int @params;
-                int* @params_ptr = &@params;
-                {
-                    GetHistogramParameteriv(target, pname, @params_ptr);
-                }
-                return @params;
-            }
-            /// <inheritdoc cref="GetHistogramParameteriv(HistogramTargetEXT, GetHistogramParameterPNameEXT, int*)"/>
-            public static unsafe void GetHistogramParameteri(HistogramTargetEXT target, GetHistogramParameterPNameEXT pname, out int @params)
-            {
-                fixed (int* @params_ptr = &@params)
-                {
-                    GetHistogramParameteriv(target, pname, @params_ptr);
-                }
-            }
             /// <inheritdoc cref="GetInfoLogARB(GLHandleARB, int, int*, byte*)"/>
             public static unsafe string GetInfoLogARB(GLHandleARB obj, int maxLength, out int length)
             {
@@ -15616,118 +15051,6 @@ namespace OpenTK.Graphics.OpenGL
                 fixed (int* @params_ptr = &@params)
                 {
                     GetInternalformativ(target, internalformat, pname, count, @params_ptr);
-                }
-            }
-            /// <inheritdoc cref="GetMinmax(MinmaxTargetEXT, bool, PixelFormat, PixelType, void*)"/>
-            public static unsafe void GetMinmax(MinmaxTargetEXT target, bool reset, PixelFormat format, PixelType type, IntPtr values)
-            {
-                void* values_vptr = (void*)values;
-                GetMinmax(target, reset, format, type, values_vptr);
-            }
-            /// <inheritdoc cref="GetMinmax(MinmaxTargetEXT, bool, PixelFormat, PixelType, void*)"/>
-            public static unsafe void GetMinmax<T1>(MinmaxTargetEXT target, bool reset, PixelFormat format, PixelType type, Span<T1> values)
-                where T1 : unmanaged
-            {
-                fixed (void* values_ptr = values)
-                {
-                    GetMinmax(target, reset, format, type, values_ptr);
-                }
-            }
-            /// <inheritdoc cref="GetMinmax(MinmaxTargetEXT, bool, PixelFormat, PixelType, void*)"/>
-            public static unsafe void GetMinmax<T1>(MinmaxTargetEXT target, bool reset, PixelFormat format, PixelType type, T1[] values)
-                where T1 : unmanaged
-            {
-                fixed (void* values_ptr = values)
-                {
-                    GetMinmax(target, reset, format, type, values_ptr);
-                }
-            }
-            /// <inheritdoc cref="GetMinmax(MinmaxTargetEXT, bool, PixelFormat, PixelType, void*)"/>
-            public static unsafe T1 GetMinmax<T1>(MinmaxTargetEXT target, bool reset, PixelFormat format, PixelType type)
-                where T1 : unmanaged
-            {
-                T1 values;
-                void* values_ptr = &values;
-                {
-                    GetMinmax(target, reset, format, type, values_ptr);
-                }
-                return values;
-            }
-            /// <inheritdoc cref="GetMinmax(MinmaxTargetEXT, bool, PixelFormat, PixelType, void*)"/>
-            public static unsafe void GetMinmax<T1>(MinmaxTargetEXT target, bool reset, PixelFormat format, PixelType type, out T1 values)
-                where T1 : unmanaged
-            {
-                fixed (void* values_ptr = &values)
-                {
-                    GetMinmax(target, reset, format, type, values_ptr);
-                }
-            }
-            /// <inheritdoc cref="GetMinmaxParameterfv(MinmaxTargetEXT, GetMinmaxParameterPNameEXT, float*)"/>
-            public static unsafe void GetMinmaxParameterf(MinmaxTargetEXT target, GetMinmaxParameterPNameEXT pname, Span<float> @params)
-            {
-                fixed (float* @params_ptr = @params)
-                {
-                    GetMinmaxParameterfv(target, pname, @params_ptr);
-                }
-            }
-            /// <inheritdoc cref="GetMinmaxParameterfv(MinmaxTargetEXT, GetMinmaxParameterPNameEXT, float*)"/>
-            public static unsafe void GetMinmaxParameterf(MinmaxTargetEXT target, GetMinmaxParameterPNameEXT pname, float[] @params)
-            {
-                fixed (float* @params_ptr = @params)
-                {
-                    GetMinmaxParameterfv(target, pname, @params_ptr);
-                }
-            }
-            /// <inheritdoc cref="GetMinmaxParameterfv(MinmaxTargetEXT, GetMinmaxParameterPNameEXT, float*)"/>
-            public static unsafe float GetMinmaxParameterf(MinmaxTargetEXT target, GetMinmaxParameterPNameEXT pname)
-            {
-                float @params;
-                float* @params_ptr = &@params;
-                {
-                    GetMinmaxParameterfv(target, pname, @params_ptr);
-                }
-                return @params;
-            }
-            /// <inheritdoc cref="GetMinmaxParameterfv(MinmaxTargetEXT, GetMinmaxParameterPNameEXT, float*)"/>
-            public static unsafe void GetMinmaxParameterf(MinmaxTargetEXT target, GetMinmaxParameterPNameEXT pname, out float @params)
-            {
-                fixed (float* @params_ptr = &@params)
-                {
-                    GetMinmaxParameterfv(target, pname, @params_ptr);
-                }
-            }
-            /// <inheritdoc cref="GetMinmaxParameteriv(MinmaxTargetEXT, GetMinmaxParameterPNameEXT, int*)"/>
-            public static unsafe void GetMinmaxParameteri(MinmaxTargetEXT target, GetMinmaxParameterPNameEXT pname, Span<int> @params)
-            {
-                fixed (int* @params_ptr = @params)
-                {
-                    GetMinmaxParameteriv(target, pname, @params_ptr);
-                }
-            }
-            /// <inheritdoc cref="GetMinmaxParameteriv(MinmaxTargetEXT, GetMinmaxParameterPNameEXT, int*)"/>
-            public static unsafe void GetMinmaxParameteri(MinmaxTargetEXT target, GetMinmaxParameterPNameEXT pname, int[] @params)
-            {
-                fixed (int* @params_ptr = @params)
-                {
-                    GetMinmaxParameteriv(target, pname, @params_ptr);
-                }
-            }
-            /// <inheritdoc cref="GetMinmaxParameteriv(MinmaxTargetEXT, GetMinmaxParameterPNameEXT, int*)"/>
-            public static unsafe int GetMinmaxParameteri(MinmaxTargetEXT target, GetMinmaxParameterPNameEXT pname)
-            {
-                int @params;
-                int* @params_ptr = &@params;
-                {
-                    GetMinmaxParameteriv(target, pname, @params_ptr);
-                }
-                return @params;
-            }
-            /// <inheritdoc cref="GetMinmaxParameteriv(MinmaxTargetEXT, GetMinmaxParameterPNameEXT, int*)"/>
-            public static unsafe void GetMinmaxParameteri(MinmaxTargetEXT target, GetMinmaxParameterPNameEXT pname, out int @params)
-            {
-                fixed (int* @params_ptr = &@params)
-                {
-                    GetMinmaxParameteriv(target, pname, @params_ptr);
                 }
             }
             /// <inheritdoc cref="GetMultisamplefv(GetMultisamplePNameNV, uint, float*)"/>
@@ -15992,39 +15315,6 @@ namespace OpenTK.Graphics.OpenGL
                     Marshal.FreeCoTaskMem((IntPtr)name_ptr);
                 }
             }
-            /// <inheritdoc cref="GetnColorTableARB(ColorTableTarget, PixelFormat, PixelType, int, void*)"/>
-            public static unsafe void GetnColorTableARB(ColorTableTarget target, PixelFormat format, PixelType type, int bufSize, IntPtr table)
-            {
-                void* table_vptr = (void*)table;
-                GetnColorTableARB(target, format, type, bufSize, table_vptr);
-            }
-            /// <inheritdoc cref="GetnColorTableARB(ColorTableTarget, PixelFormat, PixelType, int, void*)"/>
-            public static unsafe void GetnColorTableARB<T1>(ColorTableTarget target, PixelFormat format, PixelType type, int bufSize, Span<T1> table)
-                where T1 : unmanaged
-            {
-                fixed (void* table_ptr = table)
-                {
-                    GetnColorTableARB(target, format, type, bufSize, table_ptr);
-                }
-            }
-            /// <inheritdoc cref="GetnColorTableARB(ColorTableTarget, PixelFormat, PixelType, int, void*)"/>
-            public static unsafe void GetnColorTableARB<T1>(ColorTableTarget target, PixelFormat format, PixelType type, int bufSize, T1[] table)
-                where T1 : unmanaged
-            {
-                fixed (void* table_ptr = table)
-                {
-                    GetnColorTableARB(target, format, type, bufSize, table_ptr);
-                }
-            }
-            /// <inheritdoc cref="GetnColorTableARB(ColorTableTarget, PixelFormat, PixelType, int, void*)"/>
-            public static unsafe void GetnColorTableARB<T1>(ColorTableTarget target, PixelFormat format, PixelType type, int bufSize, ref T1 table)
-                where T1 : unmanaged
-            {
-                fixed (void* table_ptr = &table)
-                {
-                    GetnColorTableARB(target, format, type, bufSize, table_ptr);
-                }
-            }
             /// <inheritdoc cref="GetnCompressedTexImageARB(TextureTarget, int, int, void*)"/>
             public static unsafe void GetnCompressedTexImageARB(TextureTarget target, int lod, int bufSize, IntPtr img)
             {
@@ -16056,328 +15346,6 @@ namespace OpenTK.Graphics.OpenGL
                 fixed (void* img_ptr = &img)
                 {
                     GetnCompressedTexImageARB(target, lod, bufSize, img_ptr);
-                }
-            }
-            /// <inheritdoc cref="GetnConvolutionFilterARB(ConvolutionTarget, PixelFormat, PixelType, int, void*)"/>
-            public static unsafe void GetnConvolutionFilterARB(ConvolutionTarget target, PixelFormat format, PixelType type, int bufSize, IntPtr image)
-            {
-                void* image_vptr = (void*)image;
-                GetnConvolutionFilterARB(target, format, type, bufSize, image_vptr);
-            }
-            /// <inheritdoc cref="GetnConvolutionFilterARB(ConvolutionTarget, PixelFormat, PixelType, int, void*)"/>
-            public static unsafe void GetnConvolutionFilterARB<T1>(ConvolutionTarget target, PixelFormat format, PixelType type, int bufSize, Span<T1> image)
-                where T1 : unmanaged
-            {
-                fixed (void* image_ptr = image)
-                {
-                    GetnConvolutionFilterARB(target, format, type, bufSize, image_ptr);
-                }
-            }
-            /// <inheritdoc cref="GetnConvolutionFilterARB(ConvolutionTarget, PixelFormat, PixelType, int, void*)"/>
-            public static unsafe void GetnConvolutionFilterARB<T1>(ConvolutionTarget target, PixelFormat format, PixelType type, int bufSize, T1[] image)
-                where T1 : unmanaged
-            {
-                fixed (void* image_ptr = image)
-                {
-                    GetnConvolutionFilterARB(target, format, type, bufSize, image_ptr);
-                }
-            }
-            /// <inheritdoc cref="GetnConvolutionFilterARB(ConvolutionTarget, PixelFormat, PixelType, int, void*)"/>
-            public static unsafe void GetnConvolutionFilterARB<T1>(ConvolutionTarget target, PixelFormat format, PixelType type, int bufSize, ref T1 image)
-                where T1 : unmanaged
-            {
-                fixed (void* image_ptr = &image)
-                {
-                    GetnConvolutionFilterARB(target, format, type, bufSize, image_ptr);
-                }
-            }
-            /// <inheritdoc cref="GetnHistogramARB(HistogramTargetEXT, bool, PixelFormat, PixelType, int, void*)"/>
-            public static unsafe void GetnHistogramARB(HistogramTargetEXT target, bool reset, PixelFormat format, PixelType type, int bufSize, IntPtr values)
-            {
-                void* values_vptr = (void*)values;
-                GetnHistogramARB(target, reset, format, type, bufSize, values_vptr);
-            }
-            /// <inheritdoc cref="GetnHistogramARB(HistogramTargetEXT, bool, PixelFormat, PixelType, int, void*)"/>
-            public static unsafe void GetnHistogramARB<T1>(HistogramTargetEXT target, bool reset, PixelFormat format, PixelType type, int bufSize, Span<T1> values)
-                where T1 : unmanaged
-            {
-                fixed (void* values_ptr = values)
-                {
-                    GetnHistogramARB(target, reset, format, type, bufSize, values_ptr);
-                }
-            }
-            /// <inheritdoc cref="GetnHistogramARB(HistogramTargetEXT, bool, PixelFormat, PixelType, int, void*)"/>
-            public static unsafe void GetnHistogramARB<T1>(HistogramTargetEXT target, bool reset, PixelFormat format, PixelType type, int bufSize, T1[] values)
-                where T1 : unmanaged
-            {
-                fixed (void* values_ptr = values)
-                {
-                    GetnHistogramARB(target, reset, format, type, bufSize, values_ptr);
-                }
-            }
-            /// <inheritdoc cref="GetnHistogramARB(HistogramTargetEXT, bool, PixelFormat, PixelType, int, void*)"/>
-            public static unsafe void GetnHistogramARB<T1>(HistogramTargetEXT target, bool reset, PixelFormat format, PixelType type, int bufSize, ref T1 values)
-                where T1 : unmanaged
-            {
-                fixed (void* values_ptr = &values)
-                {
-                    GetnHistogramARB(target, reset, format, type, bufSize, values_ptr);
-                }
-            }
-            /// <inheritdoc cref="GetnMapdvARB(MapTarget, MapQuery, int, double*)"/>
-            public static unsafe void GetnMapdvARB(MapTarget target, MapQuery query, int bufSize, Span<double> v)
-            {
-                fixed (double* v_ptr = v)
-                {
-                    GetnMapdvARB(target, query, bufSize, v_ptr);
-                }
-            }
-            /// <inheritdoc cref="GetnMapdvARB(MapTarget, MapQuery, int, double*)"/>
-            public static unsafe void GetnMapdvARB(MapTarget target, MapQuery query, int bufSize, double[] v)
-            {
-                fixed (double* v_ptr = v)
-                {
-                    GetnMapdvARB(target, query, bufSize, v_ptr);
-                }
-            }
-            /// <inheritdoc cref="GetnMapdvARB(MapTarget, MapQuery, int, double*)"/>
-            public static unsafe void GetnMapdvARB(MapTarget target, MapQuery query, int bufSize, ref double v)
-            {
-                fixed (double* v_ptr = &v)
-                {
-                    GetnMapdvARB(target, query, bufSize, v_ptr);
-                }
-            }
-            /// <inheritdoc cref="GetnMapfvARB(MapTarget, MapQuery, int, float*)"/>
-            public static unsafe void GetnMapfvARB(MapTarget target, MapQuery query, int bufSize, Span<float> v)
-            {
-                fixed (float* v_ptr = v)
-                {
-                    GetnMapfvARB(target, query, bufSize, v_ptr);
-                }
-            }
-            /// <inheritdoc cref="GetnMapfvARB(MapTarget, MapQuery, int, float*)"/>
-            public static unsafe void GetnMapfvARB(MapTarget target, MapQuery query, int bufSize, float[] v)
-            {
-                fixed (float* v_ptr = v)
-                {
-                    GetnMapfvARB(target, query, bufSize, v_ptr);
-                }
-            }
-            /// <inheritdoc cref="GetnMapfvARB(MapTarget, MapQuery, int, float*)"/>
-            public static unsafe void GetnMapfvARB(MapTarget target, MapQuery query, int bufSize, ref float v)
-            {
-                fixed (float* v_ptr = &v)
-                {
-                    GetnMapfvARB(target, query, bufSize, v_ptr);
-                }
-            }
-            /// <inheritdoc cref="GetnMapivARB(MapTarget, MapQuery, int, int*)"/>
-            public static unsafe void GetnMapivARB(MapTarget target, MapQuery query, int bufSize, Span<int> v)
-            {
-                fixed (int* v_ptr = v)
-                {
-                    GetnMapivARB(target, query, bufSize, v_ptr);
-                }
-            }
-            /// <inheritdoc cref="GetnMapivARB(MapTarget, MapQuery, int, int*)"/>
-            public static unsafe void GetnMapivARB(MapTarget target, MapQuery query, int bufSize, int[] v)
-            {
-                fixed (int* v_ptr = v)
-                {
-                    GetnMapivARB(target, query, bufSize, v_ptr);
-                }
-            }
-            /// <inheritdoc cref="GetnMapivARB(MapTarget, MapQuery, int, int*)"/>
-            public static unsafe void GetnMapivARB(MapTarget target, MapQuery query, int bufSize, ref int v)
-            {
-                fixed (int* v_ptr = &v)
-                {
-                    GetnMapivARB(target, query, bufSize, v_ptr);
-                }
-            }
-            /// <inheritdoc cref="GetnMinmaxARB(MinmaxTargetEXT, bool, PixelFormat, PixelType, int, void*)"/>
-            public static unsafe void GetnMinmaxARB(MinmaxTargetEXT target, bool reset, PixelFormat format, PixelType type, int bufSize, IntPtr values)
-            {
-                void* values_vptr = (void*)values;
-                GetnMinmaxARB(target, reset, format, type, bufSize, values_vptr);
-            }
-            /// <inheritdoc cref="GetnMinmaxARB(MinmaxTargetEXT, bool, PixelFormat, PixelType, int, void*)"/>
-            public static unsafe void GetnMinmaxARB<T1>(MinmaxTargetEXT target, bool reset, PixelFormat format, PixelType type, int bufSize, Span<T1> values)
-                where T1 : unmanaged
-            {
-                fixed (void* values_ptr = values)
-                {
-                    GetnMinmaxARB(target, reset, format, type, bufSize, values_ptr);
-                }
-            }
-            /// <inheritdoc cref="GetnMinmaxARB(MinmaxTargetEXT, bool, PixelFormat, PixelType, int, void*)"/>
-            public static unsafe void GetnMinmaxARB<T1>(MinmaxTargetEXT target, bool reset, PixelFormat format, PixelType type, int bufSize, T1[] values)
-                where T1 : unmanaged
-            {
-                fixed (void* values_ptr = values)
-                {
-                    GetnMinmaxARB(target, reset, format, type, bufSize, values_ptr);
-                }
-            }
-            /// <inheritdoc cref="GetnMinmaxARB(MinmaxTargetEXT, bool, PixelFormat, PixelType, int, void*)"/>
-            public static unsafe void GetnMinmaxARB<T1>(MinmaxTargetEXT target, bool reset, PixelFormat format, PixelType type, int bufSize, ref T1 values)
-                where T1 : unmanaged
-            {
-                fixed (void* values_ptr = &values)
-                {
-                    GetnMinmaxARB(target, reset, format, type, bufSize, values_ptr);
-                }
-            }
-            /// <inheritdoc cref="GetnPixelMapfvARB(PixelMap, int, float*)"/>
-            public static unsafe void GetnPixelMapfvARB(PixelMap map, int bufSize, Span<float> values)
-            {
-                fixed (float* values_ptr = values)
-                {
-                    GetnPixelMapfvARB(map, bufSize, values_ptr);
-                }
-            }
-            /// <inheritdoc cref="GetnPixelMapfvARB(PixelMap, int, float*)"/>
-            public static unsafe void GetnPixelMapfvARB(PixelMap map, int bufSize, float[] values)
-            {
-                fixed (float* values_ptr = values)
-                {
-                    GetnPixelMapfvARB(map, bufSize, values_ptr);
-                }
-            }
-            /// <inheritdoc cref="GetnPixelMapfvARB(PixelMap, int, float*)"/>
-            public static unsafe void GetnPixelMapfvARB(PixelMap map, int bufSize, ref float values)
-            {
-                fixed (float* values_ptr = &values)
-                {
-                    GetnPixelMapfvARB(map, bufSize, values_ptr);
-                }
-            }
-            /// <inheritdoc cref="GetnPixelMapuivARB(PixelMap, int, uint*)"/>
-            public static unsafe void GetnPixelMapuivARB(PixelMap map, int bufSize, Span<uint> values)
-            {
-                fixed (uint* values_ptr = values)
-                {
-                    GetnPixelMapuivARB(map, bufSize, values_ptr);
-                }
-            }
-            /// <inheritdoc cref="GetnPixelMapuivARB(PixelMap, int, uint*)"/>
-            public static unsafe void GetnPixelMapuivARB(PixelMap map, int bufSize, uint[] values)
-            {
-                fixed (uint* values_ptr = values)
-                {
-                    GetnPixelMapuivARB(map, bufSize, values_ptr);
-                }
-            }
-            /// <inheritdoc cref="GetnPixelMapuivARB(PixelMap, int, uint*)"/>
-            public static unsafe void GetnPixelMapuivARB(PixelMap map, int bufSize, ref uint values)
-            {
-                fixed (uint* values_ptr = &values)
-                {
-                    GetnPixelMapuivARB(map, bufSize, values_ptr);
-                }
-            }
-            /// <inheritdoc cref="GetnPixelMapusvARB(PixelMap, int, ushort*)"/>
-            public static unsafe void GetnPixelMapusvARB(PixelMap map, int bufSize, Span<ushort> values)
-            {
-                fixed (ushort* values_ptr = values)
-                {
-                    GetnPixelMapusvARB(map, bufSize, values_ptr);
-                }
-            }
-            /// <inheritdoc cref="GetnPixelMapusvARB(PixelMap, int, ushort*)"/>
-            public static unsafe void GetnPixelMapusvARB(PixelMap map, int bufSize, ushort[] values)
-            {
-                fixed (ushort* values_ptr = values)
-                {
-                    GetnPixelMapusvARB(map, bufSize, values_ptr);
-                }
-            }
-            /// <inheritdoc cref="GetnPixelMapusvARB(PixelMap, int, ushort*)"/>
-            public static unsafe void GetnPixelMapusvARB(PixelMap map, int bufSize, ref ushort values)
-            {
-                fixed (ushort* values_ptr = &values)
-                {
-                    GetnPixelMapusvARB(map, bufSize, values_ptr);
-                }
-            }
-            /// <inheritdoc cref="GetnPolygonStippleARB(int, byte*)"/>
-            public static unsafe void GetnPolygonStippleARB(int bufSize, Span<byte> pattern)
-            {
-                fixed (byte* pattern_ptr = pattern)
-                {
-                    GetnPolygonStippleARB(bufSize, pattern_ptr);
-                }
-            }
-            /// <inheritdoc cref="GetnPolygonStippleARB(int, byte*)"/>
-            public static unsafe void GetnPolygonStippleARB(int bufSize, byte[] pattern)
-            {
-                fixed (byte* pattern_ptr = pattern)
-                {
-                    GetnPolygonStippleARB(bufSize, pattern_ptr);
-                }
-            }
-            /// <inheritdoc cref="GetnPolygonStippleARB(int, byte*)"/>
-            public static unsafe void GetnPolygonStippleARB(int bufSize, ref byte pattern)
-            {
-                fixed (byte* pattern_ptr = &pattern)
-                {
-                    GetnPolygonStippleARB(bufSize, pattern_ptr);
-                }
-            }
-            /// <inheritdoc cref="GetnSeparableFilterARB(SeparableTargetEXT, PixelFormat, PixelType, int, void*, int, void*, void*)"/>
-            public static unsafe void GetnSeparableFilterARB(SeparableTargetEXT target, PixelFormat format, PixelType type, int rowBufSize, IntPtr row, int columnBufSize, IntPtr column, IntPtr span)
-            {
-                void* row_vptr = (void*)row;
-                void* column_vptr = (void*)column;
-                void* span_vptr = (void*)span;
-                GetnSeparableFilterARB(target, format, type, rowBufSize, row_vptr, columnBufSize, column_vptr, span_vptr);
-            }
-            /// <inheritdoc cref="GetnSeparableFilterARB(SeparableTargetEXT, PixelFormat, PixelType, int, void*, int, void*, void*)"/>
-            public static unsafe void GetnSeparableFilterARB<T1, T2, T3>(SeparableTargetEXT target, PixelFormat format, PixelType type, int rowBufSize, Span<T1> row, int columnBufSize, Span<T2> column, Span<T3> span)
-                where T1 : unmanaged
-                where T2 : unmanaged
-                where T3 : unmanaged
-            {
-                fixed (void* span_ptr = span)
-                {
-                    fixed (void* column_ptr = column)
-                    {
-                        fixed (void* row_ptr = row)
-                        {
-                            GetnSeparableFilterARB(target, format, type, rowBufSize, row_ptr, columnBufSize, column_ptr, span_ptr);
-                        }
-                    }
-                }
-            }
-            /// <inheritdoc cref="GetnSeparableFilterARB(SeparableTargetEXT, PixelFormat, PixelType, int, void*, int, void*, void*)"/>
-            public static unsafe void GetnSeparableFilterARB<T1, T2, T3>(SeparableTargetEXT target, PixelFormat format, PixelType type, int rowBufSize, T1[] row, int columnBufSize, T2[] column, T3[] span)
-                where T1 : unmanaged
-                where T2 : unmanaged
-                where T3 : unmanaged
-            {
-                fixed (void* span_ptr = span)
-                {
-                    fixed (void* column_ptr = column)
-                    {
-                        fixed (void* row_ptr = row)
-                        {
-                            GetnSeparableFilterARB(target, format, type, rowBufSize, row_ptr, columnBufSize, column_ptr, span_ptr);
-                        }
-                    }
-                }
-            }
-            /// <inheritdoc cref="GetnSeparableFilterARB(SeparableTargetEXT, PixelFormat, PixelType, int, void*, int, void*, void*)"/>
-            public static unsafe void GetnSeparableFilterARB<T1, T2, T3>(SeparableTargetEXT target, PixelFormat format, PixelType type, int rowBufSize, ref T1 row, int columnBufSize, ref T2 column, ref T3 span)
-                where T1 : unmanaged
-                where T2 : unmanaged
-                where T3 : unmanaged
-            {
-                fixed (void* row_ptr = &row)
-                fixed (void* column_ptr = &column)
-                fixed (void* span_ptr = &span)
-                {
-                    GetnSeparableFilterARB(target, format, type, rowBufSize, row_ptr, columnBufSize, column_ptr, span_ptr);
                 }
             }
             /// <inheritdoc cref="GetnTexImageARB(TextureTarget, int, PixelFormat, PixelType, int, void*)"/>
@@ -17421,76 +16389,6 @@ namespace OpenTK.Graphics.OpenGL
                 fixed (int* @params_ptr = &@params)
                 {
                     GetSamplerParameteriv(sampler, pname, @params_ptr);
-                }
-            }
-            /// <inheritdoc cref="GetSeparableFilter(SeparableTargetEXT, PixelFormat, PixelType, void*, void*, void*)"/>
-            public static unsafe void GetSeparableFilter(SeparableTargetEXT target, PixelFormat format, PixelType type, IntPtr row, IntPtr column, IntPtr span)
-            {
-                void* row_vptr = (void*)row;
-                void* column_vptr = (void*)column;
-                void* span_vptr = (void*)span;
-                GetSeparableFilter(target, format, type, row_vptr, column_vptr, span_vptr);
-            }
-            /// <inheritdoc cref="GetSeparableFilter(SeparableTargetEXT, PixelFormat, PixelType, void*, void*, void*)"/>
-            public static unsafe void GetSeparableFilter<T1, T2, T3>(SeparableTargetEXT target, PixelFormat format, PixelType type, Span<T1> row, Span<T2> column, Span<T3> span)
-                where T1 : unmanaged
-                where T2 : unmanaged
-                where T3 : unmanaged
-            {
-                fixed (void* span_ptr = span)
-                {
-                    fixed (void* column_ptr = column)
-                    {
-                        fixed (void* row_ptr = row)
-                        {
-                            GetSeparableFilter(target, format, type, row_ptr, column_ptr, span_ptr);
-                        }
-                    }
-                }
-            }
-            /// <inheritdoc cref="GetSeparableFilter(SeparableTargetEXT, PixelFormat, PixelType, void*, void*, void*)"/>
-            public static unsafe void GetSeparableFilter<T1, T2, T3>(SeparableTargetEXT target, PixelFormat format, PixelType type, T1[] row, T2[] column, T3[] span)
-                where T1 : unmanaged
-                where T2 : unmanaged
-                where T3 : unmanaged
-            {
-                fixed (void* span_ptr = span)
-                {
-                    fixed (void* column_ptr = column)
-                    {
-                        fixed (void* row_ptr = row)
-                        {
-                            GetSeparableFilter(target, format, type, row_ptr, column_ptr, span_ptr);
-                        }
-                    }
-                }
-            }
-            /// <inheritdoc cref="GetSeparableFilter(SeparableTargetEXT, PixelFormat, PixelType, void*, void*, void*)"/>
-            public static unsafe T3 GetSeparableFilter<T1, T2, T3>(SeparableTargetEXT target, PixelFormat format, PixelType type, out T1 row, out T2 column)
-                where T1 : unmanaged
-                where T2 : unmanaged
-                where T3 : unmanaged
-            {
-                T3 span;
-                void* span_ptr = &span;
-                fixed (void* row_ptr = &row)
-                fixed (void* column_ptr = &column)
-                {
-                    GetSeparableFilter(target, format, type, row_ptr, column_ptr, span_ptr);
-                }
-                return span;
-            }
-            /// <inheritdoc cref="GetSeparableFilter(SeparableTargetEXT, PixelFormat, PixelType, void*, void*, void*)"/>
-            public static unsafe void GetSeparableFilter<T1, T2, T3>(SeparableTargetEXT target, PixelFormat format, PixelType type, out T1 row, out T2 column, out T3 span)
-                where T1 : unmanaged
-                where T2 : unmanaged
-                where T3 : unmanaged
-            {
-                fixed (void* row_ptr = &row)
-                fixed (void* column_ptr = &column)
-                fixed (void* span_ptr = &span)
-                {
-                    GetSeparableFilter(target, format, type, row_ptr, column_ptr, span_ptr);
                 }
             }
             /// <inheritdoc cref="GetShaderPrecisionFormat(ShaderType, PrecisionType, int*, int*)"/>
@@ -19107,38 +18005,6 @@ namespace OpenTK.Graphics.OpenGL
                     MultiTexCoord4svARB(target, v_ptr);
                 }
             }
-            /// <inheritdoc cref="MultiTexCoordP1uiv(TextureUnit, TexCoordPointerType, uint*)"/>
-            public static unsafe void MultiTexCoordP1ui(TextureUnit texture, TexCoordPointerType type, ref readonly uint coords)
-            {
-                fixed (uint* coords_ptr = &coords)
-                {
-                    MultiTexCoordP1uiv(texture, type, coords_ptr);
-                }
-            }
-            /// <inheritdoc cref="MultiTexCoordP2uiv(TextureUnit, TexCoordPointerType, uint*)"/>
-            public static unsafe void MultiTexCoordP2ui(TextureUnit texture, TexCoordPointerType type, ref readonly uint coords)
-            {
-                fixed (uint* coords_ptr = &coords)
-                {
-                    MultiTexCoordP2uiv(texture, type, coords_ptr);
-                }
-            }
-            /// <inheritdoc cref="MultiTexCoordP3uiv(TextureUnit, TexCoordPointerType, uint*)"/>
-            public static unsafe void MultiTexCoordP3ui(TextureUnit texture, TexCoordPointerType type, ref readonly uint coords)
-            {
-                fixed (uint* coords_ptr = &coords)
-                {
-                    MultiTexCoordP3uiv(texture, type, coords_ptr);
-                }
-            }
-            /// <inheritdoc cref="MultiTexCoordP4uiv(TextureUnit, TexCoordPointerType, uint*)"/>
-            public static unsafe void MultiTexCoordP4ui(TextureUnit texture, TexCoordPointerType type, ref readonly uint coords)
-            {
-                fixed (uint* coords_ptr = &coords)
-                {
-                    MultiTexCoordP4uiv(texture, type, coords_ptr);
-                }
-            }
             /// <inheritdoc cref="MultTransposeMatrixdARB(double*)"/>
             public static unsafe void MultTransposeMatrixdARB(ReadOnlySpan<double> m)
             {
@@ -19342,14 +18208,6 @@ namespace OpenTK.Graphics.OpenGL
                 NamedStringARB(type, namelen, name_ptr, stringlen, @string_ptr);
                 Marshal.FreeCoTaskMem((IntPtr)@string_ptr);
                 Marshal.FreeCoTaskMem((IntPtr)name_ptr);
-            }
-            /// <inheritdoc cref="NormalP3uiv(NormalPointerType, uint*)"/>
-            public static unsafe void NormalP3ui(NormalPointerType type, ref readonly uint coords)
-            {
-                fixed (uint* coords_ptr = &coords)
-                {
-                    NormalP3uiv(type, coords_ptr);
-                }
             }
             /// <inheritdoc cref="PatchParameterfv(PatchParameterName, float*)"/>
             public static unsafe void PatchParameterf(PatchParameterName pname, ReadOnlySpan<float> values)
@@ -21085,58 +19943,6 @@ namespace OpenTK.Graphics.OpenGL
                     ScissorIndexedv(index, v_ptr);
                 }
             }
-            /// <inheritdoc cref="SecondaryColorP3uiv(ColorPointerType, uint*)"/>
-            public static unsafe void SecondaryColorP3ui(ColorPointerType type, ref readonly uint color)
-            {
-                fixed (uint* color_ptr = &color)
-                {
-                    SecondaryColorP3uiv(type, color_ptr);
-                }
-            }
-            /// <inheritdoc cref="SeparableFilter2D(SeparableTargetEXT, InternalFormat, int, int, PixelFormat, PixelType, void*, void*)"/>
-            public static unsafe void SeparableFilter2D(SeparableTargetEXT target, InternalFormat internalformat, int width, int height, PixelFormat format, PixelType type, IntPtr row, IntPtr column)
-            {
-                void* row_vptr = (void*)row;
-                void* column_vptr = (void*)column;
-                SeparableFilter2D(target, internalformat, width, height, format, type, row_vptr, column_vptr);
-            }
-            /// <inheritdoc cref="SeparableFilter2D(SeparableTargetEXT, InternalFormat, int, int, PixelFormat, PixelType, void*, void*)"/>
-            public static unsafe void SeparableFilter2D<T1, T2>(SeparableTargetEXT target, InternalFormat internalformat, int width, int height, PixelFormat format, PixelType type, ReadOnlySpan<T1> row, ReadOnlySpan<T2> column)
-                where T1 : unmanaged
-                where T2 : unmanaged
-            {
-                fixed (void* column_ptr = column)
-                {
-                    fixed (void* row_ptr = row)
-                    {
-                        SeparableFilter2D(target, internalformat, width, height, format, type, row_ptr, column_ptr);
-                    }
-                }
-            }
-            /// <inheritdoc cref="SeparableFilter2D(SeparableTargetEXT, InternalFormat, int, int, PixelFormat, PixelType, void*, void*)"/>
-            public static unsafe void SeparableFilter2D<T1, T2>(SeparableTargetEXT target, InternalFormat internalformat, int width, int height, PixelFormat format, PixelType type, T1[] row, T2[] column)
-                where T1 : unmanaged
-                where T2 : unmanaged
-            {
-                fixed (void* column_ptr = column)
-                {
-                    fixed (void* row_ptr = row)
-                    {
-                        SeparableFilter2D(target, internalformat, width, height, format, type, row_ptr, column_ptr);
-                    }
-                }
-            }
-            /// <inheritdoc cref="SeparableFilter2D(SeparableTargetEXT, InternalFormat, int, int, PixelFormat, PixelType, void*, void*)"/>
-            public static unsafe void SeparableFilter2D<T1, T2>(SeparableTargetEXT target, InternalFormat internalformat, int width, int height, PixelFormat format, PixelType type, ref readonly T1 row, ref readonly T2 column)
-                where T1 : unmanaged
-                where T2 : unmanaged
-            {
-                fixed (void* row_ptr = &row)
-                fixed (void* column_ptr = &column)
-                {
-                    SeparableFilter2D(target, internalformat, width, height, format, type, row_ptr, column_ptr);
-                }
-            }
             /// <inheritdoc cref="ShaderBinary(int, int*, ShaderBinaryFormat, void*, int)"/>
             public static unsafe void ShaderBinary(int count, ReadOnlySpan<int> shaders, ShaderBinaryFormat binaryFormat, IntPtr binary, int length)
             {
@@ -21263,38 +20069,6 @@ namespace OpenTK.Graphics.OpenGL
                     byte* pEntryPoint_ptr = (byte*)Marshal.StringToCoTaskMemUTF8(pEntryPoint);
                     SpecializeShaderARB(shader, pEntryPoint_ptr, numSpecializationConstants, pConstantIndex_ptr, pConstantValue_ptr);
                     Marshal.FreeCoTaskMem((IntPtr)pEntryPoint_ptr);
-                }
-            }
-            /// <inheritdoc cref="TexCoordP1uiv(TexCoordPointerType, uint*)"/>
-            public static unsafe void TexCoordP1ui(TexCoordPointerType type, ref readonly uint coords)
-            {
-                fixed (uint* coords_ptr = &coords)
-                {
-                    TexCoordP1uiv(type, coords_ptr);
-                }
-            }
-            /// <inheritdoc cref="TexCoordP2uiv(TexCoordPointerType, uint*)"/>
-            public static unsafe void TexCoordP2ui(TexCoordPointerType type, ref readonly uint coords)
-            {
-                fixed (uint* coords_ptr = &coords)
-                {
-                    TexCoordP2uiv(type, coords_ptr);
-                }
-            }
-            /// <inheritdoc cref="TexCoordP3uiv(TexCoordPointerType, uint*)"/>
-            public static unsafe void TexCoordP3ui(TexCoordPointerType type, ref readonly uint coords)
-            {
-                fixed (uint* coords_ptr = &coords)
-                {
-                    TexCoordP3uiv(type, coords_ptr);
-                }
-            }
-            /// <inheritdoc cref="TexCoordP4uiv(TexCoordPointerType, uint*)"/>
-            public static unsafe void TexCoordP4ui(TexCoordPointerType type, ref readonly uint coords)
-            {
-                fixed (uint* coords_ptr = &coords)
-                {
-                    TexCoordP4uiv(type, coords_ptr);
                 }
             }
             /// <inheritdoc cref="TextureParameterfv(int, TextureParameterName, float*)"/>
@@ -23345,30 +22119,6 @@ namespace OpenTK.Graphics.OpenGL
                 fixed (void* pointer_ptr = &pointer)
                 {
                     VertexAttribPointerARB(index, size, type, normalized, stride, pointer_ptr);
-                }
-            }
-            /// <inheritdoc cref="VertexP2uiv(VertexPointerType, uint*)"/>
-            public static unsafe void VertexP2ui(VertexPointerType type, ref readonly uint value)
-            {
-                fixed (uint* value_ptr = &value)
-                {
-                    VertexP2uiv(type, value_ptr);
-                }
-            }
-            /// <inheritdoc cref="VertexP3uiv(VertexPointerType, uint*)"/>
-            public static unsafe void VertexP3ui(VertexPointerType type, ref readonly uint value)
-            {
-                fixed (uint* value_ptr = &value)
-                {
-                    VertexP3uiv(type, value_ptr);
-                }
-            }
-            /// <inheritdoc cref="VertexP4uiv(VertexPointerType, uint*)"/>
-            public static unsafe void VertexP4ui(VertexPointerType type, ref readonly uint value)
-            {
-                fixed (uint* value_ptr = &value)
-                {
-                    VertexP4uiv(type, value_ptr);
                 }
             }
             /// <inheritdoc cref="ViewportArrayv(uint, int, float*)"/>
@@ -25667,15 +24417,6 @@ namespace OpenTK.Graphics.OpenGL
                 Marshal.FreeCoTaskMem((IntPtr)@string_ptr);
                 return returnValue;
             }
-            /// <inheritdoc cref="CreateShaderProgramvEXT(ShaderType, int, byte**)"/>
-            public static unsafe int CreateShaderProgramvEXT(ShaderType type, int count, string[] strings)
-            {
-                int returnValue;
-                byte** strings_ptr = (byte**)MarshalTk.StringArrayToCoTaskMemUTF8(strings);
-                returnValue = CreateShaderProgramvEXT(type, count, strings_ptr);
-                MarshalTk.FreeStringArrayCoTaskMem((IntPtr)strings_ptr, strings.Length);
-                return returnValue;
-            }
             /// <inheritdoc cref="CullParameterdvEXT(CullParameterEXT, double*)"/>
             public static unsafe void CullParameterdvEXT(CullParameterEXT pname, Span<double> @params)
             {
@@ -25770,30 +24511,6 @@ namespace OpenTK.Graphics.OpenGL
                 fixed (uint* memoryObjects_ptr = &memoryObjects)
                 {
                     DeleteMemoryObjectsEXT(n, memoryObjects_ptr);
-                }
-            }
-            /// <inheritdoc cref="DeleteProgramPipelinesEXT(int, int*)"/>
-            public static unsafe void DeleteProgramPipelinesEXT(int n, ReadOnlySpan<int> pipelines)
-            {
-                fixed (int* pipelines_ptr = pipelines)
-                {
-                    DeleteProgramPipelinesEXT(n, pipelines_ptr);
-                }
-            }
-            /// <inheritdoc cref="DeleteProgramPipelinesEXT(int, int*)"/>
-            public static unsafe void DeleteProgramPipelinesEXT(int n, int[] pipelines)
-            {
-                fixed (int* pipelines_ptr = pipelines)
-                {
-                    DeleteProgramPipelinesEXT(n, pipelines_ptr);
-                }
-            }
-            /// <inheritdoc cref="DeleteProgramPipelinesEXT(int, int*)"/>
-            public static unsafe void DeleteProgramPipelinesEXT(int n, ref readonly int pipelines)
-            {
-                fixed (int* pipelines_ptr = &pipelines)
-                {
-                    DeleteProgramPipelinesEXT(n, pipelines_ptr);
                 }
             }
             /// <inheritdoc cref="DeleteRenderbuffersEXT(int, int*)"/>
@@ -26121,30 +24838,6 @@ namespace OpenTK.Graphics.OpenGL
                 fixed (int* framebuffers_ptr = &framebuffers)
                 {
                     GenFramebuffersEXT(n, framebuffers_ptr);
-                }
-            }
-            /// <inheritdoc cref="GenProgramPipelinesEXT(int, int*)"/>
-            public static unsafe void GenProgramPipelinesEXT(int n, Span<int> pipelines)
-            {
-                fixed (int* pipelines_ptr = pipelines)
-                {
-                    GenProgramPipelinesEXT(n, pipelines_ptr);
-                }
-            }
-            /// <inheritdoc cref="GenProgramPipelinesEXT(int, int*)"/>
-            public static unsafe void GenProgramPipelinesEXT(int n, int[] pipelines)
-            {
-                fixed (int* pipelines_ptr = pipelines)
-                {
-                    GenProgramPipelinesEXT(n, pipelines_ptr);
-                }
-            }
-            /// <inheritdoc cref="GenProgramPipelinesEXT(int, int*)"/>
-            public static unsafe void GenProgramPipelinesEXT(int n, ref int pipelines)
-            {
-                fixed (int* pipelines_ptr = &pipelines)
-                {
-                    GenProgramPipelinesEXT(n, pipelines_ptr);
                 }
             }
             /// <inheritdoc cref="GenRenderbuffersEXT(int, int*)"/>
@@ -28110,54 +26803,6 @@ namespace OpenTK.Graphics.OpenGL
                 fixed (int* @params_ptr = &@params)
                 {
                     GetPixelTransformParameterivEXT(target, pname, @params_ptr);
-                }
-            }
-            /// <inheritdoc cref="GetProgramPipelineInfoLogEXT(int, int, int*, byte*)"/>
-            public static unsafe string GetProgramPipelineInfoLogEXT(int pipeline, int bufSize, out int length)
-            {
-                string infoLog;
-                fixed (int* length_ptr = &length)
-                {
-                    var infoLog_ptr = (byte*)Marshal.AllocCoTaskMem(bufSize);
-                    GetProgramPipelineInfoLogEXT(pipeline, bufSize, length_ptr, infoLog_ptr);
-                    infoLog = Marshal.PtrToStringUTF8((IntPtr)infoLog_ptr)!;
-                    Marshal.FreeCoTaskMem((IntPtr)infoLog_ptr);
-                }
-                return infoLog;
-            }
-            /// <inheritdoc cref="GetProgramPipelineInfoLogEXT(int, int, int*, byte*)"/>
-            public static unsafe void GetProgramPipelineInfoLogEXT(int pipeline, int bufSize, out int length, out string infoLog)
-            {
-                fixed (int* length_ptr = &length)
-                {
-                    var infoLog_ptr = (byte*)Marshal.AllocCoTaskMem(bufSize);
-                    GetProgramPipelineInfoLogEXT(pipeline, bufSize, length_ptr, infoLog_ptr);
-                    infoLog = Marshal.PtrToStringUTF8((IntPtr)infoLog_ptr)!;
-                    Marshal.FreeCoTaskMem((IntPtr)infoLog_ptr);
-                }
-            }
-            /// <inheritdoc cref="GetProgramPipelineivEXT(int, PipelineParameterName, int*)"/>
-            public static unsafe void GetProgramPipelineivEXT(int pipeline, PipelineParameterName pname, Span<int> @params)
-            {
-                fixed (int* @params_ptr = @params)
-                {
-                    GetProgramPipelineivEXT(pipeline, pname, @params_ptr);
-                }
-            }
-            /// <inheritdoc cref="GetProgramPipelineivEXT(int, PipelineParameterName, int*)"/>
-            public static unsafe void GetProgramPipelineivEXT(int pipeline, PipelineParameterName pname, int[] @params)
-            {
-                fixed (int* @params_ptr = @params)
-                {
-                    GetProgramPipelineivEXT(pipeline, pname, @params_ptr);
-                }
-            }
-            /// <inheritdoc cref="GetProgramPipelineivEXT(int, PipelineParameterName, int*)"/>
-            public static unsafe void GetProgramPipelineivEXT(int pipeline, PipelineParameterName pname, ref int @params)
-            {
-                fixed (int* @params_ptr = &@params)
-                {
-                    GetProgramPipelineivEXT(pipeline, pname, @params_ptr);
                 }
             }
             /// <inheritdoc cref="GetQueryObjecti64vEXT(int, QueryObjectParameterName, long*)"/>
@@ -33877,43 +32522,6 @@ namespace OpenTK.Graphics.OpenGL
                     DebugMessageCallback(callback_ptr, userParam_ptr);
                 }
             }
-            /// <inheritdoc cref="DebugMessageCallbackKHR(IntPtr, void*)"/>
-            public static unsafe void DebugMessageCallbackKHR(GLDebugProcKHR callback, IntPtr userParam)
-            {
-                void* userParam_vptr = (void*)userParam;
-                IntPtr callback_ptr = Marshal.GetFunctionPointerForDelegate(callback);
-                DebugMessageCallbackKHR(callback_ptr, userParam_vptr);
-            }
-            /// <inheritdoc cref="DebugMessageCallbackKHR(IntPtr, void*)"/>
-            public static unsafe void DebugMessageCallbackKHR<T1>(GLDebugProcKHR callback, ReadOnlySpan<T1> userParam)
-                where T1 : unmanaged
-            {
-                fixed (void* userParam_ptr = userParam)
-                {
-                    IntPtr callback_ptr = Marshal.GetFunctionPointerForDelegate(callback);
-                    DebugMessageCallbackKHR(callback_ptr, userParam_ptr);
-                }
-            }
-            /// <inheritdoc cref="DebugMessageCallbackKHR(IntPtr, void*)"/>
-            public static unsafe void DebugMessageCallbackKHR<T1>(GLDebugProcKHR callback, T1[] userParam)
-                where T1 : unmanaged
-            {
-                fixed (void* userParam_ptr = userParam)
-                {
-                    IntPtr callback_ptr = Marshal.GetFunctionPointerForDelegate(callback);
-                    DebugMessageCallbackKHR(callback_ptr, userParam_ptr);
-                }
-            }
-            /// <inheritdoc cref="DebugMessageCallbackKHR(IntPtr, void*)"/>
-            public static unsafe void DebugMessageCallbackKHR<T1>(GLDebugProcKHR callback, ref readonly T1 userParam)
-                where T1 : unmanaged
-            {
-                fixed (void* userParam_ptr = &userParam)
-                {
-                    IntPtr callback_ptr = Marshal.GetFunctionPointerForDelegate(callback);
-                    DebugMessageCallbackKHR(callback_ptr, userParam_ptr);
-                }
-            }
             /// <inheritdoc cref="DebugMessageControl(DebugSource, DebugType, DebugSeverity, int, uint*, bool)"/>
             public static unsafe void DebugMessageControl(DebugSource source, DebugType type, DebugSeverity severity, int count, ReadOnlySpan<uint> ids, bool enabled)
             {
@@ -33938,42 +32546,11 @@ namespace OpenTK.Graphics.OpenGL
                     DebugMessageControl(source, type, severity, count, ids_ptr, enabled);
                 }
             }
-            /// <inheritdoc cref="DebugMessageControlKHR(DebugSource, DebugType, DebugSeverity, int, uint*, bool)"/>
-            public static unsafe void DebugMessageControlKHR(DebugSource source, DebugType type, DebugSeverity severity, int count, ReadOnlySpan<uint> ids, bool enabled)
-            {
-                fixed (uint* ids_ptr = ids)
-                {
-                    DebugMessageControlKHR(source, type, severity, count, ids_ptr, enabled);
-                }
-            }
-            /// <inheritdoc cref="DebugMessageControlKHR(DebugSource, DebugType, DebugSeverity, int, uint*, bool)"/>
-            public static unsafe void DebugMessageControlKHR(DebugSource source, DebugType type, DebugSeverity severity, int count, uint[] ids, bool enabled)
-            {
-                fixed (uint* ids_ptr = ids)
-                {
-                    DebugMessageControlKHR(source, type, severity, count, ids_ptr, enabled);
-                }
-            }
-            /// <inheritdoc cref="DebugMessageControlKHR(DebugSource, DebugType, DebugSeverity, int, uint*, bool)"/>
-            public static unsafe void DebugMessageControlKHR(DebugSource source, DebugType type, DebugSeverity severity, int count, ref readonly uint ids, bool enabled)
-            {
-                fixed (uint* ids_ptr = &ids)
-                {
-                    DebugMessageControlKHR(source, type, severity, count, ids_ptr, enabled);
-                }
-            }
             /// <inheritdoc cref="DebugMessageInsert(DebugSource, DebugType, uint, DebugSeverity, int, byte*)"/>
             public static unsafe void DebugMessageInsert(DebugSource source, DebugType type, uint id, DebugSeverity severity, int length, string buf)
             {
                 byte* buf_ptr = (byte*)Marshal.StringToCoTaskMemUTF8(buf);
                 DebugMessageInsert(source, type, id, severity, length, buf_ptr);
-                Marshal.FreeCoTaskMem((IntPtr)buf_ptr);
-            }
-            /// <inheritdoc cref="DebugMessageInsertKHR(DebugSource, DebugType, uint, DebugSeverity, int, byte*)"/>
-            public static unsafe void DebugMessageInsertKHR(DebugSource source, DebugType type, uint id, DebugSeverity severity, int length, string buf)
-            {
-                byte* buf_ptr = (byte*)Marshal.StringToCoTaskMemUTF8(buf);
-                DebugMessageInsertKHR(source, type, id, severity, length, buf_ptr);
                 Marshal.FreeCoTaskMem((IntPtr)buf_ptr);
             }
             /// <inheritdoc cref="GetDebugMessageLog(uint, int, DebugSource*, DebugType*, uint*, DebugSeverity*, int*, byte*)"/>
@@ -34043,73 +32620,6 @@ namespace OpenTK.Graphics.OpenGL
                 }
                 return returnValue;
             }
-            /// <inheritdoc cref="GetDebugMessageLogKHR(uint, int, DebugSource*, DebugType*, uint*, DebugSeverity*, int*, byte*)"/>
-            public static unsafe uint GetDebugMessageLogKHR(uint count, int bufSize, Span<DebugSource> sources, Span<DebugType> types, Span<uint> ids, Span<DebugSeverity> severities, Span<int> lengths, out string messageLog)
-            {
-                uint returnValue;
-                fixed (int* lengths_ptr = lengths)
-                {
-                    fixed (DebugSeverity* severities_ptr = severities)
-                    {
-                        fixed (uint* ids_ptr = ids)
-                        {
-                            fixed (DebugType* types_ptr = types)
-                            {
-                                fixed (DebugSource* sources_ptr = sources)
-                                {
-                                    var messageLog_ptr = (byte*)Marshal.AllocCoTaskMem(bufSize);
-                                    returnValue = GetDebugMessageLogKHR(count, bufSize, sources_ptr, types_ptr, ids_ptr, severities_ptr, lengths_ptr, messageLog_ptr);
-                                    messageLog = Marshal.PtrToStringUTF8((IntPtr)messageLog_ptr)!;
-                                    Marshal.FreeCoTaskMem((IntPtr)messageLog_ptr);
-                                }
-                            }
-                        }
-                    }
-                }
-                return returnValue;
-            }
-            /// <inheritdoc cref="GetDebugMessageLogKHR(uint, int, DebugSource*, DebugType*, uint*, DebugSeverity*, int*, byte*)"/>
-            public static unsafe uint GetDebugMessageLogKHR(uint count, int bufSize, DebugSource[] sources, DebugType[] types, uint[] ids, DebugSeverity[] severities, int[] lengths, out string messageLog)
-            {
-                uint returnValue;
-                fixed (int* lengths_ptr = lengths)
-                {
-                    fixed (DebugSeverity* severities_ptr = severities)
-                    {
-                        fixed (uint* ids_ptr = ids)
-                        {
-                            fixed (DebugType* types_ptr = types)
-                            {
-                                fixed (DebugSource* sources_ptr = sources)
-                                {
-                                    var messageLog_ptr = (byte*)Marshal.AllocCoTaskMem(bufSize);
-                                    returnValue = GetDebugMessageLogKHR(count, bufSize, sources_ptr, types_ptr, ids_ptr, severities_ptr, lengths_ptr, messageLog_ptr);
-                                    messageLog = Marshal.PtrToStringUTF8((IntPtr)messageLog_ptr)!;
-                                    Marshal.FreeCoTaskMem((IntPtr)messageLog_ptr);
-                                }
-                            }
-                        }
-                    }
-                }
-                return returnValue;
-            }
-            /// <inheritdoc cref="GetDebugMessageLogKHR(uint, int, DebugSource*, DebugType*, uint*, DebugSeverity*, int*, byte*)"/>
-            public static unsafe uint GetDebugMessageLogKHR(uint count, int bufSize, ref DebugSource sources, ref DebugType types, ref uint ids, ref DebugSeverity severities, ref int lengths, out string messageLog)
-            {
-                uint returnValue;
-                fixed (DebugSource* sources_ptr = &sources)
-                fixed (DebugType* types_ptr = &types)
-                fixed (uint* ids_ptr = &ids)
-                fixed (DebugSeverity* severities_ptr = &severities)
-                fixed (int* lengths_ptr = &lengths)
-                {
-                    var messageLog_ptr = (byte*)Marshal.AllocCoTaskMem(bufSize);
-                    returnValue = GetDebugMessageLogKHR(count, bufSize, sources_ptr, types_ptr, ids_ptr, severities_ptr, lengths_ptr, messageLog_ptr);
-                    messageLog = Marshal.PtrToStringUTF8((IntPtr)messageLog_ptr)!;
-                    Marshal.FreeCoTaskMem((IntPtr)messageLog_ptr);
-                }
-                return returnValue;
-            }
             /// <inheritdoc cref="GetnUniformfv(int, int, int, float*)"/>
             public static unsafe void GetnUniformf(int program, int location, int bufSize, Span<float> @params)
             {
@@ -34132,30 +32642,6 @@ namespace OpenTK.Graphics.OpenGL
                 fixed (float* @params_ptr = &@params)
                 {
                     GetnUniformfv(program, location, bufSize, @params_ptr);
-                }
-            }
-            /// <inheritdoc cref="GetnUniformfvKHR(int, int, int, float*)"/>
-            public static unsafe void GetnUniformfvKHR(int program, int location, int bufSize, Span<float> @params)
-            {
-                fixed (float* @params_ptr = @params)
-                {
-                    GetnUniformfvKHR(program, location, bufSize, @params_ptr);
-                }
-            }
-            /// <inheritdoc cref="GetnUniformfvKHR(int, int, int, float*)"/>
-            public static unsafe void GetnUniformfvKHR(int program, int location, int bufSize, float[] @params)
-            {
-                fixed (float* @params_ptr = @params)
-                {
-                    GetnUniformfvKHR(program, location, bufSize, @params_ptr);
-                }
-            }
-            /// <inheritdoc cref="GetnUniformfvKHR(int, int, int, float*)"/>
-            public static unsafe void GetnUniformfvKHR(int program, int location, int bufSize, ref float @params)
-            {
-                fixed (float* @params_ptr = &@params)
-                {
-                    GetnUniformfvKHR(program, location, bufSize, @params_ptr);
                 }
             }
             /// <inheritdoc cref="GetnUniformiv(int, int, int, int*)"/>
@@ -34182,30 +32668,6 @@ namespace OpenTK.Graphics.OpenGL
                     GetnUniformiv(program, location, bufSize, @params_ptr);
                 }
             }
-            /// <inheritdoc cref="GetnUniformivKHR(int, int, int, int*)"/>
-            public static unsafe void GetnUniformivKHR(int program, int location, int bufSize, Span<int> @params)
-            {
-                fixed (int* @params_ptr = @params)
-                {
-                    GetnUniformivKHR(program, location, bufSize, @params_ptr);
-                }
-            }
-            /// <inheritdoc cref="GetnUniformivKHR(int, int, int, int*)"/>
-            public static unsafe void GetnUniformivKHR(int program, int location, int bufSize, int[] @params)
-            {
-                fixed (int* @params_ptr = @params)
-                {
-                    GetnUniformivKHR(program, location, bufSize, @params_ptr);
-                }
-            }
-            /// <inheritdoc cref="GetnUniformivKHR(int, int, int, int*)"/>
-            public static unsafe void GetnUniformivKHR(int program, int location, int bufSize, ref int @params)
-            {
-                fixed (int* @params_ptr = &@params)
-                {
-                    GetnUniformivKHR(program, location, bufSize, @params_ptr);
-                }
-            }
             /// <inheritdoc cref="GetnUniformuiv(int, int, int, uint*)"/>
             public static unsafe void GetnUniformui(int program, int location, int bufSize, Span<uint> @params)
             {
@@ -34230,30 +32692,6 @@ namespace OpenTK.Graphics.OpenGL
                     GetnUniformuiv(program, location, bufSize, @params_ptr);
                 }
             }
-            /// <inheritdoc cref="GetnUniformuivKHR(int, int, int, uint*)"/>
-            public static unsafe void GetnUniformuivKHR(int program, int location, int bufSize, Span<uint> @params)
-            {
-                fixed (uint* @params_ptr = @params)
-                {
-                    GetnUniformuivKHR(program, location, bufSize, @params_ptr);
-                }
-            }
-            /// <inheritdoc cref="GetnUniformuivKHR(int, int, int, uint*)"/>
-            public static unsafe void GetnUniformuivKHR(int program, int location, int bufSize, uint[] @params)
-            {
-                fixed (uint* @params_ptr = @params)
-                {
-                    GetnUniformuivKHR(program, location, bufSize, @params_ptr);
-                }
-            }
-            /// <inheritdoc cref="GetnUniformuivKHR(int, int, int, uint*)"/>
-            public static unsafe void GetnUniformuivKHR(int program, int location, int bufSize, ref uint @params)
-            {
-                fixed (uint* @params_ptr = &@params)
-                {
-                    GetnUniformuivKHR(program, location, bufSize, @params_ptr);
-                }
-            }
             /// <inheritdoc cref="GetObjectLabel(ObjectIdentifier, uint, int, int*, byte*)"/>
             public static unsafe string GetObjectLabel(ObjectIdentifier identifier, uint name, int bufSize, out int length)
             {
@@ -34274,30 +32712,6 @@ namespace OpenTK.Graphics.OpenGL
                 {
                     var label_ptr = (byte*)Marshal.AllocCoTaskMem(bufSize);
                     GetObjectLabel(identifier, name, bufSize, length_ptr, label_ptr);
-                    label = Marshal.PtrToStringUTF8((IntPtr)label_ptr)!;
-                    Marshal.FreeCoTaskMem((IntPtr)label_ptr);
-                }
-            }
-            /// <inheritdoc cref="GetObjectLabelKHR(All, uint, int, int*, byte*)"/>
-            public static unsafe string GetObjectLabelKHR(All identifier, uint name, int bufSize, out int length)
-            {
-                string label;
-                fixed (int* length_ptr = &length)
-                {
-                    var label_ptr = (byte*)Marshal.AllocCoTaskMem(bufSize);
-                    GetObjectLabelKHR(identifier, name, bufSize, length_ptr, label_ptr);
-                    label = Marshal.PtrToStringUTF8((IntPtr)label_ptr)!;
-                    Marshal.FreeCoTaskMem((IntPtr)label_ptr);
-                }
-                return label;
-            }
-            /// <inheritdoc cref="GetObjectLabelKHR(All, uint, int, int*, byte*)"/>
-            public static unsafe void GetObjectLabelKHR(All identifier, uint name, int bufSize, out int length, out string label)
-            {
-                fixed (int* length_ptr = &length)
-                {
-                    var label_ptr = (byte*)Marshal.AllocCoTaskMem(bufSize);
-                    GetObjectLabelKHR(identifier, name, bufSize, length_ptr, label_ptr);
                     label = Marshal.PtrToStringUTF8((IntPtr)label_ptr)!;
                     Marshal.FreeCoTaskMem((IntPtr)label_ptr);
                 }
@@ -34420,124 +32834,6 @@ namespace OpenTK.Graphics.OpenGL
                     Marshal.FreeCoTaskMem((IntPtr)label_ptr);
                 }
             }
-            /// <inheritdoc cref="GetObjectPtrLabelKHR(void*, int, int*, byte*)"/>
-            public static unsafe string GetObjectPtrLabelKHR(IntPtr ptr, int bufSize, out int length)
-            {
-                string label;
-                fixed (int* length_ptr = &length)
-                {
-                    var label_ptr = (byte*)Marshal.AllocCoTaskMem(bufSize);
-                    void* ptr_vptr = (void*)ptr;
-                    GetObjectPtrLabelKHR(ptr_vptr, bufSize, length_ptr, label_ptr);
-                    label = Marshal.PtrToStringUTF8((IntPtr)label_ptr)!;
-                    Marshal.FreeCoTaskMem((IntPtr)label_ptr);
-                }
-                return label;
-            }
-            /// <inheritdoc cref="GetObjectPtrLabelKHR(void*, int, int*, byte*)"/>
-            public static unsafe void GetObjectPtrLabelKHR(IntPtr ptr, int bufSize, out int length, out string label)
-            {
-                fixed (int* length_ptr = &length)
-                {
-                    var label_ptr = (byte*)Marshal.AllocCoTaskMem(bufSize);
-                    void* ptr_vptr = (void*)ptr;
-                    GetObjectPtrLabelKHR(ptr_vptr, bufSize, length_ptr, label_ptr);
-                    label = Marshal.PtrToStringUTF8((IntPtr)label_ptr)!;
-                    Marshal.FreeCoTaskMem((IntPtr)label_ptr);
-                }
-            }
-            /// <inheritdoc cref="GetObjectPtrLabelKHR(void*, int, int*, byte*)"/>
-            public static unsafe string GetObjectPtrLabelKHR<T1>(ReadOnlySpan<T1> ptr, int bufSize, out int length)
-                where T1 : unmanaged
-            {
-                string label;
-                fixed (int* length_ptr = &length)
-                {
-                    fixed (void* ptr_ptr = ptr)
-                    {
-                        var label_ptr = (byte*)Marshal.AllocCoTaskMem(bufSize);
-                        GetObjectPtrLabelKHR(ptr_ptr, bufSize, length_ptr, label_ptr);
-                        label = Marshal.PtrToStringUTF8((IntPtr)label_ptr)!;
-                        Marshal.FreeCoTaskMem((IntPtr)label_ptr);
-                    }
-                }
-                return label;
-            }
-            /// <inheritdoc cref="GetObjectPtrLabelKHR(void*, int, int*, byte*)"/>
-            public static unsafe void GetObjectPtrLabelKHR<T1>(ReadOnlySpan<T1> ptr, int bufSize, out int length, out string label)
-                where T1 : unmanaged
-            {
-                fixed (int* length_ptr = &length)
-                {
-                    fixed (void* ptr_ptr = ptr)
-                    {
-                        var label_ptr = (byte*)Marshal.AllocCoTaskMem(bufSize);
-                        GetObjectPtrLabelKHR(ptr_ptr, bufSize, length_ptr, label_ptr);
-                        label = Marshal.PtrToStringUTF8((IntPtr)label_ptr)!;
-                        Marshal.FreeCoTaskMem((IntPtr)label_ptr);
-                    }
-                }
-            }
-            /// <inheritdoc cref="GetObjectPtrLabelKHR(void*, int, int*, byte*)"/>
-            public static unsafe string GetObjectPtrLabelKHR<T1>(T1[] ptr, int bufSize, out int length)
-                where T1 : unmanaged
-            {
-                string label;
-                fixed (int* length_ptr = &length)
-                {
-                    fixed (void* ptr_ptr = ptr)
-                    {
-                        var label_ptr = (byte*)Marshal.AllocCoTaskMem(bufSize);
-                        GetObjectPtrLabelKHR(ptr_ptr, bufSize, length_ptr, label_ptr);
-                        label = Marshal.PtrToStringUTF8((IntPtr)label_ptr)!;
-                        Marshal.FreeCoTaskMem((IntPtr)label_ptr);
-                    }
-                }
-                return label;
-            }
-            /// <inheritdoc cref="GetObjectPtrLabelKHR(void*, int, int*, byte*)"/>
-            public static unsafe void GetObjectPtrLabelKHR<T1>(T1[] ptr, int bufSize, out int length, out string label)
-                where T1 : unmanaged
-            {
-                fixed (int* length_ptr = &length)
-                {
-                    fixed (void* ptr_ptr = ptr)
-                    {
-                        var label_ptr = (byte*)Marshal.AllocCoTaskMem(bufSize);
-                        GetObjectPtrLabelKHR(ptr_ptr, bufSize, length_ptr, label_ptr);
-                        label = Marshal.PtrToStringUTF8((IntPtr)label_ptr)!;
-                        Marshal.FreeCoTaskMem((IntPtr)label_ptr);
-                    }
-                }
-            }
-            /// <inheritdoc cref="GetObjectPtrLabelKHR(void*, int, int*, byte*)"/>
-            public static unsafe string GetObjectPtrLabelKHR<T1>(ref readonly T1 ptr, int bufSize, out int length)
-                where T1 : unmanaged
-            {
-                string label;
-                fixed (void* ptr_ptr = &ptr)
-                fixed (int* length_ptr = &length)
-                {
-                    var label_ptr = (byte*)Marshal.AllocCoTaskMem(bufSize);
-                    GetObjectPtrLabelKHR(ptr_ptr, bufSize, length_ptr, label_ptr);
-                    label = Marshal.PtrToStringUTF8((IntPtr)label_ptr)!;
-                    Marshal.FreeCoTaskMem((IntPtr)label_ptr);
-                }
-                return label;
-            }
-            /// <inheritdoc cref="GetObjectPtrLabelKHR(void*, int, int*, byte*)"/>
-            public static unsafe void GetObjectPtrLabelKHR<T1>(ref readonly T1 ptr, int bufSize, out int length, out string label)
-                where T1 : unmanaged
-            {
-                fixed (void* ptr_ptr = &ptr)
-                fixed (int* length_ptr = &length)
-                {
-                    var label_ptr = (byte*)Marshal.AllocCoTaskMem(bufSize);
-                    GetObjectPtrLabelKHR(ptr_ptr, bufSize, length_ptr, label_ptr);
-                    label = Marshal.PtrToStringUTF8((IntPtr)label_ptr)!;
-                    Marshal.FreeCoTaskMem((IntPtr)label_ptr);
-                }
-            }
             /// <inheritdoc cref="GetPointerv(GetPointervPName, void**)"/>
             public static unsafe void GetPointer(GetPointervPName pname, void** @params)
             {
@@ -34548,13 +32844,6 @@ namespace OpenTK.Graphics.OpenGL
             {
                 byte* label_ptr = (byte*)Marshal.StringToCoTaskMemUTF8(label);
                 ObjectLabel(identifier, name, length, label_ptr);
-                Marshal.FreeCoTaskMem((IntPtr)label_ptr);
-            }
-            /// <inheritdoc cref="ObjectLabelKHR(ObjectIdentifier, int, int, byte*)"/>
-            public static unsafe void ObjectLabelKHR(ObjectIdentifier identifier, int name, int length, string label)
-            {
-                byte* label_ptr = (byte*)Marshal.StringToCoTaskMemUTF8(label);
-                ObjectLabelKHR(identifier, name, length, label_ptr);
                 Marshal.FreeCoTaskMem((IntPtr)label_ptr);
             }
             /// <inheritdoc cref="ObjectPtrLabel(void*, int, byte*)"/>
@@ -34574,35 +32863,11 @@ namespace OpenTK.Graphics.OpenGL
                 ObjectPtrLabel(ptr_intptr, length, label_ptr);
                 Marshal.FreeCoTaskMem((IntPtr)label_ptr);
             }
-            /// <inheritdoc cref="ObjectPtrLabelKHR(void*, int, byte*)"/>
-            public static unsafe void ObjectPtrLabelKHR(IntPtr ptr, int length, string label)
-            {
-                byte* label_ptr = (byte*)Marshal.StringToCoTaskMemUTF8(label);
-                void* ptr_intptr = (void*)ptr;
-                ObjectPtrLabelKHR(ptr_intptr, length, label_ptr);
-                Marshal.FreeCoTaskMem((IntPtr)label_ptr);
-            }
-            /// <inheritdoc cref="ObjectPtrLabelKHR(void*, int, byte*)"/>
-            public static unsafe void ObjectPtrLabelKHR(GLSync ptr, int length, string label)
-            {
-                byte* label_ptr = (byte*)Marshal.StringToCoTaskMemUTF8(label);
-                IntPtr ptr_sync = (IntPtr)ptr;
-                void* ptr_intptr = (void*)ptr_sync;
-                ObjectPtrLabelKHR(ptr_intptr, length, label_ptr);
-                Marshal.FreeCoTaskMem((IntPtr)label_ptr);
-            }
             /// <inheritdoc cref="PushDebugGroup(DebugSource, uint, int, byte*)"/>
             public static unsafe void PushDebugGroup(DebugSource source, uint id, int length, string message)
             {
                 byte* message_ptr = (byte*)Marshal.StringToCoTaskMemUTF8(message);
                 PushDebugGroup(source, id, length, message_ptr);
-                Marshal.FreeCoTaskMem((IntPtr)message_ptr);
-            }
-            /// <inheritdoc cref="PushDebugGroupKHR(DebugSource, uint, int, byte*)"/>
-            public static unsafe void PushDebugGroupKHR(DebugSource source, uint id, int length, string message)
-            {
-                byte* message_ptr = (byte*)Marshal.StringToCoTaskMemUTF8(message);
-                PushDebugGroupKHR(source, id, length, message_ptr);
                 Marshal.FreeCoTaskMem((IntPtr)message_ptr);
             }
             /// <inheritdoc cref="ReadnPixels(int, int, int, int, PixelFormat, PixelType, int, void*)"/>
@@ -34636,39 +32901,6 @@ namespace OpenTK.Graphics.OpenGL
                 fixed (void* data_ptr = &data)
                 {
                     ReadnPixels(x, y, width, height, format, type, bufSize, data_ptr);
-                }
-            }
-            /// <inheritdoc cref="ReadnPixelsKHR(int, int, int, int, PixelFormat, PixelType, int, void*)"/>
-            public static unsafe void ReadnPixelsKHR(int x, int y, int width, int height, PixelFormat format, PixelType type, int bufSize, IntPtr data)
-            {
-                void* data_vptr = (void*)data;
-                ReadnPixelsKHR(x, y, width, height, format, type, bufSize, data_vptr);
-            }
-            /// <inheritdoc cref="ReadnPixelsKHR(int, int, int, int, PixelFormat, PixelType, int, void*)"/>
-            public static unsafe void ReadnPixelsKHR<T1>(int x, int y, int width, int height, PixelFormat format, PixelType type, int bufSize, Span<T1> data)
-                where T1 : unmanaged
-            {
-                fixed (void* data_ptr = data)
-                {
-                    ReadnPixelsKHR(x, y, width, height, format, type, bufSize, data_ptr);
-                }
-            }
-            /// <inheritdoc cref="ReadnPixelsKHR(int, int, int, int, PixelFormat, PixelType, int, void*)"/>
-            public static unsafe void ReadnPixelsKHR<T1>(int x, int y, int width, int height, PixelFormat format, PixelType type, int bufSize, T1[] data)
-                where T1 : unmanaged
-            {
-                fixed (void* data_ptr = data)
-                {
-                    ReadnPixelsKHR(x, y, width, height, format, type, bufSize, data_ptr);
-                }
-            }
-            /// <inheritdoc cref="ReadnPixelsKHR(int, int, int, int, PixelFormat, PixelType, int, void*)"/>
-            public static unsafe void ReadnPixelsKHR<T1>(int x, int y, int width, int height, PixelFormat format, PixelType type, int bufSize, ref T1 data)
-                where T1 : unmanaged
-            {
-                fixed (void* data_ptr = &data)
-                {
-                    ReadnPixelsKHR(x, y, width, height, format, type, bufSize, data_ptr);
                 }
             }
         }
@@ -36657,74 +34889,6 @@ namespace OpenTK.Graphics.OpenGL
                     GetOcclusionQueryuivNV(id, pname, @params_ptr);
                 }
             }
-            /// <inheritdoc cref="GetPathColorGenfvNV(PathColor, PathGenMode, float*)"/>
-            public static unsafe void GetPathColorGenfvNV(PathColor color, PathGenMode pname, Span<float> value)
-            {
-                fixed (float* value_ptr = value)
-                {
-                    GetPathColorGenfvNV(color, pname, value_ptr);
-                }
-            }
-            /// <inheritdoc cref="GetPathColorGenfvNV(PathColor, PathGenMode, float*)"/>
-            public static unsafe void GetPathColorGenfvNV(PathColor color, PathGenMode pname, float[] value)
-            {
-                fixed (float* value_ptr = value)
-                {
-                    GetPathColorGenfvNV(color, pname, value_ptr);
-                }
-            }
-            /// <inheritdoc cref="GetPathColorGenfvNV(PathColor, PathGenMode, float*)"/>
-            public static unsafe float GetPathColorGenfvNV(PathColor color, PathGenMode pname)
-            {
-                float value;
-                float* value_ptr = &value;
-                {
-                    GetPathColorGenfvNV(color, pname, value_ptr);
-                }
-                return value;
-            }
-            /// <inheritdoc cref="GetPathColorGenfvNV(PathColor, PathGenMode, float*)"/>
-            public static unsafe void GetPathColorGenfvNV(PathColor color, PathGenMode pname, out float value)
-            {
-                fixed (float* value_ptr = &value)
-                {
-                    GetPathColorGenfvNV(color, pname, value_ptr);
-                }
-            }
-            /// <inheritdoc cref="GetPathColorGenivNV(PathColor, PathGenMode, int*)"/>
-            public static unsafe void GetPathColorGenivNV(PathColor color, PathGenMode pname, Span<int> value)
-            {
-                fixed (int* value_ptr = value)
-                {
-                    GetPathColorGenivNV(color, pname, value_ptr);
-                }
-            }
-            /// <inheritdoc cref="GetPathColorGenivNV(PathColor, PathGenMode, int*)"/>
-            public static unsafe void GetPathColorGenivNV(PathColor color, PathGenMode pname, int[] value)
-            {
-                fixed (int* value_ptr = value)
-                {
-                    GetPathColorGenivNV(color, pname, value_ptr);
-                }
-            }
-            /// <inheritdoc cref="GetPathColorGenivNV(PathColor, PathGenMode, int*)"/>
-            public static unsafe int GetPathColorGenivNV(PathColor color, PathGenMode pname)
-            {
-                int value;
-                int* value_ptr = &value;
-                {
-                    GetPathColorGenivNV(color, pname, value_ptr);
-                }
-                return value;
-            }
-            /// <inheritdoc cref="GetPathColorGenivNV(PathColor, PathGenMode, int*)"/>
-            public static unsafe void GetPathColorGenivNV(PathColor color, PathGenMode pname, out int value)
-            {
-                fixed (int* value_ptr = &value)
-                {
-                    GetPathColorGenivNV(color, pname, value_ptr);
-                }
-            }
             /// <inheritdoc cref="GetPathCommandsNV(uint, byte*)"/>
             public static unsafe void GetPathCommandsNV(uint path, Span<byte> commands)
             {
@@ -37075,74 +35239,6 @@ namespace OpenTK.Graphics.OpenGL
                 fixed (float* returnedSpacing_ptr = &returnedSpacing)
                 {
                     GetPathSpacingNV(pathListMode, numPaths, pathNameType, paths_ptr, pathBase, advanceScale, kerningScale, transformType, returnedSpacing_ptr);
-                }
-            }
-            /// <inheritdoc cref="GetPathTexGenfvNV(TextureUnit, PathGenMode, float*)"/>
-            public static unsafe void GetPathTexGenfvNV(TextureUnit texCoordSet, PathGenMode pname, Span<float> value)
-            {
-                fixed (float* value_ptr = value)
-                {
-                    GetPathTexGenfvNV(texCoordSet, pname, value_ptr);
-                }
-            }
-            /// <inheritdoc cref="GetPathTexGenfvNV(TextureUnit, PathGenMode, float*)"/>
-            public static unsafe void GetPathTexGenfvNV(TextureUnit texCoordSet, PathGenMode pname, float[] value)
-            {
-                fixed (float* value_ptr = value)
-                {
-                    GetPathTexGenfvNV(texCoordSet, pname, value_ptr);
-                }
-            }
-            /// <inheritdoc cref="GetPathTexGenfvNV(TextureUnit, PathGenMode, float*)"/>
-            public static unsafe float GetPathTexGenfvNV(TextureUnit texCoordSet, PathGenMode pname)
-            {
-                float value;
-                float* value_ptr = &value;
-                {
-                    GetPathTexGenfvNV(texCoordSet, pname, value_ptr);
-                }
-                return value;
-            }
-            /// <inheritdoc cref="GetPathTexGenfvNV(TextureUnit, PathGenMode, float*)"/>
-            public static unsafe void GetPathTexGenfvNV(TextureUnit texCoordSet, PathGenMode pname, out float value)
-            {
-                fixed (float* value_ptr = &value)
-                {
-                    GetPathTexGenfvNV(texCoordSet, pname, value_ptr);
-                }
-            }
-            /// <inheritdoc cref="GetPathTexGenivNV(TextureUnit, PathGenMode, int*)"/>
-            public static unsafe void GetPathTexGenivNV(TextureUnit texCoordSet, PathGenMode pname, Span<int> value)
-            {
-                fixed (int* value_ptr = value)
-                {
-                    GetPathTexGenivNV(texCoordSet, pname, value_ptr);
-                }
-            }
-            /// <inheritdoc cref="GetPathTexGenivNV(TextureUnit, PathGenMode, int*)"/>
-            public static unsafe void GetPathTexGenivNV(TextureUnit texCoordSet, PathGenMode pname, int[] value)
-            {
-                fixed (int* value_ptr = value)
-                {
-                    GetPathTexGenivNV(texCoordSet, pname, value_ptr);
-                }
-            }
-            /// <inheritdoc cref="GetPathTexGenivNV(TextureUnit, PathGenMode, int*)"/>
-            public static unsafe int GetPathTexGenivNV(TextureUnit texCoordSet, PathGenMode pname)
-            {
-                int value;
-                int* value_ptr = &value;
-                {
-                    GetPathTexGenivNV(texCoordSet, pname, value_ptr);
-                }
-                return value;
-            }
-            /// <inheritdoc cref="GetPathTexGenivNV(TextureUnit, PathGenMode, int*)"/>
-            public static unsafe void GetPathTexGenivNV(TextureUnit texCoordSet, PathGenMode pname, out int value)
-            {
-                fixed (int* value_ptr = &value)
-                {
-                    GetPathTexGenivNV(texCoordSet, pname, value_ptr);
                 }
             }
             /// <inheritdoc cref="GetProgramEnvParameterIivNV(ProgramTarget, uint, int*)"/>
@@ -38964,30 +37060,6 @@ namespace OpenTK.Graphics.OpenGL
                     Normal3hvNV(v_ptr);
                 }
             }
-            /// <inheritdoc cref="PathColorGenNV(PathColor, PathGenMode, PathColorFormat, float*)"/>
-            public static unsafe void PathColorGenNV(PathColor color, PathGenMode genMode, PathColorFormat colorFormat, ReadOnlySpan<float> coeffs)
-            {
-                fixed (float* coeffs_ptr = coeffs)
-                {
-                    PathColorGenNV(color, genMode, colorFormat, coeffs_ptr);
-                }
-            }
-            /// <inheritdoc cref="PathColorGenNV(PathColor, PathGenMode, PathColorFormat, float*)"/>
-            public static unsafe void PathColorGenNV(PathColor color, PathGenMode genMode, PathColorFormat colorFormat, float[] coeffs)
-            {
-                fixed (float* coeffs_ptr = coeffs)
-                {
-                    PathColorGenNV(color, genMode, colorFormat, coeffs_ptr);
-                }
-            }
-            /// <inheritdoc cref="PathColorGenNV(PathColor, PathGenMode, PathColorFormat, float*)"/>
-            public static unsafe void PathColorGenNV(PathColor color, PathGenMode genMode, PathColorFormat colorFormat, ref readonly float coeffs)
-            {
-                fixed (float* coeffs_ptr = &coeffs)
-                {
-                    PathColorGenNV(color, genMode, colorFormat, coeffs_ptr);
-                }
-            }
             /// <inheritdoc cref="PathCommandsNV(uint, int, byte*, int, PathCoordType, void*)"/>
             public static unsafe void PathCommandsNV(uint path, int numCommands, ReadOnlySpan<byte> commands, int numCoords, PathCoordType coordType, IntPtr coords)
             {
@@ -39511,30 +37583,6 @@ namespace OpenTK.Graphics.OpenGL
                 fixed (void* coords_ptr = &coords)
                 {
                     PathSubCoordsNV(path, coordStart, numCoords, coordType, coords_ptr);
-                }
-            }
-            /// <inheritdoc cref="PathTexGenNV(PathColor, PathGenMode, int, float*)"/>
-            public static unsafe void PathTexGenNV(PathColor texCoordSet, PathGenMode genMode, int components, ReadOnlySpan<float> coeffs)
-            {
-                fixed (float* coeffs_ptr = coeffs)
-                {
-                    PathTexGenNV(texCoordSet, genMode, components, coeffs_ptr);
-                }
-            }
-            /// <inheritdoc cref="PathTexGenNV(PathColor, PathGenMode, int, float*)"/>
-            public static unsafe void PathTexGenNV(PathColor texCoordSet, PathGenMode genMode, int components, float[] coeffs)
-            {
-                fixed (float* coeffs_ptr = coeffs)
-                {
-                    PathTexGenNV(texCoordSet, genMode, components, coeffs_ptr);
-                }
-            }
-            /// <inheritdoc cref="PathTexGenNV(PathColor, PathGenMode, int, float*)"/>
-            public static unsafe void PathTexGenNV(PathColor texCoordSet, PathGenMode genMode, int components, ref readonly float coeffs)
-            {
-                fixed (float* coeffs_ptr = &coeffs)
-                {
-                    PathTexGenNV(texCoordSet, genMode, components, coeffs_ptr);
                 }
             }
             /// <inheritdoc cref="PixelDataRangeNV(PixelDataRangeTargetNV, int, void*)"/>
@@ -44036,40 +42084,6 @@ namespace OpenTK.Graphics.OpenGL
                     GetLightxOES(light, pname, @params_ptr);
                 }
             }
-            /// <inheritdoc cref="GetLightxvOES(LightName, LightParameter, int*)"/>
-            public static unsafe void GetLightxvOES(LightName light, LightParameter pname, Span<int> @params)
-            {
-                fixed (int* @params_ptr = @params)
-                {
-                    GetLightxvOES(light, pname, @params_ptr);
-                }
-            }
-            /// <inheritdoc cref="GetLightxvOES(LightName, LightParameter, int*)"/>
-            public static unsafe void GetLightxvOES(LightName light, LightParameter pname, int[] @params)
-            {
-                fixed (int* @params_ptr = @params)
-                {
-                    GetLightxvOES(light, pname, @params_ptr);
-                }
-            }
-            /// <inheritdoc cref="GetLightxvOES(LightName, LightParameter, int*)"/>
-            public static unsafe int GetLightxvOES(LightName light, LightParameter pname)
-            {
-                int @params;
-                int* @params_ptr = &@params;
-                {
-                    GetLightxvOES(light, pname, @params_ptr);
-                }
-                return @params;
-            }
-            /// <inheritdoc cref="GetLightxvOES(LightName, LightParameter, int*)"/>
-            public static unsafe void GetLightxvOES(LightName light, LightParameter pname, out int @params)
-            {
-                fixed (int* @params_ptr = &@params)
-                {
-                    GetLightxvOES(light, pname, @params_ptr);
-                }
-            }
             /// <inheritdoc cref="GetMapxvOES(MapTarget, GetMapQuery, int*)"/>
             public static unsafe void GetMapxvOES(MapTarget target, GetMapQuery query, Span<int> v)
             {
@@ -44102,40 +42116,6 @@ namespace OpenTK.Graphics.OpenGL
                 fixed (int* v_ptr = &v)
                 {
                     GetMapxvOES(target, query, v_ptr);
-                }
-            }
-            /// <inheritdoc cref="GetMaterialxvOES(TriangleFace, MaterialParameter, int*)"/>
-            public static unsafe void GetMaterialxvOES(TriangleFace face, MaterialParameter pname, Span<int> @params)
-            {
-                fixed (int* @params_ptr = @params)
-                {
-                    GetMaterialxvOES(face, pname, @params_ptr);
-                }
-            }
-            /// <inheritdoc cref="GetMaterialxvOES(TriangleFace, MaterialParameter, int*)"/>
-            public static unsafe void GetMaterialxvOES(TriangleFace face, MaterialParameter pname, int[] @params)
-            {
-                fixed (int* @params_ptr = @params)
-                {
-                    GetMaterialxvOES(face, pname, @params_ptr);
-                }
-            }
-            /// <inheritdoc cref="GetMaterialxvOES(TriangleFace, MaterialParameter, int*)"/>
-            public static unsafe int GetMaterialxvOES(TriangleFace face, MaterialParameter pname)
-            {
-                int @params;
-                int* @params_ptr = &@params;
-                {
-                    GetMaterialxvOES(face, pname, @params_ptr);
-                }
-                return @params;
-            }
-            /// <inheritdoc cref="GetMaterialxvOES(TriangleFace, MaterialParameter, int*)"/>
-            public static unsafe void GetMaterialxvOES(TriangleFace face, MaterialParameter pname, out int @params)
-            {
-                fixed (int* @params_ptr = &@params)
-                {
-                    GetMaterialxvOES(face, pname, @params_ptr);
                 }
             }
             /// <inheritdoc cref="GetPixelMapxv(PixelMap, int, int*)"/>

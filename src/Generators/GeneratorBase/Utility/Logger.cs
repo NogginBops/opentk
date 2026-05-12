@@ -36,7 +36,7 @@ namespace GeneratorBase.Utility
             [Pure]
             public override string ToString()
             {
-                return $"[{_severity} {_time:yyyy-MM-dd hh:mm:ss:fffff} {_filePath}#{_lineNumber}] {_message}\n";
+                return $"[{_severity} {_time:yyyy-MM-dd hh:mm:ss:fffff} {_filePath}#{_lineNumber}] {_message}";
             }
 
             [Pure]
@@ -85,11 +85,10 @@ namespace GeneratorBase.Utility
 
         public void WriteLog(MessageInfo info)
         {
-            var data = Encoding.UTF8.GetBytes(info.ToString());
+            var data = Encoding.UTF8.GetBytes(info.ToString() + Environment.NewLine);
             _fileStream?.Write(data, 0, data.Length);
             Console.ForegroundColor = info.GetColor();
-            Console.Write(info.ToString());
-            //Console.Error.Write(info.ToString());
+            Console.WriteLine(info.ToString());
             Console.ResetColor();
         }
     }

@@ -25,7 +25,7 @@ namespace OpenTK.Graphics.Glx
         RgbaBitSgix = 1,
         StereoNotifyMaskExt = 1,
         SyncSwapSgix = 1,
-        Texture1dBitExt = 1,
+        Texture1DBitExt = 1,
         UseGl = 1,
         Vendor = 1,
         WindowBit = 1,
@@ -154,7 +154,7 @@ namespace OpenTK.Graphics.Glx
         TextureFormatNoneExt = 8408,
         TextureFormatRgbExt = 8409,
         TextureFormatRgbaExt = 8410,
-        Texture1dExt = 8411,
+        Texture1DExt = 8411,
         Texture2DExt = 8412,
         TextureRectangleExt = 8413,
         FrontExt = 8414,
@@ -305,7 +305,7 @@ namespace OpenTK.Graphics.Glx
     [Flags]
     public enum BindToTextureTargetMask : uint
     {
-        Texture1dBitExt = 1,
+        Texture1DBitExt = 1,
         Texture2DBitExt = 2,
         TextureRectangleBitExt = 4,
     }

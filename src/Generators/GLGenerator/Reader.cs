@@ -5,6 +5,8 @@ using System.IO;
 using System.Net;
 using System.Text.Json;
 using System.Reflection;
+using System.Net.Http;
+using System.Linq.Expressions;
 
 namespace GLGenerator
 {
@@ -38,6 +40,33 @@ namespace GLGenerator
     {
         private static readonly string TempDirectory = Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) ?? "", "..", "..", "..", "SpecificationFiles");
 
+        private static string ReadFileFromUrl(string url, string fileName)
+        {
+            string filePath = Path.Combine(TempDirectory, fileName);
+            if (File.Exists(filePath))
+            {
+                Logger.Info($"Found cache file for {fileName}, using that.");
+                return filePath;
+            }
+            else
+            {
+                Logger.Info($"Didn't find cache file for {fileName}, downloading from {url}. (looked for {fileName} in this directory: {Path.GetFullPath(filePath)})");
+                if (!Directory.Exists(TempDirectory))
+                {
+                    Directory.CreateDirectory(TempDirectory);
+                }
+
+                HttpClient client = new HttpClient();
+                HttpRequestMessage message = new HttpRequestMessage(HttpMethod.Get, url);
+                HttpResponseMessage response = client.Send(message, HttpCompletionOption.ResponseContentRead);
+                response.EnsureSuccessStatusCode();
+
+                using (var file = File.Open(filePath, FileMode.Create, FileAccess.Write))
+                    response.Content.ReadAsStream().CopyTo(file);
+                return filePath;
+            }
+        }
+
         private static FileStream ReadFileFromGithub(string url, string filePath)
         {
             string fileName = Path.GetFileName(filePath);
@@ -64,39 +93,39 @@ namespace GLGenerator
         internal static FileStream ReadGLSpecFromGithub()
         {
             string url = "https://raw.githubusercontent.com/KhronosGroup/OpenGL-Registry/main/xml/gl.xml";
-            string filePath = Path.Combine(TempDirectory, "gl.xml");
-
-            return ReadFileFromGithub(url, filePath);
+            string filePath = ReadFileFromUrl(url, "gl.xml");
+            return File.OpenRead(filePath);
         }
 
         internal static FileStream ReadWGLSpecFromGithub()
         {
             string url = "https://raw.githubusercontent.com/KhronosGroup/OpenGL-Registry/main/xml/wgl.xml";
-            string filePath = Path.Combine(TempDirectory, "wgl.xml");
-
-            return ReadFileFromGithub(url, filePath);
+            string filePath = ReadFileFromUrl(url, "wgl.xml");
+            return File.OpenRead(filePath);
         }
 
         internal static FileStream ReadGLXSpecFromGithub()
         {
             string url = "https://raw.githubusercontent.com/KhronosGroup/OpenGL-Registry/main/xml/glx.xml";
-            string filePath = Path.Combine(TempDirectory, "glx.xml");
-
-            return ReadFileFromGithub(url, filePath);
-        }
-
-        internal static FileStream ReadEGLSpecFromGithub()
-        {
-            string url = "https://raw.githubusercontent.com/KhronosGroup/EGL-Registry/refs/heads/main/api/egl.xml";
-            string filePath = Path.Combine(TempDirectory, "egl.xml");
-
-            return ReadFileFromGithub(url, filePath);
-        }
-
-        internal static FileStream ReadEGLANGLESpecFromFile()
-        {
-            string filePath = Path.Combine(TempDirectory, "egl_angle_ext.xml");
+            string filePath = ReadFileFromUrl(url, "glx.xml");
             return File.OpenRead(filePath);
+        }
+
+        internal static Stream ReadEGLAndAngleSpecFromGithub()
+        {
+            string filePath = ReadFileFromUrl("https://raw.githubusercontent.com/KhronosGroup/EGL-Registry/refs/heads/main/api/egl.xml", "egl.xml");
+            string angleFilePath = ReadFileFromUrl("https://raw.githubusercontent.com/google/angle/refs/heads/main/scripts/egl_angle_ext.xml", "egl_angle_ext.xml");
+
+            string eglText = File.ReadAllText(filePath);
+            string angleText = File.ReadAllText(angleFilePath);
+
+            string finalEglText = NameMangler.RemoveEnd(eglText, "</registry>\r\n") + NameMangler.RemoveStart(angleText, "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<registry>");
+            MemoryStream stream = new MemoryStream();
+            StreamWriter writer = new StreamWriter(stream);
+            writer.Write(finalEglText);
+            writer.Flush();
+            stream.Position = 0;
+            return stream;
         }
 
         internal static DocumentationSource ReadDocumentationFromGithub()

@@ -709,6 +709,16 @@ namespace OpenTK.Graphics.Wgl
             return _wglGetCurrentReadDCEXT_fnptr();
         }
         
+        /// <summary><b>[entry point: <c>wglGetDefaultProcAddress</c>]</b></summary>
+        public static delegate* unmanaged<byte*, IntPtr> _wglGetDefaultProcAddress_fnptr;
+        [MethodImpl(MethodImplOptions.NoInlining)]
+        internal static IntPtr wglGetDefaultProcAddress_Lazy(byte* lpszProc)
+        {
+            if (_wglGetDefaultProcAddress_fnptr == null)
+                _wglGetDefaultProcAddress_fnptr = (delegate* unmanaged<byte*, IntPtr>)WGLLoader.BindingsContext.GetProcAddress("wglGetDefaultProcAddress");
+            return _wglGetDefaultProcAddress_fnptr(lpszProc);
+        }
+        
         /// <summary><b>[entry point: <c>wglGetDigitalVideoParametersI3D</c>]</b></summary>
         public static delegate* unmanaged<IntPtr, int, int*, int> _wglGetDigitalVideoParametersI3D_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]

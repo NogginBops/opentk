@@ -23,8 +23,6 @@ namespace OpenTK.Graphics.OpenGLES1
         VersionEsCl11 = 1,
         VersionEsCm11 = 1,
         ColorBufferBit1Qcom = 2,
-        ContextFlagDebugBit = 2,
-        ContextFlagDebugBitKhr = 2,
         LineLoop = 2,
         MapWriteBitExt = 2,
         LineStrip = 3,
@@ -71,9 +69,7 @@ namespace OpenTK.Graphics.OpenGLES1
         InvalidValue = 1281,
         InvalidOperation = 1282,
         StackOverflow = 1283,
-        StackOverflowKhr = 1283,
         StackUnderflow = 1284,
-        StackUnderflowKhr = 1284,
         OutOfMemory = 1285,
         InvalidFramebufferOperationOes = 1286,
         DepthBufferBit3Qcom = 2048,
@@ -267,11 +263,9 @@ namespace OpenTK.Graphics.OpenGLES1
         Light6 = 16390,
         Light7 = 16391,
         DepthBufferBit7Qcom = 32768,
-        FuncAddExt = 32774,
         FuncAddOes = 32774,
         MinExt = 32775,
         MaxExt = 32776,
-        BlendEquationExt = 32777,
         BlendEquationOes = 32777,
         BlendEquationRgbOes = 32777,
         FuncSubtractOes = 32778,
@@ -296,7 +290,6 @@ namespace OpenTK.Graphics.OpenGLES1
         Rgb10A2Ext = 32857,
         TextureBinding2D = 32873,
         VertexArray = 32884,
-        VertexArrayKhr = 32884,
         NormalArray = 32885,
         ColorArray = 32886,
         TextureCoordArray = 32888,
@@ -348,71 +341,12 @@ namespace OpenTK.Graphics.OpenGLES1
         R32fExt = 33326,
         Rg16fExt = 33327,
         Rg32fExt = 33328,
-        DebugOutputSynchronous = 33346,
-        DebugOutputSynchronousKhr = 33346,
-        DebugNextLoggedMessageLength = 33347,
-        DebugNextLoggedMessageLengthKhr = 33347,
-        DebugCallbackFunction = 33348,
-        DebugCallbackFunctionKhr = 33348,
-        DebugCallbackUserParam = 33349,
-        DebugCallbackUserParamKhr = 33349,
-        DebugSourceApi = 33350,
-        DebugSourceApiKhr = 33350,
-        DebugSourceWindowSystem = 33351,
-        DebugSourceWindowSystemKhr = 33351,
-        DebugSourceShaderCompiler = 33352,
-        DebugSourceShaderCompilerKhr = 33352,
-        DebugSourceThirdParty = 33353,
-        DebugSourceThirdPartyKhr = 33353,
-        DebugSourceApplication = 33354,
-        DebugSourceApplicationKhr = 33354,
-        DebugSourceOther = 33355,
-        DebugSourceOtherKhr = 33355,
-        DebugTypeError = 33356,
-        DebugTypeErrorKhr = 33356,
-        DebugTypeDeprecatedBehavior = 33357,
-        DebugTypeDeprecatedBehaviorKhr = 33357,
-        DebugTypeUndefinedBehavior = 33358,
-        DebugTypeUndefinedBehaviorKhr = 33358,
-        DebugTypePortability = 33359,
-        DebugTypePortabilityKhr = 33359,
-        DebugTypePerformance = 33360,
-        DebugTypePerformanceKhr = 33360,
-        DebugTypeOther = 33361,
-        DebugTypeOtherKhr = 33361,
         LoseContextOnResetExt = 33362,
         GuiltyContextResetExt = 33363,
         InnocentContextResetExt = 33364,
         UnknownContextResetExt = 33365,
         ResetNotificationStrategyExt = 33366,
         NoResetNotificationExt = 33377,
-        DebugTypeMarker = 33384,
-        DebugTypeMarkerKhr = 33384,
-        DebugTypePushGroup = 33385,
-        DebugTypePushGroupKhr = 33385,
-        DebugTypePopGroup = 33386,
-        DebugTypePopGroupKhr = 33386,
-        DebugSeverityNotification = 33387,
-        DebugSeverityNotificationKhr = 33387,
-        MaxDebugGroupStackDepth = 33388,
-        MaxDebugGroupStackDepthKhr = 33388,
-        DebugGroupStackDepth = 33389,
-        DebugGroupStackDepthKhr = 33389,
-        Buffer = 33504,
-        BufferKhr = 33504,
-        Shader = 33505,
-        ShaderKhr = 33505,
-        Program = 33506,
-        ProgramKhr = 33506,
-        Query = 33507,
-        QueryKhr = 33507,
-        ProgramPipeline = 33508,
-        ProgramPipelineKhr = 33508,
-        Sampler = 33510,
-        SamplerKhr = 33510,
-        DisplayList = 33511,
-        MaxLabelLength = 33512,
-        MaxLabelLengthKhr = 33512,
         UnsignedShort565 = 33635,
         UnsignedShort4444RevExt = 33637,
         UnsignedShort4444RevImg = 33637,
@@ -650,7 +584,6 @@ namespace OpenTK.Graphics.OpenGLES1
         Rgb565Oes = 36194,
         Etc1Rgb8Oes = 36196,
         TextureExternalOes = 36197,
-        SamplerExternalOes = 36198,
         TextureBindingExternalOes = 36199,
         RequiredTextureImageUnitsOes = 36200,
         FramebufferAttachmentTextureSamplesExt = 36204,
@@ -674,20 +607,6 @@ namespace OpenTK.Graphics.OpenGLES1
         FramebufferIncompleteMultisampleImg = 37172,
         MaxSamplesImg = 37173,
         TextureSamplesImg = 37174,
-        MaxDebugMessageLength = 37187,
-        MaxDebugMessageLengthKhr = 37187,
-        MaxDebugLoggedMessages = 37188,
-        MaxDebugLoggedMessagesKhr = 37188,
-        DebugLoggedMessages = 37189,
-        DebugLoggedMessagesKhr = 37189,
-        DebugSeverityHigh = 37190,
-        DebugSeverityHighKhr = 37190,
-        DebugSeverityMedium = 37191,
-        DebugSeverityMediumKhr = 37191,
-        DebugSeverityLow = 37192,
-        DebugSeverityLowKhr = 37192,
-        DebugOutput = 37600,
-        DebugOutputKhr = 37600,
         Bgra8Ext = 37793,
         StencilBufferBit0Qcom = 65536,
         StencilBufferBit1Qcom = 131072,
@@ -740,10 +659,9 @@ namespace OpenTK.Graphics.OpenGLES1
         Short = 5122,
         Float = 5126,
     }
-    ///<summary>Used in <see cref="GL.EXT.BlendEquationEXT" />, <see cref="GL.OES.BlendEquationOES" />, <see cref="GL.OES.BlendEquationSeparateOES" /></summary>
+    ///<summary>Used in <see cref="GL.OES.BlendEquationOES" />, <see cref="GL.OES.BlendEquationSeparateOES" /></summary>
     public enum BlendEquationMode : uint
     {
-        FuncAddExt = 32774,
         MinExt = 32775,
         MaxExt = 32776,
     }
@@ -904,20 +822,6 @@ namespace OpenTK.Graphics.OpenGLES1
         Alpha = 6406,
         Rgb = 6407,
     }
-    [Flags]
-    public enum ContextFlagMask : uint
-    {
-        ContextFlagDebugBit = 2,
-        ContextFlagDebugBitKhr = 2,
-    }
-    ///<summary>Used in <see cref="GL.OES.ConvolutionParameterxOES" />, <see cref="GL.OES.ConvolutionParameterxvOES" /></summary>
-    public enum ConvolutionParameter : uint
-    {
-    }
-    ///<summary>Used in <see cref="GL.OES.ConvolutionParameterxOES" />, <see cref="GL.OES.ConvolutionParameterxvOES" /></summary>
-    public enum ConvolutionTargetEXT : uint
-    {
-    }
     public enum CopyBufferSubDataTarget : uint
     {
         ArrayBuffer = 34962,
@@ -927,39 +831,17 @@ namespace OpenTK.Graphics.OpenGLES1
     {
         Texture2D = 3553,
     }
-    ///<summary>Used in <see cref="GL.KHR.DebugMessageControl" />, <see cref="GL.KHR.DebugMessageControlKHR" />, <see cref="GL.KHR.DebugMessageInsert" />, ...</summary>
     public enum DebugSeverity : uint
     {
         DontCare = 4352,
-        DebugSeverityNotification = 33387,
-        DebugSeverityHigh = 37190,
-        DebugSeverityMedium = 37191,
-        DebugSeverityLow = 37192,
     }
-    ///<summary>Used in <see cref="GL.KHR.DebugMessageControl" />, <see cref="GL.KHR.DebugMessageControlKHR" />, <see cref="GL.KHR.DebugMessageInsert" />, ...</summary>
     public enum DebugSource : uint
     {
         DontCare = 4352,
-        DebugSourceApi = 33350,
-        DebugSourceWindowSystem = 33351,
-        DebugSourceShaderCompiler = 33352,
-        DebugSourceThirdParty = 33353,
-        DebugSourceApplication = 33354,
-        DebugSourceOther = 33355,
     }
-    ///<summary>Used in <see cref="GL.KHR.DebugMessageControl" />, <see cref="GL.KHR.DebugMessageControlKHR" />, <see cref="GL.KHR.DebugMessageInsert" />, ...</summary>
     public enum DebugType : uint
     {
         DontCare = 4352,
-        DebugTypeError = 33356,
-        DebugTypeDeprecatedBehavior = 33357,
-        DebugTypeUndefinedBehavior = 33358,
-        DebugTypePortability = 33359,
-        DebugTypePerformance = 33360,
-        DebugTypeOther = 33361,
-        DebugTypeMarker = 33384,
-        DebugTypePushGroup = 33385,
-        DebugTypePopGroup = 33386,
     }
     ///<summary>Used in <see cref="GL.DepthFunc" /></summary>
     public enum DepthFunction : uint
@@ -1034,10 +916,8 @@ namespace OpenTK.Graphics.OpenGLES1
         SampleAlphaToCoverage = 32926,
         SampleAlphaToOne = 32927,
         SampleCoverage = 32928,
-        DebugOutputSynchronous = 33346,
         TextureCubeMapOes = 34067,
         TextureGenStrOes = 36192,
-        DebugOutput = 37600,
     }
     ///<summary>Used in <see cref="GL.GetError" /></summary>
     public enum ErrorCode : uint
@@ -1189,14 +1069,6 @@ namespace OpenTK.Graphics.OpenGLES1
         SampleBuffers = 32936,
         Samples = 32937,
     }
-    ///<summary>Used in <see cref="GL.OES.GetHistogramParameterxvOES" /></summary>
-    public enum GetHistogramParameterPNameEXT : uint
-    {
-    }
-    ///<summary>Used in <see cref="GL.OES.GetMapxvOES" /></summary>
-    public enum GetMapQuery : uint
-    {
-    }
     ///<summary>Used in <see cref="GL.GetBooleanv" />, <see cref="GL.GetFixedv" />, <see cref="GL.GetFloatv" />, ...</summary>
     public enum GetPName : uint
     {
@@ -1296,7 +1168,6 @@ namespace OpenTK.Graphics.OpenGLES1
         Light5 = 16389,
         Light6 = 16390,
         Light7 = 16391,
-        BlendEquationExt = 32777,
         BlendEquationOes = 32777,
         PolygonOffsetFill = 32823,
         PolygonOffsetFactor = 32824,
@@ -1324,9 +1195,6 @@ namespace OpenTK.Graphics.OpenGLES1
         PointSizeMax = 33063,
         PointFadeThresholdSize = 33064,
         PointDistanceAttenuation = 33065,
-        MaxDebugGroupStackDepth = 33388,
-        DebugGroupStackDepth = 33389,
-        MaxLabelLength = 33512,
         AliasedPointSizeRange = 33901,
         AliasedLineWidthRange = 33902,
         ActiveTexture = 34016,
@@ -1338,15 +1206,13 @@ namespace OpenTK.Graphics.OpenGLES1
         ElementArrayBufferBinding = 34965,
         TextureGenStrOes = 36192,
     }
-    ///<summary>Used in <see cref="GL.GetPointerv" />, <see cref="GL.KHR.GetPointerv" /></summary>
+    ///<summary>Used in <see cref="GL.GetPointerv" /></summary>
     public enum GetPointervPName : uint
     {
         VertexArrayPointer = 32910,
         NormalArrayPointer = 32911,
         ColorArrayPointer = 32912,
         TextureCoordArrayPointer = 32914,
-        DebugCallbackFunction = 33348,
-        DebugCallbackUserParam = 33349,
     }
     ///<summary>Used in <see cref="GL.GetTexParameterfv" />, <see cref="GL.GetTexParameteriv" />, <see cref="GL.GetTexParameterxv" />, ...</summary>
     public enum GetTextureParameter : uint
@@ -1378,10 +1244,6 @@ namespace OpenTK.Graphics.OpenGLES1
         LineSmoothHint = 3154,
         FogHint = 3156,
         GenerateMipmapHint = 33170,
-    }
-    ///<summary>Used in <see cref="GL.OES.GetHistogramParameterxvOES" /></summary>
-    public enum HistogramTargetEXT : uint
-    {
     }
     public enum IndexFunctionEXT : uint
     {
@@ -1533,10 +1395,6 @@ namespace OpenTK.Graphics.OpenGLES1
         MapFlushExplicitBitExt = 16,
         MapUnsynchronizedBitExt = 32,
     }
-    ///<summary>Used in <see cref="GL.OES.GetMapxvOES" />, <see cref="GL.OES.Map1xOES" />, <see cref="GL.OES.Map2xOES" /></summary>
-    public enum MapTarget : uint
-    {
-    }
     public enum MapTypeNV : uint
     {
         Float = 5126,
@@ -1572,17 +1430,10 @@ namespace OpenTK.Graphics.OpenGLES1
         Short = 5122,
         Float = 5126,
     }
-    ///<summary>Used in <see cref="GL.KHR.GetObjectLabel" />, <see cref="GL.KHR.ObjectLabel" />, <see cref="GL.KHR.ObjectLabelKHR" /></summary>
     public enum ObjectIdentifier : uint
     {
         Texture = 5890,
         VertexArray = 32884,
-        Buffer = 33504,
-        Shader = 33505,
-        Program = 33506,
-        Query = 33507,
-        ProgramPipeline = 33508,
-        Sampler = 33510,
     }
     public enum PathColor : uint
     {
@@ -1623,11 +1474,7 @@ namespace OpenTK.Graphics.OpenGLES1
         BgraExt = 32993,
         BgraImg = 32993,
     }
-    ///<summary>Used in <see cref="GL.OES.GetPixelMapxv" />, <see cref="GL.OES.PixelMapx" /></summary>
-    public enum PixelMap : uint
-    {
-    }
-    ///<summary>Used in <see cref="GL.PixelStorei" />, <see cref="GL.OES.PixelStorex" /></summary>
+    ///<summary>Used in <see cref="GL.PixelStorei" /></summary>
     public enum PixelStoreParameter : uint
     {
         UnpackAlignment = 3317,
@@ -1639,7 +1486,6 @@ namespace OpenTK.Graphics.OpenGLES1
         Rgb = 6407,
         Rgba = 6408,
     }
-    ///<summary>Used in <see cref="GL.OES.PixelTransferxOES" /></summary>
     public enum PixelTransferParameter : uint
     {
         AlphaScale = 3356,

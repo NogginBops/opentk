@@ -515,7 +515,7 @@ namespace GLGenerator
         {
             foreach (var group in enumGroups)
             {
-                if (group.FunctionsUsingEnumGroup != null)
+                if (group.FunctionsUsingEnumGroup.Count > 0)
                 {
                     if (group.FunctionsUsingEnumGroup.Count > 3)
                     {

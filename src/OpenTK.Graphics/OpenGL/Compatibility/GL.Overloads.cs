@@ -30075,15 +30075,6 @@ namespace OpenTK.Graphics.OpenGL.Compatibility
                 Marshal.FreeCoTaskMem((IntPtr)@string_ptr);
                 return returnValue;
             }
-            /// <inheritdoc cref="CreateShaderProgramvEXT(ShaderType, int, byte**)"/>
-            public static unsafe int CreateShaderProgramvEXT(ShaderType type, int count, string[] strings)
-            {
-                int returnValue;
-                byte** strings_ptr = (byte**)MarshalTk.StringArrayToCoTaskMemUTF8(strings);
-                returnValue = CreateShaderProgramvEXT(type, count, strings_ptr);
-                MarshalTk.FreeStringArrayCoTaskMem((IntPtr)strings_ptr, strings.Length);
-                return returnValue;
-            }
             /// <inheritdoc cref="CullParameterdvEXT(CullParameterEXT, double*)"/>
             public static unsafe void CullParameterdvEXT(CullParameterEXT pname, Span<double> @params)
             {
@@ -30178,30 +30169,6 @@ namespace OpenTK.Graphics.OpenGL.Compatibility
                 fixed (uint* memoryObjects_ptr = &memoryObjects)
                 {
                     DeleteMemoryObjectsEXT(n, memoryObjects_ptr);
-                }
-            }
-            /// <inheritdoc cref="DeleteProgramPipelinesEXT(int, int*)"/>
-            public static unsafe void DeleteProgramPipelinesEXT(int n, ReadOnlySpan<int> pipelines)
-            {
-                fixed (int* pipelines_ptr = pipelines)
-                {
-                    DeleteProgramPipelinesEXT(n, pipelines_ptr);
-                }
-            }
-            /// <inheritdoc cref="DeleteProgramPipelinesEXT(int, int*)"/>
-            public static unsafe void DeleteProgramPipelinesEXT(int n, int[] pipelines)
-            {
-                fixed (int* pipelines_ptr = pipelines)
-                {
-                    DeleteProgramPipelinesEXT(n, pipelines_ptr);
-                }
-            }
-            /// <inheritdoc cref="DeleteProgramPipelinesEXT(int, int*)"/>
-            public static unsafe void DeleteProgramPipelinesEXT(int n, ref readonly int pipelines)
-            {
-                fixed (int* pipelines_ptr = &pipelines)
-                {
-                    DeleteProgramPipelinesEXT(n, pipelines_ptr);
                 }
             }
             /// <inheritdoc cref="DeleteRenderbuffersEXT(int, int*)"/>
@@ -30529,30 +30496,6 @@ namespace OpenTK.Graphics.OpenGL.Compatibility
                 fixed (int* framebuffers_ptr = &framebuffers)
                 {
                     GenFramebuffersEXT(n, framebuffers_ptr);
-                }
-            }
-            /// <inheritdoc cref="GenProgramPipelinesEXT(int, int*)"/>
-            public static unsafe void GenProgramPipelinesEXT(int n, Span<int> pipelines)
-            {
-                fixed (int* pipelines_ptr = pipelines)
-                {
-                    GenProgramPipelinesEXT(n, pipelines_ptr);
-                }
-            }
-            /// <inheritdoc cref="GenProgramPipelinesEXT(int, int*)"/>
-            public static unsafe void GenProgramPipelinesEXT(int n, int[] pipelines)
-            {
-                fixed (int* pipelines_ptr = pipelines)
-                {
-                    GenProgramPipelinesEXT(n, pipelines_ptr);
-                }
-            }
-            /// <inheritdoc cref="GenProgramPipelinesEXT(int, int*)"/>
-            public static unsafe void GenProgramPipelinesEXT(int n, ref int pipelines)
-            {
-                fixed (int* pipelines_ptr = &pipelines)
-                {
-                    GenProgramPipelinesEXT(n, pipelines_ptr);
                 }
             }
             /// <inheritdoc cref="GenRenderbuffersEXT(int, int*)"/>
@@ -32518,54 +32461,6 @@ namespace OpenTK.Graphics.OpenGL.Compatibility
                 fixed (int* @params_ptr = &@params)
                 {
                     GetPixelTransformParameterivEXT(target, pname, @params_ptr);
-                }
-            }
-            /// <inheritdoc cref="GetProgramPipelineInfoLogEXT(int, int, int*, byte*)"/>
-            public static unsafe string GetProgramPipelineInfoLogEXT(int pipeline, int bufSize, out int length)
-            {
-                string infoLog;
-                fixed (int* length_ptr = &length)
-                {
-                    var infoLog_ptr = (byte*)Marshal.AllocCoTaskMem(bufSize);
-                    GetProgramPipelineInfoLogEXT(pipeline, bufSize, length_ptr, infoLog_ptr);
-                    infoLog = Marshal.PtrToStringUTF8((IntPtr)infoLog_ptr)!;
-                    Marshal.FreeCoTaskMem((IntPtr)infoLog_ptr);
-                }
-                return infoLog;
-            }
-            /// <inheritdoc cref="GetProgramPipelineInfoLogEXT(int, int, int*, byte*)"/>
-            public static unsafe void GetProgramPipelineInfoLogEXT(int pipeline, int bufSize, out int length, out string infoLog)
-            {
-                fixed (int* length_ptr = &length)
-                {
-                    var infoLog_ptr = (byte*)Marshal.AllocCoTaskMem(bufSize);
-                    GetProgramPipelineInfoLogEXT(pipeline, bufSize, length_ptr, infoLog_ptr);
-                    infoLog = Marshal.PtrToStringUTF8((IntPtr)infoLog_ptr)!;
-                    Marshal.FreeCoTaskMem((IntPtr)infoLog_ptr);
-                }
-            }
-            /// <inheritdoc cref="GetProgramPipelineivEXT(int, PipelineParameterName, int*)"/>
-            public static unsafe void GetProgramPipelineivEXT(int pipeline, PipelineParameterName pname, Span<int> @params)
-            {
-                fixed (int* @params_ptr = @params)
-                {
-                    GetProgramPipelineivEXT(pipeline, pname, @params_ptr);
-                }
-            }
-            /// <inheritdoc cref="GetProgramPipelineivEXT(int, PipelineParameterName, int*)"/>
-            public static unsafe void GetProgramPipelineivEXT(int pipeline, PipelineParameterName pname, int[] @params)
-            {
-                fixed (int* @params_ptr = @params)
-                {
-                    GetProgramPipelineivEXT(pipeline, pname, @params_ptr);
-                }
-            }
-            /// <inheritdoc cref="GetProgramPipelineivEXT(int, PipelineParameterName, int*)"/>
-            public static unsafe void GetProgramPipelineivEXT(int pipeline, PipelineParameterName pname, ref int @params)
-            {
-                fixed (int* @params_ptr = &@params)
-                {
-                    GetProgramPipelineivEXT(pipeline, pname, @params_ptr);
                 }
             }
             /// <inheritdoc cref="GetQueryObjecti64vEXT(int, QueryObjectParameterName, long*)"/>
@@ -38285,43 +38180,6 @@ namespace OpenTK.Graphics.OpenGL.Compatibility
                     DebugMessageCallback(callback_ptr, userParam_ptr);
                 }
             }
-            /// <inheritdoc cref="DebugMessageCallbackKHR(IntPtr, void*)"/>
-            public static unsafe void DebugMessageCallbackKHR(GLDebugProcKHR callback, IntPtr userParam)
-            {
-                void* userParam_vptr = (void*)userParam;
-                IntPtr callback_ptr = Marshal.GetFunctionPointerForDelegate(callback);
-                DebugMessageCallbackKHR(callback_ptr, userParam_vptr);
-            }
-            /// <inheritdoc cref="DebugMessageCallbackKHR(IntPtr, void*)"/>
-            public static unsafe void DebugMessageCallbackKHR<T1>(GLDebugProcKHR callback, ReadOnlySpan<T1> userParam)
-                where T1 : unmanaged
-            {
-                fixed (void* userParam_ptr = userParam)
-                {
-                    IntPtr callback_ptr = Marshal.GetFunctionPointerForDelegate(callback);
-                    DebugMessageCallbackKHR(callback_ptr, userParam_ptr);
-                }
-            }
-            /// <inheritdoc cref="DebugMessageCallbackKHR(IntPtr, void*)"/>
-            public static unsafe void DebugMessageCallbackKHR<T1>(GLDebugProcKHR callback, T1[] userParam)
-                where T1 : unmanaged
-            {
-                fixed (void* userParam_ptr = userParam)
-                {
-                    IntPtr callback_ptr = Marshal.GetFunctionPointerForDelegate(callback);
-                    DebugMessageCallbackKHR(callback_ptr, userParam_ptr);
-                }
-            }
-            /// <inheritdoc cref="DebugMessageCallbackKHR(IntPtr, void*)"/>
-            public static unsafe void DebugMessageCallbackKHR<T1>(GLDebugProcKHR callback, ref readonly T1 userParam)
-                where T1 : unmanaged
-            {
-                fixed (void* userParam_ptr = &userParam)
-                {
-                    IntPtr callback_ptr = Marshal.GetFunctionPointerForDelegate(callback);
-                    DebugMessageCallbackKHR(callback_ptr, userParam_ptr);
-                }
-            }
             /// <inheritdoc cref="DebugMessageControl(DebugSource, DebugType, DebugSeverity, int, uint*, bool)"/>
             public static unsafe void DebugMessageControl(DebugSource source, DebugType type, DebugSeverity severity, int count, ReadOnlySpan<uint> ids, bool enabled)
             {
@@ -38346,42 +38204,11 @@ namespace OpenTK.Graphics.OpenGL.Compatibility
                     DebugMessageControl(source, type, severity, count, ids_ptr, enabled);
                 }
             }
-            /// <inheritdoc cref="DebugMessageControlKHR(DebugSource, DebugType, DebugSeverity, int, uint*, bool)"/>
-            public static unsafe void DebugMessageControlKHR(DebugSource source, DebugType type, DebugSeverity severity, int count, ReadOnlySpan<uint> ids, bool enabled)
-            {
-                fixed (uint* ids_ptr = ids)
-                {
-                    DebugMessageControlKHR(source, type, severity, count, ids_ptr, enabled);
-                }
-            }
-            /// <inheritdoc cref="DebugMessageControlKHR(DebugSource, DebugType, DebugSeverity, int, uint*, bool)"/>
-            public static unsafe void DebugMessageControlKHR(DebugSource source, DebugType type, DebugSeverity severity, int count, uint[] ids, bool enabled)
-            {
-                fixed (uint* ids_ptr = ids)
-                {
-                    DebugMessageControlKHR(source, type, severity, count, ids_ptr, enabled);
-                }
-            }
-            /// <inheritdoc cref="DebugMessageControlKHR(DebugSource, DebugType, DebugSeverity, int, uint*, bool)"/>
-            public static unsafe void DebugMessageControlKHR(DebugSource source, DebugType type, DebugSeverity severity, int count, ref readonly uint ids, bool enabled)
-            {
-                fixed (uint* ids_ptr = &ids)
-                {
-                    DebugMessageControlKHR(source, type, severity, count, ids_ptr, enabled);
-                }
-            }
             /// <inheritdoc cref="DebugMessageInsert(DebugSource, DebugType, uint, DebugSeverity, int, byte*)"/>
             public static unsafe void DebugMessageInsert(DebugSource source, DebugType type, uint id, DebugSeverity severity, int length, string buf)
             {
                 byte* buf_ptr = (byte*)Marshal.StringToCoTaskMemUTF8(buf);
                 DebugMessageInsert(source, type, id, severity, length, buf_ptr);
-                Marshal.FreeCoTaskMem((IntPtr)buf_ptr);
-            }
-            /// <inheritdoc cref="DebugMessageInsertKHR(DebugSource, DebugType, uint, DebugSeverity, int, byte*)"/>
-            public static unsafe void DebugMessageInsertKHR(DebugSource source, DebugType type, uint id, DebugSeverity severity, int length, string buf)
-            {
-                byte* buf_ptr = (byte*)Marshal.StringToCoTaskMemUTF8(buf);
-                DebugMessageInsertKHR(source, type, id, severity, length, buf_ptr);
                 Marshal.FreeCoTaskMem((IntPtr)buf_ptr);
             }
             /// <inheritdoc cref="GetDebugMessageLog(uint, int, DebugSource*, DebugType*, uint*, DebugSeverity*, int*, byte*)"/>
@@ -38451,73 +38278,6 @@ namespace OpenTK.Graphics.OpenGL.Compatibility
                 }
                 return returnValue;
             }
-            /// <inheritdoc cref="GetDebugMessageLogKHR(uint, int, DebugSource*, DebugType*, uint*, DebugSeverity*, int*, byte*)"/>
-            public static unsafe uint GetDebugMessageLogKHR(uint count, int bufSize, Span<DebugSource> sources, Span<DebugType> types, Span<uint> ids, Span<DebugSeverity> severities, Span<int> lengths, out string messageLog)
-            {
-                uint returnValue;
-                fixed (int* lengths_ptr = lengths)
-                {
-                    fixed (DebugSeverity* severities_ptr = severities)
-                    {
-                        fixed (uint* ids_ptr = ids)
-                        {
-                            fixed (DebugType* types_ptr = types)
-                            {
-                                fixed (DebugSource* sources_ptr = sources)
-                                {
-                                    var messageLog_ptr = (byte*)Marshal.AllocCoTaskMem(bufSize);
-                                    returnValue = GetDebugMessageLogKHR(count, bufSize, sources_ptr, types_ptr, ids_ptr, severities_ptr, lengths_ptr, messageLog_ptr);
-                                    messageLog = Marshal.PtrToStringUTF8((IntPtr)messageLog_ptr)!;
-                                    Marshal.FreeCoTaskMem((IntPtr)messageLog_ptr);
-                                }
-                            }
-                        }
-                    }
-                }
-                return returnValue;
-            }
-            /// <inheritdoc cref="GetDebugMessageLogKHR(uint, int, DebugSource*, DebugType*, uint*, DebugSeverity*, int*, byte*)"/>
-            public static unsafe uint GetDebugMessageLogKHR(uint count, int bufSize, DebugSource[] sources, DebugType[] types, uint[] ids, DebugSeverity[] severities, int[] lengths, out string messageLog)
-            {
-                uint returnValue;
-                fixed (int* lengths_ptr = lengths)
-                {
-                    fixed (DebugSeverity* severities_ptr = severities)
-                    {
-                        fixed (uint* ids_ptr = ids)
-                        {
-                            fixed (DebugType* types_ptr = types)
-                            {
-                                fixed (DebugSource* sources_ptr = sources)
-                                {
-                                    var messageLog_ptr = (byte*)Marshal.AllocCoTaskMem(bufSize);
-                                    returnValue = GetDebugMessageLogKHR(count, bufSize, sources_ptr, types_ptr, ids_ptr, severities_ptr, lengths_ptr, messageLog_ptr);
-                                    messageLog = Marshal.PtrToStringUTF8((IntPtr)messageLog_ptr)!;
-                                    Marshal.FreeCoTaskMem((IntPtr)messageLog_ptr);
-                                }
-                            }
-                        }
-                    }
-                }
-                return returnValue;
-            }
-            /// <inheritdoc cref="GetDebugMessageLogKHR(uint, int, DebugSource*, DebugType*, uint*, DebugSeverity*, int*, byte*)"/>
-            public static unsafe uint GetDebugMessageLogKHR(uint count, int bufSize, ref DebugSource sources, ref DebugType types, ref uint ids, ref DebugSeverity severities, ref int lengths, out string messageLog)
-            {
-                uint returnValue;
-                fixed (DebugSource* sources_ptr = &sources)
-                fixed (DebugType* types_ptr = &types)
-                fixed (uint* ids_ptr = &ids)
-                fixed (DebugSeverity* severities_ptr = &severities)
-                fixed (int* lengths_ptr = &lengths)
-                {
-                    var messageLog_ptr = (byte*)Marshal.AllocCoTaskMem(bufSize);
-                    returnValue = GetDebugMessageLogKHR(count, bufSize, sources_ptr, types_ptr, ids_ptr, severities_ptr, lengths_ptr, messageLog_ptr);
-                    messageLog = Marshal.PtrToStringUTF8((IntPtr)messageLog_ptr)!;
-                    Marshal.FreeCoTaskMem((IntPtr)messageLog_ptr);
-                }
-                return returnValue;
-            }
             /// <inheritdoc cref="GetnUniformfv(int, int, int, float*)"/>
             public static unsafe void GetnUniformf(int program, int location, int bufSize, Span<float> @params)
             {
@@ -38540,30 +38300,6 @@ namespace OpenTK.Graphics.OpenGL.Compatibility
                 fixed (float* @params_ptr = &@params)
                 {
                     GetnUniformfv(program, location, bufSize, @params_ptr);
-                }
-            }
-            /// <inheritdoc cref="GetnUniformfvKHR(int, int, int, float*)"/>
-            public static unsafe void GetnUniformfvKHR(int program, int location, int bufSize, Span<float> @params)
-            {
-                fixed (float* @params_ptr = @params)
-                {
-                    GetnUniformfvKHR(program, location, bufSize, @params_ptr);
-                }
-            }
-            /// <inheritdoc cref="GetnUniformfvKHR(int, int, int, float*)"/>
-            public static unsafe void GetnUniformfvKHR(int program, int location, int bufSize, float[] @params)
-            {
-                fixed (float* @params_ptr = @params)
-                {
-                    GetnUniformfvKHR(program, location, bufSize, @params_ptr);
-                }
-            }
-            /// <inheritdoc cref="GetnUniformfvKHR(int, int, int, float*)"/>
-            public static unsafe void GetnUniformfvKHR(int program, int location, int bufSize, ref float @params)
-            {
-                fixed (float* @params_ptr = &@params)
-                {
-                    GetnUniformfvKHR(program, location, bufSize, @params_ptr);
                 }
             }
             /// <inheritdoc cref="GetnUniformiv(int, int, int, int*)"/>
@@ -38590,30 +38326,6 @@ namespace OpenTK.Graphics.OpenGL.Compatibility
                     GetnUniformiv(program, location, bufSize, @params_ptr);
                 }
             }
-            /// <inheritdoc cref="GetnUniformivKHR(int, int, int, int*)"/>
-            public static unsafe void GetnUniformivKHR(int program, int location, int bufSize, Span<int> @params)
-            {
-                fixed (int* @params_ptr = @params)
-                {
-                    GetnUniformivKHR(program, location, bufSize, @params_ptr);
-                }
-            }
-            /// <inheritdoc cref="GetnUniformivKHR(int, int, int, int*)"/>
-            public static unsafe void GetnUniformivKHR(int program, int location, int bufSize, int[] @params)
-            {
-                fixed (int* @params_ptr = @params)
-                {
-                    GetnUniformivKHR(program, location, bufSize, @params_ptr);
-                }
-            }
-            /// <inheritdoc cref="GetnUniformivKHR(int, int, int, int*)"/>
-            public static unsafe void GetnUniformivKHR(int program, int location, int bufSize, ref int @params)
-            {
-                fixed (int* @params_ptr = &@params)
-                {
-                    GetnUniformivKHR(program, location, bufSize, @params_ptr);
-                }
-            }
             /// <inheritdoc cref="GetnUniformuiv(int, int, int, uint*)"/>
             public static unsafe void GetnUniformui(int program, int location, int bufSize, Span<uint> @params)
             {
@@ -38638,30 +38350,6 @@ namespace OpenTK.Graphics.OpenGL.Compatibility
                     GetnUniformuiv(program, location, bufSize, @params_ptr);
                 }
             }
-            /// <inheritdoc cref="GetnUniformuivKHR(int, int, int, uint*)"/>
-            public static unsafe void GetnUniformuivKHR(int program, int location, int bufSize, Span<uint> @params)
-            {
-                fixed (uint* @params_ptr = @params)
-                {
-                    GetnUniformuivKHR(program, location, bufSize, @params_ptr);
-                }
-            }
-            /// <inheritdoc cref="GetnUniformuivKHR(int, int, int, uint*)"/>
-            public static unsafe void GetnUniformuivKHR(int program, int location, int bufSize, uint[] @params)
-            {
-                fixed (uint* @params_ptr = @params)
-                {
-                    GetnUniformuivKHR(program, location, bufSize, @params_ptr);
-                }
-            }
-            /// <inheritdoc cref="GetnUniformuivKHR(int, int, int, uint*)"/>
-            public static unsafe void GetnUniformuivKHR(int program, int location, int bufSize, ref uint @params)
-            {
-                fixed (uint* @params_ptr = &@params)
-                {
-                    GetnUniformuivKHR(program, location, bufSize, @params_ptr);
-                }
-            }
             /// <inheritdoc cref="GetObjectLabel(ObjectIdentifier, uint, int, int*, byte*)"/>
             public static unsafe string GetObjectLabel(ObjectIdentifier identifier, uint name, int bufSize, out int length)
             {
@@ -38682,30 +38370,6 @@ namespace OpenTK.Graphics.OpenGL.Compatibility
                 {
                     var label_ptr = (byte*)Marshal.AllocCoTaskMem(bufSize);
                     GetObjectLabel(identifier, name, bufSize, length_ptr, label_ptr);
-                    label = Marshal.PtrToStringUTF8((IntPtr)label_ptr)!;
-                    Marshal.FreeCoTaskMem((IntPtr)label_ptr);
-                }
-            }
-            /// <inheritdoc cref="GetObjectLabelKHR(All, uint, int, int*, byte*)"/>
-            public static unsafe string GetObjectLabelKHR(All identifier, uint name, int bufSize, out int length)
-            {
-                string label;
-                fixed (int* length_ptr = &length)
-                {
-                    var label_ptr = (byte*)Marshal.AllocCoTaskMem(bufSize);
-                    GetObjectLabelKHR(identifier, name, bufSize, length_ptr, label_ptr);
-                    label = Marshal.PtrToStringUTF8((IntPtr)label_ptr)!;
-                    Marshal.FreeCoTaskMem((IntPtr)label_ptr);
-                }
-                return label;
-            }
-            /// <inheritdoc cref="GetObjectLabelKHR(All, uint, int, int*, byte*)"/>
-            public static unsafe void GetObjectLabelKHR(All identifier, uint name, int bufSize, out int length, out string label)
-            {
-                fixed (int* length_ptr = &length)
-                {
-                    var label_ptr = (byte*)Marshal.AllocCoTaskMem(bufSize);
-                    GetObjectLabelKHR(identifier, name, bufSize, length_ptr, label_ptr);
                     label = Marshal.PtrToStringUTF8((IntPtr)label_ptr)!;
                     Marshal.FreeCoTaskMem((IntPtr)label_ptr);
                 }
@@ -38828,124 +38492,6 @@ namespace OpenTK.Graphics.OpenGL.Compatibility
                     Marshal.FreeCoTaskMem((IntPtr)label_ptr);
                 }
             }
-            /// <inheritdoc cref="GetObjectPtrLabelKHR(void*, int, int*, byte*)"/>
-            public static unsafe string GetObjectPtrLabelKHR(IntPtr ptr, int bufSize, out int length)
-            {
-                string label;
-                fixed (int* length_ptr = &length)
-                {
-                    var label_ptr = (byte*)Marshal.AllocCoTaskMem(bufSize);
-                    void* ptr_vptr = (void*)ptr;
-                    GetObjectPtrLabelKHR(ptr_vptr, bufSize, length_ptr, label_ptr);
-                    label = Marshal.PtrToStringUTF8((IntPtr)label_ptr)!;
-                    Marshal.FreeCoTaskMem((IntPtr)label_ptr);
-                }
-                return label;
-            }
-            /// <inheritdoc cref="GetObjectPtrLabelKHR(void*, int, int*, byte*)"/>
-            public static unsafe void GetObjectPtrLabelKHR(IntPtr ptr, int bufSize, out int length, out string label)
-            {
-                fixed (int* length_ptr = &length)
-                {
-                    var label_ptr = (byte*)Marshal.AllocCoTaskMem(bufSize);
-                    void* ptr_vptr = (void*)ptr;
-                    GetObjectPtrLabelKHR(ptr_vptr, bufSize, length_ptr, label_ptr);
-                    label = Marshal.PtrToStringUTF8((IntPtr)label_ptr)!;
-                    Marshal.FreeCoTaskMem((IntPtr)label_ptr);
-                }
-            }
-            /// <inheritdoc cref="GetObjectPtrLabelKHR(void*, int, int*, byte*)"/>
-            public static unsafe string GetObjectPtrLabelKHR<T1>(ReadOnlySpan<T1> ptr, int bufSize, out int length)
-                where T1 : unmanaged
-            {
-                string label;
-                fixed (int* length_ptr = &length)
-                {
-                    fixed (void* ptr_ptr = ptr)
-                    {
-                        var label_ptr = (byte*)Marshal.AllocCoTaskMem(bufSize);
-                        GetObjectPtrLabelKHR(ptr_ptr, bufSize, length_ptr, label_ptr);
-                        label = Marshal.PtrToStringUTF8((IntPtr)label_ptr)!;
-                        Marshal.FreeCoTaskMem((IntPtr)label_ptr);
-                    }
-                }
-                return label;
-            }
-            /// <inheritdoc cref="GetObjectPtrLabelKHR(void*, int, int*, byte*)"/>
-            public static unsafe void GetObjectPtrLabelKHR<T1>(ReadOnlySpan<T1> ptr, int bufSize, out int length, out string label)
-                where T1 : unmanaged
-            {
-                fixed (int* length_ptr = &length)
-                {
-                    fixed (void* ptr_ptr = ptr)
-                    {
-                        var label_ptr = (byte*)Marshal.AllocCoTaskMem(bufSize);
-                        GetObjectPtrLabelKHR(ptr_ptr, bufSize, length_ptr, label_ptr);
-                        label = Marshal.PtrToStringUTF8((IntPtr)label_ptr)!;
-                        Marshal.FreeCoTaskMem((IntPtr)label_ptr);
-                    }
-                }
-            }
-            /// <inheritdoc cref="GetObjectPtrLabelKHR(void*, int, int*, byte*)"/>
-            public static unsafe string GetObjectPtrLabelKHR<T1>(T1[] ptr, int bufSize, out int length)
-                where T1 : unmanaged
-            {
-                string label;
-                fixed (int* length_ptr = &length)
-                {
-                    fixed (void* ptr_ptr = ptr)
-                    {
-                        var label_ptr = (byte*)Marshal.AllocCoTaskMem(bufSize);
-                        GetObjectPtrLabelKHR(ptr_ptr, bufSize, length_ptr, label_ptr);
-                        label = Marshal.PtrToStringUTF8((IntPtr)label_ptr)!;
-                        Marshal.FreeCoTaskMem((IntPtr)label_ptr);
-                    }
-                }
-                return label;
-            }
-            /// <inheritdoc cref="GetObjectPtrLabelKHR(void*, int, int*, byte*)"/>
-            public static unsafe void GetObjectPtrLabelKHR<T1>(T1[] ptr, int bufSize, out int length, out string label)
-                where T1 : unmanaged
-            {
-                fixed (int* length_ptr = &length)
-                {
-                    fixed (void* ptr_ptr = ptr)
-                    {
-                        var label_ptr = (byte*)Marshal.AllocCoTaskMem(bufSize);
-                        GetObjectPtrLabelKHR(ptr_ptr, bufSize, length_ptr, label_ptr);
-                        label = Marshal.PtrToStringUTF8((IntPtr)label_ptr)!;
-                        Marshal.FreeCoTaskMem((IntPtr)label_ptr);
-                    }
-                }
-            }
-            /// <inheritdoc cref="GetObjectPtrLabelKHR(void*, int, int*, byte*)"/>
-            public static unsafe string GetObjectPtrLabelKHR<T1>(ref readonly T1 ptr, int bufSize, out int length)
-                where T1 : unmanaged
-            {
-                string label;
-                fixed (void* ptr_ptr = &ptr)
-                fixed (int* length_ptr = &length)
-                {
-                    var label_ptr = (byte*)Marshal.AllocCoTaskMem(bufSize);
-                    GetObjectPtrLabelKHR(ptr_ptr, bufSize, length_ptr, label_ptr);
-                    label = Marshal.PtrToStringUTF8((IntPtr)label_ptr)!;
-                    Marshal.FreeCoTaskMem((IntPtr)label_ptr);
-                }
-                return label;
-            }
-            /// <inheritdoc cref="GetObjectPtrLabelKHR(void*, int, int*, byte*)"/>
-            public static unsafe void GetObjectPtrLabelKHR<T1>(ref readonly T1 ptr, int bufSize, out int length, out string label)
-                where T1 : unmanaged
-            {
-                fixed (void* ptr_ptr = &ptr)
-                fixed (int* length_ptr = &length)
-                {
-                    var label_ptr = (byte*)Marshal.AllocCoTaskMem(bufSize);
-                    GetObjectPtrLabelKHR(ptr_ptr, bufSize, length_ptr, label_ptr);
-                    label = Marshal.PtrToStringUTF8((IntPtr)label_ptr)!;
-                    Marshal.FreeCoTaskMem((IntPtr)label_ptr);
-                }
-            }
             /// <inheritdoc cref="GetPointerv(GetPointervPName, void**)"/>
             public static unsafe void GetPointer(GetPointervPName pname, void** @params)
             {
@@ -38956,13 +38502,6 @@ namespace OpenTK.Graphics.OpenGL.Compatibility
             {
                 byte* label_ptr = (byte*)Marshal.StringToCoTaskMemUTF8(label);
                 ObjectLabel(identifier, name, length, label_ptr);
-                Marshal.FreeCoTaskMem((IntPtr)label_ptr);
-            }
-            /// <inheritdoc cref="ObjectLabelKHR(ObjectIdentifier, int, int, byte*)"/>
-            public static unsafe void ObjectLabelKHR(ObjectIdentifier identifier, int name, int length, string label)
-            {
-                byte* label_ptr = (byte*)Marshal.StringToCoTaskMemUTF8(label);
-                ObjectLabelKHR(identifier, name, length, label_ptr);
                 Marshal.FreeCoTaskMem((IntPtr)label_ptr);
             }
             /// <inheritdoc cref="ObjectPtrLabel(void*, int, byte*)"/>
@@ -38982,35 +38521,11 @@ namespace OpenTK.Graphics.OpenGL.Compatibility
                 ObjectPtrLabel(ptr_intptr, length, label_ptr);
                 Marshal.FreeCoTaskMem((IntPtr)label_ptr);
             }
-            /// <inheritdoc cref="ObjectPtrLabelKHR(void*, int, byte*)"/>
-            public static unsafe void ObjectPtrLabelKHR(IntPtr ptr, int length, string label)
-            {
-                byte* label_ptr = (byte*)Marshal.StringToCoTaskMemUTF8(label);
-                void* ptr_intptr = (void*)ptr;
-                ObjectPtrLabelKHR(ptr_intptr, length, label_ptr);
-                Marshal.FreeCoTaskMem((IntPtr)label_ptr);
-            }
-            /// <inheritdoc cref="ObjectPtrLabelKHR(void*, int, byte*)"/>
-            public static unsafe void ObjectPtrLabelKHR(GLSync ptr, int length, string label)
-            {
-                byte* label_ptr = (byte*)Marshal.StringToCoTaskMemUTF8(label);
-                IntPtr ptr_sync = (IntPtr)ptr;
-                void* ptr_intptr = (void*)ptr_sync;
-                ObjectPtrLabelKHR(ptr_intptr, length, label_ptr);
-                Marshal.FreeCoTaskMem((IntPtr)label_ptr);
-            }
             /// <inheritdoc cref="PushDebugGroup(DebugSource, uint, int, byte*)"/>
             public static unsafe void PushDebugGroup(DebugSource source, uint id, int length, string message)
             {
                 byte* message_ptr = (byte*)Marshal.StringToCoTaskMemUTF8(message);
                 PushDebugGroup(source, id, length, message_ptr);
-                Marshal.FreeCoTaskMem((IntPtr)message_ptr);
-            }
-            /// <inheritdoc cref="PushDebugGroupKHR(DebugSource, uint, int, byte*)"/>
-            public static unsafe void PushDebugGroupKHR(DebugSource source, uint id, int length, string message)
-            {
-                byte* message_ptr = (byte*)Marshal.StringToCoTaskMemUTF8(message);
-                PushDebugGroupKHR(source, id, length, message_ptr);
                 Marshal.FreeCoTaskMem((IntPtr)message_ptr);
             }
             /// <inheritdoc cref="ReadnPixels(int, int, int, int, PixelFormat, PixelType, int, void*)"/>
@@ -39044,39 +38559,6 @@ namespace OpenTK.Graphics.OpenGL.Compatibility
                 fixed (void* data_ptr = &data)
                 {
                     ReadnPixels(x, y, width, height, format, type, bufSize, data_ptr);
-                }
-            }
-            /// <inheritdoc cref="ReadnPixelsKHR(int, int, int, int, PixelFormat, PixelType, int, void*)"/>
-            public static unsafe void ReadnPixelsKHR(int x, int y, int width, int height, PixelFormat format, PixelType type, int bufSize, IntPtr data)
-            {
-                void* data_vptr = (void*)data;
-                ReadnPixelsKHR(x, y, width, height, format, type, bufSize, data_vptr);
-            }
-            /// <inheritdoc cref="ReadnPixelsKHR(int, int, int, int, PixelFormat, PixelType, int, void*)"/>
-            public static unsafe void ReadnPixelsKHR<T1>(int x, int y, int width, int height, PixelFormat format, PixelType type, int bufSize, Span<T1> data)
-                where T1 : unmanaged
-            {
-                fixed (void* data_ptr = data)
-                {
-                    ReadnPixelsKHR(x, y, width, height, format, type, bufSize, data_ptr);
-                }
-            }
-            /// <inheritdoc cref="ReadnPixelsKHR(int, int, int, int, PixelFormat, PixelType, int, void*)"/>
-            public static unsafe void ReadnPixelsKHR<T1>(int x, int y, int width, int height, PixelFormat format, PixelType type, int bufSize, T1[] data)
-                where T1 : unmanaged
-            {
-                fixed (void* data_ptr = data)
-                {
-                    ReadnPixelsKHR(x, y, width, height, format, type, bufSize, data_ptr);
-                }
-            }
-            /// <inheritdoc cref="ReadnPixelsKHR(int, int, int, int, PixelFormat, PixelType, int, void*)"/>
-            public static unsafe void ReadnPixelsKHR<T1>(int x, int y, int width, int height, PixelFormat format, PixelType type, int bufSize, ref T1 data)
-                where T1 : unmanaged
-            {
-                fixed (void* data_ptr = &data)
-                {
-                    ReadnPixelsKHR(x, y, width, height, format, type, bufSize, data_ptr);
                 }
             }
         }
@@ -48444,40 +47926,6 @@ namespace OpenTK.Graphics.OpenGL.Compatibility
                     GetLightxOES(light, pname, @params_ptr);
                 }
             }
-            /// <inheritdoc cref="GetLightxvOES(LightName, LightParameter, int*)"/>
-            public static unsafe void GetLightxvOES(LightName light, LightParameter pname, Span<int> @params)
-            {
-                fixed (int* @params_ptr = @params)
-                {
-                    GetLightxvOES(light, pname, @params_ptr);
-                }
-            }
-            /// <inheritdoc cref="GetLightxvOES(LightName, LightParameter, int*)"/>
-            public static unsafe void GetLightxvOES(LightName light, LightParameter pname, int[] @params)
-            {
-                fixed (int* @params_ptr = @params)
-                {
-                    GetLightxvOES(light, pname, @params_ptr);
-                }
-            }
-            /// <inheritdoc cref="GetLightxvOES(LightName, LightParameter, int*)"/>
-            public static unsafe int GetLightxvOES(LightName light, LightParameter pname)
-            {
-                int @params;
-                int* @params_ptr = &@params;
-                {
-                    GetLightxvOES(light, pname, @params_ptr);
-                }
-                return @params;
-            }
-            /// <inheritdoc cref="GetLightxvOES(LightName, LightParameter, int*)"/>
-            public static unsafe void GetLightxvOES(LightName light, LightParameter pname, out int @params)
-            {
-                fixed (int* @params_ptr = &@params)
-                {
-                    GetLightxvOES(light, pname, @params_ptr);
-                }
-            }
             /// <inheritdoc cref="GetMapxvOES(MapTarget, GetMapQuery, int*)"/>
             public static unsafe void GetMapxvOES(MapTarget target, GetMapQuery query, Span<int> v)
             {
@@ -48510,40 +47958,6 @@ namespace OpenTK.Graphics.OpenGL.Compatibility
                 fixed (int* v_ptr = &v)
                 {
                     GetMapxvOES(target, query, v_ptr);
-                }
-            }
-            /// <inheritdoc cref="GetMaterialxvOES(TriangleFace, MaterialParameter, int*)"/>
-            public static unsafe void GetMaterialxvOES(TriangleFace face, MaterialParameter pname, Span<int> @params)
-            {
-                fixed (int* @params_ptr = @params)
-                {
-                    GetMaterialxvOES(face, pname, @params_ptr);
-                }
-            }
-            /// <inheritdoc cref="GetMaterialxvOES(TriangleFace, MaterialParameter, int*)"/>
-            public static unsafe void GetMaterialxvOES(TriangleFace face, MaterialParameter pname, int[] @params)
-            {
-                fixed (int* @params_ptr = @params)
-                {
-                    GetMaterialxvOES(face, pname, @params_ptr);
-                }
-            }
-            /// <inheritdoc cref="GetMaterialxvOES(TriangleFace, MaterialParameter, int*)"/>
-            public static unsafe int GetMaterialxvOES(TriangleFace face, MaterialParameter pname)
-            {
-                int @params;
-                int* @params_ptr = &@params;
-                {
-                    GetMaterialxvOES(face, pname, @params_ptr);
-                }
-                return @params;
-            }
-            /// <inheritdoc cref="GetMaterialxvOES(TriangleFace, MaterialParameter, int*)"/>
-            public static unsafe void GetMaterialxvOES(TriangleFace face, MaterialParameter pname, out int @params)
-            {
-                fixed (int* @params_ptr = &@params)
-                {
-                    GetMaterialxvOES(face, pname, @params_ptr);
                 }
             }
             /// <inheritdoc cref="GetPixelMapxv(PixelMap, int, int*)"/>

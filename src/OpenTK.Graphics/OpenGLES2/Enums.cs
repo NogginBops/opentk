@@ -378,13 +378,11 @@ namespace OpenTK.Graphics.OpenGLES2
         OneMinusConstantAlpha = 32772,
         BlendColor = 32773,
         FuncAdd = 32774,
-        FuncAddExt = 32774,
         Min = 32775,
         MinExt = 32775,
         Max = 32776,
         MaxExt = 32776,
         BlendEquation = 32777,
-        BlendEquationExt = 32777,
         BlendEquationRgb = 32777,
         FuncSubtract = 32778,
         FuncReverseSubtract = 32779,
@@ -637,9 +635,7 @@ namespace OpenTK.Graphics.OpenGLES2
         MaxLabelLengthKhr = 33512,
         MaxCullDistancesExt = 33529,
         MaxCombinedClipAndCullDistancesExt = 33530,
-        ContextReleaseBehavior = 33531,
         ContextReleaseBehaviorKhr = 33531,
-        ContextReleaseBehaviorFlush = 33532,
         ContextReleaseBehaviorFlushKhr = 33532,
         UnsignedShort565 = 33635,
         UnsignedShort4444RevExt = 33637,
@@ -1741,7 +1737,6 @@ namespace OpenTK.Graphics.OpenGLES2
         ColorAttachmentExt = 37104,
         MultiviewExt = 37105,
         MaxMultiviewBuffersExt = 37106,
-        ContextRobustAccess = 37107,
         ContextRobustAccessExt = 37107,
         ContextRobustAccessKhr = 37107,
         Texture2DMultisample = 37120,
@@ -2542,7 +2537,6 @@ namespace OpenTK.Graphics.OpenGLES2
     public enum BlendEquationMode : uint
     {
         FuncAdd = 32774,
-        FuncAddExt = 32774,
         Min = 32775,
         MinExt = 32775,
         Max = 32776,
@@ -3042,12 +3036,10 @@ namespace OpenTK.Graphics.OpenGLES2
         FoveationScaledBinMethodBitQcom = 2,
         FoveationSubsampledLayoutMethodBitQcom = 4,
     }
-    [Flags]
     public enum FragmentShaderDestMaskATI : uint
     {
         None = 0,
     }
-    [Flags]
     public enum FragmentShaderDestModMaskATI : uint
     {
         None = 0,
@@ -3276,7 +3268,6 @@ namespace OpenTK.Graphics.OpenGLES2
         PolygonOffsetUnits = 10752,
         BlendColor = 32773,
         BlendEquation = 32777,
-        BlendEquationExt = 32777,
         BlendEquationRgb = 32777,
         PolygonOffsetFill = 32823,
         PolygonOffsetFactor = 32824,
@@ -3467,7 +3458,7 @@ namespace OpenTK.Graphics.OpenGLES2
         ShaderCoreTexelRateArm = 38645,
         ShaderCoreFmaRateArm = 38646,
     }
-    ///<summary>Used in <see cref="GL.GetPointerv" />, <see cref="GL.KHR.GetPointerv" /></summary>
+    ///<summary>Used in <see cref="GL.GetPointerv" /></summary>
     public enum GetPointervPName : uint
     {
         DebugCallbackFunction = 33348,
@@ -3489,12 +3480,13 @@ namespace OpenTK.Graphics.OpenGLES2
         TextureGreenSize = 32861,
         TextureBlueSize = 32862,
         TextureAlphaSize = 32863,
+        TextureDepth = 32881,
         TextureUnnormalizedCoordinatesArm = 36714,
         SurfaceCompressionExt = 38592,
         TextureYDegammaQcom = 38672,
         TextureCbcrDegammaQcom = 38673,
     }
-    ///<summary>Used in <see cref="GL.GetGraphicsResetStatus" />, <see cref="GL.KHR.GetGraphicsResetStatus" />, <see cref="GL.EXT.GetGraphicsResetStatusEXT" />, ...</summary>
+    ///<summary>Used in <see cref="GL.GetGraphicsResetStatus" />, <see cref="GL.EXT.GetGraphicsResetStatusEXT" />, <see cref="GL.KHR.GetGraphicsResetStatusKHR" /></summary>
     public enum GraphicsResetStatus : uint
     {
         NoError = 0,
@@ -3936,7 +3928,7 @@ namespace OpenTK.Graphics.OpenGLES2
         Int = 5124,
         Float = 5126,
     }
-    ///<summary>Used in <see cref="GL.GetObjectLabel" />, <see cref="GL.ObjectLabel" />, <see cref="GL.KHR.GetObjectLabel" />, ...</summary>
+    ///<summary>Used in <see cref="GL.GetObjectLabel" />, <see cref="GL.ObjectLabel" />, <see cref="GL.KHR.ObjectLabelKHR" /></summary>
     public enum ObjectIdentifier : uint
     {
         Texture = 5890,
@@ -3956,11 +3948,6 @@ namespace OpenTK.Graphics.OpenGLES2
     {
         PatchVertices = 36466,
     }
-    ///<summary>Used in <see cref="GL.NV.GetPathColorGenfvNV" />, <see cref="GL.NV.GetPathColorGenivNV" />, <see cref="GL.NV.PathColorGenNV" />, ...</summary>
-    public enum PathColor : uint
-    {
-    }
-    ///<summary>Used in <see cref="GL.NV.PathColorGenNV" /></summary>
     public enum PathColorFormat : uint
     {
         None = 0,
@@ -4055,7 +4042,6 @@ namespace OpenTK.Graphics.OpenGLES2
         SystemFontNameNv = 36979,
         FileNameNv = 36980,
     }
-    ///<summary>Used in <see cref="GL.NV.GetPathColorGenfvNV" />, <see cref="GL.NV.GetPathColorGenivNV" />, <see cref="GL.NV.GetPathTexGenfvNV" />, ...</summary>
     public enum PathGenMode : uint
     {
         None = 0,
@@ -4980,9 +4966,6 @@ namespace OpenTK.Graphics.OpenGLES2
     ///<summary>Used in <see cref="GL.TexParameterf" />, <see cref="GL.TexParameterfv" />, <see cref="GL.TexParameteri" />, ...</summary>
     public enum TextureParameterName : uint
     {
-        TextureWidth = 4096,
-        TextureHeight = 4097,
-        TextureInternalFormat = 4099,
         TextureBorderColor = 4100,
         TextureBorderColorNv = 4100,
         TextureMagFilter = 10240,
@@ -5043,7 +5026,7 @@ namespace OpenTK.Graphics.OpenGLES2
         Texture2DMultisample = 37120,
         Texture2DMultisampleArray = 37122,
     }
-    ///<summary>Used in <see cref="GL.ActiveTexture" />, <see cref="GL.NV.GetPathTexGenfvNV" />, <see cref="GL.NV.GetPathTexGenivNV" /></summary>
+    ///<summary>Used in <see cref="GL.ActiveTexture" /></summary>
     public enum TextureUnit : uint
     {
         Texture0 = 33984,

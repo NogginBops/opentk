@@ -123,7 +123,7 @@ namespace ALGenerator
                 // FIXME: This is one point where we could do some processing to move things from one namespace to another.
                 // Alternatively we can try and do this later in processing. See comment with the same date.
                 // - Noggin_bops 2023-08-26
-                List<API> apis = new List<API>(Enum.GetValues<InputAPI>().Length);
+                List<API> apis = new List<API>(Enum.GetValues<InputApi>().Length);
                 foreach (API api in alSpecification.APIs.Concat(alcSpecification.APIs))
                 {
                     if (apis.Find(x => x.Name == api.Name) != null)
@@ -164,12 +164,12 @@ namespace ALGenerator
                                 }
                             }
 
-                            static bool MatchesAPI(OutputApiFlags flags, InputAPI api)
+                            static bool MatchesAPI(OutputApiFlags flags, InputApi api)
                             {
                                 switch (api)
                                 {
-                                    case InputAPI.AL: return flags.HasFlag(OutputApiFlags.AL);
-                                    case InputAPI.ALC: return flags.HasFlag(OutputApiFlags.ALC);
+                                    case InputApi.AL: return flags.HasFlag(OutputApiFlags.AL);
+                                    case InputApi.ALC: return flags.HasFlag(OutputApiFlags.ALC);
                                     default: throw new Exception();
                                 }
                             }

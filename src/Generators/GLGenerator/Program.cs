@@ -1,5 +1,6 @@
 ﻿using GeneratorBase;
 using GeneratorBase.Utility;
+using GeneratorBase.Utility.Extensions;
 using GLGenerator.Parsing;
 using GLGenerator.Process;
 using System;
@@ -30,7 +31,7 @@ namespace GLGenerator
 
             using (Logger.CreateLogger(Path.Combine(Path.GetDirectoryName(Assembly.GetEntryAssembly()!.Location)!, "log.txt")))
             {
-                Specification glSpecification;
+                SpecificationFile glSpecification;
                 {
                     NameManglerSettings glSettings = new NameManglerSettings()
                     {
@@ -46,7 +47,7 @@ namespace GLGenerator
                             { "ProgramPropertyARB", "ProgramProperty" },
                             { "BlendEquationModeEXT", "BlendEquationMode" },
                         },
-                        EnumAcronymsToKeepCapitalization = [ "2D", "3dfx", "3D" ],
+                        EnumAcronymsToKeepCapitalization = [ "1D", "2D", "3dfx", "3D" ],
                     };
 
                     // Reading the gl.xml file and parsing it into data structures.
@@ -54,7 +55,7 @@ namespace GLGenerator
                     glSpecification = SpecificationParser.Parse(specificationStream, new NameMangler(glSettings), ApiFile.GL, new List<string>());
                 }
 
-                Specification wglSpecification;
+                SpecificationFile wglSpecification;
                 {
                     NameManglerSettings wglSettings = new NameManglerSettings()
                     {
@@ -80,7 +81,7 @@ namespace GLGenerator
                             "ERROR_INCOMPATIBLE_AFFINITY_MASKS_NV",
                             "ERROR_MISSING_AFFINITY_MASK_NV",
                         },
-                        EnumAcronymsToKeepCapitalization = ["2D", "3dfx", "3D"],
+                        EnumAcronymsToKeepCapitalization = ["1D", "2D", "3dfx", "3D"],
                     };
 
                     // Reading the gl.xml file and parsing it into data structures.
@@ -88,7 +89,7 @@ namespace GLGenerator
                     wglSpecification = SpecificationParser.Parse(wglSpecificationStream, new NameMangler(wglSettings), ApiFile.WGL, new List<string>());
                 }
 
-                Specification glxSpecification;
+                SpecificationFile glxSpecification;
                 {
                     NameManglerSettings glxSettings = new NameManglerSettings()
                     {
@@ -101,7 +102,7 @@ namespace GLGenerator
                         EnumsWithoutPrefix = new HashSet<string>()
                         {
                         },
-                        EnumAcronymsToKeepCapitalization = ["2D", "3dfx", "3D"],
+                        EnumAcronymsToKeepCapitalization = ["1D", "2D", "3dfx", "3D"],
                     };
 
                     List<string> glxIgnoreFunctions = new List<string>()
@@ -118,7 +119,7 @@ namespace GLGenerator
                     glxSpecification = SpecificationParser.Parse(glxSpecificationStream, new NameMangler(glxSettings), ApiFile.GLX, glxIgnoreFunctions);
                 }
 
-                Specification eglSpecification;
+                SpecificationFile eglAndAngleSpecification;
                 {
                     NameManglerSettings eglSettings = new NameManglerSettings()
                     {
@@ -131,7 +132,7 @@ namespace GLGenerator
                         EnumsWithoutPrefix = new HashSet<string>()
                         {
                         },
-                        EnumAcronymsToKeepCapitalization = ["2D", "3dfx", "3D"],
+                        EnumAcronymsToKeepCapitalization = ["1D", "2D", "3dfx", "3D"],
                     };
 
                     List<string> eglIgnoreFunctions = new List<string>()
@@ -139,109 +140,27 @@ namespace GLGenerator
                     };
 
                     // Reading the gl.xml file and parsing it into data structures.
-                    using FileStream eglSpecificationStream = Reader.ReadEGLSpecFromGithub();
-                    eglSpecification = SpecificationParser.Parse(eglSpecificationStream, new NameMangler(eglSettings), ApiFile.EGL, eglIgnoreFunctions);
-
-                    using FileStream eglANGLESpecificationStream = Reader.ReadEGLANGLESpecFromFile();
-                    Specification eglANGLESpecification = SpecificationParser.Parse(eglANGLESpecificationStream, new NameMangler(eglSettings), ApiFile.EGL, eglIgnoreFunctions);
-
-                    eglSpecification.Functions.AddRange(eglANGLESpecification.Functions);
-                    eglSpecification.Enums.AddRange(eglANGLESpecification.Enums);
-
-                    // FIXME: Merge the API...
-                    Debug.Assert(eglSpecification.APIs.Count == 1);
-                    Debug.Assert(eglSpecification.APIs[0].Name == InputAPI.EGL);
-                    Debug.Assert(eglANGLESpecification.APIs.Count == 1);
-                    Debug.Assert(eglANGLESpecification.APIs[0].Name == InputAPI.EGL);
-                    eglSpecification.APIs[0].Functions.AddRange(eglANGLESpecification.APIs[0].Functions);
-                    eglSpecification.APIs[0].Enums.AddRange(eglANGLESpecification.APIs[0].Enums);
+                    using Stream eglAndAngleSpecificationStream = Reader.ReadEGLAndAngleSpecFromGithub();
+                    eglAndAngleSpecification = SpecificationParser.Parse(eglAndAngleSpecificationStream, new NameMangler(eglSettings), ApiFile.EGL, eglIgnoreFunctions);
                 }
 
-                List<Function> functions =
-                [
-                    .. glSpecification.Functions,
-                    .. wglSpecification.Functions,
-                    .. glxSpecification.Functions,
-                    .. eglSpecification.Functions,
-                ];
-
-                List<EnumEntry> enums =
-                [
-                    .. glSpecification.Enums,
-                    .. wglSpecification.Enums,
-                    .. glxSpecification.Enums,
-                    .. eglSpecification.Enums,
-                ];
-
-                // FIXME: This is one point where we could do some processing to move things from one namespace to another.
-                // Alternatively we can try and do this later in processing. See comment with the same date.
-                // - Noggin_bops 2023-08-26
-                List<API> apis = new List<API>(Enum.GetValues<InputAPI>().Length);
-                foreach (API api in glSpecification.APIs.Concat(wglSpecification.APIs).Concat(glxSpecification.APIs).Concat(eglSpecification.APIs))
+                SpecificationFile[] files = [glSpecification, wglSpecification, glxSpecification, eglAndAngleSpecification];
+                Processor.CrossReferenceEnums(files);
+                var apis = Processor.MakeApis(files);
+                List<ResolvedApi> resolvedApis = new List<ResolvedApi>(apis.Count);
+                foreach (var api in apis)
                 {
-                    if (apis.Find(x => x.Name == api.Name) != null)
-                    {
-                        // We already have this API. Merge it?
-                        throw new NotImplementedException();
-                    }
-                    else
-                    {
-                        apis.Add(api);
-                    }
+                    SpecificationFile file = Array.Find(files, file => file.File == api.Name.ToApiFile())!;
+                    ResolvedApi resolvedApi = Processor.ResolveReferences(api, file);
+                    resolvedApis.Add(resolvedApi);
                 }
-
-                {
-                    foreach (var api in apis)
-                    {
-                        foreach (var @enum in enums)
-                        {
-                            if (MatchesAPI(@enum.Apis, api.Name))
-                            {
-                                bool found = false;
-                                foreach (var @ref in api.Enums)
-                                {
-                                    if (@ref.EnumName == @enum.OriginalName)
-                                    {
-                                        found = true;
-                                        break;
-                                    }
-                                }
-
-                                // Check that the enum is a part of all the groups it's supposed to be part of.
-
-                                if (found == false)
-                                {
-                                    // Add the reference to the enum.
-                                    //api.Enums.Add(new EnumReference(@enum.Name, null, null, new List<ExtensionReference>(), GLProfile.None));
-                                    //Logger.Info($"Adding enum entry '{@enum.MangledName}' into {api.Name}.");
-                                }
-                            }
-
-                            static bool MatchesAPI(OutputApiFlags flags, InputAPI api)
-                            {
-                                switch (api)
-                                {
-                                    case InputAPI.GL: return (flags & (OutputApiFlags.GL | OutputApiFlags.GLCompat)) != 0;
-                                    case InputAPI.GLES1: return flags.HasFlag(OutputApiFlags.GLES1);
-                                    case InputAPI.GLES2: return flags.HasFlag(OutputApiFlags.GLES2);
-                                    case InputAPI.WGL: return flags.HasFlag(OutputApiFlags.WGL);
-                                    case InputAPI.GLX: return flags.HasFlag(OutputApiFlags.GLX);
-                                    case InputAPI.EGL: return flags.HasFlag(OutputApiFlags.EGL);
-                                    default: throw new Exception();
-                                }
-                            }
-                        }
-                    }
-                }
-
-                Specification finalSpecification = new Specification(functions, enums, apis);
 
                 // Read the documentation folders and parse it into data structures.
                 using DocumentationSource documentationSource = Reader.ReadDocumentationFromGithub();
                 Documentation documentation = DocumentationParser.Parse(documentationSource);
 
                 // Processer/overloading
-                OutputData outputSpec = Processor.ProcessSpec(finalSpecification, documentation);
+                OutputData outputSpec = Processor.ProcessSpec(resolvedApis, files, documentation);
 
                 // Writing cs files.
                 Writer.Write(outputSpec);

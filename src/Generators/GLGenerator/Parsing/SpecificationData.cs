@@ -9,38 +9,19 @@ using System.Linq;
 
 namespace GLGenerator.Parsing
 {
-    internal enum InputAPI
-    {
-        GL,
-        GLES1,
-        GLES2,
-        WGL,
-        GLX,
-        EGL,
-    }
-
-    [Flags]
-    internal enum EnumAPI
-    {
-        None = 0,
-        GL = 1 << 0,
-        GLCompat = 1 << 1,
-        GLES1 = 1 << 2,
-        GLES2 = 1 << 3,
-        WGL = 1 << 4,
-        GLX = 1 << 5,
-        EGL = 1 << 6,
-    }
-
-    internal record Specification(
+    internal record SpecificationFile(
+        ApiFile File,
         List<Function> Functions,
         List<EnumEntry> Enums,
-        List<API> APIs);
+        List<Feature> Features,
+        List<Extension> Extensions);
 
     internal record API(
-        InputAPI Name,
+        OutputApi Name,
         List<FunctionReference> Functions,
         List<EnumReference> Enums);
+
+    internal record ResolvedApi(OutputApi Api, List<Function> Functions, List<EnumMember> Enums);
 
     internal record FunctionReference(
         string EntryPoint,

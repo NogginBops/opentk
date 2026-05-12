@@ -448,30 +448,30 @@ namespace OpenTK.Graphics.OpenGLES2
         /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/es3.0/html/glCullFace.xhtml"/></remarks>
         public static void CullFace(TriangleFace mode) => GLPointers.glCullFace_Lazy((uint)mode);
         
-        /// <summary> <b>[requires: v3.2 | GL_KHR_debug]</b> <b>[entry point: <c>glDebugMessageCallback</c>]</b><br/> Specify a callback to receive debugging messages from the GL. </summary>
+        /// <summary> <b>[requires: v3.2]</b> <b>[entry point: <c>glDebugMessageCallback</c>]</b><br/> Specify a callback to receive debugging messages from the GL. </summary>
         /// <param name="callback"> The address of a callback function that will be called when a debug message is generated. </param>
         /// <param name="userParam"> A user supplied pointer that will be passed on each invocation of callback. </param>
-        /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/es3.0/html/glDebugMessageCallback.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/KHR/KHR_debug.txt">KHR_debug.txt</see></remarks>
+        /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/es3.0/html/glDebugMessageCallback.xhtml"/></remarks>
         public static void DebugMessageCallback(IntPtr callback, void* userParam) => GLPointers.glDebugMessageCallback_Lazy(callback, userParam);
         
-        /// <summary> <b>[requires: v3.2 | GL_KHR_debug]</b> <b>[entry point: <c>glDebugMessageControl</c>]</b><br/> Control the reporting of debug messages in a debug context. </summary>
+        /// <summary> <b>[requires: v3.2]</b> <b>[entry point: <c>glDebugMessageControl</c>]</b><br/> Control the reporting of debug messages in a debug context. </summary>
         /// <param name="source"> The source of debug messages to enable or disable. </param>
         /// <param name="type"> The type of debug messages to enable or disable. </param>
         /// <param name="severity"> The severity of debug messages to enable or disable. </param>
         /// <param name="count"> The length of the array ids. </param>
         /// <param name="ids"> The address of an array of unsigned integers contianing the ids of the messages to enable or disable. </param>
         /// <param name="enabled"> A Boolean flag determining whether the selected messages should be enabled or disabled. </param>
-        /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/es3.0/html/glDebugMessageControl.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/KHR/KHR_debug.txt">KHR_debug.txt</see></remarks>
+        /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/es3.0/html/glDebugMessageControl.xhtml"/></remarks>
         public static void DebugMessageControl(DebugSource source, DebugType type, DebugSeverity severity, int count, uint* ids, bool enabled) => GLPointers.glDebugMessageControl_Lazy((uint)source, (uint)type, (uint)severity, count, ids, (byte)(enabled ? 1 : 0));
         
-        /// <summary> <b>[requires: v3.2 | GL_KHR_debug]</b> <b>[entry point: <c>glDebugMessageInsert</c>]</b><br/> Inject an application-supplied message into the debug message queue. </summary>
+        /// <summary> <b>[requires: v3.2]</b> <b>[entry point: <c>glDebugMessageInsert</c>]</b><br/> Inject an application-supplied message into the debug message queue. </summary>
         /// <param name="source"> The source of the debug message to insert. </param>
         /// <param name="type"> The type of the debug message insert. </param>
         /// <param name="id"> The user-supplied identifier of the message to insert. </param>
         /// <param name="severity"> The severity of the debug messages to insert. </param>
         /// <param name="length"> The length string contained in the character array whose address is given by message. </param>
         /// <param name="buf"> The address of a character array containing the message to insert. </param>
-        /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/es3.0/html/glDebugMessageInsert.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/KHR/KHR_debug.txt">KHR_debug.txt</see></remarks>
+        /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/es3.0/html/glDebugMessageInsert.xhtml"/></remarks>
         public static void DebugMessageInsert(DebugSource source, DebugType type, uint id, DebugSeverity severity, int length, byte* buf) => GLPointers.glDebugMessageInsert_Lazy((uint)source, (uint)type, id, (uint)severity, length, buf);
         
         /// <summary> <b>[requires: v2.0]</b> <b>[entry point: <c>glDeleteBuffers</c>]</b><br/> Delete named buffer objects. </summary>
@@ -931,7 +931,7 @@ namespace OpenTK.Graphics.OpenGLES2
         /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/es3.0/html/glGetBufferPointerv.xhtml"/></remarks>
         public static void GetBufferPointerv(BufferTarget target, BufferPointerNameARB pname, void** @params) => GLPointers.glGetBufferPointerv_Lazy((uint)target, (uint)pname, @params);
         
-        /// <summary> <b>[requires: v3.2 | GL_KHR_debug]</b> <b>[entry point: <c>glGetDebugMessageLog</c>]</b><br/> Retrieve messages from the debug message log. </summary>
+        /// <summary> <b>[requires: v3.2]</b> <b>[entry point: <c>glGetDebugMessageLog</c>]</b><br/> Retrieve messages from the debug message log. </summary>
         /// <param name="count"> The number of debug messages to retrieve from the log. </param>
         /// <param name="bufSize"> The size of the buffer whose address is given by messageLog. </param>
         /// <param name="sources"> The address of an array of variables to receive the sources of the retrieved messages. </param>
@@ -940,7 +940,7 @@ namespace OpenTK.Graphics.OpenGLES2
         /// <param name="severities"> The address of an array of variables to receive the severites of the retrieved messages. </param>
         /// <param name="lengths"> The address of an array of variables to receive the lengths of the received messages. </param>
         /// <param name="messageLog"> The address of an array of characters that will receive the messages. </param>
-        /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/es3.0/html/glGetDebugMessageLog.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/KHR/KHR_debug.txt">KHR_debug.txt</see></remarks>
+        /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/es3.0/html/glGetDebugMessageLog.xhtml"/></remarks>
         public static uint GetDebugMessageLog(uint count, int bufSize, DebugSource* sources, DebugType* types, uint* ids, DebugSeverity* severities, int* lengths, byte* messageLog) => GLPointers.glGetDebugMessageLog_Lazy(count, bufSize, (uint*)sources, (uint*)types, ids, (uint*)severities, lengths, messageLog);
         
         /// <summary> <b>[requires: v2.0]</b> <b>[entry point: <c>glGetError</c>]</b><br/> Return error information. </summary>
@@ -974,8 +974,8 @@ namespace OpenTK.Graphics.OpenGLES2
         /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/es3.0/html/glGetFramebufferParameteriv.xhtml"/></remarks>
         public static void GetFramebufferParameteriv(FramebufferTarget target, FramebufferAttachmentParameterName pname, int* @params) => GLPointers.glGetFramebufferParameteriv_Lazy((uint)target, (uint)pname, @params);
         
-        /// <summary> <b>[requires: v3.2 | GL_KHR_robustness]</b> <b>[entry point: <c>glGetGraphicsResetStatus</c>]</b><br/> Check if the rendering context has not been lost due to software or hardware issues. </summary>
-        /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/es3.0/html/glGetGraphicsResetStatus.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/KHR/KHR_robustness.txt">KHR_robustness.txt</see></remarks>
+        /// <summary> <b>[requires: v3.2]</b> <b>[entry point: <c>glGetGraphicsResetStatus</c>]</b><br/> Check if the rendering context has not been lost due to software or hardware issues. </summary>
+        /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/es3.0/html/glGetGraphicsResetStatus.xhtml"/></remarks>
         public static GraphicsResetStatus GetGraphicsResetStatus() => (GraphicsResetStatus) GLPointers.glGetGraphicsResetStatus_Lazy();
         
         /// <summary> <b>[requires: v3.0]</b> <b>[entry point: <c>glGetInteger64i_v</c>]</b><br/> Return the value or values of a selected parameter. </summary>
@@ -1020,51 +1020,51 @@ namespace OpenTK.Graphics.OpenGLES2
         /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/es3.0/html/glGetMultisamplefv.xhtml"/></remarks>
         public static void GetMultisamplefv(GetMultisamplePNameNV pname, uint index, float* val) => GLPointers.glGetMultisamplefv_Lazy((uint)pname, index, val);
         
-        /// <summary> <b>[requires: v3.2 | GL_KHR_robustness]</b> <b>[entry point: <c>glGetnUniformfv</c>]</b><br/> Returns the value of a uniform variable. </summary>
+        /// <summary> <b>[requires: v3.2]</b> <b>[entry point: <c>glGetnUniformfv</c>]</b><br/> Returns the value of a uniform variable. </summary>
         /// <param name="program">Specifies the program object to be queried.</param>
         /// <param name="location">Specifies the location of the uniform variable to be queried.</param>
         /// <param name="bufSize">Specifies the size of the buffer params. </param>
         /// <param name="params">Returns the value of the specified uniform variable.</param>
-        /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/es3.0/html/glGetUniform.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/KHR/KHR_robustness.txt">KHR_robustness.txt</see></remarks>
+        /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/es3.0/html/glGetUniform.xhtml"/></remarks>
         public static void GetnUniformfv(int program, int location, int bufSize, float* @params) => GLPointers.glGetnUniformfv_Lazy(program, location, bufSize, @params);
         
-        /// <summary> <b>[requires: v3.2 | GL_KHR_robustness]</b> <b>[entry point: <c>glGetnUniformiv</c>]</b><br/> Returns the value of a uniform variable. </summary>
+        /// <summary> <b>[requires: v3.2]</b> <b>[entry point: <c>glGetnUniformiv</c>]</b><br/> Returns the value of a uniform variable. </summary>
         /// <param name="program">Specifies the program object to be queried.</param>
         /// <param name="location">Specifies the location of the uniform variable to be queried.</param>
         /// <param name="bufSize">Specifies the size of the buffer params. </param>
         /// <param name="params">Returns the value of the specified uniform variable.</param>
-        /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/es3.0/html/glGetUniform.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/KHR/KHR_robustness.txt">KHR_robustness.txt</see></remarks>
+        /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/es3.0/html/glGetUniform.xhtml"/></remarks>
         public static void GetnUniformiv(int program, int location, int bufSize, int* @params) => GLPointers.glGetnUniformiv_Lazy(program, location, bufSize, @params);
         
-        /// <summary> <b>[requires: v3.2 | GL_KHR_robustness]</b> <b>[entry point: <c>glGetnUniformuiv</c>]</b><br/> Returns the value of a uniform variable. </summary>
+        /// <summary> <b>[requires: v3.2]</b> <b>[entry point: <c>glGetnUniformuiv</c>]</b><br/> Returns the value of a uniform variable. </summary>
         /// <param name="program">Specifies the program object to be queried.</param>
         /// <param name="location">Specifies the location of the uniform variable to be queried.</param>
         /// <param name="bufSize">Specifies the size of the buffer params. </param>
         /// <param name="params">Returns the value of the specified uniform variable.</param>
-        /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/es3.0/html/glGetUniform.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/KHR/KHR_robustness.txt">KHR_robustness.txt</see></remarks>
+        /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/es3.0/html/glGetUniform.xhtml"/></remarks>
         public static void GetnUniformuiv(int program, int location, int bufSize, uint* @params) => GLPointers.glGetnUniformuiv_Lazy(program, location, bufSize, @params);
         
-        /// <summary> <b>[requires: v3.2 | GL_KHR_debug]</b> <b>[entry point: <c>glGetObjectLabel</c>]</b><br/> Retrieve the label of a named object identified within a namespace. </summary>
+        /// <summary> <b>[requires: v3.2]</b> <b>[entry point: <c>glGetObjectLabel</c>]</b><br/> Retrieve the label of a named object identified within a namespace. </summary>
         /// <param name="identifier"> The namespace from which the name of the object is allocated. </param>
         /// <param name="name"> The name of the object whose label to retrieve. </param>
         /// <param name="bufSize">!!missing documentation!!</param>
         /// <param name="length"> The address of a variable to receive the length of the object label. </param>
         /// <param name="label"> The address of a string that will receive the object label. </param>
-        /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/es3.0/html/glGetObjectLabel.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/KHR/KHR_debug.txt">KHR_debug.txt</see></remarks>
+        /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/es3.0/html/glGetObjectLabel.xhtml"/></remarks>
         public static void GetObjectLabel(ObjectIdentifier identifier, uint name, int bufSize, int* length, byte* label) => GLPointers.glGetObjectLabel_Lazy((uint)identifier, name, bufSize, length, label);
         
-        /// <summary> <b>[requires: v3.2 | GL_KHR_debug]</b> <b>[entry point: <c>glGetObjectPtrLabel</c>]</b><br/> Retrieve the label of a sync object identified by a pointer. </summary>
+        /// <summary> <b>[requires: v3.2]</b> <b>[entry point: <c>glGetObjectPtrLabel</c>]</b><br/> Retrieve the label of a sync object identified by a pointer. </summary>
         /// <param name="ptr"> The name of the sync object whose label to retrieve. </param>
         /// <param name="bufSize">!!missing documentation!!</param>
         /// <param name="length"> The address of a variable to receive the length of the object label. </param>
         /// <param name="label"> The address of a string that will receive the object label. </param>
-        /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/es3.0/html/glGetObjectPtrLabel.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/KHR/KHR_debug.txt">KHR_debug.txt</see></remarks>
+        /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/es3.0/html/glGetObjectPtrLabel.xhtml"/></remarks>
         public static void GetObjectPtrLabel(void* ptr, int bufSize, int* length, byte* label) => GLPointers.glGetObjectPtrLabel_Lazy(ptr, bufSize, length, label);
         
-        /// <summary> <b>[requires: v3.2 | GL_KHR_debug]</b> <b>[entry point: <c>glGetPointerv</c>]</b><br/> Return the address of the specified pointer. </summary>
+        /// <summary> <b>[requires: v3.2]</b> <b>[entry point: <c>glGetPointerv</c>]</b><br/> Return the address of the specified pointer. </summary>
         /// <param name="pname"> Specifies the pointer to be returned. Must be one of GL_DEBUG_CALLBACK_FUNCTION or GL_DEBUG_CALLBACK_USER_PARAM. </param>
         /// <param name="params"> Returns the pointer value specified by pname. </param>
-        /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/es3.0/html/glGetPointerv.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/KHR/KHR_debug.txt">KHR_debug.txt</see></remarks>
+        /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/es3.0/html/glGetPointerv.xhtml"/></remarks>
         public static void GetPointerv(GetPointervPName pname, void** @params) => GLPointers.glGetPointerv_Lazy((uint)pname, @params);
         
         /// <summary> <b>[requires: v3.0]</b> <b>[entry point: <c>glGetProgramBinary</c>]</b><br/> Return a binary representation of a program object&apos;s compiled and linked executable source. </summary>
@@ -1509,19 +1509,19 @@ namespace OpenTK.Graphics.OpenGLES2
         /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/es3.0/html/glMinSampleShading.xhtml"/></remarks>
         public static void MinSampleShading(float value) => GLPointers.glMinSampleShading_Lazy(value);
         
-        /// <summary> <b>[requires: v3.2 | GL_KHR_debug]</b> <b>[entry point: <c>glObjectLabel</c>]</b><br/> Label a named object identified within a namespace. </summary>
+        /// <summary> <b>[requires: v3.2]</b> <b>[entry point: <c>glObjectLabel</c>]</b><br/> Label a named object identified within a namespace. </summary>
         /// <param name="identifier"> The namespace from which the name of the object is allocated. </param>
         /// <param name="name"> The name of the object to label. </param>
         /// <param name="length"> The length of the label to be used for the object. </param>
         /// <param name="label"> The address of a string containing the label to assign to the object. </param>
-        /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/es3.0/html/glObjectLabel.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/KHR/KHR_debug.txt">KHR_debug.txt</see></remarks>
+        /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/es3.0/html/glObjectLabel.xhtml"/></remarks>
         public static void ObjectLabel(ObjectIdentifier identifier, int name, int length, byte* label) => GLPointers.glObjectLabel_Lazy((uint)identifier, name, length, label);
         
-        /// <summary> <b>[requires: v3.2 | GL_KHR_debug]</b> <b>[entry point: <c>glObjectPtrLabel</c>]</b><br/> Label a sync object identified by a pointer. </summary>
+        /// <summary> <b>[requires: v3.2]</b> <b>[entry point: <c>glObjectPtrLabel</c>]</b><br/> Label a sync object identified by a pointer. </summary>
         /// <param name="ptr"> A pointer identifying a sync object. </param>
         /// <param name="length"> The length of the label to be used for the object. </param>
         /// <param name="label"> The address of a string containing the label to assign to the object. </param>
-        /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/es3.0/html/glObjectPtrLabel.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/KHR/KHR_debug.txt">KHR_debug.txt</see></remarks>
+        /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/es3.0/html/glObjectPtrLabel.xhtml"/></remarks>
         public static void ObjectPtrLabel(void* ptr, int length, byte* label) => GLPointers.glObjectPtrLabel_Lazy(ptr, length, label);
         
         /// <summary> <b>[requires: v3.2]</b> <b>[entry point: <c>glPatchParameteri</c>]</b><br/> Specifies the parameters for patch primitives. </summary>
@@ -1546,8 +1546,8 @@ namespace OpenTK.Graphics.OpenGLES2
         /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/es3.0/html/glPolygonOffset.xhtml"/></remarks>
         public static void PolygonOffset(float factor, float units) => GLPointers.glPolygonOffset_Lazy(factor, units);
         
-        /// <summary> <b>[requires: v3.2 | GL_KHR_debug]</b> <b>[entry point: <c>glPopDebugGroup</c>]</b><br/> Pop the active debug group. </summary>
-        /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/es3.0/html/glPopDebugGroup.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/KHR/KHR_debug.txt">KHR_debug.txt</see></remarks>
+        /// <summary> <b>[requires: v3.2]</b> <b>[entry point: <c>glPopDebugGroup</c>]</b><br/> Pop the active debug group. </summary>
+        /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/es3.0/html/glPopDebugGroup.xhtml"/></remarks>
         public static void PopDebugGroup() => GLPointers.glPopDebugGroup_Lazy();
         
         /// <summary> <b>[requires: v3.2]</b> <b>[entry point: <c>glPrimitiveBoundingBox</c>]</b><br/> Set the bounding box for a primitive. </summary>
@@ -1856,12 +1856,12 @@ namespace OpenTK.Graphics.OpenGLES2
         /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/es3.0/html/glProgramUniform.xhtml"/></remarks>
         public static void ProgramUniformMatrix4x3fv(int program, int location, int count, bool transpose, float* value) => GLPointers.glProgramUniformMatrix4x3fv_Lazy(program, location, count, (byte)(transpose ? 1 : 0), value);
         
-        /// <summary> <b>[requires: v3.2 | GL_KHR_debug]</b> <b>[entry point: <c>glPushDebugGroup</c>]</b><br/> Push a named debug group into the command stream. </summary>
+        /// <summary> <b>[requires: v3.2]</b> <b>[entry point: <c>glPushDebugGroup</c>]</b><br/> Push a named debug group into the command stream. </summary>
         /// <param name="source"> The source of the debug message. </param>
         /// <param name="id"> The identifier of the message. </param>
         /// <param name="length"> The length of the message to be sent to the debug output stream. </param>
         /// <param name="message"> The a string containing the message to be sent to the debug output stream. </param>
-        /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/es3.0/html/glPushDebugGroup.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/KHR/KHR_debug.txt">KHR_debug.txt</see></remarks>
+        /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/es3.0/html/glPushDebugGroup.xhtml"/></remarks>
         public static void PushDebugGroup(DebugSource source, uint id, int length, byte* message) => GLPointers.glPushDebugGroup_Lazy((uint)source, id, length, message);
         
         /// <summary> <b>[requires: v3.0]</b> <b>[entry point: <c>glReadBuffer</c>]</b><br/> Select a color buffer source for pixels. </summary>
@@ -1869,7 +1869,7 @@ namespace OpenTK.Graphics.OpenGLES2
         /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/es3.0/html/glReadBuffer.xhtml"/></remarks>
         public static void ReadBuffer(ReadBufferMode src) => GLPointers.glReadBuffer_Lazy((uint)src);
         
-        /// <summary> <b>[requires: v3.2 | GL_KHR_robustness]</b> <b>[entry point: <c>glReadnPixels</c>]</b><br/> Read a block of pixels from the frame buffer. </summary>
+        /// <summary> <b>[requires: v3.2]</b> <b>[entry point: <c>glReadnPixels</c>]</b><br/> Read a block of pixels from the frame buffer. </summary>
         /// <param name="x"> Specify the window coordinates of the first pixel that is read from the frame buffer. This location is the lower left corner of a rectangular block of pixels. </param>
         /// <param name="y"> Specify the window coordinates of the first pixel that is read from the frame buffer. This location is the lower left corner of a rectangular block of pixels. </param>
         /// <param name="width"> Specify the dimensions of the pixel rectangle. width and height of one correspond to a single pixel. </param>
@@ -1878,7 +1878,7 @@ namespace OpenTK.Graphics.OpenGLES2
         /// <param name="type"> Specifies the data type of the pixel data. Must be one of GL_UNSIGNED_BYTE, GL_UNSIGNED_INT, GL_UNSIGNED_INT_2_10_10_10_REV, GL_INT, or GL_FLOAT. An implementation-chosen type will also be accepted. This can be queried with glGet and GL_IMPLEMENTATION_COLOR_READ_TYPE. </param>
         /// <param name="bufSize"> Specifies the size of the buffer data for glReadnPixels function. </param>
         /// <param name="data"> Returns the pixel data. </param>
-        /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/es3.0/html/glReadPixels.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/KHR/KHR_robustness.txt">KHR_robustness.txt</see></remarks>
+        /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/es3.0/html/glReadPixels.xhtml"/></remarks>
         public static void ReadnPixels(int x, int y, int width, int height, PixelFormat format, PixelType type, int bufSize, void* data) => GLPointers.glReadnPixels_Lazy(x, y, width, height, (uint)format, (uint)type, bufSize, data);
         
         /// <summary> <b>[requires: v2.0]</b> <b>[entry point: <c>glReadPixels</c>]</b><br/> Read a block of pixels from the frame buffer. </summary>
@@ -2774,10 +2774,6 @@ namespace OpenTK.Graphics.OpenGLES2
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_win32_keyed_mutex.txt">EXT_win32_keyed_mutex.txt</see></remarks>
             public static bool AcquireKeyedMutexWin32EXT(uint memory, ulong key, uint timeout) => GLPointers.glAcquireKeyedMutexWin32EXT_Lazy(memory, key, timeout) != 0;
             
-            /// <summary> <b>[requires: GL_EXT_separate_shader_objects]</b> <b>[entry point: <c>glActiveProgramEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_separate_shader_objects.txt">EXT_separate_shader_objects.txt</see></remarks>
-            public static void ActiveProgramEXT(int program) => GLPointers.glActiveProgramEXT_Lazy(program);
-            
             /// <summary> <b>[requires: GL_EXT_separate_shader_objects]</b> <b>[entry point: <c>glActiveShaderProgramEXT</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_separate_shader_objects.txt">EXT_separate_shader_objects.txt</see></remarks>
             public static void ActiveShaderProgramEXT(int pipeline, int program) => GLPointers.glActiveShaderProgramEXT_Lazy(pipeline, program);
@@ -2797,10 +2793,6 @@ namespace OpenTK.Graphics.OpenGLES2
             /// <summary> <b>[requires: GL_EXT_separate_shader_objects]</b> <b>[entry point: <c>glBindProgramPipelineEXT</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_separate_shader_objects.txt">EXT_separate_shader_objects.txt</see></remarks>
             public static void BindProgramPipelineEXT(int pipeline) => GLPointers.glBindProgramPipelineEXT_Lazy(pipeline);
-            
-            /// <summary> <b>[requires: GL_EXT_blend_minmax]</b> <b>[entry point: <c>glBlendEquationEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_blend_minmax.txt">EXT_blend_minmax.txt</see></remarks>
-            public static void BlendEquationEXT(BlendEquationMode mode) => GLPointers.glBlendEquationEXT_Lazy((uint)mode);
             
             /// <summary> <b>[requires: GL_EXT_draw_buffers_indexed]</b> <b>[entry point: <c>glBlendEquationiEXT</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_draw_buffers_indexed.txt">EXT_draw_buffers_indexed.txt</see></remarks>
@@ -2865,10 +2857,6 @@ namespace OpenTK.Graphics.OpenGLES2
             /// <summary> <b>[requires: GL_EXT_memory_object]</b> <b>[entry point: <c>glCreateMemoryObjectsEXT</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_memory_object.txt">EXT_memory_object.txt</see></remarks>
             public static void CreateMemoryObjectsEXT(int n, uint* memoryObjects) => GLPointers.glCreateMemoryObjectsEXT_Lazy(n, memoryObjects);
-            
-            /// <summary> <b>[requires: GL_EXT_separate_shader_objects]</b> <b>[entry point: <c>glCreateShaderProgramEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_separate_shader_objects.txt">EXT_separate_shader_objects.txt</see></remarks>
-            public static int CreateShaderProgramEXT(ShaderType type, byte* @string) => GLPointers.glCreateShaderProgramEXT_Lazy((uint)type, @string);
             
             /// <summary> <b>[requires: GL_EXT_separate_shader_objects]</b> <b>[entry point: <c>glCreateShaderProgramvEXT</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_separate_shader_objects.txt">EXT_separate_shader_objects.txt</see></remarks>
@@ -3167,7 +3155,7 @@ namespace OpenTK.Graphics.OpenGLES2
             public static void MultiDrawArraysIndirectEXT(PrimitiveType mode, void* indirect, int drawcount, int stride) => GLPointers.glMultiDrawArraysIndirectEXT_Lazy((uint)mode, indirect, drawcount, stride);
             
             /// <summary> <b>[requires: GL_EXT_draw_elements_base_vertex | GL_OES_draw_elements_base_vertex]</b> <b>[entry point: <c>glMultiDrawElementsBaseVertexEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/OES/EXT_draw_elements_base_vertex.txt">EXT_draw_elements_base_vertex.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/OES/OES_draw_elements_base_vertex.txt">OES_draw_elements_base_vertex.txt</see></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_draw_elements_base_vertex.txt">EXT_draw_elements_base_vertex.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/OES/OES_draw_elements_base_vertex.txt">OES_draw_elements_base_vertex.txt</see></remarks>
             public static void MultiDrawElementsBaseVertexEXT(PrimitiveType mode, int* count, DrawElementsType type, void** indices, int drawcount, int* basevertex) => GLPointers.glMultiDrawElementsBaseVertexEXT_Lazy((uint)mode, count, (uint)type, indices, drawcount, basevertex);
             
             /// <summary> <b>[requires: GL_EXT_multi_draw_arrays]</b> <b>[entry point: <c>glMultiDrawElementsEXT</c>]</b><br/>  </summary>
@@ -3347,7 +3335,7 @@ namespace OpenTK.Graphics.OpenGLES2
             public static void QueryCounterEXT(int id, QueryCounterTarget target) => GLPointers.glQueryCounterEXT_Lazy(id, (uint)target);
             
             /// <summary> <b>[requires: GL_EXT_raster_multisample | GL_NV_framebuffer_mixed_samples]</b> <b>[entry point: <c>glRasterSamplesEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/EXT_raster_multisample.txt">EXT_raster_multisample.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_framebuffer_mixed_samples.txt">NV_framebuffer_mixed_samples.txt</see></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_raster_multisample.txt">EXT_raster_multisample.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_framebuffer_mixed_samples.txt">NV_framebuffer_mixed_samples.txt</see></remarks>
             public static void RasterSamplesEXT(uint samples, bool fixedsamplelocations) => GLPointers.glRasterSamplesEXT_Lazy(samples, (byte)(fixedsamplelocations ? 1 : 0));
             
             /// <summary> <b>[requires: GL_EXT_multiview_draw_buffers]</b> <b>[entry point: <c>glReadBufferIndexedEXT</c>]</b><br/>  </summary>
@@ -3430,10 +3418,6 @@ namespace OpenTK.Graphics.OpenGLES2
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_texture_storage_compression.txt">EXT_texture_storage_compression.txt</see></remarks>
             public static void TexStorageAttribs3DEXT(TextureTarget target, int levels, SizedInternalFormat internalformat, int width, int height, int depth, TexStorageAttribs* attrib_list) => GLPointers.glTexStorageAttribs3DEXT_Lazy((uint)target, levels, (uint)internalformat, width, height, depth, (int*)attrib_list);
             
-            /// <summary> <b>[requires: GL_EXT_memory_object]</b> <b>[entry point: <c>glTexStorageMem1DEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_memory_object.txt">EXT_memory_object.txt</see></remarks>
-            public static void TexStorageMem1DEXT(TextureTarget target, int levels, SizedInternalFormat internalFormat, int width, uint memory, ulong offset) => GLPointers.glTexStorageMem1DEXT_Lazy((uint)target, levels, (uint)internalFormat, width, memory, offset);
-            
             /// <summary> <b>[requires: GL_EXT_memory_object]</b> <b>[entry point: <c>glTexStorageMem2DEXT</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_memory_object.txt">EXT_memory_object.txt</see></remarks>
             public static void TexStorageMem2DEXT(TextureTarget target, int levels, SizedInternalFormat internalFormat, int width, int height, uint memory, ulong offset) => GLPointers.glTexStorageMem2DEXT_Lazy((uint)target, levels, (uint)internalFormat, width, height, memory, offset);
@@ -3462,10 +3446,6 @@ namespace OpenTK.Graphics.OpenGLES2
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_texture_storage.txt">EXT_texture_storage.txt</see></remarks>
             public static void TextureStorage3DEXT(int texture, All target, int levels, SizedInternalFormat internalformat, int width, int height, int depth) => GLPointers.glTextureStorage3DEXT_Lazy(texture, (uint)target, levels, (uint)internalformat, width, height, depth);
             
-            /// <summary> <b>[requires: GL_EXT_memory_object]</b> <b>[entry point: <c>glTextureStorageMem1DEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_memory_object.txt">EXT_memory_object.txt</see></remarks>
-            public static void TextureStorageMem1DEXT(int texture, int levels, SizedInternalFormat internalFormat, int width, uint memory, ulong offset) => GLPointers.glTextureStorageMem1DEXT_Lazy(texture, levels, (uint)internalFormat, width, memory, offset);
-            
             /// <summary> <b>[requires: GL_EXT_memory_object]</b> <b>[entry point: <c>glTextureStorageMem2DEXT</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_memory_object.txt">EXT_memory_object.txt</see></remarks>
             public static void TextureStorageMem2DEXT(int texture, int levels, SizedInternalFormat internalFormat, int width, int height, uint memory, ulong offset) => GLPointers.glTextureStorageMem2DEXT_Lazy(texture, levels, (uint)internalFormat, width, height, memory, offset);
@@ -3489,10 +3469,6 @@ namespace OpenTK.Graphics.OpenGLES2
             /// <summary> <b>[requires: GL_EXT_separate_shader_objects]</b> <b>[entry point: <c>glUseProgramStagesEXT</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_separate_shader_objects.txt">EXT_separate_shader_objects.txt</see></remarks>
             public static void UseProgramStagesEXT(int pipeline, UseProgramStageMask stages, int program) => GLPointers.glUseProgramStagesEXT_Lazy(pipeline, (uint)stages, program);
-            
-            /// <summary> <b>[requires: GL_EXT_separate_shader_objects]</b> <b>[entry point: <c>glUseShaderProgramEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_separate_shader_objects.txt">EXT_separate_shader_objects.txt</see></remarks>
-            public static void UseShaderProgramEXT(All type, int program) => GLPointers.glUseShaderProgramEXT_Lazy((uint)type, program);
             
             /// <summary> <b>[requires: GL_EXT_separate_shader_objects]</b> <b>[entry point: <c>glValidateProgramPipelineEXT</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_separate_shader_objects.txt">EXT_separate_shader_objects.txt</see></remarks>
@@ -3610,134 +3586,45 @@ namespace OpenTK.Graphics.OpenGLES2
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/KHR/KHR_blend_equation_advanced.txt">KHR_blend_equation_advanced.txt</see></remarks>
             public static void BlendBarrierKHR() => GLPointers.glBlendBarrierKHR_Lazy();
             
-            /// <summary> <b>[requires: v3.2 | GL_KHR_debug]</b> <b>[entry point: <c>glDebugMessageCallback</c>]</b><br/> Specify a callback to receive debugging messages from the GL. </summary>
-            /// <param name="callback"> The address of a callback function that will be called when a debug message is generated. </param>
-            /// <param name="userParam"> A user supplied pointer that will be passed on each invocation of callback. </param>
-            /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/es3.0/html/glDebugMessageCallback.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/KHR/KHR_debug.txt">KHR_debug.txt</see></remarks>
-            public static void DebugMessageCallback(IntPtr callback, void* userParam) => GLPointers.glDebugMessageCallback_Lazy(callback, userParam);
-            
             /// <summary> <b>[requires: GL_KHR_debug]</b> <b>[entry point: <c>glDebugMessageCallbackKHR</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/KHR/KHR_debug.txt">KHR_debug.txt</see></remarks>
             public static void DebugMessageCallbackKHR(IntPtr callback, void* userParam) => GLPointers.glDebugMessageCallbackKHR_Lazy(callback, userParam);
-            
-            /// <summary> <b>[requires: v3.2 | GL_KHR_debug]</b> <b>[entry point: <c>glDebugMessageControl</c>]</b><br/> Control the reporting of debug messages in a debug context. </summary>
-            /// <param name="source"> The source of debug messages to enable or disable. </param>
-            /// <param name="type"> The type of debug messages to enable or disable. </param>
-            /// <param name="severity"> The severity of debug messages to enable or disable. </param>
-            /// <param name="count"> The length of the array ids. </param>
-            /// <param name="ids"> The address of an array of unsigned integers contianing the ids of the messages to enable or disable. </param>
-            /// <param name="enabled"> A Boolean flag determining whether the selected messages should be enabled or disabled. </param>
-            /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/es3.0/html/glDebugMessageControl.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/KHR/KHR_debug.txt">KHR_debug.txt</see></remarks>
-            public static void DebugMessageControl(DebugSource source, DebugType type, DebugSeverity severity, int count, uint* ids, bool enabled) => GLPointers.glDebugMessageControl_Lazy((uint)source, (uint)type, (uint)severity, count, ids, (byte)(enabled ? 1 : 0));
             
             /// <summary> <b>[requires: GL_KHR_debug]</b> <b>[entry point: <c>glDebugMessageControlKHR</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/KHR/KHR_debug.txt">KHR_debug.txt</see></remarks>
             public static void DebugMessageControlKHR(DebugSource source, DebugType type, DebugSeverity severity, int count, uint* ids, bool enabled) => GLPointers.glDebugMessageControlKHR_Lazy((uint)source, (uint)type, (uint)severity, count, ids, (byte)(enabled ? 1 : 0));
             
-            /// <summary> <b>[requires: v3.2 | GL_KHR_debug]</b> <b>[entry point: <c>glDebugMessageInsert</c>]</b><br/> Inject an application-supplied message into the debug message queue. </summary>
-            /// <param name="source"> The source of the debug message to insert. </param>
-            /// <param name="type"> The type of the debug message insert. </param>
-            /// <param name="id"> The user-supplied identifier of the message to insert. </param>
-            /// <param name="severity"> The severity of the debug messages to insert. </param>
-            /// <param name="length"> The length string contained in the character array whose address is given by message. </param>
-            /// <param name="buf"> The address of a character array containing the message to insert. </param>
-            /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/es3.0/html/glDebugMessageInsert.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/KHR/KHR_debug.txt">KHR_debug.txt</see></remarks>
-            public static void DebugMessageInsert(DebugSource source, DebugType type, uint id, DebugSeverity severity, int length, byte* buf) => GLPointers.glDebugMessageInsert_Lazy((uint)source, (uint)type, id, (uint)severity, length, buf);
-            
             /// <summary> <b>[requires: GL_KHR_debug]</b> <b>[entry point: <c>glDebugMessageInsertKHR</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/KHR/KHR_debug.txt">KHR_debug.txt</see></remarks>
             public static void DebugMessageInsertKHR(DebugSource source, DebugType type, uint id, DebugSeverity severity, int length, byte* buf) => GLPointers.glDebugMessageInsertKHR_Lazy((uint)source, (uint)type, id, (uint)severity, length, buf);
-            
-            /// <summary> <b>[requires: v3.2 | GL_KHR_debug]</b> <b>[entry point: <c>glGetDebugMessageLog</c>]</b><br/> Retrieve messages from the debug message log. </summary>
-            /// <param name="count"> The number of debug messages to retrieve from the log. </param>
-            /// <param name="bufSize"> The size of the buffer whose address is given by messageLog. </param>
-            /// <param name="sources"> The address of an array of variables to receive the sources of the retrieved messages. </param>
-            /// <param name="types"> The address of an array of variables to receive the types of the retrieved messages. </param>
-            /// <param name="ids"> The address of an array of unsigned integers to receive the ids of the retrieved messages. </param>
-            /// <param name="severities"> The address of an array of variables to receive the severites of the retrieved messages. </param>
-            /// <param name="lengths"> The address of an array of variables to receive the lengths of the received messages. </param>
-            /// <param name="messageLog"> The address of an array of characters that will receive the messages. </param>
-            /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/es3.0/html/glGetDebugMessageLog.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/KHR/KHR_debug.txt">KHR_debug.txt</see></remarks>
-            public static uint GetDebugMessageLog(uint count, int bufSize, DebugSource* sources, DebugType* types, uint* ids, DebugSeverity* severities, int* lengths, byte* messageLog) => GLPointers.glGetDebugMessageLog_Lazy(count, bufSize, (uint*)sources, (uint*)types, ids, (uint*)severities, lengths, messageLog);
             
             /// <summary> <b>[requires: GL_KHR_debug]</b> <b>[entry point: <c>glGetDebugMessageLogKHR</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/KHR/KHR_debug.txt">KHR_debug.txt</see></remarks>
             public static uint GetDebugMessageLogKHR(uint count, int bufSize, DebugSource* sources, DebugType* types, uint* ids, DebugSeverity* severities, int* lengths, byte* messageLog) => GLPointers.glGetDebugMessageLogKHR_Lazy(count, bufSize, (uint*)sources, (uint*)types, ids, (uint*)severities, lengths, messageLog);
             
-            /// <summary> <b>[requires: v3.2 | GL_KHR_robustness]</b> <b>[entry point: <c>glGetGraphicsResetStatus</c>]</b><br/> Check if the rendering context has not been lost due to software or hardware issues. </summary>
-            /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/es3.0/html/glGetGraphicsResetStatus.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/KHR/KHR_robustness.txt">KHR_robustness.txt</see></remarks>
-            public static GraphicsResetStatus GetGraphicsResetStatus() => (GraphicsResetStatus) GLPointers.glGetGraphicsResetStatus_Lazy();
-            
             /// <summary> <b>[requires: GL_KHR_robustness]</b> <b>[entry point: <c>glGetGraphicsResetStatusKHR</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/KHR/KHR_robustness.txt">KHR_robustness.txt</see></remarks>
             public static GraphicsResetStatus GetGraphicsResetStatusKHR() => (GraphicsResetStatus) GLPointers.glGetGraphicsResetStatusKHR_Lazy();
-            
-            /// <summary> <b>[requires: v3.2 | GL_KHR_robustness]</b> <b>[entry point: <c>glGetnUniformfv</c>]</b><br/> Returns the value of a uniform variable. </summary>
-            /// <param name="program">Specifies the program object to be queried.</param>
-            /// <param name="location">Specifies the location of the uniform variable to be queried.</param>
-            /// <param name="bufSize">Specifies the size of the buffer params. </param>
-            /// <param name="params">Returns the value of the specified uniform variable.</param>
-            /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/es3.0/html/glGetUniform.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/KHR/KHR_robustness.txt">KHR_robustness.txt</see></remarks>
-            public static void GetnUniformfv(int program, int location, int bufSize, float* @params) => GLPointers.glGetnUniformfv_Lazy(program, location, bufSize, @params);
             
             /// <summary> <b>[requires: GL_KHR_robustness]</b> <b>[entry point: <c>glGetnUniformfvKHR</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/KHR/KHR_robustness.txt">KHR_robustness.txt</see></remarks>
             public static void GetnUniformfvKHR(int program, int location, int bufSize, float* @params) => GLPointers.glGetnUniformfvKHR_Lazy(program, location, bufSize, @params);
             
-            /// <summary> <b>[requires: v3.2 | GL_KHR_robustness]</b> <b>[entry point: <c>glGetnUniformiv</c>]</b><br/> Returns the value of a uniform variable. </summary>
-            /// <param name="program">Specifies the program object to be queried.</param>
-            /// <param name="location">Specifies the location of the uniform variable to be queried.</param>
-            /// <param name="bufSize">Specifies the size of the buffer params. </param>
-            /// <param name="params">Returns the value of the specified uniform variable.</param>
-            /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/es3.0/html/glGetUniform.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/KHR/KHR_robustness.txt">KHR_robustness.txt</see></remarks>
-            public static void GetnUniformiv(int program, int location, int bufSize, int* @params) => GLPointers.glGetnUniformiv_Lazy(program, location, bufSize, @params);
-            
             /// <summary> <b>[requires: GL_KHR_robustness]</b> <b>[entry point: <c>glGetnUniformivKHR</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/KHR/KHR_robustness.txt">KHR_robustness.txt</see></remarks>
             public static void GetnUniformivKHR(int program, int location, int bufSize, int* @params) => GLPointers.glGetnUniformivKHR_Lazy(program, location, bufSize, @params);
-            
-            /// <summary> <b>[requires: v3.2 | GL_KHR_robustness]</b> <b>[entry point: <c>glGetnUniformuiv</c>]</b><br/> Returns the value of a uniform variable. </summary>
-            /// <param name="program">Specifies the program object to be queried.</param>
-            /// <param name="location">Specifies the location of the uniform variable to be queried.</param>
-            /// <param name="bufSize">Specifies the size of the buffer params. </param>
-            /// <param name="params">Returns the value of the specified uniform variable.</param>
-            /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/es3.0/html/glGetUniform.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/KHR/KHR_robustness.txt">KHR_robustness.txt</see></remarks>
-            public static void GetnUniformuiv(int program, int location, int bufSize, uint* @params) => GLPointers.glGetnUniformuiv_Lazy(program, location, bufSize, @params);
             
             /// <summary> <b>[requires: GL_KHR_robustness]</b> <b>[entry point: <c>glGetnUniformuivKHR</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/KHR/KHR_robustness.txt">KHR_robustness.txt</see></remarks>
             public static void GetnUniformuivKHR(int program, int location, int bufSize, uint* @params) => GLPointers.glGetnUniformuivKHR_Lazy(program, location, bufSize, @params);
             
-            /// <summary> <b>[requires: v3.2 | GL_KHR_debug]</b> <b>[entry point: <c>glGetObjectLabel</c>]</b><br/> Retrieve the label of a named object identified within a namespace. </summary>
-            /// <param name="identifier"> The namespace from which the name of the object is allocated. </param>
-            /// <param name="name"> The name of the object whose label to retrieve. </param>
-            /// <param name="bufSize">!!missing documentation!!</param>
-            /// <param name="length"> The address of a variable to receive the length of the object label. </param>
-            /// <param name="label"> The address of a string that will receive the object label. </param>
-            /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/es3.0/html/glGetObjectLabel.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/KHR/KHR_debug.txt">KHR_debug.txt</see></remarks>
-            public static void GetObjectLabel(ObjectIdentifier identifier, uint name, int bufSize, int* length, byte* label) => GLPointers.glGetObjectLabel_Lazy((uint)identifier, name, bufSize, length, label);
-            
             /// <summary> <b>[requires: GL_KHR_debug]</b> <b>[entry point: <c>glGetObjectLabelKHR</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/KHR/KHR_debug.txt">KHR_debug.txt</see></remarks>
             public static void GetObjectLabelKHR(All identifier, uint name, int bufSize, int* length, byte* label) => GLPointers.glGetObjectLabelKHR_Lazy((uint)identifier, name, bufSize, length, label);
             
-            /// <summary> <b>[requires: v3.2 | GL_KHR_debug]</b> <b>[entry point: <c>glGetObjectPtrLabel</c>]</b><br/> Retrieve the label of a sync object identified by a pointer. </summary>
-            /// <param name="ptr"> The name of the sync object whose label to retrieve. </param>
-            /// <param name="bufSize">!!missing documentation!!</param>
-            /// <param name="length"> The address of a variable to receive the length of the object label. </param>
-            /// <param name="label"> The address of a string that will receive the object label. </param>
-            /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/es3.0/html/glGetObjectPtrLabel.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/KHR/KHR_debug.txt">KHR_debug.txt</see></remarks>
-            public static void GetObjectPtrLabel(void* ptr, int bufSize, int* length, byte* label) => GLPointers.glGetObjectPtrLabel_Lazy(ptr, bufSize, length, label);
-            
             /// <summary> <b>[requires: GL_KHR_debug]</b> <b>[entry point: <c>glGetObjectPtrLabelKHR</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/KHR/KHR_debug.txt">KHR_debug.txt</see></remarks>
             public static void GetObjectPtrLabelKHR(void* ptr, int bufSize, int* length, byte* label) => GLPointers.glGetObjectPtrLabelKHR_Lazy(ptr, bufSize, length, label);
-            
-            /// <summary> <b>[requires: v3.2 | GL_KHR_debug]</b> <b>[entry point: <c>glGetPointerv</c>]</b><br/> Return the address of the specified pointer. </summary>
-            /// <param name="pname"> Specifies the pointer to be returned. Must be one of GL_DEBUG_CALLBACK_FUNCTION or GL_DEBUG_CALLBACK_USER_PARAM. </param>
-            /// <param name="params"> Returns the pointer value specified by pname. </param>
-            /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/es3.0/html/glGetPointerv.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/KHR/KHR_debug.txt">KHR_debug.txt</see></remarks>
-            public static void GetPointerv(GetPointervPName pname, void** @params) => GLPointers.glGetPointerv_Lazy((uint)pname, @params);
             
             /// <summary> <b>[requires: GL_KHR_debug]</b> <b>[entry point: <c>glGetPointervKHR</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/KHR/KHR_debug.txt">KHR_debug.txt</see></remarks>
@@ -3747,60 +3634,21 @@ namespace OpenTK.Graphics.OpenGLES2
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/KHR/KHR_parallel_shader_compile.txt">KHR_parallel_shader_compile.txt</see></remarks>
             public static void MaxShaderCompilerThreadsKHR(uint count) => GLPointers.glMaxShaderCompilerThreadsKHR_Lazy(count);
             
-            /// <summary> <b>[requires: v3.2 | GL_KHR_debug]</b> <b>[entry point: <c>glObjectLabel</c>]</b><br/> Label a named object identified within a namespace. </summary>
-            /// <param name="identifier"> The namespace from which the name of the object is allocated. </param>
-            /// <param name="name"> The name of the object to label. </param>
-            /// <param name="length"> The length of the label to be used for the object. </param>
-            /// <param name="label"> The address of a string containing the label to assign to the object. </param>
-            /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/es3.0/html/glObjectLabel.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/KHR/KHR_debug.txt">KHR_debug.txt</see></remarks>
-            public static void ObjectLabel(ObjectIdentifier identifier, int name, int length, byte* label) => GLPointers.glObjectLabel_Lazy((uint)identifier, name, length, label);
-            
             /// <summary> <b>[requires: GL_KHR_debug]</b> <b>[entry point: <c>glObjectLabelKHR</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/KHR/KHR_debug.txt">KHR_debug.txt</see></remarks>
             public static void ObjectLabelKHR(ObjectIdentifier identifier, int name, int length, byte* label) => GLPointers.glObjectLabelKHR_Lazy((uint)identifier, name, length, label);
-            
-            /// <summary> <b>[requires: v3.2 | GL_KHR_debug]</b> <b>[entry point: <c>glObjectPtrLabel</c>]</b><br/> Label a sync object identified by a pointer. </summary>
-            /// <param name="ptr"> A pointer identifying a sync object. </param>
-            /// <param name="length"> The length of the label to be used for the object. </param>
-            /// <param name="label"> The address of a string containing the label to assign to the object. </param>
-            /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/es3.0/html/glObjectPtrLabel.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/KHR/KHR_debug.txt">KHR_debug.txt</see></remarks>
-            public static void ObjectPtrLabel(void* ptr, int length, byte* label) => GLPointers.glObjectPtrLabel_Lazy(ptr, length, label);
             
             /// <summary> <b>[requires: GL_KHR_debug]</b> <b>[entry point: <c>glObjectPtrLabelKHR</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/KHR/KHR_debug.txt">KHR_debug.txt</see></remarks>
             public static void ObjectPtrLabelKHR(void* ptr, int length, byte* label) => GLPointers.glObjectPtrLabelKHR_Lazy(ptr, length, label);
             
-            /// <summary> <b>[requires: v3.2 | GL_KHR_debug]</b> <b>[entry point: <c>glPopDebugGroup</c>]</b><br/> Pop the active debug group. </summary>
-            /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/es3.0/html/glPopDebugGroup.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/KHR/KHR_debug.txt">KHR_debug.txt</see></remarks>
-            public static void PopDebugGroup() => GLPointers.glPopDebugGroup_Lazy();
-            
             /// <summary> <b>[requires: GL_KHR_debug]</b> <b>[entry point: <c>glPopDebugGroupKHR</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/KHR/KHR_debug.txt">KHR_debug.txt</see></remarks>
             public static void PopDebugGroupKHR() => GLPointers.glPopDebugGroupKHR_Lazy();
             
-            /// <summary> <b>[requires: v3.2 | GL_KHR_debug]</b> <b>[entry point: <c>glPushDebugGroup</c>]</b><br/> Push a named debug group into the command stream. </summary>
-            /// <param name="source"> The source of the debug message. </param>
-            /// <param name="id"> The identifier of the message. </param>
-            /// <param name="length"> The length of the message to be sent to the debug output stream. </param>
-            /// <param name="message"> The a string containing the message to be sent to the debug output stream. </param>
-            /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/es3.0/html/glPushDebugGroup.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/KHR/KHR_debug.txt">KHR_debug.txt</see></remarks>
-            public static void PushDebugGroup(DebugSource source, uint id, int length, byte* message) => GLPointers.glPushDebugGroup_Lazy((uint)source, id, length, message);
-            
             /// <summary> <b>[requires: GL_KHR_debug]</b> <b>[entry point: <c>glPushDebugGroupKHR</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/KHR/KHR_debug.txt">KHR_debug.txt</see></remarks>
             public static void PushDebugGroupKHR(DebugSource source, uint id, int length, byte* message) => GLPointers.glPushDebugGroupKHR_Lazy((uint)source, id, length, message);
-            
-            /// <summary> <b>[requires: v3.2 | GL_KHR_robustness]</b> <b>[entry point: <c>glReadnPixels</c>]</b><br/> Read a block of pixels from the frame buffer. </summary>
-            /// <param name="x"> Specify the window coordinates of the first pixel that is read from the frame buffer. This location is the lower left corner of a rectangular block of pixels. </param>
-            /// <param name="y"> Specify the window coordinates of the first pixel that is read from the frame buffer. This location is the lower left corner of a rectangular block of pixels. </param>
-            /// <param name="width"> Specify the dimensions of the pixel rectangle. width and height of one correspond to a single pixel. </param>
-            /// <param name="height"> Specify the dimensions of the pixel rectangle. width and height of one correspond to a single pixel. </param>
-            /// <param name="format"> Specifies the format of the pixel data. The following symbolic values are accepted: GL_RGBA, and GL_RGBA_INTEGER. An implementation-chosen format will also be accepted. This can be queried with glGet and GL_IMPLEMENTATION_COLOR_READ_FORMAT. </param>
-            /// <param name="type"> Specifies the data type of the pixel data. Must be one of GL_UNSIGNED_BYTE, GL_UNSIGNED_INT, GL_UNSIGNED_INT_2_10_10_10_REV, GL_INT, or GL_FLOAT. An implementation-chosen type will also be accepted. This can be queried with glGet and GL_IMPLEMENTATION_COLOR_READ_TYPE. </param>
-            /// <param name="bufSize"> Specifies the size of the buffer data for glReadnPixels function. </param>
-            /// <param name="data"> Returns the pixel data. </param>
-            /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/es3.0/html/glReadPixels.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/KHR/KHR_robustness.txt">KHR_robustness.txt</see></remarks>
-            public static void ReadnPixels(int x, int y, int width, int height, PixelFormat format, PixelType type, int bufSize, void* data) => GLPointers.glReadnPixels_Lazy(x, y, width, height, (uint)format, (uint)type, bufSize, data);
             
             /// <summary> <b>[requires: GL_KHR_robustness]</b> <b>[entry point: <c>glReadnPixelsKHR</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/KHR/KHR_robustness.txt">KHR_robustness.txt</see></remarks>
@@ -4059,14 +3907,6 @@ namespace OpenTK.Graphics.OpenGLES2
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_memory_attachment.txt">NV_memory_attachment.txt</see></remarks>
             public static void GetMemoryObjectDetachedResourcesuivNV(uint memory, All pname, int first, int count, uint* @params) => GLPointers.glGetMemoryObjectDetachedResourcesuivNV_Lazy(memory, (uint)pname, first, count, @params);
             
-            /// <summary> <b>[requires: GL_NV_path_rendering]</b> <b>[entry point: <c>glGetPathColorGenfvNV</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_path_rendering.txt">NV_path_rendering.txt</see></remarks>
-            public static void GetPathColorGenfvNV(PathColor color, PathGenMode pname, float* value) => GLPointers.glGetPathColorGenfvNV_Lazy((uint)color, (uint)pname, value);
-            
-            /// <summary> <b>[requires: GL_NV_path_rendering]</b> <b>[entry point: <c>glGetPathColorGenivNV</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_path_rendering.txt">NV_path_rendering.txt</see></remarks>
-            public static void GetPathColorGenivNV(PathColor color, PathGenMode pname, int* value) => GLPointers.glGetPathColorGenivNV_Lazy((uint)color, (uint)pname, value);
-            
             /// <summary> <b>[requires: GL_NV_path_rendering]</b> <b>[entry point: <c>glGetPathCommandsNV</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_path_rendering.txt">NV_path_rendering.txt</see></remarks>
             public static void GetPathCommandsNV(uint path, byte* commands) => GLPointers.glGetPathCommandsNV_Lazy(path, commands);
@@ -4102,14 +3942,6 @@ namespace OpenTK.Graphics.OpenGLES2
             /// <summary> <b>[requires: GL_NV_path_rendering]</b> <b>[entry point: <c>glGetPathSpacingNV</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_path_rendering.txt">NV_path_rendering.txt</see></remarks>
             public static void GetPathSpacingNV(PathListMode pathListMode, int numPaths, PathElementType pathNameType, void* paths, uint pathBase, float advanceScale, float kerningScale, PathTransformType transformType, float* returnedSpacing) => GLPointers.glGetPathSpacingNV_Lazy((uint)pathListMode, numPaths, (uint)pathNameType, paths, pathBase, advanceScale, kerningScale, (uint)transformType, returnedSpacing);
-            
-            /// <summary> <b>[requires: GL_NV_path_rendering]</b> <b>[entry point: <c>glGetPathTexGenfvNV</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_path_rendering.txt">NV_path_rendering.txt</see></remarks>
-            public static void GetPathTexGenfvNV(TextureUnit texCoordSet, PathGenMode pname, float* value) => GLPointers.glGetPathTexGenfvNV_Lazy((uint)texCoordSet, (uint)pname, value);
-            
-            /// <summary> <b>[requires: GL_NV_path_rendering]</b> <b>[entry point: <c>glGetPathTexGenivNV</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_path_rendering.txt">NV_path_rendering.txt</see></remarks>
-            public static void GetPathTexGenivNV(TextureUnit texCoordSet, PathGenMode pname, int* value) => GLPointers.glGetPathTexGenivNV_Lazy((uint)texCoordSet, (uint)pname, value);
             
             /// <summary> <b>[requires: GL_NV_path_rendering]</b> <b>[entry point: <c>glGetProgramResourcefvNV</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_path_rendering.txt">NV_path_rendering.txt</see></remarks>
@@ -4311,10 +4143,6 @@ namespace OpenTK.Graphics.OpenGLES2
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_sample_locations.txt">NV_sample_locations.txt</see></remarks>
             public static void NamedFramebufferSampleLocationsfvNV(int framebuffer, uint start, int count, float* v) => GLPointers.glNamedFramebufferSampleLocationsfvNV_Lazy(framebuffer, start, count, v);
             
-            /// <summary> <b>[requires: GL_NV_path_rendering]</b> <b>[entry point: <c>glPathColorGenNV</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_path_rendering.txt">NV_path_rendering.txt</see></remarks>
-            public static void PathColorGenNV(PathColor color, PathGenMode genMode, PathColorFormat colorFormat, float* coeffs) => GLPointers.glPathColorGenNV_Lazy((uint)color, (uint)genMode, (uint)colorFormat, coeffs);
-            
             /// <summary> <b>[requires: GL_NV_path_rendering]</b> <b>[entry point: <c>glPathCommandsNV</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_path_rendering.txt">NV_path_rendering.txt</see></remarks>
             public static void PathCommandsNV(uint path, int numCommands, byte* commands, int numCoords, PathCoordType coordType, void* coords) => GLPointers.glPathCommandsNV_Lazy(path, numCommands, commands, numCoords, (uint)coordType, coords);
@@ -4330,10 +4158,6 @@ namespace OpenTK.Graphics.OpenGLES2
             /// <summary> <b>[requires: GL_NV_path_rendering]</b> <b>[entry point: <c>glPathDashArrayNV</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_path_rendering.txt">NV_path_rendering.txt</see></remarks>
             public static void PathDashArrayNV(uint path, int dashCount, float* dashArray) => GLPointers.glPathDashArrayNV_Lazy(path, dashCount, dashArray);
-            
-            /// <summary> <b>[requires: GL_NV_path_rendering]</b> <b>[entry point: <c>glPathFogGenNV</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_path_rendering.txt">NV_path_rendering.txt</see></remarks>
-            public static void PathFogGenNV(PathGenMode genMode) => GLPointers.glPathFogGenNV_Lazy((uint)genMode);
             
             /// <summary> <b>[requires: GL_NV_path_rendering]</b> <b>[entry point: <c>glPathGlyphIndexArrayNV</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_path_rendering.txt">NV_path_rendering.txt</see></remarks>
@@ -4390,10 +4214,6 @@ namespace OpenTK.Graphics.OpenGLES2
             /// <summary> <b>[requires: GL_NV_path_rendering]</b> <b>[entry point: <c>glPathSubCoordsNV</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_path_rendering.txt">NV_path_rendering.txt</see></remarks>
             public static void PathSubCoordsNV(uint path, int coordStart, int numCoords, PathCoordType coordType, void* coords) => GLPointers.glPathSubCoordsNV_Lazy(path, coordStart, numCoords, (uint)coordType, coords);
-            
-            /// <summary> <b>[requires: GL_NV_path_rendering]</b> <b>[entry point: <c>glPathTexGenNV</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_path_rendering.txt">NV_path_rendering.txt</see></remarks>
-            public static void PathTexGenNV(PathColor texCoordSet, PathGenMode genMode, int components, float* coeffs) => GLPointers.glPathTexGenNV_Lazy((uint)texCoordSet, (uint)genMode, components, coeffs);
             
             /// <summary> <b>[requires: GL_NV_path_rendering]</b> <b>[entry point: <c>glPointAlongPathNV</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_path_rendering.txt">NV_path_rendering.txt</see></remarks>
@@ -4480,7 +4300,7 @@ namespace OpenTK.Graphics.OpenGLES2
             public static void ProgramUniformHandleui64vNV(int program, int location, int count, ulong* values) => GLPointers.glProgramUniformHandleui64vNV_Lazy(program, location, count, values);
             
             /// <summary> <b>[requires: GL_EXT_raster_multisample | GL_NV_framebuffer_mixed_samples]</b> <b>[entry point: <c>glRasterSamplesEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/EXT_raster_multisample.txt">EXT_raster_multisample.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_framebuffer_mixed_samples.txt">NV_framebuffer_mixed_samples.txt</see></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_raster_multisample.txt">EXT_raster_multisample.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_framebuffer_mixed_samples.txt">NV_framebuffer_mixed_samples.txt</see></remarks>
             public static void RasterSamplesEXT(uint samples, bool fixedsamplelocations) => GLPointers.glRasterSamplesEXT_Lazy(samples, (byte)(fixedsamplelocations ? 1 : 0));
             
             /// <summary> <b>[requires: GL_NV_read_buffer]</b> <b>[entry point: <c>glReadBufferNV</c>]</b><br/>  </summary>
@@ -4880,7 +4700,7 @@ namespace OpenTK.Graphics.OpenGLES2
             public static void MinSampleShadingOES(float value) => GLPointers.glMinSampleShadingOES_Lazy(value);
             
             /// <summary> <b>[requires: GL_EXT_draw_elements_base_vertex | GL_OES_draw_elements_base_vertex]</b> <b>[entry point: <c>glMultiDrawElementsBaseVertexEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/OES/EXT_draw_elements_base_vertex.txt">EXT_draw_elements_base_vertex.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/OES/OES_draw_elements_base_vertex.txt">OES_draw_elements_base_vertex.txt</see></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_draw_elements_base_vertex.txt">EXT_draw_elements_base_vertex.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/OES/OES_draw_elements_base_vertex.txt">OES_draw_elements_base_vertex.txt</see></remarks>
             public static void MultiDrawElementsBaseVertexEXT(PrimitiveType mode, int* count, DrawElementsType type, void** indices, int drawcount, int* basevertex) => GLPointers.glMultiDrawElementsBaseVertexEXT_Lazy((uint)mode, count, (uint)type, indices, drawcount, basevertex);
             
             /// <summary> <b>[requires: GL_OES_tessellation_shader]</b> <b>[entry point: <c>glPatchParameteriOES</c>]</b><br/>  </summary>

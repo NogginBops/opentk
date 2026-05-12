@@ -197,7 +197,7 @@ namespace OpenTK.Graphics.Wgl
         TextureRgbaArb = 8310,
         NoTextureArb = 8311,
         TextureCubeMapArb = 8312,
-        Texture1dArb = 8313,
+        Texture1DArb = 8313,
         Texture2DArb = 8314,
         MipmapLevelArb = 8315,
         CubeMapFaceArb = 8316,
@@ -525,7 +525,7 @@ namespace OpenTK.Graphics.Wgl
     {
         NoTextureArb = 8311,
         TextureCubeMapArb = 8312,
-        Texture1dArb = 8313,
+        Texture1DArb = 8313,
         Texture2DArb = 8314,
     }
     ///<summary>Used in <see cref="Wgl.ARB.ChoosePixelFormatARB" />, <see cref="Wgl.ARB.GetPixelFormatAttribfvARB" />, <see cref="Wgl.EXT.GetPixelFormatAttribfvEXT" />, ...</summary>

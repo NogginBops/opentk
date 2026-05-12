@@ -130,8 +130,8 @@ namespace ALGenerator.Process
             {
                 OutputApi outAPI = api switch
                 {
-                    InputAPI.AL => OutputApi.AL,
-                    InputAPI.ALC => OutputApi.ALC,
+                    InputApi.AL => OutputApi.AL,
+                    InputApi.ALC => OutputApi.ALC,
 
                     _ => throw new Exception(),
                 };
@@ -139,8 +139,8 @@ namespace ALGenerator.Process
                 // FIXME: Do we need this here?
                 ApiFile file = api switch
                 {
-                    InputAPI.AL => ApiFile.AL,
-                    InputAPI.ALC => ApiFile.ALC,
+                    InputApi.AL => ApiFile.AL,
+                    InputApi.ALC => ApiFile.ALC,
 
                     _ => throw new Exception(),
                 };
@@ -213,12 +213,12 @@ namespace ALGenerator.Process
 
                                     AddToGroup(allEnumGroups, outputApi, groupRef, @enum.IsFlag);
 
-                                    static bool MatchesAPI(InputAPI api, OutputApi output)
+                                    static bool MatchesAPI(InputApi api, OutputApi output)
                                     {
                                         switch (api)
                                         {
-                                            case InputAPI.AL: return output == OutputApi.AL;
-                                            case InputAPI.ALC: return output == OutputApi.ALC;
+                                            case InputApi.AL: return output == OutputApi.AL;
+                                            case InputApi.ALC: return output == OutputApi.ALC;
                                             default: throw new Exception();
                                         }
                                     }
@@ -261,8 +261,8 @@ namespace ALGenerator.Process
                 // FIXME: Probably make these the same enum!
                 OutputApi outAPI = api switch
                 {
-                    InputAPI.AL => OutputApi.AL,
-                    InputAPI.ALC => OutputApi.ALC,
+                    InputApi.AL => OutputApi.AL,
+                    InputApi.ALC => OutputApi.ALC,
 
                     _ => throw new Exception(),
                 };
@@ -270,8 +270,8 @@ namespace ALGenerator.Process
                 // FIXME: Do we need this here?
                 ApiFile file = api switch
                 {
-                    InputAPI.AL => ApiFile.AL,
-                    InputAPI.ALC => ApiFile.ALC,
+                    InputApi.AL => ApiFile.AL,
+                    InputApi.ALC => ApiFile.ALC,
 
                     _ => throw new Exception(),
                 };
@@ -541,24 +541,23 @@ namespace ALGenerator.Process
 
                         if (enumGroupToNativeFunctionsUsingThatEnumGroup.TryGetValue(new GroupRef(originalName, translatedName, alFile), out var functionsUsingEnumGroup) == false)
                         {
-                            functionsUsingEnumGroup = null;
+                            functionsUsingEnumGroup = [];
                         }
 
-                        // If there is a list, sort it by name
-                        if (functionsUsingEnumGroup != null)
-                            functionsUsingEnumGroup.Sort((f1, f2) => {
-                                // We want to prioritize "core" vendorFunctions before extensions.
-                                if (f1.Vendor == "" && f2.Vendor != "") return -1;
-                                if (f1.Vendor != "" && f2.Vendor == "") return 1;
+                        functionsUsingEnumGroup.Sort((f1, f2) => {
+                            // We want to prioritize "core" vendorFunctions before extensions.
+                            if (f1.Vendor == "" && f2.Vendor != "") return -1;
+                            if (f1.Vendor != "" && f2.Vendor == "") return 1;
 
-                                return f1.Function.Name.CompareTo(f2.Function.Name);
-                            });
+                            return f1.Function.Name.CompareTo(f2.Function.Name);
+                        });
 
                         members.Sort(EnumMember.DefaultComparison);
 
                         finalGroups.Add(new EnumType()
                         {
                             Name = translatedName,
+                            OriginalName = originalName,
                             IsFlags = isFlags,
                             Members = members,
                             ReferencedBy = [],
@@ -580,12 +579,13 @@ namespace ALGenerator.Process
                         {
                             if (enumGroupToNativeFunctionsUsingThatEnumGroup.TryGetValue(group, out var functionsUsingEnumGroup) == false)
                             {
-                                functionsUsingEnumGroup = null;
+                                functionsUsingEnumGroup = [];
                             }
 
                             finalGroups.Add(new EnumType()
                             {
                                 Name = group.TranslatedName,
+                                OriginalName = group.OriginalName,
                                 IsFlags = false,
                                 Members = [],
                                 ReferencedBy = [],
@@ -604,10 +604,11 @@ namespace ALGenerator.Process
                     finalGroups.Insert(0, new EnumType()
                     {
                         Name = "All",
+                        OriginalName = "All",
                         IsFlags = false,
                         Members = allEnumGroup,
                         ReferencedBy = [],
-                        FunctionsUsingEnumGroup = null,
+                        FunctionsUsingEnumGroup = [],
                     });
 
                     return new OutputApiData(outAPI, sortedVendorFunctions, finalGroups, documentation);

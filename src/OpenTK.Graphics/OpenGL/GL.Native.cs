@@ -4878,11 +4878,11 @@ namespace OpenTK.Graphics.OpenGL
             public static void GetPerfMonitorGroupStringAMD(uint group, int bufSize, int* length, byte* groupString) => GLPointers.glGetPerfMonitorGroupStringAMD_Lazy(group, bufSize, length, groupString);
             
             /// <summary> <b>[requires: GL_AMD_gpu_shader_int64 | GL_NV_gpu_shader5]</b> <b>[entry point: <c>glGetUniformi64vNV</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/AMD_gpu_shader_int64.txt">AMD_gpu_shader_int64.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_gpu_shader5.txt">NV_gpu_shader5.txt</see></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/AMD/AMD_gpu_shader_int64.txt">AMD_gpu_shader_int64.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_gpu_shader5.txt">NV_gpu_shader5.txt</see></remarks>
             public static void GetUniformi64vNV(int program, int location, long* @params) => GLPointers.glGetUniformi64vNV_Lazy(program, location, @params);
             
             /// <summary> <b>[requires: GL_AMD_gpu_shader_int64 | GL_NV_shader_buffer_load]</b> <b>[entry point: <c>glGetUniformui64vNV</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/AMD_gpu_shader_int64.txt">AMD_gpu_shader_int64.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_shader_buffer_load.txt">NV_shader_buffer_load.txt</see></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/AMD/AMD_gpu_shader_int64.txt">AMD_gpu_shader_int64.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_shader_buffer_load.txt">NV_shader_buffer_load.txt</see></remarks>
             public static void GetUniformui64vNV(int program, int location, ulong* @params) => GLPointers.glGetUniformui64vNV_Lazy(program, location, @params);
             
             /// <summary> <b>[requires: GL_AMD_name_gen_delete]</b> <b>[entry point: <c>glIsNameAMD</c>]</b><br/>  </summary>
@@ -4906,67 +4906,67 @@ namespace OpenTK.Graphics.OpenGL
             public static void NamedRenderbufferStorageMultisampleAdvancedAMD(int renderbuffer, int samples, int storageSamples, InternalFormat internalformat, int width, int height) => GLPointers.glNamedRenderbufferStorageMultisampleAdvancedAMD_Lazy(renderbuffer, samples, storageSamples, (uint)internalformat, width, height);
             
             /// <summary> <b>[requires: GL_AMD_gpu_shader_int64 | GL_NV_gpu_shader5]</b> <b>[entry point: <c>glProgramUniform1i64NV</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/AMD_gpu_shader_int64.txt">AMD_gpu_shader_int64.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_gpu_shader5.txt">NV_gpu_shader5.txt</see></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/AMD/AMD_gpu_shader_int64.txt">AMD_gpu_shader_int64.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_gpu_shader5.txt">NV_gpu_shader5.txt</see></remarks>
             public static void ProgramUniform1i64NV(int program, int location, long x) => GLPointers.glProgramUniform1i64NV_Lazy(program, location, x);
             
             /// <summary> <b>[requires: GL_AMD_gpu_shader_int64 | GL_NV_gpu_shader5]</b> <b>[entry point: <c>glProgramUniform1i64vNV</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/AMD_gpu_shader_int64.txt">AMD_gpu_shader_int64.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_gpu_shader5.txt">NV_gpu_shader5.txt</see></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/AMD/AMD_gpu_shader_int64.txt">AMD_gpu_shader_int64.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_gpu_shader5.txt">NV_gpu_shader5.txt</see></remarks>
             public static void ProgramUniform1i64vNV(int program, int location, int count, long* value) => GLPointers.glProgramUniform1i64vNV_Lazy(program, location, count, value);
             
             /// <summary> <b>[requires: GL_AMD_gpu_shader_int64 | GL_NV_gpu_shader5]</b> <b>[entry point: <c>glProgramUniform1ui64NV</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/AMD_gpu_shader_int64.txt">AMD_gpu_shader_int64.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_gpu_shader5.txt">NV_gpu_shader5.txt</see></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/AMD/AMD_gpu_shader_int64.txt">AMD_gpu_shader_int64.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_gpu_shader5.txt">NV_gpu_shader5.txt</see></remarks>
             public static void ProgramUniform1ui64NV(int program, int location, ulong x) => GLPointers.glProgramUniform1ui64NV_Lazy(program, location, x);
             
             /// <summary> <b>[requires: GL_AMD_gpu_shader_int64 | GL_NV_gpu_shader5]</b> <b>[entry point: <c>glProgramUniform1ui64vNV</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/AMD_gpu_shader_int64.txt">AMD_gpu_shader_int64.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_gpu_shader5.txt">NV_gpu_shader5.txt</see></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/AMD/AMD_gpu_shader_int64.txt">AMD_gpu_shader_int64.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_gpu_shader5.txt">NV_gpu_shader5.txt</see></remarks>
             public static void ProgramUniform1ui64vNV(int program, int location, int count, ulong* value) => GLPointers.glProgramUniform1ui64vNV_Lazy(program, location, count, value);
             
             /// <summary> <b>[requires: GL_AMD_gpu_shader_int64 | GL_NV_gpu_shader5]</b> <b>[entry point: <c>glProgramUniform2i64NV</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/AMD_gpu_shader_int64.txt">AMD_gpu_shader_int64.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_gpu_shader5.txt">NV_gpu_shader5.txt</see></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/AMD/AMD_gpu_shader_int64.txt">AMD_gpu_shader_int64.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_gpu_shader5.txt">NV_gpu_shader5.txt</see></remarks>
             public static void ProgramUniform2i64NV(int program, int location, long x, long y) => GLPointers.glProgramUniform2i64NV_Lazy(program, location, x, y);
             
             /// <summary> <b>[requires: GL_AMD_gpu_shader_int64 | GL_NV_gpu_shader5]</b> <b>[entry point: <c>glProgramUniform2i64vNV</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/AMD_gpu_shader_int64.txt">AMD_gpu_shader_int64.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_gpu_shader5.txt">NV_gpu_shader5.txt</see></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/AMD/AMD_gpu_shader_int64.txt">AMD_gpu_shader_int64.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_gpu_shader5.txt">NV_gpu_shader5.txt</see></remarks>
             public static void ProgramUniform2i64vNV(int program, int location, int count, long* value) => GLPointers.glProgramUniform2i64vNV_Lazy(program, location, count, value);
             
             /// <summary> <b>[requires: GL_AMD_gpu_shader_int64 | GL_NV_gpu_shader5]</b> <b>[entry point: <c>glProgramUniform2ui64NV</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/AMD_gpu_shader_int64.txt">AMD_gpu_shader_int64.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_gpu_shader5.txt">NV_gpu_shader5.txt</see></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/AMD/AMD_gpu_shader_int64.txt">AMD_gpu_shader_int64.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_gpu_shader5.txt">NV_gpu_shader5.txt</see></remarks>
             public static void ProgramUniform2ui64NV(int program, int location, ulong x, ulong y) => GLPointers.glProgramUniform2ui64NV_Lazy(program, location, x, y);
             
             /// <summary> <b>[requires: GL_AMD_gpu_shader_int64 | GL_NV_gpu_shader5]</b> <b>[entry point: <c>glProgramUniform2ui64vNV</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/AMD_gpu_shader_int64.txt">AMD_gpu_shader_int64.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_gpu_shader5.txt">NV_gpu_shader5.txt</see></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/AMD/AMD_gpu_shader_int64.txt">AMD_gpu_shader_int64.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_gpu_shader5.txt">NV_gpu_shader5.txt</see></remarks>
             public static void ProgramUniform2ui64vNV(int program, int location, int count, ulong* value) => GLPointers.glProgramUniform2ui64vNV_Lazy(program, location, count, value);
             
             /// <summary> <b>[requires: GL_AMD_gpu_shader_int64 | GL_NV_gpu_shader5]</b> <b>[entry point: <c>glProgramUniform3i64NV</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/AMD_gpu_shader_int64.txt">AMD_gpu_shader_int64.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_gpu_shader5.txt">NV_gpu_shader5.txt</see></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/AMD/AMD_gpu_shader_int64.txt">AMD_gpu_shader_int64.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_gpu_shader5.txt">NV_gpu_shader5.txt</see></remarks>
             public static void ProgramUniform3i64NV(int program, int location, long x, long y, long z) => GLPointers.glProgramUniform3i64NV_Lazy(program, location, x, y, z);
             
             /// <summary> <b>[requires: GL_AMD_gpu_shader_int64 | GL_NV_gpu_shader5]</b> <b>[entry point: <c>glProgramUniform3i64vNV</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/AMD_gpu_shader_int64.txt">AMD_gpu_shader_int64.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_gpu_shader5.txt">NV_gpu_shader5.txt</see></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/AMD/AMD_gpu_shader_int64.txt">AMD_gpu_shader_int64.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_gpu_shader5.txt">NV_gpu_shader5.txt</see></remarks>
             public static void ProgramUniform3i64vNV(int program, int location, int count, long* value) => GLPointers.glProgramUniform3i64vNV_Lazy(program, location, count, value);
             
             /// <summary> <b>[requires: GL_AMD_gpu_shader_int64 | GL_NV_gpu_shader5]</b> <b>[entry point: <c>glProgramUniform3ui64NV</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/AMD_gpu_shader_int64.txt">AMD_gpu_shader_int64.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_gpu_shader5.txt">NV_gpu_shader5.txt</see></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/AMD/AMD_gpu_shader_int64.txt">AMD_gpu_shader_int64.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_gpu_shader5.txt">NV_gpu_shader5.txt</see></remarks>
             public static void ProgramUniform3ui64NV(int program, int location, ulong x, ulong y, ulong z) => GLPointers.glProgramUniform3ui64NV_Lazy(program, location, x, y, z);
             
             /// <summary> <b>[requires: GL_AMD_gpu_shader_int64 | GL_NV_gpu_shader5]</b> <b>[entry point: <c>glProgramUniform3ui64vNV</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/AMD_gpu_shader_int64.txt">AMD_gpu_shader_int64.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_gpu_shader5.txt">NV_gpu_shader5.txt</see></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/AMD/AMD_gpu_shader_int64.txt">AMD_gpu_shader_int64.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_gpu_shader5.txt">NV_gpu_shader5.txt</see></remarks>
             public static void ProgramUniform3ui64vNV(int program, int location, int count, ulong* value) => GLPointers.glProgramUniform3ui64vNV_Lazy(program, location, count, value);
             
             /// <summary> <b>[requires: GL_AMD_gpu_shader_int64 | GL_NV_gpu_shader5]</b> <b>[entry point: <c>glProgramUniform4i64NV</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/AMD_gpu_shader_int64.txt">AMD_gpu_shader_int64.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_gpu_shader5.txt">NV_gpu_shader5.txt</see></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/AMD/AMD_gpu_shader_int64.txt">AMD_gpu_shader_int64.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_gpu_shader5.txt">NV_gpu_shader5.txt</see></remarks>
             public static void ProgramUniform4i64NV(int program, int location, long x, long y, long z, long w) => GLPointers.glProgramUniform4i64NV_Lazy(program, location, x, y, z, w);
             
             /// <summary> <b>[requires: GL_AMD_gpu_shader_int64 | GL_NV_gpu_shader5]</b> <b>[entry point: <c>glProgramUniform4i64vNV</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/AMD_gpu_shader_int64.txt">AMD_gpu_shader_int64.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_gpu_shader5.txt">NV_gpu_shader5.txt</see></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/AMD/AMD_gpu_shader_int64.txt">AMD_gpu_shader_int64.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_gpu_shader5.txt">NV_gpu_shader5.txt</see></remarks>
             public static void ProgramUniform4i64vNV(int program, int location, int count, long* value) => GLPointers.glProgramUniform4i64vNV_Lazy(program, location, count, value);
             
             /// <summary> <b>[requires: GL_AMD_gpu_shader_int64 | GL_NV_gpu_shader5]</b> <b>[entry point: <c>glProgramUniform4ui64NV</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/AMD_gpu_shader_int64.txt">AMD_gpu_shader_int64.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_gpu_shader5.txt">NV_gpu_shader5.txt</see></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/AMD/AMD_gpu_shader_int64.txt">AMD_gpu_shader_int64.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_gpu_shader5.txt">NV_gpu_shader5.txt</see></remarks>
             public static void ProgramUniform4ui64NV(int program, int location, ulong x, ulong y, ulong z, ulong w) => GLPointers.glProgramUniform4ui64NV_Lazy(program, location, x, y, z, w);
             
             /// <summary> <b>[requires: GL_AMD_gpu_shader_int64 | GL_NV_gpu_shader5]</b> <b>[entry point: <c>glProgramUniform4ui64vNV</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/AMD_gpu_shader_int64.txt">AMD_gpu_shader_int64.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_gpu_shader5.txt">NV_gpu_shader5.txt</see></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/AMD/AMD_gpu_shader_int64.txt">AMD_gpu_shader_int64.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_gpu_shader5.txt">NV_gpu_shader5.txt</see></remarks>
             public static void ProgramUniform4ui64vNV(int program, int location, int count, ulong* value) => GLPointers.glProgramUniform4ui64vNV_Lazy(program, location, count, value);
             
             /// <summary> <b>[requires: GL_AMD_occlusion_query_event]</b> <b>[entry point: <c>glQueryObjectParameteruiAMD</c>]</b><br/>  </summary>
@@ -5006,67 +5006,67 @@ namespace OpenTK.Graphics.OpenGL
             public static void TextureStorageSparseAMD(int texture, TextureTarget target, SizedInternalFormat internalFormat, int width, int height, int depth, int layers, TextureStorageMaskAMD flags) => GLPointers.glTextureStorageSparseAMD_Lazy(texture, (uint)target, (uint)internalFormat, width, height, depth, layers, (uint)flags);
             
             /// <summary> <b>[requires: GL_AMD_gpu_shader_int64 | GL_NV_gpu_shader5]</b> <b>[entry point: <c>glUniform1i64NV</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/AMD_gpu_shader_int64.txt">AMD_gpu_shader_int64.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_gpu_shader5.txt">NV_gpu_shader5.txt</see></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/AMD/AMD_gpu_shader_int64.txt">AMD_gpu_shader_int64.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_gpu_shader5.txt">NV_gpu_shader5.txt</see></remarks>
             public static void Uniform1i64NV(int location, long x) => GLPointers.glUniform1i64NV_Lazy(location, x);
             
             /// <summary> <b>[requires: GL_AMD_gpu_shader_int64 | GL_NV_gpu_shader5]</b> <b>[entry point: <c>glUniform1i64vNV</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/AMD_gpu_shader_int64.txt">AMD_gpu_shader_int64.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_gpu_shader5.txt">NV_gpu_shader5.txt</see></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/AMD/AMD_gpu_shader_int64.txt">AMD_gpu_shader_int64.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_gpu_shader5.txt">NV_gpu_shader5.txt</see></remarks>
             public static void Uniform1i64vNV(int location, int count, long* value) => GLPointers.glUniform1i64vNV_Lazy(location, count, value);
             
             /// <summary> <b>[requires: GL_AMD_gpu_shader_int64 | GL_NV_gpu_shader5]</b> <b>[entry point: <c>glUniform1ui64NV</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/AMD_gpu_shader_int64.txt">AMD_gpu_shader_int64.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_gpu_shader5.txt">NV_gpu_shader5.txt</see></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/AMD/AMD_gpu_shader_int64.txt">AMD_gpu_shader_int64.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_gpu_shader5.txt">NV_gpu_shader5.txt</see></remarks>
             public static void Uniform1ui64NV(int location, ulong x) => GLPointers.glUniform1ui64NV_Lazy(location, x);
             
             /// <summary> <b>[requires: GL_AMD_gpu_shader_int64 | GL_NV_gpu_shader5]</b> <b>[entry point: <c>glUniform1ui64vNV</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/AMD_gpu_shader_int64.txt">AMD_gpu_shader_int64.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_gpu_shader5.txt">NV_gpu_shader5.txt</see></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/AMD/AMD_gpu_shader_int64.txt">AMD_gpu_shader_int64.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_gpu_shader5.txt">NV_gpu_shader5.txt</see></remarks>
             public static void Uniform1ui64vNV(int location, int count, ulong* value) => GLPointers.glUniform1ui64vNV_Lazy(location, count, value);
             
             /// <summary> <b>[requires: GL_AMD_gpu_shader_int64 | GL_NV_gpu_shader5]</b> <b>[entry point: <c>glUniform2i64NV</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/AMD_gpu_shader_int64.txt">AMD_gpu_shader_int64.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_gpu_shader5.txt">NV_gpu_shader5.txt</see></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/AMD/AMD_gpu_shader_int64.txt">AMD_gpu_shader_int64.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_gpu_shader5.txt">NV_gpu_shader5.txt</see></remarks>
             public static void Uniform2i64NV(int location, long x, long y) => GLPointers.glUniform2i64NV_Lazy(location, x, y);
             
             /// <summary> <b>[requires: GL_AMD_gpu_shader_int64 | GL_NV_gpu_shader5]</b> <b>[entry point: <c>glUniform2i64vNV</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/AMD_gpu_shader_int64.txt">AMD_gpu_shader_int64.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_gpu_shader5.txt">NV_gpu_shader5.txt</see></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/AMD/AMD_gpu_shader_int64.txt">AMD_gpu_shader_int64.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_gpu_shader5.txt">NV_gpu_shader5.txt</see></remarks>
             public static void Uniform2i64vNV(int location, int count, long* value) => GLPointers.glUniform2i64vNV_Lazy(location, count, value);
             
             /// <summary> <b>[requires: GL_AMD_gpu_shader_int64 | GL_NV_gpu_shader5]</b> <b>[entry point: <c>glUniform2ui64NV</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/AMD_gpu_shader_int64.txt">AMD_gpu_shader_int64.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_gpu_shader5.txt">NV_gpu_shader5.txt</see></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/AMD/AMD_gpu_shader_int64.txt">AMD_gpu_shader_int64.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_gpu_shader5.txt">NV_gpu_shader5.txt</see></remarks>
             public static void Uniform2ui64NV(int location, ulong x, ulong y) => GLPointers.glUniform2ui64NV_Lazy(location, x, y);
             
             /// <summary> <b>[requires: GL_AMD_gpu_shader_int64 | GL_NV_gpu_shader5]</b> <b>[entry point: <c>glUniform2ui64vNV</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/AMD_gpu_shader_int64.txt">AMD_gpu_shader_int64.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_gpu_shader5.txt">NV_gpu_shader5.txt</see></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/AMD/AMD_gpu_shader_int64.txt">AMD_gpu_shader_int64.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_gpu_shader5.txt">NV_gpu_shader5.txt</see></remarks>
             public static void Uniform2ui64vNV(int location, int count, ulong* value) => GLPointers.glUniform2ui64vNV_Lazy(location, count, value);
             
             /// <summary> <b>[requires: GL_AMD_gpu_shader_int64 | GL_NV_gpu_shader5]</b> <b>[entry point: <c>glUniform3i64NV</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/AMD_gpu_shader_int64.txt">AMD_gpu_shader_int64.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_gpu_shader5.txt">NV_gpu_shader5.txt</see></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/AMD/AMD_gpu_shader_int64.txt">AMD_gpu_shader_int64.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_gpu_shader5.txt">NV_gpu_shader5.txt</see></remarks>
             public static void Uniform3i64NV(int location, long x, long y, long z) => GLPointers.glUniform3i64NV_Lazy(location, x, y, z);
             
             /// <summary> <b>[requires: GL_AMD_gpu_shader_int64 | GL_NV_gpu_shader5]</b> <b>[entry point: <c>glUniform3i64vNV</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/AMD_gpu_shader_int64.txt">AMD_gpu_shader_int64.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_gpu_shader5.txt">NV_gpu_shader5.txt</see></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/AMD/AMD_gpu_shader_int64.txt">AMD_gpu_shader_int64.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_gpu_shader5.txt">NV_gpu_shader5.txt</see></remarks>
             public static void Uniform3i64vNV(int location, int count, long* value) => GLPointers.glUniform3i64vNV_Lazy(location, count, value);
             
             /// <summary> <b>[requires: GL_AMD_gpu_shader_int64 | GL_NV_gpu_shader5]</b> <b>[entry point: <c>glUniform3ui64NV</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/AMD_gpu_shader_int64.txt">AMD_gpu_shader_int64.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_gpu_shader5.txt">NV_gpu_shader5.txt</see></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/AMD/AMD_gpu_shader_int64.txt">AMD_gpu_shader_int64.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_gpu_shader5.txt">NV_gpu_shader5.txt</see></remarks>
             public static void Uniform3ui64NV(int location, ulong x, ulong y, ulong z) => GLPointers.glUniform3ui64NV_Lazy(location, x, y, z);
             
             /// <summary> <b>[requires: GL_AMD_gpu_shader_int64 | GL_NV_gpu_shader5]</b> <b>[entry point: <c>glUniform3ui64vNV</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/AMD_gpu_shader_int64.txt">AMD_gpu_shader_int64.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_gpu_shader5.txt">NV_gpu_shader5.txt</see></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/AMD/AMD_gpu_shader_int64.txt">AMD_gpu_shader_int64.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_gpu_shader5.txt">NV_gpu_shader5.txt</see></remarks>
             public static void Uniform3ui64vNV(int location, int count, ulong* value) => GLPointers.glUniform3ui64vNV_Lazy(location, count, value);
             
             /// <summary> <b>[requires: GL_AMD_gpu_shader_int64 | GL_NV_gpu_shader5]</b> <b>[entry point: <c>glUniform4i64NV</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/AMD_gpu_shader_int64.txt">AMD_gpu_shader_int64.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_gpu_shader5.txt">NV_gpu_shader5.txt</see></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/AMD/AMD_gpu_shader_int64.txt">AMD_gpu_shader_int64.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_gpu_shader5.txt">NV_gpu_shader5.txt</see></remarks>
             public static void Uniform4i64NV(int location, long x, long y, long z, long w) => GLPointers.glUniform4i64NV_Lazy(location, x, y, z, w);
             
             /// <summary> <b>[requires: GL_AMD_gpu_shader_int64 | GL_NV_gpu_shader5]</b> <b>[entry point: <c>glUniform4i64vNV</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/AMD_gpu_shader_int64.txt">AMD_gpu_shader_int64.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_gpu_shader5.txt">NV_gpu_shader5.txt</see></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/AMD/AMD_gpu_shader_int64.txt">AMD_gpu_shader_int64.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_gpu_shader5.txt">NV_gpu_shader5.txt</see></remarks>
             public static void Uniform4i64vNV(int location, int count, long* value) => GLPointers.glUniform4i64vNV_Lazy(location, count, value);
             
             /// <summary> <b>[requires: GL_AMD_gpu_shader_int64 | GL_NV_gpu_shader5]</b> <b>[entry point: <c>glUniform4ui64NV</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/AMD_gpu_shader_int64.txt">AMD_gpu_shader_int64.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_gpu_shader5.txt">NV_gpu_shader5.txt</see></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/AMD/AMD_gpu_shader_int64.txt">AMD_gpu_shader_int64.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_gpu_shader5.txt">NV_gpu_shader5.txt</see></remarks>
             public static void Uniform4ui64NV(int location, ulong x, ulong y, ulong z, ulong w) => GLPointers.glUniform4ui64NV_Lazy(location, x, y, z, w);
             
             /// <summary> <b>[requires: GL_AMD_gpu_shader_int64 | GL_NV_gpu_shader5]</b> <b>[entry point: <c>glUniform4ui64vNV</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/AMD_gpu_shader_int64.txt">AMD_gpu_shader_int64.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_gpu_shader5.txt">NV_gpu_shader5.txt</see></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/AMD/AMD_gpu_shader_int64.txt">AMD_gpu_shader_int64.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_gpu_shader5.txt">NV_gpu_shader5.txt</see></remarks>
             public static void Uniform4ui64vNV(int location, int count, ulong* value) => GLPointers.glUniform4ui64vNV_Lazy(location, count, value);
             
             /// <summary> <b>[requires: GL_AMD_interleaved_elements]</b> <b>[entry point: <c>glVertexAttribParameteriAMD</c>]</b><br/>  </summary>
@@ -5598,38 +5598,6 @@ namespace OpenTK.Graphics.OpenGL
             /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/glClipControl.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_clip_control.txt">ARB_clip_control.txt</see></remarks>
             public static void ClipControl(ClipControlOrigin origin, ClipControlDepth depth) => GLPointers.glClipControl_Lazy((uint)origin, (uint)depth);
             
-            /// <summary> <b>[requires: v3.3 | GL_ARB_vertex_type_2_10_10_10_rev]</b> <b>[entry point: <c>glColorP3ui</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_vertex_type_2_10_10_10_rev.txt">ARB_vertex_type_2_10_10_10_rev.txt</see></remarks>
-            public static void ColorP3ui(ColorPointerType type, uint color) => GLPointers.glColorP3ui_Lazy((uint)type, color);
-            
-            /// <summary> <b>[requires: v3.3 | GL_ARB_vertex_type_2_10_10_10_rev]</b> <b>[entry point: <c>glColorP3uiv</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_vertex_type_2_10_10_10_rev.txt">ARB_vertex_type_2_10_10_10_rev.txt</see></remarks>
-            public static void ColorP3uiv(ColorPointerType type, uint* color) => GLPointers.glColorP3uiv_Lazy((uint)type, color);
-            
-            /// <summary> <b>[requires: v3.3 | GL_ARB_vertex_type_2_10_10_10_rev]</b> <b>[entry point: <c>glColorP4ui</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_vertex_type_2_10_10_10_rev.txt">ARB_vertex_type_2_10_10_10_rev.txt</see></remarks>
-            public static void ColorP4ui(ColorPointerType type, uint color) => GLPointers.glColorP4ui_Lazy((uint)type, color);
-            
-            /// <summary> <b>[requires: v3.3 | GL_ARB_vertex_type_2_10_10_10_rev]</b> <b>[entry point: <c>glColorP4uiv</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_vertex_type_2_10_10_10_rev.txt">ARB_vertex_type_2_10_10_10_rev.txt</see></remarks>
-            public static void ColorP4uiv(ColorPointerType type, uint* color) => GLPointers.glColorP4uiv_Lazy((uint)type, color);
-            
-            /// <summary> <b>[requires: GL_ARB_imaging]</b> <b>[entry point: <c>glColorSubTable</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_imaging.txt">ARB_imaging.txt</see></remarks>
-            public static void ColorSubTable(ColorTableTarget target, int start, int count, PixelFormat format, PixelType type, void* data) => GLPointers.glColorSubTable_Lazy((uint)target, start, count, (uint)format, (uint)type, data);
-            
-            /// <summary> <b>[requires: GL_ARB_imaging]</b> <b>[entry point: <c>glColorTable</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_imaging.txt">ARB_imaging.txt</see></remarks>
-            public static void ColorTable(ColorTableTarget target, InternalFormat internalformat, int width, PixelFormat format, PixelType type, void* table) => GLPointers.glColorTable_Lazy((uint)target, (uint)internalformat, width, (uint)format, (uint)type, table);
-            
-            /// <summary> <b>[requires: GL_ARB_imaging]</b> <b>[entry point: <c>glColorTableParameterfv</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_imaging.txt">ARB_imaging.txt</see></remarks>
-            public static void ColorTableParameterfv(ColorTableTarget target, ColorTableParameterPName pname, float* @params) => GLPointers.glColorTableParameterfv_Lazy((uint)target, (uint)pname, @params);
-            
-            /// <summary> <b>[requires: GL_ARB_imaging]</b> <b>[entry point: <c>glColorTableParameteriv</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_imaging.txt">ARB_imaging.txt</see></remarks>
-            public static void ColorTableParameteriv(ColorTableTarget target, ColorTableParameterPName pname, int* @params) => GLPointers.glColorTableParameteriv_Lazy((uint)target, (uint)pname, @params);
-            
             /// <summary> <b>[requires: GL_ARB_shader_objects]</b> <b>[entry point: <c>glCompileShaderARB</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_shader_objects.txt">ARB_shader_objects.txt</see></remarks>
             public static void CompileShaderARB(GLHandleARB shaderObj) => GLPointers.glCompileShaderARB_Lazy((IntPtr)shaderObj);
@@ -5701,30 +5669,6 @@ namespace OpenTK.Graphics.OpenGL
             /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/glCompressedTexSubImage3D.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_direct_state_access.txt">ARB_direct_state_access.txt</see></remarks>
             public static void CompressedTextureSubImage3D(int texture, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, InternalFormat format, int imageSize, void* data) => GLPointers.glCompressedTextureSubImage3D_Lazy(texture, level, xoffset, yoffset, zoffset, width, height, depth, (uint)format, imageSize, data);
             
-            /// <summary> <b>[requires: GL_ARB_imaging]</b> <b>[entry point: <c>glConvolutionFilter1D</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_imaging.txt">ARB_imaging.txt</see></remarks>
-            public static void ConvolutionFilter1D(ConvolutionTarget target, InternalFormat internalformat, int width, PixelFormat format, PixelType type, void* image) => GLPointers.glConvolutionFilter1D_Lazy((uint)target, (uint)internalformat, width, (uint)format, (uint)type, image);
-            
-            /// <summary> <b>[requires: GL_ARB_imaging]</b> <b>[entry point: <c>glConvolutionFilter2D</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_imaging.txt">ARB_imaging.txt</see></remarks>
-            public static void ConvolutionFilter2D(ConvolutionTarget target, InternalFormat internalformat, int width, int height, PixelFormat format, PixelType type, void* image) => GLPointers.glConvolutionFilter2D_Lazy((uint)target, (uint)internalformat, width, height, (uint)format, (uint)type, image);
-            
-            /// <summary> <b>[requires: GL_ARB_imaging]</b> <b>[entry point: <c>glConvolutionParameterf</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_imaging.txt">ARB_imaging.txt</see></remarks>
-            public static void ConvolutionParameterf(ConvolutionTarget target, ConvolutionParameter pname, float @params) => GLPointers.glConvolutionParameterf_Lazy((uint)target, (uint)pname, @params);
-            
-            /// <summary> <b>[requires: GL_ARB_imaging]</b> <b>[entry point: <c>glConvolutionParameterfv</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_imaging.txt">ARB_imaging.txt</see></remarks>
-            public static void ConvolutionParameterfv(ConvolutionTarget target, ConvolutionParameter pname, float* @params) => GLPointers.glConvolutionParameterfv_Lazy((uint)target, (uint)pname, @params);
-            
-            /// <summary> <b>[requires: GL_ARB_imaging]</b> <b>[entry point: <c>glConvolutionParameteri</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_imaging.txt">ARB_imaging.txt</see></remarks>
-            public static void ConvolutionParameteri(ConvolutionTarget target, ConvolutionParameter pname, int @params) => GLPointers.glConvolutionParameteri_Lazy((uint)target, (uint)pname, @params);
-            
-            /// <summary> <b>[requires: GL_ARB_imaging]</b> <b>[entry point: <c>glConvolutionParameteriv</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_imaging.txt">ARB_imaging.txt</see></remarks>
-            public static void ConvolutionParameteriv(ConvolutionTarget target, ConvolutionParameter pname, int* @params) => GLPointers.glConvolutionParameteriv_Lazy((uint)target, (uint)pname, @params);
-            
             /// <summary> <b>[requires: v3.1 | GL_ARB_copy_buffer]</b> <b>[entry point: <c>glCopyBufferSubData</c>]</b><br/> Copy all or part of the data store of a buffer object to the data store of another buffer object. </summary>
             /// <param name="readTarget"> Specifies the target to which the source buffer object is bound for glCopyBufferSubData </param>
             /// <param name="writeTarget"> Specifies the target to which the destination buffer object is bound for glCopyBufferSubData. </param>
@@ -5733,22 +5677,6 @@ namespace OpenTK.Graphics.OpenGL
             /// <param name="size"> Specifies the size, in basic machine units, of the data to be copied from the source buffer object to the destination buffer object. </param>
             /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/glCopyBufferSubData.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_copy_buffer.txt">ARB_copy_buffer.txt</see></remarks>
             public static void CopyBufferSubData(CopyBufferSubDataTarget readTarget, CopyBufferSubDataTarget writeTarget, IntPtr readOffset, IntPtr writeOffset, nint size) => GLPointers.glCopyBufferSubData_Lazy((uint)readTarget, (uint)writeTarget, readOffset, writeOffset, size);
-            
-            /// <summary> <b>[requires: GL_ARB_imaging]</b> <b>[entry point: <c>glCopyColorSubTable</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_imaging.txt">ARB_imaging.txt</see></remarks>
-            public static void CopyColorSubTable(ColorTableTarget target, int start, int x, int y, int width) => GLPointers.glCopyColorSubTable_Lazy((uint)target, start, x, y, width);
-            
-            /// <summary> <b>[requires: GL_ARB_imaging]</b> <b>[entry point: <c>glCopyColorTable</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_imaging.txt">ARB_imaging.txt</see></remarks>
-            public static void CopyColorTable(ColorTableTarget target, InternalFormat internalformat, int x, int y, int width) => GLPointers.glCopyColorTable_Lazy((uint)target, (uint)internalformat, x, y, width);
-            
-            /// <summary> <b>[requires: GL_ARB_imaging]</b> <b>[entry point: <c>glCopyConvolutionFilter1D</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_imaging.txt">ARB_imaging.txt</see></remarks>
-            public static void CopyConvolutionFilter1D(ConvolutionTarget target, InternalFormat internalformat, int x, int y, int width) => GLPointers.glCopyConvolutionFilter1D_Lazy((uint)target, (uint)internalformat, x, y, width);
-            
-            /// <summary> <b>[requires: GL_ARB_imaging]</b> <b>[entry point: <c>glCopyConvolutionFilter2D</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_imaging.txt">ARB_imaging.txt</see></remarks>
-            public static void CopyConvolutionFilter2D(ConvolutionTarget target, InternalFormat internalformat, int x, int y, int width, int height) => GLPointers.glCopyConvolutionFilter2D_Lazy((uint)target, (uint)internalformat, x, y, width, height);
             
             /// <summary> <b>[requires: v4.3 | GL_ARB_copy_image]</b> <b>[entry point: <c>glCopyImageSubData</c>]</b><br/> Perform a raw data copy between two images. </summary>
             /// <param name="srcName"> The name of a texture or renderbuffer object from which to copy. </param>
@@ -6406,18 +6334,6 @@ namespace OpenTK.Graphics.OpenGL
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_vertex_buffer_object.txt">ARB_vertex_buffer_object.txt</see></remarks>
             public static void GetBufferSubDataARB(BufferTarget target, IntPtr offset, nint size, void* data) => GLPointers.glGetBufferSubDataARB_Lazy((uint)target, offset, size, data);
             
-            /// <summary> <b>[requires: GL_ARB_imaging]</b> <b>[entry point: <c>glGetColorTable</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_imaging.txt">ARB_imaging.txt</see></remarks>
-            public static void GetColorTable(ColorTableTarget target, PixelFormat format, PixelType type, void* table) => GLPointers.glGetColorTable_Lazy((uint)target, (uint)format, (uint)type, table);
-            
-            /// <summary> <b>[requires: GL_ARB_imaging]</b> <b>[entry point: <c>glGetColorTableParameterfv</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_imaging.txt">ARB_imaging.txt</see></remarks>
-            public static void GetColorTableParameterfv(ColorTableTarget target, ColorTableParameterPName pname, float* @params) => GLPointers.glGetColorTableParameterfv_Lazy((uint)target, (uint)pname, @params);
-            
-            /// <summary> <b>[requires: GL_ARB_imaging]</b> <b>[entry point: <c>glGetColorTableParameteriv</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_imaging.txt">ARB_imaging.txt</see></remarks>
-            public static void GetColorTableParameteriv(ColorTableTarget target, ColorTableParameterPName pname, int* @params) => GLPointers.glGetColorTableParameteriv_Lazy((uint)target, (uint)pname, @params);
-            
             /// <summary> <b>[requires: GL_ARB_texture_compression]</b> <b>[entry point: <c>glGetCompressedTexImageARB</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_texture_compression.txt">ARB_texture_compression.txt</see></remarks>
             public static void GetCompressedTexImageARB(TextureTarget target, int level, void* img) => GLPointers.glGetCompressedTexImageARB_Lazy((uint)target, level, img);
@@ -6443,18 +6359,6 @@ namespace OpenTK.Graphics.OpenGL
             /// <param name="pixels">Returns the texture subimage. Should be a pointer to an array of the type specified by type.</param>
             /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/glGetCompressedTextureSubImage.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_get_texture_sub_image.txt">ARB_get_texture_sub_image.txt</see></remarks>
             public static void GetCompressedTextureSubImage(int texture, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, int bufSize, void* pixels) => GLPointers.glGetCompressedTextureSubImage_Lazy(texture, level, xoffset, yoffset, zoffset, width, height, depth, bufSize, pixels);
-            
-            /// <summary> <b>[requires: GL_ARB_imaging]</b> <b>[entry point: <c>glGetConvolutionFilter</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_imaging.txt">ARB_imaging.txt</see></remarks>
-            public static void GetConvolutionFilter(ConvolutionTarget target, PixelFormat format, PixelType type, void* image) => GLPointers.glGetConvolutionFilter_Lazy((uint)target, (uint)format, (uint)type, image);
-            
-            /// <summary> <b>[requires: GL_ARB_imaging]</b> <b>[entry point: <c>glGetConvolutionParameterfv</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_imaging.txt">ARB_imaging.txt</see></remarks>
-            public static void GetConvolutionParameterfv(ConvolutionTarget target, ConvolutionParameter pname, float* @params) => GLPointers.glGetConvolutionParameterfv_Lazy((uint)target, (uint)pname, @params);
-            
-            /// <summary> <b>[requires: GL_ARB_imaging]</b> <b>[entry point: <c>glGetConvolutionParameteriv</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_imaging.txt">ARB_imaging.txt</see></remarks>
-            public static void GetConvolutionParameteriv(ConvolutionTarget target, ConvolutionParameter pname, int* @params) => GLPointers.glGetConvolutionParameteriv_Lazy((uint)target, (uint)pname, @params);
             
             /// <summary> <b>[requires: GL_ARB_debug_output]</b> <b>[entry point: <c>glGetDebugMessageLogARB</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_debug_output.txt">ARB_debug_output.txt</see></remarks>
@@ -6503,18 +6407,6 @@ namespace OpenTK.Graphics.OpenGL
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_shader_objects.txt">ARB_shader_objects.txt</see></remarks>
             public static GLHandleARB GetHandleARB(ContainerType pname) => (GLHandleARB) GLPointers.glGetHandleARB_Lazy((uint)pname);
             
-            /// <summary> <b>[requires: GL_ARB_imaging]</b> <b>[entry point: <c>glGetHistogram</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_imaging.txt">ARB_imaging.txt</see></remarks>
-            public static void GetHistogram(HistogramTargetEXT target, bool reset, PixelFormat format, PixelType type, void* values) => GLPointers.glGetHistogram_Lazy((uint)target, (byte)(reset ? 1 : 0), (uint)format, (uint)type, values);
-            
-            /// <summary> <b>[requires: GL_ARB_imaging]</b> <b>[entry point: <c>glGetHistogramParameterfv</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_imaging.txt">ARB_imaging.txt</see></remarks>
-            public static void GetHistogramParameterfv(HistogramTargetEXT target, GetHistogramParameterPNameEXT pname, float* @params) => GLPointers.glGetHistogramParameterfv_Lazy((uint)target, (uint)pname, @params);
-            
-            /// <summary> <b>[requires: GL_ARB_imaging]</b> <b>[entry point: <c>glGetHistogramParameteriv</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_imaging.txt">ARB_imaging.txt</see></remarks>
-            public static void GetHistogramParameteriv(HistogramTargetEXT target, GetHistogramParameterPNameEXT pname, int* @params) => GLPointers.glGetHistogramParameteriv_Lazy((uint)target, (uint)pname, @params);
-            
             /// <summary> <b>[requires: GL_ARB_bindless_texture]</b> <b>[entry point: <c>glGetImageHandleARB</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_bindless_texture.txt">ARB_bindless_texture.txt</see></remarks>
             public static ulong GetImageHandleARB(int texture, int level, bool layered, int layer, PixelFormat format) => GLPointers.glGetImageHandleARB_Lazy(texture, level, (byte)(layered ? 1 : 0), layer, (uint)format);
@@ -6553,18 +6445,6 @@ namespace OpenTK.Graphics.OpenGL
             /// <param name="params"> Specifies the address of a variable into which to write the retrieved information. </param>
             /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/glGetInternalformat.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_internalformat_query.txt">ARB_internalformat_query.txt</see></remarks>
             public static void GetInternalformativ(TextureTarget target, InternalFormat internalformat, InternalFormatPName pname, int count, int* @params) => GLPointers.glGetInternalformativ_Lazy((uint)target, (uint)internalformat, (uint)pname, count, @params);
-            
-            /// <summary> <b>[requires: GL_ARB_imaging]</b> <b>[entry point: <c>glGetMinmax</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_imaging.txt">ARB_imaging.txt</see></remarks>
-            public static void GetMinmax(MinmaxTargetEXT target, bool reset, PixelFormat format, PixelType type, void* values) => GLPointers.glGetMinmax_Lazy((uint)target, (byte)(reset ? 1 : 0), (uint)format, (uint)type, values);
-            
-            /// <summary> <b>[requires: GL_ARB_imaging]</b> <b>[entry point: <c>glGetMinmaxParameterfv</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_imaging.txt">ARB_imaging.txt</see></remarks>
-            public static void GetMinmaxParameterfv(MinmaxTargetEXT target, GetMinmaxParameterPNameEXT pname, float* @params) => GLPointers.glGetMinmaxParameterfv_Lazy((uint)target, (uint)pname, @params);
-            
-            /// <summary> <b>[requires: GL_ARB_imaging]</b> <b>[entry point: <c>glGetMinmaxParameteriv</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_imaging.txt">ARB_imaging.txt</see></remarks>
-            public static void GetMinmaxParameteriv(MinmaxTargetEXT target, GetMinmaxParameterPNameEXT pname, int* @params) => GLPointers.glGetMinmaxParameteriv_Lazy((uint)target, (uint)pname, @params);
             
             /// <summary> <b>[requires: v3.2 | GL_ARB_texture_multisample]</b> <b>[entry point: <c>glGetMultisamplefv</c>]</b><br/> Retrieve the location of a sample. </summary>
             /// <param name="pname"> Specifies the sample parameter name. pname must be GL_SAMPLE_POSITION. </param>
@@ -6632,57 +6512,9 @@ namespace OpenTK.Graphics.OpenGL
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_shading_language_include.txt">ARB_shading_language_include.txt</see></remarks>
             public static void GetNamedStringivARB(int namelen, byte* name, All pname, int* @params) => GLPointers.glGetNamedStringivARB_Lazy(namelen, name, (uint)pname, @params);
             
-            /// <summary> <b>[requires: GL_ARB_robustness]</b> <b>[entry point: <c>glGetnColorTableARB</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_robustness.txt">ARB_robustness.txt</see></remarks>
-            public static void GetnColorTableARB(ColorTableTarget target, PixelFormat format, PixelType type, int bufSize, void* table) => GLPointers.glGetnColorTableARB_Lazy((uint)target, (uint)format, (uint)type, bufSize, table);
-            
             /// <summary> <b>[requires: GL_ARB_robustness]</b> <b>[entry point: <c>glGetnCompressedTexImageARB</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_robustness.txt">ARB_robustness.txt</see></remarks>
             public static void GetnCompressedTexImageARB(TextureTarget target, int lod, int bufSize, void* img) => GLPointers.glGetnCompressedTexImageARB_Lazy((uint)target, lod, bufSize, img);
-            
-            /// <summary> <b>[requires: GL_ARB_robustness]</b> <b>[entry point: <c>glGetnConvolutionFilterARB</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_robustness.txt">ARB_robustness.txt</see></remarks>
-            public static void GetnConvolutionFilterARB(ConvolutionTarget target, PixelFormat format, PixelType type, int bufSize, void* image) => GLPointers.glGetnConvolutionFilterARB_Lazy((uint)target, (uint)format, (uint)type, bufSize, image);
-            
-            /// <summary> <b>[requires: GL_ARB_robustness]</b> <b>[entry point: <c>glGetnHistogramARB</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_robustness.txt">ARB_robustness.txt</see></remarks>
-            public static void GetnHistogramARB(HistogramTargetEXT target, bool reset, PixelFormat format, PixelType type, int bufSize, void* values) => GLPointers.glGetnHistogramARB_Lazy((uint)target, (byte)(reset ? 1 : 0), (uint)format, (uint)type, bufSize, values);
-            
-            /// <summary> <b>[requires: GL_ARB_robustness]</b> <b>[entry point: <c>glGetnMapdvARB</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_robustness.txt">ARB_robustness.txt</see></remarks>
-            public static void GetnMapdvARB(MapTarget target, MapQuery query, int bufSize, double* v) => GLPointers.glGetnMapdvARB_Lazy((uint)target, (uint)query, bufSize, v);
-            
-            /// <summary> <b>[requires: GL_ARB_robustness]</b> <b>[entry point: <c>glGetnMapfvARB</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_robustness.txt">ARB_robustness.txt</see></remarks>
-            public static void GetnMapfvARB(MapTarget target, MapQuery query, int bufSize, float* v) => GLPointers.glGetnMapfvARB_Lazy((uint)target, (uint)query, bufSize, v);
-            
-            /// <summary> <b>[requires: GL_ARB_robustness]</b> <b>[entry point: <c>glGetnMapivARB</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_robustness.txt">ARB_robustness.txt</see></remarks>
-            public static void GetnMapivARB(MapTarget target, MapQuery query, int bufSize, int* v) => GLPointers.glGetnMapivARB_Lazy((uint)target, (uint)query, bufSize, v);
-            
-            /// <summary> <b>[requires: GL_ARB_robustness]</b> <b>[entry point: <c>glGetnMinmaxARB</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_robustness.txt">ARB_robustness.txt</see></remarks>
-            public static void GetnMinmaxARB(MinmaxTargetEXT target, bool reset, PixelFormat format, PixelType type, int bufSize, void* values) => GLPointers.glGetnMinmaxARB_Lazy((uint)target, (byte)(reset ? 1 : 0), (uint)format, (uint)type, bufSize, values);
-            
-            /// <summary> <b>[requires: GL_ARB_robustness]</b> <b>[entry point: <c>glGetnPixelMapfvARB</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_robustness.txt">ARB_robustness.txt</see></remarks>
-            public static void GetnPixelMapfvARB(PixelMap map, int bufSize, float* values) => GLPointers.glGetnPixelMapfvARB_Lazy((uint)map, bufSize, values);
-            
-            /// <summary> <b>[requires: GL_ARB_robustness]</b> <b>[entry point: <c>glGetnPixelMapuivARB</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_robustness.txt">ARB_robustness.txt</see></remarks>
-            public static void GetnPixelMapuivARB(PixelMap map, int bufSize, uint* values) => GLPointers.glGetnPixelMapuivARB_Lazy((uint)map, bufSize, values);
-            
-            /// <summary> <b>[requires: GL_ARB_robustness]</b> <b>[entry point: <c>glGetnPixelMapusvARB</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_robustness.txt">ARB_robustness.txt</see></remarks>
-            public static void GetnPixelMapusvARB(PixelMap map, int bufSize, ushort* values) => GLPointers.glGetnPixelMapusvARB_Lazy((uint)map, bufSize, values);
-            
-            /// <summary> <b>[requires: GL_ARB_robustness]</b> <b>[entry point: <c>glGetnPolygonStippleARB</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_robustness.txt">ARB_robustness.txt</see></remarks>
-            public static void GetnPolygonStippleARB(int bufSize, byte* pattern) => GLPointers.glGetnPolygonStippleARB_Lazy(bufSize, pattern);
-            
-            /// <summary> <b>[requires: GL_ARB_robustness]</b> <b>[entry point: <c>glGetnSeparableFilterARB</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_robustness.txt">ARB_robustness.txt</see></remarks>
-            public static void GetnSeparableFilterARB(SeparableTargetEXT target, PixelFormat format, PixelType type, int rowBufSize, void* row, int columnBufSize, void* column, void* span) => GLPointers.glGetnSeparableFilterARB_Lazy((uint)target, (uint)format, (uint)type, rowBufSize, row, columnBufSize, column, span);
             
             /// <summary> <b>[requires: GL_ARB_robustness]</b> <b>[entry point: <c>glGetnTexImageARB</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_robustness.txt">ARB_robustness.txt</see></remarks>
@@ -6928,10 +6760,6 @@ namespace OpenTK.Graphics.OpenGL
             /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/glGetSamplerParameter.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_sampler_objects.txt">ARB_sampler_objects.txt</see></remarks>
             public static void GetSamplerParameteriv(int sampler, SamplerParameterI pname, int* @params) => GLPointers.glGetSamplerParameteriv_Lazy(sampler, (uint)pname, @params);
             
-            /// <summary> <b>[requires: GL_ARB_imaging]</b> <b>[entry point: <c>glGetSeparableFilter</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_imaging.txt">ARB_imaging.txt</see></remarks>
-            public static void GetSeparableFilter(SeparableTargetEXT target, PixelFormat format, PixelType type, void* row, void* column, void* span) => GLPointers.glGetSeparableFilter_Lazy((uint)target, (uint)format, (uint)type, row, column, span);
-            
             /// <summary> <b>[requires: v4.1 | GL_ARB_ES2_compatibility]</b> <b>[entry point: <c>glGetShaderPrecisionFormat</c>]</b><br/> Retrieve the range and precision for numeric formats supported by the shader compiler. </summary>
             /// <param name="shadertype"> Specifies the type of shader whose precision to query. shaderType must be GL_VERTEX_SHADER or GL_FRAGMENT_SHADER. </param>
             /// <param name="precisiontype"> Specifies the numeric format whose precision and range to query. </param>
@@ -7166,10 +6994,6 @@ namespace OpenTK.Graphics.OpenGL
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_vertex_program.txt">ARB_vertex_program.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_vertex_shader.txt">ARB_vertex_shader.txt</see></remarks>
             public static void GetVertexAttribPointervARB(uint index, VertexAttribPointerPropertyARB pname, void** pointer) => GLPointers.glGetVertexAttribPointervARB_Lazy(index, (uint)pname, pointer);
             
-            /// <summary> <b>[requires: GL_ARB_imaging]</b> <b>[entry point: <c>glHistogram</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_imaging.txt">ARB_imaging.txt</see></remarks>
-            public static void Histogram(HistogramTargetEXT target, int width, InternalFormat internalformat, bool sink) => GLPointers.glHistogram_Lazy((uint)target, width, (uint)internalformat, (byte)(sink ? 1 : 0));
-            
             /// <summary> <b>[requires: v4.3 | GL_ARB_invalidate_subdata]</b> <b>[entry point: <c>glInvalidateBufferData</c>]</b><br/> Invalidate the content of a buffer object&apos;s data store. </summary>
             /// <param name="buffer"> The name of a buffer object whose data store to invalidate. </param>
             /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/glInvalidateBufferData.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_invalidate_subdata.txt">ARB_invalidate_subdata.txt</see></remarks>
@@ -7379,10 +7203,6 @@ namespace OpenTK.Graphics.OpenGL
             /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/glMemoryBarrier.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_ES3_1_compatibility.txt">ARB_ES3_1_compatibility.txt</see></remarks>
             public static void MemoryBarrierByRegion(MemoryBarrierMask barriers) => GLPointers.glMemoryBarrierByRegion_Lazy((uint)barriers);
             
-            /// <summary> <b>[requires: GL_ARB_imaging]</b> <b>[entry point: <c>glMinmax</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_imaging.txt">ARB_imaging.txt</see></remarks>
-            public static void Minmax(MinmaxTargetEXT target, InternalFormat internalformat, bool sink) => GLPointers.glMinmax_Lazy((uint)target, (uint)internalformat, (byte)(sink ? 1 : 0));
-            
             /// <summary> <b>[requires: GL_ARB_sample_shading]</b> <b>[entry point: <c>glMinSampleShadingARB</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_sample_shading.txt">ARB_sample_shading.txt</see></remarks>
             public static void MinSampleShadingARB(float value) => GLPointers.glMinSampleShadingARB_Lazy(value);
@@ -7550,38 +7370,6 @@ namespace OpenTK.Graphics.OpenGL
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_multitexture.txt">ARB_multitexture.txt</see></remarks>
             public static void MultiTexCoord4svARB(TextureUnit target, short* v) => GLPointers.glMultiTexCoord4svARB_Lazy((uint)target, v);
             
-            /// <summary> <b>[requires: v3.3 | GL_ARB_vertex_type_2_10_10_10_rev]</b> <b>[entry point: <c>glMultiTexCoordP1ui</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_vertex_type_2_10_10_10_rev.txt">ARB_vertex_type_2_10_10_10_rev.txt</see></remarks>
-            public static void MultiTexCoordP1ui(TextureUnit texture, TexCoordPointerType type, uint coords) => GLPointers.glMultiTexCoordP1ui_Lazy((uint)texture, (uint)type, coords);
-            
-            /// <summary> <b>[requires: v3.3 | GL_ARB_vertex_type_2_10_10_10_rev]</b> <b>[entry point: <c>glMultiTexCoordP1uiv</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_vertex_type_2_10_10_10_rev.txt">ARB_vertex_type_2_10_10_10_rev.txt</see></remarks>
-            public static void MultiTexCoordP1uiv(TextureUnit texture, TexCoordPointerType type, uint* coords) => GLPointers.glMultiTexCoordP1uiv_Lazy((uint)texture, (uint)type, coords);
-            
-            /// <summary> <b>[requires: v3.3 | GL_ARB_vertex_type_2_10_10_10_rev]</b> <b>[entry point: <c>glMultiTexCoordP2ui</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_vertex_type_2_10_10_10_rev.txt">ARB_vertex_type_2_10_10_10_rev.txt</see></remarks>
-            public static void MultiTexCoordP2ui(TextureUnit texture, TexCoordPointerType type, uint coords) => GLPointers.glMultiTexCoordP2ui_Lazy((uint)texture, (uint)type, coords);
-            
-            /// <summary> <b>[requires: v3.3 | GL_ARB_vertex_type_2_10_10_10_rev]</b> <b>[entry point: <c>glMultiTexCoordP2uiv</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_vertex_type_2_10_10_10_rev.txt">ARB_vertex_type_2_10_10_10_rev.txt</see></remarks>
-            public static void MultiTexCoordP2uiv(TextureUnit texture, TexCoordPointerType type, uint* coords) => GLPointers.glMultiTexCoordP2uiv_Lazy((uint)texture, (uint)type, coords);
-            
-            /// <summary> <b>[requires: v3.3 | GL_ARB_vertex_type_2_10_10_10_rev]</b> <b>[entry point: <c>glMultiTexCoordP3ui</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_vertex_type_2_10_10_10_rev.txt">ARB_vertex_type_2_10_10_10_rev.txt</see></remarks>
-            public static void MultiTexCoordP3ui(TextureUnit texture, TexCoordPointerType type, uint coords) => GLPointers.glMultiTexCoordP3ui_Lazy((uint)texture, (uint)type, coords);
-            
-            /// <summary> <b>[requires: v3.3 | GL_ARB_vertex_type_2_10_10_10_rev]</b> <b>[entry point: <c>glMultiTexCoordP3uiv</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_vertex_type_2_10_10_10_rev.txt">ARB_vertex_type_2_10_10_10_rev.txt</see></remarks>
-            public static void MultiTexCoordP3uiv(TextureUnit texture, TexCoordPointerType type, uint* coords) => GLPointers.glMultiTexCoordP3uiv_Lazy((uint)texture, (uint)type, coords);
-            
-            /// <summary> <b>[requires: v3.3 | GL_ARB_vertex_type_2_10_10_10_rev]</b> <b>[entry point: <c>glMultiTexCoordP4ui</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_vertex_type_2_10_10_10_rev.txt">ARB_vertex_type_2_10_10_10_rev.txt</see></remarks>
-            public static void MultiTexCoordP4ui(TextureUnit texture, TexCoordPointerType type, uint coords) => GLPointers.glMultiTexCoordP4ui_Lazy((uint)texture, (uint)type, coords);
-            
-            /// <summary> <b>[requires: v3.3 | GL_ARB_vertex_type_2_10_10_10_rev]</b> <b>[entry point: <c>glMultiTexCoordP4uiv</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_vertex_type_2_10_10_10_rev.txt">ARB_vertex_type_2_10_10_10_rev.txt</see></remarks>
-            public static void MultiTexCoordP4uiv(TextureUnit texture, TexCoordPointerType type, uint* coords) => GLPointers.glMultiTexCoordP4uiv_Lazy((uint)texture, (uint)type, coords);
-            
             /// <summary> <b>[requires: GL_ARB_transpose_matrix]</b> <b>[entry point: <c>glMultTransposeMatrixdARB</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_transpose_matrix.txt">ARB_transpose_matrix.txt</see></remarks>
             public static void MultTransposeMatrixdARB(double* m) => GLPointers.glMultTransposeMatrixdARB_Lazy(m);
@@ -7697,14 +7485,6 @@ namespace OpenTK.Graphics.OpenGL
             /// <summary> <b>[requires: GL_ARB_shading_language_include]</b> <b>[entry point: <c>glNamedStringARB</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_shading_language_include.txt">ARB_shading_language_include.txt</see></remarks>
             public static void NamedStringARB(All type, int namelen, byte* name, int stringlen, byte* @string) => GLPointers.glNamedStringARB_Lazy((uint)type, namelen, name, stringlen, @string);
-            
-            /// <summary> <b>[requires: v3.3 | GL_ARB_vertex_type_2_10_10_10_rev]</b> <b>[entry point: <c>glNormalP3ui</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_vertex_type_2_10_10_10_rev.txt">ARB_vertex_type_2_10_10_10_rev.txt</see></remarks>
-            public static void NormalP3ui(NormalPointerType type, uint coords) => GLPointers.glNormalP3ui_Lazy((uint)type, coords);
-            
-            /// <summary> <b>[requires: v3.3 | GL_ARB_vertex_type_2_10_10_10_rev]</b> <b>[entry point: <c>glNormalP3uiv</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_vertex_type_2_10_10_10_rev.txt">ARB_vertex_type_2_10_10_10_rev.txt</see></remarks>
-            public static void NormalP3uiv(NormalPointerType type, uint* coords) => GLPointers.glNormalP3uiv_Lazy((uint)type, coords);
             
             /// <summary> <b>[requires: v4.0 | GL_ARB_tessellation_shader]</b> <b>[entry point: <c>glPatchParameterfv</c>]</b><br/> Specifies the parameters for patch primitives. </summary>
             /// <param name="pname"> Specifies the name of the parameter to set. The symbolc constants GL_PATCH_VERTICES, GL_PATCH_DEFAULT_OUTER_LEVEL, and GL_PATCH_DEFAULT_INNER_LEVEL are accepted. </param>
@@ -8248,14 +8028,6 @@ namespace OpenTK.Graphics.OpenGL
             /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/glRenderbufferStorageMultisample.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_framebuffer_object.txt">ARB_framebuffer_object.txt</see></remarks>
             public static void RenderbufferStorageMultisample(RenderbufferTarget target, int samples, InternalFormat internalformat, int width, int height) => GLPointers.glRenderbufferStorageMultisample_Lazy((uint)target, samples, (uint)internalformat, width, height);
             
-            /// <summary> <b>[requires: GL_ARB_imaging]</b> <b>[entry point: <c>glResetHistogram</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_imaging.txt">ARB_imaging.txt</see></remarks>
-            public static void ResetHistogram(HistogramTargetEXT target) => GLPointers.glResetHistogram_Lazy((uint)target);
-            
-            /// <summary> <b>[requires: GL_ARB_imaging]</b> <b>[entry point: <c>glResetMinmax</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_imaging.txt">ARB_imaging.txt</see></remarks>
-            public static void ResetMinmax(MinmaxTargetEXT target) => GLPointers.glResetMinmax_Lazy((uint)target);
-            
             /// <summary> <b>[requires: v4.0 | GL_ARB_transform_feedback2]</b> <b>[entry point: <c>glResumeTransformFeedback</c>]</b><br/> Resume transform feedback operations. </summary>
             /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/glResumeTransformFeedback.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_transform_feedback2.txt">ARB_transform_feedback2.txt</see></remarks>
             public static void ResumeTransformFeedback() => GLPointers.glResumeTransformFeedback_Lazy();
@@ -8334,18 +8106,6 @@ namespace OpenTK.Graphics.OpenGL
             /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/glScissorIndexed.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_viewport_array.txt">ARB_viewport_array.txt</see></remarks>
             public static void ScissorIndexedv(uint index, int* v) => GLPointers.glScissorIndexedv_Lazy(index, v);
             
-            /// <summary> <b>[requires: v3.3 | GL_ARB_vertex_type_2_10_10_10_rev]</b> <b>[entry point: <c>glSecondaryColorP3ui</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_vertex_type_2_10_10_10_rev.txt">ARB_vertex_type_2_10_10_10_rev.txt</see></remarks>
-            public static void SecondaryColorP3ui(ColorPointerType type, uint color) => GLPointers.glSecondaryColorP3ui_Lazy((uint)type, color);
-            
-            /// <summary> <b>[requires: v3.3 | GL_ARB_vertex_type_2_10_10_10_rev]</b> <b>[entry point: <c>glSecondaryColorP3uiv</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_vertex_type_2_10_10_10_rev.txt">ARB_vertex_type_2_10_10_10_rev.txt</see></remarks>
-            public static void SecondaryColorP3uiv(ColorPointerType type, uint* color) => GLPointers.glSecondaryColorP3uiv_Lazy((uint)type, color);
-            
-            /// <summary> <b>[requires: GL_ARB_imaging]</b> <b>[entry point: <c>glSeparableFilter2D</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_imaging.txt">ARB_imaging.txt</see></remarks>
-            public static void SeparableFilter2D(SeparableTargetEXT target, InternalFormat internalformat, int width, int height, PixelFormat format, PixelType type, void* row, void* column) => GLPointers.glSeparableFilter2D_Lazy((uint)target, (uint)internalformat, width, height, (uint)format, (uint)type, row, column);
-            
             /// <summary> <b>[requires: v4.1 | GL_ARB_ES2_compatibility]</b> <b>[entry point: <c>glShaderBinary</c>]</b><br/> Load pre-compiled shader binaries. </summary>
             /// <param name="count"> Specifies the number of shader object handles contained in shaders. </param>
             /// <param name="shaders"> Specifies the address of an array of shader handles into which to load pre-compiled shader binaries. </param>
@@ -8382,38 +8142,6 @@ namespace OpenTK.Graphics.OpenGL
             /// <param name="size"> Specifies the size of the range of the buffer&apos;s data store to attach. </param>
             /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/glTexBufferRange.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_texture_buffer_range.txt">ARB_texture_buffer_range.txt</see></remarks>
             public static void TexBufferRange(TextureTarget target, SizedInternalFormat internalformat, int buffer, IntPtr offset, nint size) => GLPointers.glTexBufferRange_Lazy((uint)target, (uint)internalformat, buffer, offset, size);
-            
-            /// <summary> <b>[requires: v3.3 | GL_ARB_vertex_type_2_10_10_10_rev]</b> <b>[entry point: <c>glTexCoordP1ui</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_vertex_type_2_10_10_10_rev.txt">ARB_vertex_type_2_10_10_10_rev.txt</see></remarks>
-            public static void TexCoordP1ui(TexCoordPointerType type, uint coords) => GLPointers.glTexCoordP1ui_Lazy((uint)type, coords);
-            
-            /// <summary> <b>[requires: v3.3 | GL_ARB_vertex_type_2_10_10_10_rev]</b> <b>[entry point: <c>glTexCoordP1uiv</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_vertex_type_2_10_10_10_rev.txt">ARB_vertex_type_2_10_10_10_rev.txt</see></remarks>
-            public static void TexCoordP1uiv(TexCoordPointerType type, uint* coords) => GLPointers.glTexCoordP1uiv_Lazy((uint)type, coords);
-            
-            /// <summary> <b>[requires: v3.3 | GL_ARB_vertex_type_2_10_10_10_rev]</b> <b>[entry point: <c>glTexCoordP2ui</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_vertex_type_2_10_10_10_rev.txt">ARB_vertex_type_2_10_10_10_rev.txt</see></remarks>
-            public static void TexCoordP2ui(TexCoordPointerType type, uint coords) => GLPointers.glTexCoordP2ui_Lazy((uint)type, coords);
-            
-            /// <summary> <b>[requires: v3.3 | GL_ARB_vertex_type_2_10_10_10_rev]</b> <b>[entry point: <c>glTexCoordP2uiv</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_vertex_type_2_10_10_10_rev.txt">ARB_vertex_type_2_10_10_10_rev.txt</see></remarks>
-            public static void TexCoordP2uiv(TexCoordPointerType type, uint* coords) => GLPointers.glTexCoordP2uiv_Lazy((uint)type, coords);
-            
-            /// <summary> <b>[requires: v3.3 | GL_ARB_vertex_type_2_10_10_10_rev]</b> <b>[entry point: <c>glTexCoordP3ui</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_vertex_type_2_10_10_10_rev.txt">ARB_vertex_type_2_10_10_10_rev.txt</see></remarks>
-            public static void TexCoordP3ui(TexCoordPointerType type, uint coords) => GLPointers.glTexCoordP3ui_Lazy((uint)type, coords);
-            
-            /// <summary> <b>[requires: v3.3 | GL_ARB_vertex_type_2_10_10_10_rev]</b> <b>[entry point: <c>glTexCoordP3uiv</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_vertex_type_2_10_10_10_rev.txt">ARB_vertex_type_2_10_10_10_rev.txt</see></remarks>
-            public static void TexCoordP3uiv(TexCoordPointerType type, uint* coords) => GLPointers.glTexCoordP3uiv_Lazy((uint)type, coords);
-            
-            /// <summary> <b>[requires: v3.3 | GL_ARB_vertex_type_2_10_10_10_rev]</b> <b>[entry point: <c>glTexCoordP4ui</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_vertex_type_2_10_10_10_rev.txt">ARB_vertex_type_2_10_10_10_rev.txt</see></remarks>
-            public static void TexCoordP4ui(TexCoordPointerType type, uint coords) => GLPointers.glTexCoordP4ui_Lazy((uint)type, coords);
-            
-            /// <summary> <b>[requires: v3.3 | GL_ARB_vertex_type_2_10_10_10_rev]</b> <b>[entry point: <c>glTexCoordP4uiv</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_vertex_type_2_10_10_10_rev.txt">ARB_vertex_type_2_10_10_10_rev.txt</see></remarks>
-            public static void TexCoordP4uiv(TexCoordPointerType type, uint* coords) => GLPointers.glTexCoordP4uiv_Lazy((uint)type, coords);
             
             /// <summary> <b>[requires: v3.2 | GL_ARB_texture_multisample]</b> <b>[entry point: <c>glTexImage2DMultisample</c>]</b><br/> Establish the data storage, format, dimensions, and number of samples of a multisample texture&apos;s image. </summary>
             /// <param name="target"> Specifies the target of the operation. target must be GL_TEXTURE_2D_MULTISAMPLE or GL_PROXY_TEXTURE_2D_MULTISAMPLE. </param>
@@ -9303,30 +9031,6 @@ namespace OpenTK.Graphics.OpenGL
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_vertex_blend.txt">ARB_vertex_blend.txt</see></remarks>
             public static void VertexBlendARB(int count) => GLPointers.glVertexBlendARB_Lazy(count);
             
-            /// <summary> <b>[requires: v3.3 | GL_ARB_vertex_type_2_10_10_10_rev]</b> <b>[entry point: <c>glVertexP2ui</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_vertex_type_2_10_10_10_rev.txt">ARB_vertex_type_2_10_10_10_rev.txt</see></remarks>
-            public static void VertexP2ui(VertexPointerType type, uint value) => GLPointers.glVertexP2ui_Lazy((uint)type, value);
-            
-            /// <summary> <b>[requires: v3.3 | GL_ARB_vertex_type_2_10_10_10_rev]</b> <b>[entry point: <c>glVertexP2uiv</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_vertex_type_2_10_10_10_rev.txt">ARB_vertex_type_2_10_10_10_rev.txt</see></remarks>
-            public static void VertexP2uiv(VertexPointerType type, uint* value) => GLPointers.glVertexP2uiv_Lazy((uint)type, value);
-            
-            /// <summary> <b>[requires: v3.3 | GL_ARB_vertex_type_2_10_10_10_rev]</b> <b>[entry point: <c>glVertexP3ui</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_vertex_type_2_10_10_10_rev.txt">ARB_vertex_type_2_10_10_10_rev.txt</see></remarks>
-            public static void VertexP3ui(VertexPointerType type, uint value) => GLPointers.glVertexP3ui_Lazy((uint)type, value);
-            
-            /// <summary> <b>[requires: v3.3 | GL_ARB_vertex_type_2_10_10_10_rev]</b> <b>[entry point: <c>glVertexP3uiv</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_vertex_type_2_10_10_10_rev.txt">ARB_vertex_type_2_10_10_10_rev.txt</see></remarks>
-            public static void VertexP3uiv(VertexPointerType type, uint* value) => GLPointers.glVertexP3uiv_Lazy((uint)type, value);
-            
-            /// <summary> <b>[requires: v3.3 | GL_ARB_vertex_type_2_10_10_10_rev]</b> <b>[entry point: <c>glVertexP4ui</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_vertex_type_2_10_10_10_rev.txt">ARB_vertex_type_2_10_10_10_rev.txt</see></remarks>
-            public static void VertexP4ui(VertexPointerType type, uint value) => GLPointers.glVertexP4ui_Lazy((uint)type, value);
-            
-            /// <summary> <b>[requires: v3.3 | GL_ARB_vertex_type_2_10_10_10_rev]</b> <b>[entry point: <c>glVertexP4uiv</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/ARB/ARB_vertex_type_2_10_10_10_rev.txt">ARB_vertex_type_2_10_10_10_rev.txt</see></remarks>
-            public static void VertexP4uiv(VertexPointerType type, uint* value) => GLPointers.glVertexP4uiv_Lazy((uint)type, value);
-            
             /// <summary> <b>[requires: v4.1 | GL_ARB_viewport_array]</b> <b>[entry point: <c>glViewportArrayv</c>]</b><br/> Set multiple viewports. </summary>
             /// <param name="first"> Specify the first viewport to set. </param>
             /// <param name="count"> Specify the number of viewports to set. </param>
@@ -9824,10 +9528,6 @@ namespace OpenTK.Graphics.OpenGL
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_separate_shader_objects.txt">EXT_separate_shader_objects.txt</see></remarks>
             public static void ActiveProgramEXT(int program) => GLPointers.glActiveProgramEXT_Lazy(program);
             
-            /// <summary> <b>[requires: GL_EXT_separate_shader_objects]</b> <b>[entry point: <c>glActiveShaderProgramEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_separate_shader_objects.txt">EXT_separate_shader_objects.txt</see></remarks>
-            public static void ActiveShaderProgramEXT(int pipeline, int program) => GLPointers.glActiveShaderProgramEXT_Lazy(pipeline, program);
-            
             /// <summary> <b>[requires: GL_EXT_stencil_two_side]</b> <b>[entry point: <c>glActiveStencilFaceEXT</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_stencil_two_side.txt">EXT_stencil_two_side.txt</see></remarks>
             public static void ActiveStencilFaceEXT(TriangleFace face) => GLPointers.glActiveStencilFaceEXT_Lazy((uint)face);
@@ -9891,10 +9591,6 @@ namespace OpenTK.Graphics.OpenGL
             /// <summary> <b>[requires: GL_EXT_vertex_shader]</b> <b>[entry point: <c>glBindParameterEXT</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_vertex_shader.txt">EXT_vertex_shader.txt</see></remarks>
             public static uint BindParameterEXT(VertexShaderParameterEXT value) => GLPointers.glBindParameterEXT_Lazy((uint)value);
-            
-            /// <summary> <b>[requires: GL_EXT_separate_shader_objects]</b> <b>[entry point: <c>glBindProgramPipelineEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_separate_shader_objects.txt">EXT_separate_shader_objects.txt</see></remarks>
-            public static void BindProgramPipelineEXT(int pipeline) => GLPointers.glBindProgramPipelineEXT_Lazy(pipeline);
             
             /// <summary> <b>[requires: GL_EXT_framebuffer_object]</b> <b>[entry point: <c>glBindRenderbufferEXT</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_framebuffer_object.txt">EXT_framebuffer_object.txt</see></remarks>
@@ -10192,10 +9888,6 @@ namespace OpenTK.Graphics.OpenGL
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_separate_shader_objects.txt">EXT_separate_shader_objects.txt</see></remarks>
             public static int CreateShaderProgramEXT(ShaderType type, byte* @string) => GLPointers.glCreateShaderProgramEXT_Lazy((uint)type, @string);
             
-            /// <summary> <b>[requires: GL_EXT_separate_shader_objects]</b> <b>[entry point: <c>glCreateShaderProgramvEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_separate_shader_objects.txt">EXT_separate_shader_objects.txt</see></remarks>
-            public static int CreateShaderProgramvEXT(ShaderType type, int count, byte** strings) => GLPointers.glCreateShaderProgramvEXT_Lazy((uint)type, count, strings);
-            
             /// <summary> <b>[requires: GL_EXT_cull_vertex]</b> <b>[entry point: <c>glCullParameterdvEXT</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_cull_vertex.txt">EXT_cull_vertex.txt</see></remarks>
             public static void CullParameterdvEXT(CullParameterEXT pname, double* @params) => GLPointers.glCullParameterdvEXT_Lazy((uint)pname, @params);
@@ -10211,10 +9903,6 @@ namespace OpenTK.Graphics.OpenGL
             /// <summary> <b>[requires: GL_EXT_memory_object]</b> <b>[entry point: <c>glDeleteMemoryObjectsEXT</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_memory_object.txt">EXT_memory_object.txt</see></remarks>
             public static void DeleteMemoryObjectsEXT(int n, uint* memoryObjects) => GLPointers.glDeleteMemoryObjectsEXT_Lazy(n, memoryObjects);
-            
-            /// <summary> <b>[requires: GL_EXT_separate_shader_objects]</b> <b>[entry point: <c>glDeleteProgramPipelinesEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_separate_shader_objects.txt">EXT_separate_shader_objects.txt</see></remarks>
-            public static void DeleteProgramPipelinesEXT(int n, int* pipelines) => GLPointers.glDeleteProgramPipelinesEXT_Lazy(n, pipelines);
             
             /// <summary> <b>[requires: GL_EXT_framebuffer_object]</b> <b>[entry point: <c>glDeleteRenderbuffersEXT</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_framebuffer_object.txt">EXT_framebuffer_object.txt</see></remarks>
@@ -10381,7 +10069,7 @@ namespace OpenTK.Graphics.OpenGL
             public static void FramebufferTexture3DEXT(FramebufferTarget target, FramebufferAttachment attachment, TextureTarget textarget, int texture, int level, int zoffset) => GLPointers.glFramebufferTexture3DEXT_Lazy((uint)target, (uint)attachment, (uint)textarget, texture, level, zoffset);
             
             /// <summary> <b>[requires: GL_EXT_texture_array | GL_NV_geometry_program4]</b> <b>[entry point: <c>glFramebufferTextureLayerEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_texture_array.txt">EXT_texture_array.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/EXT/NV_geometry_program4.txt">NV_geometry_program4.txt</see></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_texture_array.txt">EXT_texture_array.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_geometry_program4.txt">NV_geometry_program4.txt</see></remarks>
             public static void FramebufferTextureLayerEXT(FramebufferTarget target, FramebufferAttachment attachment, int texture, int level, int layer) => GLPointers.glFramebufferTextureLayerEXT_Lazy((uint)target, (uint)attachment, texture, level, layer);
             
             /// <summary> <b>[requires: GL_EXT_framebuffer_object]</b> <b>[entry point: <c>glGenerateMipmapEXT</c>]</b><br/>  </summary>
@@ -10399,10 +10087,6 @@ namespace OpenTK.Graphics.OpenGL
             /// <summary> <b>[requires: GL_EXT_framebuffer_object]</b> <b>[entry point: <c>glGenFramebuffersEXT</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_framebuffer_object.txt">EXT_framebuffer_object.txt</see></remarks>
             public static void GenFramebuffersEXT(int n, int* framebuffers) => GLPointers.glGenFramebuffersEXT_Lazy(n, framebuffers);
-            
-            /// <summary> <b>[requires: GL_EXT_separate_shader_objects]</b> <b>[entry point: <c>glGenProgramPipelinesEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_separate_shader_objects.txt">EXT_separate_shader_objects.txt</see></remarks>
-            public static void GenProgramPipelinesEXT(int n, int* pipelines) => GLPointers.glGenProgramPipelinesEXT_Lazy(n, pipelines);
             
             /// <summary> <b>[requires: GL_EXT_framebuffer_object]</b> <b>[entry point: <c>glGenRenderbuffersEXT</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_framebuffer_object.txt">EXT_framebuffer_object.txt</see></remarks>
@@ -10664,14 +10348,6 @@ namespace OpenTK.Graphics.OpenGL
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_vertex_array.txt">EXT_vertex_array.txt</see></remarks>
             public static void GetPointervEXT(GetPointervPName pname, void** @params) => GLPointers.glGetPointervEXT_Lazy((uint)pname, @params);
             
-            /// <summary> <b>[requires: GL_EXT_separate_shader_objects]</b> <b>[entry point: <c>glGetProgramPipelineInfoLogEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_separate_shader_objects.txt">EXT_separate_shader_objects.txt</see></remarks>
-            public static void GetProgramPipelineInfoLogEXT(int pipeline, int bufSize, int* length, byte* infoLog) => GLPointers.glGetProgramPipelineInfoLogEXT_Lazy(pipeline, bufSize, length, infoLog);
-            
-            /// <summary> <b>[requires: GL_EXT_separate_shader_objects]</b> <b>[entry point: <c>glGetProgramPipelineivEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_separate_shader_objects.txt">EXT_separate_shader_objects.txt</see></remarks>
-            public static void GetProgramPipelineivEXT(int pipeline, PipelineParameterName pname, int* @params) => GLPointers.glGetProgramPipelineivEXT_Lazy(pipeline, (uint)pname, @params);
-            
             /// <summary> <b>[requires: GL_EXT_timer_query]</b> <b>[entry point: <c>glGetQueryObjecti64vEXT</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_timer_query.txt">EXT_timer_query.txt</see></remarks>
             public static void GetQueryObjecti64vEXT(int id, QueryObjectParameterName pname, long* @params) => GLPointers.glGetQueryObjecti64vEXT_Lazy(id, (uint)pname, @params);
@@ -10785,11 +10461,11 @@ namespace OpenTK.Graphics.OpenGL
             public static void GetVertexArrayPointervEXT(int vaobj, VertexArrayPName pname, void** param) => GLPointers.glGetVertexArrayPointervEXT_Lazy(vaobj, (uint)pname, param);
             
             /// <summary> <b>[requires: GL_EXT_gpu_shader4 | GL_NV_vertex_program4]</b> <b>[entry point: <c>glGetVertexAttribIivEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_gpu_shader4.txt">EXT_gpu_shader4.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/EXT/NV_vertex_program4.txt">NV_vertex_program4.txt</see></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_gpu_shader4.txt">EXT_gpu_shader4.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_vertex_program4.txt">NV_vertex_program4.txt</see></remarks>
             public static void GetVertexAttribIivEXT(uint index, VertexAttribEnum pname, int* @params) => GLPointers.glGetVertexAttribIivEXT_Lazy(index, (uint)pname, @params);
             
             /// <summary> <b>[requires: GL_EXT_gpu_shader4 | GL_NV_vertex_program4]</b> <b>[entry point: <c>glGetVertexAttribIuivEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_gpu_shader4.txt">EXT_gpu_shader4.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/EXT/NV_vertex_program4.txt">NV_vertex_program4.txt</see></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_gpu_shader4.txt">EXT_gpu_shader4.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_vertex_program4.txt">NV_vertex_program4.txt</see></remarks>
             public static void GetVertexAttribIuivEXT(uint index, VertexAttribEnum pname, uint* @params) => GLPointers.glGetVertexAttribIuivEXT_Lazy(index, (uint)pname, @params);
             
             /// <summary> <b>[requires: GL_EXT_vertex_attrib_64bit]</b> <b>[entry point: <c>glGetVertexAttribLdvEXT</c>]</b><br/>  </summary>
@@ -10860,10 +10536,6 @@ namespace OpenTK.Graphics.OpenGL
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_memory_object.txt">EXT_memory_object.txt</see></remarks>
             public static bool IsMemoryObjectEXT(uint memoryObject) => GLPointers.glIsMemoryObjectEXT_Lazy(memoryObject) != 0;
             
-            /// <summary> <b>[requires: GL_EXT_separate_shader_objects]</b> <b>[entry point: <c>glIsProgramPipelineEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_separate_shader_objects.txt">EXT_separate_shader_objects.txt</see></remarks>
-            public static bool IsProgramPipelineEXT(int pipeline) => GLPointers.glIsProgramPipelineEXT_Lazy(pipeline) != 0;
-            
             /// <summary> <b>[requires: GL_EXT_framebuffer_object]</b> <b>[entry point: <c>glIsRenderbufferEXT</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_framebuffer_object.txt">EXT_framebuffer_object.txt</see></remarks>
             public static bool IsRenderbufferEXT(int renderbuffer) => GLPointers.glIsRenderbufferEXT_Lazy(renderbuffer) != 0;
@@ -10897,79 +10569,79 @@ namespace OpenTK.Graphics.OpenGL
             public static void* MapNamedBufferRangeEXT(int buffer, IntPtr offset, nint length, MapBufferAccessMask access) => GLPointers.glMapNamedBufferRangeEXT_Lazy(buffer, offset, length, (uint)access);
             
             /// <summary> <b>[requires: GL_EXT_direct_state_access | GL_NV_path_rendering]</b> <b>[entry point: <c>glMatrixFrustumEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_direct_state_access.txt">EXT_direct_state_access.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/EXT/NV_path_rendering.txt">NV_path_rendering.txt</see></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_direct_state_access.txt">EXT_direct_state_access.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_path_rendering.txt">NV_path_rendering.txt</see></remarks>
             public static void MatrixFrustumEXT(MatrixMode mode, double left, double right, double bottom, double top, double zNear, double zFar) => GLPointers.glMatrixFrustumEXT_Lazy((uint)mode, left, right, bottom, top, zNear, zFar);
             
             /// <summary> <b>[requires: GL_EXT_direct_state_access | GL_NV_path_rendering]</b> <b>[entry point: <c>glMatrixLoaddEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_direct_state_access.txt">EXT_direct_state_access.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/EXT/NV_path_rendering.txt">NV_path_rendering.txt</see></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_direct_state_access.txt">EXT_direct_state_access.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_path_rendering.txt">NV_path_rendering.txt</see></remarks>
             public static void MatrixLoaddEXT(MatrixMode mode, double* m) => GLPointers.glMatrixLoaddEXT_Lazy((uint)mode, m);
             
             /// <summary> <b>[requires: GL_EXT_direct_state_access | GL_NV_path_rendering]</b> <b>[entry point: <c>glMatrixLoadfEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_direct_state_access.txt">EXT_direct_state_access.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/EXT/NV_path_rendering.txt">NV_path_rendering.txt</see></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_direct_state_access.txt">EXT_direct_state_access.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_path_rendering.txt">NV_path_rendering.txt</see></remarks>
             public static void MatrixLoadfEXT(MatrixMode mode, float* m) => GLPointers.glMatrixLoadfEXT_Lazy((uint)mode, m);
             
             /// <summary> <b>[requires: GL_EXT_direct_state_access | GL_NV_path_rendering]</b> <b>[entry point: <c>glMatrixLoadIdentityEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_direct_state_access.txt">EXT_direct_state_access.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/EXT/NV_path_rendering.txt">NV_path_rendering.txt</see></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_direct_state_access.txt">EXT_direct_state_access.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_path_rendering.txt">NV_path_rendering.txt</see></remarks>
             public static void MatrixLoadIdentityEXT(MatrixMode mode) => GLPointers.glMatrixLoadIdentityEXT_Lazy((uint)mode);
             
             /// <summary> <b>[requires: GL_EXT_direct_state_access | GL_NV_path_rendering]</b> <b>[entry point: <c>glMatrixLoadTransposedEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_direct_state_access.txt">EXT_direct_state_access.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/EXT/NV_path_rendering.txt">NV_path_rendering.txt</see></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_direct_state_access.txt">EXT_direct_state_access.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_path_rendering.txt">NV_path_rendering.txt</see></remarks>
             public static void MatrixLoadTransposedEXT(MatrixMode mode, double* m) => GLPointers.glMatrixLoadTransposedEXT_Lazy((uint)mode, m);
             
             /// <summary> <b>[requires: GL_EXT_direct_state_access | GL_NV_path_rendering]</b> <b>[entry point: <c>glMatrixLoadTransposefEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_direct_state_access.txt">EXT_direct_state_access.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/EXT/NV_path_rendering.txt">NV_path_rendering.txt</see></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_direct_state_access.txt">EXT_direct_state_access.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_path_rendering.txt">NV_path_rendering.txt</see></remarks>
             public static void MatrixLoadTransposefEXT(MatrixMode mode, float* m) => GLPointers.glMatrixLoadTransposefEXT_Lazy((uint)mode, m);
             
             /// <summary> <b>[requires: GL_EXT_direct_state_access | GL_NV_path_rendering]</b> <b>[entry point: <c>glMatrixMultdEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_direct_state_access.txt">EXT_direct_state_access.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/EXT/NV_path_rendering.txt">NV_path_rendering.txt</see></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_direct_state_access.txt">EXT_direct_state_access.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_path_rendering.txt">NV_path_rendering.txt</see></remarks>
             public static void MatrixMultdEXT(MatrixMode mode, double* m) => GLPointers.glMatrixMultdEXT_Lazy((uint)mode, m);
             
             /// <summary> <b>[requires: GL_EXT_direct_state_access | GL_NV_path_rendering]</b> <b>[entry point: <c>glMatrixMultfEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_direct_state_access.txt">EXT_direct_state_access.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/EXT/NV_path_rendering.txt">NV_path_rendering.txt</see></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_direct_state_access.txt">EXT_direct_state_access.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_path_rendering.txt">NV_path_rendering.txt</see></remarks>
             public static void MatrixMultfEXT(MatrixMode mode, float* m) => GLPointers.glMatrixMultfEXT_Lazy((uint)mode, m);
             
             /// <summary> <b>[requires: GL_EXT_direct_state_access | GL_NV_path_rendering]</b> <b>[entry point: <c>glMatrixMultTransposedEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_direct_state_access.txt">EXT_direct_state_access.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/EXT/NV_path_rendering.txt">NV_path_rendering.txt</see></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_direct_state_access.txt">EXT_direct_state_access.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_path_rendering.txt">NV_path_rendering.txt</see></remarks>
             public static void MatrixMultTransposedEXT(MatrixMode mode, double* m) => GLPointers.glMatrixMultTransposedEXT_Lazy((uint)mode, m);
             
             /// <summary> <b>[requires: GL_EXT_direct_state_access | GL_NV_path_rendering]</b> <b>[entry point: <c>glMatrixMultTransposefEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_direct_state_access.txt">EXT_direct_state_access.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/EXT/NV_path_rendering.txt">NV_path_rendering.txt</see></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_direct_state_access.txt">EXT_direct_state_access.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_path_rendering.txt">NV_path_rendering.txt</see></remarks>
             public static void MatrixMultTransposefEXT(MatrixMode mode, float* m) => GLPointers.glMatrixMultTransposefEXT_Lazy((uint)mode, m);
             
             /// <summary> <b>[requires: GL_EXT_direct_state_access | GL_NV_path_rendering]</b> <b>[entry point: <c>glMatrixOrthoEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_direct_state_access.txt">EXT_direct_state_access.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/EXT/NV_path_rendering.txt">NV_path_rendering.txt</see></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_direct_state_access.txt">EXT_direct_state_access.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_path_rendering.txt">NV_path_rendering.txt</see></remarks>
             public static void MatrixOrthoEXT(MatrixMode mode, double left, double right, double bottom, double top, double zNear, double zFar) => GLPointers.glMatrixOrthoEXT_Lazy((uint)mode, left, right, bottom, top, zNear, zFar);
             
             /// <summary> <b>[requires: GL_EXT_direct_state_access | GL_NV_path_rendering]</b> <b>[entry point: <c>glMatrixPopEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_direct_state_access.txt">EXT_direct_state_access.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/EXT/NV_path_rendering.txt">NV_path_rendering.txt</see></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_direct_state_access.txt">EXT_direct_state_access.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_path_rendering.txt">NV_path_rendering.txt</see></remarks>
             public static void MatrixPopEXT(MatrixMode mode) => GLPointers.glMatrixPopEXT_Lazy((uint)mode);
             
             /// <summary> <b>[requires: GL_EXT_direct_state_access | GL_NV_path_rendering]</b> <b>[entry point: <c>glMatrixPushEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_direct_state_access.txt">EXT_direct_state_access.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/EXT/NV_path_rendering.txt">NV_path_rendering.txt</see></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_direct_state_access.txt">EXT_direct_state_access.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_path_rendering.txt">NV_path_rendering.txt</see></remarks>
             public static void MatrixPushEXT(MatrixMode mode) => GLPointers.glMatrixPushEXT_Lazy((uint)mode);
             
             /// <summary> <b>[requires: GL_EXT_direct_state_access | GL_NV_path_rendering]</b> <b>[entry point: <c>glMatrixRotatedEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_direct_state_access.txt">EXT_direct_state_access.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/EXT/NV_path_rendering.txt">NV_path_rendering.txt</see></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_direct_state_access.txt">EXT_direct_state_access.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_path_rendering.txt">NV_path_rendering.txt</see></remarks>
             public static void MatrixRotatedEXT(MatrixMode mode, double angle, double x, double y, double z) => GLPointers.glMatrixRotatedEXT_Lazy((uint)mode, angle, x, y, z);
             
             /// <summary> <b>[requires: GL_EXT_direct_state_access | GL_NV_path_rendering]</b> <b>[entry point: <c>glMatrixRotatefEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_direct_state_access.txt">EXT_direct_state_access.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/EXT/NV_path_rendering.txt">NV_path_rendering.txt</see></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_direct_state_access.txt">EXT_direct_state_access.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_path_rendering.txt">NV_path_rendering.txt</see></remarks>
             public static void MatrixRotatefEXT(MatrixMode mode, float angle, float x, float y, float z) => GLPointers.glMatrixRotatefEXT_Lazy((uint)mode, angle, x, y, z);
             
             /// <summary> <b>[requires: GL_EXT_direct_state_access | GL_NV_path_rendering]</b> <b>[entry point: <c>glMatrixScaledEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_direct_state_access.txt">EXT_direct_state_access.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/EXT/NV_path_rendering.txt">NV_path_rendering.txt</see></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_direct_state_access.txt">EXT_direct_state_access.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_path_rendering.txt">NV_path_rendering.txt</see></remarks>
             public static void MatrixScaledEXT(MatrixMode mode, double x, double y, double z) => GLPointers.glMatrixScaledEXT_Lazy((uint)mode, x, y, z);
             
             /// <summary> <b>[requires: GL_EXT_direct_state_access | GL_NV_path_rendering]</b> <b>[entry point: <c>glMatrixScalefEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_direct_state_access.txt">EXT_direct_state_access.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/EXT/NV_path_rendering.txt">NV_path_rendering.txt</see></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_direct_state_access.txt">EXT_direct_state_access.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_path_rendering.txt">NV_path_rendering.txt</see></remarks>
             public static void MatrixScalefEXT(MatrixMode mode, float x, float y, float z) => GLPointers.glMatrixScalefEXT_Lazy((uint)mode, x, y, z);
             
             /// <summary> <b>[requires: GL_EXT_direct_state_access | GL_NV_path_rendering]</b> <b>[entry point: <c>glMatrixTranslatedEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_direct_state_access.txt">EXT_direct_state_access.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/EXT/NV_path_rendering.txt">NV_path_rendering.txt</see></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_direct_state_access.txt">EXT_direct_state_access.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_path_rendering.txt">NV_path_rendering.txt</see></remarks>
             public static void MatrixTranslatedEXT(MatrixMode mode, double x, double y, double z) => GLPointers.glMatrixTranslatedEXT_Lazy((uint)mode, x, y, z);
             
             /// <summary> <b>[requires: GL_EXT_direct_state_access | GL_NV_path_rendering]</b> <b>[entry point: <c>glMatrixTranslatefEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_direct_state_access.txt">EXT_direct_state_access.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/EXT/NV_path_rendering.txt">NV_path_rendering.txt</see></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_direct_state_access.txt">EXT_direct_state_access.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_path_rendering.txt">NV_path_rendering.txt</see></remarks>
             public static void MatrixTranslatefEXT(MatrixMode mode, float x, float y, float z) => GLPointers.glMatrixTranslatefEXT_Lazy((uint)mode, x, y, z);
             
             /// <summary> <b>[requires: GL_EXT_shader_image_load_store]</b> <b>[entry point: <c>glMemoryBarrierEXT</c>]</b><br/>  </summary>
@@ -11260,8 +10932,8 @@ namespace OpenTK.Graphics.OpenGL
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_gpu_program_parameters.txt">EXT_gpu_program_parameters.txt</see></remarks>
             public static void ProgramLocalParameters4fvEXT(ProgramTarget target, uint index, int count, float* @params) => GLPointers.glProgramLocalParameters4fvEXT_Lazy((uint)target, index, count, @params);
             
-            /// <summary> <b>[requires: GL_EXT_geometry_shader4 | GL_EXT_separate_shader_objects]</b> <b>[entry point: <c>glProgramParameteriEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_geometry_shader4.txt">EXT_geometry_shader4.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_separate_shader_objects.txt">EXT_separate_shader_objects.txt</see></remarks>
+            /// <summary> <b>[requires: GL_EXT_geometry_shader4]</b> <b>[entry point: <c>glProgramParameteriEXT</c>]</b><br/>  </summary>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_geometry_shader4.txt">EXT_geometry_shader4.txt</see></remarks>
             public static void ProgramParameteriEXT(int program, ProgramParameterPName pname, int value) => GLPointers.glProgramParameteriEXT_Lazy(program, (uint)pname, value);
             
             /// <summary> <b>[requires: GL_EXT_direct_state_access]</b> <b>[entry point: <c>glProgramUniform1dEXT</c>]</b><br/>  </summary>
@@ -11272,28 +10944,28 @@ namespace OpenTK.Graphics.OpenGL
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_direct_state_access.txt">EXT_direct_state_access.txt</see></remarks>
             public static void ProgramUniform1dvEXT(int program, int location, int count, double* value) => GLPointers.glProgramUniform1dvEXT_Lazy(program, location, count, value);
             
-            /// <summary> <b>[requires: GL_EXT_direct_state_access | GL_EXT_separate_shader_objects]</b> <b>[entry point: <c>glProgramUniform1fEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_direct_state_access.txt">EXT_direct_state_access.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_separate_shader_objects.txt">EXT_separate_shader_objects.txt</see></remarks>
+            /// <summary> <b>[requires: GL_EXT_direct_state_access]</b> <b>[entry point: <c>glProgramUniform1fEXT</c>]</b><br/>  </summary>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_direct_state_access.txt">EXT_direct_state_access.txt</see></remarks>
             public static void ProgramUniform1fEXT(int program, int location, float v0) => GLPointers.glProgramUniform1fEXT_Lazy(program, location, v0);
             
-            /// <summary> <b>[requires: GL_EXT_direct_state_access | GL_EXT_separate_shader_objects]</b> <b>[entry point: <c>glProgramUniform1fvEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_direct_state_access.txt">EXT_direct_state_access.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_separate_shader_objects.txt">EXT_separate_shader_objects.txt</see></remarks>
+            /// <summary> <b>[requires: GL_EXT_direct_state_access]</b> <b>[entry point: <c>glProgramUniform1fvEXT</c>]</b><br/>  </summary>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_direct_state_access.txt">EXT_direct_state_access.txt</see></remarks>
             public static void ProgramUniform1fvEXT(int program, int location, int count, float* value) => GLPointers.glProgramUniform1fvEXT_Lazy(program, location, count, value);
             
-            /// <summary> <b>[requires: GL_EXT_direct_state_access | GL_EXT_separate_shader_objects]</b> <b>[entry point: <c>glProgramUniform1iEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_direct_state_access.txt">EXT_direct_state_access.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_separate_shader_objects.txt">EXT_separate_shader_objects.txt</see></remarks>
+            /// <summary> <b>[requires: GL_EXT_direct_state_access]</b> <b>[entry point: <c>glProgramUniform1iEXT</c>]</b><br/>  </summary>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_direct_state_access.txt">EXT_direct_state_access.txt</see></remarks>
             public static void ProgramUniform1iEXT(int program, int location, int v0) => GLPointers.glProgramUniform1iEXT_Lazy(program, location, v0);
             
-            /// <summary> <b>[requires: GL_EXT_direct_state_access | GL_EXT_separate_shader_objects]</b> <b>[entry point: <c>glProgramUniform1ivEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_direct_state_access.txt">EXT_direct_state_access.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_separate_shader_objects.txt">EXT_separate_shader_objects.txt</see></remarks>
+            /// <summary> <b>[requires: GL_EXT_direct_state_access]</b> <b>[entry point: <c>glProgramUniform1ivEXT</c>]</b><br/>  </summary>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_direct_state_access.txt">EXT_direct_state_access.txt</see></remarks>
             public static void ProgramUniform1ivEXT(int program, int location, int count, int* value) => GLPointers.glProgramUniform1ivEXT_Lazy(program, location, count, value);
             
-            /// <summary> <b>[requires: GL_EXT_direct_state_access | GL_EXT_separate_shader_objects]</b> <b>[entry point: <c>glProgramUniform1uiEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_direct_state_access.txt">EXT_direct_state_access.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_separate_shader_objects.txt">EXT_separate_shader_objects.txt</see></remarks>
+            /// <summary> <b>[requires: GL_EXT_direct_state_access]</b> <b>[entry point: <c>glProgramUniform1uiEXT</c>]</b><br/>  </summary>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_direct_state_access.txt">EXT_direct_state_access.txt</see></remarks>
             public static void ProgramUniform1uiEXT(int program, int location, uint v0) => GLPointers.glProgramUniform1uiEXT_Lazy(program, location, v0);
             
-            /// <summary> <b>[requires: GL_EXT_direct_state_access | GL_EXT_separate_shader_objects]</b> <b>[entry point: <c>glProgramUniform1uivEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_direct_state_access.txt">EXT_direct_state_access.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_separate_shader_objects.txt">EXT_separate_shader_objects.txt</see></remarks>
+            /// <summary> <b>[requires: GL_EXT_direct_state_access]</b> <b>[entry point: <c>glProgramUniform1uivEXT</c>]</b><br/>  </summary>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_direct_state_access.txt">EXT_direct_state_access.txt</see></remarks>
             public static void ProgramUniform1uivEXT(int program, int location, int count, uint* value) => GLPointers.glProgramUniform1uivEXT_Lazy(program, location, count, value);
             
             /// <summary> <b>[requires: GL_EXT_direct_state_access]</b> <b>[entry point: <c>glProgramUniform2dEXT</c>]</b><br/>  </summary>
@@ -11304,28 +10976,28 @@ namespace OpenTK.Graphics.OpenGL
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_direct_state_access.txt">EXT_direct_state_access.txt</see></remarks>
             public static void ProgramUniform2dvEXT(int program, int location, int count, double* value) => GLPointers.glProgramUniform2dvEXT_Lazy(program, location, count, value);
             
-            /// <summary> <b>[requires: GL_EXT_direct_state_access | GL_EXT_separate_shader_objects]</b> <b>[entry point: <c>glProgramUniform2fEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_direct_state_access.txt">EXT_direct_state_access.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_separate_shader_objects.txt">EXT_separate_shader_objects.txt</see></remarks>
+            /// <summary> <b>[requires: GL_EXT_direct_state_access]</b> <b>[entry point: <c>glProgramUniform2fEXT</c>]</b><br/>  </summary>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_direct_state_access.txt">EXT_direct_state_access.txt</see></remarks>
             public static void ProgramUniform2fEXT(int program, int location, float v0, float v1) => GLPointers.glProgramUniform2fEXT_Lazy(program, location, v0, v1);
             
-            /// <summary> <b>[requires: GL_EXT_direct_state_access | GL_EXT_separate_shader_objects]</b> <b>[entry point: <c>glProgramUniform2fvEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_direct_state_access.txt">EXT_direct_state_access.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_separate_shader_objects.txt">EXT_separate_shader_objects.txt</see></remarks>
+            /// <summary> <b>[requires: GL_EXT_direct_state_access]</b> <b>[entry point: <c>glProgramUniform2fvEXT</c>]</b><br/>  </summary>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_direct_state_access.txt">EXT_direct_state_access.txt</see></remarks>
             public static void ProgramUniform2fvEXT(int program, int location, int count, float* value) => GLPointers.glProgramUniform2fvEXT_Lazy(program, location, count, value);
             
-            /// <summary> <b>[requires: GL_EXT_direct_state_access | GL_EXT_separate_shader_objects]</b> <b>[entry point: <c>glProgramUniform2iEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_direct_state_access.txt">EXT_direct_state_access.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_separate_shader_objects.txt">EXT_separate_shader_objects.txt</see></remarks>
+            /// <summary> <b>[requires: GL_EXT_direct_state_access]</b> <b>[entry point: <c>glProgramUniform2iEXT</c>]</b><br/>  </summary>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_direct_state_access.txt">EXT_direct_state_access.txt</see></remarks>
             public static void ProgramUniform2iEXT(int program, int location, int v0, int v1) => GLPointers.glProgramUniform2iEXT_Lazy(program, location, v0, v1);
             
-            /// <summary> <b>[requires: GL_EXT_direct_state_access | GL_EXT_separate_shader_objects]</b> <b>[entry point: <c>glProgramUniform2ivEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_direct_state_access.txt">EXT_direct_state_access.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_separate_shader_objects.txt">EXT_separate_shader_objects.txt</see></remarks>
+            /// <summary> <b>[requires: GL_EXT_direct_state_access]</b> <b>[entry point: <c>glProgramUniform2ivEXT</c>]</b><br/>  </summary>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_direct_state_access.txt">EXT_direct_state_access.txt</see></remarks>
             public static void ProgramUniform2ivEXT(int program, int location, int count, int* value) => GLPointers.glProgramUniform2ivEXT_Lazy(program, location, count, value);
             
-            /// <summary> <b>[requires: GL_EXT_direct_state_access | GL_EXT_separate_shader_objects]</b> <b>[entry point: <c>glProgramUniform2uiEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_direct_state_access.txt">EXT_direct_state_access.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_separate_shader_objects.txt">EXT_separate_shader_objects.txt</see></remarks>
+            /// <summary> <b>[requires: GL_EXT_direct_state_access]</b> <b>[entry point: <c>glProgramUniform2uiEXT</c>]</b><br/>  </summary>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_direct_state_access.txt">EXT_direct_state_access.txt</see></remarks>
             public static void ProgramUniform2uiEXT(int program, int location, uint v0, uint v1) => GLPointers.glProgramUniform2uiEXT_Lazy(program, location, v0, v1);
             
-            /// <summary> <b>[requires: GL_EXT_direct_state_access | GL_EXT_separate_shader_objects]</b> <b>[entry point: <c>glProgramUniform2uivEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_direct_state_access.txt">EXT_direct_state_access.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_separate_shader_objects.txt">EXT_separate_shader_objects.txt</see></remarks>
+            /// <summary> <b>[requires: GL_EXT_direct_state_access]</b> <b>[entry point: <c>glProgramUniform2uivEXT</c>]</b><br/>  </summary>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_direct_state_access.txt">EXT_direct_state_access.txt</see></remarks>
             public static void ProgramUniform2uivEXT(int program, int location, int count, uint* value) => GLPointers.glProgramUniform2uivEXT_Lazy(program, location, count, value);
             
             /// <summary> <b>[requires: GL_EXT_direct_state_access]</b> <b>[entry point: <c>glProgramUniform3dEXT</c>]</b><br/>  </summary>
@@ -11336,28 +11008,28 @@ namespace OpenTK.Graphics.OpenGL
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_direct_state_access.txt">EXT_direct_state_access.txt</see></remarks>
             public static void ProgramUniform3dvEXT(int program, int location, int count, double* value) => GLPointers.glProgramUniform3dvEXT_Lazy(program, location, count, value);
             
-            /// <summary> <b>[requires: GL_EXT_direct_state_access | GL_EXT_separate_shader_objects]</b> <b>[entry point: <c>glProgramUniform3fEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_direct_state_access.txt">EXT_direct_state_access.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_separate_shader_objects.txt">EXT_separate_shader_objects.txt</see></remarks>
+            /// <summary> <b>[requires: GL_EXT_direct_state_access]</b> <b>[entry point: <c>glProgramUniform3fEXT</c>]</b><br/>  </summary>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_direct_state_access.txt">EXT_direct_state_access.txt</see></remarks>
             public static void ProgramUniform3fEXT(int program, int location, float v0, float v1, float v2) => GLPointers.glProgramUniform3fEXT_Lazy(program, location, v0, v1, v2);
             
-            /// <summary> <b>[requires: GL_EXT_direct_state_access | GL_EXT_separate_shader_objects]</b> <b>[entry point: <c>glProgramUniform3fvEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_direct_state_access.txt">EXT_direct_state_access.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_separate_shader_objects.txt">EXT_separate_shader_objects.txt</see></remarks>
+            /// <summary> <b>[requires: GL_EXT_direct_state_access]</b> <b>[entry point: <c>glProgramUniform3fvEXT</c>]</b><br/>  </summary>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_direct_state_access.txt">EXT_direct_state_access.txt</see></remarks>
             public static void ProgramUniform3fvEXT(int program, int location, int count, float* value) => GLPointers.glProgramUniform3fvEXT_Lazy(program, location, count, value);
             
-            /// <summary> <b>[requires: GL_EXT_direct_state_access | GL_EXT_separate_shader_objects]</b> <b>[entry point: <c>glProgramUniform3iEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_direct_state_access.txt">EXT_direct_state_access.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_separate_shader_objects.txt">EXT_separate_shader_objects.txt</see></remarks>
+            /// <summary> <b>[requires: GL_EXT_direct_state_access]</b> <b>[entry point: <c>glProgramUniform3iEXT</c>]</b><br/>  </summary>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_direct_state_access.txt">EXT_direct_state_access.txt</see></remarks>
             public static void ProgramUniform3iEXT(int program, int location, int v0, int v1, int v2) => GLPointers.glProgramUniform3iEXT_Lazy(program, location, v0, v1, v2);
             
-            /// <summary> <b>[requires: GL_EXT_direct_state_access | GL_EXT_separate_shader_objects]</b> <b>[entry point: <c>glProgramUniform3ivEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_direct_state_access.txt">EXT_direct_state_access.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_separate_shader_objects.txt">EXT_separate_shader_objects.txt</see></remarks>
+            /// <summary> <b>[requires: GL_EXT_direct_state_access]</b> <b>[entry point: <c>glProgramUniform3ivEXT</c>]</b><br/>  </summary>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_direct_state_access.txt">EXT_direct_state_access.txt</see></remarks>
             public static void ProgramUniform3ivEXT(int program, int location, int count, int* value) => GLPointers.glProgramUniform3ivEXT_Lazy(program, location, count, value);
             
-            /// <summary> <b>[requires: GL_EXT_direct_state_access | GL_EXT_separate_shader_objects]</b> <b>[entry point: <c>glProgramUniform3uiEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_direct_state_access.txt">EXT_direct_state_access.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_separate_shader_objects.txt">EXT_separate_shader_objects.txt</see></remarks>
+            /// <summary> <b>[requires: GL_EXT_direct_state_access]</b> <b>[entry point: <c>glProgramUniform3uiEXT</c>]</b><br/>  </summary>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_direct_state_access.txt">EXT_direct_state_access.txt</see></remarks>
             public static void ProgramUniform3uiEXT(int program, int location, uint v0, uint v1, uint v2) => GLPointers.glProgramUniform3uiEXT_Lazy(program, location, v0, v1, v2);
             
-            /// <summary> <b>[requires: GL_EXT_direct_state_access | GL_EXT_separate_shader_objects]</b> <b>[entry point: <c>glProgramUniform3uivEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_direct_state_access.txt">EXT_direct_state_access.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_separate_shader_objects.txt">EXT_separate_shader_objects.txt</see></remarks>
+            /// <summary> <b>[requires: GL_EXT_direct_state_access]</b> <b>[entry point: <c>glProgramUniform3uivEXT</c>]</b><br/>  </summary>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_direct_state_access.txt">EXT_direct_state_access.txt</see></remarks>
             public static void ProgramUniform3uivEXT(int program, int location, int count, uint* value) => GLPointers.glProgramUniform3uivEXT_Lazy(program, location, count, value);
             
             /// <summary> <b>[requires: GL_EXT_direct_state_access]</b> <b>[entry point: <c>glProgramUniform4dEXT</c>]</b><br/>  </summary>
@@ -11368,100 +11040,100 @@ namespace OpenTK.Graphics.OpenGL
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_direct_state_access.txt">EXT_direct_state_access.txt</see></remarks>
             public static void ProgramUniform4dvEXT(int program, int location, int count, double* value) => GLPointers.glProgramUniform4dvEXT_Lazy(program, location, count, value);
             
-            /// <summary> <b>[requires: GL_EXT_direct_state_access | GL_EXT_separate_shader_objects]</b> <b>[entry point: <c>glProgramUniform4fEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_direct_state_access.txt">EXT_direct_state_access.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_separate_shader_objects.txt">EXT_separate_shader_objects.txt</see></remarks>
+            /// <summary> <b>[requires: GL_EXT_direct_state_access]</b> <b>[entry point: <c>glProgramUniform4fEXT</c>]</b><br/>  </summary>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_direct_state_access.txt">EXT_direct_state_access.txt</see></remarks>
             public static void ProgramUniform4fEXT(int program, int location, float v0, float v1, float v2, float v3) => GLPointers.glProgramUniform4fEXT_Lazy(program, location, v0, v1, v2, v3);
             
-            /// <summary> <b>[requires: GL_EXT_direct_state_access | GL_EXT_separate_shader_objects]</b> <b>[entry point: <c>glProgramUniform4fvEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_direct_state_access.txt">EXT_direct_state_access.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_separate_shader_objects.txt">EXT_separate_shader_objects.txt</see></remarks>
+            /// <summary> <b>[requires: GL_EXT_direct_state_access]</b> <b>[entry point: <c>glProgramUniform4fvEXT</c>]</b><br/>  </summary>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_direct_state_access.txt">EXT_direct_state_access.txt</see></remarks>
             public static void ProgramUniform4fvEXT(int program, int location, int count, float* value) => GLPointers.glProgramUniform4fvEXT_Lazy(program, location, count, value);
             
-            /// <summary> <b>[requires: GL_EXT_direct_state_access | GL_EXT_separate_shader_objects]</b> <b>[entry point: <c>glProgramUniform4iEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_direct_state_access.txt">EXT_direct_state_access.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_separate_shader_objects.txt">EXT_separate_shader_objects.txt</see></remarks>
+            /// <summary> <b>[requires: GL_EXT_direct_state_access]</b> <b>[entry point: <c>glProgramUniform4iEXT</c>]</b><br/>  </summary>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_direct_state_access.txt">EXT_direct_state_access.txt</see></remarks>
             public static void ProgramUniform4iEXT(int program, int location, int v0, int v1, int v2, int v3) => GLPointers.glProgramUniform4iEXT_Lazy(program, location, v0, v1, v2, v3);
             
-            /// <summary> <b>[requires: GL_EXT_direct_state_access | GL_EXT_separate_shader_objects]</b> <b>[entry point: <c>glProgramUniform4ivEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_direct_state_access.txt">EXT_direct_state_access.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_separate_shader_objects.txt">EXT_separate_shader_objects.txt</see></remarks>
+            /// <summary> <b>[requires: GL_EXT_direct_state_access]</b> <b>[entry point: <c>glProgramUniform4ivEXT</c>]</b><br/>  </summary>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_direct_state_access.txt">EXT_direct_state_access.txt</see></remarks>
             public static void ProgramUniform4ivEXT(int program, int location, int count, int* value) => GLPointers.glProgramUniform4ivEXT_Lazy(program, location, count, value);
             
-            /// <summary> <b>[requires: GL_EXT_direct_state_access | GL_EXT_separate_shader_objects]</b> <b>[entry point: <c>glProgramUniform4uiEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_direct_state_access.txt">EXT_direct_state_access.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_separate_shader_objects.txt">EXT_separate_shader_objects.txt</see></remarks>
+            /// <summary> <b>[requires: GL_EXT_direct_state_access]</b> <b>[entry point: <c>glProgramUniform4uiEXT</c>]</b><br/>  </summary>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_direct_state_access.txt">EXT_direct_state_access.txt</see></remarks>
             public static void ProgramUniform4uiEXT(int program, int location, uint v0, uint v1, uint v2, uint v3) => GLPointers.glProgramUniform4uiEXT_Lazy(program, location, v0, v1, v2, v3);
             
-            /// <summary> <b>[requires: GL_EXT_direct_state_access | GL_EXT_separate_shader_objects]</b> <b>[entry point: <c>glProgramUniform4uivEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_direct_state_access.txt">EXT_direct_state_access.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_separate_shader_objects.txt">EXT_separate_shader_objects.txt</see></remarks>
+            /// <summary> <b>[requires: GL_EXT_direct_state_access]</b> <b>[entry point: <c>glProgramUniform4uivEXT</c>]</b><br/>  </summary>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_direct_state_access.txt">EXT_direct_state_access.txt</see></remarks>
             public static void ProgramUniform4uivEXT(int program, int location, int count, uint* value) => GLPointers.glProgramUniform4uivEXT_Lazy(program, location, count, value);
             
             /// <summary> <b>[requires: GL_EXT_direct_state_access]</b> <b>[entry point: <c>glProgramUniformMatrix2dvEXT</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_direct_state_access.txt">EXT_direct_state_access.txt</see></remarks>
             public static void ProgramUniformMatrix2dvEXT(int program, int location, int count, bool transpose, double* value) => GLPointers.glProgramUniformMatrix2dvEXT_Lazy(program, location, count, (byte)(transpose ? 1 : 0), value);
             
-            /// <summary> <b>[requires: GL_EXT_direct_state_access | GL_EXT_separate_shader_objects]</b> <b>[entry point: <c>glProgramUniformMatrix2fvEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_direct_state_access.txt">EXT_direct_state_access.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_separate_shader_objects.txt">EXT_separate_shader_objects.txt</see></remarks>
+            /// <summary> <b>[requires: GL_EXT_direct_state_access]</b> <b>[entry point: <c>glProgramUniformMatrix2fvEXT</c>]</b><br/>  </summary>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_direct_state_access.txt">EXT_direct_state_access.txt</see></remarks>
             public static void ProgramUniformMatrix2fvEXT(int program, int location, int count, bool transpose, float* value) => GLPointers.glProgramUniformMatrix2fvEXT_Lazy(program, location, count, (byte)(transpose ? 1 : 0), value);
             
             /// <summary> <b>[requires: GL_EXT_direct_state_access]</b> <b>[entry point: <c>glProgramUniformMatrix2x3dvEXT</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_direct_state_access.txt">EXT_direct_state_access.txt</see></remarks>
             public static void ProgramUniformMatrix2x3dvEXT(int program, int location, int count, bool transpose, double* value) => GLPointers.glProgramUniformMatrix2x3dvEXT_Lazy(program, location, count, (byte)(transpose ? 1 : 0), value);
             
-            /// <summary> <b>[requires: GL_EXT_direct_state_access | GL_EXT_separate_shader_objects]</b> <b>[entry point: <c>glProgramUniformMatrix2x3fvEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_direct_state_access.txt">EXT_direct_state_access.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_separate_shader_objects.txt">EXT_separate_shader_objects.txt</see></remarks>
+            /// <summary> <b>[requires: GL_EXT_direct_state_access]</b> <b>[entry point: <c>glProgramUniformMatrix2x3fvEXT</c>]</b><br/>  </summary>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_direct_state_access.txt">EXT_direct_state_access.txt</see></remarks>
             public static void ProgramUniformMatrix2x3fvEXT(int program, int location, int count, bool transpose, float* value) => GLPointers.glProgramUniformMatrix2x3fvEXT_Lazy(program, location, count, (byte)(transpose ? 1 : 0), value);
             
             /// <summary> <b>[requires: GL_EXT_direct_state_access]</b> <b>[entry point: <c>glProgramUniformMatrix2x4dvEXT</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_direct_state_access.txt">EXT_direct_state_access.txt</see></remarks>
             public static void ProgramUniformMatrix2x4dvEXT(int program, int location, int count, bool transpose, double* value) => GLPointers.glProgramUniformMatrix2x4dvEXT_Lazy(program, location, count, (byte)(transpose ? 1 : 0), value);
             
-            /// <summary> <b>[requires: GL_EXT_direct_state_access | GL_EXT_separate_shader_objects]</b> <b>[entry point: <c>glProgramUniformMatrix2x4fvEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_direct_state_access.txt">EXT_direct_state_access.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_separate_shader_objects.txt">EXT_separate_shader_objects.txt</see></remarks>
+            /// <summary> <b>[requires: GL_EXT_direct_state_access]</b> <b>[entry point: <c>glProgramUniformMatrix2x4fvEXT</c>]</b><br/>  </summary>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_direct_state_access.txt">EXT_direct_state_access.txt</see></remarks>
             public static void ProgramUniformMatrix2x4fvEXT(int program, int location, int count, bool transpose, float* value) => GLPointers.glProgramUniformMatrix2x4fvEXT_Lazy(program, location, count, (byte)(transpose ? 1 : 0), value);
             
             /// <summary> <b>[requires: GL_EXT_direct_state_access]</b> <b>[entry point: <c>glProgramUniformMatrix3dvEXT</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_direct_state_access.txt">EXT_direct_state_access.txt</see></remarks>
             public static void ProgramUniformMatrix3dvEXT(int program, int location, int count, bool transpose, double* value) => GLPointers.glProgramUniformMatrix3dvEXT_Lazy(program, location, count, (byte)(transpose ? 1 : 0), value);
             
-            /// <summary> <b>[requires: GL_EXT_direct_state_access | GL_EXT_separate_shader_objects]</b> <b>[entry point: <c>glProgramUniformMatrix3fvEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_direct_state_access.txt">EXT_direct_state_access.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_separate_shader_objects.txt">EXT_separate_shader_objects.txt</see></remarks>
+            /// <summary> <b>[requires: GL_EXT_direct_state_access]</b> <b>[entry point: <c>glProgramUniformMatrix3fvEXT</c>]</b><br/>  </summary>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_direct_state_access.txt">EXT_direct_state_access.txt</see></remarks>
             public static void ProgramUniformMatrix3fvEXT(int program, int location, int count, bool transpose, float* value) => GLPointers.glProgramUniformMatrix3fvEXT_Lazy(program, location, count, (byte)(transpose ? 1 : 0), value);
             
             /// <summary> <b>[requires: GL_EXT_direct_state_access]</b> <b>[entry point: <c>glProgramUniformMatrix3x2dvEXT</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_direct_state_access.txt">EXT_direct_state_access.txt</see></remarks>
             public static void ProgramUniformMatrix3x2dvEXT(int program, int location, int count, bool transpose, double* value) => GLPointers.glProgramUniformMatrix3x2dvEXT_Lazy(program, location, count, (byte)(transpose ? 1 : 0), value);
             
-            /// <summary> <b>[requires: GL_EXT_direct_state_access | GL_EXT_separate_shader_objects]</b> <b>[entry point: <c>glProgramUniformMatrix3x2fvEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_direct_state_access.txt">EXT_direct_state_access.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_separate_shader_objects.txt">EXT_separate_shader_objects.txt</see></remarks>
+            /// <summary> <b>[requires: GL_EXT_direct_state_access]</b> <b>[entry point: <c>glProgramUniformMatrix3x2fvEXT</c>]</b><br/>  </summary>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_direct_state_access.txt">EXT_direct_state_access.txt</see></remarks>
             public static void ProgramUniformMatrix3x2fvEXT(int program, int location, int count, bool transpose, float* value) => GLPointers.glProgramUniformMatrix3x2fvEXT_Lazy(program, location, count, (byte)(transpose ? 1 : 0), value);
             
             /// <summary> <b>[requires: GL_EXT_direct_state_access]</b> <b>[entry point: <c>glProgramUniformMatrix3x4dvEXT</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_direct_state_access.txt">EXT_direct_state_access.txt</see></remarks>
             public static void ProgramUniformMatrix3x4dvEXT(int program, int location, int count, bool transpose, double* value) => GLPointers.glProgramUniformMatrix3x4dvEXT_Lazy(program, location, count, (byte)(transpose ? 1 : 0), value);
             
-            /// <summary> <b>[requires: GL_EXT_direct_state_access | GL_EXT_separate_shader_objects]</b> <b>[entry point: <c>glProgramUniformMatrix3x4fvEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_direct_state_access.txt">EXT_direct_state_access.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_separate_shader_objects.txt">EXT_separate_shader_objects.txt</see></remarks>
+            /// <summary> <b>[requires: GL_EXT_direct_state_access]</b> <b>[entry point: <c>glProgramUniformMatrix3x4fvEXT</c>]</b><br/>  </summary>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_direct_state_access.txt">EXT_direct_state_access.txt</see></remarks>
             public static void ProgramUniformMatrix3x4fvEXT(int program, int location, int count, bool transpose, float* value) => GLPointers.glProgramUniformMatrix3x4fvEXT_Lazy(program, location, count, (byte)(transpose ? 1 : 0), value);
             
             /// <summary> <b>[requires: GL_EXT_direct_state_access]</b> <b>[entry point: <c>glProgramUniformMatrix4dvEXT</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_direct_state_access.txt">EXT_direct_state_access.txt</see></remarks>
             public static void ProgramUniformMatrix4dvEXT(int program, int location, int count, bool transpose, double* value) => GLPointers.glProgramUniformMatrix4dvEXT_Lazy(program, location, count, (byte)(transpose ? 1 : 0), value);
             
-            /// <summary> <b>[requires: GL_EXT_direct_state_access | GL_EXT_separate_shader_objects]</b> <b>[entry point: <c>glProgramUniformMatrix4fvEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_direct_state_access.txt">EXT_direct_state_access.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_separate_shader_objects.txt">EXT_separate_shader_objects.txt</see></remarks>
+            /// <summary> <b>[requires: GL_EXT_direct_state_access]</b> <b>[entry point: <c>glProgramUniformMatrix4fvEXT</c>]</b><br/>  </summary>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_direct_state_access.txt">EXT_direct_state_access.txt</see></remarks>
             public static void ProgramUniformMatrix4fvEXT(int program, int location, int count, bool transpose, float* value) => GLPointers.glProgramUniformMatrix4fvEXT_Lazy(program, location, count, (byte)(transpose ? 1 : 0), value);
             
             /// <summary> <b>[requires: GL_EXT_direct_state_access]</b> <b>[entry point: <c>glProgramUniformMatrix4x2dvEXT</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_direct_state_access.txt">EXT_direct_state_access.txt</see></remarks>
             public static void ProgramUniformMatrix4x2dvEXT(int program, int location, int count, bool transpose, double* value) => GLPointers.glProgramUniformMatrix4x2dvEXT_Lazy(program, location, count, (byte)(transpose ? 1 : 0), value);
             
-            /// <summary> <b>[requires: GL_EXT_direct_state_access | GL_EXT_separate_shader_objects]</b> <b>[entry point: <c>glProgramUniformMatrix4x2fvEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_direct_state_access.txt">EXT_direct_state_access.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_separate_shader_objects.txt">EXT_separate_shader_objects.txt</see></remarks>
+            /// <summary> <b>[requires: GL_EXT_direct_state_access]</b> <b>[entry point: <c>glProgramUniformMatrix4x2fvEXT</c>]</b><br/>  </summary>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_direct_state_access.txt">EXT_direct_state_access.txt</see></remarks>
             public static void ProgramUniformMatrix4x2fvEXT(int program, int location, int count, bool transpose, float* value) => GLPointers.glProgramUniformMatrix4x2fvEXT_Lazy(program, location, count, (byte)(transpose ? 1 : 0), value);
             
             /// <summary> <b>[requires: GL_EXT_direct_state_access]</b> <b>[entry point: <c>glProgramUniformMatrix4x3dvEXT</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_direct_state_access.txt">EXT_direct_state_access.txt</see></remarks>
             public static void ProgramUniformMatrix4x3dvEXT(int program, int location, int count, bool transpose, double* value) => GLPointers.glProgramUniformMatrix4x3dvEXT_Lazy(program, location, count, (byte)(transpose ? 1 : 0), value);
             
-            /// <summary> <b>[requires: GL_EXT_direct_state_access | GL_EXT_separate_shader_objects]</b> <b>[entry point: <c>glProgramUniformMatrix4x3fvEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_direct_state_access.txt">EXT_direct_state_access.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_separate_shader_objects.txt">EXT_separate_shader_objects.txt</see></remarks>
+            /// <summary> <b>[requires: GL_EXT_direct_state_access]</b> <b>[entry point: <c>glProgramUniformMatrix4x3fvEXT</c>]</b><br/>  </summary>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_direct_state_access.txt">EXT_direct_state_access.txt</see></remarks>
             public static void ProgramUniformMatrix4x3fvEXT(int program, int location, int count, bool transpose, float* value) => GLPointers.glProgramUniformMatrix4x3fvEXT_Lazy(program, location, count, (byte)(transpose ? 1 : 0), value);
             
             /// <summary> <b>[requires: GL_EXT_provoking_vertex]</b> <b>[entry point: <c>glProvokingVertexEXT</c>]</b><br/>  </summary>
@@ -11477,7 +11149,7 @@ namespace OpenTK.Graphics.OpenGL
             public static void PushGroupMarkerEXT(int length, byte* marker) => GLPointers.glPushGroupMarkerEXT_Lazy(length, marker);
             
             /// <summary> <b>[requires: GL_EXT_raster_multisample | GL_NV_framebuffer_mixed_samples]</b> <b>[entry point: <c>glRasterSamplesEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_raster_multisample.txt">EXT_raster_multisample.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/EXT/NV_framebuffer_mixed_samples.txt">NV_framebuffer_mixed_samples.txt</see></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_raster_multisample.txt">EXT_raster_multisample.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_framebuffer_mixed_samples.txt">NV_framebuffer_mixed_samples.txt</see></remarks>
             public static void RasterSamplesEXT(uint samples, bool fixedsamplelocations) => GLPointers.glRasterSamplesEXT_Lazy(samples, (byte)(fixedsamplelocations ? 1 : 0));
             
             /// <summary> <b>[requires: GL_EXT_win32_keyed_mutex]</b> <b>[entry point: <c>glReleaseKeyedMutexWin32EXT</c>]</b><br/>  </summary>
@@ -11888,17 +11560,9 @@ namespace OpenTK.Graphics.OpenGL
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_direct_state_access.txt">EXT_direct_state_access.txt</see></remarks>
             public static bool UnmapNamedBufferEXT(int buffer) => GLPointers.glUnmapNamedBufferEXT_Lazy(buffer) != 0;
             
-            /// <summary> <b>[requires: GL_EXT_separate_shader_objects]</b> <b>[entry point: <c>glUseProgramStagesEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_separate_shader_objects.txt">EXT_separate_shader_objects.txt</see></remarks>
-            public static void UseProgramStagesEXT(int pipeline, UseProgramStageMask stages, int program) => GLPointers.glUseProgramStagesEXT_Lazy(pipeline, (uint)stages, program);
-            
             /// <summary> <b>[requires: GL_EXT_separate_shader_objects]</b> <b>[entry point: <c>glUseShaderProgramEXT</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_separate_shader_objects.txt">EXT_separate_shader_objects.txt</see></remarks>
             public static void UseShaderProgramEXT(All type, int program) => GLPointers.glUseShaderProgramEXT_Lazy((uint)type, program);
-            
-            /// <summary> <b>[requires: GL_EXT_separate_shader_objects]</b> <b>[entry point: <c>glValidateProgramPipelineEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_separate_shader_objects.txt">EXT_separate_shader_objects.txt</see></remarks>
-            public static void ValidateProgramPipelineEXT(int pipeline) => GLPointers.glValidateProgramPipelineEXT_Lazy(pipeline);
             
             /// <summary> <b>[requires: GL_EXT_vertex_shader]</b> <b>[entry point: <c>glVariantbvEXT</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_vertex_shader.txt">EXT_vertex_shader.txt</see></remarks>
@@ -12013,87 +11677,87 @@ namespace OpenTK.Graphics.OpenGL
             public static void VertexArrayVertexOffsetEXT(int vaobj, int buffer, int size, VertexPointerType type, int stride, IntPtr offset) => GLPointers.glVertexArrayVertexOffsetEXT_Lazy(vaobj, buffer, size, (uint)type, stride, offset);
             
             /// <summary> <b>[requires: GL_EXT_gpu_shader4 | GL_NV_vertex_program4]</b> <b>[entry point: <c>glVertexAttribI1iEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_gpu_shader4.txt">EXT_gpu_shader4.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/EXT/NV_vertex_program4.txt">NV_vertex_program4.txt</see></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_gpu_shader4.txt">EXT_gpu_shader4.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_vertex_program4.txt">NV_vertex_program4.txt</see></remarks>
             public static void VertexAttribI1iEXT(uint index, int x) => GLPointers.glVertexAttribI1iEXT_Lazy(index, x);
             
             /// <summary> <b>[requires: GL_EXT_gpu_shader4 | GL_NV_vertex_program4]</b> <b>[entry point: <c>glVertexAttribI1ivEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_gpu_shader4.txt">EXT_gpu_shader4.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/EXT/NV_vertex_program4.txt">NV_vertex_program4.txt</see></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_gpu_shader4.txt">EXT_gpu_shader4.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_vertex_program4.txt">NV_vertex_program4.txt</see></remarks>
             public static void VertexAttribI1ivEXT(uint index, int* v) => GLPointers.glVertexAttribI1ivEXT_Lazy(index, v);
             
             /// <summary> <b>[requires: GL_EXT_gpu_shader4 | GL_NV_vertex_program4]</b> <b>[entry point: <c>glVertexAttribI1uiEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_gpu_shader4.txt">EXT_gpu_shader4.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/EXT/NV_vertex_program4.txt">NV_vertex_program4.txt</see></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_gpu_shader4.txt">EXT_gpu_shader4.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_vertex_program4.txt">NV_vertex_program4.txt</see></remarks>
             public static void VertexAttribI1uiEXT(uint index, uint x) => GLPointers.glVertexAttribI1uiEXT_Lazy(index, x);
             
             /// <summary> <b>[requires: GL_EXT_gpu_shader4 | GL_NV_vertex_program4]</b> <b>[entry point: <c>glVertexAttribI1uivEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_gpu_shader4.txt">EXT_gpu_shader4.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/EXT/NV_vertex_program4.txt">NV_vertex_program4.txt</see></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_gpu_shader4.txt">EXT_gpu_shader4.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_vertex_program4.txt">NV_vertex_program4.txt</see></remarks>
             public static void VertexAttribI1uivEXT(uint index, uint* v) => GLPointers.glVertexAttribI1uivEXT_Lazy(index, v);
             
             /// <summary> <b>[requires: GL_EXT_gpu_shader4 | GL_NV_vertex_program4]</b> <b>[entry point: <c>glVertexAttribI2iEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_gpu_shader4.txt">EXT_gpu_shader4.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/EXT/NV_vertex_program4.txt">NV_vertex_program4.txt</see></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_gpu_shader4.txt">EXT_gpu_shader4.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_vertex_program4.txt">NV_vertex_program4.txt</see></remarks>
             public static void VertexAttribI2iEXT(uint index, int x, int y) => GLPointers.glVertexAttribI2iEXT_Lazy(index, x, y);
             
             /// <summary> <b>[requires: GL_EXT_gpu_shader4 | GL_NV_vertex_program4]</b> <b>[entry point: <c>glVertexAttribI2ivEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_gpu_shader4.txt">EXT_gpu_shader4.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/EXT/NV_vertex_program4.txt">NV_vertex_program4.txt</see></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_gpu_shader4.txt">EXT_gpu_shader4.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_vertex_program4.txt">NV_vertex_program4.txt</see></remarks>
             public static void VertexAttribI2ivEXT(uint index, int* v) => GLPointers.glVertexAttribI2ivEXT_Lazy(index, v);
             
             /// <summary> <b>[requires: GL_EXT_gpu_shader4 | GL_NV_vertex_program4]</b> <b>[entry point: <c>glVertexAttribI2uiEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_gpu_shader4.txt">EXT_gpu_shader4.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/EXT/NV_vertex_program4.txt">NV_vertex_program4.txt</see></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_gpu_shader4.txt">EXT_gpu_shader4.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_vertex_program4.txt">NV_vertex_program4.txt</see></remarks>
             public static void VertexAttribI2uiEXT(uint index, uint x, uint y) => GLPointers.glVertexAttribI2uiEXT_Lazy(index, x, y);
             
             /// <summary> <b>[requires: GL_EXT_gpu_shader4 | GL_NV_vertex_program4]</b> <b>[entry point: <c>glVertexAttribI2uivEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_gpu_shader4.txt">EXT_gpu_shader4.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/EXT/NV_vertex_program4.txt">NV_vertex_program4.txt</see></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_gpu_shader4.txt">EXT_gpu_shader4.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_vertex_program4.txt">NV_vertex_program4.txt</see></remarks>
             public static void VertexAttribI2uivEXT(uint index, uint* v) => GLPointers.glVertexAttribI2uivEXT_Lazy(index, v);
             
             /// <summary> <b>[requires: GL_EXT_gpu_shader4 | GL_NV_vertex_program4]</b> <b>[entry point: <c>glVertexAttribI3iEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_gpu_shader4.txt">EXT_gpu_shader4.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/EXT/NV_vertex_program4.txt">NV_vertex_program4.txt</see></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_gpu_shader4.txt">EXT_gpu_shader4.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_vertex_program4.txt">NV_vertex_program4.txt</see></remarks>
             public static void VertexAttribI3iEXT(uint index, int x, int y, int z) => GLPointers.glVertexAttribI3iEXT_Lazy(index, x, y, z);
             
             /// <summary> <b>[requires: GL_EXT_gpu_shader4 | GL_NV_vertex_program4]</b> <b>[entry point: <c>glVertexAttribI3ivEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_gpu_shader4.txt">EXT_gpu_shader4.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/EXT/NV_vertex_program4.txt">NV_vertex_program4.txt</see></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_gpu_shader4.txt">EXT_gpu_shader4.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_vertex_program4.txt">NV_vertex_program4.txt</see></remarks>
             public static void VertexAttribI3ivEXT(uint index, int* v) => GLPointers.glVertexAttribI3ivEXT_Lazy(index, v);
             
             /// <summary> <b>[requires: GL_EXT_gpu_shader4 | GL_NV_vertex_program4]</b> <b>[entry point: <c>glVertexAttribI3uiEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_gpu_shader4.txt">EXT_gpu_shader4.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/EXT/NV_vertex_program4.txt">NV_vertex_program4.txt</see></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_gpu_shader4.txt">EXT_gpu_shader4.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_vertex_program4.txt">NV_vertex_program4.txt</see></remarks>
             public static void VertexAttribI3uiEXT(uint index, uint x, uint y, uint z) => GLPointers.glVertexAttribI3uiEXT_Lazy(index, x, y, z);
             
             /// <summary> <b>[requires: GL_EXT_gpu_shader4 | GL_NV_vertex_program4]</b> <b>[entry point: <c>glVertexAttribI3uivEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_gpu_shader4.txt">EXT_gpu_shader4.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/EXT/NV_vertex_program4.txt">NV_vertex_program4.txt</see></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_gpu_shader4.txt">EXT_gpu_shader4.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_vertex_program4.txt">NV_vertex_program4.txt</see></remarks>
             public static void VertexAttribI3uivEXT(uint index, uint* v) => GLPointers.glVertexAttribI3uivEXT_Lazy(index, v);
             
             /// <summary> <b>[requires: GL_EXT_gpu_shader4 | GL_NV_vertex_program4]</b> <b>[entry point: <c>glVertexAttribI4bvEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_gpu_shader4.txt">EXT_gpu_shader4.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/EXT/NV_vertex_program4.txt">NV_vertex_program4.txt</see></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_gpu_shader4.txt">EXT_gpu_shader4.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_vertex_program4.txt">NV_vertex_program4.txt</see></remarks>
             public static void VertexAttribI4bvEXT(uint index, sbyte* v) => GLPointers.glVertexAttribI4bvEXT_Lazy(index, v);
             
             /// <summary> <b>[requires: GL_EXT_gpu_shader4 | GL_NV_vertex_program4]</b> <b>[entry point: <c>glVertexAttribI4iEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_gpu_shader4.txt">EXT_gpu_shader4.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/EXT/NV_vertex_program4.txt">NV_vertex_program4.txt</see></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_gpu_shader4.txt">EXT_gpu_shader4.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_vertex_program4.txt">NV_vertex_program4.txt</see></remarks>
             public static void VertexAttribI4iEXT(uint index, int x, int y, int z, int w) => GLPointers.glVertexAttribI4iEXT_Lazy(index, x, y, z, w);
             
             /// <summary> <b>[requires: GL_EXT_gpu_shader4 | GL_NV_vertex_program4]</b> <b>[entry point: <c>glVertexAttribI4ivEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_gpu_shader4.txt">EXT_gpu_shader4.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/EXT/NV_vertex_program4.txt">NV_vertex_program4.txt</see></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_gpu_shader4.txt">EXT_gpu_shader4.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_vertex_program4.txt">NV_vertex_program4.txt</see></remarks>
             public static void VertexAttribI4ivEXT(uint index, int* v) => GLPointers.glVertexAttribI4ivEXT_Lazy(index, v);
             
             /// <summary> <b>[requires: GL_EXT_gpu_shader4 | GL_NV_vertex_program4]</b> <b>[entry point: <c>glVertexAttribI4svEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_gpu_shader4.txt">EXT_gpu_shader4.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/EXT/NV_vertex_program4.txt">NV_vertex_program4.txt</see></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_gpu_shader4.txt">EXT_gpu_shader4.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_vertex_program4.txt">NV_vertex_program4.txt</see></remarks>
             public static void VertexAttribI4svEXT(uint index, short* v) => GLPointers.glVertexAttribI4svEXT_Lazy(index, v);
             
             /// <summary> <b>[requires: GL_EXT_gpu_shader4 | GL_NV_vertex_program4]</b> <b>[entry point: <c>glVertexAttribI4ubvEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_gpu_shader4.txt">EXT_gpu_shader4.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/EXT/NV_vertex_program4.txt">NV_vertex_program4.txt</see></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_gpu_shader4.txt">EXT_gpu_shader4.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_vertex_program4.txt">NV_vertex_program4.txt</see></remarks>
             public static void VertexAttribI4ubvEXT(uint index, byte* v) => GLPointers.glVertexAttribI4ubvEXT_Lazy(index, v);
             
             /// <summary> <b>[requires: GL_EXT_gpu_shader4 | GL_NV_vertex_program4]</b> <b>[entry point: <c>glVertexAttribI4uiEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_gpu_shader4.txt">EXT_gpu_shader4.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/EXT/NV_vertex_program4.txt">NV_vertex_program4.txt</see></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_gpu_shader4.txt">EXT_gpu_shader4.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_vertex_program4.txt">NV_vertex_program4.txt</see></remarks>
             public static void VertexAttribI4uiEXT(uint index, uint x, uint y, uint z, uint w) => GLPointers.glVertexAttribI4uiEXT_Lazy(index, x, y, z, w);
             
             /// <summary> <b>[requires: GL_EXT_gpu_shader4 | GL_NV_vertex_program4]</b> <b>[entry point: <c>glVertexAttribI4uivEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_gpu_shader4.txt">EXT_gpu_shader4.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/EXT/NV_vertex_program4.txt">NV_vertex_program4.txt</see></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_gpu_shader4.txt">EXT_gpu_shader4.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_vertex_program4.txt">NV_vertex_program4.txt</see></remarks>
             public static void VertexAttribI4uivEXT(uint index, uint* v) => GLPointers.glVertexAttribI4uivEXT_Lazy(index, v);
             
             /// <summary> <b>[requires: GL_EXT_gpu_shader4 | GL_NV_vertex_program4]</b> <b>[entry point: <c>glVertexAttribI4usvEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_gpu_shader4.txt">EXT_gpu_shader4.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/EXT/NV_vertex_program4.txt">NV_vertex_program4.txt</see></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_gpu_shader4.txt">EXT_gpu_shader4.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_vertex_program4.txt">NV_vertex_program4.txt</see></remarks>
             public static void VertexAttribI4usvEXT(uint index, ushort* v) => GLPointers.glVertexAttribI4usvEXT_Lazy(index, v);
             
             /// <summary> <b>[requires: GL_EXT_gpu_shader4 | GL_NV_vertex_program4]</b> <b>[entry point: <c>glVertexAttribIPointerEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_gpu_shader4.txt">EXT_gpu_shader4.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/EXT/NV_vertex_program4.txt">NV_vertex_program4.txt</see></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_gpu_shader4.txt">EXT_gpu_shader4.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_vertex_program4.txt">NV_vertex_program4.txt</see></remarks>
             public static void VertexAttribIPointerEXT(uint index, int size, VertexAttribIType type, int stride, void* pointer) => GLPointers.glVertexAttribIPointerEXT_Lazy(index, size, (uint)type, stride, pointer);
             
             /// <summary> <b>[requires: GL_EXT_vertex_attrib_64bit]</b> <b>[entry point: <c>glVertexAttribL1dEXT</c>]</b><br/>  </summary>
@@ -12346,10 +12010,6 @@ namespace OpenTK.Graphics.OpenGL
             /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/glDebugMessageCallback.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/KHR/KHR_debug.txt">KHR_debug.txt</see></remarks>
             public static void DebugMessageCallback(IntPtr callback, void* userParam) => GLPointers.glDebugMessageCallback_Lazy(callback, userParam);
             
-            /// <summary> <b>[requires: GL_KHR_debug]</b> <b>[entry point: <c>glDebugMessageCallbackKHR</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/KHR/KHR_debug.txt">KHR_debug.txt</see></remarks>
-            public static void DebugMessageCallbackKHR(IntPtr callback, void* userParam) => GLPointers.glDebugMessageCallbackKHR_Lazy(callback, userParam);
-            
             /// <summary> <b>[requires: v4.3 | GL_KHR_debug]</b> <b>[entry point: <c>glDebugMessageControl</c>]</b><br/> Control the reporting of debug messages in a debug context. </summary>
             /// <param name="source"> The source of debug messages to enable or disable. </param>
             /// <param name="type"> The type of debug messages to enable or disable. </param>
@@ -12360,10 +12020,6 @@ namespace OpenTK.Graphics.OpenGL
             /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/glDebugMessageControl.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/KHR/KHR_debug.txt">KHR_debug.txt</see></remarks>
             public static void DebugMessageControl(DebugSource source, DebugType type, DebugSeverity severity, int count, uint* ids, bool enabled) => GLPointers.glDebugMessageControl_Lazy((uint)source, (uint)type, (uint)severity, count, ids, (byte)(enabled ? 1 : 0));
             
-            /// <summary> <b>[requires: GL_KHR_debug]</b> <b>[entry point: <c>glDebugMessageControlKHR</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/KHR/KHR_debug.txt">KHR_debug.txt</see></remarks>
-            public static void DebugMessageControlKHR(DebugSource source, DebugType type, DebugSeverity severity, int count, uint* ids, bool enabled) => GLPointers.glDebugMessageControlKHR_Lazy((uint)source, (uint)type, (uint)severity, count, ids, (byte)(enabled ? 1 : 0));
-            
             /// <summary> <b>[requires: v4.3 | GL_KHR_debug]</b> <b>[entry point: <c>glDebugMessageInsert</c>]</b><br/> Inject an application-supplied message into the debug message queue. </summary>
             /// <param name="source"> The source of the debug message to insert. </param>
             /// <param name="type"> The type of the debug message insert. </param>
@@ -12373,10 +12029,6 @@ namespace OpenTK.Graphics.OpenGL
             /// <param name="buf"> The address of a character array containing the message to insert. </param>
             /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/glDebugMessageInsert.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/KHR/KHR_debug.txt">KHR_debug.txt</see></remarks>
             public static void DebugMessageInsert(DebugSource source, DebugType type, uint id, DebugSeverity severity, int length, byte* buf) => GLPointers.glDebugMessageInsert_Lazy((uint)source, (uint)type, id, (uint)severity, length, buf);
-            
-            /// <summary> <b>[requires: GL_KHR_debug]</b> <b>[entry point: <c>glDebugMessageInsertKHR</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/KHR/KHR_debug.txt">KHR_debug.txt</see></remarks>
-            public static void DebugMessageInsertKHR(DebugSource source, DebugType type, uint id, DebugSeverity severity, int length, byte* buf) => GLPointers.glDebugMessageInsertKHR_Lazy((uint)source, (uint)type, id, (uint)severity, length, buf);
             
             /// <summary> <b>[requires: v4.3 | GL_KHR_debug]</b> <b>[entry point: <c>glGetDebugMessageLog</c>]</b><br/> Retrieve messages from the debug message log. </summary>
             /// <param name="count"> The number of debug messages to retrieve from the log. </param>
@@ -12390,17 +12042,9 @@ namespace OpenTK.Graphics.OpenGL
             /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/glGetDebugMessageLog.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/KHR/KHR_debug.txt">KHR_debug.txt</see></remarks>
             public static uint GetDebugMessageLog(uint count, int bufSize, DebugSource* sources, DebugType* types, uint* ids, DebugSeverity* severities, int* lengths, byte* messageLog) => GLPointers.glGetDebugMessageLog_Lazy(count, bufSize, (uint*)sources, (uint*)types, ids, (uint*)severities, lengths, messageLog);
             
-            /// <summary> <b>[requires: GL_KHR_debug]</b> <b>[entry point: <c>glGetDebugMessageLogKHR</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/KHR/KHR_debug.txt">KHR_debug.txt</see></remarks>
-            public static uint GetDebugMessageLogKHR(uint count, int bufSize, DebugSource* sources, DebugType* types, uint* ids, DebugSeverity* severities, int* lengths, byte* messageLog) => GLPointers.glGetDebugMessageLogKHR_Lazy(count, bufSize, (uint*)sources, (uint*)types, ids, (uint*)severities, lengths, messageLog);
-            
             /// <summary> <b>[requires: v4.5 | GL_KHR_robustness]</b> <b>[entry point: <c>glGetGraphicsResetStatus</c>]</b><br/> Check if the rendering context has not been lost due to software or hardware issues. </summary>
             /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/glGetGraphicsResetStatus.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/KHR/KHR_robustness.txt">KHR_robustness.txt</see></remarks>
             public static GraphicsResetStatus GetGraphicsResetStatus() => (GraphicsResetStatus) GLPointers.glGetGraphicsResetStatus_Lazy();
-            
-            /// <summary> <b>[requires: GL_KHR_robustness]</b> <b>[entry point: <c>glGetGraphicsResetStatusKHR</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/KHR/KHR_robustness.txt">KHR_robustness.txt</see></remarks>
-            public static GraphicsResetStatus GetGraphicsResetStatusKHR() => (GraphicsResetStatus) GLPointers.glGetGraphicsResetStatusKHR_Lazy();
             
             /// <summary> <b>[requires: v4.5 | GL_KHR_robustness]</b> <b>[entry point: <c>glGetnUniformfv</c>]</b><br/> Returns the value of a uniform variable. </summary>
             /// <param name="program">Specifies the program object to be queried.</param>
@@ -12410,10 +12054,6 @@ namespace OpenTK.Graphics.OpenGL
             /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/glGetUniform.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/KHR/KHR_robustness.txt">KHR_robustness.txt</see></remarks>
             public static void GetnUniformfv(int program, int location, int bufSize, float* @params) => GLPointers.glGetnUniformfv_Lazy(program, location, bufSize, @params);
             
-            /// <summary> <b>[requires: GL_KHR_robustness]</b> <b>[entry point: <c>glGetnUniformfvKHR</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/KHR/KHR_robustness.txt">KHR_robustness.txt</see></remarks>
-            public static void GetnUniformfvKHR(int program, int location, int bufSize, float* @params) => GLPointers.glGetnUniformfvKHR_Lazy(program, location, bufSize, @params);
-            
             /// <summary> <b>[requires: v4.5 | GL_KHR_robustness]</b> <b>[entry point: <c>glGetnUniformiv</c>]</b><br/> Returns the value of a uniform variable. </summary>
             /// <param name="program">Specifies the program object to be queried.</param>
             /// <param name="location">Specifies the location of the uniform variable to be queried.</param>
@@ -12422,10 +12062,6 @@ namespace OpenTK.Graphics.OpenGL
             /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/glGetUniform.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/KHR/KHR_robustness.txt">KHR_robustness.txt</see></remarks>
             public static void GetnUniformiv(int program, int location, int bufSize, int* @params) => GLPointers.glGetnUniformiv_Lazy(program, location, bufSize, @params);
             
-            /// <summary> <b>[requires: GL_KHR_robustness]</b> <b>[entry point: <c>glGetnUniformivKHR</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/KHR/KHR_robustness.txt">KHR_robustness.txt</see></remarks>
-            public static void GetnUniformivKHR(int program, int location, int bufSize, int* @params) => GLPointers.glGetnUniformivKHR_Lazy(program, location, bufSize, @params);
-            
             /// <summary> <b>[requires: v4.5 | GL_KHR_robustness]</b> <b>[entry point: <c>glGetnUniformuiv</c>]</b><br/> Returns the value of a uniform variable. </summary>
             /// <param name="program">Specifies the program object to be queried.</param>
             /// <param name="location">Specifies the location of the uniform variable to be queried.</param>
@@ -12433,10 +12069,6 @@ namespace OpenTK.Graphics.OpenGL
             /// <param name="params">Returns the value of the specified uniform variable.</param>
             /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/glGetUniform.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/KHR/KHR_robustness.txt">KHR_robustness.txt</see></remarks>
             public static void GetnUniformuiv(int program, int location, int bufSize, uint* @params) => GLPointers.glGetnUniformuiv_Lazy(program, location, bufSize, @params);
-            
-            /// <summary> <b>[requires: GL_KHR_robustness]</b> <b>[entry point: <c>glGetnUniformuivKHR</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/KHR/KHR_robustness.txt">KHR_robustness.txt</see></remarks>
-            public static void GetnUniformuivKHR(int program, int location, int bufSize, uint* @params) => GLPointers.glGetnUniformuivKHR_Lazy(program, location, bufSize, @params);
             
             /// <summary> <b>[requires: v4.3 | GL_KHR_debug]</b> <b>[entry point: <c>glGetObjectLabel</c>]</b><br/> Retrieve the label of a named object identified within a namespace. </summary>
             /// <param name="identifier"> The namespace from which the name of the object is allocated. </param>
@@ -12447,10 +12079,6 @@ namespace OpenTK.Graphics.OpenGL
             /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/glGetObjectLabel.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/KHR/KHR_debug.txt">KHR_debug.txt</see></remarks>
             public static void GetObjectLabel(ObjectIdentifier identifier, uint name, int bufSize, int* length, byte* label) => GLPointers.glGetObjectLabel_Lazy((uint)identifier, name, bufSize, length, label);
             
-            /// <summary> <b>[requires: GL_KHR_debug]</b> <b>[entry point: <c>glGetObjectLabelKHR</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/KHR/KHR_debug.txt">KHR_debug.txt</see></remarks>
-            public static void GetObjectLabelKHR(All identifier, uint name, int bufSize, int* length, byte* label) => GLPointers.glGetObjectLabelKHR_Lazy((uint)identifier, name, bufSize, length, label);
-            
             /// <summary> <b>[requires: v4.3 | GL_KHR_debug]</b> <b>[entry point: <c>glGetObjectPtrLabel</c>]</b><br/> Retrieve the label of a sync object identified by a pointer. </summary>
             /// <param name="ptr"> The name of the sync object whose label to retrieve. </param>
             /// <param name="bufSize"> The length of the buffer whose address is in label. </param>
@@ -12459,10 +12087,6 @@ namespace OpenTK.Graphics.OpenGL
             /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/glGetObjectPtrLabel.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/KHR/KHR_debug.txt">KHR_debug.txt</see></remarks>
             public static void GetObjectPtrLabel(void* ptr, int bufSize, int* length, byte* label) => GLPointers.glGetObjectPtrLabel_Lazy(ptr, bufSize, length, label);
             
-            /// <summary> <b>[requires: GL_KHR_debug]</b> <b>[entry point: <c>glGetObjectPtrLabelKHR</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/KHR/KHR_debug.txt">KHR_debug.txt</see></remarks>
-            public static void GetObjectPtrLabelKHR(void* ptr, int bufSize, int* length, byte* label) => GLPointers.glGetObjectPtrLabelKHR_Lazy(ptr, bufSize, length, label);
-            
             /// <summary> <b>[requires: v1.1 | GL_KHR_debug]</b> 
             /// <br/><b>[removed in: v3.2]</b> <br/>
             /// <b>[entry point: <c>glGetPointerv</c>]</b><br/> Return the address of the specified pointer. </summary>
@@ -12470,10 +12094,6 @@ namespace OpenTK.Graphics.OpenGL
             /// <param name="params"> Returns the pointer value specified by pname. </param>
             /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/glGetPointerv.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/KHR/KHR_debug.txt">KHR_debug.txt</see></remarks>
             public static void GetPointerv(GetPointervPName pname, void** @params) => GLPointers.glGetPointerv_Lazy((uint)pname, @params);
-            
-            /// <summary> <b>[requires: GL_KHR_debug]</b> <b>[entry point: <c>glGetPointervKHR</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/KHR/KHR_debug.txt">KHR_debug.txt</see></remarks>
-            public static void GetPointervKHR(All pname, void** @params) => GLPointers.glGetPointervKHR_Lazy((uint)pname, @params);
             
             /// <summary> <b>[requires: GL_KHR_parallel_shader_compile]</b> <b>[entry point: <c>glMaxShaderCompilerThreadsKHR</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/KHR/KHR_parallel_shader_compile.txt">KHR_parallel_shader_compile.txt</see></remarks>
@@ -12487,10 +12107,6 @@ namespace OpenTK.Graphics.OpenGL
             /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/glObjectLabel.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/KHR/KHR_debug.txt">KHR_debug.txt</see></remarks>
             public static void ObjectLabel(ObjectIdentifier identifier, int name, int length, byte* label) => GLPointers.glObjectLabel_Lazy((uint)identifier, name, length, label);
             
-            /// <summary> <b>[requires: GL_KHR_debug]</b> <b>[entry point: <c>glObjectLabelKHR</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/KHR/KHR_debug.txt">KHR_debug.txt</see></remarks>
-            public static void ObjectLabelKHR(ObjectIdentifier identifier, int name, int length, byte* label) => GLPointers.glObjectLabelKHR_Lazy((uint)identifier, name, length, label);
-            
             /// <summary> <b>[requires: v4.3 | GL_KHR_debug]</b> <b>[entry point: <c>glObjectPtrLabel</c>]</b><br/> Label a sync object identified by a pointer. </summary>
             /// <param name="ptr"> A pointer identifying a sync object. </param>
             /// <param name="length"> The length of the label to be used for the object. </param>
@@ -12498,17 +12114,9 @@ namespace OpenTK.Graphics.OpenGL
             /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/glObjectPtrLabel.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/KHR/KHR_debug.txt">KHR_debug.txt</see></remarks>
             public static void ObjectPtrLabel(void* ptr, int length, byte* label) => GLPointers.glObjectPtrLabel_Lazy(ptr, length, label);
             
-            /// <summary> <b>[requires: GL_KHR_debug]</b> <b>[entry point: <c>glObjectPtrLabelKHR</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/KHR/KHR_debug.txt">KHR_debug.txt</see></remarks>
-            public static void ObjectPtrLabelKHR(void* ptr, int length, byte* label) => GLPointers.glObjectPtrLabelKHR_Lazy(ptr, length, label);
-            
             /// <summary> <b>[requires: v4.3 | GL_KHR_debug]</b> <b>[entry point: <c>glPopDebugGroup</c>]</b><br/> Pop the active debug group. </summary>
             /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/glPopDebugGroup.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/KHR/KHR_debug.txt">KHR_debug.txt</see></remarks>
             public static void PopDebugGroup() => GLPointers.glPopDebugGroup_Lazy();
-            
-            /// <summary> <b>[requires: GL_KHR_debug]</b> <b>[entry point: <c>glPopDebugGroupKHR</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/KHR/KHR_debug.txt">KHR_debug.txt</see></remarks>
-            public static void PopDebugGroupKHR() => GLPointers.glPopDebugGroupKHR_Lazy();
             
             /// <summary> <b>[requires: v4.3 | GL_KHR_debug]</b> <b>[entry point: <c>glPushDebugGroup</c>]</b><br/> Push a named debug group into the command stream. </summary>
             /// <param name="source"> The source of the debug message. </param>
@@ -12517,10 +12125,6 @@ namespace OpenTK.Graphics.OpenGL
             /// <param name="message"> The a string containing the message to be sent to the debug output stream. </param>
             /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/glPushDebugGroup.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/KHR/KHR_debug.txt">KHR_debug.txt</see></remarks>
             public static void PushDebugGroup(DebugSource source, uint id, int length, byte* message) => GLPointers.glPushDebugGroup_Lazy((uint)source, id, length, message);
-            
-            /// <summary> <b>[requires: GL_KHR_debug]</b> <b>[entry point: <c>glPushDebugGroupKHR</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/KHR/KHR_debug.txt">KHR_debug.txt</see></remarks>
-            public static void PushDebugGroupKHR(DebugSource source, uint id, int length, byte* message) => GLPointers.glPushDebugGroupKHR_Lazy((uint)source, id, length, message);
             
             /// <summary> <b>[requires: v4.5 | GL_KHR_robustness]</b> <b>[entry point: <c>glReadnPixels</c>]</b><br/> Read a block of pixels from the frame buffer. </summary>
             /// <param name="x">Specify the window coordinates of the first pixel that is read from the frame buffer. This location is the lower left corner of a rectangular block of pixels.</param>
@@ -12533,10 +12137,6 @@ namespace OpenTK.Graphics.OpenGL
             /// <param name="data">Returns the pixel data.</param>
             /// <remarks><see href="https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/glReadPixels.xhtml"/><br/><see href="https://registry.khronos.org/OpenGL/extensions/KHR/KHR_robustness.txt">KHR_robustness.txt</see></remarks>
             public static void ReadnPixels(int x, int y, int width, int height, PixelFormat format, PixelType type, int bufSize, void* data) => GLPointers.glReadnPixels_Lazy(x, y, width, height, (uint)format, (uint)type, bufSize, data);
-            
-            /// <summary> <b>[requires: GL_KHR_robustness]</b> <b>[entry point: <c>glReadnPixelsKHR</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/KHR/KHR_robustness.txt">KHR_robustness.txt</see></remarks>
-            public static void ReadnPixelsKHR(int x, int y, int width, int height, PixelFormat format, PixelType type, int bufSize, void* data) => GLPointers.glReadnPixelsKHR_Lazy(x, y, width, height, (uint)format, (uint)type, bufSize, data);
             
         }
         /// <summary>MESA extensions.</summary>
@@ -12999,7 +12599,7 @@ namespace OpenTK.Graphics.OpenGL
             public static void FramebufferTextureFaceEXT(FramebufferTarget target, FramebufferAttachment attachment, int texture, int level, TextureTarget face) => GLPointers.glFramebufferTextureFaceEXT_Lazy((uint)target, (uint)attachment, texture, level, (uint)face);
             
             /// <summary> <b>[requires: GL_EXT_texture_array | GL_NV_geometry_program4]</b> <b>[entry point: <c>glFramebufferTextureLayerEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_texture_array.txt">EXT_texture_array.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/EXT/NV_geometry_program4.txt">NV_geometry_program4.txt</see></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_texture_array.txt">EXT_texture_array.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_geometry_program4.txt">NV_geometry_program4.txt</see></remarks>
             public static void FramebufferTextureLayerEXT(FramebufferTarget target, FramebufferAttachment attachment, int texture, int level, int layer) => GLPointers.glFramebufferTextureLayerEXT_Lazy((uint)target, (uint)attachment, texture, level, layer);
             
             /// <summary> <b>[requires: GL_NV_fence]</b> <b>[entry point: <c>glGenFencesNV</c>]</b><br/>  </summary>
@@ -13130,14 +12730,6 @@ namespace OpenTK.Graphics.OpenGL
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_occlusion_query.txt">NV_occlusion_query.txt</see></remarks>
             public static void GetOcclusionQueryuivNV(uint id, OcclusionQueryParameterNameNV pname, uint* @params) => GLPointers.glGetOcclusionQueryuivNV_Lazy(id, (uint)pname, @params);
             
-            /// <summary> <b>[requires: GL_NV_path_rendering]</b> <b>[entry point: <c>glGetPathColorGenfvNV</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_path_rendering.txt">NV_path_rendering.txt</see></remarks>
-            public static void GetPathColorGenfvNV(PathColor color, PathGenMode pname, float* value) => GLPointers.glGetPathColorGenfvNV_Lazy((uint)color, (uint)pname, value);
-            
-            /// <summary> <b>[requires: GL_NV_path_rendering]</b> <b>[entry point: <c>glGetPathColorGenivNV</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_path_rendering.txt">NV_path_rendering.txt</see></remarks>
-            public static void GetPathColorGenivNV(PathColor color, PathGenMode pname, int* value) => GLPointers.glGetPathColorGenivNV_Lazy((uint)color, (uint)pname, value);
-            
             /// <summary> <b>[requires: GL_NV_path_rendering]</b> <b>[entry point: <c>glGetPathCommandsNV</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_path_rendering.txt">NV_path_rendering.txt</see></remarks>
             public static void GetPathCommandsNV(uint path, byte* commands) => GLPointers.glGetPathCommandsNV_Lazy(path, commands);
@@ -13173,14 +12765,6 @@ namespace OpenTK.Graphics.OpenGL
             /// <summary> <b>[requires: GL_NV_path_rendering]</b> <b>[entry point: <c>glGetPathSpacingNV</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_path_rendering.txt">NV_path_rendering.txt</see></remarks>
             public static void GetPathSpacingNV(PathListMode pathListMode, int numPaths, PathElementType pathNameType, void* paths, uint pathBase, float advanceScale, float kerningScale, PathTransformType transformType, float* returnedSpacing) => GLPointers.glGetPathSpacingNV_Lazy((uint)pathListMode, numPaths, (uint)pathNameType, paths, pathBase, advanceScale, kerningScale, (uint)transformType, returnedSpacing);
-            
-            /// <summary> <b>[requires: GL_NV_path_rendering]</b> <b>[entry point: <c>glGetPathTexGenfvNV</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_path_rendering.txt">NV_path_rendering.txt</see></remarks>
-            public static void GetPathTexGenfvNV(TextureUnit texCoordSet, PathGenMode pname, float* value) => GLPointers.glGetPathTexGenfvNV_Lazy((uint)texCoordSet, (uint)pname, value);
-            
-            /// <summary> <b>[requires: GL_NV_path_rendering]</b> <b>[entry point: <c>glGetPathTexGenivNV</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_path_rendering.txt">NV_path_rendering.txt</see></remarks>
-            public static void GetPathTexGenivNV(TextureUnit texCoordSet, PathGenMode pname, int* value) => GLPointers.glGetPathTexGenivNV_Lazy((uint)texCoordSet, (uint)pname, value);
             
             /// <summary> <b>[requires: GL_NV_gpu_program4]</b> <b>[entry point: <c>glGetProgramEnvParameterIivNV</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_gpu_program4.txt">NV_gpu_program4.txt</see></remarks>
@@ -13263,11 +12847,11 @@ namespace OpenTK.Graphics.OpenGL
             public static void GetTransformFeedbackVaryingNV(int program, uint index, int* location) => GLPointers.glGetTransformFeedbackVaryingNV_Lazy(program, index, location);
             
             /// <summary> <b>[requires: GL_AMD_gpu_shader_int64 | GL_NV_gpu_shader5]</b> <b>[entry point: <c>glGetUniformi64vNV</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/AMD_gpu_shader_int64.txt">AMD_gpu_shader_int64.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_gpu_shader5.txt">NV_gpu_shader5.txt</see></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/AMD/AMD_gpu_shader_int64.txt">AMD_gpu_shader_int64.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_gpu_shader5.txt">NV_gpu_shader5.txt</see></remarks>
             public static void GetUniformi64vNV(int program, int location, long* @params) => GLPointers.glGetUniformi64vNV_Lazy(program, location, @params);
             
             /// <summary> <b>[requires: GL_AMD_gpu_shader_int64 | GL_NV_shader_buffer_load]</b> <b>[entry point: <c>glGetUniformui64vNV</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/AMD_gpu_shader_int64.txt">AMD_gpu_shader_int64.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_shader_buffer_load.txt">NV_shader_buffer_load.txt</see></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/AMD/AMD_gpu_shader_int64.txt">AMD_gpu_shader_int64.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_shader_buffer_load.txt">NV_shader_buffer_load.txt</see></remarks>
             public static void GetUniformui64vNV(int program, int location, ulong* @params) => GLPointers.glGetUniformui64vNV_Lazy(program, location, @params);
             
             /// <summary> <b>[requires: GL_NV_transform_feedback]</b> <b>[entry point: <c>glGetVaryingLocationNV</c>]</b><br/>  </summary>
@@ -13283,11 +12867,11 @@ namespace OpenTK.Graphics.OpenGL
             public static void GetVertexAttribfvNV(uint index, VertexAttribEnumNV pname, float* @params) => GLPointers.glGetVertexAttribfvNV_Lazy(index, (uint)pname, @params);
             
             /// <summary> <b>[requires: GL_EXT_gpu_shader4 | GL_NV_vertex_program4]</b> <b>[entry point: <c>glGetVertexAttribIivEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_gpu_shader4.txt">EXT_gpu_shader4.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/EXT/NV_vertex_program4.txt">NV_vertex_program4.txt</see></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_gpu_shader4.txt">EXT_gpu_shader4.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_vertex_program4.txt">NV_vertex_program4.txt</see></remarks>
             public static void GetVertexAttribIivEXT(uint index, VertexAttribEnum pname, int* @params) => GLPointers.glGetVertexAttribIivEXT_Lazy(index, (uint)pname, @params);
             
             /// <summary> <b>[requires: GL_EXT_gpu_shader4 | GL_NV_vertex_program4]</b> <b>[entry point: <c>glGetVertexAttribIuivEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_gpu_shader4.txt">EXT_gpu_shader4.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/EXT/NV_vertex_program4.txt">NV_vertex_program4.txt</see></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_gpu_shader4.txt">EXT_gpu_shader4.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_vertex_program4.txt">NV_vertex_program4.txt</see></remarks>
             public static void GetVertexAttribIuivEXT(uint index, VertexAttribEnum pname, uint* @params) => GLPointers.glGetVertexAttribIuivEXT_Lazy(index, (uint)pname, @params);
             
             /// <summary> <b>[requires: GL_NV_vertex_program]</b> <b>[entry point: <c>glGetVertexAttribivNV</c>]</b><br/>  </summary>
@@ -13455,7 +13039,7 @@ namespace OpenTK.Graphics.OpenGL
             public static void MapParameterivNV(EvalTargetNV target, MapParameterNV pname, int* @params) => GLPointers.glMapParameterivNV_Lazy((uint)target, (uint)pname, @params);
             
             /// <summary> <b>[requires: GL_EXT_direct_state_access | GL_NV_path_rendering]</b> <b>[entry point: <c>glMatrixFrustumEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_direct_state_access.txt">EXT_direct_state_access.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/EXT/NV_path_rendering.txt">NV_path_rendering.txt</see></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_direct_state_access.txt">EXT_direct_state_access.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_path_rendering.txt">NV_path_rendering.txt</see></remarks>
             public static void MatrixFrustumEXT(MatrixMode mode, double left, double right, double bottom, double top, double zNear, double zFar) => GLPointers.glMatrixFrustumEXT_Lazy((uint)mode, left, right, bottom, top, zNear, zFar);
             
             /// <summary> <b>[requires: GL_NV_path_rendering]</b> <b>[entry point: <c>glMatrixLoad3x2fNV</c>]</b><br/>  </summary>
@@ -13467,15 +13051,15 @@ namespace OpenTK.Graphics.OpenGL
             public static void MatrixLoad3x3fNV(All matrixMode, float* m) => GLPointers.glMatrixLoad3x3fNV_Lazy((uint)matrixMode, m);
             
             /// <summary> <b>[requires: GL_EXT_direct_state_access | GL_NV_path_rendering]</b> <b>[entry point: <c>glMatrixLoaddEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_direct_state_access.txt">EXT_direct_state_access.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/EXT/NV_path_rendering.txt">NV_path_rendering.txt</see></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_direct_state_access.txt">EXT_direct_state_access.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_path_rendering.txt">NV_path_rendering.txt</see></remarks>
             public static void MatrixLoaddEXT(MatrixMode mode, double* m) => GLPointers.glMatrixLoaddEXT_Lazy((uint)mode, m);
             
             /// <summary> <b>[requires: GL_EXT_direct_state_access | GL_NV_path_rendering]</b> <b>[entry point: <c>glMatrixLoadfEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_direct_state_access.txt">EXT_direct_state_access.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/EXT/NV_path_rendering.txt">NV_path_rendering.txt</see></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_direct_state_access.txt">EXT_direct_state_access.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_path_rendering.txt">NV_path_rendering.txt</see></remarks>
             public static void MatrixLoadfEXT(MatrixMode mode, float* m) => GLPointers.glMatrixLoadfEXT_Lazy((uint)mode, m);
             
             /// <summary> <b>[requires: GL_EXT_direct_state_access | GL_NV_path_rendering]</b> <b>[entry point: <c>glMatrixLoadIdentityEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_direct_state_access.txt">EXT_direct_state_access.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/EXT/NV_path_rendering.txt">NV_path_rendering.txt</see></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_direct_state_access.txt">EXT_direct_state_access.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_path_rendering.txt">NV_path_rendering.txt</see></remarks>
             public static void MatrixLoadIdentityEXT(MatrixMode mode) => GLPointers.glMatrixLoadIdentityEXT_Lazy((uint)mode);
             
             /// <summary> <b>[requires: GL_NV_path_rendering]</b> <b>[entry point: <c>glMatrixLoadTranspose3x3fNV</c>]</b><br/>  </summary>
@@ -13483,11 +13067,11 @@ namespace OpenTK.Graphics.OpenGL
             public static void MatrixLoadTranspose3x3fNV(All matrixMode, float* m) => GLPointers.glMatrixLoadTranspose3x3fNV_Lazy((uint)matrixMode, m);
             
             /// <summary> <b>[requires: GL_EXT_direct_state_access | GL_NV_path_rendering]</b> <b>[entry point: <c>glMatrixLoadTransposedEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_direct_state_access.txt">EXT_direct_state_access.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/EXT/NV_path_rendering.txt">NV_path_rendering.txt</see></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_direct_state_access.txt">EXT_direct_state_access.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_path_rendering.txt">NV_path_rendering.txt</see></remarks>
             public static void MatrixLoadTransposedEXT(MatrixMode mode, double* m) => GLPointers.glMatrixLoadTransposedEXT_Lazy((uint)mode, m);
             
             /// <summary> <b>[requires: GL_EXT_direct_state_access | GL_NV_path_rendering]</b> <b>[entry point: <c>glMatrixLoadTransposefEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_direct_state_access.txt">EXT_direct_state_access.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/EXT/NV_path_rendering.txt">NV_path_rendering.txt</see></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_direct_state_access.txt">EXT_direct_state_access.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_path_rendering.txt">NV_path_rendering.txt</see></remarks>
             public static void MatrixLoadTransposefEXT(MatrixMode mode, float* m) => GLPointers.glMatrixLoadTransposefEXT_Lazy((uint)mode, m);
             
             /// <summary> <b>[requires: GL_NV_path_rendering]</b> <b>[entry point: <c>glMatrixMult3x2fNV</c>]</b><br/>  </summary>
@@ -13499,11 +13083,11 @@ namespace OpenTK.Graphics.OpenGL
             public static void MatrixMult3x3fNV(All matrixMode, float* m) => GLPointers.glMatrixMult3x3fNV_Lazy((uint)matrixMode, m);
             
             /// <summary> <b>[requires: GL_EXT_direct_state_access | GL_NV_path_rendering]</b> <b>[entry point: <c>glMatrixMultdEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_direct_state_access.txt">EXT_direct_state_access.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/EXT/NV_path_rendering.txt">NV_path_rendering.txt</see></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_direct_state_access.txt">EXT_direct_state_access.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_path_rendering.txt">NV_path_rendering.txt</see></remarks>
             public static void MatrixMultdEXT(MatrixMode mode, double* m) => GLPointers.glMatrixMultdEXT_Lazy((uint)mode, m);
             
             /// <summary> <b>[requires: GL_EXT_direct_state_access | GL_NV_path_rendering]</b> <b>[entry point: <c>glMatrixMultfEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_direct_state_access.txt">EXT_direct_state_access.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/EXT/NV_path_rendering.txt">NV_path_rendering.txt</see></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_direct_state_access.txt">EXT_direct_state_access.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_path_rendering.txt">NV_path_rendering.txt</see></remarks>
             public static void MatrixMultfEXT(MatrixMode mode, float* m) => GLPointers.glMatrixMultfEXT_Lazy((uint)mode, m);
             
             /// <summary> <b>[requires: GL_NV_path_rendering]</b> <b>[entry point: <c>glMatrixMultTranspose3x3fNV</c>]</b><br/>  </summary>
@@ -13511,47 +13095,47 @@ namespace OpenTK.Graphics.OpenGL
             public static void MatrixMultTranspose3x3fNV(All matrixMode, float* m) => GLPointers.glMatrixMultTranspose3x3fNV_Lazy((uint)matrixMode, m);
             
             /// <summary> <b>[requires: GL_EXT_direct_state_access | GL_NV_path_rendering]</b> <b>[entry point: <c>glMatrixMultTransposedEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_direct_state_access.txt">EXT_direct_state_access.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/EXT/NV_path_rendering.txt">NV_path_rendering.txt</see></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_direct_state_access.txt">EXT_direct_state_access.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_path_rendering.txt">NV_path_rendering.txt</see></remarks>
             public static void MatrixMultTransposedEXT(MatrixMode mode, double* m) => GLPointers.glMatrixMultTransposedEXT_Lazy((uint)mode, m);
             
             /// <summary> <b>[requires: GL_EXT_direct_state_access | GL_NV_path_rendering]</b> <b>[entry point: <c>glMatrixMultTransposefEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_direct_state_access.txt">EXT_direct_state_access.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/EXT/NV_path_rendering.txt">NV_path_rendering.txt</see></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_direct_state_access.txt">EXT_direct_state_access.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_path_rendering.txt">NV_path_rendering.txt</see></remarks>
             public static void MatrixMultTransposefEXT(MatrixMode mode, float* m) => GLPointers.glMatrixMultTransposefEXT_Lazy((uint)mode, m);
             
             /// <summary> <b>[requires: GL_EXT_direct_state_access | GL_NV_path_rendering]</b> <b>[entry point: <c>glMatrixOrthoEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_direct_state_access.txt">EXT_direct_state_access.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/EXT/NV_path_rendering.txt">NV_path_rendering.txt</see></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_direct_state_access.txt">EXT_direct_state_access.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_path_rendering.txt">NV_path_rendering.txt</see></remarks>
             public static void MatrixOrthoEXT(MatrixMode mode, double left, double right, double bottom, double top, double zNear, double zFar) => GLPointers.glMatrixOrthoEXT_Lazy((uint)mode, left, right, bottom, top, zNear, zFar);
             
             /// <summary> <b>[requires: GL_EXT_direct_state_access | GL_NV_path_rendering]</b> <b>[entry point: <c>glMatrixPopEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_direct_state_access.txt">EXT_direct_state_access.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/EXT/NV_path_rendering.txt">NV_path_rendering.txt</see></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_direct_state_access.txt">EXT_direct_state_access.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_path_rendering.txt">NV_path_rendering.txt</see></remarks>
             public static void MatrixPopEXT(MatrixMode mode) => GLPointers.glMatrixPopEXT_Lazy((uint)mode);
             
             /// <summary> <b>[requires: GL_EXT_direct_state_access | GL_NV_path_rendering]</b> <b>[entry point: <c>glMatrixPushEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_direct_state_access.txt">EXT_direct_state_access.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/EXT/NV_path_rendering.txt">NV_path_rendering.txt</see></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_direct_state_access.txt">EXT_direct_state_access.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_path_rendering.txt">NV_path_rendering.txt</see></remarks>
             public static void MatrixPushEXT(MatrixMode mode) => GLPointers.glMatrixPushEXT_Lazy((uint)mode);
             
             /// <summary> <b>[requires: GL_EXT_direct_state_access | GL_NV_path_rendering]</b> <b>[entry point: <c>glMatrixRotatedEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_direct_state_access.txt">EXT_direct_state_access.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/EXT/NV_path_rendering.txt">NV_path_rendering.txt</see></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_direct_state_access.txt">EXT_direct_state_access.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_path_rendering.txt">NV_path_rendering.txt</see></remarks>
             public static void MatrixRotatedEXT(MatrixMode mode, double angle, double x, double y, double z) => GLPointers.glMatrixRotatedEXT_Lazy((uint)mode, angle, x, y, z);
             
             /// <summary> <b>[requires: GL_EXT_direct_state_access | GL_NV_path_rendering]</b> <b>[entry point: <c>glMatrixRotatefEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_direct_state_access.txt">EXT_direct_state_access.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/EXT/NV_path_rendering.txt">NV_path_rendering.txt</see></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_direct_state_access.txt">EXT_direct_state_access.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_path_rendering.txt">NV_path_rendering.txt</see></remarks>
             public static void MatrixRotatefEXT(MatrixMode mode, float angle, float x, float y, float z) => GLPointers.glMatrixRotatefEXT_Lazy((uint)mode, angle, x, y, z);
             
             /// <summary> <b>[requires: GL_EXT_direct_state_access | GL_NV_path_rendering]</b> <b>[entry point: <c>glMatrixScaledEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_direct_state_access.txt">EXT_direct_state_access.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/EXT/NV_path_rendering.txt">NV_path_rendering.txt</see></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_direct_state_access.txt">EXT_direct_state_access.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_path_rendering.txt">NV_path_rendering.txt</see></remarks>
             public static void MatrixScaledEXT(MatrixMode mode, double x, double y, double z) => GLPointers.glMatrixScaledEXT_Lazy((uint)mode, x, y, z);
             
             /// <summary> <b>[requires: GL_EXT_direct_state_access | GL_NV_path_rendering]</b> <b>[entry point: <c>glMatrixScalefEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_direct_state_access.txt">EXT_direct_state_access.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/EXT/NV_path_rendering.txt">NV_path_rendering.txt</see></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_direct_state_access.txt">EXT_direct_state_access.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_path_rendering.txt">NV_path_rendering.txt</see></remarks>
             public static void MatrixScalefEXT(MatrixMode mode, float x, float y, float z) => GLPointers.glMatrixScalefEXT_Lazy((uint)mode, x, y, z);
             
             /// <summary> <b>[requires: GL_EXT_direct_state_access | GL_NV_path_rendering]</b> <b>[entry point: <c>glMatrixTranslatedEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_direct_state_access.txt">EXT_direct_state_access.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/EXT/NV_path_rendering.txt">NV_path_rendering.txt</see></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_direct_state_access.txt">EXT_direct_state_access.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_path_rendering.txt">NV_path_rendering.txt</see></remarks>
             public static void MatrixTranslatedEXT(MatrixMode mode, double x, double y, double z) => GLPointers.glMatrixTranslatedEXT_Lazy((uint)mode, x, y, z);
             
             /// <summary> <b>[requires: GL_EXT_direct_state_access | GL_NV_path_rendering]</b> <b>[entry point: <c>glMatrixTranslatefEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_direct_state_access.txt">EXT_direct_state_access.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/EXT/NV_path_rendering.txt">NV_path_rendering.txt</see></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_direct_state_access.txt">EXT_direct_state_access.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_path_rendering.txt">NV_path_rendering.txt</see></remarks>
             public static void MatrixTranslatefEXT(MatrixMode mode, float x, float y, float z) => GLPointers.glMatrixTranslatefEXT_Lazy((uint)mode, x, y, z);
             
             /// <summary> <b>[requires: GL_NV_gpu_multicast]</b> <b>[entry point: <c>glMulticastBarrierNV</c>]</b><br/>  </summary>
@@ -13678,10 +13262,6 @@ namespace OpenTK.Graphics.OpenGL
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_vertex_buffer_unified_memory.txt">NV_vertex_buffer_unified_memory.txt</see></remarks>
             public static void NormalFormatNV(All type, int stride) => GLPointers.glNormalFormatNV_Lazy((uint)type, stride);
             
-            /// <summary> <b>[requires: GL_NV_path_rendering]</b> <b>[entry point: <c>glPathColorGenNV</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_path_rendering.txt">NV_path_rendering.txt</see></remarks>
-            public static void PathColorGenNV(PathColor color, PathGenMode genMode, PathColorFormat colorFormat, float* coeffs) => GLPointers.glPathColorGenNV_Lazy((uint)color, (uint)genMode, (uint)colorFormat, coeffs);
-            
             /// <summary> <b>[requires: GL_NV_path_rendering]</b> <b>[entry point: <c>glPathCommandsNV</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_path_rendering.txt">NV_path_rendering.txt</see></remarks>
             public static void PathCommandsNV(uint path, int numCommands, byte* commands, int numCoords, PathCoordType coordType, void* coords) => GLPointers.glPathCommandsNV_Lazy(path, numCommands, commands, numCoords, (uint)coordType, coords);
@@ -13697,10 +13277,6 @@ namespace OpenTK.Graphics.OpenGL
             /// <summary> <b>[requires: GL_NV_path_rendering]</b> <b>[entry point: <c>glPathDashArrayNV</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_path_rendering.txt">NV_path_rendering.txt</see></remarks>
             public static void PathDashArrayNV(uint path, int dashCount, float* dashArray) => GLPointers.glPathDashArrayNV_Lazy(path, dashCount, dashArray);
-            
-            /// <summary> <b>[requires: GL_NV_path_rendering]</b> <b>[entry point: <c>glPathFogGenNV</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_path_rendering.txt">NV_path_rendering.txt</see></remarks>
-            public static void PathFogGenNV(PathGenMode genMode) => GLPointers.glPathFogGenNV_Lazy((uint)genMode);
             
             /// <summary> <b>[requires: GL_NV_path_rendering]</b> <b>[entry point: <c>glPathGlyphIndexArrayNV</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_path_rendering.txt">NV_path_rendering.txt</see></remarks>
@@ -13757,10 +13333,6 @@ namespace OpenTK.Graphics.OpenGL
             /// <summary> <b>[requires: GL_NV_path_rendering]</b> <b>[entry point: <c>glPathSubCoordsNV</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_path_rendering.txt">NV_path_rendering.txt</see></remarks>
             public static void PathSubCoordsNV(uint path, int coordStart, int numCoords, PathCoordType coordType, void* coords) => GLPointers.glPathSubCoordsNV_Lazy(path, coordStart, numCoords, (uint)coordType, coords);
-            
-            /// <summary> <b>[requires: GL_NV_path_rendering]</b> <b>[entry point: <c>glPathTexGenNV</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_path_rendering.txt">NV_path_rendering.txt</see></remarks>
-            public static void PathTexGenNV(PathColor texCoordSet, PathGenMode genMode, int components, float* coeffs) => GLPointers.glPathTexGenNV_Lazy((uint)texCoordSet, (uint)genMode, components, coeffs);
             
             /// <summary> <b>[requires: GL_NV_transform_feedback2]</b> <b>[entry point: <c>glPauseTransformFeedbackNV</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_transform_feedback2.txt">NV_transform_feedback2.txt</see></remarks>
@@ -13907,67 +13479,67 @@ namespace OpenTK.Graphics.OpenGL
             public static void ProgramSubroutineParametersuivNV(All target, int count, uint* @params) => GLPointers.glProgramSubroutineParametersuivNV_Lazy((uint)target, count, @params);
             
             /// <summary> <b>[requires: GL_AMD_gpu_shader_int64 | GL_NV_gpu_shader5]</b> <b>[entry point: <c>glProgramUniform1i64NV</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/AMD_gpu_shader_int64.txt">AMD_gpu_shader_int64.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_gpu_shader5.txt">NV_gpu_shader5.txt</see></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/AMD/AMD_gpu_shader_int64.txt">AMD_gpu_shader_int64.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_gpu_shader5.txt">NV_gpu_shader5.txt</see></remarks>
             public static void ProgramUniform1i64NV(int program, int location, long x) => GLPointers.glProgramUniform1i64NV_Lazy(program, location, x);
             
             /// <summary> <b>[requires: GL_AMD_gpu_shader_int64 | GL_NV_gpu_shader5]</b> <b>[entry point: <c>glProgramUniform1i64vNV</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/AMD_gpu_shader_int64.txt">AMD_gpu_shader_int64.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_gpu_shader5.txt">NV_gpu_shader5.txt</see></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/AMD/AMD_gpu_shader_int64.txt">AMD_gpu_shader_int64.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_gpu_shader5.txt">NV_gpu_shader5.txt</see></remarks>
             public static void ProgramUniform1i64vNV(int program, int location, int count, long* value) => GLPointers.glProgramUniform1i64vNV_Lazy(program, location, count, value);
             
             /// <summary> <b>[requires: GL_AMD_gpu_shader_int64 | GL_NV_gpu_shader5]</b> <b>[entry point: <c>glProgramUniform1ui64NV</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/AMD_gpu_shader_int64.txt">AMD_gpu_shader_int64.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_gpu_shader5.txt">NV_gpu_shader5.txt</see></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/AMD/AMD_gpu_shader_int64.txt">AMD_gpu_shader_int64.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_gpu_shader5.txt">NV_gpu_shader5.txt</see></remarks>
             public static void ProgramUniform1ui64NV(int program, int location, ulong x) => GLPointers.glProgramUniform1ui64NV_Lazy(program, location, x);
             
             /// <summary> <b>[requires: GL_AMD_gpu_shader_int64 | GL_NV_gpu_shader5]</b> <b>[entry point: <c>glProgramUniform1ui64vNV</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/AMD_gpu_shader_int64.txt">AMD_gpu_shader_int64.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_gpu_shader5.txt">NV_gpu_shader5.txt</see></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/AMD/AMD_gpu_shader_int64.txt">AMD_gpu_shader_int64.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_gpu_shader5.txt">NV_gpu_shader5.txt</see></remarks>
             public static void ProgramUniform1ui64vNV(int program, int location, int count, ulong* value) => GLPointers.glProgramUniform1ui64vNV_Lazy(program, location, count, value);
             
             /// <summary> <b>[requires: GL_AMD_gpu_shader_int64 | GL_NV_gpu_shader5]</b> <b>[entry point: <c>glProgramUniform2i64NV</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/AMD_gpu_shader_int64.txt">AMD_gpu_shader_int64.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_gpu_shader5.txt">NV_gpu_shader5.txt</see></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/AMD/AMD_gpu_shader_int64.txt">AMD_gpu_shader_int64.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_gpu_shader5.txt">NV_gpu_shader5.txt</see></remarks>
             public static void ProgramUniform2i64NV(int program, int location, long x, long y) => GLPointers.glProgramUniform2i64NV_Lazy(program, location, x, y);
             
             /// <summary> <b>[requires: GL_AMD_gpu_shader_int64 | GL_NV_gpu_shader5]</b> <b>[entry point: <c>glProgramUniform2i64vNV</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/AMD_gpu_shader_int64.txt">AMD_gpu_shader_int64.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_gpu_shader5.txt">NV_gpu_shader5.txt</see></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/AMD/AMD_gpu_shader_int64.txt">AMD_gpu_shader_int64.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_gpu_shader5.txt">NV_gpu_shader5.txt</see></remarks>
             public static void ProgramUniform2i64vNV(int program, int location, int count, long* value) => GLPointers.glProgramUniform2i64vNV_Lazy(program, location, count, value);
             
             /// <summary> <b>[requires: GL_AMD_gpu_shader_int64 | GL_NV_gpu_shader5]</b> <b>[entry point: <c>glProgramUniform2ui64NV</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/AMD_gpu_shader_int64.txt">AMD_gpu_shader_int64.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_gpu_shader5.txt">NV_gpu_shader5.txt</see></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/AMD/AMD_gpu_shader_int64.txt">AMD_gpu_shader_int64.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_gpu_shader5.txt">NV_gpu_shader5.txt</see></remarks>
             public static void ProgramUniform2ui64NV(int program, int location, ulong x, ulong y) => GLPointers.glProgramUniform2ui64NV_Lazy(program, location, x, y);
             
             /// <summary> <b>[requires: GL_AMD_gpu_shader_int64 | GL_NV_gpu_shader5]</b> <b>[entry point: <c>glProgramUniform2ui64vNV</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/AMD_gpu_shader_int64.txt">AMD_gpu_shader_int64.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_gpu_shader5.txt">NV_gpu_shader5.txt</see></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/AMD/AMD_gpu_shader_int64.txt">AMD_gpu_shader_int64.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_gpu_shader5.txt">NV_gpu_shader5.txt</see></remarks>
             public static void ProgramUniform2ui64vNV(int program, int location, int count, ulong* value) => GLPointers.glProgramUniform2ui64vNV_Lazy(program, location, count, value);
             
             /// <summary> <b>[requires: GL_AMD_gpu_shader_int64 | GL_NV_gpu_shader5]</b> <b>[entry point: <c>glProgramUniform3i64NV</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/AMD_gpu_shader_int64.txt">AMD_gpu_shader_int64.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_gpu_shader5.txt">NV_gpu_shader5.txt</see></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/AMD/AMD_gpu_shader_int64.txt">AMD_gpu_shader_int64.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_gpu_shader5.txt">NV_gpu_shader5.txt</see></remarks>
             public static void ProgramUniform3i64NV(int program, int location, long x, long y, long z) => GLPointers.glProgramUniform3i64NV_Lazy(program, location, x, y, z);
             
             /// <summary> <b>[requires: GL_AMD_gpu_shader_int64 | GL_NV_gpu_shader5]</b> <b>[entry point: <c>glProgramUniform3i64vNV</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/AMD_gpu_shader_int64.txt">AMD_gpu_shader_int64.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_gpu_shader5.txt">NV_gpu_shader5.txt</see></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/AMD/AMD_gpu_shader_int64.txt">AMD_gpu_shader_int64.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_gpu_shader5.txt">NV_gpu_shader5.txt</see></remarks>
             public static void ProgramUniform3i64vNV(int program, int location, int count, long* value) => GLPointers.glProgramUniform3i64vNV_Lazy(program, location, count, value);
             
             /// <summary> <b>[requires: GL_AMD_gpu_shader_int64 | GL_NV_gpu_shader5]</b> <b>[entry point: <c>glProgramUniform3ui64NV</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/AMD_gpu_shader_int64.txt">AMD_gpu_shader_int64.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_gpu_shader5.txt">NV_gpu_shader5.txt</see></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/AMD/AMD_gpu_shader_int64.txt">AMD_gpu_shader_int64.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_gpu_shader5.txt">NV_gpu_shader5.txt</see></remarks>
             public static void ProgramUniform3ui64NV(int program, int location, ulong x, ulong y, ulong z) => GLPointers.glProgramUniform3ui64NV_Lazy(program, location, x, y, z);
             
             /// <summary> <b>[requires: GL_AMD_gpu_shader_int64 | GL_NV_gpu_shader5]</b> <b>[entry point: <c>glProgramUniform3ui64vNV</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/AMD_gpu_shader_int64.txt">AMD_gpu_shader_int64.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_gpu_shader5.txt">NV_gpu_shader5.txt</see></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/AMD/AMD_gpu_shader_int64.txt">AMD_gpu_shader_int64.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_gpu_shader5.txt">NV_gpu_shader5.txt</see></remarks>
             public static void ProgramUniform3ui64vNV(int program, int location, int count, ulong* value) => GLPointers.glProgramUniform3ui64vNV_Lazy(program, location, count, value);
             
             /// <summary> <b>[requires: GL_AMD_gpu_shader_int64 | GL_NV_gpu_shader5]</b> <b>[entry point: <c>glProgramUniform4i64NV</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/AMD_gpu_shader_int64.txt">AMD_gpu_shader_int64.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_gpu_shader5.txt">NV_gpu_shader5.txt</see></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/AMD/AMD_gpu_shader_int64.txt">AMD_gpu_shader_int64.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_gpu_shader5.txt">NV_gpu_shader5.txt</see></remarks>
             public static void ProgramUniform4i64NV(int program, int location, long x, long y, long z, long w) => GLPointers.glProgramUniform4i64NV_Lazy(program, location, x, y, z, w);
             
             /// <summary> <b>[requires: GL_AMD_gpu_shader_int64 | GL_NV_gpu_shader5]</b> <b>[entry point: <c>glProgramUniform4i64vNV</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/AMD_gpu_shader_int64.txt">AMD_gpu_shader_int64.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_gpu_shader5.txt">NV_gpu_shader5.txt</see></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/AMD/AMD_gpu_shader_int64.txt">AMD_gpu_shader_int64.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_gpu_shader5.txt">NV_gpu_shader5.txt</see></remarks>
             public static void ProgramUniform4i64vNV(int program, int location, int count, long* value) => GLPointers.glProgramUniform4i64vNV_Lazy(program, location, count, value);
             
             /// <summary> <b>[requires: GL_AMD_gpu_shader_int64 | GL_NV_gpu_shader5]</b> <b>[entry point: <c>glProgramUniform4ui64NV</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/AMD_gpu_shader_int64.txt">AMD_gpu_shader_int64.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_gpu_shader5.txt">NV_gpu_shader5.txt</see></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/AMD/AMD_gpu_shader_int64.txt">AMD_gpu_shader_int64.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_gpu_shader5.txt">NV_gpu_shader5.txt</see></remarks>
             public static void ProgramUniform4ui64NV(int program, int location, ulong x, ulong y, ulong z, ulong w) => GLPointers.glProgramUniform4ui64NV_Lazy(program, location, x, y, z, w);
             
             /// <summary> <b>[requires: GL_AMD_gpu_shader_int64 | GL_NV_gpu_shader5]</b> <b>[entry point: <c>glProgramUniform4ui64vNV</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/AMD_gpu_shader_int64.txt">AMD_gpu_shader_int64.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_gpu_shader5.txt">NV_gpu_shader5.txt</see></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/AMD/AMD_gpu_shader_int64.txt">AMD_gpu_shader_int64.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_gpu_shader5.txt">NV_gpu_shader5.txt</see></remarks>
             public static void ProgramUniform4ui64vNV(int program, int location, int count, ulong* value) => GLPointers.glProgramUniform4ui64vNV_Lazy(program, location, count, value);
             
             /// <summary> <b>[requires: GL_NV_bindless_texture]</b> <b>[entry point: <c>glProgramUniformHandleui64NV</c>]</b><br/>  </summary>
@@ -13999,7 +13571,7 @@ namespace OpenTK.Graphics.OpenGL
             public static void QueryResourceTagNV(int tagId, byte* tagString) => GLPointers.glQueryResourceTagNV_Lazy(tagId, tagString);
             
             /// <summary> <b>[requires: GL_EXT_raster_multisample | GL_NV_framebuffer_mixed_samples]</b> <b>[entry point: <c>glRasterSamplesEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_raster_multisample.txt">EXT_raster_multisample.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/EXT/NV_framebuffer_mixed_samples.txt">NV_framebuffer_mixed_samples.txt</see></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_raster_multisample.txt">EXT_raster_multisample.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_framebuffer_mixed_samples.txt">NV_framebuffer_mixed_samples.txt</see></remarks>
             public static void RasterSamplesEXT(uint samples, bool fixedsamplelocations) => GLPointers.glRasterSamplesEXT_Lazy(samples, (byte)(fixedsamplelocations ? 1 : 0));
             
             /// <summary> <b>[requires: GL_NV_framebuffer_multisample_coverage]</b> <b>[entry point: <c>glRenderbufferStorageMultisampleCoverageNV</c>]</b><br/>  </summary>
@@ -14231,67 +13803,67 @@ namespace OpenTK.Graphics.OpenGL
             public static void TransformPathNV(uint resultPath, uint srcPath, PathTransformType transformType, float* transformValues) => GLPointers.glTransformPathNV_Lazy(resultPath, srcPath, (uint)transformType, transformValues);
             
             /// <summary> <b>[requires: GL_AMD_gpu_shader_int64 | GL_NV_gpu_shader5]</b> <b>[entry point: <c>glUniform1i64NV</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/AMD_gpu_shader_int64.txt">AMD_gpu_shader_int64.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_gpu_shader5.txt">NV_gpu_shader5.txt</see></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/AMD/AMD_gpu_shader_int64.txt">AMD_gpu_shader_int64.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_gpu_shader5.txt">NV_gpu_shader5.txt</see></remarks>
             public static void Uniform1i64NV(int location, long x) => GLPointers.glUniform1i64NV_Lazy(location, x);
             
             /// <summary> <b>[requires: GL_AMD_gpu_shader_int64 | GL_NV_gpu_shader5]</b> <b>[entry point: <c>glUniform1i64vNV</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/AMD_gpu_shader_int64.txt">AMD_gpu_shader_int64.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_gpu_shader5.txt">NV_gpu_shader5.txt</see></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/AMD/AMD_gpu_shader_int64.txt">AMD_gpu_shader_int64.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_gpu_shader5.txt">NV_gpu_shader5.txt</see></remarks>
             public static void Uniform1i64vNV(int location, int count, long* value) => GLPointers.glUniform1i64vNV_Lazy(location, count, value);
             
             /// <summary> <b>[requires: GL_AMD_gpu_shader_int64 | GL_NV_gpu_shader5]</b> <b>[entry point: <c>glUniform1ui64NV</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/AMD_gpu_shader_int64.txt">AMD_gpu_shader_int64.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_gpu_shader5.txt">NV_gpu_shader5.txt</see></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/AMD/AMD_gpu_shader_int64.txt">AMD_gpu_shader_int64.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_gpu_shader5.txt">NV_gpu_shader5.txt</see></remarks>
             public static void Uniform1ui64NV(int location, ulong x) => GLPointers.glUniform1ui64NV_Lazy(location, x);
             
             /// <summary> <b>[requires: GL_AMD_gpu_shader_int64 | GL_NV_gpu_shader5]</b> <b>[entry point: <c>glUniform1ui64vNV</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/AMD_gpu_shader_int64.txt">AMD_gpu_shader_int64.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_gpu_shader5.txt">NV_gpu_shader5.txt</see></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/AMD/AMD_gpu_shader_int64.txt">AMD_gpu_shader_int64.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_gpu_shader5.txt">NV_gpu_shader5.txt</see></remarks>
             public static void Uniform1ui64vNV(int location, int count, ulong* value) => GLPointers.glUniform1ui64vNV_Lazy(location, count, value);
             
             /// <summary> <b>[requires: GL_AMD_gpu_shader_int64 | GL_NV_gpu_shader5]</b> <b>[entry point: <c>glUniform2i64NV</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/AMD_gpu_shader_int64.txt">AMD_gpu_shader_int64.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_gpu_shader5.txt">NV_gpu_shader5.txt</see></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/AMD/AMD_gpu_shader_int64.txt">AMD_gpu_shader_int64.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_gpu_shader5.txt">NV_gpu_shader5.txt</see></remarks>
             public static void Uniform2i64NV(int location, long x, long y) => GLPointers.glUniform2i64NV_Lazy(location, x, y);
             
             /// <summary> <b>[requires: GL_AMD_gpu_shader_int64 | GL_NV_gpu_shader5]</b> <b>[entry point: <c>glUniform2i64vNV</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/AMD_gpu_shader_int64.txt">AMD_gpu_shader_int64.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_gpu_shader5.txt">NV_gpu_shader5.txt</see></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/AMD/AMD_gpu_shader_int64.txt">AMD_gpu_shader_int64.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_gpu_shader5.txt">NV_gpu_shader5.txt</see></remarks>
             public static void Uniform2i64vNV(int location, int count, long* value) => GLPointers.glUniform2i64vNV_Lazy(location, count, value);
             
             /// <summary> <b>[requires: GL_AMD_gpu_shader_int64 | GL_NV_gpu_shader5]</b> <b>[entry point: <c>glUniform2ui64NV</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/AMD_gpu_shader_int64.txt">AMD_gpu_shader_int64.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_gpu_shader5.txt">NV_gpu_shader5.txt</see></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/AMD/AMD_gpu_shader_int64.txt">AMD_gpu_shader_int64.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_gpu_shader5.txt">NV_gpu_shader5.txt</see></remarks>
             public static void Uniform2ui64NV(int location, ulong x, ulong y) => GLPointers.glUniform2ui64NV_Lazy(location, x, y);
             
             /// <summary> <b>[requires: GL_AMD_gpu_shader_int64 | GL_NV_gpu_shader5]</b> <b>[entry point: <c>glUniform2ui64vNV</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/AMD_gpu_shader_int64.txt">AMD_gpu_shader_int64.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_gpu_shader5.txt">NV_gpu_shader5.txt</see></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/AMD/AMD_gpu_shader_int64.txt">AMD_gpu_shader_int64.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_gpu_shader5.txt">NV_gpu_shader5.txt</see></remarks>
             public static void Uniform2ui64vNV(int location, int count, ulong* value) => GLPointers.glUniform2ui64vNV_Lazy(location, count, value);
             
             /// <summary> <b>[requires: GL_AMD_gpu_shader_int64 | GL_NV_gpu_shader5]</b> <b>[entry point: <c>glUniform3i64NV</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/AMD_gpu_shader_int64.txt">AMD_gpu_shader_int64.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_gpu_shader5.txt">NV_gpu_shader5.txt</see></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/AMD/AMD_gpu_shader_int64.txt">AMD_gpu_shader_int64.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_gpu_shader5.txt">NV_gpu_shader5.txt</see></remarks>
             public static void Uniform3i64NV(int location, long x, long y, long z) => GLPointers.glUniform3i64NV_Lazy(location, x, y, z);
             
             /// <summary> <b>[requires: GL_AMD_gpu_shader_int64 | GL_NV_gpu_shader5]</b> <b>[entry point: <c>glUniform3i64vNV</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/AMD_gpu_shader_int64.txt">AMD_gpu_shader_int64.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_gpu_shader5.txt">NV_gpu_shader5.txt</see></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/AMD/AMD_gpu_shader_int64.txt">AMD_gpu_shader_int64.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_gpu_shader5.txt">NV_gpu_shader5.txt</see></remarks>
             public static void Uniform3i64vNV(int location, int count, long* value) => GLPointers.glUniform3i64vNV_Lazy(location, count, value);
             
             /// <summary> <b>[requires: GL_AMD_gpu_shader_int64 | GL_NV_gpu_shader5]</b> <b>[entry point: <c>glUniform3ui64NV</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/AMD_gpu_shader_int64.txt">AMD_gpu_shader_int64.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_gpu_shader5.txt">NV_gpu_shader5.txt</see></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/AMD/AMD_gpu_shader_int64.txt">AMD_gpu_shader_int64.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_gpu_shader5.txt">NV_gpu_shader5.txt</see></remarks>
             public static void Uniform3ui64NV(int location, ulong x, ulong y, ulong z) => GLPointers.glUniform3ui64NV_Lazy(location, x, y, z);
             
             /// <summary> <b>[requires: GL_AMD_gpu_shader_int64 | GL_NV_gpu_shader5]</b> <b>[entry point: <c>glUniform3ui64vNV</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/AMD_gpu_shader_int64.txt">AMD_gpu_shader_int64.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_gpu_shader5.txt">NV_gpu_shader5.txt</see></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/AMD/AMD_gpu_shader_int64.txt">AMD_gpu_shader_int64.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_gpu_shader5.txt">NV_gpu_shader5.txt</see></remarks>
             public static void Uniform3ui64vNV(int location, int count, ulong* value) => GLPointers.glUniform3ui64vNV_Lazy(location, count, value);
             
             /// <summary> <b>[requires: GL_AMD_gpu_shader_int64 | GL_NV_gpu_shader5]</b> <b>[entry point: <c>glUniform4i64NV</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/AMD_gpu_shader_int64.txt">AMD_gpu_shader_int64.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_gpu_shader5.txt">NV_gpu_shader5.txt</see></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/AMD/AMD_gpu_shader_int64.txt">AMD_gpu_shader_int64.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_gpu_shader5.txt">NV_gpu_shader5.txt</see></remarks>
             public static void Uniform4i64NV(int location, long x, long y, long z, long w) => GLPointers.glUniform4i64NV_Lazy(location, x, y, z, w);
             
             /// <summary> <b>[requires: GL_AMD_gpu_shader_int64 | GL_NV_gpu_shader5]</b> <b>[entry point: <c>glUniform4i64vNV</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/AMD_gpu_shader_int64.txt">AMD_gpu_shader_int64.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_gpu_shader5.txt">NV_gpu_shader5.txt</see></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/AMD/AMD_gpu_shader_int64.txt">AMD_gpu_shader_int64.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_gpu_shader5.txt">NV_gpu_shader5.txt</see></remarks>
             public static void Uniform4i64vNV(int location, int count, long* value) => GLPointers.glUniform4i64vNV_Lazy(location, count, value);
             
             /// <summary> <b>[requires: GL_AMD_gpu_shader_int64 | GL_NV_gpu_shader5]</b> <b>[entry point: <c>glUniform4ui64NV</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/AMD_gpu_shader_int64.txt">AMD_gpu_shader_int64.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_gpu_shader5.txt">NV_gpu_shader5.txt</see></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/AMD/AMD_gpu_shader_int64.txt">AMD_gpu_shader_int64.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_gpu_shader5.txt">NV_gpu_shader5.txt</see></remarks>
             public static void Uniform4ui64NV(int location, ulong x, ulong y, ulong z, ulong w) => GLPointers.glUniform4ui64NV_Lazy(location, x, y, z, w);
             
             /// <summary> <b>[requires: GL_AMD_gpu_shader_int64 | GL_NV_gpu_shader5]</b> <b>[entry point: <c>glUniform4ui64vNV</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/NV/AMD_gpu_shader_int64.txt">AMD_gpu_shader_int64.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_gpu_shader5.txt">NV_gpu_shader5.txt</see></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/AMD/AMD_gpu_shader_int64.txt">AMD_gpu_shader_int64.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_gpu_shader5.txt">NV_gpu_shader5.txt</see></remarks>
             public static void Uniform4ui64vNV(int location, int count, ulong* value) => GLPointers.glUniform4ui64vNV_Lazy(location, count, value);
             
             /// <summary> <b>[requires: GL_NV_bindless_texture]</b> <b>[entry point: <c>glUniformHandleui64NV</c>]</b><br/>  </summary>
@@ -14523,83 +14095,83 @@ namespace OpenTK.Graphics.OpenGL
             public static void VertexAttribFormatNV(uint index, int size, VertexAttribType type, bool normalized, int stride) => GLPointers.glVertexAttribFormatNV_Lazy(index, size, (uint)type, (byte)(normalized ? 1 : 0), stride);
             
             /// <summary> <b>[requires: GL_EXT_gpu_shader4 | GL_NV_vertex_program4]</b> <b>[entry point: <c>glVertexAttribI1iEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_gpu_shader4.txt">EXT_gpu_shader4.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/EXT/NV_vertex_program4.txt">NV_vertex_program4.txt</see></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_gpu_shader4.txt">EXT_gpu_shader4.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_vertex_program4.txt">NV_vertex_program4.txt</see></remarks>
             public static void VertexAttribI1iEXT(uint index, int x) => GLPointers.glVertexAttribI1iEXT_Lazy(index, x);
             
             /// <summary> <b>[requires: GL_EXT_gpu_shader4 | GL_NV_vertex_program4]</b> <b>[entry point: <c>glVertexAttribI1ivEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_gpu_shader4.txt">EXT_gpu_shader4.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/EXT/NV_vertex_program4.txt">NV_vertex_program4.txt</see></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_gpu_shader4.txt">EXT_gpu_shader4.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_vertex_program4.txt">NV_vertex_program4.txt</see></remarks>
             public static void VertexAttribI1ivEXT(uint index, int* v) => GLPointers.glVertexAttribI1ivEXT_Lazy(index, v);
             
             /// <summary> <b>[requires: GL_EXT_gpu_shader4 | GL_NV_vertex_program4]</b> <b>[entry point: <c>glVertexAttribI1uiEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_gpu_shader4.txt">EXT_gpu_shader4.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/EXT/NV_vertex_program4.txt">NV_vertex_program4.txt</see></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_gpu_shader4.txt">EXT_gpu_shader4.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_vertex_program4.txt">NV_vertex_program4.txt</see></remarks>
             public static void VertexAttribI1uiEXT(uint index, uint x) => GLPointers.glVertexAttribI1uiEXT_Lazy(index, x);
             
             /// <summary> <b>[requires: GL_EXT_gpu_shader4 | GL_NV_vertex_program4]</b> <b>[entry point: <c>glVertexAttribI1uivEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_gpu_shader4.txt">EXT_gpu_shader4.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/EXT/NV_vertex_program4.txt">NV_vertex_program4.txt</see></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_gpu_shader4.txt">EXT_gpu_shader4.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_vertex_program4.txt">NV_vertex_program4.txt</see></remarks>
             public static void VertexAttribI1uivEXT(uint index, uint* v) => GLPointers.glVertexAttribI1uivEXT_Lazy(index, v);
             
             /// <summary> <b>[requires: GL_EXT_gpu_shader4 | GL_NV_vertex_program4]</b> <b>[entry point: <c>glVertexAttribI2iEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_gpu_shader4.txt">EXT_gpu_shader4.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/EXT/NV_vertex_program4.txt">NV_vertex_program4.txt</see></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_gpu_shader4.txt">EXT_gpu_shader4.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_vertex_program4.txt">NV_vertex_program4.txt</see></remarks>
             public static void VertexAttribI2iEXT(uint index, int x, int y) => GLPointers.glVertexAttribI2iEXT_Lazy(index, x, y);
             
             /// <summary> <b>[requires: GL_EXT_gpu_shader4 | GL_NV_vertex_program4]</b> <b>[entry point: <c>glVertexAttribI2ivEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_gpu_shader4.txt">EXT_gpu_shader4.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/EXT/NV_vertex_program4.txt">NV_vertex_program4.txt</see></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_gpu_shader4.txt">EXT_gpu_shader4.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_vertex_program4.txt">NV_vertex_program4.txt</see></remarks>
             public static void VertexAttribI2ivEXT(uint index, int* v) => GLPointers.glVertexAttribI2ivEXT_Lazy(index, v);
             
             /// <summary> <b>[requires: GL_EXT_gpu_shader4 | GL_NV_vertex_program4]</b> <b>[entry point: <c>glVertexAttribI2uiEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_gpu_shader4.txt">EXT_gpu_shader4.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/EXT/NV_vertex_program4.txt">NV_vertex_program4.txt</see></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_gpu_shader4.txt">EXT_gpu_shader4.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_vertex_program4.txt">NV_vertex_program4.txt</see></remarks>
             public static void VertexAttribI2uiEXT(uint index, uint x, uint y) => GLPointers.glVertexAttribI2uiEXT_Lazy(index, x, y);
             
             /// <summary> <b>[requires: GL_EXT_gpu_shader4 | GL_NV_vertex_program4]</b> <b>[entry point: <c>glVertexAttribI2uivEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_gpu_shader4.txt">EXT_gpu_shader4.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/EXT/NV_vertex_program4.txt">NV_vertex_program4.txt</see></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_gpu_shader4.txt">EXT_gpu_shader4.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_vertex_program4.txt">NV_vertex_program4.txt</see></remarks>
             public static void VertexAttribI2uivEXT(uint index, uint* v) => GLPointers.glVertexAttribI2uivEXT_Lazy(index, v);
             
             /// <summary> <b>[requires: GL_EXT_gpu_shader4 | GL_NV_vertex_program4]</b> <b>[entry point: <c>glVertexAttribI3iEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_gpu_shader4.txt">EXT_gpu_shader4.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/EXT/NV_vertex_program4.txt">NV_vertex_program4.txt</see></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_gpu_shader4.txt">EXT_gpu_shader4.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_vertex_program4.txt">NV_vertex_program4.txt</see></remarks>
             public static void VertexAttribI3iEXT(uint index, int x, int y, int z) => GLPointers.glVertexAttribI3iEXT_Lazy(index, x, y, z);
             
             /// <summary> <b>[requires: GL_EXT_gpu_shader4 | GL_NV_vertex_program4]</b> <b>[entry point: <c>glVertexAttribI3ivEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_gpu_shader4.txt">EXT_gpu_shader4.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/EXT/NV_vertex_program4.txt">NV_vertex_program4.txt</see></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_gpu_shader4.txt">EXT_gpu_shader4.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_vertex_program4.txt">NV_vertex_program4.txt</see></remarks>
             public static void VertexAttribI3ivEXT(uint index, int* v) => GLPointers.glVertexAttribI3ivEXT_Lazy(index, v);
             
             /// <summary> <b>[requires: GL_EXT_gpu_shader4 | GL_NV_vertex_program4]</b> <b>[entry point: <c>glVertexAttribI3uiEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_gpu_shader4.txt">EXT_gpu_shader4.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/EXT/NV_vertex_program4.txt">NV_vertex_program4.txt</see></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_gpu_shader4.txt">EXT_gpu_shader4.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_vertex_program4.txt">NV_vertex_program4.txt</see></remarks>
             public static void VertexAttribI3uiEXT(uint index, uint x, uint y, uint z) => GLPointers.glVertexAttribI3uiEXT_Lazy(index, x, y, z);
             
             /// <summary> <b>[requires: GL_EXT_gpu_shader4 | GL_NV_vertex_program4]</b> <b>[entry point: <c>glVertexAttribI3uivEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_gpu_shader4.txt">EXT_gpu_shader4.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/EXT/NV_vertex_program4.txt">NV_vertex_program4.txt</see></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_gpu_shader4.txt">EXT_gpu_shader4.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_vertex_program4.txt">NV_vertex_program4.txt</see></remarks>
             public static void VertexAttribI3uivEXT(uint index, uint* v) => GLPointers.glVertexAttribI3uivEXT_Lazy(index, v);
             
             /// <summary> <b>[requires: GL_EXT_gpu_shader4 | GL_NV_vertex_program4]</b> <b>[entry point: <c>glVertexAttribI4bvEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_gpu_shader4.txt">EXT_gpu_shader4.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/EXT/NV_vertex_program4.txt">NV_vertex_program4.txt</see></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_gpu_shader4.txt">EXT_gpu_shader4.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_vertex_program4.txt">NV_vertex_program4.txt</see></remarks>
             public static void VertexAttribI4bvEXT(uint index, sbyte* v) => GLPointers.glVertexAttribI4bvEXT_Lazy(index, v);
             
             /// <summary> <b>[requires: GL_EXT_gpu_shader4 | GL_NV_vertex_program4]</b> <b>[entry point: <c>glVertexAttribI4iEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_gpu_shader4.txt">EXT_gpu_shader4.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/EXT/NV_vertex_program4.txt">NV_vertex_program4.txt</see></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_gpu_shader4.txt">EXT_gpu_shader4.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_vertex_program4.txt">NV_vertex_program4.txt</see></remarks>
             public static void VertexAttribI4iEXT(uint index, int x, int y, int z, int w) => GLPointers.glVertexAttribI4iEXT_Lazy(index, x, y, z, w);
             
             /// <summary> <b>[requires: GL_EXT_gpu_shader4 | GL_NV_vertex_program4]</b> <b>[entry point: <c>glVertexAttribI4ivEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_gpu_shader4.txt">EXT_gpu_shader4.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/EXT/NV_vertex_program4.txt">NV_vertex_program4.txt</see></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_gpu_shader4.txt">EXT_gpu_shader4.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_vertex_program4.txt">NV_vertex_program4.txt</see></remarks>
             public static void VertexAttribI4ivEXT(uint index, int* v) => GLPointers.glVertexAttribI4ivEXT_Lazy(index, v);
             
             /// <summary> <b>[requires: GL_EXT_gpu_shader4 | GL_NV_vertex_program4]</b> <b>[entry point: <c>glVertexAttribI4svEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_gpu_shader4.txt">EXT_gpu_shader4.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/EXT/NV_vertex_program4.txt">NV_vertex_program4.txt</see></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_gpu_shader4.txt">EXT_gpu_shader4.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_vertex_program4.txt">NV_vertex_program4.txt</see></remarks>
             public static void VertexAttribI4svEXT(uint index, short* v) => GLPointers.glVertexAttribI4svEXT_Lazy(index, v);
             
             /// <summary> <b>[requires: GL_EXT_gpu_shader4 | GL_NV_vertex_program4]</b> <b>[entry point: <c>glVertexAttribI4ubvEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_gpu_shader4.txt">EXT_gpu_shader4.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/EXT/NV_vertex_program4.txt">NV_vertex_program4.txt</see></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_gpu_shader4.txt">EXT_gpu_shader4.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_vertex_program4.txt">NV_vertex_program4.txt</see></remarks>
             public static void VertexAttribI4ubvEXT(uint index, byte* v) => GLPointers.glVertexAttribI4ubvEXT_Lazy(index, v);
             
             /// <summary> <b>[requires: GL_EXT_gpu_shader4 | GL_NV_vertex_program4]</b> <b>[entry point: <c>glVertexAttribI4uiEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_gpu_shader4.txt">EXT_gpu_shader4.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/EXT/NV_vertex_program4.txt">NV_vertex_program4.txt</see></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_gpu_shader4.txt">EXT_gpu_shader4.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_vertex_program4.txt">NV_vertex_program4.txt</see></remarks>
             public static void VertexAttribI4uiEXT(uint index, uint x, uint y, uint z, uint w) => GLPointers.glVertexAttribI4uiEXT_Lazy(index, x, y, z, w);
             
             /// <summary> <b>[requires: GL_EXT_gpu_shader4 | GL_NV_vertex_program4]</b> <b>[entry point: <c>glVertexAttribI4uivEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_gpu_shader4.txt">EXT_gpu_shader4.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/EXT/NV_vertex_program4.txt">NV_vertex_program4.txt</see></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_gpu_shader4.txt">EXT_gpu_shader4.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_vertex_program4.txt">NV_vertex_program4.txt</see></remarks>
             public static void VertexAttribI4uivEXT(uint index, uint* v) => GLPointers.glVertexAttribI4uivEXT_Lazy(index, v);
             
             /// <summary> <b>[requires: GL_EXT_gpu_shader4 | GL_NV_vertex_program4]</b> <b>[entry point: <c>glVertexAttribI4usvEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_gpu_shader4.txt">EXT_gpu_shader4.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/EXT/NV_vertex_program4.txt">NV_vertex_program4.txt</see></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_gpu_shader4.txt">EXT_gpu_shader4.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_vertex_program4.txt">NV_vertex_program4.txt</see></remarks>
             public static void VertexAttribI4usvEXT(uint index, ushort* v) => GLPointers.glVertexAttribI4usvEXT_Lazy(index, v);
             
             /// <summary> <b>[requires: GL_NV_vertex_buffer_unified_memory]</b> <b>[entry point: <c>glVertexAttribIFormatNV</c>]</b><br/>  </summary>
@@ -14607,7 +14179,7 @@ namespace OpenTK.Graphics.OpenGL
             public static void VertexAttribIFormatNV(uint index, int size, VertexAttribIType type, int stride) => GLPointers.glVertexAttribIFormatNV_Lazy(index, size, (uint)type, stride);
             
             /// <summary> <b>[requires: GL_EXT_gpu_shader4 | GL_NV_vertex_program4]</b> <b>[entry point: <c>glVertexAttribIPointerEXT</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_gpu_shader4.txt">EXT_gpu_shader4.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/EXT/NV_vertex_program4.txt">NV_vertex_program4.txt</see></remarks>
+            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/EXT/EXT_gpu_shader4.txt">EXT_gpu_shader4.txt</see><br/><see href="https://registry.khronos.org/OpenGL/extensions/NV/NV_vertex_program4.txt">NV_vertex_program4.txt</see></remarks>
             public static void VertexAttribIPointerEXT(uint index, int size, VertexAttribIType type, int stride, void* pointer) => GLPointers.glVertexAttribIPointerEXT_Lazy(index, size, (uint)type, stride, pointer);
             
             /// <summary> <b>[requires: GL_NV_vertex_attrib_integer_64bit]</b> <b>[entry point: <c>glVertexAttribL1i64NV</c>]</b><br/>  </summary>
@@ -14994,10 +14566,6 @@ namespace OpenTK.Graphics.OpenGL
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/OES/OES_fixed_point.txt">OES_fixed_point.txt</see></remarks>
             public static void GetLightxOES(LightName light, LightParameter pname, int* @params) => GLPointers.glGetLightxOES_Lazy((uint)light, (uint)pname, @params);
             
-            /// <summary> <b>[requires: GL_OES_fixed_point]</b> <b>[entry point: <c>glGetLightxvOES</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/OES/OES_fixed_point.txt">OES_fixed_point.txt</see></remarks>
-            public static void GetLightxvOES(LightName light, LightParameter pname, int* @params) => GLPointers.glGetLightxvOES_Lazy((uint)light, (uint)pname, @params);
-            
             /// <summary> <b>[requires: GL_OES_fixed_point]</b> <b>[entry point: <c>glGetMapxvOES</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/OES/OES_fixed_point.txt">OES_fixed_point.txt</see></remarks>
             public static void GetMapxvOES(MapTarget target, GetMapQuery query, int* v) => GLPointers.glGetMapxvOES_Lazy((uint)target, (uint)query, v);
@@ -15005,10 +14573,6 @@ namespace OpenTK.Graphics.OpenGL
             /// <summary> <b>[requires: GL_OES_fixed_point]</b> <b>[entry point: <c>glGetMaterialxOES</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/OES/OES_fixed_point.txt">OES_fixed_point.txt</see></remarks>
             public static void GetMaterialxOES(TriangleFace face, MaterialParameter pname, int param) => GLPointers.glGetMaterialxOES_Lazy((uint)face, (uint)pname, param);
-            
-            /// <summary> <b>[requires: GL_OES_fixed_point]</b> <b>[entry point: <c>glGetMaterialxvOES</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/OES/OES_fixed_point.txt">OES_fixed_point.txt</see></remarks>
-            public static void GetMaterialxvOES(TriangleFace face, MaterialParameter pname, int* @params) => GLPointers.glGetMaterialxvOES_Lazy((uint)face, (uint)pname, @params);
             
             /// <summary> <b>[requires: GL_OES_fixed_point]</b> <b>[entry point: <c>glGetPixelMapxv</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/OES/OES_fixed_point.txt">OES_fixed_point.txt</see></remarks>
@@ -15198,10 +14762,6 @@ namespace OpenTK.Graphics.OpenGL
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/OES/OES_fixed_point.txt">OES_fixed_point.txt</see></remarks>
             public static void PixelZoomxOES(int xfactor, int yfactor) => GLPointers.glPixelZoomxOES_Lazy(xfactor, yfactor);
             
-            /// <summary> <b>[requires: GL_OES_fixed_point]</b> <b>[entry point: <c>glPointParameterxOES</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/OES/OES_fixed_point.txt">OES_fixed_point.txt</see></remarks>
-            public static void PointParameterxOES(PointParameterNameARB pname, int param) => GLPointers.glPointParameterxOES_Lazy((uint)pname, param);
-            
             /// <summary> <b>[requires: GL_OES_fixed_point]</b> <b>[entry point: <c>glPointParameterxvOES</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/OES/OES_fixed_point.txt">OES_fixed_point.txt</see></remarks>
             public static void PointParameterxvOES(PointParameterNameARB pname, int* @params) => GLPointers.glPointParameterxvOES_Lazy((uint)pname, @params);
@@ -15257,10 +14817,6 @@ namespace OpenTK.Graphics.OpenGL
             /// <summary> <b>[requires: GL_OES_fixed_point]</b> <b>[entry point: <c>glRotatexOES</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/OES/OES_fixed_point.txt">OES_fixed_point.txt</see></remarks>
             public static void RotatexOES(int angle, int x, int y, int z) => GLPointers.glRotatexOES_Lazy(angle, x, y, z);
-            
-            /// <summary> <b>[requires: GL_OES_fixed_point]</b> <b>[entry point: <c>glSampleCoveragexOES</c>]</b><br/>  </summary>
-            /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/OES/OES_fixed_point.txt">OES_fixed_point.txt</see></remarks>
-            public static void SampleCoveragexOES(int value, bool invert) => GLPointers.glSampleCoveragexOES_Lazy(value, (byte)(invert ? 1 : 0));
             
             /// <summary> <b>[requires: GL_OES_fixed_point]</b> <b>[entry point: <c>glScalexOES</c>]</b><br/>  </summary>
             /// <remarks><see href="https://registry.khronos.org/OpenGL/extensions/OES/OES_fixed_point.txt">OES_fixed_point.txt</see></remarks>
