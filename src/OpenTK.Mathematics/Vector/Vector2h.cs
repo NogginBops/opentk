@@ -22,7 +22,6 @@ SOFTWARE.
 
 using System;
 using System.Diagnostics.Contracts;
-using System.IO;
 using System.Numerics;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;

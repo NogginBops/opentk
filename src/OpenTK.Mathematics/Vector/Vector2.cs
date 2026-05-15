@@ -21,12 +21,10 @@ SOFTWARE.
  */
 
 using System;
-using System.ComponentModel.Design;
 using System.Diagnostics.Contracts;
 using System.Numerics;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using System.Runtime.Intrinsics;
 using System.Xml.Serialization;
 
 namespace OpenTK.Mathematics
