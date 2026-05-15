@@ -1,12 +1,9 @@
 using GeneratorBase;
 using GeneratorBase.Utility;
 using GeneratorBase.Utility.Extensions;
-using GLGenerator.Process;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Diagnostics;
-using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Xml.Linq;

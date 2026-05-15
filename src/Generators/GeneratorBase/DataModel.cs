@@ -11,7 +11,10 @@ using System.Threading.Tasks;
 namespace GeneratorBase
 {
     public record DeprecationReason(Version? Version, string? Extension, string? ExplanationLink);
-    public record RemoveReason(Version? Version, string? Extension, string? ExplanationLink);
+    public record RemoveReason(Version? Version, string? Extension, string? ExplanationLink)
+    {
+        public GLProfile Profile = GLProfile.None;
+    }
 
     public record ExtensionInfo(string Name, string Vendor)
     {
@@ -115,6 +118,30 @@ namespace GeneratorBase
         List<VendorFunctions> VendorFunctions,
         List<EnumType> Enums,
         Dictionary<Function, FunctionDocumentation> FunctionDocumentation);
+
+    public record SpecificationFile(
+        ApiFile File,
+        List<Function> Functions,
+        List<EnumEntry> Enums,
+        List<Feature> Features,
+        List<Extension> Extensions);
+
+    public record API(
+        OutputApi Name,
+        List<FunctionReference> Functions,
+        List<EnumReference> Enums);
+
+    public record ResolvedApi(OutputApi Api, List<Function> Functions, List<EnumMember> Enums);
+
+    public record FunctionReference(
+        string EntryPoint,
+        VersionInfo VersionInfo);
+
+    public record EnumReference(
+        string EnumName,
+        VersionInfo VersionInfo,
+        // Is this enum reference copied from another namespace.
+        bool IsCrossReferenced);
 
     public record Feature
     {

@@ -12,24 +12,6 @@ using System.Runtime.CompilerServices;
 
 namespace ALGenerator.Parsing
 {
-    internal record Specification(
-        List<Function> Functions,
-        List<EnumEntry> Enums,
-        List<API> APIs);
-
-    internal record API(
-        InputApi Name,
-        List<FunctionReference> Functions,
-        List<EnumReference> Enums);
-
-    internal record FunctionReference(string EntryPoint, VersionInfo VersionInfo);
-
-    internal record EnumReference(
-        string EnumName,
-        VersionInfo VersionInfo,
-        // Is this enum reference copied from another namespace.
-        bool IsCrossReferenced);
-
     internal record EFXPreset(
         string Name,
         float Density,

@@ -19,7 +19,7 @@ namespace ALGenerator.Parsing
 {
     internal class SpecificationParser
     {
-        internal static Specification Parse(Stream input, NameMangler nameMangler, ApiFile currentFile, List<string> ignoreFunctions)
+        internal static SpecificationFile Parse(Stream input, NameMangler nameMangler, ApiFile currentFile, List<string> ignoreFunctions)
         {
             XDocument? xdocument = XDocument.Load(input);
 
@@ -41,310 +41,7 @@ namespace ALGenerator.Parsing
                 CreateDirectContextCommands(functions, extensions);
             }
 
-            Dictionary<OutputApi, List<Function>> functionsPerApi = ResolveFunctionVersionInfo(functions, features, extensions);
-
-            List<API> APIs = MakeAPIs(features, extensions);
-
-            return new Specification(functions, enums, APIs);
-        }
-
-        private static Dictionary<OutputApi, List<Function>> ResolveFunctionVersionInfo(List<Function> functions, List<Feature> features, List<Extension> extensions)
-        {
-            Dictionary<OutputApi, List<Function>> functionsPerApi = [];
-
-            foreach (Feature feature in features)
-            {
-                OutputApi api = feature.Api;
-                foreach (RequireTag requires in feature.RequireTags)
-                {
-                    Debug.Assert(requires.Api != feature.Api);
-                    foreach (CommandRef command in requires.Commands)
-                    {
-                        Function? function = functions.Find(f => f.EntryPoint == command.Name);
-                        Debug.Assert(function != null);
-                        functionsPerApi.AddToNestedList(api, function with { VersionInfo = new VersionInfo(feature.Version, []) });
-                    }
-                }
-
-                foreach (DeprecateTag deprecates in feature.DeprecateTags)
-                {
-                    foreach (CommandRef command in deprecates.Commands)
-                    {
-                        List<Function> apiFunctions = functionsPerApi.GetNestedList(api);
-                        Function? apiFunction = apiFunctions.Find(f => f.EntryPoint == command.Name);
-                        Debug.Assert(apiFunction != null, "To deprecate a function it needs to have been added first.");
-                        apiFunction.VersionInfo!.Deprecate(new DeprecationReason(feature.Version, null, null));
-                    }
-                }
-
-                foreach (RemoveTag removes in feature.RemoveTags)
-                {
-                    foreach (CommandRef command in removes.Commands)
-                    {
-                        List<Function> apiFunctions = functionsPerApi.GetNestedList(api);
-                        Function? apiFunction = apiFunctions.Find(f => f.EntryPoint == command.Name);
-                        Debug.Assert(apiFunction != null, "To remove a function it needs to have been added first.");
-                        apiFunction.VersionInfo!.Remove(new RemoveReason(feature.Version, null, null));
-                    }
-                }
-            }
-
-            foreach (Extension extension in extensions)
-            {
-                foreach (RequireTag requires in extension.RequireTags)
-                {
-                    foreach (CommandRef command in requires.Commands)
-                    {
-                        Function? function = functions.Find(f => f.EntryPoint == command.Name);
-                        Debug.Assert(function != null);
-                        foreach (OutputApi api in extension.SupportedApis)
-                        {
-                            List<Function> apiFunctions = functionsPerApi.GetNestedList(api);
-                            Function? apiFunction = apiFunctions.Find(f => f.EntryPoint == function.EntryPoint);
-                            if (apiFunction != null)
-                            {
-                                apiFunction.VersionInfo!.Extensions.Add(new ExtensionInfo(extension.Name, extension.Vendor));
-                            }
-                            else
-                            {
-                                apiFunctions.Add(function with { VersionInfo = new VersionInfo(null, [new ExtensionInfo(extension.Name, extension.Vendor)]) });
-                            }
-                        }
-                    }
-                }
-
-                foreach (DeprecateTag deprecates in extension.DeprecateTags)
-                {
-                    foreach (CommandRef command in deprecates.Commands)
-                    {
-                        foreach (OutputApi api in extension.SupportedApis)
-                        {
-                            List<Function> apiFunctions = functionsPerApi.GetNestedList(api);
-                            Function? apiFunction = apiFunctions.Find(f => f.EntryPoint == command.Name);
-                            Debug.Assert(apiFunction != null, "To deprecate a function it needs to have been added first.");
-                            apiFunction.VersionInfo!.Deprecate(new DeprecationReason(null, extension.Name, null));
-                        }
-                    }
-                }
-
-                foreach (RemoveTag removes in extension.RemoveTags)
-                {
-                    foreach (CommandRef command in removes.Commands)
-                    {
-                        foreach (OutputApi api in extension.SupportedApis)
-                        {
-                            List<Function> apiFunctions = functionsPerApi.GetNestedList(api);
-                            Function? apiFunction = apiFunctions.Find(f => f.EntryPoint == command.Name);
-                            Debug.Assert(apiFunction != null, "To remove a function it needs to have been added first.");
-                            apiFunction.VersionInfo!.Remove(new RemoveReason(null, extension.Name, null));
-                        }
-                    }
-                }
-            }
-
-            return functionsPerApi;
-        }
-
-        private static List<API> MakeAPIs(List<Feature> features, List<Extension> extensions)
-        {
-            Dictionary<OutputApi, List<Feature>> FeaturesPerAPI = new Dictionary<OutputApi, List<Feature>>();
-            foreach (var feature in features)
-            {
-                FeaturesPerAPI.AddToNestedList(feature.Api, feature);
-            }
-
-            Dictionary<OutputApi, List<Extension>> ExtensionsPerAPI = new Dictionary<OutputApi, List<Extension>>();
-            foreach (var extension in extensions)
-            {
-                foreach (var supportedAPI in extension.SupportedApis)
-                {
-                    ExtensionsPerAPI.AddToNestedList(supportedAPI, extension);
-                }
-            }
-
-            List<API> APIs = new List<API>();
-            foreach (var api in FeaturesPerAPI.Keys.Union(ExtensionsPerAPI.Keys))
-            {
-                // We use GetValueOrDefault in case we have zero features or extensions,
-                // this happens in egl_angle_ext.xml which doesn't define any features.
-                // - Noggin_bops 2024-11-11
-                List<FunctionReference> functions = MakeFunctionReferences(FeaturesPerAPI.GetValueOrDefault(api, []), ExtensionsPerAPI.GetValueOrDefault(api, []), api);
-                // FIXME: Here we miss the enums that where not defined in this file. for example wgl::ObjectTypeDX
-                List<EnumReference> enums = MakeEnumReferences(FeaturesPerAPI.GetValueOrDefault(api, []), ExtensionsPerAPI.GetValueOrDefault(api, []), api);
-
-                InputApi inAPI = api switch
-                {
-                    OutputApi.AL => InputApi.AL,
-                    OutputApi.ALC => InputApi.ALC,
-
-                    _ => throw new Exception(),
-                };
-
-                APIs.Add(new API(inAPI, functions, enums));
-            }
-
-            return APIs;
-
-            static List<FunctionReference> MakeFunctionReferences(List<Feature> features, List<Extension> extensions, OutputApi api)
-            {
-                Dictionary<string, FunctionReference> entryPointToReference = new Dictionary<string, FunctionReference>();
-
-                foreach (var feature in features)
-                {
-                    foreach (var requires in feature.RequireTags)
-                    {
-                        Debug.Assert(requires.Api != feature.Api);
-
-                        foreach (var entryPoint in requires.Commands)
-                        {
-                            if (entryPointToReference.TryGetValue(entryPoint.Name, out FunctionReference? value) == false)
-                            {
-                                value = new FunctionReference(entryPoint.Name, new VersionInfo(feature.Version, []));
-                                entryPointToReference.Add(entryPoint.Name, value);
-                            }
-
-                            // FIXME: This isn't strictly needed... they are already going to be in order.
-                            if (feature.Version < value.VersionInfo.Version)
-                            {
-                                value = value with { VersionInfo = value.VersionInfo with { Version = feature.Version } };
-                            }
-
-                            entryPointToReference[entryPoint.Name] = value;
-                        }
-                    }
-
-                    Debug.Assert(feature.DeprecateTags.Count == 0);
-
-                    foreach (var removes in feature.RemoveTags)
-                    {
-                        foreach (var entryPoint in removes.Commands)
-                        {
-                            if (entryPointToReference.TryGetValue(entryPoint.Name, out FunctionReference? value) == false)
-                            {
-                                value = new FunctionReference(entryPoint.Name, new VersionInfo(feature.Version, []));
-                                entryPointToReference.Add(entryPoint.Name, value);
-                            }
-
-                            value.VersionInfo.Remove(new RemoveReason(feature.Version, null, null));
-
-                            entryPointToReference[entryPoint.Name] = value;
-                        }
-                    }
-                }
-
-                foreach (var extension in extensions)
-                {
-                    Debug.Assert(extension.SupportedApis.Contains(api));
-
-                    foreach (var requires in extension.RequireTags)
-                    {
-                        Debug.Assert(extension.SupportedApis.Contains(requires.Api));
-
-                        foreach (var entryPoint in requires.Commands)
-                        {
-                            if (entryPointToReference.TryGetValue(entryPoint.Name, out FunctionReference? value) == false)
-                            {
-                                value = new FunctionReference(entryPoint.Name, new VersionInfo(null, []));
-                                entryPointToReference.Add(entryPoint.Name, value);
-                            }
-
-                            value.VersionInfo.Extensions.Add(new ExtensionInfo(extension.Name, extension.Vendor));
-
-                            entryPointToReference[entryPoint.Name] = value;
-                        }
-                    }
-
-                    Debug.Assert(extension.DeprecateTags.Count == 0);
-                    Debug.Assert(extension.RemoveTags.Count == 0);
-                }
-
-                return entryPointToReference.Values.ToList();
-            }
-
-            static List<EnumReference> MakeEnumReferences(List<Feature> features, List<Extension> extensions, OutputApi api)
-            {
-                Dictionary<string, EnumReference> enumNameToReference = new Dictionary<string, EnumReference>();
-
-                foreach (var feature in features)
-                {
-                    foreach (var requires in feature.RequireTags)
-                    {
-                        Debug.Assert(requires.Api != feature.Api);
-
-                        foreach (var enumName in requires.Enums)
-                        {
-                            if (enumNameToReference.TryGetValue(enumName.Name, out EnumReference? value) == false)
-                            {
-                                value = new EnumReference(enumName.Name, new VersionInfo(feature.Version, []), false);
-                                enumNameToReference.Add(enumName.Name, value);
-                            }
-
-                            Debug.Assert(value.VersionInfo.RemovedBy.Count <= 1);
-
-                            if (value.VersionInfo.RemovedBy.Count == 1 &&
-                                value.VersionInfo.RemovedBy[0].Version != null &&
-                                feature.Version > value.VersionInfo.RemovedBy[0].Version)
-                            {
-                                value = value with { VersionInfo = value.VersionInfo with { Version = feature.Version, RemovedBy = [] } };
-                            }
-
-                            // FIXME: This isn't strictly needed... they are already going to be in order.
-                            if (feature.Version < value.VersionInfo.Version)
-                            {
-                                value = value with { VersionInfo = value.VersionInfo with { Version = feature.Version } };
-                            }
-
-                            enumNameToReference[enumName.Name] = value;
-                        }
-                    }
-
-                    Debug.Assert(feature.DeprecateTags.Count == 0);
-
-                    foreach (var removes in feature.RemoveTags)
-                    {
-                        foreach (var enumName in removes.Enums)
-                        {
-                            if (enumNameToReference.TryGetValue(enumName.Name, out EnumReference? value) == false)
-                            {
-                                value = new EnumReference(enumName.Name, new VersionInfo(feature.Version, []), false);
-                                enumNameToReference.Add(enumName.Name, value);
-                            }
-
-                            value.VersionInfo.Remove(new RemoveReason(feature.Version, null, null));
-
-                            enumNameToReference[enumName.Name] = value;
-                        }
-                    }
-                }
-
-                foreach (var extension in extensions)
-                {
-                    Debug.Assert(extension.SupportedApis.Contains(api));
-
-                    foreach (var requires in extension.RequireTags)
-                    {
-                        Debug.Assert(extension.SupportedApis.Contains(requires.Api));
-
-                        foreach (var enumName in requires.Enums)
-                        {
-                            if (enumNameToReference.TryGetValue(enumName.Name, out EnumReference? value) == false)
-                            {
-                                value = new EnumReference(enumName.Name, new VersionInfo(null, []), false);
-                                enumNameToReference.Add(enumName.Name, value);
-                            }
-
-                            value.VersionInfo.Extensions.Add(new ExtensionInfo(extension.Name, extension.Vendor));
-
-                            enumNameToReference[enumName.Name] = value;
-                        }
-                    }
-
-                    Debug.Assert(extension.DeprecateTags.Count == 0);
-                    Debug.Assert(extension.RemoveTags.Count == 0);
-                }
-
-                return enumNameToReference.Values.ToList();
-            }
+            return new SpecificationFile(currentFile, functions, enums, features, extensions);
         }
 
         private static void CreateDirectContextCommands(List<Function> functions, List<Extension> extensions)
@@ -1005,7 +702,7 @@ namespace ALGenerator.Parsing
                 {
                     RequireTag reqTag = ParseRequire(require);
                     if (reqTag.Api == OutputApi.Invalid)
-                        continue;
+                        reqTag = reqTag with { Api = api };
                     requireTags.Add(reqTag);
                 }
 
@@ -1061,16 +758,25 @@ namespace ALGenerator.Parsing
 
                 string? comment = extension.Attribute("comment")?.Value;
 
+                OutputApi[] supportedApis = [FileToAPI(currentFile)];
+
                 List<RequireTag> requires = new List<RequireTag>();
                 foreach (XElement? require in extension.Elements("require"))
                 {
                     RequireTag reqTag = ParseRequire(require);
                     if (reqTag.Api == OutputApi.Invalid)
-                        continue;
-                    requires.Add(reqTag);
+                    {
+                        foreach (var api in supportedApis)
+                        {
+                            reqTag = reqTag with { Api = api };
+                            requires.Add(reqTag);
+                        }
+                    }
+                    else
+                    {
+                        requires.Add(reqTag);
+                    }
                 }
-
-                OutputApi supportedApi = FileToAPI(currentFile);
 
                 extensions.Add(new Extension()
                 {
@@ -1082,7 +788,7 @@ namespace ALGenerator.Parsing
                     Comment = comment,
 
                     Vendor = vendor,
-                    SupportedApis = [supportedApi],
+                    SupportedApis = supportedApis,
                 });
             }
 
@@ -1185,7 +891,8 @@ namespace ALGenerator.Parsing
 
         internal static OutputApi ParseApi(string? api) => api switch
         {
-            null or "" or "disabled" => OutputApi.Invalid,
+            null or "" => OutputApi.Invalid,
+            "disabled" => throw new Exception(),
 
             "al" => OutputApi.AL,
             "alc" => OutputApi.ALC,

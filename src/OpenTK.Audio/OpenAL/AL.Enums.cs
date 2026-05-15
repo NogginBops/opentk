@@ -2299,11 +2299,11 @@ namespace OpenTK.Audio.OpenAL
         /// <remarks>[originally: AL_ECHO_SPREAD]</remarks>
         EchoSpread = 5,
     }
-    ///<summary>Used in <see cref="AL.EXT.GetEffectfDirect" />, <see cref="AL.EXT.GetEffectf" /></summary>
+    ///<summary>Used in <see cref="AL.EXT.GetEffectf" />, <see cref="AL.EXT.GetEffectfDirect" /></summary>
     public enum EffectGetPNameF : uint
     {
     }
-    ///<summary>Used in <see cref="AL.EXT.GetEffectfvDirect" />, <see cref="AL.EXT.GetEffectfv" /></summary>
+    ///<summary>Used in <see cref="AL.EXT.GetEffectfv" />, <see cref="AL.EXT.GetEffectfvDirect" /></summary>
     public enum EffectGetPNameFV : uint
     {
     }
@@ -2934,11 +2934,11 @@ namespace OpenTK.Audio.OpenAL
         /// <remarks>[originally: AL_EVENT_TYPE_DISCONNECTED_SOFT]</remarks>
         EventTypeDisconnectedSoft = 6566,
     }
-    ///<summary>Used in <see cref="AL.EXT.GetFilterfDirect" />, <see cref="AL.EXT.GetFilterf" /></summary>
+    ///<summary>Used in <see cref="AL.EXT.GetFilterf" />, <see cref="AL.EXT.GetFilterfDirect" /></summary>
     public enum FilterGetPNameF : uint
     {
     }
-    ///<summary>Used in <see cref="AL.EXT.GetFilterfvDirect" />, <see cref="AL.EXT.GetFilterfv" /></summary>
+    ///<summary>Used in <see cref="AL.EXT.GetFilterfv" />, <see cref="AL.EXT.GetFilterfvDirect" /></summary>
     public enum FilterGetPNameFV : uint
     {
     }
@@ -2960,11 +2960,11 @@ namespace OpenTK.Audio.OpenAL
         /// <remarks>[originally: AL_FILTER_TYPE]</remarks>
         FilterType = 32769,
     }
-    ///<summary>Used in <see cref="AL.EXT.FilterfDirect" />, <see cref="AL.EXT.Filterf" /></summary>
+    ///<summary>Used in <see cref="AL.EXT.Filterf" />, <see cref="AL.EXT.FilterfDirect" /></summary>
     public enum FilterPNameF : uint
     {
     }
-    ///<summary>Used in <see cref="AL.EXT.FilterfvDirect" />, <see cref="AL.EXT.Filterfv" /></summary>
+    ///<summary>Used in <see cref="AL.EXT.Filterfv" />, <see cref="AL.EXT.FilterfvDirect" /></summary>
     public enum FilterPNameFV : uint
     {
     }

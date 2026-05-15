@@ -168,7 +168,7 @@ namespace GLGenerator.Process
                         {
                             if (entryPointToReference.TryGetValue(entryPoint.Name, out FunctionReference? value) == false)
                             {
-                                value = new FunctionReference(entryPoint.Name, new VersionInfo(feature.Version, []) { Profile = requires.GLProfile }, GLProfile.None);
+                                value = new FunctionReference(entryPoint.Name, new VersionInfo(feature.Version, []) { Profile = requires.GLProfile });
                                 entryPointToReference.Add(entryPoint.Name, value);
                             }
 
@@ -176,9 +176,11 @@ namespace GLGenerator.Process
                             if (feature.Version < value.VersionInfo.Version)
                             {
                                 value = value with { VersionInfo = value.VersionInfo with { Version = feature.Version } };
-                            }
 
-                            value = value with { Profile = requires.GLProfile };
+                                // Make sure we are not overriding with wrong profile info...
+                                Debug.Assert(value.VersionInfo.Profile == GLProfile.None || value.VersionInfo.Profile == requires.GLProfile);
+                                value.VersionInfo.Profile = requires.GLProfile;
+                            }
 
                             entryPointToReference[entryPoint.Name] = value;
                         }
@@ -194,14 +196,11 @@ namespace GLGenerator.Process
                         {
                             if (entryPointToReference.TryGetValue(entryPoint.Name, out FunctionReference? value) == false)
                             {
-                                value = new FunctionReference(entryPoint.Name, new VersionInfo(feature.Version, []), GLProfile.None);
+                                value = new FunctionReference(entryPoint.Name, new VersionInfo(feature.Version, []));
                                 entryPointToReference.Add(entryPoint.Name, value);
                             }
 
-                            value.VersionInfo.Remove(new RemoveReason(feature.Version, null, null));
-
-                            // FIXME: This seems weird as the RemoveTag profile is the profile the value is removed from.
-                            value = value with { Profile = removes.Profile };
+                            value.VersionInfo.Remove(new RemoveReason(feature.Version, null, null) { Profile = removes.Profile });
 
                             entryPointToReference[entryPoint.Name] = value;
                         }
@@ -228,14 +227,11 @@ namespace GLGenerator.Process
                         {
                             if (entryPointToReference.TryGetValue(entryPoint.Name, out FunctionReference? value) == false)
                             {
-                                value = new FunctionReference(entryPoint.Name, new VersionInfo(null, []), GLProfile.None);
+                                value = new FunctionReference(entryPoint.Name, new VersionInfo(null, []));
                                 entryPointToReference.Add(entryPoint.Name, value);
                             }
 
                             value.VersionInfo.Extensions.Add(new ExtensionInfo(extension.Name, extension.Vendor) { Profile = requires.GLProfile });
-
-                            // FIXME: Should we do this?
-                            value = value with { Profile = requires.GLProfile };
 
                             entryPointToReference[entryPoint.Name] = value;
                         }
@@ -262,7 +258,7 @@ namespace GLGenerator.Process
                         {
                             if (enumNameToReference.TryGetValue(enumName.Name, out EnumReference? value) == false)
                             {
-                                value = new EnumReference(enumName.Name, new VersionInfo(feature.Version, []) { Profile = requires.GLProfile }, requires.GLProfile, false);
+                                value = new EnumReference(enumName.Name, new VersionInfo(feature.Version, []) { Profile = requires.GLProfile }, false);
                                 enumNameToReference.Add(enumName.Name, value);
                             }
 
@@ -279,9 +275,11 @@ namespace GLGenerator.Process
                             if (feature.Version < value.VersionInfo.Version)
                             {
                                 value = value with { VersionInfo = value.VersionInfo with { Version = feature.Version } };
-                            }
 
-                            value = value with { Profile = requires.GLProfile };
+                                // Make sure we are not overriding with wrong profile info...
+                                Debug.Assert(value.VersionInfo.Profile == GLProfile.None || value.VersionInfo.Profile == requires.GLProfile);
+                                value.VersionInfo.Profile = requires.GLProfile;
+                            }
 
                             enumNameToReference[enumName.Name] = value;
                         }
@@ -293,15 +291,13 @@ namespace GLGenerator.Process
                         {
                             if (enumNameToReference.TryGetValue(enumName.Name, out EnumReference? value) == false)
                             {
-                                value = new EnumReference(enumName.Name, new VersionInfo(feature.Version, []), GLProfile.None, false);
+                                value = new EnumReference(enumName.Name, new VersionInfo(feature.Version, []), false);
                                 enumNameToReference.Add(enumName.Name, value);
                             }
 
                             Debug.Assert(removes.Profile == GLProfile.Core);
 
-                            value.VersionInfo.Remove(new RemoveReason(feature.Version, null, null));
-
-                            value = value with { Profile = removes.Profile };
+                            value.VersionInfo.Remove(new RemoveReason(feature.Version, null, null) { Profile = removes.Profile });
 
                             enumNameToReference[enumName.Name] = value;
                         }
@@ -333,7 +329,7 @@ namespace GLGenerator.Process
                         {
                             if (enumNameToReference.TryGetValue(enumName.Name, out EnumReference? value) == false)
                             {
-                                value = new EnumReference(enumName.Name, new VersionInfo(null, []), GLProfile.None, false);
+                                value = new EnumReference(enumName.Name, new VersionInfo(null, []), false);
                                 enumNameToReference.Add(enumName.Name, value);
                             }
 
@@ -351,7 +347,19 @@ namespace GLGenerator.Process
             }
         }
 
-        internal static ResolvedApi ResolveReferences(API api, SpecificationFile file)
+        internal static List<ResolvedApi> ResolveReferences(List<API> apis, SpecificationFile[] files)
+        {
+            List<ResolvedApi> resolvedApis = new List<ResolvedApi>(apis.Count);
+            foreach (var api in apis)
+            {
+                SpecificationFile file = Array.Find(files, file => file.File == api.Name.ToApiFile())!;
+                ResolvedApi resolvedApi = Processor.ResolveReferences(api, file);
+                resolvedApis.Add(resolvedApi);
+            }
+            return resolvedApis;
+        }
+
+        private static ResolvedApi ResolveReferences(API api, SpecificationFile file)
         {
             List<Function> apiFunctions = [];
             foreach (FunctionReference functionReference in api.Functions)

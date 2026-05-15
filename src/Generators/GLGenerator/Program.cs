@@ -146,14 +146,8 @@ namespace GLGenerator
 
                 SpecificationFile[] files = [glSpecification, wglSpecification, glxSpecification, eglAndAngleSpecification];
                 Processor.CrossReferenceEnums(files);
-                var apis = Processor.MakeApis(files);
-                List<ResolvedApi> resolvedApis = new List<ResolvedApi>(apis.Count);
-                foreach (var api in apis)
-                {
-                    SpecificationFile file = Array.Find(files, file => file.File == api.Name.ToApiFile())!;
-                    ResolvedApi resolvedApi = Processor.ResolveReferences(api, file);
-                    resolvedApis.Add(resolvedApi);
-                }
+                List<API> apis = Processor.MakeApis(files);
+                List<ResolvedApi> resolvedApis = Processor.ResolveReferences(apis, files);
 
                 // Read the documentation folders and parse it into data structures.
                 using DocumentationSource documentationSource = Reader.ReadDocumentationFromGithub();
