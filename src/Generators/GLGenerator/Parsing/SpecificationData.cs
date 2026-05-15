@@ -9,16 +9,6 @@ using System.Linq;
 
 namespace GLGenerator.Parsing
 {
-    internal record ConstantReference(
-        string ConstantName,
-        VersionInfo VersionInfo,
-        GLProfile Profile);
-
-    internal record APIVersion(
-        Version Name,
-        List<string> EntryPoints,
-        List<string> EnumValues);
-
     internal enum HandleType
     {
         AnyHandle,

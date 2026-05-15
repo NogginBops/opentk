@@ -361,20 +361,30 @@ namespace GLGenerator.Process
 
         private static ResolvedApi ResolveReferences(API api, SpecificationFile file)
         {
+            Dictionary<string, Function> functionLookup = new Dictionary<string, Function>();
+            foreach (var function in file.Functions)
+            {
+                functionLookup.Add(function.EntryPoint, function);
+            }
+
             List<Function> apiFunctions = [];
             foreach (FunctionReference functionReference in api.Functions)
             {
                 if (functionReference.VersionInfo.AvailableInApi(api.Name) == false)
                     continue;
 
-                Function? function = FindFunction(file, functionReference.EntryPoint);
+                Function? function = FindFunction(functionLookup, functionReference.EntryPoint);
                 Debug.Assert(function != null);
                 Debug.Assert(function.VersionInfo == null);
                 function = function with { VersionInfo = functionReference.VersionInfo };
 
-                // if (functionReference.VersionInfo.AvailableInApi(api.Name))
-                // FIXME: Check the functionRefernce.Profile??
                 apiFunctions.Add(function);
+            }
+
+            Dictionary<string, List<EnumEntry>> enumLookup = new Dictionary<string, List<EnumEntry>>();
+            foreach (var @enum in file.Enums)
+            {
+                enumLookup.AddToNestedList(@enum.OriginalName, @enum);
             }
 
             List<EnumMember> apiEnums = [];
@@ -383,7 +393,7 @@ namespace GLGenerator.Process
                 if (enumReference.VersionInfo.AvailableInApi(api.Name) == false)
                     continue;
 
-                EnumEntry? entry = FindEnum(file, enumReference.EnumName, api.Name);
+                EnumEntry? entry = FindEnum(enumLookup, enumReference.EnumName, api.Name);
                 Debug.Assert(entry != null);
                 Debug.Assert(entry.VersionInfo == null);
                 EnumMember member = new EnumMember()
@@ -422,24 +432,21 @@ namespace GLGenerator.Process
 
             return new ResolvedApi(api.Name, apiFunctions, apiEnums);
 
-            static Function? FindFunction(SpecificationFile file, string functionName)
+            static Function? FindFunction(Dictionary<string, Function> functions, string functionName)
             {
-                foreach (Function function in file.Functions)
-                {
-                    if (function.EntryPoint == functionName)
-                    {
-                        return function;
-                    }
-                }
-                return null;
+                functions.TryGetValue(functionName, out Function? function);
+                return function;
             }
-            static EnumEntry? FindEnum(SpecificationFile file, string enumName, OutputApi api)
+            static EnumEntry? FindEnum(Dictionary<string, List<EnumEntry>> enums, string enumName, OutputApi api)
             {
-                foreach (EnumEntry @enum in file.Enums)
+                if (enums.TryGetValue(enumName, out List<EnumEntry>? list))
                 {
-                    if (@enum.OriginalName == enumName && @enum.Apis.HasFlag(api.ToFlag()))
+                    foreach (EnumEntry @enum in list)
                     {
-                        return @enum;
+                        if (@enum.Apis.HasFlag(api.ToFlag()))
+                        {
+                            return @enum;
+                        }
                     }
                 }
                 return null;
