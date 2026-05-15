@@ -111,6 +111,7 @@ namespace OpenTK.Platform
         /// <param name="requested">The requested context values.</param>
         /// <param name="logger">A logger to use for logging.</param>
         /// <returns>The index of the selected "best match" context values.</returns>
+        /// <seealso cref="OpenGLGraphicsApiHints.Selector"/>
         public static int DefaultValuesSelector(IReadOnlyList<ContextValues> options, ContextValues requested, ILogger? logger)
         {
             if (options.Count == 0)

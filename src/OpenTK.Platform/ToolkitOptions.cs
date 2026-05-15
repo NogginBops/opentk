@@ -1,4 +1,4 @@
-﻿using OpenTK.Core.Utility;
+using OpenTK.Core.Utility;
 using System;
 
 #nullable enable
@@ -96,6 +96,14 @@ namespace OpenTK.Platform
             /// Defaults to <see langword="true"/>.
             /// </summary>
             public bool IsDPIAware { get; set; } = true;
+
+            /// <summary>
+            /// The maximum number of window messages to process per call to <see cref="IWindowComponent.ProcessEvents(bool)"/>. 
+            /// This is useful to limit the performance impact of High-DPI mice.
+            /// A value of 0 means no limit.
+            /// Defaults to 5.
+            /// </summary>
+            public int MaxWindowMessagesPerFrame { get; set; } = 5;
         }
 
         /// <summary>

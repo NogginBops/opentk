@@ -8,6 +8,8 @@ using ImGuiNET;
 using OpenTK.Platform;
 using OpenTK.Core.Utility;
 using OpenTK.Platform.Native;
+using System.Runtime.InteropServices;
+using System.Linq;
 
 namespace OpenTK.Backends.Tests
 {
@@ -43,9 +45,17 @@ namespace OpenTK.Backends.Tests
 
         // FIXME: Add some other diagnostics data such as OS version, Arch, 64bit?, GPU vendor, etc.
 
+        List<float> times = new List<float>();
+
         /// <inheritdoc/>
         public override void Paint(double deltaTime)
         {
+            times.Add((float)deltaTime * 1000);
+            if (times.Count > 1000)
+                times.RemoveAt(0);
+            ImGui.PlotLines("delta time", ref CollectionsMarshal.AsSpan(times)[0], times.Count, 0, "", 0, 16, new Vector2(ImGui.GetColumnWidth(), 200));
+            ImGui.TextUnformatted($"avg: {times.Average()}ms");
+
             ImGui.Text("This is the OpenTK PAL2 driver test suite.");
             ImGui.BulletText("Click on each tab to view details related to that driver. ");
             ImGui.BulletText("Use the command line argument to specify which drivers to load manually.");
