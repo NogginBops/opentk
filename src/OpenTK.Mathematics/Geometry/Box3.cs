@@ -34,6 +34,14 @@ namespace OpenTK.Mathematics
         public static readonly Box3 Empty = new Box3(Vector3.PositiveInfinity, Vector3.NegativeInfinity);
 
         /// <summary>
+        /// A box with <c>Min = Vector3.Zero</c> and <c>Min = Vector3.Zero</c>.
+        /// </summary>
+        /// <remarks>
+        /// If you want an empty box, consider using <see cref="Empty"/>.
+        /// </remarks>
+        public static readonly Box3 Zero = new Box3(Vector3.Zero, Vector3.Zero);
+
+        /// <summary>
         /// A box with a <c>Min = (0, 0, 0)</c> and <c>Max = (1, 1, 1)</c>.
         /// </summary>
         public static readonly Box3 UnitCube = new Box3(Vector3.Zero, Vector3.One);
@@ -107,10 +115,7 @@ namespace OpenTK.Mathematics
         /// <remarks>
         /// This function never returns negative values, so <see cref="Empty"/> will have a size of (0, 0).
         /// </remarks>
-        public readonly Vector3 Size
-        {
-            get => Vector3.ComponentMax(Vector3.Zero, Max - Min);
-        }
+        public readonly Vector3 Size => Vector3.ComponentMax(Vector3.Zero, Max - Min);
 
         /// <summary>
         /// Gets half the size of the box.
@@ -119,25 +124,22 @@ namespace OpenTK.Mathematics
         /// <remarks>
         /// This function never returns negative values, so <see cref="Empty"/> will have a size of (0, 0).
         /// </remarks>
-        public readonly Vector3 HalfSize
-        {
-            get => Size / 2.0f;
-        }
+        public readonly Vector3 HalfSize => Size / 2.0f;
 
         /// <summary>
         /// The width of the box.
         /// </summary>
-        public float Width => Size.X;
+        public readonly float Width => Size.X;
 
         /// <summary>
         /// The height of the box.
         /// </summary>
-        public float Height => Size.Y;
+        public readonly float Height => Size.Y;
 
         /// <summary>
         /// The depth of the box.
         /// </summary>
-        public float Depth => Size.Z;
+        public readonly float Depth => Size.Z;
 
         /// <summary>
         /// The volume of the box.
@@ -206,7 +208,7 @@ namespace OpenTK.Mathematics
         }
 
         /// <summary>
-        /// Returns the intersection of two boxes.
+        /// Returns the intersection of two boxes, or <see cref="Empty"/> if there is no intersection.
         /// </summary>
         /// <param name="a">The first box.</param>
         /// <param name="b">The second box.</param>
@@ -226,15 +228,16 @@ namespace OpenTK.Mathematics
         }
 
         /// <summary>
-        /// Returns the intersection of two boxes.
+        /// Returns the intersection of two boxes, or <see cref="Empty"/> if there is no intersection.
+        /// With NaN propagation and -0 behaviour being platform depedent.
         /// </summary>
         /// <param name="a">The first box.</param>
         /// <param name="b">The second box.</param>
         /// <returns>The intersection of the two boxes.</returns>
-        public static Box3 Intersect(in Box3 a, in Box3 b)
+        public static Box3 IntersectNative(Box3 a, Box3 b)
         {
-            Vector3.ComponentMax(in a.Min, in b.Min, out Vector3 min);
-            Vector3.ComponentMin(in a.Max, in b.Max, out Vector3 max);
+            Vector3 min = Vector3.ComponentMaxNative(a.Min, b.Min);
+            Vector3 max = Vector3.ComponentMinNative(a.Max, b.Max);
             if (max.X >= min.X && max.Y >= min.Y && max.Z >= min.Z)
             {
                 return new Box3(min, max);
@@ -251,7 +254,7 @@ namespace OpenTK.Mathematics
         /// <param name="other">The box with which to intersect.</param>
         public void Intersect(Box3 other)
         {
-            this = Intersect(in this, in other);
+            this = Intersect(this, other);
         }
 
         /// <summary>
@@ -511,6 +514,32 @@ namespace OpenTK.Mathematics
         }
 
         /// <summary>
+        /// Extends this box to encapsulate a given point.
+        /// With NaN propagation and -0 behaviour being platform dependent.
+        /// </summary>
+        /// <remarks>
+        /// This can be used in combination with <see cref="Empty"/> to make an efficient bounding box calculation.
+        /// </remarks>
+        /// <param name="point">The point to contain.</param>
+        /// <example>
+        /// For example:
+        /// <code>
+        /// Vector3[] points = GetPoints();
+        /// Box3 aabb = Box3.Empty;
+        /// for (int i = 0; i &lt; points.Length; i++)
+        /// {
+        ///     aabb.Extend(points[i]):
+        /// }
+        /// </code>
+        /// Will calculate the bounding box of all the points in the array without needing a special case for the first point.
+        /// </example>
+        public void ExtendNative(Vector3 point)
+        {
+            Min = Vector3.ComponentMinNative(Min, point);
+            Max = Vector3.ComponentMaxNative(Max, point);
+        }
+
+        /// <summary>
         /// Returns a box that is extended to encapsulate a given point.
         /// </summary>
         /// <remarks>
@@ -534,6 +563,34 @@ namespace OpenTK.Mathematics
         {
             Box3 box = this;
             box.Extend(point);
+            return box;
+        }
+
+        /// <summary>
+        /// Returns a box that is extended to encapsulate a given point.
+        /// With NaN propagation and -0 behaviour being platform dependent.
+        /// </summary>
+        /// <remarks>
+        /// This can be used in combination with <see cref="Empty"/> to make an efficient bounding box calculation.
+        /// </remarks>
+        /// <param name="point">The point to contain.</param>
+        /// <returns>The extended box.</returns>
+        /// <example>
+        /// For example:
+        /// <code>
+        /// Vector3[] points = GetPoints();
+        /// Box3 aabb = Box3.Empty;
+        /// for (int i = 0; i &lt; points.Length; i++)
+        /// {
+        ///     aabb = aabb.Extended(points[i]):
+        /// }
+        /// </code>
+        /// Will calculate the bounding box of all the points in the array without needing a special case for the first point.
+        /// </example>
+        public readonly Box3 ExtendedNative(Vector3 point)
+        {
+            Box3 box = this;
+            box.ExtendNative(point);
             return box;
         }
 

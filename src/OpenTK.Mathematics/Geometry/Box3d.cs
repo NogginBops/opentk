@@ -34,6 +34,14 @@ namespace OpenTK.Mathematics
         public static readonly Box3d Empty = new Box3d(Vector3d.PositiveInfinity, Vector3d.NegativeInfinity);
 
         /// <summary>
+        /// A box with <c>Min = Vector3d.Zero</c> and <c>Min = Vector3d.Zero</c>.
+        /// </summary>
+        /// <remarks>
+        /// If you want an empty box, consider using <see cref="Empty"/>.
+        /// </remarks>
+        public static readonly Box3d Zero = new Box3d(Vector3d.Zero, Vector3d.Zero);
+
+        /// <summary>
         /// A box with a <c>Min = (0, 0, 0)</c> and <c>Max = (1, 1, 1)</c>.
         /// </summary>
         public static readonly Box3d UnitCube = new Box3d(Vector3d.Zero, Vector3d.One);
@@ -107,10 +115,7 @@ namespace OpenTK.Mathematics
         /// <remarks>
         /// This function never returns negative values, so <see cref="Empty"/> will have a size of (0, 0).
         /// </remarks>
-        public readonly Vector3d Size
-        {
-            get => Vector3d.ComponentMax(Vector3d.Zero, Max - Min);
-        }
+        public readonly Vector3d Size => Vector3d.ComponentMax(Vector3d.Zero, Max - Min);
 
         /// <summary>
         /// Gets half the size of the box.
@@ -119,10 +124,7 @@ namespace OpenTK.Mathematics
         /// <remarks>
         /// This function never returns negative values, so <see cref="Empty"/> will have a size of (0, 0).
         /// </remarks>
-        public readonly Vector3d HalfSize
-        {
-            get => Size / 2.0d;
-        }
+        public readonly Vector3d HalfSize => Size / 2.0d;
 
         /// <summary>
         /// The width of the box.
@@ -206,26 +208,36 @@ namespace OpenTK.Mathematics
         }
 
         /// <summary>
-        /// Returns the intersection of two boxes.
+        /// Returns the intersection of two boxes, or <see cref="Empty"/> if there is no intersection.
         /// </summary>
         /// <param name="a">The first box.</param>
         /// <param name="b">The second box.</param>
         /// <returns>The intersection of the two boxes.</returns>
         public static Box3d Intersect(Box3d a, Box3d b)
         {
-            return Intersect(in a, in b);
+            Vector3d min = Vector3d.ComponentMax(a.Min, b.Min);
+            Vector3d max = Vector3d.ComponentMin(a.Max, b.Max);
+            if (max.X >= min.X && max.Y >= min.Y && max.Z >= min.Z)
+            {
+                return new Box3d(min, max);
+            }
+            else
+            {
+                return Box3d.Empty;
+            }
         }
 
         /// <summary>
-        /// Returns the intersection of two boxes.
+        /// Returns the intersection of two boxes, or <see cref="Empty"/> if there is no intersection.
+        /// With NaN propagation and -0 behaviour being platform depedent.
         /// </summary>
         /// <param name="a">The first box.</param>
         /// <param name="b">The second box.</param>
         /// <returns>The intersection of the two boxes.</returns>
-        public static Box3d Intersect(in Box3d a, in Box3d b)
+        public static Box3d IntersectNative(Box3d a, Box3d b)
         {
-            Vector3d.ComponentMax(in a.Min, in b.Min, out Vector3d min);
-            Vector3d.ComponentMin(in a.Max, in b.Max, out Vector3d max);
+            Vector3d min = Vector3d.ComponentMaxNative(a.Min, b.Min);
+            Vector3d max = Vector3d.ComponentMinNative(a.Max, b.Max);
             if (max.X >= min.X && max.Y >= min.Y && max.Z >= min.Z)
             {
                 return new Box3d(min, max);
@@ -242,7 +254,7 @@ namespace OpenTK.Mathematics
         /// <param name="other">The Box with which to intersect.</param>
         public void Intersect(Box3d other)
         {
-            this = Intersect(in this, in other);
+            this = Intersect(this, other);
         }
 
         /// <summary>
@@ -502,6 +514,32 @@ namespace OpenTK.Mathematics
         }
 
         /// <summary>
+        /// Extends this box to encapsulate a given point.
+        /// With NaN propagation and -0 behaviour being platform dependent.
+        /// </summary>
+        /// <remarks>
+        /// This can be used in combination with <see cref="Empty"/> to make an efficient bounding box calculation.
+        /// </remarks>
+        /// <param name="point">The point to contain.</param>
+        /// <example>
+        /// For example:
+        /// <code>
+        /// Vector3d[] points = GetPoints();
+        /// Box3d aabb = Box3d.Empty;
+        /// for (int i = 0; i &lt; points.Length; i++)
+        /// {
+        ///     aabb.Extend(points[i]):
+        /// }
+        /// </code>
+        /// Will calculate the bounding box of all the points in the array without needing a special case for the first point.
+        /// </example>
+        public void ExtendNative(Vector3d point)
+        {
+            Min = Vector3d.ComponentMinNative(Min, point);
+            Max = Vector3d.ComponentMaxNative(Max, point);
+        }
+
+        /// <summary>
         /// Returns a box that is extended to encapsulate a given point.
         /// </summary>
         /// <remarks>
@@ -525,6 +563,34 @@ namespace OpenTK.Mathematics
         {
             Box3d box = this;
             box.Extend(point);
+            return box;
+        }
+
+        /// <summary>
+        /// Returns a box that is extended to encapsulate a given point.
+        /// With NaN propagation and -0 behaviour being platform dependent.
+        /// </summary>
+        /// <remarks>
+        /// This can be used in combination with <see cref="Empty"/> to make an efficient bounding box calculation.
+        /// </remarks>
+        /// <param name="point">The point to contain.</param>
+        /// <returns>The extended box.</returns>
+        /// <example>
+        /// For example:
+        /// <code>
+        /// Vector3d[] points = GetPoints();
+        /// Box3d aabb = Box3d.Empty;
+        /// for (int i = 0; i &lt; points.Length; i++)
+        /// {
+        ///     aabb = aabb.Extended(points[i]):
+        /// }
+        /// </code>
+        /// Will calculate the bounding box of all the points in the array without needing a special case for the first point.
+        /// </example>
+        public readonly Box3d ExtendedNative(Vector3d point)
+        {
+            Box3d box = this;
+            box.ExtendNative(point);
             return box;
         }
 

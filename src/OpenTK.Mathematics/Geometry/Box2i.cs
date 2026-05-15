@@ -33,6 +33,14 @@ namespace OpenTK.Mathematics
         public static readonly Box2i Empty = new Box2i(Vector2i.MaxValue, Vector2i.MinValue);
 
         /// <summary>
+        /// An empty box with <c>Min = Vector2i.Zero</c> and <c>Max = Vector2i.Zero</c>.
+        /// </summary>
+        /// <remarks>
+        /// If you want an empty box, consider using <see cref="Empty"/>.
+        /// </remarks>
+        public static readonly Box2i Zero = new Box2i(Vector2i.Zero, Vector2i.Zero);
+
+        /// <summary>
         /// A box with a <c>Min = (0, 0)</c> and <c>Max = (1, 1)</c>.
         /// </summary>
         public static readonly Box2i UnitSquare = new Box2i(Vector2i.Zero, Vector2i.One);
@@ -86,10 +94,7 @@ namespace OpenTK.Mathematics
         /// <summary>
         /// Gets a vector describing the center of the box.
         /// </summary>
-        public readonly Vector2 Center
-        {
-             get => Min + HalfSize;
-        }
+        public readonly Vector2 Center => Min + HalfSize;
 
         /// <summary>
         /// Gets the location of the box from a Location + Size perspective. Basically an alias for <see cref="Min"/>.
@@ -102,10 +107,7 @@ namespace OpenTK.Mathematics
         /// <remarks>
         /// This function never returns negative values, so <see cref="Empty"/> will have a size of (0, 0).
         /// </remarks>
-        public readonly Vector2i Size
-        {
-            get => Vector2i.ComponentMax(Vector2i.Zero, Max - Min);
-        }
+        public readonly Vector2i Size => Vector2i.ComponentMax(Vector2i.Zero, Max - Min);
 
         /// <summary>
         /// Gets half the size of the box.
@@ -114,10 +116,7 @@ namespace OpenTK.Mathematics
         /// <remarks>
         /// This function never returns negative values, so <see cref="Empty"/> will have a size of (0, 0).
         /// </remarks>
-        public readonly Vector2 HalfSize
-        {
-            get => (Vector2)Size / 2.0f;
-        }
+        public readonly Vector2 HalfSize => (Vector2)Size / 2.0f;
 
         /// <summary>
         /// The width of the box.
@@ -196,26 +195,15 @@ namespace OpenTK.Mathematics
         }
 
         /// <summary>
-        /// Returns the intersection of two boxes.
+        /// Returns the intersection of two boxes, or <see cref="Empty"/> if there is no intersection.
         /// </summary>
         /// <param name="a">The first box.</param>
         /// <param name="b">The second box.</param>
         /// <returns>The intersection of the two boxes.</returns>
         public static Box2i Intersect(Box2i a, Box2i b)
         {
-            return Intersect(in a, in b);
-        }
-
-        /// <summary>
-        /// Returns the intersection of two boxes.
-        /// </summary>
-        /// <param name="a">The first box.</param>
-        /// <param name="b">The second box.</param>
-        /// <returns>The intersection of the two boxes.</returns>
-        public static Box2i Intersect(in Box2i a, in Box2i b)
-        {
-            Vector2i.ComponentMax(in a.Min, in b.Min, out Vector2i min);
-            Vector2i.ComponentMin(in a.Max, in b.Max, out Vector2i max);
+            Vector2i min = Vector2i.ComponentMax(a.Min, b.Min);
+            Vector2i max = Vector2i.ComponentMin(a.Max, b.Max);
             if (max.X >= min.X && max.Y >= min.Y)
             {
                 return new Box2i(min, max);
@@ -232,7 +220,7 @@ namespace OpenTK.Mathematics
         /// <param name="other">The Box with which to intersect.</param>
         public void Intersect(Box2i other)
         {
-            this = Intersect(in this, in other);
+            this = Intersect(this, other);
         }
 
         /// <summary>

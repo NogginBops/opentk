@@ -34,6 +34,14 @@ namespace OpenTK.Mathematics
         public static readonly Box2d Empty = new Box2d(Vector2d.PositiveInfinity, Vector2d.NegativeInfinity);
 
         /// <summary>
+        /// A box with <c>Min = Vector2d.Zero</c> and <c>Min = Vector2d.Zero</c>.
+        /// </summary>
+        /// <remarks>
+        /// If you want an empty box, consider using <see cref="Empty"/>.
+        /// </remarks>
+        public static readonly Box2d Zero = new Box2d(Vector2d.Zero, Vector2d.Zero);
+
+        /// <summary>
         /// A box with a <c>Min = (0, 0)</c> and <c>Max = (1, 1)</c>.
         /// </summary>
         public static readonly Box2d UnitSquare = new Box2d(Vector2d.Zero, Vector2d.One);
@@ -105,10 +113,7 @@ namespace OpenTK.Mathematics
         /// <remarks>
         /// This function never returns negative values, so <see cref="Empty"/> will have a size of (0, 0).
         /// </remarks>
-        public readonly Vector2d Size
-        {
-            get => Vector2d.ComponentMax(Vector2d.Zero, Max - Min);
-        }
+        public readonly Vector2d Size => Vector2d.ComponentMax(Vector2d.Zero, Max - Min);
 
         /// <summary>
         /// Gets half the size of the box.
@@ -117,10 +122,7 @@ namespace OpenTK.Mathematics
         /// <remarks>
         /// This function never returns negative values, so <see cref="Empty"/> will have a size of (0, 0).
         /// </remarks>
-        public readonly Vector2d HalfSize
-        {
-            get => Size / 2.0f;
-        }
+        public readonly Vector2d HalfSize => Size / 2.0f;
 
         /// <summary>
         /// The width of the box.
@@ -199,26 +201,36 @@ namespace OpenTK.Mathematics
         }
 
         /// <summary>
-        /// Returns the intersection of two boxes.
+        /// Returns the intersection of two boxes, or <see cref="Empty"/> if there is no intersection.
         /// </summary>
         /// <param name="a">The first box.</param>
         /// <param name="b">The second box.</param>
         /// <returns>The intersection of the two boxes.</returns>
         public static Box2d Intersect(Box2d a, Box2d b)
         {
-            return Intersect(in a, in b);
+            Vector2d min = Vector2d.ComponentMax(a.Min, b.Min);
+            Vector2d max = Vector2d.ComponentMin(a.Max, b.Max);
+            if (max.X >= min.X && max.Y >= min.Y)
+            {
+                return new Box2d(min, max);
+            }
+            else
+            {
+                return Box2d.Empty;
+            }
         }
 
         /// <summary>
-        /// Returns the intersection of two boxes.
-        /// </summary>
+        /// Returns the intersection of two boxes, or <see cref="Empty"/> if there is no intersection.
+        /// With NaN propagation and -0 behaviour being platform depedent.
+        /// </summary>a
         /// <param name="a">The first box.</param>
         /// <param name="b">The second box.</param>
-        /// <returns>The intersection of the two Boxes.</returns>
-        public static Box2d Intersect(in Box2d a, in Box2d b)
+        /// <returns>The intersection of the two boxes.</returns>
+        public static Box2d IntersectNative(Box2d a, Box2d b)
         {
-            Vector2d.ComponentMax(in a.Min, in b.Min, out Vector2d min);
-            Vector2d.ComponentMin(in a.Max, in b.Max, out Vector2d max);
+            Vector2d min = Vector2d.ComponentMaxNative(a.Min, b.Min);
+            Vector2d max = Vector2d.ComponentMinNative(a.Max, b.Max);
             if (max.X >= min.X && max.Y >= min.Y)
             {
                 return new Box2d(min, max);
@@ -232,10 +244,10 @@ namespace OpenTK.Mathematics
         /// <summary>
         /// Replaces this box with the intersection of itself and the specified box.
         /// </summary>
-        /// <param name="other">The box with which to intersect.</param>
+        /// <param name="other">The Box with which to intersect.</param>
         public void Intersect(Box2d other)
         {
-            this = Intersect(in this, in other);
+            this = Intersect(this, other);
         }
 
         /// <summary>
@@ -316,9 +328,8 @@ namespace OpenTK.Mathematics
         /// <returns>The distance between the specified point and the nearest edge.</returns>
         public readonly double DistanceToNearestEdge(Vector2d point)
         {
-            // FIXME: What if the point is inside the box?
             Vector2d dist = Vector2d.ComponentMax(Vector2d.Zero, Vector2d.ComponentMax(Min - point, point - Max));
-            return dist.Length;
+            return double.Min(dist.X, dist.Y);
         }
 
         /// <summary>
@@ -329,7 +340,7 @@ namespace OpenTK.Mathematics
         public readonly double SignedDistanceToNearestEdge(Vector2d point)
         {
             Vector2d d = Vector2d.Abs(point - Center) - HalfSize;
-            return Vector2d.ComponentMax(Vector2d.Zero, d).Length + Math.Min(Math.Max(d.X, d.Y), 0.0);
+            return Vector2d.ComponentMax(Vector2d.Zero, d).Length + double.Min(double.Max(d.X, d.Y), 0.0f);
         }
 
         /// <summary>
@@ -493,6 +504,32 @@ namespace OpenTK.Mathematics
         }
 
         /// <summary>
+        /// Extends this box to encapsulate a given point.
+        /// With NaN propagation and -0 behaviour being platform dependent.
+        /// </summary>
+        /// <remarks>
+        /// This can be used in combination with <see cref="Empty"/> to make an efficient bounding box calculation.
+        /// </remarks>
+        /// <param name="point">The point to contain.</param>
+        /// <example>
+        /// For example:
+        /// <code>
+        /// Vector2d[] points = GetPoints();
+        /// Box2d aabb = Box2d.Empty;
+        /// for (int i = 0; i &lt; points.Length; i++)
+        /// {
+        ///     aabb.Extend(points[i]):
+        /// }
+        /// </code>
+        /// Will calculate the bounding box of all the points in the array without needing a special case for the first point.
+        /// </example>
+        public void ExtendNative(Vector2d point)
+        {
+            Min = Vector2d.ComponentMinNative(Min, point);
+            Max = Vector2d.ComponentMaxNative(Max, point);
+        }
+
+        /// <summary>
         /// Returns a box that is extended to encapsulate a given point.
         /// </summary>
         /// <remarks>
@@ -516,6 +553,34 @@ namespace OpenTK.Mathematics
         {
             Box2d box = this;
             box.Extend(point);
+            return box;
+        }
+
+        /// <summary>
+        /// Returns a box that is extended to encapsulate a given point.
+        /// With NaN propagation and -0 behaviour being platform dependent.
+        /// </summary>
+        /// <remarks>
+        /// This can be used in combination with <see cref="Empty"/> to make an efficient bounding box calculation.
+        /// </remarks>
+        /// <param name="point">The point to contain.</param>
+        /// <returns>The extended box.</returns>
+        /// <example>
+        /// For example:
+        /// <code>
+        /// Vector2d[] points = GetPoints();
+        /// Box2d aabb = Box2d.Empty;
+        /// for (int i = 0; i &lt; points.Length; i++)
+        /// {
+        ///     aabb = aabb.Extended(points[i]):
+        /// }
+        /// </code>
+        /// Will calculate the bounding box of all the points in the array without needing a special case for the first point.
+        /// </example>
+        public readonly Box2d ExtendedNative(Vector2d point)
+        {
+            Box2d box = this;
+            box.ExtendNative(point);
             return box;
         }
 

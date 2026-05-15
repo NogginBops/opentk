@@ -33,6 +33,14 @@ namespace OpenTK.Mathematics
         public static readonly Box3i Empty = new Box3i(Vector3i.MaxValue, Vector3i.MinValue);
 
         /// <summary>
+        /// A box with <c>Min = Vector3i.Zero</c> and <c>Min = Vector3i.Zero</c>.
+        /// </summary>
+        /// <remarks>
+        /// If you want an empty box, consider using <see cref="Empty"/>.
+        /// </remarks>
+        public static readonly Box3i Zero = new Box3i(Vector3i.Zero, Vector3i.Zero);
+
+        /// <summary>
         /// A box with a <c>Min = (0, 0, 0)</c> and <c>Max = (1, 1, 1)</c>.
         /// </summary>
         public static readonly Box3i UnitCube = new Box3i(Vector3i.Zero, Vector3i.One);
@@ -104,10 +112,7 @@ namespace OpenTK.Mathematics
         /// <remarks>
         /// This function never returns negative values, so <see cref="Empty"/> will have a size of (0, 0).
         /// </remarks>
-        public readonly Vector3i Size
-        {
-            get => Vector3i.ComponentMax(Vector3i.Zero, Max - Min);
-        }
+        public readonly Vector3i Size => Vector3i.ComponentMax(Vector3i.Zero, Max - Min);
 
         /// <summary>
         /// Gets half the size of the box.
@@ -116,10 +121,7 @@ namespace OpenTK.Mathematics
         /// <remarks>
         /// This function never returns negative values, so <see cref="Empty"/> will have a size of (0, 0).
         /// </remarks>
-        public readonly Vector3 HalfSize
-        {
-            get => (Vector3)Size / 2.0f;
-        }
+        public readonly Vector3 HalfSize => (Vector3)Size / 2.0f;
 
         /// <summary>
         /// The width of the box.
@@ -142,7 +144,7 @@ namespace OpenTK.Mathematics
         public readonly int Volume => Size.X * Size.Y * Size.Z;
 
         /// <summary>
-        /// The area of the box.
+        /// The area of the box as a <see cref="long"/>.
         /// </summary>
         public readonly long LongVolume => (long)Size.X * (long)Size.Y * (long)Size.Z;
 
