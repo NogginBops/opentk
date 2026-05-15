@@ -373,7 +373,7 @@ namespace OpenTK.Mathematics
         /// <returns>The nearest point on the edge of the box to the point, <paramref name="point"/>.</returns>
         public readonly Vector3d NearestPointOnEdge(Vector3d point)
         {
-            Vector3d nearestInBox = Vector3d.ComponentMin(Max, Vector3.ComponentMax(Min, point));
+            Vector3d nearestInBox = Vector3d.ComponentMin(Max, Vector3d.ComponentMax(Min, point));
             Vector3d minToP = nearestInBox - Min;
             Vector3d pToMax = Max - nearestInBox;
             Vector3d axisMinDistance = Vector3d.ComponentMin(minToP, pToMax);
