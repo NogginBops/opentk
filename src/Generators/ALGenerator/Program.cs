@@ -1,6 +1,7 @@
 ﻿using ALGenerator.Parsing;
-using ALGenerator.Process;
 using GeneratorBase;
+using GeneratorBase.Overloading;
+using GeneratorBase.Process;
 using GeneratorBase.Utility;
 using System;
 using System.Collections.Generic;
@@ -125,8 +126,29 @@ namespace ALGenerator
                     documentation = DocumentationParser.Parse(alSOFTSpecificationStream);
                 }
 
+                IOverloader[] overloaders = [
+                    new TrimNameOverloader(TrimNameOverloader.EndingsNotToTrimOpenAL),
+
+                    new StringReturnOverloader(),
+                    new BoolReturnOverloader(),
+
+                    new ColorTypeOverloader(),
+                    new MathTypeOverloader(),
+                    new FunctionPtrToDelegateOverloader(),
+                    new PointerToOffsetOverloader(),
+                    new VoidPtrToIntPtrOverloader(),
+                    new GenCreateAndDeleteOverloader(
+                        GenCreateAndDeleteOverloader.PluralNameToSingularNameOpenAL,
+                        GenCreateAndDeleteOverloader.PluralParameterNameToSingularNameOpenAL),
+                    new StringOverloader(),
+                    new StringArrayOverloader(),
+                    new SpanAndArrayOverloader(),
+                    new RefInsteadOfPointerOverloader(),
+                    new OutToReturnOverloader(),
+                ];
+
                 // Processer/overloading
-                OutputData outputSpec = Processor.ProcessSpec(resolvedApis, files, documentation);
+                OutputData outputSpec = Processor.ProcessSpec(resolvedApis, files, documentation, overloaders);
 
                 // Writing cs files.
                 Writer.Write(outputSpec);

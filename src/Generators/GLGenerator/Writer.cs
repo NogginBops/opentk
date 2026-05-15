@@ -9,7 +9,6 @@ using GLGenerator.Parsing;
 using GeneratorBase.Utility;
 using GeneratorBase.Utility.Extensions;
 using GeneratorBase;
-using GLGenerator.Process;
 using GeneratorBase.Overloading;
 using System.Diagnostics;
 

@@ -1,7 +1,6 @@
 ﻿using GeneratorBase;
 using GeneratorBase.Utility;
 using GeneratorBase.Utility.Extensions;
-using GLGenerator.Process;
 using System;
 using System.Collections.Generic;
 using System.IO;

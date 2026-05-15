@@ -22,6 +22,12 @@ namespace GeneratorBase
         }
     }
 
+    public interface IDocumentation
+    {
+        Dictionary<Function, FunctionDocumentation> CreateFunctionDocumentation(OutputApi api, List<VendorFunctions> functions);
+        Dictionary<string, EnumMemberDocumentation> CreateEnumMemberDocumentation(OutputApi api, List<EnumMember> enums);
+    }
+
     public record class FunctionDocumentation
     {
         public required string FunctionName { get; init; }
@@ -38,7 +44,6 @@ namespace GeneratorBase
         // OpenAL
         public PropertyInfo? PropertyInfo { get; init; }
     }
-
 
     #region OpenAL
 

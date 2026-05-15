@@ -1,5 +1,4 @@
 ﻿using GeneratorBase;
-using GLGenerator.Process;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;

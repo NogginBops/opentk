@@ -103,13 +103,7 @@ namespace GeneratorBase
         }
     }
 
-    public record OutputData(
-        List<ApiPointers> Pointers,
-        List<OutputApiData> Namespaces)
-    {
-        // OpenAL
-        public Dictionary<string, EnumMemberDocumentation> EnumMemberDocumentation { get; init; }
-    }
+    public record OutputData(List<ApiPointers> Pointers, List<OutputApiData> Namespaces);
 
     // FIXME: Add vulkan stuff to this...
     // FIXME: Better name?
@@ -117,7 +111,8 @@ namespace GeneratorBase
         OutputApi Api,
         List<VendorFunctions> VendorFunctions,
         List<EnumType> Enums,
-        Dictionary<Function, FunctionDocumentation> FunctionDocumentation);
+        Dictionary<Function, FunctionDocumentation> FunctionDocumentation,
+        Dictionary<string, EnumMemberDocumentation> EnumMemberDocumentation);
 
     public record SpecificationFile(
         ApiFile File,

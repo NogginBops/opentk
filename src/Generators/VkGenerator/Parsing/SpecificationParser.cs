@@ -599,6 +599,7 @@ namespace VkGenerator.Parsing
                     enumTypes.Add(new EnumType()
                     {
                         Name = name,
+                        OriginalName = name,
                         IsFlags = false,
                         Members = members,
 
@@ -665,6 +666,7 @@ namespace VkGenerator.Parsing
                     enumTypes.Add(new EnumType()
                     {
                         Name = name,
+                        OriginalName = name,
                         IsFlags = true,
                         Members = members,
 

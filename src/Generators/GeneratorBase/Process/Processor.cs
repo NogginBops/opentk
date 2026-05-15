@@ -1,58 +1,35 @@
-﻿using GeneratorBase;
-using GeneratorBase.Overloading;
+﻿using GeneratorBase.Overloading;
 using GeneratorBase.Utility;
 using GeneratorBase.Utility.Extensions;
-using GLGenerator.Parsing;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
+using System.Text;
 
-namespace GLGenerator.Process
+namespace GeneratorBase.Process
 {
-    internal static class Processor
+    public class Processor
     {
-        internal record FunctionData(
+        private record FunctionData(
             Function NativeFunction,
             Overload[] Overloads,
             bool ChangeNativeName);
 
-        internal sealed record EnumGroupInfo(
-            string OriginalName,
-            string GroupName,
-            bool IsFlags)
-        {
-            // To deduplicate these correctly we need special logic for the IsFlags bool
-            // so we don't consider it in the equality check and hashcode to allow for that.
-            //
-            // Example:
-            // PathFontStyle uses GL_NONE which is not marked as bitmask
-            // but other entries such as GL_BOLD_BIT_NV is marked as bitmask.
-            //
-            // When this case happens we want to consider the entire groupName as a bitmask.
-            //
-            // In the current spec this case only happens for PathFontStyle.
-            // - 2021-07-04
-            public bool Equals(EnumGroupInfo? other) =>
-                other?.GroupName == GroupName;
-
-            public override int GetHashCode() =>
-                HashCode.Combine(GroupName);
-        };
-
-        internal static OutputData ProcessSpec(List<ResolvedApi> apis, SpecificationFile[] files, Documentation docs)
+        public static OutputData ProcessSpec(List<ResolvedApi> apis, SpecificationFile[] files, IDocumentation docs, IOverloader[] overloaders)
         {
             List<OutputApiData> outputNamespaces = new List<OutputApiData>(apis.Count);
             foreach (var api in apis)
             {
-                List<VendorFunctions> vendorFunctions = CreateVendorFunctions(api.Api, api.Functions, docs);
+                List<VendorFunctions> vendorFunctions = CreateVendorFunctions(api.Api, api.Functions, docs, overloaders);
                 List<EnumType> enumTypes = CreateEnumTypes(api.Api, api.Enums);
 
                 MarkEnumsUsedByFunctions(api.Api, vendorFunctions, enumTypes);
 
-                Dictionary<Function, FunctionDocumentation> apiDocumentation = CreateFunctionDocumentation(api.Api, vendorFunctions, docs);
+                Dictionary<Function, FunctionDocumentation> functionDocumentation = docs.CreateFunctionDocumentation(api.Api, vendorFunctions);
+                Dictionary<string, EnumMemberDocumentation> enumMemberDocumentation = docs.CreateEnumMemberDocumentation(api.Api, api.Enums);
 
-                outputNamespaces.Add(new OutputApiData(api.Api, vendorFunctions, enumTypes, apiDocumentation));
+                outputNamespaces.Add(new OutputApiData(api.Api, vendorFunctions, enumTypes, functionDocumentation, enumMemberDocumentation));
             }
 
             // FIXME: Potentially split the GLES function pointers from the GL ones.
@@ -66,7 +43,7 @@ namespace GLGenerator.Process
             return new OutputData(pointers, outputNamespaces);
         }
 
-        internal static void CrossReferenceEnums(SpecificationFile[] files)
+        public static void CrossReferenceEnums(SpecificationFile[] files)
         {
             static SpecificationFile GetFile(SpecificationFile[] files, ApiFile file)
             {
@@ -97,7 +74,7 @@ namespace GLGenerator.Process
             }
         }
 
-        internal static List<API> MakeApis(SpecificationFile[] files)
+        public static List<API> MakeApis(SpecificationFile[] files)
         {
             List<API> apis = [];
             foreach (SpecificationFile file in files)
@@ -347,7 +324,7 @@ namespace GLGenerator.Process
             }
         }
 
-        internal static List<ResolvedApi> ResolveReferences(List<API> apis, SpecificationFile[] files)
+        public static List<ResolvedApi> ResolveReferences(List<API> apis, SpecificationFile[] files)
         {
             List<ResolvedApi> resolvedApis = new List<ResolvedApi>(apis.Count);
             foreach (var api in apis)
@@ -453,12 +430,12 @@ namespace GLGenerator.Process
             }
         }
 
-        private static List<VendorFunctions> CreateVendorFunctions(OutputApi api, List<Function> functions, Documentation docs)
+        private static List<VendorFunctions> CreateVendorFunctions(OutputApi api, List<Function> functions, IDocumentation docs, IOverloader[] overloaders)
         {
             Dictionary<string, List<FunctionData>> functionsPerVendor = new Dictionary<string, List<FunctionData>>();
             foreach (var function in functions)
             {
-                FunctionData overloadedFunction = GenerateOverloads(function);
+                FunctionData overloadedFunction = GenerateOverloads(function, overloaders);
 
                 bool keepRemovedFunctions = false;
                 if (api == OutputApi.GLCompat)
@@ -697,104 +674,6 @@ namespace GLGenerator.Process
             }
         }
 
-        private static Dictionary<Function, FunctionDocumentation> CreateFunctionDocumentation(OutputApi api, List<VendorFunctions> functions, Documentation docs)
-        {
-            Dictionary<Function, FunctionDocumentation> functionsDocumentation = new Dictionary<Function, FunctionDocumentation>();
-            foreach (var vendorFunctions in functions)
-            {
-                foreach (var function in vendorFunctions.Functions)
-                {
-                    List<Link> extensionURLs = [];
-                    foreach (var extension in function.NativeFunction.VersionInfo!.Extensions)
-                    {
-                        string ext = NameMangler.MaybeRemoveStart(extension.Name, "GL_");
-
-                        string url;
-                        if (extension.Vendor == "ANGLE" || extension.Vendor == "CHROMIUM")
-                        {
-                            url = $"https://chromium.googlesource.com/angle/angle/+/refs/heads/main/extensions/{ext}.txt";
-                        }
-                        else
-                        {
-                            string apiString = api switch
-                            {
-                                OutputApi.GL => "OpenGL",
-                                OutputApi.GLCompat => "OpenGL",
-                                OutputApi.GLES1 => "OpenGL",
-                                OutputApi.GLES2 => "OpenGL",
-                                OutputApi.WGL => "OpenGL",
-                                OutputApi.GLX => "OpenGL",
-                                OutputApi.EGL => "EGL",
-                                _ => throw new Exception()
-                            };
-
-                            url = $"https://registry.khronos.org/{apiString}/extensions/{extension.Vendor}/{ext}.txt";
-                        }
-                        extensionURLs.Add(new Link(url, $"{ext}.txt"));
-                    }
-
-                    FunctionDocumentation? functionDocumentation = GetFunctionDocumentation(docs, api, function.NativeFunction);
-                    if (functionDocumentation != null)
-                    {
-                        // Here we assume this will produce identical documentation even if this is done multiple times...
-                        functionsDocumentation[function.NativeFunction] = functionDocumentation with
-                        {
-                            VersionInfo = function.NativeFunction.VersionInfo,
-                            RefPagesLinks = [.. functionDocumentation.RefPagesLinks, .. extensionURLs]
-                        };
-                    }
-                    else
-                    {
-                        // Extensions don't have documentation, so we don't warn about them.
-                        if (vendorFunctions.Vendor == "")
-                        {
-                            if (api == OutputApi.GL || api == OutputApi.GLCompat || api == OutputApi.GLES1 || api == OutputApi.GLES2)
-                            {
-                                Logger.Warning($"{function.NativeFunction.EntryPoint} doesn't have any documentation for {api}");
-                            }
-                        }
-
-                        // Here we assume this will produce identical documentation even if this is done multiple times...
-                        functionsDocumentation[function.NativeFunction] = new FunctionDocumentation()
-                        {
-                            FunctionName = function.NativeFunction.EntryPoint,
-                            Purpose = "",
-                            Parameters = [],
-                            RefPagesLinks = extensionURLs,
-                            VersionInfo = function.NativeFunction.VersionInfo,
-                        };
-                    }
-                }
-            }
-            return functionsDocumentation;
-        }
-
-        private static FunctionDocumentation? GetFunctionDocumentation(Documentation documentation, OutputApi api, Function function)
-        {
-            if (documentation.VersionDocumentation.TryGetValue(api, out var apiDocumentation))
-            {
-                if (apiDocumentation.TryGetValue(function.EntryPoint, out FunctionDocumentation? functionDocumentation))
-                {
-                    if (function.Parameters.Count != functionDocumentation.Parameters.Length)
-                    {
-                        Logger.Warning($"Function {function.EntryPoint} has differnet number of parameters than the parsed documentation. (gl.xml:{function.Parameters.Count}, documentation:{functionDocumentation.Parameters.Length})");
-                    }
-
-                    for (int i = 0; i < Math.Min(function.Parameters.Count, functionDocumentation.Parameters.Length); i++)
-                    {
-                        if (function.Parameters[i].OriginalName != functionDocumentation.Parameters[i].ParameterName)
-                        {
-                            //Logger.Warning($"[{version}][{function.EntryPoint}] Function parameter '{function.Parameters[i].OriginalName}' doesn't have the same name in the documentation. ('{commandDoc.Parameters[i].ParameterName}')");
-                        }
-                    }
-
-                    return functionDocumentation;
-                }
-            }
-
-            return null;
-        }
-
         private static ApiPointers CreatePointersList(SpecificationFile file)
         {
             SortedList<string, Function> allFunctions = new SortedList<string, Function>();
@@ -807,30 +686,8 @@ namespace GLGenerator.Process
             return new ApiPointers(file.File, allFunctions.Values.ToList());
         }
 
-        public static readonly IOverloader[] Overloaders = [
-                new TrimNameOverloader(TrimNameOverloader.EndingsNotToTrimOpenGL),
-
-                new StringReturnOverloader(),
-                new BoolReturnOverloader(),
-
-                new ColorTypeOverloader(),
-                new MathTypeOverloader(),
-                new FunctionPtrToDelegateOverloader(),
-                new PointerToOffsetOverloader(),
-                new ObjectPtrLabelOverloader(),
-                new VoidPtrToIntPtrOverloader(),
-                new GenCreateAndDeleteOverloader(
-                    GenCreateAndDeleteOverloader.PluralNameToSingularNameOpenGL,
-                    GenCreateAndDeleteOverloader.PluralParameterNameToSingularNameOpenGL),
-                new StringOverloader(),
-                new StringArrayOverloader(),
-                new SpanAndArrayOverloader(),
-                new RefInsteadOfPointerOverloader(),
-                new OutToReturnOverloader(),
-            ];
-
         // Maybe we can do the return type overloading in a post processing step?
-        internal static FunctionData GenerateOverloads(Function nativeFunction)
+        private static FunctionData GenerateOverloads(Function nativeFunction, IOverloader[] overloaders)
         {
             List<Overload> overloads = new List<Overload>
             {
@@ -839,15 +696,15 @@ namespace GLGenerator.Process
                     new NameTable(), /*"returnValue",*/ Array.Empty<string>(), nativeFunction.Name),
             };
 
-            bool overloadedOnce = false;
-            foreach (IOverloader overloader in Overloaders)
+            bool hasOverloads = false;
+            foreach (IOverloader overloader in overloaders)
             {
                 List<Overload> newOverloads = new List<Overload>();
                 foreach (Overload overload in overloads)
                 {
                     if (overloader.TryGenerateOverloads(overload, out List<Overload>? overloaderOverloads))
                     {
-                        overloadedOnce = true;
+                        hasOverloads = true;
 
                         newOverloads.AddRange(overloaderOverloads);
                     }
@@ -859,7 +716,7 @@ namespace GLGenerator.Process
                 // Replace the old overloads with the new overloads
                 overloads = newOverloads;
             }
-            Overload[] overloadArray = overloadedOnce ? overloads.ToArray() : Array.Empty<Overload>();
+            Overload[] overloadArray = hasOverloads ? overloads.ToArray() : [];
 
             bool changeNativeName = false;
             foreach (Overload overload in overloadArray)

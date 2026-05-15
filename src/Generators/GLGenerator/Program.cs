@@ -1,8 +1,9 @@
 ﻿using GeneratorBase;
+using GeneratorBase.Overloading;
+using GeneratorBase.Process;
 using GeneratorBase.Utility;
 using GeneratorBase.Utility.Extensions;
 using GLGenerator.Parsing;
-using GLGenerator.Process;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -153,8 +154,30 @@ namespace GLGenerator
                 using DocumentationSource documentationSource = Reader.ReadDocumentationFromGithub();
                 Documentation documentation = DocumentationParser.Parse(documentationSource);
 
+                IOverloader[] overloaders = [
+                    new TrimNameOverloader(TrimNameOverloader.EndingsNotToTrimOpenGL),
+
+                    new StringReturnOverloader(),
+                    new BoolReturnOverloader(),
+
+                    new ColorTypeOverloader(),
+                    new MathTypeOverloader(),
+                    new FunctionPtrToDelegateOverloader(),
+                    new PointerToOffsetOverloader(),
+                    new ObjectPtrLabelOverloader(),
+                    new VoidPtrToIntPtrOverloader(),
+                    new GenCreateAndDeleteOverloader(
+                        GenCreateAndDeleteOverloader.PluralNameToSingularNameOpenGL,
+                        GenCreateAndDeleteOverloader.PluralParameterNameToSingularNameOpenGL),
+                    new StringOverloader(),
+                    new StringArrayOverloader(),
+                    new SpanAndArrayOverloader(),
+                    new RefInsteadOfPointerOverloader(),
+                    new OutToReturnOverloader(),
+                ];
+
                 // Processer/overloading
-                OutputData outputSpec = Processor.ProcessSpec(resolvedApis, files, documentation);
+                OutputData outputSpec = Processor.ProcessSpec(resolvedApis, files, documentation, overloaders);
 
                 // Writing cs files.
                 Writer.Write(outputSpec);

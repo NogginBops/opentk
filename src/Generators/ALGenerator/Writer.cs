@@ -1,5 +1,4 @@
 ﻿using ALGenerator.Parsing;
-using ALGenerator.Process;
 using GeneratorBase;
 using GeneratorBase.Overloading;
 using GeneratorBase.Utility;
@@ -48,11 +47,11 @@ namespace ALGenerator
 
             foreach (OutputApiData @namespace in data.Namespaces)
             {
-                WriteNamespace(outputProjectPath, @namespace, data.EnumMemberDocumentation);
+                WriteNamespace(outputProjectPath, @namespace);
             }
         }
 
-        public static void WriteNamespace(string outputProjectPath, OutputApiData @namespace, Dictionary<string, EnumMemberDocumentation> enumMemberDocumentation)
+        public static void WriteNamespace(string outputProjectPath, OutputApiData @namespace)
         {
             // FIXME: Fix function pointers so we can merge this.
             FileStrings strings = @namespace.Api switch
@@ -68,7 +67,7 @@ namespace ALGenerator
             WriteNativeFunctions(directoryPath, strings, @namespace.VendorFunctions, @namespace.FunctionDocumentation);
             WriteOverloads(directoryPath, strings, @namespace.VendorFunctions);
 
-            WriteEnums(directoryPath, strings, @namespace.Enums, enumMemberDocumentation);
+            WriteEnums(directoryPath, strings, @namespace.Enums, @namespace.EnumMemberDocumentation);
         }
 
         // FIXME: Maybe we should nest this 

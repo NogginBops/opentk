@@ -318,6 +318,7 @@ namespace VkGenerator.Process
 
                     EnumType newEnumType = new EnumType() {
                         Name = bitmask.Name,
+                        OriginalName = bitmask.Name,
                         IsFlags = true,
                         Members = [],
                         Extension = null,
