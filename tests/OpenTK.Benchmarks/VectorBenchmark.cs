@@ -44,12 +44,6 @@ namespace OpenTK.Benchmarks
         }
 
         [Benchmark(Baseline = true)]
-        public Vector3 ComponentMinOld()
-        {
-            return Vector3.ComponentMinOld(A, B);
-        }
-
-        [Benchmark]
         public Vector3 ComponentMinIEEE()
         {
             return Vector3.ComponentMin(A, B);

@@ -342,9 +342,7 @@ namespace OpenTK.Mathematics
         /// <returns>The distance between the specified point and the nearest edge.</returns>
         public readonly double DistanceToNearestEdge(Vector3d point)
         {
-            // FIXME: What if the point is inside the box?
-            Vector3d dist = Vector3d.ComponentMax(Vector3d.Zero, Vector3d.ComponentMax(Min - point, point - Max));
-            return dist.Length;
+            return double.Abs(SignedDistanceToNearestEdge(point));
         }
 
         /// <summary>
@@ -355,7 +353,7 @@ namespace OpenTK.Mathematics
         public readonly double SignedDistanceToNearestEdge(Vector3d point)
         {
             Vector3d d = Vector3d.Abs(point - Center) - HalfSize;
-            return Vector3d.ComponentMax(Vector3d.Zero, d).Length + Math.Min(Math.Max(d.X, Math.Max(d.Y, d.Z)), 0.0);
+            return Vector3d.ComponentMax(Vector3d.Zero, d).Length + double.Min(double.Max(d.X, double.Max(d.Y, d.Z)), 0.0);
         }
 
         /// <summary>
@@ -366,6 +364,44 @@ namespace OpenTK.Mathematics
         public readonly Vector3d NearestPointInBox(Vector3d point)
         {
             return Vector3d.ComponentMin(Max, Vector3d.ComponentMax(Min, point));
+        }
+
+        /// <summary>
+        /// Returns the nearest point that is on the edge of the box.
+        /// </summary>
+        /// <param name="point">The point for which the nearest point on the edge of the box should be found.</param>
+        /// <returns>The nearest point on the edge of the box to the point, <paramref name="point"/>.</returns>
+        public readonly Vector3d NearestPointOnEdge(Vector3d point)
+        {
+            Vector3d nearestInBox = Vector3d.ComponentMin(Max, Vector3.ComponentMax(Min, point));
+            Vector3d minToP = nearestInBox - Min;
+            Vector3d pToMax = Max - nearestInBox;
+            Vector3d axisMinDistance = Vector3d.ComponentMin(minToP, pToMax);
+            double minDistance = double.Min(double.Min(axisMinDistance.X, axisMinDistance.Y), axisMinDistance.Z);
+            if (minDistance == minToP.X)
+            {
+                return new Vector3d(Min.X, nearestInBox.Y, nearestInBox.Z);
+            }
+            else if (minDistance == pToMax.X)
+            {
+                return new Vector3d(Max.X, nearestInBox.Y, nearestInBox.Z);
+            }
+            else if (minDistance == minToP.Y)
+            {
+                return new Vector3d(nearestInBox.X, Min.Y, nearestInBox.Z);
+            }
+            else if (minDistance == pToMax.Y)
+            {
+                return new Vector3d(nearestInBox.X, Max.Y, nearestInBox.Z);
+            }
+            else if (minDistance == minToP.Z)
+            {
+                return new Vector3d(nearestInBox.X, nearestInBox.Y, Min.Z);
+            }
+            else // if (minDistance == maxToP.Z)
+            {
+                return new Vector3d(nearestInBox.X, nearestInBox.Y, Max.Z);
+            }
         }
 
         /// <summary>

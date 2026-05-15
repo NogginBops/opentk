@@ -138,9 +138,11 @@ module Box3 =
     module Extend =
         [<Property>]
         let ``After extending a box the point should be either on the edge of the box or the box shouldn't change size`` (b1 : Box3, v1 : Vector3) =
-            let v2 = b1.Size
-            b1.Extend(v1)
-            Assert.EitherEqual(b1.DistanceToNearestEdge(v1), (float32)0, v2, b1.Size)
+            let b2 = b1.Extended(v1)
+            if b1.ContainsInclusive(v1) then
+                Assert.Equal(b1.Size, b2.Size)
+            else
+                Assert.ApproximatelyEquivalent(b2.DistanceToNearestEdge(v1), (float32)0)
 
         [<Property>]
         let ``After extending the point should be enclosed in the box`` (b1 : Box3, v1 : Vector3) =
@@ -191,9 +193,29 @@ module Box3 =
     [<Properties(Arbitrary = [|typeof<OpenTKGen>|])>]
     module DistanceToNearestEdge =
         [<Property>]
-        let ``The distance should always return the smallest possible distance`` (b1 : Box3, v1 : Vector3) =
-           let v2 = Vector3(Math.Max((float32)0, Math.Max(b1.Min.X - v1.X, v1.X - b1.Max.X)), Math.Max((float32)0, Math.Max(b1.Min.Y - v1.Y,  v1.Y - b1.Max.Y)), Math.Max((float32)0, Math.Max(b1.Min.Z - v1.Z,  v1.Z - b1.Max.Z)));
-           Assert.Equal(b1.DistanceToNearestEdge(v1), v2.Length)
+        let ``The distance to the zero box is the length of the vector`` (v1 : Vector3) =
+           let dist = Box3.Zero.DistanceToNearestEdge(v1)
+           Assert.Equal(dist, v1.Length)
+
+        [<Property>]
+        let ``The distance to the unit square is the expected length`` () =
+           let unitSquare = Box3.UnitCube
+           let p01 = Vector3(0.0f, 1.0f, 0.0f);
+           let p11 = Vector3(1.0f, 1.0f, 0.0f);
+           let p02 = Vector3(0.0f, 2.0f, 0.0f);
+           let p052 = Vector3(0.5f, 2.0f, 0.0f);
+           let p12 = Vector3(1.0f, 2.0f, 0.0f);
+           Assert.Equal(unitSquare.DistanceToNearestEdge(p01), 0.0f);
+           Assert.Equal(unitSquare.DistanceToNearestEdge(p11), 0.0f);
+           Assert.Equal(unitSquare.DistanceToNearestEdge(p02), 1.0f);
+           Assert.Equal(unitSquare.DistanceToNearestEdge(p12), 1.0f);
+           Assert.Equal(unitSquare.DistanceToNearestEdge(p052), 1.0f);
+           Assert.Equal(unitSquare.DistanceToNearestEdge(p12), 1.0f);
+
+        [<Property>]
+        let ``The distance to nearest edge should be the distance to the neasest point on the edge`` (b1 : Box3, v1 : Vector3) =
+           let pointOnEdge = b1.NearestPointOnEdge(v1)
+           Assert.ApproximatelyEquivalent(b1.DistanceToNearestEdge(v1), Vector3.Distance(pointOnEdge, v1))
 
         [<Property>]
         let ``The distance should never be negative`` (b1 : Box3, v1 : Vector3) =

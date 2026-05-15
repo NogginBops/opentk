@@ -333,8 +333,7 @@ namespace OpenTK.Mathematics
         /// <returns>The distance between the specified point and the nearest edge.</returns>
         public readonly double DistanceToNearestEdge(Vector2d point)
         {
-            Vector2d dist = Vector2d.ComponentMax(Vector2d.Zero, Vector2d.ComponentMax(Min - point, point - Max));
-            return double.Min(dist.X, dist.Y);
+            return double.Abs(SignedDistanceToNearestEdge(point));
         }
 
         /// <summary>
@@ -356,6 +355,35 @@ namespace OpenTK.Mathematics
         public readonly Vector2d NearestPointInBox(Vector2d point)
         {
             return Vector2d.ComponentMin(Max, Vector2d.ComponentMax(Min, point));
+        }
+
+        /// <summary>
+        /// Returns the nearest point that is on the edge of the box.
+        /// </summary>
+        /// <param name="point">The point for which the nearest point on the edge of the box should be found.</param>
+        /// <returns>The nearest point on the edge of the box to the point, <paramref name="point"/>.</returns>
+        public readonly Vector2d NearestPointOnEdge(Vector2d point)
+        {
+            Vector2d nearestInBox = Vector2d.ComponentMin(Max, Vector2d.ComponentMax(Min, point));
+            Vector2d pToMin = Min - nearestInBox;
+            Vector2d maxToP = nearestInBox - Max;
+            double minDistance = double.Min(double.Min(pToMin.X, maxToP.X), double.Min(pToMin.Y, maxToP.Y));
+            if (minDistance == pToMin.X)
+            {
+                return new Vector2d(Min.X, nearestInBox.Y);
+            }
+            else if (minDistance == maxToP.X)
+            {
+                return new Vector2d(Max.X, nearestInBox.Y);
+            }
+            else if (minDistance == pToMin.Y)
+            {
+                return new Vector2d(nearestInBox.X, Min.Y);
+            }
+            else // if (minDistance == maxToP.Y)
+            {
+                return new Vector2d(nearestInBox.X, Max.Y);
+            }
         }
 
         /// <summary>

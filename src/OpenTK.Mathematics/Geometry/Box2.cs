@@ -333,8 +333,7 @@ namespace OpenTK.Mathematics
         /// <returns>The distance between the specified point and the nearest edge.</returns>
         public readonly float DistanceToNearestEdge(Vector2 point)
         {
-            Vector2 dist = Vector2.ComponentMax(Vector2.Zero, Vector2.ComponentMax(Min - point, point - Max));
-            return float.Min(dist.X, dist.Y);
+            return float.Abs(SignedDistanceToNearestEdge(point));
         }
 
         /// <summary>
@@ -356,6 +355,35 @@ namespace OpenTK.Mathematics
         public readonly Vector2 NearestPointInBox(Vector2 point)
         {
             return Vector2.ComponentMin(Max, Vector2.ComponentMax(Min, point));
+        }
+
+        /// <summary>
+        /// Returns the nearest point that is on the edge of the box.
+        /// </summary>
+        /// <param name="point">The point for which the nearest point on the edge of the box should be found.</param>
+        /// <returns>The nearest point on the edge of the box to the point, <paramref name="point"/>.</returns>
+        public readonly Vector2 NearestPointOnEdge(Vector2 point)
+        {
+            Vector2 nearestInBox = Vector2.ComponentMin(Max, Vector2.ComponentMax(Min, point));
+            Vector2 minToP = nearestInBox - Min;
+            Vector2 pToMax = Max - nearestInBox;
+            float minDistance = float.Min(float.Min(minToP.X, pToMax.X), float.Min(minToP.Y, pToMax.Y));
+            if (minDistance == minToP.X)
+            {
+                return new Vector2(Min.X, nearestInBox.Y);
+            }
+            else if (minDistance == pToMax.X)
+            {
+                return new Vector2(Max.X, nearestInBox.Y);
+            }
+            else if (minDistance == minToP.Y)
+            {
+                return new Vector2(nearestInBox.X, Min.Y);
+            }
+            else // if (minDistance == maxToP.Y)
+            {
+                return new Vector2(nearestInBox.X, Max.Y);
+            }
         }
 
         /// <summary>
