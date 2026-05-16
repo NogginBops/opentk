@@ -1462,6 +1462,8 @@ namespace OpenTK.Graphics.Vulkan
             _vkCmdBeginConditionalRenderingEXT_fnptr = (delegate* unmanaged<VkCommandBuffer, VkConditionalRenderingBeginInfoEXT*, void>)VKLoader.GetDeviceProcAddr(device, "vkCmdBeginConditionalRenderingEXT");
             _vkCmdBeginCustomResolveEXT_fnptr = (delegate* unmanaged<VkCommandBuffer, VkBeginCustomResolveInfoEXT*, void>)VKLoader.GetDeviceProcAddr(device, "vkCmdBeginCustomResolveEXT");
             _vkCmdBeginDebugUtilsLabelEXT_fnptr = (delegate* unmanaged<VkCommandBuffer, VkDebugUtilsLabelEXT*, void>)VKLoader.GetDeviceProcAddr(device, "vkCmdBeginDebugUtilsLabelEXT");
+            _vkCmdBeginGpaSampleAMD_fnptr = (delegate* unmanaged<VkCommandBuffer, VkGpaSessionAMD, VkGpaSampleBeginInfoAMD*, uint*, VkResult>)VKLoader.GetDeviceProcAddr(device, "vkCmdBeginGpaSampleAMD");
+            _vkCmdBeginGpaSessionAMD_fnptr = (delegate* unmanaged<VkCommandBuffer, VkGpaSessionAMD, VkResult>)VKLoader.GetDeviceProcAddr(device, "vkCmdBeginGpaSessionAMD");
             _vkCmdBeginPerTileExecutionQCOM_fnptr = (delegate* unmanaged<VkCommandBuffer, VkPerTileBeginInfoQCOM*, void>)VKLoader.GetDeviceProcAddr(device, "vkCmdBeginPerTileExecutionQCOM");
             _vkCmdBeginQuery_fnptr = (delegate* unmanaged<VkCommandBuffer, VkQueryPool, uint, VkQueryControlFlagBits, void>)VKLoader.GetDeviceProcAddr(device, "vkCmdBeginQuery");
             _vkCmdBeginQueryIndexedEXT_fnptr = (delegate* unmanaged<VkCommandBuffer, VkQueryPool, uint, VkQueryControlFlagBits, uint, void>)VKLoader.GetDeviceProcAddr(device, "vkCmdBeginQueryIndexedEXT");
@@ -1521,6 +1523,7 @@ namespace OpenTK.Graphics.Vulkan
             _vkCmdCopyBufferToImage_fnptr = (delegate* unmanaged<VkCommandBuffer, VkBuffer, VkImage, VkImageLayout, uint, VkBufferImageCopy*, void>)VKLoader.GetDeviceProcAddr(device, "vkCmdCopyBufferToImage");
             _vkCmdCopyBufferToImage2_fnptr = (delegate* unmanaged<VkCommandBuffer, VkCopyBufferToImageInfo2*, void>)VKLoader.GetDeviceProcAddr(device, "vkCmdCopyBufferToImage2");
             _vkCmdCopyBufferToImage2KHR_fnptr = (delegate* unmanaged<VkCommandBuffer, VkCopyBufferToImageInfo2*, void>)VKLoader.GetDeviceProcAddr(device, "vkCmdCopyBufferToImage2KHR");
+            _vkCmdCopyGpaSessionResultsAMD_fnptr = (delegate* unmanaged<VkCommandBuffer, VkGpaSessionAMD, void>)VKLoader.GetDeviceProcAddr(device, "vkCmdCopyGpaSessionResultsAMD");
             _vkCmdCopyImage_fnptr = (delegate* unmanaged<VkCommandBuffer, VkImage, VkImageLayout, VkImage, VkImageLayout, uint, VkImageCopy*, void>)VKLoader.GetDeviceProcAddr(device, "vkCmdCopyImage");
             _vkCmdCopyImage2_fnptr = (delegate* unmanaged<VkCommandBuffer, VkCopyImageInfo2*, void>)VKLoader.GetDeviceProcAddr(device, "vkCmdCopyImage2");
             _vkCmdCopyImage2KHR_fnptr = (delegate* unmanaged<VkCommandBuffer, VkCopyImageInfo2*, void>)VKLoader.GetDeviceProcAddr(device, "vkCmdCopyImage2KHR");
@@ -1592,6 +1595,8 @@ namespace OpenTK.Graphics.Vulkan
             _vkCmdEncodeVideoKHR_fnptr = (delegate* unmanaged<VkCommandBuffer, VkVideoEncodeInfoKHR*, void>)VKLoader.GetDeviceProcAddr(device, "vkCmdEncodeVideoKHR");
             _vkCmdEndConditionalRenderingEXT_fnptr = (delegate* unmanaged<VkCommandBuffer, void>)VKLoader.GetDeviceProcAddr(device, "vkCmdEndConditionalRenderingEXT");
             _vkCmdEndDebugUtilsLabelEXT_fnptr = (delegate* unmanaged<VkCommandBuffer, void>)VKLoader.GetDeviceProcAddr(device, "vkCmdEndDebugUtilsLabelEXT");
+            _vkCmdEndGpaSampleAMD_fnptr = (delegate* unmanaged<VkCommandBuffer, VkGpaSessionAMD, uint, void>)VKLoader.GetDeviceProcAddr(device, "vkCmdEndGpaSampleAMD");
+            _vkCmdEndGpaSessionAMD_fnptr = (delegate* unmanaged<VkCommandBuffer, VkGpaSessionAMD, VkResult>)VKLoader.GetDeviceProcAddr(device, "vkCmdEndGpaSessionAMD");
             _vkCmdEndPerTileExecutionQCOM_fnptr = (delegate* unmanaged<VkCommandBuffer, VkPerTileEndInfoQCOM*, void>)VKLoader.GetDeviceProcAddr(device, "vkCmdEndPerTileExecutionQCOM");
             _vkCmdEndQuery_fnptr = (delegate* unmanaged<VkCommandBuffer, VkQueryPool, uint, void>)VKLoader.GetDeviceProcAddr(device, "vkCmdEndQuery");
             _vkCmdEndQueryIndexedEXT_fnptr = (delegate* unmanaged<VkCommandBuffer, VkQueryPool, uint, uint, void>)VKLoader.GetDeviceProcAddr(device, "vkCmdEndQueryIndexedEXT");
@@ -1808,6 +1813,7 @@ namespace OpenTK.Graphics.Vulkan
             _vkCreateExternalComputeQueueNV_fnptr = (delegate* unmanaged<VkDevice, VkExternalComputeQueueCreateInfoNV*, VkAllocationCallbacks*, VkExternalComputeQueueNV*, VkResult>)VKLoader.GetDeviceProcAddr(device, "vkCreateExternalComputeQueueNV");
             _vkCreateFence_fnptr = (delegate* unmanaged<VkDevice, VkFenceCreateInfo*, VkAllocationCallbacks*, VkFence*, VkResult>)VKLoader.GetDeviceProcAddr(device, "vkCreateFence");
             _vkCreateFramebuffer_fnptr = (delegate* unmanaged<VkDevice, VkFramebufferCreateInfo*, VkAllocationCallbacks*, VkFramebuffer*, VkResult>)VKLoader.GetDeviceProcAddr(device, "vkCreateFramebuffer");
+            _vkCreateGpaSessionAMD_fnptr = (delegate* unmanaged<VkDevice, VkGpaSessionCreateInfoAMD*, VkAllocationCallbacks*, VkGpaSessionAMD*, VkResult>)VKLoader.GetDeviceProcAddr(device, "vkCreateGpaSessionAMD");
             _vkCreateGraphicsPipelines_fnptr = (delegate* unmanaged<VkDevice, VkPipelineCache, uint, VkGraphicsPipelineCreateInfo*, VkAllocationCallbacks*, VkPipeline*, VkResult>)VKLoader.GetDeviceProcAddr(device, "vkCreateGraphicsPipelines");
             _vkCreateImage_fnptr = (delegate* unmanaged<VkDevice, VkImageCreateInfo*, VkAllocationCallbacks*, VkImage*, VkResult>)VKLoader.GetDeviceProcAddr(device, "vkCreateImage");
             _vkCreateImageView_fnptr = (delegate* unmanaged<VkDevice, VkImageViewCreateInfo*, VkAllocationCallbacks*, VkImageView*, VkResult>)VKLoader.GetDeviceProcAddr(device, "vkCreateImageView");
@@ -1866,6 +1872,7 @@ namespace OpenTK.Graphics.Vulkan
             _vkDestroyExternalComputeQueueNV_fnptr = (delegate* unmanaged<VkDevice, VkExternalComputeQueueNV, VkAllocationCallbacks*, void>)VKLoader.GetDeviceProcAddr(device, "vkDestroyExternalComputeQueueNV");
             _vkDestroyFence_fnptr = (delegate* unmanaged<VkDevice, VkFence, VkAllocationCallbacks*, void>)VKLoader.GetDeviceProcAddr(device, "vkDestroyFence");
             _vkDestroyFramebuffer_fnptr = (delegate* unmanaged<VkDevice, VkFramebuffer, VkAllocationCallbacks*, void>)VKLoader.GetDeviceProcAddr(device, "vkDestroyFramebuffer");
+            _vkDestroyGpaSessionAMD_fnptr = (delegate* unmanaged<VkDevice, VkGpaSessionAMD, VkAllocationCallbacks*, void>)VKLoader.GetDeviceProcAddr(device, "vkDestroyGpaSessionAMD");
             _vkDestroyImage_fnptr = (delegate* unmanaged<VkDevice, VkImage, VkAllocationCallbacks*, void>)VKLoader.GetDeviceProcAddr(device, "vkDestroyImage");
             _vkDestroyImageView_fnptr = (delegate* unmanaged<VkDevice, VkImageView, VkAllocationCallbacks*, void>)VKLoader.GetDeviceProcAddr(device, "vkDestroyImageView");
             _vkDestroyIndirectCommandsLayoutEXT_fnptr = (delegate* unmanaged<VkDevice, VkIndirectCommandsLayoutEXT, VkAllocationCallbacks*, void>)VKLoader.GetDeviceProcAddr(device, "vkDestroyIndirectCommandsLayoutEXT");
@@ -1979,6 +1986,9 @@ namespace OpenTK.Graphics.Vulkan
             _vkGetFramebufferTilePropertiesQCOM_fnptr = (delegate* unmanaged<VkDevice, VkFramebuffer, uint*, VkTilePropertiesQCOM*, VkResult>)VKLoader.GetDeviceProcAddr(device, "vkGetFramebufferTilePropertiesQCOM");
             _vkGetGeneratedCommandsMemoryRequirementsEXT_fnptr = (delegate* unmanaged<VkDevice, VkGeneratedCommandsMemoryRequirementsInfoEXT*, VkMemoryRequirements2*, void>)VKLoader.GetDeviceProcAddr(device, "vkGetGeneratedCommandsMemoryRequirementsEXT");
             _vkGetGeneratedCommandsMemoryRequirementsNV_fnptr = (delegate* unmanaged<VkDevice, VkGeneratedCommandsMemoryRequirementsInfoNV*, VkMemoryRequirements2*, void>)VKLoader.GetDeviceProcAddr(device, "vkGetGeneratedCommandsMemoryRequirementsNV");
+            _vkGetGpaDeviceClockInfoAMD_fnptr = (delegate* unmanaged<VkDevice, VkGpaDeviceGetClockInfoAMD*, VkResult>)VKLoader.GetDeviceProcAddr(device, "vkGetGpaDeviceClockInfoAMD");
+            _vkGetGpaSessionResultsAMD_fnptr = (delegate* unmanaged<VkDevice, VkGpaSessionAMD, uint, nuint*, void*, VkResult>)VKLoader.GetDeviceProcAddr(device, "vkGetGpaSessionResultsAMD");
+            _vkGetGpaSessionStatusAMD_fnptr = (delegate* unmanaged<VkDevice, VkGpaSessionAMD, VkResult>)VKLoader.GetDeviceProcAddr(device, "vkGetGpaSessionStatusAMD");
             _vkGetImageDrmFormatModifierPropertiesEXT_fnptr = (delegate* unmanaged<VkDevice, VkImage, VkImageDrmFormatModifierPropertiesEXT*, VkResult>)VKLoader.GetDeviceProcAddr(device, "vkGetImageDrmFormatModifierPropertiesEXT");
             _vkGetImageMemoryRequirements_fnptr = (delegate* unmanaged<VkDevice, VkImage, VkMemoryRequirements*, void>)VKLoader.GetDeviceProcAddr(device, "vkGetImageMemoryRequirements");
             _vkGetImageMemoryRequirements2_fnptr = (delegate* unmanaged<VkDevice, VkImageMemoryRequirementsInfo2*, VkMemoryRequirements2*, void>)VKLoader.GetDeviceProcAddr(device, "vkGetImageMemoryRequirements2");
@@ -2110,6 +2120,7 @@ namespace OpenTK.Graphics.Vulkan
             _vkResetDescriptorPool_fnptr = (delegate* unmanaged<VkDevice, VkDescriptorPool, VkDescriptorPoolResetFlags, VkResult>)VKLoader.GetDeviceProcAddr(device, "vkResetDescriptorPool");
             _vkResetEvent_fnptr = (delegate* unmanaged<VkDevice, VkEvent, VkResult>)VKLoader.GetDeviceProcAddr(device, "vkResetEvent");
             _vkResetFences_fnptr = (delegate* unmanaged<VkDevice, uint, VkFence*, VkResult>)VKLoader.GetDeviceProcAddr(device, "vkResetFences");
+            _vkResetGpaSessionAMD_fnptr = (delegate* unmanaged<VkDevice, VkGpaSessionAMD, VkResult>)VKLoader.GetDeviceProcAddr(device, "vkResetGpaSessionAMD");
             _vkResetQueryPool_fnptr = (delegate* unmanaged<VkDevice, VkQueryPool, uint, uint, void>)VKLoader.GetDeviceProcAddr(device, "vkResetQueryPool");
             _vkResetQueryPoolEXT_fnptr = (delegate* unmanaged<VkDevice, VkQueryPool, uint, uint, void>)VKLoader.GetDeviceProcAddr(device, "vkResetQueryPoolEXT");
             _vkSetBufferCollectionBufferConstraintsFUCHSIA_fnptr = (delegate* unmanaged<VkDevice, VkBufferCollectionFUCHSIA, VkBufferConstraintsInfoFUCHSIA*, VkResult>)VKLoader.GetDeviceProcAddr(device, "vkSetBufferCollectionBufferConstraintsFUCHSIA");
@@ -2118,6 +2129,7 @@ namespace OpenTK.Graphics.Vulkan
             _vkSetDebugUtilsObjectTagEXT_fnptr = (delegate* unmanaged<VkDevice, VkDebugUtilsObjectTagInfoEXT*, VkResult>)VKLoader.GetDeviceProcAddr(device, "vkSetDebugUtilsObjectTagEXT");
             _vkSetDeviceMemoryPriorityEXT_fnptr = (delegate* unmanaged<VkDevice, VkDeviceMemory, float, void>)VKLoader.GetDeviceProcAddr(device, "vkSetDeviceMemoryPriorityEXT");
             _vkSetEvent_fnptr = (delegate* unmanaged<VkDevice, VkEvent, VkResult>)VKLoader.GetDeviceProcAddr(device, "vkSetEvent");
+            _vkSetGpaDeviceClockModeAMD_fnptr = (delegate* unmanaged<VkDevice, VkGpaDeviceClockModeInfoAMD*, VkResult>)VKLoader.GetDeviceProcAddr(device, "vkSetGpaDeviceClockModeAMD");
             _vkSetHdrMetadataEXT_fnptr = (delegate* unmanaged<VkDevice, uint, VkSwapchainKHR*, VkHdrMetadataEXT*, void>)VKLoader.GetDeviceProcAddr(device, "vkSetHdrMetadataEXT");
             _vkSetLatencyMarkerNV_fnptr = (delegate* unmanaged<VkDevice, VkSwapchainKHR, VkSetLatencyMarkerInfoNV*, void>)VKLoader.GetDeviceProcAddr(device, "vkSetLatencyMarkerNV");
             _vkSetLatencySleepModeNV_fnptr = (delegate* unmanaged<VkDevice, VkSwapchainKHR, VkLatencySleepModeInfoNV*, VkResult>)VKLoader.GetDeviceProcAddr(device, "vkSetLatencySleepModeNV");
@@ -2428,6 +2440,24 @@ namespace OpenTK.Graphics.Vulkan
         public void CmdBeginDebugUtilsLabelEXT(VkCommandBuffer commandBuffer, VkDebugUtilsLabelEXT* pLabelInfo)
         {
             _vkCmdBeginDebugUtilsLabelEXT_fnptr(commandBuffer, pLabelInfo);
+        }
+        /// <summary><b>[requires: VK_AMD_gpa_interface]</b> [device command] </summary>
+        /// <param name="commandBuffer">[extern sync: always] </param>
+        /// <param name="gpaSession"></param>
+        /// <param name="pGpaSampleBeginInfo"></param>
+        /// <param name="pSampleID"></param>
+        /// <remarks><see href="https://registry.khronos.org/vulkan/specs/1.3-extensions/man/html/vkCmdBeginGpaSampleAMD.html" /></remarks>
+        public VkResult CmdBeginGpaSampleAMD(VkCommandBuffer commandBuffer, VkGpaSessionAMD gpaSession, VkGpaSampleBeginInfoAMD* pGpaSampleBeginInfo, uint* pSampleID)
+        {
+            return _vkCmdBeginGpaSampleAMD_fnptr(commandBuffer, gpaSession, pGpaSampleBeginInfo, pSampleID);
+        }
+        /// <summary><b>[requires: VK_AMD_gpa_interface]</b> [device command] </summary>
+        /// <param name="commandBuffer">[extern sync: always] </param>
+        /// <param name="gpaSession"></param>
+        /// <remarks><see href="https://registry.khronos.org/vulkan/specs/1.3-extensions/man/html/vkCmdBeginGpaSessionAMD.html" /></remarks>
+        public VkResult CmdBeginGpaSessionAMD(VkCommandBuffer commandBuffer, VkGpaSessionAMD gpaSession)
+        {
+            return _vkCmdBeginGpaSessionAMD_fnptr(commandBuffer, gpaSession);
         }
         /// <summary><b>[requires: VK_QCOM_tile_shading]</b> [device command] </summary>
         /// <param name="commandBuffer"></param>
@@ -2999,6 +3029,14 @@ namespace OpenTK.Graphics.Vulkan
         public void CmdCopyBufferToImage2KHR(VkCommandBuffer commandBuffer, VkCopyBufferToImageInfo2* pCopyBufferToImageInfo)
         {
             _vkCmdCopyBufferToImage2KHR_fnptr(commandBuffer, pCopyBufferToImageInfo);
+        }
+        /// <summary><b>[requires: VK_AMD_gpa_interface]</b> [device command] </summary>
+        /// <param name="commandBuffer">[extern sync: always] </param>
+        /// <param name="gpaSession"></param>
+        /// <remarks><see href="https://registry.khronos.org/vulkan/specs/1.3-extensions/man/html/vkCmdCopyGpaSessionResultsAMD.html" /></remarks>
+        public void CmdCopyGpaSessionResultsAMD(VkCommandBuffer commandBuffer, VkGpaSessionAMD gpaSession)
+        {
+            _vkCmdCopyGpaSessionResultsAMD_fnptr(commandBuffer, gpaSession);
         }
         /// <summary><b>[requires: v1.0]</b> [device command] </summary>
         /// <param name="commandBuffer">[extern sync: always] </param>
@@ -3701,6 +3739,23 @@ namespace OpenTK.Graphics.Vulkan
         public void CmdEndDebugUtilsLabelEXT(VkCommandBuffer commandBuffer)
         {
             _vkCmdEndDebugUtilsLabelEXT_fnptr(commandBuffer);
+        }
+        /// <summary><b>[requires: VK_AMD_gpa_interface]</b> [device command] </summary>
+        /// <param name="commandBuffer">[extern sync: always] </param>
+        /// <param name="gpaSession"></param>
+        /// <param name="sampleID"></param>
+        /// <remarks><see href="https://registry.khronos.org/vulkan/specs/1.3-extensions/man/html/vkCmdEndGpaSampleAMD.html" /></remarks>
+        public void CmdEndGpaSampleAMD(VkCommandBuffer commandBuffer, VkGpaSessionAMD gpaSession, uint sampleID)
+        {
+            _vkCmdEndGpaSampleAMD_fnptr(commandBuffer, gpaSession, sampleID);
+        }
+        /// <summary><b>[requires: VK_AMD_gpa_interface]</b> [device command] </summary>
+        /// <param name="commandBuffer">[extern sync: always] </param>
+        /// <param name="gpaSession"></param>
+        /// <remarks><see href="https://registry.khronos.org/vulkan/specs/1.3-extensions/man/html/vkCmdEndGpaSessionAMD.html" /></remarks>
+        public VkResult CmdEndGpaSessionAMD(VkCommandBuffer commandBuffer, VkGpaSessionAMD gpaSession)
+        {
+            return _vkCmdEndGpaSessionAMD_fnptr(commandBuffer, gpaSession);
         }
         /// <summary><b>[requires: VK_QCOM_tile_shading]</b> [device command] </summary>
         /// <param name="commandBuffer"></param>
@@ -5675,6 +5730,16 @@ namespace OpenTK.Graphics.Vulkan
         {
             return _vkCreateFramebuffer_fnptr(device, pCreateInfo, pAllocator, pFramebuffer);
         }
+        /// <summary><b>[requires: VK_AMD_gpa_interface]</b> [device command] </summary>
+        /// <param name="device"></param>
+        /// <param name="pCreateInfo"></param>
+        /// <param name="pAllocator">[optional] </param>
+        /// <param name="pGpaSession"></param>
+        /// <remarks><see href="https://registry.khronos.org/vulkan/specs/1.3-extensions/man/html/vkCreateGpaSessionAMD.html" /></remarks>
+        public VkResult CreateGpaSessionAMD(VkDevice device, VkGpaSessionCreateInfoAMD* pCreateInfo, VkAllocationCallbacks* pAllocator, VkGpaSessionAMD* pGpaSession)
+        {
+            return _vkCreateGpaSessionAMD_fnptr(device, pCreateInfo, pAllocator, pGpaSession);
+        }
         /// <summary><b>[requires: v1.0]</b> [device command] </summary>
         /// <param name="device"></param>
         /// <param name="pipelineCache">[optional] [extern sync: maybe] </param>
@@ -6235,6 +6300,15 @@ namespace OpenTK.Graphics.Vulkan
         public void DestroyFramebuffer(VkDevice device, VkFramebuffer framebuffer, VkAllocationCallbacks* pAllocator)
         {
             _vkDestroyFramebuffer_fnptr(device, framebuffer, pAllocator);
+        }
+        /// <summary><b>[requires: VK_AMD_gpa_interface]</b> [device command] </summary>
+        /// <param name="device"></param>
+        /// <param name="gpaSession">[optional] [extern sync: always] </param>
+        /// <param name="pAllocator">[optional] </param>
+        /// <remarks><see href="https://registry.khronos.org/vulkan/specs/1.3-extensions/man/html/vkDestroyGpaSessionAMD.html" /></remarks>
+        public void DestroyGpaSessionAMD(VkDevice device, VkGpaSessionAMD gpaSession, VkAllocationCallbacks* pAllocator)
+        {
+            _vkDestroyGpaSessionAMD_fnptr(device, gpaSession, pAllocator);
         }
         /// <summary><b>[requires: v1.0]</b> [device command] </summary>
         /// <param name="device"></param>
@@ -7262,6 +7336,33 @@ namespace OpenTK.Graphics.Vulkan
         public void GetGeneratedCommandsMemoryRequirementsNV(VkDevice device, VkGeneratedCommandsMemoryRequirementsInfoNV* pInfo, VkMemoryRequirements2* pMemoryRequirements)
         {
             _vkGetGeneratedCommandsMemoryRequirementsNV_fnptr(device, pInfo, pMemoryRequirements);
+        }
+        /// <summary><b>[requires: VK_AMD_gpa_interface]</b> [device command] </summary>
+        /// <param name="device"></param>
+        /// <param name="pInfo"></param>
+        /// <remarks><see href="https://registry.khronos.org/vulkan/specs/1.3-extensions/man/html/vkGetGpaDeviceClockInfoAMD.html" /></remarks>
+        public VkResult GetGpaDeviceClockInfoAMD(VkDevice device, VkGpaDeviceGetClockInfoAMD* pInfo)
+        {
+            return _vkGetGpaDeviceClockInfoAMD_fnptr(device, pInfo);
+        }
+        /// <summary><b>[requires: VK_AMD_gpa_interface]</b> [device command] </summary>
+        /// <param name="device"></param>
+        /// <param name="gpaSession"></param>
+        /// <param name="sampleID"></param>
+        /// <param name="pSizeInBytes"></param>
+        /// <param name="pData">[optional] </param>
+        /// <remarks><see href="https://registry.khronos.org/vulkan/specs/1.3-extensions/man/html/vkGetGpaSessionResultsAMD.html" /></remarks>
+        public VkResult GetGpaSessionResultsAMD(VkDevice device, VkGpaSessionAMD gpaSession, uint sampleID, nuint* pSizeInBytes, void* pData)
+        {
+            return _vkGetGpaSessionResultsAMD_fnptr(device, gpaSession, sampleID, pSizeInBytes, pData);
+        }
+        /// <summary><b>[requires: VK_AMD_gpa_interface]</b> [device command] </summary>
+        /// <param name="device"></param>
+        /// <param name="gpaSession"></param>
+        /// <remarks><see href="https://registry.khronos.org/vulkan/specs/1.3-extensions/man/html/vkGetGpaSessionStatusAMD.html" /></remarks>
+        public VkResult GetGpaSessionStatusAMD(VkDevice device, VkGpaSessionAMD gpaSession)
+        {
+            return _vkGetGpaSessionStatusAMD_fnptr(device, gpaSession);
         }
         /// <summary><b>[requires: VK_EXT_image_drm_format_modifier]</b> [device command] </summary>
         /// <param name="device"></param>
@@ -8487,6 +8588,14 @@ namespace OpenTK.Graphics.Vulkan
         {
             return _vkResetFences_fnptr(device, fenceCount, pFences);
         }
+        /// <summary><b>[requires: VK_AMD_gpa_interface]</b> [device command] </summary>
+        /// <param name="device"></param>
+        /// <param name="gpaSession"></param>
+        /// <remarks><see href="https://registry.khronos.org/vulkan/specs/1.3-extensions/man/html/vkResetGpaSessionAMD.html" /></remarks>
+        public VkResult ResetGpaSessionAMD(VkDevice device, VkGpaSessionAMD gpaSession)
+        {
+            return _vkResetGpaSessionAMD_fnptr(device, gpaSession);
+        }
         /// <summary><b>[requires: v1.2]</b> [device command] </summary>
         /// <param name="device"></param>
         /// <param name="queryPool"></param>
@@ -8557,6 +8666,14 @@ namespace OpenTK.Graphics.Vulkan
         public VkResult SetEvent(VkDevice device, VkEvent @event)
         {
             return _vkSetEvent_fnptr(device, @event);
+        }
+        /// <summary><b>[requires: VK_AMD_gpa_interface]</b> [device command] </summary>
+        /// <param name="device"></param>
+        /// <param name="pInfo"></param>
+        /// <remarks><see href="https://registry.khronos.org/vulkan/specs/1.3-extensions/man/html/vkSetGpaDeviceClockModeAMD.html" /></remarks>
+        public VkResult SetGpaDeviceClockModeAMD(VkDevice device, VkGpaDeviceClockModeInfoAMD* pInfo)
+        {
+            return _vkSetGpaDeviceClockModeAMD_fnptr(device, pInfo);
         }
         /// <summary><b>[requires: VK_EXT_hdr_metadata]</b> [device command] </summary>
         /// <param name="device"></param>
@@ -8901,6 +9018,8 @@ namespace OpenTK.Graphics.Vulkan
         public delegate* unmanaged<VkCommandBuffer, VkConditionalRenderingBeginInfoEXT*, void> _vkCmdBeginConditionalRenderingEXT_fnptr;
         public delegate* unmanaged<VkCommandBuffer, VkBeginCustomResolveInfoEXT*, void> _vkCmdBeginCustomResolveEXT_fnptr;
         public delegate* unmanaged<VkCommandBuffer, VkDebugUtilsLabelEXT*, void> _vkCmdBeginDebugUtilsLabelEXT_fnptr;
+        public delegate* unmanaged<VkCommandBuffer, VkGpaSessionAMD, VkGpaSampleBeginInfoAMD*, uint*, VkResult> _vkCmdBeginGpaSampleAMD_fnptr;
+        public delegate* unmanaged<VkCommandBuffer, VkGpaSessionAMD, VkResult> _vkCmdBeginGpaSessionAMD_fnptr;
         public delegate* unmanaged<VkCommandBuffer, VkPerTileBeginInfoQCOM*, void> _vkCmdBeginPerTileExecutionQCOM_fnptr;
         public delegate* unmanaged<VkCommandBuffer, VkQueryPool, uint, VkQueryControlFlagBits, void> _vkCmdBeginQuery_fnptr;
         public delegate* unmanaged<VkCommandBuffer, VkQueryPool, uint, VkQueryControlFlagBits, uint, void> _vkCmdBeginQueryIndexedEXT_fnptr;
@@ -8960,6 +9079,7 @@ namespace OpenTK.Graphics.Vulkan
         public delegate* unmanaged<VkCommandBuffer, VkBuffer, VkImage, VkImageLayout, uint, VkBufferImageCopy*, void> _vkCmdCopyBufferToImage_fnptr;
         public delegate* unmanaged<VkCommandBuffer, VkCopyBufferToImageInfo2*, void> _vkCmdCopyBufferToImage2_fnptr;
         public delegate* unmanaged<VkCommandBuffer, VkCopyBufferToImageInfo2*, void> _vkCmdCopyBufferToImage2KHR_fnptr;
+        public delegate* unmanaged<VkCommandBuffer, VkGpaSessionAMD, void> _vkCmdCopyGpaSessionResultsAMD_fnptr;
         public delegate* unmanaged<VkCommandBuffer, VkImage, VkImageLayout, VkImage, VkImageLayout, uint, VkImageCopy*, void> _vkCmdCopyImage_fnptr;
         public delegate* unmanaged<VkCommandBuffer, VkCopyImageInfo2*, void> _vkCmdCopyImage2_fnptr;
         public delegate* unmanaged<VkCommandBuffer, VkCopyImageInfo2*, void> _vkCmdCopyImage2KHR_fnptr;
@@ -9031,6 +9151,8 @@ namespace OpenTK.Graphics.Vulkan
         public delegate* unmanaged<VkCommandBuffer, VkVideoEncodeInfoKHR*, void> _vkCmdEncodeVideoKHR_fnptr;
         public delegate* unmanaged<VkCommandBuffer, void> _vkCmdEndConditionalRenderingEXT_fnptr;
         public delegate* unmanaged<VkCommandBuffer, void> _vkCmdEndDebugUtilsLabelEXT_fnptr;
+        public delegate* unmanaged<VkCommandBuffer, VkGpaSessionAMD, uint, void> _vkCmdEndGpaSampleAMD_fnptr;
+        public delegate* unmanaged<VkCommandBuffer, VkGpaSessionAMD, VkResult> _vkCmdEndGpaSessionAMD_fnptr;
         public delegate* unmanaged<VkCommandBuffer, VkPerTileEndInfoQCOM*, void> _vkCmdEndPerTileExecutionQCOM_fnptr;
         public delegate* unmanaged<VkCommandBuffer, VkQueryPool, uint, void> _vkCmdEndQuery_fnptr;
         public delegate* unmanaged<VkCommandBuffer, VkQueryPool, uint, uint, void> _vkCmdEndQueryIndexedEXT_fnptr;
@@ -9247,6 +9369,7 @@ namespace OpenTK.Graphics.Vulkan
         public delegate* unmanaged<VkDevice, VkExternalComputeQueueCreateInfoNV*, VkAllocationCallbacks*, VkExternalComputeQueueNV*, VkResult> _vkCreateExternalComputeQueueNV_fnptr;
         public delegate* unmanaged<VkDevice, VkFenceCreateInfo*, VkAllocationCallbacks*, VkFence*, VkResult> _vkCreateFence_fnptr;
         public delegate* unmanaged<VkDevice, VkFramebufferCreateInfo*, VkAllocationCallbacks*, VkFramebuffer*, VkResult> _vkCreateFramebuffer_fnptr;
+        public delegate* unmanaged<VkDevice, VkGpaSessionCreateInfoAMD*, VkAllocationCallbacks*, VkGpaSessionAMD*, VkResult> _vkCreateGpaSessionAMD_fnptr;
         public delegate* unmanaged<VkDevice, VkPipelineCache, uint, VkGraphicsPipelineCreateInfo*, VkAllocationCallbacks*, VkPipeline*, VkResult> _vkCreateGraphicsPipelines_fnptr;
         public delegate* unmanaged<VkDevice, VkImageCreateInfo*, VkAllocationCallbacks*, VkImage*, VkResult> _vkCreateImage_fnptr;
         public delegate* unmanaged<VkDevice, VkImageViewCreateInfo*, VkAllocationCallbacks*, VkImageView*, VkResult> _vkCreateImageView_fnptr;
@@ -9305,6 +9428,7 @@ namespace OpenTK.Graphics.Vulkan
         public delegate* unmanaged<VkDevice, VkExternalComputeQueueNV, VkAllocationCallbacks*, void> _vkDestroyExternalComputeQueueNV_fnptr;
         public delegate* unmanaged<VkDevice, VkFence, VkAllocationCallbacks*, void> _vkDestroyFence_fnptr;
         public delegate* unmanaged<VkDevice, VkFramebuffer, VkAllocationCallbacks*, void> _vkDestroyFramebuffer_fnptr;
+        public delegate* unmanaged<VkDevice, VkGpaSessionAMD, VkAllocationCallbacks*, void> _vkDestroyGpaSessionAMD_fnptr;
         public delegate* unmanaged<VkDevice, VkImage, VkAllocationCallbacks*, void> _vkDestroyImage_fnptr;
         public delegate* unmanaged<VkDevice, VkImageView, VkAllocationCallbacks*, void> _vkDestroyImageView_fnptr;
         public delegate* unmanaged<VkDevice, VkIndirectCommandsLayoutEXT, VkAllocationCallbacks*, void> _vkDestroyIndirectCommandsLayoutEXT_fnptr;
@@ -9418,6 +9542,9 @@ namespace OpenTK.Graphics.Vulkan
         public delegate* unmanaged<VkDevice, VkFramebuffer, uint*, VkTilePropertiesQCOM*, VkResult> _vkGetFramebufferTilePropertiesQCOM_fnptr;
         public delegate* unmanaged<VkDevice, VkGeneratedCommandsMemoryRequirementsInfoEXT*, VkMemoryRequirements2*, void> _vkGetGeneratedCommandsMemoryRequirementsEXT_fnptr;
         public delegate* unmanaged<VkDevice, VkGeneratedCommandsMemoryRequirementsInfoNV*, VkMemoryRequirements2*, void> _vkGetGeneratedCommandsMemoryRequirementsNV_fnptr;
+        public delegate* unmanaged<VkDevice, VkGpaDeviceGetClockInfoAMD*, VkResult> _vkGetGpaDeviceClockInfoAMD_fnptr;
+        public delegate* unmanaged<VkDevice, VkGpaSessionAMD, uint, nuint*, void*, VkResult> _vkGetGpaSessionResultsAMD_fnptr;
+        public delegate* unmanaged<VkDevice, VkGpaSessionAMD, VkResult> _vkGetGpaSessionStatusAMD_fnptr;
         public delegate* unmanaged<VkDevice, VkImage, VkImageDrmFormatModifierPropertiesEXT*, VkResult> _vkGetImageDrmFormatModifierPropertiesEXT_fnptr;
         public delegate* unmanaged<VkDevice, VkImage, VkMemoryRequirements*, void> _vkGetImageMemoryRequirements_fnptr;
         public delegate* unmanaged<VkDevice, VkImageMemoryRequirementsInfo2*, VkMemoryRequirements2*, void> _vkGetImageMemoryRequirements2_fnptr;
@@ -9549,6 +9676,7 @@ namespace OpenTK.Graphics.Vulkan
         public delegate* unmanaged<VkDevice, VkDescriptorPool, VkDescriptorPoolResetFlags, VkResult> _vkResetDescriptorPool_fnptr;
         public delegate* unmanaged<VkDevice, VkEvent, VkResult> _vkResetEvent_fnptr;
         public delegate* unmanaged<VkDevice, uint, VkFence*, VkResult> _vkResetFences_fnptr;
+        public delegate* unmanaged<VkDevice, VkGpaSessionAMD, VkResult> _vkResetGpaSessionAMD_fnptr;
         public delegate* unmanaged<VkDevice, VkQueryPool, uint, uint, void> _vkResetQueryPool_fnptr;
         public delegate* unmanaged<VkDevice, VkQueryPool, uint, uint, void> _vkResetQueryPoolEXT_fnptr;
         public delegate* unmanaged<VkDevice, VkBufferCollectionFUCHSIA, VkBufferConstraintsInfoFUCHSIA*, VkResult> _vkSetBufferCollectionBufferConstraintsFUCHSIA_fnptr;
@@ -9557,6 +9685,7 @@ namespace OpenTK.Graphics.Vulkan
         public delegate* unmanaged<VkDevice, VkDebugUtilsObjectTagInfoEXT*, VkResult> _vkSetDebugUtilsObjectTagEXT_fnptr;
         public delegate* unmanaged<VkDevice, VkDeviceMemory, float, void> _vkSetDeviceMemoryPriorityEXT_fnptr;
         public delegate* unmanaged<VkDevice, VkEvent, VkResult> _vkSetEvent_fnptr;
+        public delegate* unmanaged<VkDevice, VkGpaDeviceClockModeInfoAMD*, VkResult> _vkSetGpaDeviceClockModeAMD_fnptr;
         public delegate* unmanaged<VkDevice, uint, VkSwapchainKHR*, VkHdrMetadataEXT*, void> _vkSetHdrMetadataEXT_fnptr;
         public delegate* unmanaged<VkDevice, VkSwapchainKHR, VkSetLatencyMarkerInfoNV*, void> _vkSetLatencyMarkerNV_fnptr;
         public delegate* unmanaged<VkDevice, VkSwapchainKHR, VkLatencySleepModeInfoNV*, VkResult> _vkSetLatencySleepModeNV_fnptr;

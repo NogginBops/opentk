@@ -323,6 +323,24 @@ namespace OpenTK.Graphics.Vulkan
         {
             VkPointers._vkCmdBeginDebugUtilsLabelEXT_fnptr(commandBuffer, pLabelInfo);
         }
+        /// <summary><b>[requires: VK_AMD_gpa_interface]</b> [device command] </summary>
+        /// <param name="commandBuffer">[extern sync: always] </param>
+        /// <param name="gpaSession"></param>
+        /// <param name="pGpaSampleBeginInfo"></param>
+        /// <param name="pSampleID"></param>
+        /// <remarks><see href="https://registry.khronos.org/vulkan/specs/1.3-extensions/man/html/vkCmdBeginGpaSampleAMD.html" /></remarks>
+        public static VkResult CmdBeginGpaSampleAMD(VkCommandBuffer commandBuffer, VkGpaSessionAMD gpaSession, VkGpaSampleBeginInfoAMD* pGpaSampleBeginInfo, uint* pSampleID)
+        {
+            return VkPointers._vkCmdBeginGpaSampleAMD_fnptr(commandBuffer, gpaSession, pGpaSampleBeginInfo, pSampleID);
+        }
+        /// <summary><b>[requires: VK_AMD_gpa_interface]</b> [device command] </summary>
+        /// <param name="commandBuffer">[extern sync: always] </param>
+        /// <param name="gpaSession"></param>
+        /// <remarks><see href="https://registry.khronos.org/vulkan/specs/1.3-extensions/man/html/vkCmdBeginGpaSessionAMD.html" /></remarks>
+        public static VkResult CmdBeginGpaSessionAMD(VkCommandBuffer commandBuffer, VkGpaSessionAMD gpaSession)
+        {
+            return VkPointers._vkCmdBeginGpaSessionAMD_fnptr(commandBuffer, gpaSession);
+        }
         /// <summary><b>[requires: VK_QCOM_tile_shading]</b> [device command] </summary>
         /// <param name="commandBuffer"></param>
         /// <param name="pPerTileBeginInfo"></param>
@@ -893,6 +911,14 @@ namespace OpenTK.Graphics.Vulkan
         public static void CmdCopyBufferToImage2KHR(VkCommandBuffer commandBuffer, VkCopyBufferToImageInfo2* pCopyBufferToImageInfo)
         {
             VkPointers._vkCmdCopyBufferToImage2KHR_fnptr(commandBuffer, pCopyBufferToImageInfo);
+        }
+        /// <summary><b>[requires: VK_AMD_gpa_interface]</b> [device command] </summary>
+        /// <param name="commandBuffer">[extern sync: always] </param>
+        /// <param name="gpaSession"></param>
+        /// <remarks><see href="https://registry.khronos.org/vulkan/specs/1.3-extensions/man/html/vkCmdCopyGpaSessionResultsAMD.html" /></remarks>
+        public static void CmdCopyGpaSessionResultsAMD(VkCommandBuffer commandBuffer, VkGpaSessionAMD gpaSession)
+        {
+            VkPointers._vkCmdCopyGpaSessionResultsAMD_fnptr(commandBuffer, gpaSession);
         }
         /// <summary><b>[requires: v1.0]</b> [device command] </summary>
         /// <param name="commandBuffer">[extern sync: always] </param>
@@ -1595,6 +1621,23 @@ namespace OpenTK.Graphics.Vulkan
         public static void CmdEndDebugUtilsLabelEXT(VkCommandBuffer commandBuffer)
         {
             VkPointers._vkCmdEndDebugUtilsLabelEXT_fnptr(commandBuffer);
+        }
+        /// <summary><b>[requires: VK_AMD_gpa_interface]</b> [device command] </summary>
+        /// <param name="commandBuffer">[extern sync: always] </param>
+        /// <param name="gpaSession"></param>
+        /// <param name="sampleID"></param>
+        /// <remarks><see href="https://registry.khronos.org/vulkan/specs/1.3-extensions/man/html/vkCmdEndGpaSampleAMD.html" /></remarks>
+        public static void CmdEndGpaSampleAMD(VkCommandBuffer commandBuffer, VkGpaSessionAMD gpaSession, uint sampleID)
+        {
+            VkPointers._vkCmdEndGpaSampleAMD_fnptr(commandBuffer, gpaSession, sampleID);
+        }
+        /// <summary><b>[requires: VK_AMD_gpa_interface]</b> [device command] </summary>
+        /// <param name="commandBuffer">[extern sync: always] </param>
+        /// <param name="gpaSession"></param>
+        /// <remarks><see href="https://registry.khronos.org/vulkan/specs/1.3-extensions/man/html/vkCmdEndGpaSessionAMD.html" /></remarks>
+        public static VkResult CmdEndGpaSessionAMD(VkCommandBuffer commandBuffer, VkGpaSessionAMD gpaSession)
+        {
+            return VkPointers._vkCmdEndGpaSessionAMD_fnptr(commandBuffer, gpaSession);
         }
         /// <summary><b>[requires: VK_QCOM_tile_shading]</b> [device command] </summary>
         /// <param name="commandBuffer"></param>
@@ -3640,6 +3683,16 @@ namespace OpenTK.Graphics.Vulkan
         {
             return VkPointers._vkCreateFramebuffer_fnptr(device, pCreateInfo, pAllocator, pFramebuffer);
         }
+        /// <summary><b>[requires: VK_AMD_gpa_interface]</b> [device command] </summary>
+        /// <param name="device"></param>
+        /// <param name="pCreateInfo"></param>
+        /// <param name="pAllocator">[optional] </param>
+        /// <param name="pGpaSession"></param>
+        /// <remarks><see href="https://registry.khronos.org/vulkan/specs/1.3-extensions/man/html/vkCreateGpaSessionAMD.html" /></remarks>
+        public static VkResult CreateGpaSessionAMD(VkDevice device, VkGpaSessionCreateInfoAMD* pCreateInfo, VkAllocationCallbacks* pAllocator, VkGpaSessionAMD* pGpaSession)
+        {
+            return VkPointers._vkCreateGpaSessionAMD_fnptr(device, pCreateInfo, pAllocator, pGpaSession);
+        }
         /// <summary><b>[requires: v1.0]</b> [device command] </summary>
         /// <param name="device"></param>
         /// <param name="pipelineCache">[optional] [extern sync: maybe] </param>
@@ -4381,6 +4434,15 @@ namespace OpenTK.Graphics.Vulkan
         public static void DestroyFramebuffer(VkDevice device, VkFramebuffer framebuffer, VkAllocationCallbacks* pAllocator)
         {
             VkPointers._vkDestroyFramebuffer_fnptr(device, framebuffer, pAllocator);
+        }
+        /// <summary><b>[requires: VK_AMD_gpa_interface]</b> [device command] </summary>
+        /// <param name="device"></param>
+        /// <param name="gpaSession">[optional] [extern sync: always] </param>
+        /// <param name="pAllocator">[optional] </param>
+        /// <remarks><see href="https://registry.khronos.org/vulkan/specs/1.3-extensions/man/html/vkDestroyGpaSessionAMD.html" /></remarks>
+        public static void DestroyGpaSessionAMD(VkDevice device, VkGpaSessionAMD gpaSession, VkAllocationCallbacks* pAllocator)
+        {
+            VkPointers._vkDestroyGpaSessionAMD_fnptr(device, gpaSession, pAllocator);
         }
         /// <summary><b>[requires: v1.0]</b> [device command] </summary>
         /// <param name="device"></param>
@@ -5585,6 +5647,33 @@ namespace OpenTK.Graphics.Vulkan
         public static void GetGeneratedCommandsMemoryRequirementsNV(VkDevice device, VkGeneratedCommandsMemoryRequirementsInfoNV* pInfo, VkMemoryRequirements2* pMemoryRequirements)
         {
             VkPointers._vkGetGeneratedCommandsMemoryRequirementsNV_fnptr(device, pInfo, pMemoryRequirements);
+        }
+        /// <summary><b>[requires: VK_AMD_gpa_interface]</b> [device command] </summary>
+        /// <param name="device"></param>
+        /// <param name="pInfo"></param>
+        /// <remarks><see href="https://registry.khronos.org/vulkan/specs/1.3-extensions/man/html/vkGetGpaDeviceClockInfoAMD.html" /></remarks>
+        public static VkResult GetGpaDeviceClockInfoAMD(VkDevice device, VkGpaDeviceGetClockInfoAMD* pInfo)
+        {
+            return VkPointers._vkGetGpaDeviceClockInfoAMD_fnptr(device, pInfo);
+        }
+        /// <summary><b>[requires: VK_AMD_gpa_interface]</b> [device command] </summary>
+        /// <param name="device"></param>
+        /// <param name="gpaSession"></param>
+        /// <param name="sampleID"></param>
+        /// <param name="pSizeInBytes"></param>
+        /// <param name="pData">[optional] </param>
+        /// <remarks><see href="https://registry.khronos.org/vulkan/specs/1.3-extensions/man/html/vkGetGpaSessionResultsAMD.html" /></remarks>
+        public static VkResult GetGpaSessionResultsAMD(VkDevice device, VkGpaSessionAMD gpaSession, uint sampleID, nuint* pSizeInBytes, void* pData)
+        {
+            return VkPointers._vkGetGpaSessionResultsAMD_fnptr(device, gpaSession, sampleID, pSizeInBytes, pData);
+        }
+        /// <summary><b>[requires: VK_AMD_gpa_interface]</b> [device command] </summary>
+        /// <param name="device"></param>
+        /// <param name="gpaSession"></param>
+        /// <remarks><see href="https://registry.khronos.org/vulkan/specs/1.3-extensions/man/html/vkGetGpaSessionStatusAMD.html" /></remarks>
+        public static VkResult GetGpaSessionStatusAMD(VkDevice device, VkGpaSessionAMD gpaSession)
+        {
+            return VkPointers._vkGetGpaSessionStatusAMD_fnptr(device, gpaSession);
         }
         /// <summary><b>[requires: VK_EXT_image_drm_format_modifier]</b> [device command] </summary>
         /// <param name="device"></param>
@@ -7531,6 +7620,14 @@ namespace OpenTK.Graphics.Vulkan
         {
             return VkPointers._vkResetFences_fnptr(device, fenceCount, pFences);
         }
+        /// <summary><b>[requires: VK_AMD_gpa_interface]</b> [device command] </summary>
+        /// <param name="device"></param>
+        /// <param name="gpaSession"></param>
+        /// <remarks><see href="https://registry.khronos.org/vulkan/specs/1.3-extensions/man/html/vkResetGpaSessionAMD.html" /></remarks>
+        public static VkResult ResetGpaSessionAMD(VkDevice device, VkGpaSessionAMD gpaSession)
+        {
+            return VkPointers._vkResetGpaSessionAMD_fnptr(device, gpaSession);
+        }
         /// <summary><b>[requires: v1.2]</b> [device command] </summary>
         /// <param name="device"></param>
         /// <param name="queryPool"></param>
@@ -7601,6 +7698,14 @@ namespace OpenTK.Graphics.Vulkan
         public static VkResult SetEvent(VkDevice device, VkEvent @event)
         {
             return VkPointers._vkSetEvent_fnptr(device, @event);
+        }
+        /// <summary><b>[requires: VK_AMD_gpa_interface]</b> [device command] </summary>
+        /// <param name="device"></param>
+        /// <param name="pInfo"></param>
+        /// <remarks><see href="https://registry.khronos.org/vulkan/specs/1.3-extensions/man/html/vkSetGpaDeviceClockModeAMD.html" /></remarks>
+        public static VkResult SetGpaDeviceClockModeAMD(VkDevice device, VkGpaDeviceClockModeInfoAMD* pInfo)
+        {
+            return VkPointers._vkSetGpaDeviceClockModeAMD_fnptr(device, pInfo);
         }
         /// <summary><b>[requires: VK_EXT_hdr_metadata]</b> [device command] </summary>
         /// <param name="device"></param>

@@ -252,6 +252,20 @@ namespace OpenTK.Graphics.Vulkan
             _vkCmdBeginDebugUtilsLabelEXT_fnptr = (delegate* unmanaged<VkCommandBuffer, VkDebugUtilsLabelEXT*, void>)VKLoader.GetInstanceProcAddress("vkCmdBeginDebugUtilsLabelEXT");
             _vkCmdBeginDebugUtilsLabelEXT_fnptr(commandBuffer, pLabelInfo);
         }
+        public static delegate* unmanaged<VkCommandBuffer, VkGpaSessionAMD, VkGpaSampleBeginInfoAMD*, uint*, VkResult> _vkCmdBeginGpaSampleAMD_fnptr = &vkCmdBeginGpaSampleAMD_Lazy;
+        [UnmanagedCallersOnly]
+        private static VkResult vkCmdBeginGpaSampleAMD_Lazy(VkCommandBuffer commandBuffer, VkGpaSessionAMD gpaSession, VkGpaSampleBeginInfoAMD* pGpaSampleBeginInfo, uint* pSampleID)
+        {
+            _vkCmdBeginGpaSampleAMD_fnptr = (delegate* unmanaged<VkCommandBuffer, VkGpaSessionAMD, VkGpaSampleBeginInfoAMD*, uint*, VkResult>)VKLoader.GetInstanceProcAddress("vkCmdBeginGpaSampleAMD");
+            return _vkCmdBeginGpaSampleAMD_fnptr(commandBuffer, gpaSession, pGpaSampleBeginInfo, pSampleID);
+        }
+        public static delegate* unmanaged<VkCommandBuffer, VkGpaSessionAMD, VkResult> _vkCmdBeginGpaSessionAMD_fnptr = &vkCmdBeginGpaSessionAMD_Lazy;
+        [UnmanagedCallersOnly]
+        private static VkResult vkCmdBeginGpaSessionAMD_Lazy(VkCommandBuffer commandBuffer, VkGpaSessionAMD gpaSession)
+        {
+            _vkCmdBeginGpaSessionAMD_fnptr = (delegate* unmanaged<VkCommandBuffer, VkGpaSessionAMD, VkResult>)VKLoader.GetInstanceProcAddress("vkCmdBeginGpaSessionAMD");
+            return _vkCmdBeginGpaSessionAMD_fnptr(commandBuffer, gpaSession);
+        }
         public static delegate* unmanaged<VkCommandBuffer, VkPerTileBeginInfoQCOM*, void> _vkCmdBeginPerTileExecutionQCOM_fnptr = &vkCmdBeginPerTileExecutionQCOM_Lazy;
         [UnmanagedCallersOnly]
         private static void vkCmdBeginPerTileExecutionQCOM_Lazy(VkCommandBuffer commandBuffer, VkPerTileBeginInfoQCOM* pPerTileBeginInfo)
@@ -664,6 +678,13 @@ namespace OpenTK.Graphics.Vulkan
         {
             _vkCmdCopyBufferToImage2KHR_fnptr = (delegate* unmanaged<VkCommandBuffer, VkCopyBufferToImageInfo2*, void>)VKLoader.GetInstanceProcAddress("vkCmdCopyBufferToImage2KHR");
             _vkCmdCopyBufferToImage2KHR_fnptr(commandBuffer, pCopyBufferToImageInfo);
+        }
+        public static delegate* unmanaged<VkCommandBuffer, VkGpaSessionAMD, void> _vkCmdCopyGpaSessionResultsAMD_fnptr = &vkCmdCopyGpaSessionResultsAMD_Lazy;
+        [UnmanagedCallersOnly]
+        private static void vkCmdCopyGpaSessionResultsAMD_Lazy(VkCommandBuffer commandBuffer, VkGpaSessionAMD gpaSession)
+        {
+            _vkCmdCopyGpaSessionResultsAMD_fnptr = (delegate* unmanaged<VkCommandBuffer, VkGpaSessionAMD, void>)VKLoader.GetInstanceProcAddress("vkCmdCopyGpaSessionResultsAMD");
+            _vkCmdCopyGpaSessionResultsAMD_fnptr(commandBuffer, gpaSession);
         }
         public static delegate* unmanaged<VkCommandBuffer, VkImage, VkImageLayout, VkImage, VkImageLayout, uint, VkImageCopy*, void> _vkCmdCopyImage_fnptr = &vkCmdCopyImage_Lazy;
         [UnmanagedCallersOnly]
@@ -1161,6 +1182,20 @@ namespace OpenTK.Graphics.Vulkan
         {
             _vkCmdEndDebugUtilsLabelEXT_fnptr = (delegate* unmanaged<VkCommandBuffer, void>)VKLoader.GetInstanceProcAddress("vkCmdEndDebugUtilsLabelEXT");
             _vkCmdEndDebugUtilsLabelEXT_fnptr(commandBuffer);
+        }
+        public static delegate* unmanaged<VkCommandBuffer, VkGpaSessionAMD, uint, void> _vkCmdEndGpaSampleAMD_fnptr = &vkCmdEndGpaSampleAMD_Lazy;
+        [UnmanagedCallersOnly]
+        private static void vkCmdEndGpaSampleAMD_Lazy(VkCommandBuffer commandBuffer, VkGpaSessionAMD gpaSession, uint sampleID)
+        {
+            _vkCmdEndGpaSampleAMD_fnptr = (delegate* unmanaged<VkCommandBuffer, VkGpaSessionAMD, uint, void>)VKLoader.GetInstanceProcAddress("vkCmdEndGpaSampleAMD");
+            _vkCmdEndGpaSampleAMD_fnptr(commandBuffer, gpaSession, sampleID);
+        }
+        public static delegate* unmanaged<VkCommandBuffer, VkGpaSessionAMD, VkResult> _vkCmdEndGpaSessionAMD_fnptr = &vkCmdEndGpaSessionAMD_Lazy;
+        [UnmanagedCallersOnly]
+        private static VkResult vkCmdEndGpaSessionAMD_Lazy(VkCommandBuffer commandBuffer, VkGpaSessionAMD gpaSession)
+        {
+            _vkCmdEndGpaSessionAMD_fnptr = (delegate* unmanaged<VkCommandBuffer, VkGpaSessionAMD, VkResult>)VKLoader.GetInstanceProcAddress("vkCmdEndGpaSessionAMD");
+            return _vkCmdEndGpaSessionAMD_fnptr(commandBuffer, gpaSession);
         }
         public static delegate* unmanaged<VkCommandBuffer, VkPerTileEndInfoQCOM*, void> _vkCmdEndPerTileExecutionQCOM_fnptr = &vkCmdEndPerTileExecutionQCOM_Lazy;
         [UnmanagedCallersOnly]
@@ -2723,6 +2758,13 @@ namespace OpenTK.Graphics.Vulkan
             _vkCreateFramebuffer_fnptr = (delegate* unmanaged<VkDevice, VkFramebufferCreateInfo*, VkAllocationCallbacks*, VkFramebuffer*, VkResult>)VKLoader.GetInstanceProcAddress("vkCreateFramebuffer");
             return _vkCreateFramebuffer_fnptr(device, pCreateInfo, pAllocator, pFramebuffer);
         }
+        public static delegate* unmanaged<VkDevice, VkGpaSessionCreateInfoAMD*, VkAllocationCallbacks*, VkGpaSessionAMD*, VkResult> _vkCreateGpaSessionAMD_fnptr = &vkCreateGpaSessionAMD_Lazy;
+        [UnmanagedCallersOnly]
+        private static VkResult vkCreateGpaSessionAMD_Lazy(VkDevice device, VkGpaSessionCreateInfoAMD* pCreateInfo, VkAllocationCallbacks* pAllocator, VkGpaSessionAMD* pGpaSession)
+        {
+            _vkCreateGpaSessionAMD_fnptr = (delegate* unmanaged<VkDevice, VkGpaSessionCreateInfoAMD*, VkAllocationCallbacks*, VkGpaSessionAMD*, VkResult>)VKLoader.GetInstanceProcAddress("vkCreateGpaSessionAMD");
+            return _vkCreateGpaSessionAMD_fnptr(device, pCreateInfo, pAllocator, pGpaSession);
+        }
         public static delegate* unmanaged<VkDevice, VkPipelineCache, uint, VkGraphicsPipelineCreateInfo*, VkAllocationCallbacks*, VkPipeline*, VkResult> _vkCreateGraphicsPipelines_fnptr = &vkCreateGraphicsPipelines_Lazy;
         [UnmanagedCallersOnly]
         private static VkResult vkCreateGraphicsPipelines_Lazy(VkDevice device, VkPipelineCache pipelineCache, uint createInfoCount, VkGraphicsPipelineCreateInfo* pCreateInfos, VkAllocationCallbacks* pAllocator, VkPipeline* pPipelines)
@@ -3254,6 +3296,13 @@ namespace OpenTK.Graphics.Vulkan
         {
             _vkDestroyFramebuffer_fnptr = (delegate* unmanaged<VkDevice, VkFramebuffer, VkAllocationCallbacks*, void>)VKLoader.GetInstanceProcAddress("vkDestroyFramebuffer");
             _vkDestroyFramebuffer_fnptr(device, framebuffer, pAllocator);
+        }
+        public static delegate* unmanaged<VkDevice, VkGpaSessionAMD, VkAllocationCallbacks*, void> _vkDestroyGpaSessionAMD_fnptr = &vkDestroyGpaSessionAMD_Lazy;
+        [UnmanagedCallersOnly]
+        private static void vkDestroyGpaSessionAMD_Lazy(VkDevice device, VkGpaSessionAMD gpaSession, VkAllocationCallbacks* pAllocator)
+        {
+            _vkDestroyGpaSessionAMD_fnptr = (delegate* unmanaged<VkDevice, VkGpaSessionAMD, VkAllocationCallbacks*, void>)VKLoader.GetInstanceProcAddress("vkDestroyGpaSessionAMD");
+            _vkDestroyGpaSessionAMD_fnptr(device, gpaSession, pAllocator);
         }
         public static delegate* unmanaged<VkDevice, VkImage, VkAllocationCallbacks*, void> _vkDestroyImage_fnptr = &vkDestroyImage_Lazy;
         [UnmanagedCallersOnly]
@@ -4178,6 +4227,27 @@ namespace OpenTK.Graphics.Vulkan
         {
             _vkGetGeneratedCommandsMemoryRequirementsNV_fnptr = (delegate* unmanaged<VkDevice, VkGeneratedCommandsMemoryRequirementsInfoNV*, VkMemoryRequirements2*, void>)VKLoader.GetInstanceProcAddress("vkGetGeneratedCommandsMemoryRequirementsNV");
             _vkGetGeneratedCommandsMemoryRequirementsNV_fnptr(device, pInfo, pMemoryRequirements);
+        }
+        public static delegate* unmanaged<VkDevice, VkGpaDeviceGetClockInfoAMD*, VkResult> _vkGetGpaDeviceClockInfoAMD_fnptr = &vkGetGpaDeviceClockInfoAMD_Lazy;
+        [UnmanagedCallersOnly]
+        private static VkResult vkGetGpaDeviceClockInfoAMD_Lazy(VkDevice device, VkGpaDeviceGetClockInfoAMD* pInfo)
+        {
+            _vkGetGpaDeviceClockInfoAMD_fnptr = (delegate* unmanaged<VkDevice, VkGpaDeviceGetClockInfoAMD*, VkResult>)VKLoader.GetInstanceProcAddress("vkGetGpaDeviceClockInfoAMD");
+            return _vkGetGpaDeviceClockInfoAMD_fnptr(device, pInfo);
+        }
+        public static delegate* unmanaged<VkDevice, VkGpaSessionAMD, uint, nuint*, void*, VkResult> _vkGetGpaSessionResultsAMD_fnptr = &vkGetGpaSessionResultsAMD_Lazy;
+        [UnmanagedCallersOnly]
+        private static VkResult vkGetGpaSessionResultsAMD_Lazy(VkDevice device, VkGpaSessionAMD gpaSession, uint sampleID, nuint* pSizeInBytes, void* pData)
+        {
+            _vkGetGpaSessionResultsAMD_fnptr = (delegate* unmanaged<VkDevice, VkGpaSessionAMD, uint, nuint*, void*, VkResult>)VKLoader.GetInstanceProcAddress("vkGetGpaSessionResultsAMD");
+            return _vkGetGpaSessionResultsAMD_fnptr(device, gpaSession, sampleID, pSizeInBytes, pData);
+        }
+        public static delegate* unmanaged<VkDevice, VkGpaSessionAMD, VkResult> _vkGetGpaSessionStatusAMD_fnptr = &vkGetGpaSessionStatusAMD_Lazy;
+        [UnmanagedCallersOnly]
+        private static VkResult vkGetGpaSessionStatusAMD_Lazy(VkDevice device, VkGpaSessionAMD gpaSession)
+        {
+            _vkGetGpaSessionStatusAMD_fnptr = (delegate* unmanaged<VkDevice, VkGpaSessionAMD, VkResult>)VKLoader.GetInstanceProcAddress("vkGetGpaSessionStatusAMD");
+            return _vkGetGpaSessionStatusAMD_fnptr(device, gpaSession);
         }
         public static delegate* unmanaged<VkDevice, VkImage, VkImageDrmFormatModifierPropertiesEXT*, VkResult> _vkGetImageDrmFormatModifierPropertiesEXT_fnptr = &vkGetImageDrmFormatModifierPropertiesEXT_Lazy;
         [UnmanagedCallersOnly]
@@ -5642,6 +5712,13 @@ namespace OpenTK.Graphics.Vulkan
             _vkResetFences_fnptr = (delegate* unmanaged<VkDevice, uint, VkFence*, VkResult>)VKLoader.GetInstanceProcAddress("vkResetFences");
             return _vkResetFences_fnptr(device, fenceCount, pFences);
         }
+        public static delegate* unmanaged<VkDevice, VkGpaSessionAMD, VkResult> _vkResetGpaSessionAMD_fnptr = &vkResetGpaSessionAMD_Lazy;
+        [UnmanagedCallersOnly]
+        private static VkResult vkResetGpaSessionAMD_Lazy(VkDevice device, VkGpaSessionAMD gpaSession)
+        {
+            _vkResetGpaSessionAMD_fnptr = (delegate* unmanaged<VkDevice, VkGpaSessionAMD, VkResult>)VKLoader.GetInstanceProcAddress("vkResetGpaSessionAMD");
+            return _vkResetGpaSessionAMD_fnptr(device, gpaSession);
+        }
         public static delegate* unmanaged<VkDevice, VkQueryPool, uint, uint, void> _vkResetQueryPool_fnptr = &vkResetQueryPool_Lazy;
         [UnmanagedCallersOnly]
         private static void vkResetQueryPool_Lazy(VkDevice device, VkQueryPool queryPool, uint firstQuery, uint queryCount)
@@ -5697,6 +5774,13 @@ namespace OpenTK.Graphics.Vulkan
         {
             _vkSetEvent_fnptr = (delegate* unmanaged<VkDevice, VkEvent, VkResult>)VKLoader.GetInstanceProcAddress("vkSetEvent");
             return _vkSetEvent_fnptr(device, @event);
+        }
+        public static delegate* unmanaged<VkDevice, VkGpaDeviceClockModeInfoAMD*, VkResult> _vkSetGpaDeviceClockModeAMD_fnptr = &vkSetGpaDeviceClockModeAMD_Lazy;
+        [UnmanagedCallersOnly]
+        private static VkResult vkSetGpaDeviceClockModeAMD_Lazy(VkDevice device, VkGpaDeviceClockModeInfoAMD* pInfo)
+        {
+            _vkSetGpaDeviceClockModeAMD_fnptr = (delegate* unmanaged<VkDevice, VkGpaDeviceClockModeInfoAMD*, VkResult>)VKLoader.GetInstanceProcAddress("vkSetGpaDeviceClockModeAMD");
+            return _vkSetGpaDeviceClockModeAMD_fnptr(device, pInfo);
         }
         public static delegate* unmanaged<VkDevice, uint, VkSwapchainKHR*, VkHdrMetadataEXT*, void> _vkSetHdrMetadataEXT_fnptr = &vkSetHdrMetadataEXT_Lazy;
         [UnmanagedCallersOnly]

@@ -450,6 +450,39 @@ namespace OpenTK.Graphics.Vulkan
             this.endCapsMode = endCapsMode;
         }
     }
+    /// <summary><b>[requires: VK_KHR_opacity_micromap]</b> </summary>
+    /// <remarks><see href="https://registry.khronos.org/vulkan/specs/1.3-extensions/man/html/VkAccelerationStructureGeometryMicromapDataKHR.html" /></remarks>
+    public unsafe struct VkAccelerationStructureGeometryMicromapDataKHR
+    {
+        /// <summary></summary>
+        public VkStructureType sType = VkStructureType.StructureTypeAccelerationStructureGeometryMicromapDataKhr;
+        /// <summary></summary>
+        public void* pNext;
+        /// <summary></summary>
+        public uint usageCountsCount;
+        /// <summary></summary>
+        public VkMicromapUsageKHR* pUsageCounts;
+        /// <summary></summary>
+        public VkMicromapUsageKHR** ppUsageCounts;
+        /// <summary></summary>
+        public ulong data;
+        /// <summary></summary>
+        public ulong triangleArray;
+        /// <summary></summary>
+        public ulong triangleArrayStride;
+        public VkAccelerationStructureGeometryMicromapDataKHR() { }
+        public VkAccelerationStructureGeometryMicromapDataKHR(VkStructureType sType, void* pNext, uint usageCountsCount, VkMicromapUsageKHR* pUsageCounts, VkMicromapUsageKHR** ppUsageCounts, ulong data, ulong triangleArray, ulong triangleArrayStride)
+        {
+            this.sType = sType;
+            this.pNext = pNext;
+            this.usageCountsCount = usageCountsCount;
+            this.pUsageCounts = pUsageCounts;
+            this.ppUsageCounts = ppUsageCounts;
+            this.data = data;
+            this.triangleArray = triangleArray;
+            this.triangleArrayStride = triangleArrayStride;
+        }
+    }
     /// <summary><b>[requires: VK_NV_ray_tracing_motion_blur]</b> </summary>
     /// <remarks><see href="https://registry.khronos.org/vulkan/specs/1.3-extensions/man/html/VkAccelerationStructureGeometryMotionTrianglesDataNV.html" /></remarks>
     public unsafe struct VkAccelerationStructureGeometryMotionTrianglesDataNV
@@ -899,6 +932,36 @@ namespace OpenTK.Graphics.Vulkan
             this.usageCountsCount = usageCountsCount;
             this.pUsageCounts = pUsageCounts;
             this.ppUsageCounts = ppUsageCounts;
+            this.micromap = micromap;
+        }
+    }
+    /// <summary><b>[requires: VK_KHR_opacity_micromap]</b> </summary>
+    /// <remarks><see href="https://registry.khronos.org/vulkan/specs/1.3-extensions/man/html/VkAccelerationStructureTrianglesOpacityMicromapKHR.html" /></remarks>
+    public unsafe struct VkAccelerationStructureTrianglesOpacityMicromapKHR
+    {
+        /// <summary></summary>
+        public VkStructureType sType = VkStructureType.StructureTypeAccelerationStructureTrianglesOpacityMicromapKhr;
+        /// <summary></summary>
+        public void* pNext;
+        /// <summary></summary>
+        public VkIndexType indexType;
+        /// <summary></summary>
+        public ulong indexBuffer;
+        /// <summary></summary>
+        public ulong indexStride;
+        /// <summary></summary>
+        public uint baseTriangle;
+        /// <summary></summary>
+        public VkAccelerationStructureKHR micromap;
+        public VkAccelerationStructureTrianglesOpacityMicromapKHR() { }
+        public VkAccelerationStructureTrianglesOpacityMicromapKHR(VkStructureType sType, void* pNext, VkIndexType indexType, ulong indexBuffer, ulong indexStride, uint baseTriangle, VkAccelerationStructureKHR micromap)
+        {
+            this.sType = sType;
+            this.pNext = pNext;
+            this.indexType = indexType;
+            this.indexBuffer = indexBuffer;
+            this.indexStride = indexStride;
+            this.baseTriangle = baseTriangle;
             this.micromap = micromap;
         }
     }
@@ -11832,6 +11895,180 @@ namespace OpenTK.Graphics.Vulkan
             this.pTimings = pTimings;
         }
     }
+    /// <summary><b>[requires: VK_AMD_gpa_interface]</b> Used by <see cref="Vk.SetGpaDeviceClockModeAMD"/></summary>
+    /// <remarks><see href="https://registry.khronos.org/vulkan/specs/1.3-extensions/man/html/VkGpaDeviceClockModeInfoAMD.html" /></remarks>
+    public unsafe struct VkGpaDeviceClockModeInfoAMD
+    {
+        /// <summary></summary>
+        public VkStructureType sType = VkStructureType.StructureTypeGpaDeviceClockModeInfoAmd;
+        /// <summary></summary>
+        public void* pNext;
+        /// <summary></summary>
+        public VkGpaDeviceClockModeAMD clockMode;
+        /// <summary></summary>
+        public float memoryClockRatioToPeak;
+        /// <summary></summary>
+        public float engineClockRatioToPeak;
+        public VkGpaDeviceClockModeInfoAMD() { }
+        public VkGpaDeviceClockModeInfoAMD(VkStructureType sType, void* pNext, VkGpaDeviceClockModeAMD clockMode, float memoryClockRatioToPeak, float engineClockRatioToPeak)
+        {
+            this.sType = sType;
+            this.pNext = pNext;
+            this.clockMode = clockMode;
+            this.memoryClockRatioToPeak = memoryClockRatioToPeak;
+            this.engineClockRatioToPeak = engineClockRatioToPeak;
+        }
+    }
+    /// <summary><b>[requires: VK_AMD_gpa_interface]</b> Used by <see cref="Vk.GetGpaDeviceClockInfoAMD"/></summary>
+    /// <remarks><see href="https://registry.khronos.org/vulkan/specs/1.3-extensions/man/html/VkGpaDeviceGetClockInfoAMD.html" /></remarks>
+    public unsafe struct VkGpaDeviceGetClockInfoAMD
+    {
+        /// <summary></summary>
+        public VkStructureType sType = VkStructureType.StructureTypeGpaDeviceGetClockInfoAmd;
+        /// <summary></summary>
+        public void* pNext;
+        /// <summary></summary>
+        public float memoryClockRatioToPeak;
+        /// <summary></summary>
+        public float engineClockRatioToPeak;
+        /// <summary></summary>
+        public uint memoryClockFrequency;
+        /// <summary></summary>
+        public uint engineClockFrequency;
+        public VkGpaDeviceGetClockInfoAMD() { }
+        public VkGpaDeviceGetClockInfoAMD(VkStructureType sType, void* pNext, float memoryClockRatioToPeak, float engineClockRatioToPeak, uint memoryClockFrequency, uint engineClockFrequency)
+        {
+            this.sType = sType;
+            this.pNext = pNext;
+            this.memoryClockRatioToPeak = memoryClockRatioToPeak;
+            this.engineClockRatioToPeak = engineClockRatioToPeak;
+            this.memoryClockFrequency = memoryClockFrequency;
+            this.engineClockFrequency = engineClockFrequency;
+        }
+    }
+    /// <summary><b>[requires: VK_AMD_gpa_interface]</b> </summary>
+    /// <remarks><see href="https://registry.khronos.org/vulkan/specs/1.3-extensions/man/html/VkGpaPerfBlockPropertiesAMD.html" /></remarks>
+    public unsafe struct VkGpaPerfBlockPropertiesAMD
+    {
+        /// <summary></summary>
+        public VkGpaPerfBlockAMD blockType;
+        /// <summary></summary>
+        public VkGpaPerfBlockPropertiesFlagsAMD flags;
+        /// <summary></summary>
+        public uint instanceCount;
+        /// <summary></summary>
+        public uint maxEventID;
+        /// <summary></summary>
+        public uint maxGlobalOnlyCounters;
+        /// <summary></summary>
+        public uint maxGlobalSharedCounters;
+        /// <summary></summary>
+        public uint maxStreamingCounters;
+        public VkGpaPerfBlockPropertiesAMD() { }
+        public VkGpaPerfBlockPropertiesAMD(VkGpaPerfBlockAMD blockType, VkGpaPerfBlockPropertiesFlagsAMD flags, uint instanceCount, uint maxEventID, uint maxGlobalOnlyCounters, uint maxGlobalSharedCounters, uint maxStreamingCounters)
+        {
+            this.blockType = blockType;
+            this.flags = flags;
+            this.instanceCount = instanceCount;
+            this.maxEventID = maxEventID;
+            this.maxGlobalOnlyCounters = maxGlobalOnlyCounters;
+            this.maxGlobalSharedCounters = maxGlobalSharedCounters;
+            this.maxStreamingCounters = maxStreamingCounters;
+        }
+    }
+    /// <summary><b>[requires: VK_AMD_gpa_interface]</b> </summary>
+    /// <remarks><see href="https://registry.khronos.org/vulkan/specs/1.3-extensions/man/html/VkGpaPerfCounterAMD.html" /></remarks>
+    public unsafe struct VkGpaPerfCounterAMD
+    {
+        /// <summary></summary>
+        public VkGpaPerfBlockAMD blockType;
+        /// <summary></summary>
+        public uint blockInstance;
+        /// <summary></summary>
+        public uint eventID;
+        public VkGpaPerfCounterAMD() { }
+        public VkGpaPerfCounterAMD(VkGpaPerfBlockAMD blockType, uint blockInstance, uint eventID)
+        {
+            this.blockType = blockType;
+            this.blockInstance = blockInstance;
+            this.eventID = eventID;
+        }
+    }
+    /// <summary><b>[requires: VK_AMD_gpa_interface]</b> Used by <see cref="Vk.CmdBeginGpaSampleAMD"/></summary>
+    /// <remarks><see href="https://registry.khronos.org/vulkan/specs/1.3-extensions/man/html/VkGpaSampleBeginInfoAMD.html" /></remarks>
+    public unsafe struct VkGpaSampleBeginInfoAMD
+    {
+        /// <summary></summary>
+        public VkStructureType sType = VkStructureType.StructureTypeGpaSampleBeginInfoAmd;
+        /// <summary></summary>
+        public void* pNext;
+        /// <summary></summary>
+        public VkGpaSampleTypeAMD sampleType;
+        /// <summary></summary>
+        public int sampleInternalOperations;
+        /// <summary></summary>
+        public int cacheFlushOnCounterCollection;
+        /// <summary></summary>
+        public int sqShaderMaskEnable;
+        /// <summary></summary>
+        public VkGpaSqShaderStageFlagBitsAMD sqShaderMask;
+        /// <summary></summary>
+        public uint perfCounterCount;
+        /// <summary></summary>
+        public VkGpaPerfCounterAMD* pPerfCounters;
+        /// <summary></summary>
+        public uint streamingPerfTraceSampleInterval;
+        /// <summary></summary>
+        public ulong perfCounterDeviceMemoryLimit;
+        /// <summary></summary>
+        public int sqThreadTraceEnable;
+        /// <summary></summary>
+        public int sqThreadTraceSuppressInstructionTokens;
+        /// <summary></summary>
+        public ulong sqThreadTraceDeviceMemoryLimit;
+        /// <summary></summary>
+        public VkPipelineStageFlagBits timingPreSample;
+        /// <summary></summary>
+        public VkPipelineStageFlagBits timingPostSample;
+        public VkGpaSampleBeginInfoAMD() { }
+        public VkGpaSampleBeginInfoAMD(VkStructureType sType, void* pNext, VkGpaSampleTypeAMD sampleType, int sampleInternalOperations, int cacheFlushOnCounterCollection, int sqShaderMaskEnable, VkGpaSqShaderStageFlagBitsAMD sqShaderMask, uint perfCounterCount, VkGpaPerfCounterAMD* pPerfCounters, uint streamingPerfTraceSampleInterval, ulong perfCounterDeviceMemoryLimit, int sqThreadTraceEnable, int sqThreadTraceSuppressInstructionTokens, ulong sqThreadTraceDeviceMemoryLimit, VkPipelineStageFlagBits timingPreSample, VkPipelineStageFlagBits timingPostSample)
+        {
+            this.sType = sType;
+            this.pNext = pNext;
+            this.sampleType = sampleType;
+            this.sampleInternalOperations = sampleInternalOperations;
+            this.cacheFlushOnCounterCollection = cacheFlushOnCounterCollection;
+            this.sqShaderMaskEnable = sqShaderMaskEnable;
+            this.sqShaderMask = sqShaderMask;
+            this.perfCounterCount = perfCounterCount;
+            this.pPerfCounters = pPerfCounters;
+            this.streamingPerfTraceSampleInterval = streamingPerfTraceSampleInterval;
+            this.perfCounterDeviceMemoryLimit = perfCounterDeviceMemoryLimit;
+            this.sqThreadTraceEnable = sqThreadTraceEnable;
+            this.sqThreadTraceSuppressInstructionTokens = sqThreadTraceSuppressInstructionTokens;
+            this.sqThreadTraceDeviceMemoryLimit = sqThreadTraceDeviceMemoryLimit;
+            this.timingPreSample = timingPreSample;
+            this.timingPostSample = timingPostSample;
+        }
+    }
+    /// <summary><b>[requires: VK_AMD_gpa_interface]</b> Used by <see cref="Vk.CreateGpaSessionAMD"/></summary>
+    /// <remarks><see href="https://registry.khronos.org/vulkan/specs/1.3-extensions/man/html/VkGpaSessionCreateInfoAMD.html" /></remarks>
+    public unsafe struct VkGpaSessionCreateInfoAMD
+    {
+        /// <summary></summary>
+        public VkStructureType sType = VkStructureType.StructureTypeGpaSessionCreateInfoAmd;
+        /// <summary></summary>
+        public void* pNext;
+        /// <summary></summary>
+        public VkGpaSessionAMD secondaryCopySource;
+        public VkGpaSessionCreateInfoAMD() { }
+        public VkGpaSessionCreateInfoAMD(VkStructureType sType, void* pNext, VkGpaSessionAMD secondaryCopySource)
+        {
+            this.sType = sType;
+            this.pNext = pNext;
+            this.secondaryCopySource = secondaryCopySource;
+        }
+    }
     /// <summary><b>[requires: v1.0]</b> Used by <see cref="Vk.CreateGraphicsPipelines"/></summary>
     /// <remarks><see href="https://registry.khronos.org/vulkan/specs/1.3-extensions/man/html/VkGraphicsPipelineCreateInfo.html" /></remarks>
     public unsafe struct VkGraphicsPipelineCreateInfo
@@ -15815,6 +16052,24 @@ namespace OpenTK.Graphics.Vulkan
             this.format = format;
         }
     }
+    /// <summary><b>[requires: VK_KHR_opacity_micromap]</b> </summary>
+    /// <remarks><see href="https://registry.khronos.org/vulkan/specs/1.3-extensions/man/html/VkMicromapTriangleKHR.html" /></remarks>
+    public unsafe struct VkMicromapTriangleKHR
+    {
+        /// <summary>Specified in bytes</summary>
+        public uint dataOffset;
+        /// <summary></summary>
+        public ushort subdivisionLevel;
+        /// <summary></summary>
+        public ushort format;
+        public VkMicromapTriangleKHR() { }
+        public VkMicromapTriangleKHR(uint dataOffset, ushort subdivisionLevel, ushort format)
+        {
+            this.dataOffset = dataOffset;
+            this.subdivisionLevel = subdivisionLevel;
+            this.format = format;
+        }
+    }
     /// <summary><b>[requires: VK_EXT_opacity_micromap]</b> </summary>
     /// <remarks><see href="https://registry.khronos.org/vulkan/specs/1.3-extensions/man/html/VkMicromapUsageEXT.html" /></remarks>
     public unsafe struct VkMicromapUsageEXT
@@ -15827,6 +16082,24 @@ namespace OpenTK.Graphics.Vulkan
         public uint format;
         public VkMicromapUsageEXT() { }
         public VkMicromapUsageEXT(uint count, uint subdivisionLevel, uint format)
+        {
+            this.count = count;
+            this.subdivisionLevel = subdivisionLevel;
+            this.format = format;
+        }
+    }
+    /// <summary><b>[requires: VK_KHR_opacity_micromap]</b> </summary>
+    /// <remarks><see href="https://registry.khronos.org/vulkan/specs/1.3-extensions/man/html/VkMicromapUsageKHR.html" /></remarks>
+    public unsafe struct VkMicromapUsageKHR
+    {
+        /// <summary></summary>
+        public uint count;
+        /// <summary></summary>
+        public uint subdivisionLevel;
+        /// <summary></summary>
+        public VkOpacityMicromapFormatKHR format;
+        public VkMicromapUsageKHR() { }
+        public VkMicromapUsageKHR(uint count, uint subdivisionLevel, VkOpacityMicromapFormatKHR format)
         {
             this.count = count;
             this.subdivisionLevel = subdivisionLevel;
@@ -17775,6 +18048,24 @@ namespace OpenTK.Graphics.Vulkan
             this.cooperativeMatrixConversion = cooperativeMatrixConversion;
         }
     }
+    /// <summary><b>[requires: VK_NV_cooperative_matrix_decode_vector]</b> </summary>
+    /// <remarks><see href="https://registry.khronos.org/vulkan/specs/1.3-extensions/man/html/VkPhysicalDeviceCooperativeMatrixDecodeVectorFeaturesNV.html" /></remarks>
+    public unsafe struct VkPhysicalDeviceCooperativeMatrixDecodeVectorFeaturesNV
+    {
+        /// <summary></summary>
+        public VkStructureType sType = VkStructureType.StructureTypePhysicalDeviceCooperativeMatrixDecodeVectorFeaturesNv;
+        /// <summary></summary>
+        public void* pNext;
+        /// <summary></summary>
+        public int cooperativeMatrixDecodeVector;
+        public VkPhysicalDeviceCooperativeMatrixDecodeVectorFeaturesNV() { }
+        public VkPhysicalDeviceCooperativeMatrixDecodeVectorFeaturesNV(VkStructureType sType, void* pNext, int cooperativeMatrixDecodeVector)
+        {
+            this.sType = sType;
+            this.pNext = pNext;
+            this.cooperativeMatrixDecodeVector = cooperativeMatrixDecodeVector;
+        }
+    }
     /// <summary><b>[requires: VK_KHR_cooperative_matrix]</b> </summary>
     /// <remarks><see href="https://registry.khronos.org/vulkan/specs/1.3-extensions/man/html/VkPhysicalDeviceCooperativeMatrixFeaturesKHR.html" /></remarks>
     public unsafe struct VkPhysicalDeviceCooperativeMatrixFeaturesKHR
@@ -19592,6 +19883,24 @@ namespace OpenTK.Graphics.Vulkan
             this.dynamicRenderingUnusedAttachments = dynamicRenderingUnusedAttachments;
         }
     }
+    /// <summary><b>[requires: VK_QCOM_elapsed_timer_query]</b> </summary>
+    /// <remarks><see href="https://registry.khronos.org/vulkan/specs/1.3-extensions/man/html/VkPhysicalDeviceElapsedTimerQueryFeaturesQCOM.html" /></remarks>
+    public unsafe struct VkPhysicalDeviceElapsedTimerQueryFeaturesQCOM
+    {
+        /// <summary></summary>
+        public VkStructureType sType = VkStructureType.StructureTypePhysicalDeviceElapsedTimerQueryFeaturesQcom;
+        /// <summary></summary>
+        public void* pNext;
+        /// <summary></summary>
+        public int elapsedTimerQuery;
+        public VkPhysicalDeviceElapsedTimerQueryFeaturesQCOM() { }
+        public VkPhysicalDeviceElapsedTimerQueryFeaturesQCOM(VkStructureType sType, void* pNext, int elapsedTimerQuery)
+        {
+            this.sType = sType;
+            this.pNext = pNext;
+            this.elapsedTimerQuery = elapsedTimerQuery;
+        }
+    }
     /// <summary><b>[requires: VK_NV_scissor_exclusive]</b> </summary>
     /// <remarks><see href="https://registry.khronos.org/vulkan/specs/1.3-extensions/man/html/VkPhysicalDeviceExclusiveScissorFeaturesNV.html" /></remarks>
     public unsafe struct VkPhysicalDeviceExclusiveScissorFeaturesNV
@@ -21164,6 +21473,81 @@ namespace OpenTK.Graphics.Vulkan
             this.globalPriorityQuery = globalPriorityQuery;
         }
     }
+    /// <summary><b>[requires: VK_AMD_gpa_interface]</b> </summary>
+    /// <remarks><see href="https://registry.khronos.org/vulkan/specs/1.3-extensions/man/html/VkPhysicalDeviceGpaFeaturesAMD.html" /></remarks>
+    public unsafe struct VkPhysicalDeviceGpaFeaturesAMD
+    {
+        /// <summary></summary>
+        public VkStructureType sType = VkStructureType.StructureTypePhysicalDeviceGpaFeaturesAmd;
+        /// <summary></summary>
+        public void* pNext;
+        /// <summary></summary>
+        public int perfCounters;
+        /// <summary></summary>
+        public int streamingPerfCounters;
+        /// <summary></summary>
+        public int sqThreadTracing;
+        /// <summary></summary>
+        public int clockModes;
+        public VkPhysicalDeviceGpaFeaturesAMD() { }
+        public VkPhysicalDeviceGpaFeaturesAMD(VkStructureType sType, void* pNext, int perfCounters, int streamingPerfCounters, int sqThreadTracing, int clockModes)
+        {
+            this.sType = sType;
+            this.pNext = pNext;
+            this.perfCounters = perfCounters;
+            this.streamingPerfCounters = streamingPerfCounters;
+            this.sqThreadTracing = sqThreadTracing;
+            this.clockModes = clockModes;
+        }
+    }
+    /// <summary><b>[requires: VK_AMD_gpa_interface]</b> </summary>
+    /// <remarks><see href="https://registry.khronos.org/vulkan/specs/1.3-extensions/man/html/VkPhysicalDeviceGpaProperties2AMD.html" /></remarks>
+    public unsafe struct VkPhysicalDeviceGpaProperties2AMD
+    {
+        /// <summary></summary>
+        public VkStructureType sType = VkStructureType.StructureTypePhysicalDeviceGpaProperties2Amd;
+        /// <summary></summary>
+        public void* pNext;
+        /// <summary></summary>
+        public uint revisionId;
+        public VkPhysicalDeviceGpaProperties2AMD() { }
+        public VkPhysicalDeviceGpaProperties2AMD(VkStructureType sType, void* pNext, uint revisionId)
+        {
+            this.sType = sType;
+            this.pNext = pNext;
+            this.revisionId = revisionId;
+        }
+    }
+    /// <summary><b>[requires: VK_AMD_gpa_interface]</b> </summary>
+    /// <remarks><see href="https://registry.khronos.org/vulkan/specs/1.3-extensions/man/html/VkPhysicalDeviceGpaPropertiesAMD.html" /></remarks>
+    public unsafe struct VkPhysicalDeviceGpaPropertiesAMD
+    {
+        /// <summary></summary>
+        public VkStructureType sType = VkStructureType.StructureTypePhysicalDeviceGpaPropertiesAmd;
+        /// <summary></summary>
+        public void* pNext;
+        /// <summary></summary>
+        public VkPhysicalDeviceGpaPropertiesFlagsAMD flags;
+        /// <summary></summary>
+        public ulong maxSqttSeBufferSize;
+        /// <summary></summary>
+        public uint shaderEngineCount;
+        /// <summary></summary>
+        public uint perfBlockCount;
+        /// <summary></summary>
+        public VkGpaPerfBlockPropertiesAMD* pPerfBlocks;
+        public VkPhysicalDeviceGpaPropertiesAMD() { }
+        public VkPhysicalDeviceGpaPropertiesAMD(VkStructureType sType, void* pNext, VkPhysicalDeviceGpaPropertiesFlagsAMD flags, ulong maxSqttSeBufferSize, uint shaderEngineCount, uint perfBlockCount, VkGpaPerfBlockPropertiesAMD* pPerfBlocks)
+        {
+            this.sType = sType;
+            this.pNext = pNext;
+            this.flags = flags;
+            this.maxSqttSeBufferSize = maxSqttSeBufferSize;
+            this.shaderEngineCount = shaderEngineCount;
+            this.perfBlockCount = perfBlockCount;
+            this.pPerfBlocks = pPerfBlocks;
+        }
+    }
     /// <summary><b>[requires: VK_EXT_graphics_pipeline_library]</b> </summary>
     /// <remarks><see href="https://registry.khronos.org/vulkan/specs/1.3-extensions/man/html/VkPhysicalDeviceGraphicsPipelineLibraryFeaturesEXT.html" /></remarks>
     public unsafe struct VkPhysicalDeviceGraphicsPipelineLibraryFeaturesEXT
@@ -21669,6 +22053,30 @@ namespace OpenTK.Graphics.Vulkan
             this.sType = sType;
             this.pNext = pNext;
             this.maxBlockMatchWindow = maxBlockMatchWindow;
+        }
+    }
+    /// <summary><b>[requires: VK_QCOM_image_processing3]</b> </summary>
+    /// <remarks><see href="https://registry.khronos.org/vulkan/specs/1.3-extensions/man/html/VkPhysicalDeviceImageProcessing3FeaturesQCOM.html" /></remarks>
+    public unsafe struct VkPhysicalDeviceImageProcessing3FeaturesQCOM
+    {
+        /// <summary></summary>
+        public VkStructureType sType = VkStructureType.StructureTypePhysicalDeviceImageProcessing3FeaturesQcom;
+        /// <summary></summary>
+        public void* pNext;
+        /// <summary></summary>
+        public int imageGatherLinear;
+        /// <summary></summary>
+        public int imageGatherExtendedModes;
+        /// <summary></summary>
+        public int blockMatchExtendedClampToEdge;
+        public VkPhysicalDeviceImageProcessing3FeaturesQCOM() { }
+        public VkPhysicalDeviceImageProcessing3FeaturesQCOM(VkStructureType sType, void* pNext, int imageGatherLinear, int imageGatherExtendedModes, int blockMatchExtendedClampToEdge)
+        {
+            this.sType = sType;
+            this.pNext = pNext;
+            this.imageGatherLinear = imageGatherLinear;
+            this.imageGatherExtendedModes = imageGatherExtendedModes;
+            this.blockMatchExtendedClampToEdge = blockMatchExtendedClampToEdge;
         }
     }
     /// <summary><b>[requires: VK_QCOM_image_processing]</b> </summary>
@@ -23708,6 +24116,24 @@ namespace OpenTK.Graphics.Vulkan
             this.micromapHostCommands = micromapHostCommands;
         }
     }
+    /// <summary><b>[requires: VK_KHR_opacity_micromap]</b> </summary>
+    /// <remarks><see href="https://registry.khronos.org/vulkan/specs/1.3-extensions/man/html/VkPhysicalDeviceOpacityMicromapFeaturesKHR.html" /></remarks>
+    public unsafe struct VkPhysicalDeviceOpacityMicromapFeaturesKHR
+    {
+        /// <summary></summary>
+        public VkStructureType sType = VkStructureType.StructureTypePhysicalDeviceOpacityMicromapFeaturesKhr;
+        /// <summary></summary>
+        public void* pNext;
+        /// <summary></summary>
+        public int micromap;
+        public VkPhysicalDeviceOpacityMicromapFeaturesKHR() { }
+        public VkPhysicalDeviceOpacityMicromapFeaturesKHR(VkStructureType sType, void* pNext, int micromap)
+        {
+            this.sType = sType;
+            this.pNext = pNext;
+            this.micromap = micromap;
+        }
+    }
     /// <summary><b>[requires: VK_EXT_opacity_micromap]</b> </summary>
     /// <remarks><see href="https://registry.khronos.org/vulkan/specs/1.3-extensions/man/html/VkPhysicalDeviceOpacityMicromapPropertiesEXT.html" /></remarks>
     public unsafe struct VkPhysicalDeviceOpacityMicromapPropertiesEXT
@@ -23727,6 +24153,33 @@ namespace OpenTK.Graphics.Vulkan
             this.pNext = pNext;
             this.maxOpacity2StateSubdivisionLevel = maxOpacity2StateSubdivisionLevel;
             this.maxOpacity4StateSubdivisionLevel = maxOpacity4StateSubdivisionLevel;
+        }
+    }
+    /// <summary><b>[requires: VK_KHR_opacity_micromap]</b> </summary>
+    /// <remarks><see href="https://registry.khronos.org/vulkan/specs/1.3-extensions/man/html/VkPhysicalDeviceOpacityMicromapPropertiesKHR.html" /></remarks>
+    public unsafe struct VkPhysicalDeviceOpacityMicromapPropertiesKHR
+    {
+        /// <summary></summary>
+        public VkStructureType sType = VkStructureType.StructureTypePhysicalDeviceOpacityMicromapPropertiesKhr;
+        /// <summary></summary>
+        public void* pNext;
+        /// <summary></summary>
+        public uint maxOpacity2StateSubdivisionLevel;
+        /// <summary></summary>
+        public uint maxOpacity4StateSubdivisionLevel;
+        /// <summary></summary>
+        public uint maxOpacityLossy4StateSubdivisionLevel;
+        /// <summary></summary>
+        public ulong maxMicromapTriangles;
+        public VkPhysicalDeviceOpacityMicromapPropertiesKHR() { }
+        public VkPhysicalDeviceOpacityMicromapPropertiesKHR(VkStructureType sType, void* pNext, uint maxOpacity2StateSubdivisionLevel, uint maxOpacity4StateSubdivisionLevel, uint maxOpacityLossy4StateSubdivisionLevel, ulong maxMicromapTriangles)
+        {
+            this.sType = sType;
+            this.pNext = pNext;
+            this.maxOpacity2StateSubdivisionLevel = maxOpacity2StateSubdivisionLevel;
+            this.maxOpacity4StateSubdivisionLevel = maxOpacity4StateSubdivisionLevel;
+            this.maxOpacityLossy4StateSubdivisionLevel = maxOpacityLossy4StateSubdivisionLevel;
+            this.maxMicromapTriangles = maxMicromapTriangles;
         }
     }
     /// <summary><b>[requires: VK_NV_optical_flow]</b> </summary>
@@ -26931,6 +27384,42 @@ namespace OpenTK.Graphics.Vulkan
         public fixed byte shaderModuleIdentifierAlgorithmUUID[16];
         public VkPhysicalDeviceShaderModuleIdentifierPropertiesEXT() { }
     }
+    /// <summary><b>[requires: VK_QCOM_shader_multiple_wait_queues]</b> </summary>
+    /// <remarks><see href="https://registry.khronos.org/vulkan/specs/1.3-extensions/man/html/VkPhysicalDeviceShaderMultipleWaitQueuesFeaturesQCOM.html" /></remarks>
+    public unsafe struct VkPhysicalDeviceShaderMultipleWaitQueuesFeaturesQCOM
+    {
+        /// <summary></summary>
+        public VkStructureType sType = VkStructureType.StructureTypePhysicalDeviceShaderMultipleWaitQueuesFeaturesQcom;
+        /// <summary></summary>
+        public void* pNext;
+        /// <summary></summary>
+        public int shaderMultipleWaitQueues;
+        public VkPhysicalDeviceShaderMultipleWaitQueuesFeaturesQCOM() { }
+        public VkPhysicalDeviceShaderMultipleWaitQueuesFeaturesQCOM(VkStructureType sType, void* pNext, int shaderMultipleWaitQueues)
+        {
+            this.sType = sType;
+            this.pNext = pNext;
+            this.shaderMultipleWaitQueues = shaderMultipleWaitQueues;
+        }
+    }
+    /// <summary><b>[requires: VK_QCOM_shader_multiple_wait_queues]</b> </summary>
+    /// <remarks><see href="https://registry.khronos.org/vulkan/specs/1.3-extensions/man/html/VkPhysicalDeviceShaderMultipleWaitQueuesPropertiesQCOM.html" /></remarks>
+    public unsafe struct VkPhysicalDeviceShaderMultipleWaitQueuesPropertiesQCOM
+    {
+        /// <summary></summary>
+        public VkStructureType sType = VkStructureType.StructureTypePhysicalDeviceShaderMultipleWaitQueuesPropertiesQcom;
+        /// <summary></summary>
+        public void* pNext;
+        /// <summary></summary>
+        public uint maxShaderWaitQueues;
+        public VkPhysicalDeviceShaderMultipleWaitQueuesPropertiesQCOM() { }
+        public VkPhysicalDeviceShaderMultipleWaitQueuesPropertiesQCOM(VkStructureType sType, void* pNext, uint maxShaderWaitQueues)
+        {
+            this.sType = sType;
+            this.pNext = pNext;
+            this.maxShaderWaitQueues = maxShaderWaitQueues;
+        }
+    }
     /// <summary><b>[requires: VK_EXT_shader_object]</b> </summary>
     /// <remarks><see href="https://registry.khronos.org/vulkan/specs/1.3-extensions/man/html/VkPhysicalDeviceShaderObjectFeaturesEXT.html" /></remarks>
     public unsafe struct VkPhysicalDeviceShaderObjectFeaturesEXT
@@ -27054,6 +27543,42 @@ namespace OpenTK.Graphics.Vulkan
             this.pNext = pNext;
             this.shaderSMCount = shaderSMCount;
             this.shaderWarpsPerSM = shaderWarpsPerSM;
+        }
+    }
+    /// <summary><b>[requires: VK_EXT_shader_split_barrier]</b> </summary>
+    /// <remarks><see href="https://registry.khronos.org/vulkan/specs/1.3-extensions/man/html/VkPhysicalDeviceShaderSplitBarrierFeaturesEXT.html" /></remarks>
+    public unsafe struct VkPhysicalDeviceShaderSplitBarrierFeaturesEXT
+    {
+        /// <summary></summary>
+        public VkStructureType sType = VkStructureType.StructureTypePhysicalDeviceShaderSplitBarrierFeaturesExt;
+        /// <summary></summary>
+        public void* pNext;
+        /// <summary></summary>
+        public int shaderSplitBarrier;
+        public VkPhysicalDeviceShaderSplitBarrierFeaturesEXT() { }
+        public VkPhysicalDeviceShaderSplitBarrierFeaturesEXT(VkStructureType sType, void* pNext, int shaderSplitBarrier)
+        {
+            this.sType = sType;
+            this.pNext = pNext;
+            this.shaderSplitBarrier = shaderSplitBarrier;
+        }
+    }
+    /// <summary><b>[requires: VK_EXT_shader_split_barrier]</b> </summary>
+    /// <remarks><see href="https://registry.khronos.org/vulkan/specs/1.3-extensions/man/html/VkPhysicalDeviceShaderSplitBarrierPropertiesEXT.html" /></remarks>
+    public unsafe struct VkPhysicalDeviceShaderSplitBarrierPropertiesEXT
+    {
+        /// <summary></summary>
+        public VkStructureType sType = VkStructureType.StructureTypePhysicalDeviceShaderSplitBarrierPropertiesExt;
+        /// <summary></summary>
+        public void* pNext;
+        /// <summary></summary>
+        public uint splitBarrierReservedSharedMemory;
+        public VkPhysicalDeviceShaderSplitBarrierPropertiesEXT() { }
+        public VkPhysicalDeviceShaderSplitBarrierPropertiesEXT(VkStructureType sType, void* pNext, uint splitBarrierReservedSharedMemory)
+        {
+            this.sType = sType;
+            this.pNext = pNext;
+            this.splitBarrierReservedSharedMemory = splitBarrierReservedSharedMemory;
         }
     }
     /// <summary><b>[requires: v1.2]</b> </summary>

@@ -493,6 +493,23 @@ namespace OpenTK.Graphics.Vulkan
         public static explicit operator ulong(VkFramebuffer handle) => handle.Handle;
         public static explicit operator VkFramebuffer(ulong handle) => new VkFramebuffer(handle);
     }
+    /// <summary><b>[requires: VK_AMD_gpa_interface]</b> Used by <see cref="Vk.CmdBeginGpaSampleAMD"/>, <see cref="Vk.CmdBeginGpaSessionAMD"/>, <see cref="Vk.CmdCopyGpaSessionResultsAMD"/>, ...</summary>
+    /// <remarks><see href="https://registry.khronos.org/vulkan/specs/1.3-extensions/man/html/VkGpaSessionAMD.html" /></remarks>
+    [DebuggerDisplay("VkGpaSessionAMD\\{{Handle}\\}")]
+    public unsafe struct VkGpaSessionAMD : IEquatable<VkGpaSessionAMD>
+    {
+        public static VkGpaSessionAMD Zero => new VkGpaSessionAMD(0);
+        public ulong Handle;
+        public VkGpaSessionAMD(ulong handle) => Handle = handle;
+        public override bool Equals(object? obj) => obj is VkGpaSessionAMD instance && Equals(instance);
+        public bool Equals(VkGpaSessionAMD other) => Handle.Equals(other.Handle);
+        public override int GetHashCode() => HashCode.Combine(Handle);
+        public override string? ToString() => Handle.ToString();
+        public static bool operator ==(VkGpaSessionAMD left, VkGpaSessionAMD right) => left.Equals(right);
+        public static bool operator !=(VkGpaSessionAMD left, VkGpaSessionAMD right) => !(left == right);
+        public static explicit operator ulong(VkGpaSessionAMD handle) => handle.Handle;
+        public static explicit operator VkGpaSessionAMD(ulong handle) => new VkGpaSessionAMD(handle);
+    }
     /// <summary><b>[requires: v1.0]</b> Used by <see cref="Vk.AcquireImageANDROID"/>, <see cref="Vk.AcquireImageOHOS"/>, <see cref="Vk.BindImageMemory"/>, ...</summary>
     /// <remarks><see href="https://registry.khronos.org/vulkan/specs/1.3-extensions/man/html/VkImage.html" /></remarks>
     [DebuggerDisplay("VkImage\\{{Handle}\\}")]

@@ -70,6 +70,13 @@ namespace OpenTK.Graphics.Vulkan
         /// <summary>[requires: <b>VK_NV_ray_tracing_motion_blur</b>] </summary>
         AccelerationStructureMotionInstanceTypeStaticNv = 0,
     }
+    /// <summary><b>[requires: VK_KHR_opacity_micromap]</b> </summary>
+    /// <remarks><see href="https://registry.khronos.org/vulkan/specs/latest/man/html/VkAccelerationStructureSerializedBlockTypeKHR.html" /></remarks>
+    public enum VkAccelerationStructureSerializedBlockTypeKHR : int
+    {
+        /// <summary>[requires: <b>VK_KHR_opacity_micromap</b>] </summary>
+        AccelerationStructureSerializedBlockTypeOpacityMicromapKhr = 0,
+    }
     /// <summary><b>[requires: VK_KHR_acceleration_structure]</b> </summary>
     /// <remarks><see href="https://registry.khronos.org/vulkan/specs/latest/man/html/VkAccelerationStructureTypeKHR.html" /></remarks>
     public enum VkAccelerationStructureTypeKHR : int
@@ -80,6 +87,8 @@ namespace OpenTK.Graphics.Vulkan
         AccelerationStructureTypeBottomLevelNv = 1,
         /// <summary>[requires: <b>VK_KHR_acceleration_structure</b>] </summary>
         AccelerationStructureTypeGenericKhr = 2,
+        /// <summary>[requires: <b>VK_KHR_opacity_micromap</b>] </summary>
+        AccelerationStructureTypeOpacityMicromapKhr = 1000623000,
         /// <summary>[requires: <b>VK_KHR_acceleration_structure</b>] </summary>
         AccelerationStructureTypeTopLevelKhr = 0,
         /// <summary>[requires: <b>VK_NV_ray_tracing</b>] </summary>
@@ -764,9 +773,9 @@ namespace OpenTK.Graphics.Vulkan
         BufferUsage2IndirectBufferBitKhr = 256,
         /// <summary>[requires: <b>VK_EXT_memory_decompression</b>] </summary>
         BufferUsage2MemoryDecompressionBitExt = 4294967296,
-        /// <summary>[requires: <b>VK_KHR_maintenance5</b>] </summary>
+        /// <summary>[requires: <b>VK_EXT_opacity_micromap</b>] </summary>
         BufferUsage2MicromapBuildInputReadOnlyBitExt = 8388608,
-        /// <summary>[requires: <b>VK_KHR_maintenance5</b>] </summary>
+        /// <summary>[requires: <b>VK_EXT_opacity_micromap</b>] </summary>
         BufferUsage2MicromapStorageBitExt = 16777216,
         /// <summary>[requires: <b>VK_EXT_device_generated_commands</b>] </summary>
         BufferUsage2PreprocessBufferBitExt = 2147483648,
@@ -856,6 +865,8 @@ namespace OpenTK.Graphics.Vulkan
         BuildAccelerationStructureAllowDataAccessKhr = 2048,
         /// <summary>[requires: <b>VK_EXT_opacity_micromap</b>] </summary>
         BuildAccelerationStructureAllowDisableOpacityMicromapsBitExt = 128,
+        /// <summary>[requires: <b>VK_KHR_opacity_micromap</b>] </summary>
+        BuildAccelerationStructureAllowDisableOpacityMicromapsBitKhr = 128,
         /// <summary>[requires: <b>VK_EXT_opacity_micromap</b>] </summary>
         BuildAccelerationStructureAllowDisableOpacityMicromapsExt = 128,
         /// <summary>[requires: <b>VK_NV_displacement_micromap</b>] </summary>
@@ -868,6 +879,8 @@ namespace OpenTK.Graphics.Vulkan
         BuildAccelerationStructureAllowOpacityMicromapDataUpdateExt = 256,
         /// <summary>[requires: <b>VK_EXT_opacity_micromap</b>] </summary>
         BuildAccelerationStructureAllowOpacityMicromapUpdateBitExt = 64,
+        /// <summary>[requires: <b>VK_KHR_opacity_micromap</b>] </summary>
+        BuildAccelerationStructureAllowOpacityMicromapUpdateBitKhr = 64,
         /// <summary>[requires: <b>VK_EXT_opacity_micromap</b>] </summary>
         BuildAccelerationStructureAllowOpacityMicromapUpdateExt = 64,
         /// <summary>[requires: <b>VK_KHR_acceleration_structure</b>] </summary>
@@ -878,6 +891,8 @@ namespace OpenTK.Graphics.Vulkan
         BuildAccelerationStructureLowMemoryBitKhr = 16,
         /// <summary>[requires: <b>VK_NV_ray_tracing</b>] </summary>
         BuildAccelerationStructureLowMemoryBitNv = 16,
+        /// <summary>[requires: <b>VK_KHR_opacity_micromap</b>] </summary>
+        BuildAccelerationStructureMicromapLossyBitKhr = 1024,
         /// <summary>[requires: <b>VK_NV_ray_tracing_motion_blur</b>] </summary>
         BuildAccelerationStructureMotionBitNv = 32,
         /// <summary>[requires: <b>VK_KHR_acceleration_structure</b>] </summary>
@@ -2247,6 +2262,8 @@ namespace OpenTK.Graphics.Vulkan
         DriverIdJuiceProprietary = 16,
         /// <summary>[requires: <b>v1.2</b>] Mesa open source project</summary>
         DriverIdMesaDozen = 23,
+        /// <summary>[requires: <b>v1.2</b>] Mesa open source project</summary>
+        DriverIdMesaGfxstream = 29,
         /// <summary>[requires: <b>v1.2</b>] Mesa open source project</summary>
         DriverIdMesaHoneykrisp = 26,
         /// <summary>[requires: <b>v1.2</b>] Mesa open source project</summary>
@@ -3624,6 +3641,8 @@ namespace OpenTK.Graphics.Vulkan
         FormatFeature2BlitSrcBitKhr = 1024,
         /// <summary>[requires: <b>VK_QCOM_image_processing</b>] </summary>
         FormatFeature2BlockMatchingBitQcom = 68719476736,
+        /// <summary>[requires: <b>VK_QCOM_image_processing3</b>] </summary>
+        FormatFeature2BlockMatchingSxdBitQcom = 17592186044416,
         /// <summary>[requires: <b>VK_QCOM_image_processing</b>] </summary>
         FormatFeature2BoxFilterSampledBitQcom = 137438953472,
         /// <summary>[requires: <b>v1.3</b>] </summary>
@@ -3910,6 +3929,8 @@ namespace OpenTK.Graphics.Vulkan
     {
         /// <summary>[requires: <b>VK_EXT_opacity_micromap</b>] </summary>
         GeometryInstanceDisableOpacityMicromapsBitExt = 32,
+        /// <summary>[requires: <b>VK_KHR_opacity_micromap</b>] </summary>
+        GeometryInstanceDisableOpacityMicromapsBitKhr = 32,
         /// <summary>[requires: <b>VK_EXT_opacity_micromap</b>] </summary>
         GeometryInstanceDisableOpacityMicromapsExt = 32,
         /// <summary>[requires: <b>VK_KHR_acceleration_structure</b>] </summary>
@@ -3918,6 +3939,8 @@ namespace OpenTK.Graphics.Vulkan
         GeometryInstanceForceNoOpaqueBitNv = 8,
         /// <summary>[requires: <b>VK_EXT_opacity_micromap</b>] </summary>
         GeometryInstanceForceOpacityMicromap2StateBitExt = 16,
+        /// <summary>[requires: <b>VK_KHR_opacity_micromap</b>] </summary>
+        GeometryInstanceForceOpacityMicromap2StateBitKhr = 16,
         /// <summary>[requires: <b>VK_EXT_opacity_micromap</b>] </summary>
         GeometryInstanceForceOpacityMicromap2StateExt = 16,
         /// <summary>[requires: <b>VK_KHR_acceleration_structure</b>] </summary>
@@ -3955,12 +3978,191 @@ namespace OpenTK.Graphics.Vulkan
         GeometryTypeInstancesKhr = 2,
         /// <summary>[requires: <b>VK_NV_ray_tracing_linear_swept_spheres</b>] </summary>
         GeometryTypeLinearSweptSpheresNv = 1000429005,
+        /// <summary>[requires: <b>VK_KHR_opacity_micromap</b>] </summary>
+        GeometryTypeMicromapKhr = 1000623000,
         /// <summary>[requires: <b>VK_NV_ray_tracing_linear_swept_spheres</b>] </summary>
         GeometryTypeSpheresNv = 1000429004,
         /// <summary>[requires: <b>VK_KHR_acceleration_structure</b>] </summary>
         GeometryTypeTrianglesKhr = 0,
         /// <summary>[requires: <b>VK_NV_ray_tracing</b>] </summary>
         GeometryTypeTrianglesNv = 0,
+    }
+    /// <summary><b>[requires: VK_AMD_gpa_interface]</b> </summary>
+    /// <remarks><see href="https://registry.khronos.org/vulkan/specs/latest/man/html/VkGpaDeviceClockModeAMD.html" /></remarks>
+    public enum VkGpaDeviceClockModeAMD : int
+    {
+        /// <summary>[requires: <b>VK_AMD_gpa_interface</b>] </summary>
+        GpaDeviceClockModeDefaultAmd = 0,
+        /// <summary>[requires: <b>VK_AMD_gpa_interface</b>] </summary>
+        GpaDeviceClockModeMinEngineAmd = 4,
+        /// <summary>[requires: <b>VK_AMD_gpa_interface</b>] </summary>
+        GpaDeviceClockModeMinMemoryAmd = 3,
+        /// <summary>[requires: <b>VK_AMD_gpa_interface</b>] </summary>
+        GpaDeviceClockModePeakAmd = 5,
+        /// <summary>[requires: <b>VK_AMD_gpa_interface</b>] </summary>
+        GpaDeviceClockModeProfilingAmd = 2,
+        /// <summary>[requires: <b>VK_AMD_gpa_interface</b>] </summary>
+        GpaDeviceClockModeQueryAmd = 1,
+    }
+    /// <summary><b>[requires: VK_AMD_gpa_interface]</b> </summary>
+    /// <remarks><see href="https://registry.khronos.org/vulkan/specs/latest/man/html/VkGpaPerfBlockAMD.html" /></remarks>
+    public enum VkGpaPerfBlockAMD : int
+    {
+        /// <summary>[requires: <b>VK_AMD_gpa_interface</b>] </summary>
+        GpaPerfBlockAtcAmd = 26,
+        /// <summary>[requires: <b>VK_AMD_gpa_interface</b>] </summary>
+        GpaPerfBlockAtcL2Amd = 27,
+        /// <summary>[requires: <b>VK_AMD_gpa_interface</b>] </summary>
+        GpaPerfBlockCbAmd = 14,
+        /// <summary>[requires: <b>VK_AMD_gpa_interface</b>] </summary>
+        GpaPerfBlockChaAmd = 39,
+        /// <summary>[requires: <b>VK_AMD_gpa_interface</b>] </summary>
+        GpaPerfBlockChcAmd = 40,
+        /// <summary>[requires: <b>VK_AMD_gpa_interface</b>] </summary>
+        GpaPerfBlockChcgAmd = 41,
+        /// <summary>[requires: <b>VK_AMD_gpa_interface</b>] </summary>
+        GpaPerfBlockCpcAmd = 23,
+        /// <summary>[requires: <b>VK_AMD_gpa_interface</b>] </summary>
+        GpaPerfBlockCpfAmd = 0,
+        /// <summary>[requires: <b>VK_AMD_gpa_interface</b>] </summary>
+        GpaPerfBlockCpgAmd = 22,
+        /// <summary>[requires: <b>VK_AMD_gpa_interface</b>] </summary>
+        GpaPerfBlockDbAmd = 13,
+        /// <summary>[requires: <b>VK_AMD_gpa_interface</b>] </summary>
+        GpaPerfBlockDfMallAmd = 48,
+        /// <summary>[requires: <b>VK_AMD_gpa_interface</b>] </summary>
+        GpaPerfBlockDmaAmd = 20,
+        /// <summary>[requires: <b>VK_AMD_gpa_interface</b>] </summary>
+        GpaPerfBlockEaAmd = 29,
+        /// <summary>[requires: <b>VK_AMD_gpa_interface</b>] </summary>
+        GpaPerfBlockEacpwdAmd = 54,
+        /// <summary>[requires: <b>VK_AMD_gpa_interface</b>] </summary>
+        GpaPerfBlockEaseAmd = 55,
+        /// <summary>[requires: <b>VK_AMD_gpa_interface</b>] </summary>
+        GpaPerfBlockGcrAmd = 43,
+        /// <summary>[requires: <b>VK_AMD_gpa_interface</b>] </summary>
+        GpaPerfBlockGdsAmd = 15,
+        /// <summary>[requires: <b>VK_AMD_gpa_interface</b>] </summary>
+        GpaPerfBlockGeAmd = 33,
+        /// <summary>[requires: <b>VK_AMD_gpa_interface</b>] </summary>
+        GpaPerfBlockGeDistAmd = 46,
+        /// <summary>[requires: <b>VK_AMD_gpa_interface</b>] </summary>
+        GpaPerfBlockGeSeAmd = 47,
+        /// <summary>[requires: <b>VK_AMD_gpa_interface</b>] </summary>
+        GpaPerfBlockGe1Amd = 33,
+        /// <summary>[requires: <b>VK_AMD_gpa_interface</b>] </summary>
+        GpaPerfBlockGl1aAmd = 34,
+        /// <summary>[requires: <b>VK_AMD_gpa_interface</b>] </summary>
+        GpaPerfBlockGl1cAmd = 35,
+        /// <summary>[requires: <b>VK_AMD_gpa_interface</b>] </summary>
+        GpaPerfBlockGl1cgAmd = 36,
+        /// <summary>[requires: <b>VK_AMD_gpa_interface</b>] </summary>
+        GpaPerfBlockGl1xaAmd = 51,
+        /// <summary>[requires: <b>VK_AMD_gpa_interface</b>] </summary>
+        GpaPerfBlockGl1xcAmd = 52,
+        /// <summary>[requires: <b>VK_AMD_gpa_interface</b>] </summary>
+        GpaPerfBlockGl2aAmd = 37,
+        /// <summary>[requires: <b>VK_AMD_gpa_interface</b>] </summary>
+        GpaPerfBlockGl2cAmd = 38,
+        /// <summary>[requires: <b>VK_AMD_gpa_interface</b>] </summary>
+        GpaPerfBlockGrbmAmd = 17,
+        /// <summary>[requires: <b>VK_AMD_gpa_interface</b>] </summary>
+        GpaPerfBlockGrbmSeAmd = 18,
+        /// <summary>[requires: <b>VK_AMD_gpa_interface</b>] </summary>
+        GpaPerfBlockGusAmd = 42,
+        /// <summary>[requires: <b>VK_AMD_gpa_interface</b>] </summary>
+        GpaPerfBlockIaAmd = 1,
+        /// <summary>[requires: <b>VK_AMD_gpa_interface</b>] </summary>
+        GpaPerfBlockMcAmd = 21,
+        /// <summary>[requires: <b>VK_AMD_gpa_interface</b>] </summary>
+        GpaPerfBlockMcVmL2Amd = 28,
+        /// <summary>[requires: <b>VK_AMD_gpa_interface</b>] </summary>
+        GpaPerfBlockPaAmd = 3,
+        /// <summary>[requires: <b>VK_AMD_gpa_interface</b>] </summary>
+        GpaPerfBlockPcAmd = 50,
+        /// <summary>[requires: <b>VK_AMD_gpa_interface</b>] </summary>
+        GpaPerfBlockPhAmd = 44,
+        /// <summary>[requires: <b>VK_AMD_gpa_interface</b>] </summary>
+        GpaPerfBlockRlcAmd = 19,
+        /// <summary>[requires: <b>VK_AMD_gpa_interface</b>] </summary>
+        GpaPerfBlockRlclocalAmd = 56,
+        /// <summary>[requires: <b>VK_AMD_gpa_interface</b>] </summary>
+        GpaPerfBlockRlcuserAmd = 56,
+        /// <summary>[requires: <b>VK_AMD_gpa_interface</b>] </summary>
+        GpaPerfBlockRmiAmd = 31,
+        /// <summary>[requires: <b>VK_AMD_gpa_interface</b>] </summary>
+        GpaPerfBlockRpbAmd = 30,
+        /// <summary>[requires: <b>VK_AMD_gpa_interface</b>] </summary>
+        GpaPerfBlockScAmd = 4,
+        /// <summary>[requires: <b>VK_AMD_gpa_interface</b>] </summary>
+        GpaPerfBlockSpiAmd = 5,
+        /// <summary>[requires: <b>VK_AMD_gpa_interface</b>] </summary>
+        GpaPerfBlockSqAmd = 6,
+        /// <summary>[requires: <b>VK_AMD_gpa_interface</b>] </summary>
+        GpaPerfBlockSqWgpAmd = 49,
+        /// <summary>[requires: <b>VK_AMD_gpa_interface</b>] </summary>
+        GpaPerfBlockSrbmAmd = 16,
+        /// <summary>[requires: <b>VK_AMD_gpa_interface</b>] </summary>
+        GpaPerfBlockSxAmd = 7,
+        /// <summary>[requires: <b>VK_AMD_gpa_interface</b>] </summary>
+        GpaPerfBlockTaAmd = 8,
+        /// <summary>[requires: <b>VK_AMD_gpa_interface</b>] </summary>
+        GpaPerfBlockTcaAmd = 12,
+        /// <summary>[requires: <b>VK_AMD_gpa_interface</b>] </summary>
+        GpaPerfBlockTccAmd = 11,
+        /// <summary>[requires: <b>VK_AMD_gpa_interface</b>] </summary>
+        GpaPerfBlockTcpAmd = 10,
+        /// <summary>[requires: <b>VK_AMD_gpa_interface</b>] </summary>
+        GpaPerfBlockTcsAmd = 25,
+        /// <summary>[requires: <b>VK_AMD_gpa_interface</b>] </summary>
+        GpaPerfBlockTdAmd = 9,
+        /// <summary>[requires: <b>VK_AMD_gpa_interface</b>] </summary>
+        GpaPerfBlockUmcchAmd = 32,
+        /// <summary>[requires: <b>VK_AMD_gpa_interface</b>] </summary>
+        GpaPerfBlockUtcl1Amd = 45,
+        /// <summary>[requires: <b>VK_AMD_gpa_interface</b>] </summary>
+        GpaPerfBlockVgtAmd = 2,
+        /// <summary>[requires: <b>VK_AMD_gpa_interface</b>] </summary>
+        GpaPerfBlockWdAmd = 24,
+        /// <summary>[requires: <b>VK_AMD_gpa_interface</b>] </summary>
+        GpaPerfBlockWgsAmd = 53,
+    }
+    /// <summary><b>[requires: VK_AMD_gpa_interface]</b> </summary>
+    /// <remarks><see href="https://registry.khronos.org/vulkan/specs/latest/man/html/VkGpaPerfBlockPropertiesFlagsAMD.html" /></remarks>
+    [Flags]
+    public enum VkGpaPerfBlockPropertiesFlagsAMD : uint
+    {
+    }
+    /// <summary><b>[requires: VK_AMD_gpa_interface]</b> </summary>
+    /// <remarks><see href="https://registry.khronos.org/vulkan/specs/latest/man/html/VkGpaSampleTypeAMD.html" /></remarks>
+    public enum VkGpaSampleTypeAMD : int
+    {
+        /// <summary>[requires: <b>VK_AMD_gpa_interface</b>] </summary>
+        GpaSampleTypeCumulativeAmd = 0,
+        /// <summary>[requires: <b>VK_AMD_gpa_interface</b>] </summary>
+        GpaSampleTypeTimingAmd = 2,
+        /// <summary>[requires: <b>VK_AMD_gpa_interface</b>] </summary>
+        GpaSampleTypeTraceAmd = 1,
+    }
+    /// <summary><b>[requires: VK_AMD_gpa_interface]</b> </summary>
+    /// <remarks><see href="https://registry.khronos.org/vulkan/specs/latest/man/html/VkGpaSqShaderStageFlagBitsAMD.html" /></remarks>
+    [Flags]
+    public enum VkGpaSqShaderStageFlagBitsAMD : uint
+    {
+        /// <summary>[requires: <b>VK_AMD_gpa_interface</b>] </summary>
+        GpaSqShaderStageCsBitAmd = 64,
+        /// <summary>[requires: <b>VK_AMD_gpa_interface</b>] </summary>
+        GpaSqShaderStageEsBitAmd = 8,
+        /// <summary>[requires: <b>VK_AMD_gpa_interface</b>] </summary>
+        GpaSqShaderStageGsBitAmd = 4,
+        /// <summary>[requires: <b>VK_AMD_gpa_interface</b>] </summary>
+        GpaSqShaderStageHsBitAmd = 16,
+        /// <summary>[requires: <b>VK_AMD_gpa_interface</b>] </summary>
+        GpaSqShaderStageLsBitAmd = 32,
+        /// <summary>[requires: <b>VK_AMD_gpa_interface</b>] </summary>
+        GpaSqShaderStagePsBitAmd = 1,
+        /// <summary>[requires: <b>VK_AMD_gpa_interface</b>] </summary>
+        GpaSqShaderStageVsBitAmd = 2,
     }
     /// <summary><b>[requires: VK_EXT_graphics_pipeline_library]</b> </summary>
     /// <remarks><see href="https://registry.khronos.org/vulkan/specs/latest/man/html/VkGraphicsPipelineLibraryFlagBitsEXT.html" /></remarks>
@@ -4905,6 +5107,8 @@ namespace OpenTK.Graphics.Vulkan
         ObjectTypeFence = 7,
         /// <summary>[requires: <b>v1.0</b>] </summary>
         ObjectTypeFramebuffer = 24,
+        /// <summary>[requires: <b>VK_AMD_gpa_interface</b>] </summary>
+        ObjectTypeGpaSessionAmd = 1000133000,
         /// <summary>[requires: <b>v1.0</b>] </summary>
         ObjectTypeImage = 10,
         /// <summary>[requires: <b>v1.0</b>] </summary>
@@ -4976,29 +5180,41 @@ namespace OpenTK.Graphics.Vulkan
         /// <summary>[requires: <b>VK_KHR_video_queue</b>] VkVideoSessionParametersKHR</summary>
         ObjectTypeVideoSessionParametersKhr = 1000023001,
     }
-    /// <summary><b>[requires: VK_EXT_opacity_micromap]</b> </summary>
-    /// <remarks><see href="https://registry.khronos.org/vulkan/specs/latest/man/html/VkOpacityMicromapFormatEXT.html" /></remarks>
-    public enum VkOpacityMicromapFormatEXT : int
+    /// <summary><b>[requires: VK_KHR_opacity_micromap]</b> </summary>
+    /// <remarks><see href="https://registry.khronos.org/vulkan/specs/latest/man/html/VkOpacityMicromapFormatKHR.html" /></remarks>
+    public enum VkOpacityMicromapFormatKHR : int
     {
         /// <summary>[requires: <b>VK_EXT_opacity_micromap</b>] </summary>
         OpacityMicromapFormat2StateExt = 1,
+        /// <summary>[requires: <b>VK_KHR_opacity_micromap</b>] </summary>
+        OpacityMicromapFormat2StateKhr = 1,
         /// <summary>[requires: <b>VK_EXT_opacity_micromap</b>] </summary>
         OpacityMicromapFormat4StateExt = 2,
+        /// <summary>[requires: <b>VK_KHR_opacity_micromap</b>] </summary>
+        OpacityMicromapFormat4StateKhr = 2,
     }
-    /// <summary><b>[requires: VK_EXT_opacity_micromap]</b> </summary>
-    /// <remarks><see href="https://registry.khronos.org/vulkan/specs/latest/man/html/VkOpacityMicromapSpecialIndexEXT.html" /></remarks>
-    public enum VkOpacityMicromapSpecialIndexEXT : int
+    /// <summary><b>[requires: VK_KHR_opacity_micromap]</b> </summary>
+    /// <remarks><see href="https://registry.khronos.org/vulkan/specs/latest/man/html/VkOpacityMicromapSpecialIndexKHR.html" /></remarks>
+    public enum VkOpacityMicromapSpecialIndexKHR : int
     {
         /// <summary>[requires: <b>VK_NV_cluster_acceleration_structure</b>] </summary>
         OpacityMicromapSpecialIndexClusterGeometryDisableOpacityMicromapNv = -5,
         /// <summary>[requires: <b>VK_EXT_opacity_micromap</b>] </summary>
         OpacityMicromapSpecialIndexFullyOpaqueExt = -2,
+        /// <summary>[requires: <b>VK_KHR_opacity_micromap</b>] </summary>
+        OpacityMicromapSpecialIndexFullyOpaqueKhr = -2,
         /// <summary>[requires: <b>VK_EXT_opacity_micromap</b>] </summary>
         OpacityMicromapSpecialIndexFullyTransparentExt = -1,
+        /// <summary>[requires: <b>VK_KHR_opacity_micromap</b>] </summary>
+        OpacityMicromapSpecialIndexFullyTransparentKhr = -1,
         /// <summary>[requires: <b>VK_EXT_opacity_micromap</b>] </summary>
         OpacityMicromapSpecialIndexFullyUnknownOpaqueExt = -4,
+        /// <summary>[requires: <b>VK_KHR_opacity_micromap</b>] </summary>
+        OpacityMicromapSpecialIndexFullyUnknownOpaqueKhr = -4,
         /// <summary>[requires: <b>VK_EXT_opacity_micromap</b>] </summary>
         OpacityMicromapSpecialIndexFullyUnknownTransparentExt = -3,
+        /// <summary>[requires: <b>VK_KHR_opacity_micromap</b>] </summary>
+        OpacityMicromapSpecialIndexFullyUnknownTransparentKhr = -3,
     }
     /// <summary><b>[requires: VK_NV_optical_flow]</b> </summary>
     /// <remarks><see href="https://registry.khronos.org/vulkan/specs/latest/man/html/VkOpticalFlowExecuteFlagBitsNV.html" /></remarks>
@@ -5326,6 +5542,12 @@ namespace OpenTK.Graphics.Vulkan
         /// <summary>[requires: <b>VK_QCOM_data_graph_model</b>] </summary>
         PhysicalDeviceDataGraphProcessingEngineTypeNeuralQcom = 1000629000,
     }
+    /// <summary><b>[requires: VK_AMD_gpa_interface]</b> </summary>
+    /// <remarks><see href="https://registry.khronos.org/vulkan/specs/latest/man/html/VkPhysicalDeviceGpaPropertiesFlagsAMD.html" /></remarks>
+    [Flags]
+    public enum VkPhysicalDeviceGpaPropertiesFlagsAMD : uint
+    {
+    }
     /// <summary><b>[requires: VK_KHR_maintenance7]</b> </summary>
     /// <remarks><see href="https://registry.khronos.org/vulkan/specs/latest/man/html/VkPhysicalDeviceLayeredApiKHR.html" /></remarks>
     public enum VkPhysicalDeviceLayeredApiKHR : int
@@ -5517,6 +5739,8 @@ namespace OpenTK.Graphics.Vulkan
         PipelineCreateRayTracingNoNullMissShadersBitKhr = 65536,
         /// <summary>[requires: <b>VK_EXT_opacity_micromap</b>] </summary>
         PipelineCreateRayTracingOpacityMicromapBitExt = 16777216,
+        /// <summary>[requires: <b>VK_KHR_opacity_micromap</b>] </summary>
+        PipelineCreateRayTracingOpacityMicromapBitKhr = 16777216,
         /// <summary>[requires: <b>VK_KHR_ray_tracing_pipeline</b>] </summary>
         PipelineCreateRayTracingShaderGroupHandleCaptureReplayBitKhr = 524288,
         /// <summary>[requires: <b>VK_KHR_ray_tracing_pipeline</b>] </summary>
@@ -5605,6 +5829,8 @@ namespace OpenTK.Graphics.Vulkan
         PipelineCreate2NoProtectedAccessBit = 134217728,
         /// <summary>[requires: <b>VK_KHR_maintenance5</b>] </summary>
         PipelineCreate2NoProtectedAccessBitExt = 134217728,
+        /// <summary>[requires: <b>VK_KHR_opacity_micromap</b>] </summary>
+        PipelineCreate2OpacityMicromapDisallowMixedSpecialIndexBitKhr = 2199023255552,
         /// <summary>[requires: <b>VK_VALVE_fragment_density_map_layered</b>] </summary>
         PipelineCreate2PerLayerFragmentDensityBitValve = 1099511627776,
         /// <summary>[requires: <b>v1.4</b>] </summary>
@@ -5625,8 +5851,10 @@ namespace OpenTK.Graphics.Vulkan
         PipelineCreate2RayTracingNoNullIntersectionShadersBitKhr = 131072,
         /// <summary>[requires: <b>VK_KHR_maintenance5</b>] </summary>
         PipelineCreate2RayTracingNoNullMissShadersBitKhr = 65536,
-        /// <summary>[requires: <b>VK_KHR_maintenance5</b>] </summary>
+        /// <summary>[requires: <b>VK_EXT_opacity_micromap</b>] </summary>
         PipelineCreate2RayTracingOpacityMicromapBitExt = 16777216,
+        /// <summary>[requires: <b>VK_KHR_opacity_micromap</b>] </summary>
+        PipelineCreate2RayTracingOpacityMicromapBitKhr = 16777216,
         /// <summary>[requires: <b>VK_KHR_maintenance5</b>] </summary>
         PipelineCreate2RayTracingShaderGroupHandleCaptureReplayBitKhr = 524288,
         /// <summary>[requires: <b>VK_KHR_maintenance5</b>] </summary>
@@ -6390,6 +6618,8 @@ namespace OpenTK.Graphics.Vulkan
         QueryTypePrimitivesGeneratedExt = 1000382000,
         /// <summary>[requires: <b>VK_KHR_video_queue</b>] </summary>
         QueryTypeResultStatusOnlyKhr = 1000023000,
+        /// <summary>[requires: <b>VK_QCOM_elapsed_timer_query</b>] </summary>
+        QueryTypeTimeElapsedQcom = 1000173000,
         /// <summary>[requires: <b>v1.0</b>] </summary>
         QueryTypeTimestamp = 2,
         /// <summary>[requires: <b>VK_EXT_transform_feedback</b>] </summary>
@@ -7016,6 +7246,8 @@ namespace OpenTK.Graphics.Vulkan
         ShaderCreateLinkStageBitExt = 1,
         /// <summary>[requires: <b>VK_EXT_shader_object</b>] </summary>
         ShaderCreateNoTaskShaderBitExt = 8,
+        /// <summary>[requires: <b>VK_KHR_opacity_micromap</b>] </summary>
+        ShaderCreateOpacityMicromapDisallowMixedSpecialIndexBitExt = 4096,
         /// <summary>[requires: <b>VK_EXT_shader_object</b>] </summary>
         ShaderCreateRequireFullSubgroupsBitExt = 4,
     }
@@ -7291,6 +7523,8 @@ namespace OpenTK.Graphics.Vulkan
         StructureTypeAccelerationStructureGeometryKhr = 1000150006,
         /// <summary>[requires: <b>VK_NV_ray_tracing_linear_swept_spheres</b>] </summary>
         StructureTypeAccelerationStructureGeometryLinearSweptSpheresDataNv = 1000429009,
+        /// <summary>[requires: <b>VK_KHR_opacity_micromap</b>] </summary>
+        StructureTypeAccelerationStructureGeometryMicromapDataKhr = 1000623002,
         /// <summary>[requires: <b>VK_NV_ray_tracing_motion_blur</b>] </summary>
         StructureTypeAccelerationStructureGeometryMotionTrianglesDataNv = 1000327000,
         /// <summary>[requires: <b>VK_NV_ray_tracing_linear_swept_spheres</b>] </summary>
@@ -7307,6 +7541,8 @@ namespace OpenTK.Graphics.Vulkan
         StructureTypeAccelerationStructureTrianglesDisplacementMicromapNv = 1000397002,
         /// <summary>[requires: <b>VK_EXT_opacity_micromap</b>] </summary>
         StructureTypeAccelerationStructureTrianglesOpacityMicromapExt = 1000396009,
+        /// <summary>[requires: <b>VK_KHR_opacity_micromap</b>] </summary>
+        StructureTypeAccelerationStructureTrianglesOpacityMicromapKhr = 1000623003,
         /// <summary>[requires: <b>VK_KHR_acceleration_structure</b>] </summary>
         StructureTypeAccelerationStructureVersionInfoKhr = 1000150009,
         /// <summary>[requires: <b>VK_KHR_swapchain | VK_KHR_device_group</b>] </summary>
@@ -8021,6 +8257,14 @@ namespace OpenTK.Graphics.Vulkan
         StructureTypeGeometryTrianglesNv = 1000165004,
         /// <summary>[requires: <b>VK_NV_low_latency2</b>] </summary>
         StructureTypeGetLatencyMarkerInfoNv = 1000505003,
+        /// <summary>[requires: <b>VK_AMD_gpa_interface</b>] </summary>
+        StructureTypeGpaDeviceClockModeInfoAmd = 1000133004,
+        /// <summary>[requires: <b>VK_AMD_gpa_interface</b>] </summary>
+        StructureTypeGpaDeviceGetClockInfoAmd = 1000133006,
+        /// <summary>[requires: <b>VK_AMD_gpa_interface</b>] </summary>
+        StructureTypeGpaSampleBeginInfoAmd = 1000133002,
+        /// <summary>[requires: <b>VK_AMD_gpa_interface</b>] </summary>
+        StructureTypeGpaSessionCreateInfoAmd = 1000133003,
         /// <summary>[requires: <b>v1.0</b>] </summary>
         StructureTypeGraphicsPipelineCreateInfo = 28,
         /// <summary>[requires: <b>VK_EXT_graphics_pipeline_library</b>] </summary>
@@ -8463,6 +8707,8 @@ namespace OpenTK.Graphics.Vulkan
         StructureTypePhysicalDeviceCooperativeMatrix2PropertiesNv = 1000593002,
         /// <summary>[requires: <b>VK_QCOM_cooperative_matrix_conversion</b>] </summary>
         StructureTypePhysicalDeviceCooperativeMatrixConversionFeaturesQcom = 1000172000,
+        /// <summary>[requires: <b>VK_NV_cooperative_matrix_decode_vector</b>] </summary>
+        StructureTypePhysicalDeviceCooperativeMatrixDecodeVectorFeaturesNv = 1000689000,
         /// <summary>[requires: <b>VK_KHR_cooperative_matrix</b>] </summary>
         StructureTypePhysicalDeviceCooperativeMatrixFeaturesKhr = 1000506000,
         /// <summary>[requires: <b>VK_NV_cooperative_matrix</b>] </summary>
@@ -8595,6 +8841,8 @@ namespace OpenTK.Graphics.Vulkan
         StructureTypePhysicalDeviceDynamicRenderingLocalReadFeaturesKhr = 1000232000,
         /// <summary>[requires: <b>VK_EXT_dynamic_rendering_unused_attachments</b>] </summary>
         StructureTypePhysicalDeviceDynamicRenderingUnusedAttachmentsFeaturesExt = 1000499000,
+        /// <summary>[requires: <b>VK_QCOM_elapsed_timer_query</b>] </summary>
+        StructureTypePhysicalDeviceElapsedTimerQueryFeaturesQcom = 1000173000,
         /// <summary>[requires: <b>VK_NV_scissor_exclusive</b>] </summary>
         StructureTypePhysicalDeviceExclusiveScissorFeaturesNv = 1000205002,
         /// <summary>[requires: <b>VK_EXT_extended_dynamic_state2</b>] Not promoted to 1.3</summary>
@@ -8711,6 +8959,12 @@ namespace OpenTK.Graphics.Vulkan
         StructureTypePhysicalDeviceGlobalPriorityQueryFeaturesExt = 1000388000,
         /// <summary>[requires: <b>VK_KHR_global_priority</b>] </summary>
         StructureTypePhysicalDeviceGlobalPriorityQueryFeaturesKhr = 1000388000,
+        /// <summary>[requires: <b>VK_AMD_gpa_interface</b>] </summary>
+        StructureTypePhysicalDeviceGpaFeaturesAmd = 1000133000,
+        /// <summary>[requires: <b>VK_AMD_gpa_interface</b>] </summary>
+        StructureTypePhysicalDeviceGpaProperties2Amd = 1000133005,
+        /// <summary>[requires: <b>VK_AMD_gpa_interface</b>] </summary>
+        StructureTypePhysicalDeviceGpaPropertiesAmd = 1000133001,
         /// <summary>[requires: <b>VK_EXT_graphics_pipeline_library</b>] </summary>
         StructureTypePhysicalDeviceGraphicsPipelineLibraryFeaturesExt = 1000320000,
         /// <summary>[requires: <b>VK_EXT_graphics_pipeline_library</b>] </summary>
@@ -8757,6 +9011,8 @@ namespace OpenTK.Graphics.Vulkan
         StructureTypePhysicalDeviceImageProcessing2FeaturesQcom = 1000518000,
         /// <summary>[requires: <b>VK_QCOM_image_processing2</b>] </summary>
         StructureTypePhysicalDeviceImageProcessing2PropertiesQcom = 1000518001,
+        /// <summary>[requires: <b>VK_QCOM_image_processing3</b>] </summary>
+        StructureTypePhysicalDeviceImageProcessing3FeaturesQcom = 1000303000,
         /// <summary>[requires: <b>VK_QCOM_image_processing</b>] </summary>
         StructureTypePhysicalDeviceImageProcessingFeaturesQcom = 1000440000,
         /// <summary>[requires: <b>VK_QCOM_image_processing</b>] </summary>
@@ -8927,8 +9183,12 @@ namespace OpenTK.Graphics.Vulkan
         StructureTypePhysicalDeviceNonSeamlessCubeMapFeaturesExt = 1000422000,
         /// <summary>[requires: <b>VK_EXT_opacity_micromap</b>] </summary>
         StructureTypePhysicalDeviceOpacityMicromapFeaturesExt = 1000396005,
+        /// <summary>[requires: <b>VK_KHR_opacity_micromap</b>] </summary>
+        StructureTypePhysicalDeviceOpacityMicromapFeaturesKhr = 1000623000,
         /// <summary>[requires: <b>VK_EXT_opacity_micromap</b>] </summary>
         StructureTypePhysicalDeviceOpacityMicromapPropertiesExt = 1000396006,
+        /// <summary>[requires: <b>VK_KHR_opacity_micromap</b>] </summary>
+        StructureTypePhysicalDeviceOpacityMicromapPropertiesKhr = 1000623001,
         /// <summary>[requires: <b>VK_NV_optical_flow</b>] </summary>
         StructureTypePhysicalDeviceOpticalFlowFeaturesNv = 1000464000,
         /// <summary>[requires: <b>VK_NV_optical_flow</b>] </summary>
@@ -9209,6 +9469,10 @@ namespace OpenTK.Graphics.Vulkan
         StructureTypePhysicalDeviceShaderModuleIdentifierFeaturesExt = 1000462000,
         /// <summary>[requires: <b>VK_EXT_shader_module_identifier</b>] </summary>
         StructureTypePhysicalDeviceShaderModuleIdentifierPropertiesExt = 1000462001,
+        /// <summary>[requires: <b>VK_QCOM_shader_multiple_wait_queues</b>] </summary>
+        StructureTypePhysicalDeviceShaderMultipleWaitQueuesFeaturesQcom = 1000304000,
+        /// <summary>[requires: <b>VK_QCOM_shader_multiple_wait_queues</b>] </summary>
+        StructureTypePhysicalDeviceShaderMultipleWaitQueuesPropertiesQcom = 1000304001,
         /// <summary>[requires: <b>VK_EXT_shader_object</b>] </summary>
         StructureTypePhysicalDeviceShaderObjectFeaturesExt = 1000482000,
         /// <summary>[requires: <b>VK_EXT_shader_object</b>] </summary>
@@ -9223,6 +9487,10 @@ namespace OpenTK.Graphics.Vulkan
         StructureTypePhysicalDeviceShaderSmBuiltinsFeaturesNv = 1000154000,
         /// <summary>[requires: <b>VK_NV_shader_sm_builtins</b>] </summary>
         StructureTypePhysicalDeviceShaderSmBuiltinsPropertiesNv = 1000154001,
+        /// <summary>[requires: <b>VK_EXT_shader_split_barrier</b>] </summary>
+        StructureTypePhysicalDeviceShaderSplitBarrierFeaturesExt = 1000305000,
+        /// <summary>[requires: <b>VK_EXT_shader_split_barrier</b>] </summary>
+        StructureTypePhysicalDeviceShaderSplitBarrierPropertiesExt = 1000305001,
         /// <summary>[requires: <b>v1.2</b>] </summary>
         StructureTypePhysicalDeviceShaderSubgroupExtendedTypesFeatures = 1000175000,
         /// <summary>[requires: <b>VK_KHR_shader_subgroup_extended_types</b>] </summary>

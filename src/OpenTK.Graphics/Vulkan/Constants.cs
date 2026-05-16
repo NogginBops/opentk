@@ -752,6 +752,12 @@ namespace OpenTK.Graphics.Vulkan
         /// <summary>[from: <b>VK_AMD_gpu_shader_int16</b>]</summary>
         /// <remarks><see href="https://registry.khronos.org/vulkan/specs/1.3-extensions/man/html/VK_AMD_GPU_SHADER_INT16_EXTENSION_NAME.html" /></remarks>
         public const string AmdGpuShaderInt16ExtensionName = "VK_AMD_gpu_shader_int16";
+        /// <summary>[from: <b>VK_AMD_gpa_interface</b>]</summary>
+        /// <remarks><see href="https://registry.khronos.org/vulkan/specs/1.3-extensions/man/html/VK_AMD_GPA_INTERFACE_SPEC_VERSION.html" /></remarks>
+        public const uint AmdGpaInterfaceSpecVersion = 1;
+        /// <summary>[from: <b>VK_AMD_gpa_interface</b>]</summary>
+        /// <remarks><see href="https://registry.khronos.org/vulkan/specs/1.3-extensions/man/html/VK_AMD_GPA_INTERFACE_EXTENSION_NAME.html" /></remarks>
+        public const string AmdGpaInterfaceExtensionName = "VK_AMD_gpa_interface";
         /// <summary>[from: <b>VK_AMDX_shader_enqueue</b>]</summary>
         /// <remarks><see href="https://registry.khronos.org/vulkan/specs/1.3-extensions/man/html/VK_AMDX_SHADER_ENQUEUE_SPEC_VERSION.html" /></remarks>
         public const uint AmdxShaderEnqueueSpecVersion = 2;
@@ -962,6 +968,12 @@ namespace OpenTK.Graphics.Vulkan
         /// <summary>[from: <b>VK_QCOM_cooperative_matrix_conversion</b>]</summary>
         /// <remarks><see href="https://registry.khronos.org/vulkan/specs/1.3-extensions/man/html/VK_QCOM_COOPERATIVE_MATRIX_CONVERSION_EXTENSION_NAME.html" /></remarks>
         public const string QcomCooperativeMatrixConversionExtensionName = "VK_QCOM_cooperative_matrix_conversion";
+        /// <summary>[from: <b>VK_QCOM_elapsed_timer_query</b>]</summary>
+        /// <remarks><see href="https://registry.khronos.org/vulkan/specs/1.3-extensions/man/html/VK_QCOM_ELAPSED_TIMER_QUERY_SPEC_VERSION.html" /></remarks>
+        public const uint QcomElapsedTimerQuerySpecVersion = 1;
+        /// <summary>[from: <b>VK_QCOM_elapsed_timer_query</b>]</summary>
+        /// <remarks><see href="https://registry.khronos.org/vulkan/specs/1.3-extensions/man/html/VK_QCOM_ELAPSED_TIMER_QUERY_EXTENSION_NAME.html" /></remarks>
+        public const string QcomElapsedTimerQueryExtensionName = "VK_QCOM_elapsed_timer_query";
         /// <summary>[from: <b>VK_EXT_global_priority</b>]</summary>
         /// <remarks><see href="https://registry.khronos.org/vulkan/specs/1.3-extensions/man/html/VK_EXT_GLOBAL_PRIORITY_SPEC_VERSION.html" /></remarks>
         public const uint ExtGlobalPrioritySpecVersion = 2;
@@ -1598,6 +1610,24 @@ namespace OpenTK.Graphics.Vulkan
         /// <summary>[from: <b>VK_QCOM_queue_perf_hint</b>]</summary>
         /// <remarks><see href="https://registry.khronos.org/vulkan/specs/1.3-extensions/man/html/VK_QCOM_QUEUE_PERF_HINT_EXTENSION_NAME.html" /></remarks>
         public const string QcomQueuePerfHintExtensionName = "VK_QCOM_queue_perf_hint";
+        /// <summary>[from: <b>VK_QCOM_image_processing3</b>]</summary>
+        /// <remarks><see href="https://registry.khronos.org/vulkan/specs/1.3-extensions/man/html/VK_QCOM_IMAGE_PROCESSING_3_SPEC_VERSION.html" /></remarks>
+        public const uint QcomImageProcessing3SpecVersion = 1;
+        /// <summary>[from: <b>VK_QCOM_image_processing3</b>]</summary>
+        /// <remarks><see href="https://registry.khronos.org/vulkan/specs/1.3-extensions/man/html/VK_QCOM_IMAGE_PROCESSING_3_EXTENSION_NAME.html" /></remarks>
+        public const string QcomImageProcessing3ExtensionName = "VK_QCOM_image_processing3";
+        /// <summary>[from: <b>VK_QCOM_shader_multiple_wait_queues</b>]</summary>
+        /// <remarks><see href="https://registry.khronos.org/vulkan/specs/1.3-extensions/man/html/VK_QCOM_SHADER_MULTIPLE_WAIT_QUEUES_SPEC_VERSION.html" /></remarks>
+        public const uint QcomShaderMultipleWaitQueuesSpecVersion = 1;
+        /// <summary>[from: <b>VK_QCOM_shader_multiple_wait_queues</b>]</summary>
+        /// <remarks><see href="https://registry.khronos.org/vulkan/specs/1.3-extensions/man/html/VK_QCOM_SHADER_MULTIPLE_WAIT_QUEUES_EXTENSION_NAME.html" /></remarks>
+        public const string QcomShaderMultipleWaitQueuesExtensionName = "VK_QCOM_shader_multiple_wait_queues";
+        /// <summary>[from: <b>VK_EXT_shader_split_barrier</b>]</summary>
+        /// <remarks><see href="https://registry.khronos.org/vulkan/specs/1.3-extensions/man/html/VK_EXT_SHADER_SPLIT_BARRIER_SPEC_VERSION.html" /></remarks>
+        public const uint ExtShaderSplitBarrierSpecVersion = 1;
+        /// <summary>[from: <b>VK_EXT_shader_split_barrier</b>]</summary>
+        /// <remarks><see href="https://registry.khronos.org/vulkan/specs/1.3-extensions/man/html/VK_EXT_SHADER_SPLIT_BARRIER_EXTENSION_NAME.html" /></remarks>
+        public const string ExtShaderSplitBarrierExtensionName = "VK_EXT_shader_split_barrier";
         /// <summary>[from: <b>VK_NV_cuda_kernel_launch</b>]</summary>
         /// <remarks><see href="https://registry.khronos.org/vulkan/specs/1.3-extensions/man/html/VK_NV_CUDA_KERNEL_LAUNCH_SPEC_VERSION.html" /></remarks>
         public const uint NvCudaKernelLaunchSpecVersion = 2;
@@ -2774,6 +2804,12 @@ namespace OpenTK.Graphics.Vulkan
         /// <summary>[from: <b>VK_KHR_present_mode_fifo_latest_ready</b>]</summary>
         /// <remarks><see href="https://registry.khronos.org/vulkan/specs/1.3-extensions/man/html/VK_KHR_PRESENT_MODE_FIFO_LATEST_READY_EXTENSION_NAME.html" /></remarks>
         public const string KhrPresentModeFifoLatestReadyExtensionName = "VK_KHR_present_mode_fifo_latest_ready";
+        /// <summary>[from: <b>VK_KHR_opacity_micromap</b>]</summary>
+        /// <remarks><see href="https://registry.khronos.org/vulkan/specs/1.3-extensions/man/html/VK_KHR_OPACITY_MICROMAP_SPEC_VERSION.html" /></remarks>
+        public const uint KhrOpacityMicromapSpecVersion = 1;
+        /// <summary>[from: <b>VK_KHR_opacity_micromap</b>]</summary>
+        /// <remarks><see href="https://registry.khronos.org/vulkan/specs/1.3-extensions/man/html/VK_KHR_OPACITY_MICROMAP_EXTENSION_NAME.html" /></remarks>
+        public const string KhrOpacityMicromapExtensionName = "VK_KHR_opacity_micromap";
         /// <summary>[from: <b>VK_EXT_shader_64bit_indexing</b>]</summary>
         /// <remarks><see href="https://registry.khronos.org/vulkan/specs/1.3-extensions/man/html/VK_EXT_SHADER_64BIT_INDEXING_SPEC_VERSION.html" /></remarks>
         public const uint ExtShader64bitIndexingSpecVersion = 1;
@@ -2870,6 +2906,12 @@ namespace OpenTK.Graphics.Vulkan
         /// <summary>[from: <b>VK_EXT_primitive_restart_index</b>]</summary>
         /// <remarks><see href="https://registry.khronos.org/vulkan/specs/1.3-extensions/man/html/VK_EXT_PRIMITIVE_RESTART_INDEX_EXTENSION_NAME.html" /></remarks>
         public const string ExtPrimitiveRestartIndexExtensionName = "VK_EXT_primitive_restart_index";
+        /// <summary>[from: <b>VK_NV_cooperative_matrix_decode_vector</b>]</summary>
+        /// <remarks><see href="https://registry.khronos.org/vulkan/specs/1.3-extensions/man/html/VK_NV_COOPERATIVE_MATRIX_DECODE_VECTOR_SPEC_VERSION.html" /></remarks>
+        public const uint NvCooperativeMatrixDecodeVectorSpecVersion = 1;
+        /// <summary>[from: <b>VK_NV_cooperative_matrix_decode_vector</b>]</summary>
+        /// <remarks><see href="https://registry.khronos.org/vulkan/specs/1.3-extensions/man/html/VK_NV_COOPERATIVE_MATRIX_DECODE_VECTOR_EXTENSION_NAME.html" /></remarks>
+        public const string NvCooperativeMatrixDecodeVectorExtensionName = "VK_NV_cooperative_matrix_decode_vector";
     }
 #pragma warning restore CS1591 // Missing XML comment for publicly visible type or member
 }
