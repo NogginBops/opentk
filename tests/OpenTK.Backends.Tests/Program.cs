@@ -480,24 +480,6 @@ namespace OpenTK.Backends.Tests
 
             ImGui.PopFont();
 
-            var dlist = ImGui.GetForegroundDrawList();
-            if (lastMouseHistory != null)
-            {
-                for (int i = 0; i < lastMouseHistory.BufferPositions.Count; i++)
-                {
-                    bool matches = lastMouseHistory.BufferPositions[i] == lastMouseHistory.MessagePositions[i];
-                    uint color = matches ? ImGui.ColorConvertFloat4ToU32(new System.Numerics.Vector4(0, 1, 0, 1)) : ImGui.ColorConvertFloat4ToU32(new System.Numerics.Vector4(1, 0, 0, 1));
-                    uint color2 = matches ? ImGui.ColorConvertFloat4ToU32(new System.Numerics.Vector4(0, 0, 1, 1)) : ImGui.ColorConvertFloat4ToU32(new System.Numerics.Vector4(1, 0, 1, 1));
-
-                    Toolkit.Window.ScreenToClient(lastMouseHistory.Window, lastMouseHistory.MessagePositions[i], out Vector2 mpClient);
-                    Toolkit.Window.ScreenToClient(lastMouseHistory.Window, lastMouseHistory.BufferPositions[i], out Vector2 bpClient);
-
-                    dlist.AddCircleFilled(mpClient.AsNumerics(), 2, color);
-
-                    dlist.AddCircleFilled(bpClient.AsNumerics(), 2, color2);
-                }
-            }
-
             //ImGui.ShowMetricsWindow();
             //ImGui.ShowDemoWindow();
         }
@@ -576,7 +558,6 @@ namespace OpenTK.Backends.Tests
             Toolkit.Window.Destroy(window);
         }
 
-        static MouseHistoryEventArgs? lastMouseHistory;
         private static void EventQueue_EventRaised(EventArgs args)
         {
             if (args is WindowEventArgs windowEvent)
@@ -808,10 +789,6 @@ namespace OpenTK.Backends.Tests
                         ApplicationWindows[i].Application?.HandleEvent(rawMouseMove);
                     }
                 }
-            }
-            else if (args is MouseHistoryEventArgs mouseHistory)
-            {
-                lastMouseHistory = mouseHistory;
             }
         }
 

@@ -255,8 +255,6 @@ namespace OpenTK.Platform.Native.Windows
         /// <inheritdoc/>
         public IReadOnlyList<WindowMode> SupportedModes => _SupportedModes;
 
-        public List<Vector2i> MousePositionHistory = new List<Vector2i>(64);
-
         private IntPtr Win32WindowProc(IntPtr hWnd, WM uMsg, UIntPtr wParam, IntPtr lParam)
         {
             //Console.WriteLine("WinProc " + uMsg + " " + hWnd);
@@ -619,42 +617,6 @@ namespace OpenTK.Platform.Native.Windows
                         }
 
                         h.LastMousePosition = (x, y);
-
-                        unsafe {
-                            ClientToScreen(h, (x, y), out Vector2 screenPos);
-
-                            List<Vector2i> messagePositions = new List<Vector2i>();
-                            List<Vector2i> historyPositions = new List<Vector2i>();
-
-                            if (MousePositionHistory.Count == 64)
-                                MousePositionHistory.RemoveAt(63);
-                            MousePositionHistory.Insert(0, new Vector2i((int)screenPos.X, (int)screenPos.Y));
-
-                            Win32.MOUSEMOVEPOINT* buffer = (Win32.MOUSEMOVEPOINT*)NativeMemory.AllocZeroed((uint)(sizeof(Win32.MOUSEMOVEPOINT) * 64));
-                            Win32.MOUSEMOVEPOINT input = new Win32.MOUSEMOVEPOINT() { x = ((int)screenPos.X) & 0x0000ffff, y = ((int)screenPos.Y) & 0x0000ffff };
-                            int N = Win32.GetMouseMovePointsEx((uint)sizeof(Win32.MOUSEMOVEPOINT), ref input, buffer, 64, GMMP.UseDisplayPoints);
-                            if (N != -1)
-                            {
-                                N = int.Min(N, MousePositionHistory.Count);
-                                StringBuilder matches = new StringBuilder(64);
-                                for (int i = 0; i < N; i++)
-                                {
-                                    Vector2i wmPos = MousePositionHistory[i];
-                                    Vector2i mhPos = (buffer[i].x, buffer[i].y);
-                                    if (mhPos.X > 32767)
-                                        mhPos.X -= 65536;
-                                    if (mhPos.Y > 32767)
-                                        mhPos.Y -= 65536;
-
-                                    messagePositions.Add(wmPos);
-                                    historyPositions.Add(mhPos);
-                                }
-                            }
-
-                            Toolkit.Event.RaiseEvent(new MouseHistoryEventArgs(h, messagePositions, historyPositions));
-                        }
-
-                        MouseEvents++;
 
                         return Win32.DefWindowProc(hWnd, uMsg, wParam, lParam);
                     }
@@ -1400,13 +1362,9 @@ namespace OpenTK.Platform.Native.Windows
             }
         }
 
-        static int MouseEvents = 0;
-
         /// <inheritdoc/>
         public void ProcessEvents(bool waitForEvents)
         {
-            MouseEvents = 0;
-
             uint target_time = Win32.GetTickCount() + 1;
 
             int events = 0;
@@ -1433,18 +1391,13 @@ namespace OpenTK.Platform.Native.Windows
                 Win32.DispatchMessage(in lpMsg);
                 events++;
 
-                //Logger?.LogDebug($"msg time: {lpMsg.time}, end time: {target_time}");
-                // FIXME: Deal with overflow...
-
                 if ((int)(target_time - lpMsg.time) <= 0)
                 {
-                    Logger?.LogDebug($"stop (timeout)! events: {events}");
                     break;
                 }
 
                 if (MaxWindowMessagesPerFrame > 0 && events >= MaxWindowMessagesPerFrame)
                 {
-                    Logger?.LogDebug($"stop (max events)! events: {events}");
                     break;
                 }
             }
@@ -1464,10 +1417,6 @@ namespace OpenTK.Platform.Native.Windows
                     CursorCapturingWindow.LastMousePosition = (size.X / 2, size.Y / 2);
                 }
             }
-
-            
-            //Logger?.LogDebug($"Mouse events this frame: {MouseEvents} (raw {rawMouseEvents}) out of {events} events");
-            
 
             if (RegistryMouseSettingsChangedEvent != 0)
             {
