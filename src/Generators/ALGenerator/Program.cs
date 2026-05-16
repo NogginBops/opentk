@@ -1,6 +1,7 @@
 ﻿using ALGenerator.Parsing;
-using ALGenerator.Process;
 using GeneratorBase;
+using GeneratorBase.Overloading;
+using GeneratorBase.Process;
 using GeneratorBase.Utility;
 using System;
 using System.Collections.Generic;
@@ -28,7 +29,7 @@ namespace ALGenerator
 
             using (Logger.CreateLogger(Path.Combine(Path.GetDirectoryName(Assembly.GetEntryAssembly()!.Location)!, "log.txt")))
             {
-                Specification alSpecification;
+                SpecificationFile alSpecification;
                 {
                     NameManglerSettings alSettings = new NameManglerSettings()
                     {
@@ -67,10 +68,10 @@ namespace ALGenerator
 
                     // Reading the gl.xml file and parsing it into data structures.
                     using FileStream alSpecificationStream = Reader.ReadALSpecFromGithub();
-                    alSpecification = SpecificationParser.Parse(alSpecificationStream, new NameMangler(alSettings), APIFile.AL, new List<string>());
+                    alSpecification = SpecificationParser.Parse(alSpecificationStream, new NameMangler(alSettings), ApiFile.AL, new List<string>());
                 }
 
-                Specification alcSpecification;
+                SpecificationFile alcSpecification;
                 {
                     NameManglerSettings alcSettings = new NameManglerSettings()
                     {
@@ -88,7 +89,7 @@ namespace ALGenerator
                     };
 
                     using FileStream alcSpecificationStream = Reader.ReadALCSpecFromGithub();
-                    alcSpecification = SpecificationParser.Parse(alcSpecificationStream, new NameMangler(alcSettings), APIFile.ALC, new List<string>());
+                    alcSpecification = SpecificationParser.Parse(alcSpecificationStream, new NameMangler(alcSettings), ApiFile.ALC, new List<string>());
                 }
 
                 List<EFXPreset> efxPresets;
@@ -110,82 +111,44 @@ namespace ALGenerator
                     efxPresets = SpecificationParser.ParseEFXPresets(efxPresetsStream, new NameMangler(efxSettings));
                 }
 
-                List<Function> functions = [
-                    .. alSpecification.Functions,
-                    .. alcSpecification.Functions
-                ];
-
-                List<EnumEntry> enums = [
-                    .. alSpecification.Enums,
-                    .. alcSpecification.Enums
-                ];
-
-                // FIXME: This is one point where we could do some processing to move things from one namespace to another.
-                // Alternatively we can try and do this later in processing. See comment with the same date.
-                // - Noggin_bops 2023-08-26
-                List<API> apis = new List<API>(Enum.GetValues<InputAPI>().Length);
-                foreach (API api in alSpecification.APIs.Concat(alcSpecification.APIs))
-                {
-                    if (apis.Find(x => x.Name == api.Name) != null)
-                    {
-                        // We already have this API. Merge it?
-                        throw new NotImplementedException();
-                    }
-                    else
-                    {
-                        apis.Add(api);
-                    }
-                }
-
-                {
-                    foreach (var api in apis)
-                    {
-                        foreach (var @enum in enums)
-                        {
-                            if (MatchesAPI(@enum.Apis, api.Name))
-                            {
-                                bool found = false;
-                                foreach (var @ref in api.Enums)
-                                {
-                                    if (@ref.EnumName == @enum.Name)
-                                    {
-                                        found = true;
-                                        break;
-                                    }
-                                }
-
-                                // Check that the enum is a part of all the groups it's supposed to be part of.
-
-                                if (found == false)
-                                {
-                                    // Add the reference to the enum.
-                                    //api.Enums.Add(new EnumReference(@enum.Name, null, null, new List<ExtensionReference>(), GLProfile.None));
-                                    //Logger.Info($"Adding enum entry '{@enum.MangledName}' into {api.Name}.");
-                                }
-                            }
-
-                            static bool MatchesAPI(OutputApiFlags flags, InputAPI api)
-                            {
-                                switch (api)
-                                {
-                                    case InputAPI.AL: return flags.HasFlag(OutputApiFlags.AL);
-                                    case InputAPI.ALC: return flags.HasFlag(OutputApiFlags.ALC);
-                                    default: throw new Exception();
-                                }
-                            }
-                        }
-                    }
-                }
-
-                Specification finalSpecification = new Specification(functions, enums, apis);
+                SpecificationFile[] files = [alSpecification, alcSpecification];
+                Processor.CrossReferenceEnums(files);
+                List<API> apis = Processor.MakeApis(files);
+                List<ResolvedApi> resolvedApis = Processor.ResolveReferences(apis, files);
 
                 // Read the documentation folders and parse it into data structures.
                 //using DocumentationSource documentationSource = Reader.ReadDocumentationFromGithub();
                 //Documentation documentation = DocumentationParser.Parse(documentationSource);
-                Documentation documentation = new Documentation([]);
+                Documentation documentation;
+                {
+                    using FileStream alSOFTSpecificationStream = Reader.ReadALSOFTSpecFromGithub();
+
+                    documentation = DocumentationParser.Parse(alSOFTSpecificationStream);
+                }
+
+                IOverloader[] overloaders = [
+                    new TrimNameOverloader(TrimNameOverloader.EndingsNotToTrimOpenAL),
+
+                    new StringReturnOverloader(),
+                    new BoolReturnOverloader(),
+
+                    new ColorTypeOverloader(),
+                    new MathTypeOverloader(),
+                    new FunctionPtrToDelegateOverloader(),
+                    new PointerToOffsetOverloader(),
+                    new VoidPtrToIntPtrOverloader(),
+                    new GenCreateAndDeleteOverloader(
+                        GenCreateAndDeleteOverloader.PluralNameToSingularNameOpenAL,
+                        GenCreateAndDeleteOverloader.PluralParameterNameToSingularNameOpenAL),
+                    new StringOverloader(),
+                    new StringArrayOverloader(),
+                    new SpanAndArrayOverloader(),
+                    new RefInsteadOfPointerOverloader(),
+                    new OutToReturnOverloader(),
+                ];
 
                 // Processer/overloading
-                OutputData outputSpec = Processor.ProcessSpec(finalSpecification, documentation);
+                OutputData outputSpec = Processor.ProcessSpec(resolvedApis, files, documentation, overloaders);
 
                 // Writing cs files.
                 Writer.Write(outputSpec);

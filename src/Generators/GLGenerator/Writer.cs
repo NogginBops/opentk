@@ -9,7 +9,6 @@ using GLGenerator.Parsing;
 using GeneratorBase.Utility;
 using GeneratorBase.Utility.Extensions;
 using GeneratorBase;
-using GLGenerator.Process;
 using GeneratorBase.Overloading;
 using System.Diagnostics;
 
@@ -33,31 +32,31 @@ namespace GLGenerator
                 Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) ?? throw new NullReferenceException(),
                 "..", "..", "..", "..", "..", GraphicsNamespace);
 
-            foreach (Pointers pointers in data.Pointers)
+            foreach (ApiPointers pointers in data.Pointers)
             {
                 FileStrings strings = pointers.File switch
                 {
-                    APIFile.GL => new FileStrings("GL", "GL", "OpenGL", "GLLoader", "GLLoader.BindingsContext"),
-                    APIFile.WGL => new FileStrings("WGL", "Wgl", "Wgl", "WGLLoader", "WGLLoader.BindingsContext"),
-                    APIFile.GLX => new FileStrings("GLX", "Glx", "Glx", "GLXLoader", "GLXLoader.BindingsContext"),
-                    APIFile.EGL => new FileStrings("EGL", "Egl", "Egl", "EGLLoader", "EGLLoader.BindingsContext"),
+                    ApiFile.GL => new FileStrings("GL", "GL", "OpenGL", "GLLoader", "GLLoader.BindingsContext"),
+                    ApiFile.WGL => new FileStrings("WGL", "Wgl", "Wgl", "WGLLoader", "WGLLoader.BindingsContext"),
+                    ApiFile.GLX => new FileStrings("GLX", "Glx", "Glx", "GLXLoader", "GLXLoader.BindingsContext"),
+                    ApiFile.EGL => new FileStrings("EGL", "Egl", "Egl", "EGLLoader", "EGLLoader.BindingsContext"),
                     _ => throw new Exception(),
                 };
 
                 // FIXME: Merge the writing of these function pointers for the relevant namespaces!
-                WriteFunctionPointers(outputProjectPath, strings, pointers.NativeFunctions);
+                WriteFunctionPointers(outputProjectPath, strings, pointers.Functions);
             }
 
-            foreach (Namespace @namespace in data.Namespaces)
+            foreach (OutputApiData @namespace in data.Namespaces)
             {
                 WriteNamespace(outputProjectPath, @namespace);
             }
         }
 
-        public static void WriteNamespace(string outputProjectPath, Namespace @namespace)
+        public static void WriteNamespace(string outputProjectPath, OutputApiData @namespace)
         {
             // FIXME: Fix function pointers so we can merge this.
-            FileStrings strings = @namespace.Name switch
+            FileStrings strings = @namespace.Api switch
             {
                 OutputApi.GL => new FileStrings("GL", "GL", "OpenGL", "GLLoader", "GLLoader.BindingsContext"),
                 OutputApi.GLCompat => new FileStrings("GL", "GL", "OpenGL.Compatibility", "GLLoader", "GLLoader.BindingsContext"),
@@ -66,7 +65,7 @@ namespace GLGenerator
                 OutputApi.WGL => new FileStrings("WGL", "Wgl", "Wgl", "WGLLoader", "WGLLoader.BindingsContext"),
                 OutputApi.GLX => new FileStrings("GLX", "Glx", "Glx", "GLXLoader", "GLXLoader.BindingsContext"),
                 OutputApi.EGL => new FileStrings("EGL", "Egl", "Egl", "EGLLoader", "EGLLoader.BindingsContext"),
-                _ => throw new Exception($"This is not a valid output API ({@namespace.Name})"),
+                _ => throw new Exception($"This is not a valid output API ({@namespace.Api})"),
             };
 
             string directoryPath = Path.Combine(outputProjectPath, Path.Combine(strings.Namespace.Split('.')));
@@ -77,10 +76,10 @@ namespace GLGenerator
                 File.Delete(file);
             }
 
-            WriteNativeFunctions(directoryPath, strings, @namespace.VendorFunctions, @namespace.Documentation);
+            WriteNativeFunctions(directoryPath, strings, @namespace.VendorFunctions, @namespace.FunctionDocumentation);
             WriteOverloads(directoryPath, strings, @namespace.VendorFunctions);
 
-            WriteEnums(directoryPath, strings, @namespace.EnumGroups);
+            WriteEnums(directoryPath, strings, @namespace.Enums);
         }
 
         // FIXME: Maybe we should nest this 
@@ -467,9 +466,7 @@ namespace GLGenerator
         private static void WriteDocumentation(IndentedTextWriter writer, Function function, FunctionDocumentation documentation)
         {
             writer.Write("/// <summary> ");
-            writer.Write($"<b>[requires: {string.Join(" | ", documentation.AddedIn)}]</b> ");
-            if (documentation.RemovedIn?.Count > 0)
-                writer.Write($"<b>[removed in: {string.Join(" | ", documentation.RemovedIn)}]</b> ");
+            writer.WriteVersionInfo(documentation.VersionInfo);
             writer.Write($"<b>[entry point: <c>{function.EntryPoint}</c>]</b><br/>");
             writer.WriteLine($" {documentation.Purpose} </summary>");
 
@@ -482,16 +479,16 @@ namespace GLGenerator
                 // we've already warned about this, and using the name the C# documentation
                 // system expects reduces a lot of the warnings that are generated.
                 // - Noggin_bops 2025-08-08
-                writer.WriteLine($"/// <param name=\"{parameter.Name}\">{parameterDoc.Description}</param>");
+                writer.WriteLine($"/// <param name=\"{NameMangler.MaybeRemoveStart(parameter.Name, "@")}\">{parameterDoc.Description}</param>");
             }
 
             if (documentation.RefPagesLinks.Count > 0)
             {
-                writer.WriteLine($"/// <remarks>{string.Join("<br/>", documentation.RefPagesLinks.Select(url => $"<see href=\"{url}\"/>"))}</remarks>");
+                writer.WriteLine($"/// <remarks>{string.Join("<br/>", documentation.RefPagesLinks.Select(url => url.ToSeeXmlTag()))}</remarks>");
             }
         }
 
-        private static void WriteEnums(string directoryPath, FileStrings strings, List<EnumGroup> enumGroups)
+        private static void WriteEnums(string directoryPath, FileStrings strings, List<EnumType> enumGroups)
         {
             using StreamWriter stream = File.CreateText(Path.Combine(directoryPath, "Enums.cs"));
             using IndentedTextWriter writer = new IndentedTextWriter(stream);
@@ -513,11 +510,11 @@ namespace GLGenerator
             }
         }
 
-        private static void WriteEnumGroups(IndentedTextWriter writer, string apiName, List<EnumGroup> enumGroups)
+        private static void WriteEnumGroups(IndentedTextWriter writer, string apiName, List<EnumType> enumGroups)
         {
             foreach (var group in enumGroups)
             {
-                if (group.FunctionsUsingEnumGroup != null)
+                if (group.FunctionsUsingEnumGroup.Count > 0)
                 {
                     if (group.FunctionsUsingEnumGroup.Count > 3)
                     {
@@ -542,11 +539,11 @@ namespace GLGenerator
                         // - Noggin_bops 2024-11-11
                         if (member.Value == ulong.MaxValue)
                         {
-                            writer.WriteLine($"{member.MangledName} = unchecked((uint)-1),");
+                            writer.WriteLine($"{member.Name} = unchecked((uint)-1),");
                         }
                         else
                         {
-                            writer.WriteLine($"{member.MangledName} = {member.Value},");
+                            writer.WriteLine($"{member.Name} = {member.Value},");
                         }
                     }
                 }

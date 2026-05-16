@@ -22,6 +22,9 @@ namespace OpenTK.Audio.OpenAL.ALC
         FumaSoft = 0,
         /// <remarks>[originally: ALC_HRTF_DISABLED_SOFT]</remarks>
         HrtfDisabledSoft = 0,
+        /// <summary>
+        /// No error.
+        /// </summary>
         /// <remarks>[originally: ALC_NO_ERROR]</remarks>
         NoError = 0,
         /// <remarks>[originally: ALC_ACN_SOFT]</remarks>
@@ -126,12 +129,29 @@ namespace OpenTK.Audio.OpenAL.ALC
         AsaReverbQualityHigh = 96,
         /// <remarks>[originally: ALC_ASA_REVERB_QUALITY_Max]</remarks>
         AsaReverbQualityMax = 127,
+        /// <summary>
+        /// 
+        ///                 Capture specifier string.
+        /// 
+        ///                 If device handle is NULL, it is instead a null-character separated list of
+        ///                 strings of known device specifiers (list ends with an empty string).
+        /// 
+        /// </summary>
         /// <remarks>[originally: ALC_CAPTURE_DEVICE_SPECIFIER]</remarks>
         CaptureDeviceSpecifier = 784,
+        /// <summary>
+        /// String for the default capture device specifier.
+        /// </summary>
         /// <remarks>[originally: ALC_CAPTURE_DEFAULT_DEVICE_SPECIFIER]</remarks>
         CaptureDefaultDeviceSpecifier = 785,
+        /// <summary>
+        /// Number of sample frames available for capture.
+        /// </summary>
         /// <remarks>[originally: ALC_CAPTURE_SAMPLES]</remarks>
         CaptureSamples = 786,
+        /// <summary>
+        /// <b>[property on: context]</b><br/>
+        /// </summary>
         /// <remarks>[originally: ALC_CONNECTED]</remarks>
         Connected = 787,
         /// <remarks>[originally: ALC_ASA_DISTORTION_ENABLE]</remarks>
@@ -182,36 +202,91 @@ namespace OpenTK.Audio.OpenAL.ALC
         AsaReverbEqGain = 1023,
         /// <remarks>[originally: ALC_MAC_OSX_SPATIAL_RENDERING_QUALITY_LOW]</remarks>
         MacOsxSpatialRenderingQualityLow = 1023,
+        /// <summary>
+        /// Runtime ALC major version.
+        /// </summary>
         /// <remarks>[originally: ALC_MAJOR_VERSION]</remarks>
         MajorVersion = 4096,
+        /// <summary>
+        /// Runtime ALC minor version.
+        /// </summary>
         /// <remarks>[originally: ALC_MINOR_VERSION]</remarks>
         MinorVersion = 4097,
+        /// <summary>
+        /// Context attribute list size.
+        /// </summary>
         /// <remarks>[originally: ALC_ATTRIBUTES_SIZE]</remarks>
         AttributesSize = 4098,
+        /// <summary>
+        /// Context attribute list properties.
+        /// </summary>
         /// <remarks>[originally: ALC_ALL_ATTRIBUTES]</remarks>
         AllAttributes = 4099,
+        /// <summary>
+        /// String for the default device specifier.
+        /// </summary>
         /// <remarks>[originally: ALC_DEFAULT_DEVICE_SPECIFIER]</remarks>
         DefaultDeviceSpecifier = 4100,
+        /// <summary>
+        /// 
+        ///                 Device specifier string.
+        /// 
+        ///                 If device handle is NULL, it is instead a null-character separated list of
+        ///                 strings of known device specifiers (list ends with an empty string).
+        /// 
+        /// </summary>
         /// <remarks>[originally: ALC_DEVICE_SPECIFIER]</remarks>
         DeviceSpecifier = 4101,
+        /// <summary>
+        /// String for space-separated list of ALC extensions.
+        /// </summary>
         /// <remarks>[originally: ALC_EXTENSIONS]</remarks>
         Extensions = 4102,
+        /// <summary>
+        /// Context attribute: <int> Hz.
+        /// </summary>
         /// <remarks>[originally: ALC_FREQUENCY]</remarks>
         Frequency = 4103,
         /// <remarks>[originally: ALC_FREQUENCY_AAX]</remarks>
         FrequencyAax = 4103,
+        /// <summary>
+        /// Context attribute: <int> Hz.
+        /// </summary>
         /// <remarks>[originally: ALC_REFRESH]</remarks>
         Refresh = 4104,
+        /// <summary>
+        /// Context attribute: AL_TRUE or AL_FALSE synchronous context?
+        /// </summary>
         /// <remarks>[originally: ALC_SYNC]</remarks>
         Sync = 4105,
+        /// <summary>
+        /// Context attribute: <int> requested Mono (3D) Sources.
+        /// </summary>
         /// <remarks>[originally: ALC_MONO_SOURCES]</remarks>
         MonoSources = 4112,
+        /// <summary>
+        /// Context attribute: <int> requested Stereo Sources.
+        /// </summary>
         /// <remarks>[originally: ALC_STEREO_SOURCES]</remarks>
         StereoSources = 4113,
+        /// <summary>
+        /// String for the default extended device specifier.
+        /// </summary>
         /// <remarks>[originally: ALC_DEFAULT_ALL_DEVICES_SPECIFIER]</remarks>
         DefaultAllDevicesSpecifier = 4114,
+        /// <summary>
+        /// 
+        ///                 Device's extended specifier string.
+        /// 
+        ///                 If device handle is NULL, it is instead a null-character separated list of
+        ///                 strings of known extended device specifiers (list ends with an empty string).
+        /// 
+        /// </summary>
         /// <remarks>[originally: ALC_ALL_DEVICES_SPECIFIER]</remarks>
         AllDevicesSpecifier = 4115,
+        /// <summary>
+        /// <b>[property on: context]</b><br/>
+        /// </summary>
         /// <remarks>[originally: ALC_DEFAULT_FILTER_ORDER]</remarks>
         DefaultFilterOrder = 4352,
         /// <remarks>[originally: ALC_BYTE_SOFT]</remarks>
@@ -248,22 +323,43 @@ namespace OpenTK.Audio.OpenAL.ALC
         Surround71Soft = 5382,
         /// <remarks>[originally: ALC_BFORMAT3D_SOFT]</remarks>
         Bformat3dSoft = 5383,
+        /// <summary>
+        /// <b>[property on: context]</b><br/>
+        /// </summary>
         /// <remarks>[originally: ALC_DEVICE_CLOCK_SOFT]</remarks>
         DeviceClockSoft = 5632,
+        /// <summary>
+        /// <b>[property on: context]</b><br/>
+        /// </summary>
         /// <remarks>[originally: ALC_DEVICE_LATENCY_SOFT]</remarks>
         DeviceLatencySoft = 5633,
+        /// <summary>
+        /// <b>[property on: context]</b><br/>
+        /// </summary>
         /// <remarks>[originally: ALC_DEVICE_CLOCK_LATENCY_SOFT]</remarks>
         DeviceClockLatencySoft = 5634,
         /// <remarks>[originally: ALC_FORMAT_CHANNELS_SOFT]</remarks>
         FormatChannelsSoft = 6544,
         /// <remarks>[originally: ALC_FORMAT_TYPE_SOFT]</remarks>
         FormatTypeSoft = 6545,
+        /// <summary>
+        /// <b>[property on: context]</b><br/>
+        /// </summary>
         /// <remarks>[originally: ALC_HRTF_SOFT]</remarks>
         HrtfSoft = 6546,
+        /// <summary>
+        /// <b>[property on: context]</b><br/>
+        /// </summary>
         /// <remarks>[originally: ALC_HRTF_STATUS_SOFT]</remarks>
         HrtfStatusSoft = 6547,
+        /// <summary>
+        /// <b>[property on: context]</b><br/>
+        /// </summary>
         /// <remarks>[originally: ALC_NUM_HRTF_SPECIFIERS_SOFT]</remarks>
         NumHrtfSpecifiersSoft = 6548,
+        /// <summary>
+        /// <b>[property on: context]</b><br/>
+        /// </summary>
         /// <remarks>[originally: ALC_HRTF_SPECIFIER_SOFT]</remarks>
         HrtfSpecifierSoft = 6549,
         /// <remarks>[originally: ALC_HRTF_ID_SOFT]</remarks>
@@ -274,10 +370,19 @@ namespace OpenTK.Audio.OpenAL.ALC
         AmbisonicScalingSoft = 6552,
         /// <remarks>[originally: ALC_AMBISONIC_ORDER_SOFT]</remarks>
         AmbisonicOrderSoft = 6553,
+        /// <summary>
+        /// <b>[property on: context]</b><br/>
+        /// </summary>
         /// <remarks>[originally: ALC_OUTPUT_LIMITER_SOFT]</remarks>
         OutputLimiterSoft = 6554,
+        /// <summary>
+        /// <b>[property on: context]</b><br/>
+        /// </summary>
         /// <remarks>[originally: ALC_MAX_AMBISONIC_ORDER_SOFT]</remarks>
         MaxAmbisonicOrderSoft = 6555,
+        /// <summary>
+        /// <b>[property on: context][default value: ALC_ANY_SOFT]</b><br/>
+        /// </summary>
         /// <remarks>[originally: ALC_OUTPUT_MODE_SOFT]</remarks>
         OutputModeSoft = 6572,
         /// <remarks>[originally: ALC_ANY_SOFT]</remarks>
@@ -288,6 +393,9 @@ namespace OpenTK.Audio.OpenAL.ALC
         StereoUhjSoft = 6575,
         /// <remarks>[originally: ALC_STEREO_HRTF_SOFT]</remarks>
         StereoHrtfSoft = 6578,
+        /// <summary>
+        /// <b>[property on: context]</b><br/>
+        /// </summary>
         /// <remarks>[originally: ALC_CONTEXT_FLAGS_EXT]</remarks>
         ContextFlagsExt = 6607,
         /// <remarks>[originally: ALC_PLAYBACK_DEVICE_SOFT]</remarks>
@@ -308,14 +416,29 @@ namespace OpenTK.Audio.OpenAL.ALC
         BitsAax = 8194,
         /// <remarks>[originally: ALC_CHANNELS_AAX]</remarks>
         ChannelsAax = 8195,
+        /// <summary>
+        /// Invalid device handle.
+        /// </summary>
         /// <remarks>[originally: ALC_INVALID_DEVICE]</remarks>
         InvalidDevice = 40961,
+        /// <summary>
+        /// Invalid context handle.
+        /// </summary>
         /// <remarks>[originally: ALC_INVALID_CONTEXT]</remarks>
         InvalidContext = 40962,
+        /// <summary>
+        /// Invalid enumeration passed to an ALC call.
+        /// </summary>
         /// <remarks>[originally: ALC_INVALID_ENUM]</remarks>
         InvalidEnum = 40963,
+        /// <summary>
+        /// Invalid value passed to an ALC call.
+        /// </summary>
         /// <remarks>[originally: ALC_INVALID_VALUE]</remarks>
         InvalidValue = 40964,
+        /// <summary>
+        /// Out of memory.
+        /// </summary>
         /// <remarks>[originally: ALC_OUT_OF_MEMORY]</remarks>
         OutOfMemory = 40965,
         /// <remarks>[originally: ALC_EFX_MAJOR_VERSION]</remarks>
@@ -360,16 +483,34 @@ namespace OpenTK.Audio.OpenAL.ALC
     }
     public enum ContextAttribute : uint
     {
+        /// <summary>
+        /// Context attribute: <int> Hz.
+        /// </summary>
         /// <remarks>[originally: ALC_FREQUENCY]</remarks>
         Frequency = 4103,
+        /// <summary>
+        /// Context attribute: <int> Hz.
+        /// </summary>
         /// <remarks>[originally: ALC_REFRESH]</remarks>
         Refresh = 4104,
+        /// <summary>
+        /// Context attribute: AL_TRUE or AL_FALSE synchronous context?
+        /// </summary>
         /// <remarks>[originally: ALC_SYNC]</remarks>
         Sync = 4105,
+        /// <summary>
+        /// Context attribute: <int> requested Mono (3D) Sources.
+        /// </summary>
         /// <remarks>[originally: ALC_MONO_SOURCES]</remarks>
         MonoSources = 4112,
+        /// <summary>
+        /// Context attribute: <int> requested Stereo Sources.
+        /// </summary>
         /// <remarks>[originally: ALC_STEREO_SOURCES]</remarks>
         StereoSources = 4113,
+        /// <summary>
+        /// <b>[property on: context]</b><br/>
+        /// </summary>
         /// <remarks>[originally: ALC_DEFAULT_FILTER_ORDER]</remarks>
         DefaultFilterOrder = 4352,
         /// <remarks>[originally: ALC_BFORMAT3D_SOFT]</remarks>
@@ -378,6 +519,9 @@ namespace OpenTK.Audio.OpenAL.ALC
         FormatChannelsSoft = 6544,
         /// <remarks>[originally: ALC_FORMAT_TYPE_SOFT]</remarks>
         FormatTypeSoft = 6545,
+        /// <summary>
+        /// <b>[property on: context]</b><br/>
+        /// </summary>
         /// <remarks>[originally: ALC_HRTF_SOFT]</remarks>
         HrtfSoft = 6546,
         /// <remarks>[originally: ALC_HRTF_ID_SOFT]</remarks>
@@ -388,10 +532,19 @@ namespace OpenTK.Audio.OpenAL.ALC
         AmbisonicScalingSoft = 6552,
         /// <remarks>[originally: ALC_AMBISONIC_ORDER_SOFT]</remarks>
         AmbisonicOrderSoft = 6553,
+        /// <summary>
+        /// <b>[property on: context]</b><br/>
+        /// </summary>
         /// <remarks>[originally: ALC_OUTPUT_LIMITER_SOFT]</remarks>
         OutputLimiterSoft = 6554,
+        /// <summary>
+        /// <b>[property on: context][default value: ALC_ANY_SOFT]</b><br/>
+        /// </summary>
         /// <remarks>[originally: ALC_OUTPUT_MODE_SOFT]</remarks>
         OutputModeSoft = 6572,
+        /// <summary>
+        /// <b>[property on: context]</b><br/>
+        /// </summary>
         /// <remarks>[originally: ALC_CONTEXT_FLAGS_EXT]</remarks>
         ContextFlagsExt = 6607,
         /// <remarks>[originally: ALC_MAX_AUXILIARY_SENDS]</remarks>
@@ -413,16 +566,34 @@ namespace OpenTK.Audio.OpenAL.ALC
     ///<summary>Used in <see cref="ALC.GetError" /></summary>
     public enum ErrorCode : uint
     {
+        /// <summary>
+        /// No error.
+        /// </summary>
         /// <remarks>[originally: ALC_NO_ERROR]</remarks>
         NoError = 0,
+        /// <summary>
+        /// Invalid device handle.
+        /// </summary>
         /// <remarks>[originally: ALC_INVALID_DEVICE]</remarks>
         InvalidDevice = 40961,
+        /// <summary>
+        /// Invalid context handle.
+        /// </summary>
         /// <remarks>[originally: ALC_INVALID_CONTEXT]</remarks>
         InvalidContext = 40962,
+        /// <summary>
+        /// Invalid enumeration passed to an ALC call.
+        /// </summary>
         /// <remarks>[originally: ALC_INVALID_ENUM]</remarks>
         InvalidEnum = 40963,
+        /// <summary>
+        /// Invalid value passed to an ALC call.
+        /// </summary>
         /// <remarks>[originally: ALC_INVALID_VALUE]</remarks>
         InvalidValue = 40964,
+        /// <summary>
+        /// Out of memory.
+        /// </summary>
         /// <remarks>[originally: ALC_OUT_OF_MEMORY]</remarks>
         OutOfMemory = 40965,
     }
@@ -447,36 +618,78 @@ namespace OpenTK.Audio.OpenAL.ALC
     ///<summary>Used in <see cref="ALC.SOFT.GetInteger64vSOFT" /></summary>
     public enum GetPNameI64V : uint
     {
+        /// <summary>
+        /// <b>[property on: context]</b><br/>
+        /// </summary>
         /// <remarks>[originally: ALC_DEVICE_CLOCK_SOFT]</remarks>
         DeviceClockSoft = 5632,
+        /// <summary>
+        /// <b>[property on: context]</b><br/>
+        /// </summary>
         /// <remarks>[originally: ALC_DEVICE_LATENCY_SOFT]</remarks>
         DeviceLatencySoft = 5633,
+        /// <summary>
+        /// <b>[property on: context]</b><br/>
+        /// </summary>
         /// <remarks>[originally: ALC_DEVICE_CLOCK_LATENCY_SOFT]</remarks>
         DeviceClockLatencySoft = 5634,
     }
     ///<summary>Used in <see cref="ALC.GetIntegerv" /></summary>
     public enum GetPNameIV : uint
     {
+        /// <summary>
+        /// Number of sample frames available for capture.
+        /// </summary>
         /// <remarks>[originally: ALC_CAPTURE_SAMPLES]</remarks>
         CaptureSamples = 786,
+        /// <summary>
+        /// <b>[property on: context]</b><br/>
+        /// </summary>
         /// <remarks>[originally: ALC_CONNECTED]</remarks>
         Connected = 787,
+        /// <summary>
+        /// Runtime ALC major version.
+        /// </summary>
         /// <remarks>[originally: ALC_MAJOR_VERSION]</remarks>
         MajorVersion = 4096,
+        /// <summary>
+        /// Runtime ALC minor version.
+        /// </summary>
         /// <remarks>[originally: ALC_MINOR_VERSION]</remarks>
         MinorVersion = 4097,
+        /// <summary>
+        /// Context attribute list size.
+        /// </summary>
         /// <remarks>[originally: ALC_ATTRIBUTES_SIZE]</remarks>
         AttributesSize = 4098,
+        /// <summary>
+        /// Context attribute list properties.
+        /// </summary>
         /// <remarks>[originally: ALC_ALL_ATTRIBUTES]</remarks>
         AllAttributes = 4099,
+        /// <summary>
+        /// <b>[property on: context]</b><br/>
+        /// </summary>
         /// <remarks>[originally: ALC_HRTF_SOFT]</remarks>
         HrtfSoft = 6546,
+        /// <summary>
+        /// <b>[property on: context]</b><br/>
+        /// </summary>
         /// <remarks>[originally: ALC_HRTF_STATUS_SOFT]</remarks>
         HrtfStatusSoft = 6547,
+        /// <summary>
+        /// <b>[property on: context]</b><br/>
+        /// </summary>
         /// <remarks>[originally: ALC_NUM_HRTF_SPECIFIERS_SOFT]</remarks>
         NumHrtfSpecifiersSoft = 6548,
+        /// <summary>
+        /// <b>[property on: context]</b><br/>
+        /// </summary>
         /// <remarks>[originally: ALC_OUTPUT_LIMITER_SOFT]</remarks>
         OutputLimiterSoft = 6554,
+        /// <summary>
+        /// <b>[property on: context]</b><br/>
+        /// </summary>
         /// <remarks>[originally: ALC_MAX_AMBISONIC_ORDER_SOFT]</remarks>
         MaxAmbisonicOrderSoft = 6555,
         /// <remarks>[originally: ALC_EFX_MAJOR_VERSION]</remarks>
@@ -507,6 +720,9 @@ namespace OpenTK.Audio.OpenAL.ALC
     ///<summary>Used in <see cref="ALC.SOFT.GetStringiSOFT" /></summary>
     public enum IndexedStringName : uint
     {
+        /// <summary>
+        /// <b>[property on: context]</b><br/>
+        /// </summary>
         /// <remarks>[originally: ALC_HRTF_SPECIFIER_SOFT]</remarks>
         HrtfSpecifierSoft = 6549,
     }
@@ -577,20 +793,59 @@ namespace OpenTK.Audio.OpenAL.ALC
     ///<summary>Used in <see cref="ALC.GetString" /></summary>
     public enum StringName : uint
     {
+        /// <summary>
+        /// 
+        ///                 Capture specifier string.
+        /// 
+        ///                 If device handle is NULL, it is instead a null-character separated list of
+        ///                 strings of known device specifiers (list ends with an empty string).
+        /// 
+        /// </summary>
         /// <remarks>[originally: ALC_CAPTURE_DEVICE_SPECIFIER]</remarks>
         CaptureDeviceSpecifier = 784,
+        /// <summary>
+        /// String for the default capture device specifier.
+        /// </summary>
         /// <remarks>[originally: ALC_CAPTURE_DEFAULT_DEVICE_SPECIFIER]</remarks>
         CaptureDefaultDeviceSpecifier = 785,
+        /// <summary>
+        /// String for the default device specifier.
+        /// </summary>
         /// <remarks>[originally: ALC_DEFAULT_DEVICE_SPECIFIER]</remarks>
         DefaultDeviceSpecifier = 4100,
+        /// <summary>
+        /// 
+        ///                 Device specifier string.
+        /// 
+        ///                 If device handle is NULL, it is instead a null-character separated list of
+        ///                 strings of known device specifiers (list ends with an empty string).
+        /// 
+        /// </summary>
         /// <remarks>[originally: ALC_DEVICE_SPECIFIER]</remarks>
         DeviceSpecifier = 4101,
+        /// <summary>
+        /// String for space-separated list of ALC extensions.
+        /// </summary>
         /// <remarks>[originally: ALC_EXTENSIONS]</remarks>
         Extensions = 4102,
+        /// <summary>
+        /// String for the default extended device specifier.
+        /// </summary>
         /// <remarks>[originally: ALC_DEFAULT_ALL_DEVICES_SPECIFIER]</remarks>
         DefaultAllDevicesSpecifier = 4114,
+        /// <summary>
+        /// 
+        ///                 Device's extended specifier string.
+        /// 
+        ///                 If device handle is NULL, it is instead a null-character separated list of
+        ///                 strings of known extended device specifiers (list ends with an empty string).
+        /// 
+        /// </summary>
         /// <remarks>[originally: ALC_ALL_DEVICES_SPECIFIER]</remarks>
         AllDevicesSpecifier = 4115,
+        /// <summary>
+        /// <b>[property on: context]</b><br/>
+        /// </summary>
         /// <remarks>[originally: ALC_HRTF_SPECIFIER_SOFT]</remarks>
         HrtfSpecifierSoft = 6549,
     }

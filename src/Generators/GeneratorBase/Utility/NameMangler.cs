@@ -1,8 +1,9 @@
+using System;
+using System.Buffers;
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using System.Text;
-using System;
-using System.Buffers;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace GeneratorBase.Utility
 {
@@ -161,11 +162,11 @@ namespace GeneratorBase.Utility
         {
             "base" => "@base",
             "event" => "@event",
-            "in" => "input",
-            "object" => "obj",
-            "params" => "parameters",
-            "ref" => "reference",
-            "string" => "str",
+            "in" => "@in",
+            "object" => "@object",
+            "params" => "@params",
+            "ref" => "@ref",
+            "string" => "@string",
             _ => name
         };
 

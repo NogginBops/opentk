@@ -935,11 +935,11 @@ typedef unsigned int GLhandleARB;
         <enum value="0x0DF3" name="GL_SELECTION_BUFFER_POINTER" group="GetPointervPName"/>
         <enum value="0x0DF4" name="GL_SELECTION_BUFFER_SIZE" group="GetPName"/>
             <unused start="0x0DF5" end="0xFFFF" comment="Unused for GetPName"/>
-        <enum value="0x1000" name="GL_TEXTURE_WIDTH" group="TextureParameterName,GetTextureParameter"/>
-        <enum value="0x1001" name="GL_TEXTURE_HEIGHT" group="TextureParameterName,GetTextureParameter"/>
-        <enum value="0x1003" name="GL_TEXTURE_INTERNAL_FORMAT" group="TextureParameterName,GetTextureParameter"/>
-        <enum value="0x1003" name="GL_TEXTURE_COMPONENTS" group="TextureParameterName,GetTextureParameter"/>
-        <enum value="0x1004" name="GL_TEXTURE_BORDER_COLOR" group="SamplerParameterF,GetTextureParameter,TextureParameterName"/>
+        <enum value="0x1000" name="GL_TEXTURE_WIDTH" group="GetTextureParameter"/>
+        <enum value="0x1001" name="GL_TEXTURE_HEIGHT" group="GetTextureParameter"/>
+        <enum value="0x1003" name="GL_TEXTURE_INTERNAL_FORMAT" group="GetTextureParameter"/>
+        <enum value="0x1003" name="GL_TEXTURE_COMPONENTS" group="GetTextureParameter"/>
+        <enum value="0x1004" name="GL_TEXTURE_BORDER_COLOR" group="SamplerParameterF,TextureParameterName,GetTextureParameter"/>
         <enum value="0x1004" name="GL_TEXTURE_BORDER_COLOR_EXT"/>
         <enum value="0x1004" name="GL_TEXTURE_BORDER_COLOR_NV" group="TextureParameterName,GetTextureParameter"/>
         <enum value="0x1004" name="GL_TEXTURE_BORDER_COLOR_OES"/>
@@ -1104,10 +1104,10 @@ typedef unsigned int GLhandleARB;
         <enum value="0x2702" name="GL_NEAREST_MIPMAP_LINEAR" group="TextureMinFilter"/>
         <enum value="0x2703" name="GL_LINEAR_MIPMAP_LINEAR" group="TextureMinFilter"/>
             <unused start="0x2704" end="0x27FF" comment="Unused for TextureMinFilter"/>
-        <enum value="0x2800" name="GL_TEXTURE_MAG_FILTER" group="SamplerParameterI,GetTextureParameter,TextureParameterName"/>
-        <enum value="0x2801" name="GL_TEXTURE_MIN_FILTER" group="SamplerParameterI,GetTextureParameter,TextureParameterName"/>
-        <enum value="0x2802" name="GL_TEXTURE_WRAP_S" group="SamplerParameterI,GetTextureParameter,TextureParameterName"/>
-        <enum value="0x2803" name="GL_TEXTURE_WRAP_T" group="SamplerParameterI,GetTextureParameter,TextureParameterName"/>
+        <enum value="0x2800" name="GL_TEXTURE_MAG_FILTER" group="SamplerParameterI,TextureParameterName,GetTextureParameter"/>
+        <enum value="0x2801" name="GL_TEXTURE_MIN_FILTER" group="SamplerParameterI,TextureParameterName,GetTextureParameter"/>
+        <enum value="0x2802" name="GL_TEXTURE_WRAP_S" group="SamplerParameterI,TextureParameterName,GetTextureParameter"/>
+        <enum value="0x2803" name="GL_TEXTURE_WRAP_T" group="SamplerParameterI,TextureParameterName,GetTextureParameter"/>
             <unused start="0x2804" end="0x28FF" comment="Unused for TextureParameterName"/>
         <enum value="0x2900" name="GL_CLAMP" group="TextureWrapMode"/>
         <enum value="0x2901" name="GL_REPEAT" group="TextureWrapMode"/>
@@ -1422,7 +1422,7 @@ typedef unsigned int GLhandleARB;
         <enum value="0x806F" name="GL_TEXTURE_3D_OES" group="TextureTarget"/>
         <enum value="0x8070" name="GL_PROXY_TEXTURE_3D" group="TextureTarget"/>
         <enum value="0x8070" name="GL_PROXY_TEXTURE_3D_EXT" group="TextureTarget"/>
-        <enum value="0x8071" name="GL_TEXTURE_DEPTH"/>
+        <enum value="0x8071" name="GL_TEXTURE_DEPTH" group="GetTextureParameter"/>
         <enum value="0x8071" name="GL_TEXTURE_DEPTH_EXT" group="TextureParameterName,GetTextureParameter"/>
         <enum value="0x8072" name="GL_TEXTURE_WRAP_R" group="SamplerParameterI,TextureParameterName"/>
         <enum value="0x8072" name="GL_TEXTURE_WRAP_R_EXT" group="TextureParameterName,GetTextureParameter"/>
@@ -5635,7 +5635,7 @@ typedef unsigned int GLhandleARB;
         <enum value="0x8F67" name="GL_MAX_SHADER_PIXEL_LOCAL_STORAGE_SIZE_EXT"/>
             <unused start="0x8F68" vendor="ARM"/>
         <enum value="0x8F69" name="GL_TEXTURE_ASTC_DECODE_PRECISION_EXT"/>
-        <enum value="0x8F6A" name="GL_TEXTURE_UNNORMALIZED_COORDINATES_ARM" group="SamplerParameterF,SamplerParameterI,GetTextureParameter,TextureParameterName"/>
+        <enum value="0x8F6A" name="GL_TEXTURE_UNNORMALIZED_COORDINATES_ARM" group="SamplerParameterF,SamplerParameterI,TextureParameterName,GetTextureParameter"/>
             <unused start="0x8F6B" end="0x8F6D" vendor="ARM"/>
         <enum value="0x8F6E" name="GL_NUM_SURFACE_COMPRESSION_FIXED_RATES_EXT" group="InternalFormatPName"/>
         <enum value="0x8F6F" name="GL_FRAGMENT_SHADING_RATE_NON_TRIVIAL_COMBINERS_SUPPORTED_EXT" group="GetPName"/>
@@ -6578,10 +6578,10 @@ typedef unsigned int GLhandleARB;
         <enum value="0x9359" name="GL_VIEWPORT_SWIZZLE_Y_NV"/>
         <enum value="0x935A" name="GL_VIEWPORT_SWIZZLE_Z_NV"/>
         <enum value="0x935B" name="GL_VIEWPORT_SWIZZLE_W_NV"/>
-        <enum value="0x935C" name="GL_CLIP_ORIGIN"/>
-        <enum value="0x935C" name="GL_CLIP_ORIGIN_EXT" alias="GL_CLIP_ORIGIN"/>
-        <enum value="0x935D" name="GL_CLIP_DEPTH_MODE"/>
-        <enum value="0x935D" name="GL_CLIP_DEPTH_MODE_EXT" alias="GL_CLIP_DEPTH_MODE"/>
+        <enum value="0x935C" name="GL_CLIP_ORIGIN" group="GetPName"/>
+        <enum value="0x935C" name="GL_CLIP_ORIGIN_EXT" alias="GL_CLIP_ORIGIN" group="GetPName"/>
+        <enum value="0x935D" name="GL_CLIP_DEPTH_MODE" group="GetPName"/>
+        <enum value="0x935D" name="GL_CLIP_DEPTH_MODE_EXT" alias="GL_CLIP_DEPTH_MODE" group="GetPName"/>
         <enum value="0x935E" name="GL_NEGATIVE_ONE_TO_ONE" group="ClipControlDepth"/>
         <enum value="0x935E" name="GL_NEGATIVE_ONE_TO_ONE_EXT" alias="GL_NEGATIVE_ONE_TO_ONE"/>
         <enum value="0x935F" name="GL_ZERO_TO_ONE" group="ClipControlDepth"/>
@@ -19772,27 +19772,27 @@ typedef unsigned int GLhandleARB;
         <command>
             <proto>void <name>glObjectLabel</name></proto>
             <param group="ObjectIdentifier"><ptype>GLenum</ptype> <name>identifier</name></param>
-            <param><ptype>GLuint</ptype> <name>name</name></param>
+            <param class="any"><ptype>GLuint</ptype> <name>name</name></param>
             <param><ptype>GLsizei</ptype> <name>length</name></param>
             <param len="COMPSIZE(label,length)">const <ptype>GLchar</ptype> *<name>label</name></param>
         </command>
         <command>
             <proto>void <name>glObjectLabelKHR</name></proto>
             <param group="ObjectIdentifier"><ptype>GLenum</ptype> <name>identifier</name></param>
-            <param><ptype>GLuint</ptype> <name>name</name></param>
+            <param class="any"><ptype>GLuint</ptype> <name>name</name></param>
             <param><ptype>GLsizei</ptype> <name>length</name></param>
             <param>const <ptype>GLchar</ptype> *<name>label</name></param>
             <alias name="glObjectLabel"/>
         </command>
         <command>
             <proto>void <name>glObjectPtrLabel</name></proto>
-            <param>const void *<name>ptr</name></param>
+            <param class="sync">const void *<name>ptr</name></param>
             <param><ptype>GLsizei</ptype> <name>length</name></param>
             <param len="COMPSIZE(label,length)">const <ptype>GLchar</ptype> *<name>label</name></param>
         </command>
         <command>
             <proto>void <name>glObjectPtrLabelKHR</name></proto>
-            <param>const void *<name>ptr</name></param>
+            <param class="sync">const void *<name>ptr</name></param>
             <param><ptype>GLsizei</ptype> <name>length</name></param>
             <param>const <ptype>GLchar</ptype> *<name>label</name></param>
             <alias name="glObjectPtrLabel"/>

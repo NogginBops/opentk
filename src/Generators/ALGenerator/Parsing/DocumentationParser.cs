@@ -1,12 +1,12 @@
-﻿using GeneratorBase.Utility;
+﻿using GeneratorBase;
+using GeneratorBase.Utility;
 using GeneratorBase.Utility.Extensions;
-using ALGenerator.Process;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Reflection;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Xml;
 using System.Xml.Linq;
@@ -15,127 +15,99 @@ namespace ALGenerator.Parsing
 {
     static class DocumentationParser
     {
-        public static Documentation Parse(DocumentationSource source)
+        public static Documentation Parse(Stream docs)
         {
-            Dictionary<OutputApi, VersionDocumentation> versionDocumentation = new Dictionary<OutputApi, VersionDocumentation>();
+            XDocument xdocument = XDocument.Load(docs);
 
-            foreach (var folder in source.Folders)
-            {
-                Dictionary<string, CommandDocumentation> docFolder = new Dictionary<string, CommandDocumentation>();
+            Dictionary<string, EnumMemberDocumentation> enumDocumentation = ParseEnumDocumentation(xdocument.Root!);
+            Dictionary<string, FunctionDocumentation> commandDocumentation = ParseCommandDocumentation(xdocument.Root!);
 
-                //Logger.Info($"Documentation {folder.Folder}:\n\n");
-
-                OutputApi api = folder.Folder switch
-                {
-                    "al" => OutputApi.AL,
-                    "alc" => OutputApi.ALC,
-                    _ => throw new NotImplementedException(),
-                };
-
-                foreach (var file in folder.Files)
-                {
-                    XmlReaderSettings settings = new XmlReaderSettings
-                    {
-                        NameTable = new System.Xml.NameTable(),
-                        DtdProcessing = DtdProcessing.Ignore,
-                        ValidationType = ValidationType.None
-                    };
-                    XmlNamespaceManager xmlns = new XmlNamespaceManager(settings.NameTable);
-                    xmlns.AddNamespace("mml", "");
-                    XmlParserContext context = new XmlParserContext(null, xmlns, "", XmlSpace.Default);
-                    XmlReader reader = XmlReader.Create(file, settings, context);
-                    // https://stackoverflow.com/questions/3504227/prevent-xmltextreader-from-expanding-entities
-                    PropertyInfo? propertyInfo = reader.GetType().GetProperty("DisableUndeclaredEntityCheck", BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic);
-                    propertyInfo!.SetValue(reader, true);
-                    XDocument xml = XDocument.Load(reader);
-
-                    string refPagesLink = "https://www.khronos.org/registry/OpenGL-Refpages/";
-                    string filename = Path.GetFileNameWithoutExtension(file.Name);
-                    switch (api)
-                    {
-                        case OutputApi.AL:
-                            refPagesLink += $"al/html/{filename}.xhtml";
-                            break;
-                        case OutputApi.ALC:
-                            refPagesLink += $"alc/xhtml/{filename}.xml";
-                            break;
-                        default:
-                            throw new Exception("API not supported for documentation.");
-                    }
-
-                    CommandDocumentation[] documentation = ParseFile(xml.Root!, refPagesLink);
-
-                    foreach (var commandDoc in documentation)
-                    {
-                        docFolder.Add(commandDoc.Name, commandDoc);
-                    }
-                }
-
-                versionDocumentation.Add(api, new VersionDocumentation(docFolder));
-            }
-
-            return new Documentation(versionDocumentation);
+            return new Documentation(enumDocumentation, commandDocumentation);
         }
 
-
-        private static CommandDocumentation[] ParseFile(XElement root, string refPagesLink)
+        private static readonly Regex RangeRegex = new Regex(@"(.*)\.\.(?:(=?)(.*))?", RegexOptions.Compiled | RegexOptions.CultureInvariant);
+        private static Dictionary<string, EnumMemberDocumentation> ParseEnumDocumentation(XElement root)
         {
-            // FIXME:
+            Dictionary<string, EnumMemberDocumentation> enumDocs = new Dictionary<string, EnumMemberDocumentation>();
 
-            List<CommandDocumentation> documentation = new List<CommandDocumentation>();
-
-            XElement namediv = root.ElementIgnoreNamespace("refnamediv");
-            string purpose = namediv.ElementIgnoreNamespace("refpurpose").Value;
-            purpose = NameMangler.MangleCommandPurpose(purpose);
-
-            Dictionary<string, string> parametersDescriptions = new Dictionary<string, string>();
-
-            XElement ? refparameters = root.ElementIgnoreNamespace(e => e.AttributeIgnoreNamespace("id")?.Value == "parameters");
-            if (refparameters != null)
+            var enums = root.Elements("enums");
+            foreach (var @enum in enums.Elements("enum"))
             {
-                XElement variableList = refparameters.ElementIgnoreNamespace("variablelist");
-                foreach (var entry in variableList.ElementsIgnoreNamespace("varlistentry"))
-                {
-                    string desc = entry.ElementIgnoreNamespace("para").Value;
-                    desc = NameMangler.MangleParameterDescription(desc);
+                string name = @enum.Attribute("name")!.Value;
+                string? comment = @enum.Attribute("comment")?.Value;
 
-                    foreach (var term in entry.ElementsIgnoreNamespace("term"))
+                PropertyInfo? propInfo = null;
+                if (@enum.Element("property") is XElement property)
+                {
+                    string[] on = property.Attribute("on")!.Value.Split(',');
+                    string? type = property.Attribute("type")?.Value;
+                    string? @class = property.Attribute("class")?.Value;
+                    string[]? group = property.Attribute("group")?.Value?.Split(',');
+                    string? @default = property.Attribute("default")?.Value;
+
+                    PropertyRange? range = null;
+                    if (property.Attribute("range")?.Value is string rangeString)
                     {
-                        foreach (var parameter in term.ElementsIgnoreNamespace("parameter"))
+                        var match = RangeRegex.Match(rangeString);
+                        if (match.Success)
                         {
-                            if (parametersDescriptions.ContainsKey(parameter.Value) == false)
+                            string start = match.Groups[1].Value;
+                            string? end = null;
+                            bool inclusive = false;
+                            if (match.Groups.Count > 1)
                             {
-                                parametersDescriptions.Add(NameMangler.MangleParameterName(parameter.Value), desc);
+                                inclusive = match.Groups[2].Value == "=";
+                                end = match.Groups[3].Value;
                             }
+
+                            range = new PropertyRange(start, end, inclusive);
                         }
                     }
+                    
+                    propInfo = new PropertyInfo(on, type, group, range, @default);
                 }
-            }
 
-            XElement synopsis = root.ElementIgnoreNamespace("refsynopsisdiv");
-            foreach (XElement prototype in synopsis.ElementsIgnoreNamespace("funcprototype"))
-            {
-                var function = prototype.ElementIgnoreNamespace("function");
+                string? comment2 = @enum.Element("comment")?.Value;
 
-                List<ParameterDocumentation> parameters = new List<ParameterDocumentation>();
-                foreach (var parameter in prototype.ElementsIgnoreNamespace("parameter"))
+                if (comment2 != null)
                 {
-                    string parameterName = NameMangler.MangleParameterName(parameter.Value);
-                    if (parameterName == "void")
+                    if (comment != null)
                     {
-                        Logger.Warning("void!!!!!!!!!");
-                        continue;
+                        comment = $"{comment}{Environment.NewLine}{comment2}";
                     }
-
-                    parametersDescriptions.TryGetValue(parameterName, out string? desc);
-
-                    parameters.Add(new ParameterDocumentation(parameterName, desc ?? "!!missing documentation!!"));
+                    else
+                    {
+                        comment = comment2;
+                    }
                 }
 
-                documentation.Add(new CommandDocumentation(function.Value, purpose, parameters.ToArray(), refPagesLink));
+                enumDocs.Add(name, new EnumMemberDocumentation(name, comment) { PropertyInfo = propInfo });
             }
 
-            return documentation.ToArray();
+            return enumDocs;
+        }
+
+        private static Dictionary<string, FunctionDocumentation> ParseCommandDocumentation(XElement root)
+        {
+            Dictionary<string, FunctionDocumentation> commandDocs = new Dictionary<string, FunctionDocumentation>();
+
+            var commands = root.Elements("commands");
+            foreach (var command in commands.Elements("command"))
+            {
+                string name = command.Element("proto")!.Element("name")!.Value;
+                string comment = command.Attribute("comment")?.Value ?? "";
+
+                commandDocs.Add(name, new FunctionDocumentation()
+                {
+                    FunctionName = name,
+                    Purpose = comment,
+                    Parameters = [],
+                    RefPagesLinks = [],
+                    VersionInfo = default
+                });
+            }
+
+            return commandDocs;
         }
     }
 }

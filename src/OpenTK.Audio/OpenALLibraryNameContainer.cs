@@ -21,7 +21,7 @@ namespace OpenTK.Audio.OpenAL
         /// Overrides any platform detection logic and directly searches for the OpenAL library using the provided path.
         /// If this is <c>null</c> then no override will happen.
         /// </summary>
-        public static string OverridePath { get; set; } = null;
+        public static string? OverridePath { get; set; } = null;
 
         /// <summary>
         /// Gets the library name to use on Windows.

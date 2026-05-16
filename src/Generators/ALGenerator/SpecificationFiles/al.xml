@@ -626,7 +626,7 @@
             <param group="EnableCap"><ptype>ALenum</ptype> <name>capability</name></param>
         </command>
         <command>
-            <proto>void <name>alDopperFactor</name></proto>
+            <proto>void <name>alDopplerFactor</name></proto>
             <param><ptype>ALfloat</ptype> <name>value</name></param>
         </command>
         <command>
@@ -1625,7 +1625,7 @@
                 <command name="alEnable" />
                 <command name="alDisable" />
                 <command name="alIsEnabled" />
-                <command name="alDopperFactor" />
+                <command name="alDopplerFactor" />
                 <command name="alSpeedOfSound" />
                 <command name="alDistanceModel" />
                 <command name="alGetString" />

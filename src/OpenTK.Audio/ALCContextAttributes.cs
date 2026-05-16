@@ -55,7 +55,7 @@ namespace OpenTK.Audio.OpenAL
         /// Gets or sets additional attributes.
         /// Will usually be the major and minor version numbers of the context. // FIXME: This needs verification. Docs say nothing about this.
         /// </summary>
-        public int[] AdditionalAttributes { get; set; }
+        public int[]? AdditionalAttributes { get; set; }
 
         /// <summary>
         /// Initializes a new instance of the <see cref="ALCContextAttributes"/> class.
@@ -169,7 +169,7 @@ namespace OpenTK.Audio.OpenAL
         }
 
         // Used for ToString.
-        private string GetOptionalString<T>(string title, T? value)
+        private string? GetOptionalString<T>(string title, T? value)
             where T : unmanaged
         {
             if (value == null)
@@ -189,48 +189,51 @@ namespace OpenTK.Audio.OpenAL
         public override string ToString()
         {
             StringBuilder attributeString = new StringBuilder();
-            if (AdditionalAttributes.Length > 0)
+            if (AdditionalAttributes != null)
             {
-                attributeString.Append(", ");
-            }
-
-            for (int i = 0; i + 1 < AdditionalAttributes.Length; i += 2)
-            {
-                int key   = AdditionalAttributes[i + 0];
-                int value = AdditionalAttributes[i + 1];
-
-                string keyStr = $"{(ALC.ContextAttribute)key}";
-                string valueStr = value.ToString();
-                switch ((ALC.All)key)
+                if (AdditionalAttributes.Length > 0)
                 {
-                    case ALC.All.MajorVersion:
-                    case ALC.All.MinorVersion:
-                    case ALC.All.EfxMajorVersion:
-                    case ALC.All.EfxMinorVersion:
-                    case ALC.All.MaxAmbisonicOrderSoft:
-                        keyStr = $"{(ALC.GetPNameIV)key}";
-                        break;
-                    case ALC.All.HrtfStatusSoft:
-                        keyStr = $"{(ALC.GetPNameIV)key}";
-                        valueStr = $"{(ALC.HRTFStatus)value}";
-                        break;
-                    case ALC.All.OutputModeSoft:
-                        valueStr = $"{(ALC.OutputMode)value}";
-                        break;
-                    default:
-                        break;
+                    attributeString.Append(", ");
                 }
 
-                attributeString.Append($"{keyStr}: {valueStr}, ");
-            }
+                for (int i = 0; i + 1 < AdditionalAttributes.Length; i += 2)
+                {
+                    int key   = AdditionalAttributes[i + 0];
+                    int value = AdditionalAttributes[i + 1];
 
-            if (AdditionalAttributes.Length % 2 != 0)
-            {
-                attributeString.Append($"{AdditionalAttributes[^1]}");
-            }
-            else
-            {
-                attributeString.Length -= 2;
+                    string keyStr = $"{(ALC.ContextAttribute)key}";
+                    string valueStr = value.ToString();
+                    switch ((ALC.All)key)
+                    {
+                        case ALC.All.MajorVersion:
+                        case ALC.All.MinorVersion:
+                        case ALC.All.EfxMajorVersion:
+                        case ALC.All.EfxMinorVersion:
+                        case ALC.All.MaxAmbisonicOrderSoft:
+                            keyStr = $"{(ALC.GetPNameIV)key}";
+                            break;
+                        case ALC.All.HrtfStatusSoft:
+                            keyStr = $"{(ALC.GetPNameIV)key}";
+                            valueStr = $"{(ALC.HRTFStatus)value}";
+                            break;
+                        case ALC.All.OutputModeSoft:
+                            valueStr = $"{(ALC.OutputMode)value}";
+                            break;
+                        default:
+                            break;
+                    }
+
+                    attributeString.Append($"{keyStr}: {valueStr}, ");
+                }
+
+                if (AdditionalAttributes.Length % 2 != 0)
+                {
+                    attributeString.Append($"{AdditionalAttributes[^1]}");
+                }
+                else
+                {
+                    attributeString.Length -= 2;
+                }
             }
 
             return $"{GetOptionalString(nameof(Frequency), Frequency)}, " +

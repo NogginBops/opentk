@@ -1,5 +1,4 @@
 ﻿using ALGenerator.Parsing;
-using ALGenerator.Process;
 using GeneratorBase;
 using GeneratorBase.Overloading;
 using GeneratorBase.Utility;
@@ -33,42 +32,42 @@ namespace ALGenerator
                 Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) ?? throw new NullReferenceException(),
                 "..", "..", "..", "..", "..", AudioNamespace);
 
-            foreach (Pointers pointers in data.Pointers)
+            foreach (ApiPointers pointers in data.Pointers)
             {
                 FileStrings strings = pointers.File switch
                 {
-                    APIFile.AL => new FileStrings("AL", "AL", "OpenAL", "ALLoader", "ALLoader", "ALGetProcAddress"),
-                    APIFile.ALC => new FileStrings("ALC", "ALC", "OpenAL.ALC", "ALCLoader", "ALLoader", "ALCGetProcAddress"),
+                    ApiFile.AL => new FileStrings("AL", "AL", "OpenAL", "ALLoader", "ALLoader", "ALGetProcAddress"),
+                    ApiFile.ALC => new FileStrings("ALC", "ALC", "OpenAL.ALC", "ALCLoader", "ALLoader", "ALCGetProcAddress"),
                     _ => throw new Exception(),
                 };
 
                 // FIXME: Merge the writing of these function pointers for the relevant namespaces!
-                WriteFunctionPointers(outputProjectPath, strings, pointers.NativeFunctions);
+                WriteFunctionPointers(outputProjectPath, strings, pointers.Functions);
             }
 
-            foreach (Namespace @namespace in data.Namespaces)
+            foreach (OutputApiData @namespace in data.Namespaces)
             {
                 WriteNamespace(outputProjectPath, @namespace);
             }
         }
 
-        public static void WriteNamespace(string outputProjectPath, Namespace @namespace)
+        public static void WriteNamespace(string outputProjectPath, OutputApiData @namespace)
         {
             // FIXME: Fix function pointers so we can merge this.
-            FileStrings strings = @namespace.Name switch
+            FileStrings strings = @namespace.Api switch
             {
                 OutputApi.AL => new FileStrings("AL", "AL", "OpenAL", "ALLoader", "ALLoader", "ALGetProcAddress"),
                 OutputApi.ALC => new FileStrings("ALC", "ALC", "OpenAL.ALC", "ALCLoader", "ALLoader", "ALCGetProcAddress"),
-                _ => throw new Exception($"This is not a valid output API ({@namespace.Name})"),
+                _ => throw new Exception($"This is not a valid output API ({@namespace.Api})"),
             };
 
             string directoryPath = Path.Combine(outputProjectPath, Path.Combine(strings.Namespace.Split('.')));
             if (Directory.Exists(directoryPath) == false) Directory.CreateDirectory(directoryPath);
             
-            WriteNativeFunctions(directoryPath, strings, @namespace.VendorFunctions, @namespace.Documentation);
+            WriteNativeFunctions(directoryPath, strings, @namespace.VendorFunctions, @namespace.FunctionDocumentation);
             WriteOverloads(directoryPath, strings, @namespace.VendorFunctions);
 
-            WriteEnums(directoryPath, strings, @namespace.EnumGroups);
+            WriteEnums(directoryPath, strings, @namespace.Enums, @namespace.EnumMemberDocumentation);
         }
 
         // FIXME: Maybe we should nest this 
@@ -376,7 +375,7 @@ namespace ALGenerator
 
             writer.WriteLine($"/// <inheritdoc cref=\"{nativeFunctionName}({parameterTypes})\"/>");
 
-            string parameterString = string.Join(", ", overload.InputParameters.Select(p => $"{p.StrongType.ToCSString()} {p.Name}"));
+            string parameterString = string.Join(", ", overload.InputParameters.Select(p => $"{p.StrongType!.ToCSString()} {p.Name}"));
 
             string genericTypes = overload.GenericTypes.Length <= 0 ? "" : $"<{string.Join(", ", overload.GenericTypes)}>";
             writer.WriteLine($"public static unsafe {overload.ReturnType.ToCSString()} {overload.OverloadName}{genericTypes}({parameterString})");
@@ -450,9 +449,7 @@ namespace ALGenerator
         private static void WriteDocumentation(IndentedTextWriter writer, Function function, FunctionDocumentation documentation)
         {
             writer.Write("/// <summary> ");
-            writer.Write($"<b>[requires: {string.Join(" | ", documentation.AddedIn)}]</b> ");
-            if (documentation.RemovedIn?.Count > 0)
-                writer.Write($"<b>[removed in: {string.Join(" | ", documentation.RemovedIn)}]</b> ");
+            writer.WriteVersionInfo(documentation.VersionInfo);
             writer.Write($"<b>[entry point: <c>{function.EntryPoint}</c>]</b><br/>");
             writer.WriteLine($" {documentation.Purpose} </summary>");
 
@@ -470,11 +467,47 @@ namespace ALGenerator
 
             if (documentation.RefPagesLinks.Count > 0)
             {
-                writer.WriteLine($"/// <remarks>{string.Join("<br/>", documentation.RefPagesLinks.Select(url => $"<see href=\"{url}\"/>"))}</remarks>");
+                writer.WriteLine($"/// <remarks>{string.Join("<br/>", documentation.RefPagesLinks.Select(url => url.ToSeeXmlTag()))}</remarks>");
             }
         }
 
-        private static void WriteEnums(string directoryPath, FileStrings strings, List<EnumGroup> enumGroups)
+        private static void WriteEnumMemberDocumentation(IndentedTextWriter writer, EnumMember member, EnumMemberDocumentation? documentation)
+        {
+            if (documentation != null)
+            {
+                if (documentation.PropertyInfo != null || documentation.Comment != null)
+                {
+                    writer.WriteLine($"/// <summary>");
+                    if (documentation.PropertyInfo != null)
+                    {
+                        writer.Write($"/// <b>[property on: {string.Join(", ", documentation.PropertyInfo.PropertyOn)}]");
+                        // FIXME: Our own range syntax.
+                        if (documentation.PropertyInfo.Range != null)
+                            writer.Write($"[range: {documentation.PropertyInfo.Range} ]");
+                        // FIXME: Resolve our own name for the default value if the default value is a proper enum?
+                        // FIXME: AL_TRUE -> true, AL_FALSE -> false
+                        if (documentation.PropertyInfo.Default != null)
+                            writer.Write($"[default value: {documentation.PropertyInfo.Default}]");
+                        writer.WriteLine($"</b><br/>");
+                    }
+
+                    foreach (var line in documentation.Comment?.Split("\n").Select(s => s.TrimEnd()) ?? [])
+                    {
+                        writer.WriteLine($"/// {line}");
+                    }
+
+                    writer.WriteLine("/// </summary>");
+                }
+                else
+                {
+
+                }
+            }
+
+            writer.WriteLine($"/// <remarks>[originally: {member.OriginalName}]</remarks>");
+        }
+
+        private static void WriteEnums(string directoryPath, FileStrings strings, List<EnumType> enumGroups, Dictionary<string, EnumMemberDocumentation> enumMemberDocumentation)
         {
             using StreamWriter stream = File.CreateText(Path.Combine(directoryPath, $"{strings.FileNamePrefix}.Enums.cs"));
             using IndentedTextWriter writer = new IndentedTextWriter(stream);
@@ -488,7 +521,7 @@ namespace ALGenerator
                 writer.WriteLineNoTabs("#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member");
                 // FIXME: Maybe we want to fix this?
                 writer.WriteLineNoTabs("#pragma warning disable CS0419 // Ambiguous reference in cref attribute");
-                WriteEnumGroups(writer, strings.ApiName, enumGroups);
+                WriteEnumGroups(writer, strings.ApiName, enumGroups, enumMemberDocumentation);
                 writer.WriteLineNoTabs("#pragma warning restore CA1069 // Enums values should not be duplicated");
                 writer.WriteLineNoTabs("#pragma warning restore CS1591 // Missing XML comment for publicly visible type or member");
                 // FIXME: Maybe we want to fix this?
@@ -496,11 +529,11 @@ namespace ALGenerator
             }
         }
 
-        private static void WriteEnumGroups(IndentedTextWriter writer, string apiName, List<EnumGroup> enumGroups)
+        private static void WriteEnumGroups(IndentedTextWriter writer, string apiName, List<EnumType> enumGroups, Dictionary<string, EnumMemberDocumentation> enumMemberDocumentation)
         {
             foreach (var group in enumGroups)
             {
-                if (group.FunctionsUsingEnumGroup != null)
+                if (group.FunctionsUsingEnumGroup.Count > 0)
                 {
                     if (group.FunctionsUsingEnumGroup.Count > 3)
                     {
@@ -518,8 +551,8 @@ namespace ALGenerator
                 {
                     foreach (var member in group.Members)
                     {
-                        
-                        writer.WriteLine($"/// <remarks>[originally: {member.Name}]</remarks>");
+                        enumMemberDocumentation.TryGetValue(member.OriginalName, out var documentation);
+                        WriteEnumMemberDocumentation(writer, member, documentation);
 
                         // HACK: Some enums have a value of -1, and because
                         // we don't know the bitwidth of the enum here we can't cast
@@ -528,11 +561,11 @@ namespace ALGenerator
                         // - Noggin_bops 2024-11-11
                         if (member.Value == ulong.MaxValue)
                         {
-                            writer.WriteLine($"{member.MangledName} = unchecked((uint)-1),");
+                            writer.WriteLine($"{member.Name} = unchecked((uint)-1),");
                         }
                         else
                         {
-                            writer.WriteLine($"{member.MangledName} = {member.Value},");
+                            writer.WriteLine($"{member.Name} = {member.Value},");
                         }
                     }
                 }
@@ -545,6 +578,9 @@ namespace ALGenerator
             string outputProjectPath = Path.Combine(
                 Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) ?? throw new NullReferenceException(),
                 "..", "..", "..", "..", "..", AudioNamespace);
+
+
+            //
 
             string directoryPath = Path.Combine(outputProjectPath, "OpenAL");
 
@@ -560,6 +596,8 @@ namespace ALGenerator
             writer.WriteLine($"namespace {AudioNamespace}.OpenAL");
             using (writer.CsScope())
             {
+                writer.WriteLineNoTabs("#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member");
+
                 // FIXME: Better class name?
                 writer.WriteLine($"public static unsafe partial class ReverbPresets");
                 using (writer.CsScope())
@@ -598,6 +636,8 @@ namespace ALGenerator
                         writer.WriteLine();
                     }
                 }
+
+                writer.WriteLineNoTabs("#pragma warning restore CS1591 // Missing XML comment for publicly visible type or member");
             }
         }
     }

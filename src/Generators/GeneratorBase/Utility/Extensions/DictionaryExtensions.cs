@@ -121,5 +121,18 @@ namespace GeneratorBase.Utility.Extensions
                 return false;
             }
         }
+
+        /// <summary>
+        /// Gets or creates a list for the specified key.
+        /// </summary>
+        public static List<TValue> GetNestedList<TKey, TValue>(this Dictionary<TKey, List<TValue>> dict, TKey key) where TKey : notnull
+        {
+            if (dict.TryGetValue(key, out List<TValue>? list) == false)
+            {
+                list = [];
+                dict.Add(key, list);
+            }
+            return list;
+        }
     }
 }

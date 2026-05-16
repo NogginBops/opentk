@@ -1,6 +1,8 @@
-﻿using System;
+﻿using GeneratorBase.Overloading;
+using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Diagnostics;
 using System.Linq;
 using System.Reflection.Metadata;
 using System.Text;
@@ -9,15 +11,25 @@ using System.Threading.Tasks;
 namespace GeneratorBase
 {
     public record DeprecationReason(Version? Version, string? Extension, string? ExplanationLink);
-    public record RemoveReason(Version? Version, string? Extension, string? ExplanationLink);
+    public record RemoveReason(Version? Version, string? Extension, string? ExplanationLink)
+    {
+        public GLProfile Profile = GLProfile.None;
+    }
 
-    public record ExtensionInfo(string Name, string Vendor);
+    public record ExtensionInfo(string Name, string Vendor)
+    {
+        // OpenGL
+        public GLProfile Profile = GLProfile.None;
+    }
     public record VersionInfo(Version? Version, List<ExtensionInfo> Extensions)
     {
         // FIXME: Maybe we should record who removes this thing too?
 
         public List<DeprecationReason> DeprecatedBy = [];
         public List<RemoveReason> RemovedBy = [];
+
+        // OpenGL
+        public GLProfile Profile = GLProfile.None;
 
         public void Deprecate(DeprecationReason reason)
         {
@@ -27,6 +39,52 @@ namespace GeneratorBase
         public void Remove(RemoveReason reason)
         {
             RemovedBy.Add(reason);
+        }
+
+        // Checks if this entry should exist in the provided api
+        public bool AvailableInApi(OutputApi api)
+        {
+            GLProfile glProfile = api.ToGLProfile();
+
+            // If any extension includes this entry it is available.
+            foreach (ExtensionInfo extension in Extensions)
+            {
+                if (extension.Profile == glProfile)
+                    return true;
+                else if (extension.Profile == GLProfile.None)
+                    return true;
+            }
+
+            // If any version greater than the added version removes this entry
+            // then we are not available.
+            if (Version != null)
+            {
+                // We don't remove functions due to version in compatibility profile.
+                if (glProfile != GLProfile.Compatibility)
+                {
+                    foreach (RemoveReason removeReason in RemovedBy)
+                    {
+                        if (removeReason.Version != null &&
+                            removeReason.Version > Version)
+                        {
+                            return false;
+                        }
+                    }
+                }
+
+                // If this entry wasn't added to the current profile then it's not available.
+                if (Profile != GLProfile.None && Profile != glProfile)
+                    return false;
+
+                // If there was no remove reason that mattered compared to the added version we are available
+                return true;
+            }
+            else
+            {
+                Debug.Assert(glProfile != GLProfile.Compatibility);
+                // If we don't have a version and none of the extensions made this entry available we are not available.
+                return false;
+            }
         }
 
         public override string ToString()
@@ -45,6 +103,41 @@ namespace GeneratorBase
         }
     }
 
+    public record OutputData(List<ApiPointers> Pointers, List<OutputApiData> Namespaces);
+
+    // FIXME: Add vulkan stuff to this...
+    // FIXME: Better name?
+    public record OutputApiData(
+        OutputApi Api,
+        List<VendorFunctions> VendorFunctions,
+        List<EnumType> Enums,
+        Dictionary<Function, FunctionDocumentation> FunctionDocumentation,
+        Dictionary<string, EnumMemberDocumentation> EnumMemberDocumentation);
+
+    public record SpecificationFile(
+        ApiFile File,
+        List<Function> Functions,
+        List<EnumEntry> Enums,
+        List<Feature> Features,
+        List<Extension> Extensions);
+
+    public record API(
+        OutputApi Name,
+        List<FunctionReference> Functions,
+        List<EnumReference> Enums);
+
+    public record ResolvedApi(OutputApi Api, List<Function> Functions, List<EnumMember> Enums);
+
+    public record FunctionReference(
+        string EntryPoint,
+        VersionInfo VersionInfo);
+
+    public record EnumReference(
+        string EnumName,
+        VersionInfo VersionInfo,
+        // Is this enum reference copied from another namespace.
+        bool IsCrossReferenced);
+
     public record Feature
     {
         public required string Name { get; set; }
@@ -53,11 +146,8 @@ namespace GeneratorBase
         public required List<DeprecateTag> DeprecateTags { get; set; }
         public required List<RemoveTag> RemoveTags { get; set; }
 
-        // OpenGL?
-        public GLAPI GLApi { get; set; }
-
-        // OpenGL?
-        public ALAPI ALApi { get; set; }
+        // OpenGL / OpenAL
+        public OutputApi Api { get; set; }
 
         // Vulkan
         public string? Depends { get; init; }
@@ -73,13 +163,8 @@ namespace GeneratorBase
         public string? Comment { get; init; }
 
         // OpenGL/OpenAL
+        public OutputApi[] SupportedApis { get; init; }
         public string Vendor { get; init; }
-
-        // OpenGL
-        public GLAPI[] SupportedGLApis { get; init; }
-
-        // OpenAL
-        public ALAPI[] SupportedALApis { get; init; }
 
         // Vulkan
         public int Number { get; init; }
@@ -107,13 +192,12 @@ namespace GeneratorBase
 
         public string? Comment { get; init; }
 
+        // OpenGL / OpenAL
+        public OutputApi Api { get; init; }
+
         // OpenGL
         public GLProfile GLProfile { get; init; }
-        public GLAPI GLApi { get; init; }
-
-        // OpenAL
-        public ALAPI ALApi { get; init; }
-
+        
         // Vulkan
         public List<TypeRef> Types { get; init; }
         public List<RequireEnum> AddedEnums { get; init; }
@@ -156,7 +240,7 @@ namespace GeneratorBase
     }
 
     // Vulkan
-    public record RequireEnum(string Name, int? Value, string Extends, string? Alias, string? Comment);
+    public record RequireEnum(string Name, ulong? Value, string Extends, string? Alias, string? Comment);
 
     public record CommandRef(string Name);
     public record EnumRef(string Name);
@@ -185,6 +269,30 @@ namespace GeneratorBase
         public CommandType CommandType { get; set; } = CommandType.Invalid;
     }
 
+    public record class OverloadedFunction : IComparable<OverloadedFunction>
+    {
+        public required Function NativeFunction { get; init; }
+        public required Overload[] Overloads { get; init; }
+
+        public bool ChangeNativeName { get; init; }
+
+        public int CompareTo(OverloadedFunction? other)
+        {
+            return NativeFunction.Name.CompareTo(other?.NativeFunction.Name);
+        }
+    }
+
+    public record class VendorFunctions
+    {
+        public required string Vendor { get; init; }
+        public required List<OverloadedFunction> Functions { get; init; }
+        // FIXME: Move into OverloadedFunction?
+        public required HashSet<Function> NativeFunctionsWithPostfix { get; init; }
+    }
+
+    // List of pointers for a specific api.
+    public record class ApiPointers(ApiFile File, List<Function> Functions);
+
     public record class Parameter
     {
         public required string Name { get; init; }
@@ -199,26 +307,35 @@ namespace GeneratorBase
         public string[] Kinds { get; init; }
 
         // Vulkan
-        public bool Optional { get; init; }
-        public bool ExternSync { get; init; }
+        public bool[] Optional { get; init; }
+        public ExternSyncInfo ExternSync { get; init; }
     }
 
     public record class EnumType : IReferable
     {
         public required string Name { get; init; }
+        public required string OriginalName { get; init; }
         public required bool IsFlags { get; init; }
         public required List<EnumMember> Members { get; init; }
 
         public List<Function> ReferencedBy { get; init; } = [];
 
         // OpenGL
-        public List<(string Vendor, Function Function)>? FunctionsUsingEnumGroup { get; init; }
+        public List<(string Vendor, Function Function)> FunctionsUsingEnumGroup { get; init; } = [];
 
         // Vulkan
         public string? Extension { get; init; }
 
         public BaseCSType? StrongUnderlyingType { get; set; }
         public VersionInfo? VersionInfo { get; set; }
+
+        public class NameComparer : IComparer<EnumType>
+        {
+            public int Compare(EnumType? x, EnumType? y)
+            {
+                return x.Name.CompareTo(y.Name);
+            }
+        }
     }
 
     public record class EnumMember
@@ -231,16 +348,68 @@ namespace GeneratorBase
 
         // OpenGL/OpenAL
         // FIXME: We can probably remove this property...
-        public GroupRef[] Groups { get; init; }
+        public GroupRef[]? Groups { get; init; }
         public bool IsFlag { get; init; }
+        public EnumSize EnumSize { get; init; }
 
         // Vulkan
         public string? Alias { get; init; }
         public string? Extension { get; init; }
 
         public VersionInfo? VersionInfo { get; set; }
+
+        public static int DefaultComparison(EnumMember m1, EnumMember m2)
+        {
+            int comp = m1.Value.CompareTo(m2.Value);
+            if (comp == 0)
+            {
+                return m1.Name.CompareTo(m2.Name);
+            }
+            else
+            {
+                return comp;
+            }
+        }
     }
 
+    public record EnumEntry(
+        string Name,
+        string OriginalName,
+        ulong Value,
+        OutputApiFlags Apis,
+        bool IsFlags,
+        string? Vendor,
+        string? Alias,
+        GroupRef[] Groups,
+        EnumSize UnderlyingSize)
+    {
+        public bool IsCrossReferenced { get; init; }
+        public VersionInfo? VersionInfo { get; set; }
+    }
+
+    public record class FunctionPoiner : IReferable
+    {
+        // We don't need function pointer aliases yet. - Noggin_bops 2026-02-07
+        // public string? Alias { get; init; }
+
+        public required string Name { get; init; }
+        public required List<Parameter> Parameters { get; init; }
+        public required string ReturnType { get; init; }
+
+        public List<Function> ReferencedBy { get; init; } = [];
+
+        public BaseCSType? StrongReturnType { get; set; }
+        public VersionInfo? VersionInfo { get; set; }
+    }
+
+    public enum EnumSize
+    {
+        Invalid,
+        Int32,
+        Uint32,
+        Int64,
+        Uint64,
+    }
 
     public enum ConstantType
     {
@@ -272,23 +441,97 @@ namespace GeneratorBase
         public BaseCSType? StrongType { get; set; }
     }
 
-    public interface IEnum : IReferable
+    public enum InputApi
     {
-        public string Name { get; }
-        public List<IEnumMember> Members { get; }
+        GL,
+        GLES1,
+        GLES2,
+        WGL,
+        GLX,
+        EGL,
 
-        public BaseCSType? StrongUnderlyingType { get; set; }
+        AL,
+        ALC,
+
+        Vulkan,
+        // FIXME: VulkanVideo?
     }
 
-    public interface IEnumMember
+    public enum OutputApi
     {
-        public string Name { get; }
-        public ulong Value { get; }
+        Invalid,
 
-        public VersionInfo? VersionInfo { get; set; }
+        // OpenGL
+        GL,
+        GLCompat,
+        GLES1,
+        GLES2,
+        WGL,
+        GLX,
+        EGL,
+
+        // OpenAL
+        AL,
+        ALC,
+
+        // Vulkan
+        Vulkan,
+        // FIXME: VulkanVideo?
     }
 
-    public enum APIFile
+    public static class EnumExtensions
+    {
+        public static OutputApiFlags ToFlag(this OutputApi api) => (OutputApiFlags)(1 << (int)(api));
+
+        public static ApiFile ToApiFile(this OutputApi api) => api switch
+        {
+            OutputApi.GL => ApiFile.GL,
+            OutputApi.GLCompat => ApiFile.GL,
+            OutputApi.GLES1 => ApiFile.GL,
+            OutputApi.GLES2 => ApiFile.GL,
+            OutputApi.WGL => ApiFile.WGL,
+            OutputApi.GLX => ApiFile.GLX,
+            OutputApi.EGL => ApiFile.EGL,
+            OutputApi.AL => ApiFile.AL,
+            OutputApi.ALC => ApiFile.ALC,
+            OutputApi.Vulkan => ApiFile.Vulkan,
+            OutputApi.Invalid or _ => throw new Exception(),
+        };
+
+        public static GLProfile ToGLProfile(this OutputApi api) => api switch
+        {
+            OutputApi.Invalid => throw new Exception(),
+            OutputApi.GL => GLProfile.Core,
+            OutputApi.GLCompat => GLProfile.Compatibility,
+            OutputApi.GLES1 => GLProfile.Common,
+            OutputApi.GLES2 => GLProfile.Common,
+            _ => GLProfile.None,
+        };
+    }
+
+    [Flags]
+    public enum OutputApiFlags
+    {
+        None = 0,
+
+        // OpenGL
+        GL = 1 << OutputApi.GL,
+        GLCompat = 1 << OutputApi.GLCompat,
+        GLES1 = 1 << OutputApi.GLES1,
+        GLES2 = 1 << OutputApi.GLES2,
+        WGL = 1 << OutputApi.WGL,
+        GLX = 1 << OutputApi.GLX,
+        EGL = 1 << OutputApi.EGL,
+
+        // OpenAL
+        AL = 1 << OutputApi.AL,
+        ALC = 1 << OutputApi.ALC,
+
+        // Vulkan
+        Vulkan = 1 << OutputApi.Vulkan,
+    }
+
+    public enum ApiFile
     {
         // OpenGL
         GL,
@@ -302,6 +545,7 @@ namespace GeneratorBase
 
         // Vulkan
         Vulkan,
+        // FIXME: VulkanVideo?
     }
 
     #region OpenGL
@@ -309,43 +553,20 @@ namespace GeneratorBase
     /// <param name="OriginalName">The name of the referenced enum group (as seen in the xml files).</param>
     /// <param name="TranslatedName">The name of the referenced enum group (as seen in OpenTK).</param>
     /// <param name="Namespace">The enum namespace that is referenced.</param>
-    public record GroupRef(string OriginalName, string TranslatedName, APIFile Namespace);
+    public record GroupRef(string OriginalName, string TranslatedName, ApiFile Namespace);
 
     public enum GLProfile
     {
-        Invalid,
         None,
         Core,
         Compatibility,
+        // Common is an old GLES1 profile, nowadays GLES1 and GLES2 always have the Common profile.
         Common,
-    }
-
-    public enum GLAPI
-    {
-        Invalid,
-        None,
-        GL,
-        GLES1,
-        GLES2,
-        GLSC2,
-        GLCore,
-
-        WGL,
-        GLX,
-        EGL,
     }
 
     #endregion
 
     #region OpenAL
-
-    public enum ALAPI
-    {
-        Invalid,
-        None,
-        AL,
-        ALC,
-    }
 
     #endregion
 
@@ -361,6 +582,46 @@ namespace GeneratorBase
         Instance,
         /// <summary>This command is a device command.</summary>
         Device,
+    }
+
+    public enum ExternSyncType
+    {
+        None,
+        Always,
+        Maybe,
+        Subtype,
+        SubtypeMaybe,
+    }
+
+    public struct ExternSyncInfo
+    {
+        public ExternSyncType Type;
+        public string? Subtype;
+
+        public ExternSyncInfo(ExternSyncType type, string? subtype)
+        {
+            Type = type;
+            Subtype = subtype;
+        }
+
+        public override string ToString()
+        {
+            switch (Type)
+            {
+                case ExternSyncType.None:
+                    return "none";
+                case ExternSyncType.Always:
+                    return "always";
+                case ExternSyncType.Maybe:
+                    return "maybe";
+                case ExternSyncType.Subtype:
+                    return Subtype!;
+                case ExternSyncType.SubtypeMaybe:
+                    return $"maybe {Subtype}";
+                default:
+                    throw new Exception();
+            }
+        }
     }
 
     #endregion

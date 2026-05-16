@@ -14,6 +14,9 @@ namespace OpenTK.Audio.OpenAL
         EffectNull = 0,
         /// <remarks>[originally: AL_EFFECTSLOT_NULL]</remarks>
         EffectslotNull = 0,
+        /// <summary>
+        /// Boolean False.
+        /// </summary>
         /// <remarks>[originally: AL_FALSE]</remarks>
         False = 0,
         /// <remarks>[originally: AL_FILTER_FIRST_PARAMETER]</remarks>
@@ -22,260 +25,568 @@ namespace OpenTK.Audio.OpenAL
         FilterNull = 0,
         /// <remarks>[originally: AL_FUMA_SOFT]</remarks>
         FumaSoft = 0,
+        /// <summary>
+        /// No error.
+        /// </summary>
         /// <remarks>[originally: AL_NO_ERROR]</remarks>
         NoError = 0,
+        /// <summary>
+        /// No distance model or no buffer
+        /// </summary>
         /// <remarks>[originally: AL_NONE]</remarks>
         None = 0,
         /// <remarks>[originally: AL_NORMAL_SOFT]</remarks>
         NormalSoft = 0,
         /// <remarks>[originally: AL_ACN_SOFT]</remarks>
         AcnSoft = 1,
+        /// <summary>
+        /// <b>[property on: effect][range: [0.0001, 1.0] ][default value: 0.06]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_AUTOWAH_ATTACK_TIME]</remarks>
         AutowahAttackTime = 1,
+        /// <summary>
+        /// <b>[property on: filter][range: [0.0, 1.0] ][default value: 1.0]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_BANDPASS_GAIN]</remarks>
         BandpassGain = 1,
+        /// <summary>
+        /// <b>[property on: effect][default value: AL_CHORUS_WAVEFORM_TRIANGLE]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_CHORUS_WAVEFORM]</remarks>
         ChorusWaveform = 1,
+        /// <summary>
+        /// <b>[property on: effect][default value: AL_TRUE]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_COMPRESSOR_ONOFF]</remarks>
         CompressorOnoff = 1,
         /// <remarks>[originally: AL_CONTEXT_DEBUG_BIT_EXT]</remarks>
         ContextDebugBitExt = 1,
+        /// <summary>
+        /// <b>[property on: effect][default value: 1]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_DEDICATED_GAIN]</remarks>
         DedicatedGain = 1,
+        /// <summary>
+        /// <b>[property on: effect][range: [0.0, 1.0] ][default value: 0.2]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_DISTORTION_EDGE]</remarks>
         DistortionEdge = 1,
         /// <remarks>[originally: AL_DROP_UNMATCHED_SOFT]</remarks>
         DropUnmatchedSoft = 1,
+        /// <summary>
+        /// <b>[property on: effect][range: [0.0, 1.0] ][default value: 1.0]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_EAXREVERB_DENSITY]</remarks>
         EaxreverbDensity = 1,
+        /// <summary>
+        /// <b>[property on: effect][range: [0.0, 0.207] ][default value: 0.1]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_ECHO_DELAY]</remarks>
         EchoDelay = 1,
         /// <remarks>[originally: AL_EFFECT_REVERB]</remarks>
         EffectReverb = 1,
+        /// <summary>
+        /// <b>[property on: auxiliary effect slot][default value: AL_EFFECT_NULL]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_EFFECTSLOT_EFFECT]</remarks>
         EffectslotEffect = 1,
+        /// <summary>
+        /// <b>[property on: effect][range: [0.126, 7.943] ][default value: 1.0]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_EQUALIZER_LOW_GAIN]</remarks>
         EqualizerLowGain = 1,
         /// <remarks>[originally: AL_FILTER_LOWPASS]</remarks>
         FilterLowpass = 1,
+        /// <summary>
+        /// <b>[property on: effect][default value: AL_FLANGER_WAVEFORM_TRIANGLE]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_FLANGER_WAVEFORM]</remarks>
         FlangerWaveform = 1,
+        /// <summary>
+        /// <b>[property on: effect][range: [0.0, 24000.0] ][default value: 0.0]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_FREQUENCY_SHIFTER_FREQUENCY]</remarks>
         FrequencyShifterFrequency = 1,
+        /// <summary>
+        /// <b>[property on: filter][range: [0.0, 1.0] ][default value: 1.0]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_HIGHPASS_GAIN]</remarks>
         HighpassGain = 1,
+        /// <summary>
+        /// <b>[property on: filter][range: [0.0, 1.0] ][default value: 1.0]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_LOWPASS_GAIN]</remarks>
         LowpassGain = 1,
+        /// <summary>
+        /// <b>[property on: effect][range: [-12, 12] ][default value: 12]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_PITCH_SHIFTER_COARSE_TUNE]</remarks>
         PitchShifterCoarseTune = 1,
+        /// <summary>
+        /// <b>[property on: effect][range: [0.0, 1.0] ][default value: 1.0]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_REVERB_DENSITY]</remarks>
         ReverbDensity = 1,
+        /// <summary>
+        /// <b>[property on: effect][range: [0.0, 8000.0] ][default value: 440.0]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_RING_MODULATOR_FREQUENCY]</remarks>
         RingModulatorFrequency = 1,
         /// <remarks>[originally: AL_SN3D_SOFT]</remarks>
         SN3DSoft = 1,
         /// <remarks>[originally: AL_SUPER_STEREO_SOFT]</remarks>
         SuperStereoSoft = 1,
+        /// <summary>
+        /// Boolean True.
+        /// </summary>
         /// <remarks>[originally: AL_TRUE]</remarks>
         True = 1,
+        /// <summary>
+        /// <b>[property on: effect][default value: AL_VOCAL_MOPRHER_PHONEME_A]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_VOCAL_MORPHER_PHONEMEA]</remarks>
         VocalMorpherPhonemea = 1,
         /// <remarks>[originally: AL_AUTO_SOFT]</remarks>
         AutoSoft = 2,
+        /// <summary>
+        /// <b>[property on: effect][range: [0.0001, 1.0] ][default value: 0.06]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_AUTOWAH_RELEASE_TIME]</remarks>
         AutowahReleaseTime = 2,
+        /// <summary>
+        /// <b>[property on: filter][range: [0.0, 1.0] ][default value: 1.0]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_BANDPASS_GAINLF]</remarks>
         BandpassGainlf = 2,
+        /// <summary>
+        /// <b>[property on: effect][range: [-180, 180] ][default value: 90]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_CHORUS_PHASE]</remarks>
         ChorusPhase = 2,
+        /// <summary>
+        /// <b>[property on: effect][range: [0.01, 1.0] ][default value: 0.05]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_DISTORTION_GAIN]</remarks>
         DistortionGain = 2,
         /// <remarks>[originally: AL_DONT_CARE_EXT]</remarks>
         DontCareExt = 2,
+        /// <summary>
+        /// <b>[property on: effect][range: [0.0, 1.0] ][default value: 1.0]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_EAXREVERB_DIFFUSION]</remarks>
         EaxreverbDiffusion = 2,
+        /// <summary>
+        /// <b>[property on: effect][range: [0.0, 0.404] ][default value: 0.1]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_ECHO_LRDELAY]</remarks>
         EchoLrdelay = 2,
         /// <remarks>[originally: AL_EFFECT_CHORUS]</remarks>
         EffectChorus = 2,
+        /// <summary>
+        /// <b>[property on: auxiliary effect slot][range: [0.0, 1.0] ][default value: 1.0]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_EFFECTSLOT_GAIN]</remarks>
         EffectslotGain = 2,
+        /// <summary>
+        /// <b>[property on: effect][range: [50.0, 800.0] ][default value: 200.0]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_EQUALIZER_LOW_CUTOFF]</remarks>
         EqualizerLowCutoff = 2,
         /// <remarks>[originally: AL_FILTER_HIGHPASS]</remarks>
         FilterHighpass = 2,
+        /// <summary>
+        /// <b>[property on: effect][range: [-180, 180] ][default value: 0]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_FLANGER_PHASE]</remarks>
         FlangerPhase = 2,
+        /// <summary>
+        /// <b>[property on: effect][default value: AL_FREQUENCY_SHIFTER_DIRECTION_DOWN]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_FREQUENCY_SHIFTER_LEFT_DIRECTION]</remarks>
         FrequencyShifterLeftDirection = 2,
+        /// <summary>
+        /// <b>[property on: filter][range: [0.0, 1.0] ][default value: 1.0]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_HIGHPASS_GAINLF]</remarks>
         HighpassGainlf = 2,
+        /// <summary>
+        /// <b>[property on: filter][range: [0.0, 1.0] ][default value: 1.0]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_LOWPASS_GAINHF]</remarks>
         LowpassGainhf = 2,
         /// <remarks>[originally: AL_N3D_SOFT]</remarks>
         N3DSoft = 2,
+        /// <summary>
+        /// <b>[property on: effect][range: [-150, 50] ][default value: 0]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_PITCH_SHIFTER_FINE_TUNE]</remarks>
         PitchShifterFineTune = 2,
         /// <remarks>[originally: AL_REMIX_UNMATCHED_SOFT]</remarks>
         RemixUnmatchedSoft = 2,
+        /// <summary>
+        /// <b>[property on: effect][range: [0.0, 1.0] ][default value: 1.0]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_REVERB_DIFFUSION]</remarks>
         ReverbDiffusion = 2,
+        /// <summary>
+        /// <b>[property on: effect][range: [0.0, 24000.0] ][default value: 800.0]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_RING_MODULATOR_HIGHPASS_CUTOFF]</remarks>
         RingModulatorHighpassCutoff = 2,
+        /// <summary>
+        /// <b>[property on: effect][default value: AL_VOCAL_MOPRHER_PHONEME_A]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_VOCAL_MORPHER_PHONEMEA_COARSE_TUNING]</remarks>
         VocalMorpherPhonemeaCoarseTuning = 2,
+        /// <summary>
+        /// <b>[property on: effect][range: [2.0, 1000.0] ][default value: 1000.0]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_AUTOWAH_RESONANCE]</remarks>
         AutowahResonance = 3,
+        /// <summary>
+        /// <b>[property on: filter][range: [0.0, 1.0] ][default value: 1.0]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_BANDPASS_GAINHF]</remarks>
         BandpassGainhf = 3,
+        /// <summary>
+        /// <b>[property on: effect][range: [0.0, 10.0] ][default value: 1.1]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_CHORUS_RATE]</remarks>
         ChorusRate = 3,
+        /// <summary>
+        /// <b>[property on: effect][range: [80.0, 24000] ][default value: 8000]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_DISTORTION_LOWPASS_CUTOFF]</remarks>
         DistortionLowpassCutoff = 3,
+        /// <summary>
+        /// <b>[property on: effect][range: [0.0, 1.0] ][default value: 0.32]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_EAXREVERB_GAIN]</remarks>
         EaxreverbGain = 3,
+        /// <summary>
+        /// <b>[property on: effect][range: [0.0, 0.99] ][default value: 0.5]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_ECHO_DAMPING]</remarks>
         EchoDamping = 3,
         /// <remarks>[originally: AL_EFFECT_DISTORTION]</remarks>
         EffectDistortion = 3,
+        /// <summary>
+        /// <b>[property on: auxiliary effect slot][default value: AL_TRUE]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_EFFECTSLOT_AUXILIARY_SEND_AUTO]</remarks>
         EffectslotAuxiliarySendAuto = 3,
+        /// <summary>
+        /// <b>[property on: effect][range: [0.126, 7.943] ][default value: 1.0]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_EQUALIZER_MID1_GAIN]</remarks>
         EqualizerMid1Gain = 3,
         /// <remarks>[originally: AL_FILTER_BANDPASS]</remarks>
         FilterBandpass = 3,
+        /// <summary>
+        /// <b>[property on: effect][range: [0.0, 10.0] ][default value: 0.27]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_FLANGER_RATE]</remarks>
         FlangerRate = 3,
+        /// <summary>
+        /// <b>[property on: effect][default value: AL_FREQUENCY_SHIFTER_DIRECTION_DOWN]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_FREQUENCY_SHIFTER_RIGHT_DIRECTION]</remarks>
         FrequencyShifterRightDirection = 3,
+        /// <summary>
+        /// <b>[property on: effect][range: [0.0, 1.0] ][default value: 0.32]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_REVERB_GAIN]</remarks>
         ReverbGain = 3,
+        /// <summary>
+        /// <b>[property on: effect][default value: AL_RING_MODULATOR_SINUSOID]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_RING_MODULATOR_WAVEFORM]</remarks>
         RingModulatorWaveform = 3,
+        /// <summary>
+        /// <b>[property on: effect][default value: AL_VOCAL_MOPRHER_PHONEME_ER]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_VOCAL_MORPHER_PHONEMEB]</remarks>
         VocalMorpherPhonemeb = 3,
+        /// <summary>
+        /// <b>[property on: effect][range: [0.00003, 31621.0] ][default value: 11.22]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_AUTOWAH_PEAK_GAIN]</remarks>
         AutowahPeakGain = 4,
+        /// <summary>
+        /// <b>[property on: effect][range: [0.0, 1.0] ][default value: 0.1]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_CHORUS_DEPTH]</remarks>
         ChorusDepth = 4,
+        /// <summary>
+        /// <b>[property on: effect][range: [80.0, 24000] ][default value: 3600]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_DISTORTION_EQCENTER]</remarks>
         DistortionEqcenter = 4,
+        /// <summary>
+        /// <b>[property on: effect][range: [0.0, 1.0] ][default value: 0.89]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_EAXREVERB_GAINHF]</remarks>
         EaxreverbGainhf = 4,
+        /// <summary>
+        /// <b>[property on: effect][range: [0.0, 1.0] ][default value: 0.5]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_ECHO_FEEDBACK]</remarks>
         EchoFeedback = 4,
         /// <remarks>[originally: AL_EFFECT_ECHO]</remarks>
         EffectEcho = 4,
+        /// <summary>
+        /// <b>[property on: effect][range: [200.0, 3000.0] ][default value: 500.0]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_EQUALIZER_MID1_CENTER]</remarks>
         EqualizerMid1Center = 4,
+        /// <summary>
+        /// <b>[property on: effect][range: [0.0, 1.0] ][default value: 1.0]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_FLANGER_DEPTH]</remarks>
         FlangerDepth = 4,
+        /// <summary>
+        /// <b>[property on: effect][range: [0.0, 1.0] ][default value: 0.89]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_REVERB_GAINHF]</remarks>
         ReverbGainhf = 4,
+        /// <summary>
+        /// <b>[property on: effect][default value: AL_VOCAL_MOPRHER_PHONEME_A]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_VOCAL_MORPHER_PHONEMEB_COARSE_TUNING]</remarks>
         VocalMorpherPhonemebCoarseTuning = 4,
+        /// <summary>
+        /// <b>[property on: effect][range: [-1.0, 1.0] ][default value: 0.25]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_CHORUS_FEEDBACK]</remarks>
         ChorusFeedback = 5,
+        /// <summary>
+        /// <b>[property on: effect][range: [80.0, 24000] ][default value: 3600]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_DISTORTION_EQBANDWIDTH]</remarks>
         DistortionEqbandwidth = 5,
+        /// <summary>
+        /// <b>[property on: effect][range: [0.0, 1.0] ][default value: 0.0]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_EAXREVERB_GAINLF]</remarks>
         EaxreverbGainlf = 5,
+        /// <summary>
+        /// <b>[property on: effect][range: [-1.0, 1.0] ][default value: -1.0]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_ECHO_SPREAD]</remarks>
         EchoSpread = 5,
         /// <remarks>[originally: AL_EFFECT_FLANGER]</remarks>
         EffectFlanger = 5,
+        /// <summary>
+        /// <b>[property on: effect][range: [0.01, 1.0] ][default value: 1.0]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_EQUALIZER_MID1_WIDTH]</remarks>
         EqualizerMid1Width = 5,
+        /// <summary>
+        /// <b>[property on: effect][range: [-1.0, 1.0] ][default value: -0.5]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_FLANGER_FEEDBACK]</remarks>
         FlangerFeedback = 5,
+        /// <summary>
+        /// <b>[property on: effect][range: [0.1, 20] ][default value: 1.49]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_REVERB_DECAY_TIME]</remarks>
         ReverbDecayTime = 5,
+        /// <summary>
+        /// <b>[property on: effect][default value: AL_VOCAL_MORPHER_WAVEFORM_SINUSOID]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_VOCAL_MORPHER_WAVEFORM]</remarks>
         VocalMorpherWaveform = 5,
+        /// <summary>
+        /// <b>[property on: effect][range: [0.0, 0.016] ][default value: 0.016]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_CHORUS_DELAY]</remarks>
         ChorusDelay = 6,
+        /// <summary>
+        /// <b>[property on: effect][range: [0.1, 20] ][default value: 1.49]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_EAXREVERB_DECAY_TIME]</remarks>
         EaxreverbDecayTime = 6,
         /// <remarks>[originally: AL_EFFECT_FREQUENCY_SHIFTER]</remarks>
         EffectFrequencyShifter = 6,
+        /// <summary>
+        /// <b>[property on: effect][range: [0.126, 7.943] ][default value: 1.0]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_EQUALIZER_MID2_GAIN]</remarks>
         EqualizerMid2Gain = 6,
+        /// <summary>
+        /// <b>[property on: effect][range: [0.0, 0.004] ][default value: 0.002]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_FLANGER_DELAY]</remarks>
         FlangerDelay = 6,
+        /// <summary>
+        /// <b>[property on: effect][range: [0.1, 2.0] ][default value: 0.83]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_REVERB_DECAY_HFRATIO]</remarks>
         ReverbDecayHfratio = 6,
+        /// <summary>
+        /// <b>[property on: effect][range: [0.0, 10.0] ][default value: 1.41]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_VOCAL_MORPHER_RATE]</remarks>
         VocalMorpherRate = 6,
+        /// <summary>
+        /// <b>[property on: effect][range: [0.1, 2.0] ][default value: 0.83]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_EAXREVERB_DECAY_HFRATIO]</remarks>
         EaxreverbDecayHfratio = 7,
         /// <remarks>[originally: AL_EFFECT_VOCAL_MORPHER]</remarks>
         EffectVocalMorpher = 7,
+        /// <summary>
+        /// <b>[property on: effect][range: [1000.0, 8000.0] ][default value: 3000.0]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_EQUALIZER_MID2_CENTER]</remarks>
         EqualizerMid2Center = 7,
+        /// <summary>
+        /// <b>[property on: effect][range: [0.0, 3.16] ][default value: 0.05]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_REVERB_REFLECTIONS_GAIN]</remarks>
         ReverbReflectionsGain = 7,
+        /// <summary>
+        /// <b>[property on: effect][range: [0.1, 2.0] ][default value: 1.0]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_EAXREVERB_DECAY_LFRATIO]</remarks>
         EaxreverbDecayLfratio = 8,
         /// <remarks>[originally: AL_EFFECT_PITCH_SHIFTER]</remarks>
         EffectPitchShifter = 8,
+        /// <summary>
+        /// <b>[property on: effect][range: [0.01, 1.0] ][default value: 1.0]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_EQUALIZER_MID2_WIDTH]</remarks>
         EqualizerMid2Width = 8,
+        /// <summary>
+        /// <b>[property on: effect][range: [0.0, 0.3] ][default value: 0.007]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_REVERB_REFLECTIONS_DELAY]</remarks>
         ReverbReflectionsDelay = 8,
+        /// <summary>
+        /// <b>[property on: effect][range: [0.0, 3.16] ][default value: 0.05]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_EAXREVERB_REFLECTIONS_GAIN]</remarks>
         EaxreverbReflectionsGain = 9,
         /// <remarks>[originally: AL_EFFECT_RING_MODULATOR]</remarks>
         EffectRingModulator = 9,
+        /// <summary>
+        /// <b>[property on: effect][range: [0.126, 7.943] ][default value: 1.0]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_EQUALIZER_HIGH_GAIN]</remarks>
         EqualizerHighGain = 9,
+        /// <summary>
+        /// <b>[property on: effect][range: [0.0, 10.0] ][default value: 1.26]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_REVERB_LATE_REVERB_GAIN]</remarks>
         ReverbLateReverbGain = 9,
+        /// <summary>
+        /// <b>[property on: effect][range: [0.0, 0.3] ][default value: 0.007]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_EAXREVERB_REFLECTIONS_DELAY]</remarks>
         EaxreverbReflectionsDelay = 10,
         /// <remarks>[originally: AL_EFFECT_AUTOWAH]</remarks>
         EffectAutowah = 10,
+        /// <summary>
+        /// <b>[property on: effect][range: [4000.0, 16000.0] ][default value: 6000.0]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_EQUALIZER_HIGH_CUTOFF]</remarks>
         EqualizerHighCutoff = 10,
+        /// <summary>
+        /// <b>[property on: effect][range: [0.0, 0.1] ][default value: 0.011]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_REVERB_LATE_REVERB_DELAY]</remarks>
         ReverbLateReverbDelay = 10,
+        /// <summary>
+        /// <b>[property on: effect][default value: 0.0,0.0,0.0]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_EAXREVERB_REFLECTIONS_PAN]</remarks>
         EaxreverbReflectionsPan = 11,
         /// <remarks>[originally: AL_EFFECT_COMPRESSOR]</remarks>
         EffectCompressor = 11,
+        /// <summary>
+        /// <b>[property on: effect][range: [0.892, 1.0] ][default value: 0.994]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_REVERB_AIR_ABSORPTION_GAINHF]</remarks>
         ReverbAirAbsorptionGainhf = 11,
+        /// <summary>
+        /// <b>[property on: effect][range: [0.0, 10.0] ][default value: 1.26]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_EAXREVERB_LATE_REVERB_GAIN]</remarks>
         EaxreverbLateReverbGain = 12,
         /// <remarks>[originally: AL_EFFECT_EQUALIZER]</remarks>
         EffectEqualizer = 12,
+        /// <summary>
+        /// <b>[property on: effect][range: [0.0, 10.0] ][default value: 0.0]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_REVERB_ROOM_ROLLOFF_FACTOR]</remarks>
         ReverbRoomRolloffFactor = 12,
+        /// <summary>
+        /// <b>[property on: effect][range: [0.0, 0.1] ][default value: 0.011]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_EAXREVERB_LATE_REVERB_DELAY]</remarks>
         EaxreverbLateReverbDelay = 13,
+        /// <summary>
+        /// <b>[property on: effect][default value: AL_TRUE]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_REVERB_DECAY_HFLIMIT]</remarks>
         ReverbDecayHflimit = 13,
+        /// <summary>
+        /// <b>[property on: effect][default value: 0.0,0.0,0.0]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_EAXREVERB_LATE_REVERB_PAN]</remarks>
         EaxreverbLateReverbPan = 14,
+        /// <summary>
+        /// <b>[property on: effect][range: [0.075, 0.25] ][default value: 0.25]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_EAXREVERB_ECHO_TIME]</remarks>
         EaxreverbEchoTime = 15,
+        /// <summary>
+        /// <b>[property on: effect][range: [0.0, 1.0] ][default value: 0.0]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_EAXREVERB_ECHO_DEPTH]</remarks>
         EaxreverbEchoDepth = 16,
+        /// <summary>
+        /// <b>[property on: effect][range: [0.04, 4.0] ][default value: 0.25]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_EAXREVERB_MODULATION_TIME]</remarks>
         EaxreverbModulationTime = 17,
+        /// <summary>
+        /// <b>[property on: effect][range: [0.0, 1.0] ][default value: 0.0]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_EAXREVERB_MODULATION_DEPTH]</remarks>
         EaxreverbModulationDepth = 18,
+        /// <summary>
+        /// <b>[property on: effect][range: [0.892, 1.0] ][default value: 0.994]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_EAXREVERB_AIR_ABSORPTION_GAINHF]</remarks>
         EaxreverbAirAbsorptionGainhf = 19,
+        /// <summary>
+        /// <b>[property on: effect][range: [1000.0, 20000.0] ][default value: 5000.0]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_EAXREVERB_HFREFERENCE]</remarks>
         EaxreverbHfreference = 20,
+        /// <summary>
+        /// <b>[property on: effect][range: [20.0, 1000.0] ][default value: 250.0]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_EAXREVERB_LFREFERENCE]</remarks>
         EaxreverbLfreference = 21,
+        /// <summary>
+        /// <b>[property on: effect][range: [0.0, 10.0] ][default value: 0.0]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_EAXREVERB_ROOM_ROLLOFF_FACTOR]</remarks>
         EaxreverbRoomRolloffFactor = 22,
+        /// <summary>
+        /// <b>[property on: effect][default value: AL_TRUE]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_EAXREVERB_DECAY_HFLIMIT]</remarks>
         EaxreverbDecayHflimit = 23,
         /// <remarks>[originally: AL_SOURCE_DISTANCE_MODEL]</remarks>
         SourceDistanceModel = 512,
+        /// <summary>
+        /// <b>[property on: source][default value: AL_FALSE]</b><br/>
+        /// Relative source.
+        /// Specifies if the source uses relative coordinates.
+        /// </summary>
         /// <remarks>[originally: AL_SOURCE_RELATIVE]</remarks>
         SourceRelative = 514,
         /// <remarks>[originally: ALC_MAC_OSX_SPATIAL_RENDERING_QUALITY_HIGH]</remarks>
@@ -286,34 +597,144 @@ namespace OpenTK.Audio.OpenAL
         MacOsxRenderChannelCountMultichannel = 1023,
         /// <remarks>[originally: ALC_MAC_OSX_SPATIAL_RENDERING_QUALITY_LOW]</remarks>
         MacOsxSpatialRenderingQualityLow = 1023,
+        /// <summary>
+        /// <b>[property on: source][range: [0, 360] ][default value: 360]</b><br/>
+        /// Inner cone angle, in degrees.
+        /// 
+        ///                 The angle covered by the inner cone, the area within which the source will
+        ///                 not be attenuated by direction.
+        /// 
+        /// </summary>
         /// <remarks>[originally: AL_CONE_INNER_ANGLE]</remarks>
         ConeInnerAngle = 4097,
+        /// <summary>
+        /// <b>[property on: source][range: [0, 360] ][default value: 360]</b><br/>
+        /// Outer cone angle, in degrees.
+        /// 
+        ///                 The angle covered by the outer cone, the area outside of which the source
+        ///                 will be fully attenuated by direction.
+        /// 
+        /// </summary>
         /// <remarks>[originally: AL_CONE_OUTER_ANGLE]</remarks>
         ConeOuterAngle = 4098,
+        /// <summary>
+        /// <b>[property on: source][range: [0.5, 2.0] ][default value: 1.0]</b><br/>
+        /// Source pitch.
+        /// A multiplier for the sample rate of the source's buffer.
+        /// </summary>
         /// <remarks>[originally: AL_PITCH]</remarks>
         Pitch = 4099,
+        /// <summary>
+        /// <b>[property on: source, listener][default value: 0,0,0]</b><br/>
+        /// Source or listener position.
+        /// 
+        ///                 The source or listener location in three dimensional space.
+        /// 
+        ///                 OpenAL uses a right handed coordinate system, like OpenGL, where with a
+        ///                 default view, X points right (thumb), Y points up (index finger), and Z
+        ///                 points towards the viewer/camera (middle finger).
+        /// 
+        ///                 To change from or to a left handed coordinate system, negate the Z
+        ///                 component.
+        /// 
+        /// </summary>
         /// <remarks>[originally: AL_POSITION]</remarks>
         Position = 4100,
+        /// <summary>
+        /// <b>[property on: source, listener][default value: 0,0,0]</b><br/>
+        /// Source direction.
+        /// 
+        ///                 Specifies the current direction in local space. A zero-length vector
+        ///                 specifies an omni-directional source (cone is ignored).
+        /// 
+        ///                 To change from or to a left handed coordinate system, negate the Z
+        ///                 component.
+        /// 
+        /// </summary>
         /// <remarks>[originally: AL_DIRECTION]</remarks>
         Direction = 4101,
+        /// <summary>
+        /// <b>[property on: source, listener][default value: 0,0,0]</b><br/>
+        /// Source or listener velocity.
+        /// 
+        ///                 Specifies the current velocity, relative to the position.
+        /// 
+        ///                 To change from or to a left handed coordinate system, negate the Z
+        ///                 component.
+        /// 
+        /// </summary>
         /// <remarks>[originally: AL_VELOCITY]</remarks>
         Velocity = 4102,
+        /// <summary>
+        /// <b>[property on: source][default value: AL_FALSE]</b><br/>
+        /// Source looping.
+        /// Specifies whether source playback loops.
+        /// </summary>
         /// <remarks>[originally: AL_LOOPING]</remarks>
         Looping = 4103,
+        /// <summary>
+        /// <b>[property on: source][default value: AL_NONE]</b><br/>
+        /// Source buffer.
+        /// Specifies the buffer to provide sound samples for a source.
+        /// </summary>
         /// <remarks>[originally: AL_BUFFER]</remarks>
         Buffer = 4105,
         /// <remarks>[originally: AL_BUFFER_EXT]</remarks>
         BufferExt = 4105,
+        /// <summary>
+        /// <b>[property on: source, listener][range: [0.0, ) ]</b><br/>
+        /// Source or listener gain.
+        /// 
+        ///                 For sources, an initial linear gain value (before attenuation is applied).
+        ///                 For the listener, an output linear gain adjustment.
+        /// 
+        ///                 A value of 1.0 means unattenuated. Each division by 2 equals an attenuation
+        ///                 of about -6dB. Each multiplication by 2 equals an amplification of about
+        ///                 +6dB.
+        /// 
+        /// </summary>
         /// <remarks>[originally: AL_GAIN]</remarks>
         Gain = 4106,
         /// <remarks>[originally: AL_BYTE_LOKI]</remarks>
         ByteLoki = 4108,
+        /// <summary>
+        /// <b>[property on: source][range: [0.0, 1.0] ]</b><br/>
+        /// Minimum source gain.
+        /// 
+        ///                 The minimum gain allowed for a source, after distance and cone attenuation
+        ///                 are applied (if applicable).
+        /// 
+        /// </summary>
         /// <remarks>[originally: AL_MIN_GAIN]</remarks>
         MinGain = 4109,
+        /// <summary>
+        /// <b>[property on: source][range: [0.0, 1.0] ]</b><br/>
+        /// Maximum source gain.
+        /// 
+        ///                 The maximum gain allowed for a source, after distance and cone attenuation
+        ///                 are applied (if applicable).
+        /// 
+        /// </summary>
         /// <remarks>[originally: AL_MAX_GAIN]</remarks>
         MaxGain = 4110,
+        /// <summary>
+        /// <b>[property on: listener][default value: 0.0,0.0,-1.0,0.0,1.0,0.0]</b><br/>
+        /// Listener orientation.
+        /// 
+        ///                 Effectively two three dimensional vectors. The first vector is the front (or
+        ///                 "at") and the second is the top (or "up"). Both vectors are relative to the
+        ///                 listener position.
+        /// 
+        ///                 To change from or to a left handed coordinate system, negate the Z
+        ///                 component of both vectors.
+        /// 
+        /// </summary>
         /// <remarks>[originally: AL_ORIENTATION]</remarks>
         Orientation = 4111,
+        /// <summary>
+        /// <b>[property on: source]</b><br/>
+        /// Source state (query only).
+        /// </summary>
         /// <remarks>[originally: AL_SOURCE_STATE]</remarks>
         SourceState = 4112,
         /// <remarks>[originally: AL_INITIAL]</remarks>
@@ -324,64 +745,182 @@ namespace OpenTK.Audio.OpenAL
         Paused = 4115,
         /// <remarks>[originally: AL_STOPPED]</remarks>
         Stopped = 4116,
+        /// <summary>
+        /// <b>[property on: source]</b><br/>
+        /// Source Buffer Queue size (query only).
+        /// 
+        ///                 The number of buffers queued using alSourceQueueBuffers, minus the buffers
+        ///                 removed with alSourceUnqueueBuffers.
+        /// 
+        /// </summary>
         /// <remarks>[originally: AL_BUFFERS_QUEUED]</remarks>
         BuffersQueued = 4117,
+        /// <summary>
+        /// <b>[property on: source]</b><br/>
+        /// Source Buffer Queue processed count (query only).
+        /// 
+        ///                 The number of queued buffers that have been fully processed, and can be
+        ///                 removed with alSourceUnqueueBuffers.
+        /// 
+        ///                 Looping sources will never fully process buffers because they will be set to
+        ///                 play again for when the source loops.
+        /// 
+        /// </summary>
         /// <remarks>[originally: AL_BUFFERS_PROCESSED]</remarks>
         BuffersProcessed = 4118,
+        /// <summary>
+        /// <b>[property on: source][range: [0.0, ) ][default value: 1.0]</b><br/>
+        /// Source reference distance.
+        /// 
+        ///                 The distance in units that no distance attenuation occurs.
+        /// 
+        ///                 At 0.0, no distance attenuation occurs with non-linear attenuation models.
+        /// 
+        /// </summary>
         /// <remarks>[originally: AL_REFERENCE_DISTANCE]</remarks>
         ReferenceDistance = 4128,
+        /// <summary>
+        /// <b>[property on: source][range: [0.0, ) ][default value: 1.0]</b><br/>
+        /// Source rolloff factor.
+        /// 
+        ///                 Multiplier to exaggerate or diminish distance attenuation.
+        /// 
+        ///                 At 0.0, no distance attenuation ever occurs.
+        /// 
+        /// </summary>
         /// <remarks>[originally: AL_ROLLOFF_FACTOR]</remarks>
         RolloffFactor = 4129,
+        /// <summary>
+        /// <b>[property on: listener][range: [0.0, 1.0] ][default value: 0.0]</b><br/>
+        /// Outer cone gain.
+        /// 
+        ///                 The gain attenuation applied when the listener is outside of the source's
+        ///                 outer cone angle.
+        /// 
+        /// </summary>
         /// <remarks>[originally: AL_CONE_OUTER_GAIN]</remarks>
         ConeOuterGain = 4130,
+        /// <summary>
+        /// <b>[property on: source][range: [0.0, ) ][default value: FLT_MAX]</b><br/>
+        /// Source maximum distance.
+        /// 
+        ///                 The distance above which the source is not attenuated any further with a
+        ///                 clamped distance model, or where attenuation reaches 0.0 gain for linear
+        ///                 distance models with a default rolloff factor.
+        /// 
+        /// </summary>
         /// <remarks>[originally: AL_MAX_DISTANCE]</remarks>
         MaxDistance = 4131,
+        /// <summary>
+        /// <b>[property on: source][range: [0, ) ]</b><br/>
+        /// Source buffer offset, in seconds.
+        /// </summary>
         /// <remarks>[originally: AL_SEC_OFFSET]</remarks>
         SecOffset = 4132,
+        /// <summary>
+        /// <b>[property on: source][range: [0, ) ]</b><br/>
+        /// Source buffer offset, in sample frames.
+        /// </summary>
         /// <remarks>[originally: AL_SAMPLE_OFFSET]</remarks>
         SampleOffset = 4133,
+        /// <summary>
+        /// <b>[property on: source][range: [0, ) ]</b><br/>
+        /// Source buffer offset, in bytes.
+        /// </summary>
         /// <remarks>[originally: AL_BYTE_OFFSET]</remarks>
         ByteOffset = 4134,
+        /// <summary>
+        /// <b>[property on: source]</b><br/>
+        /// Source type (query only).
+        /// 
+        ///                 A Source is Static if a Buffer has been attached using AL_BUFFER.
+        /// 
+        ///                 A Source is Streaming if one or more Buffers have been attached using
+        ///                 alSourceQueueBuffers.
+        /// 
+        ///                 A Source is Undetermined when it has the NULL buffer attached using
+        ///                 AL_BUFFER.
+        /// 
+        /// </summary>
         /// <remarks>[originally: AL_SOURCE_TYPE]</remarks>
         SourceType = 4135,
         /// <remarks>[originally: AL_STATIC]</remarks>
         Static = 4136,
         /// <remarks>[originally: AL_STREAMING]</remarks>
         Streaming = 4137,
+        /// <summary>
+        /// <b>[property on: source]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_STEREO_ANGLES]</remarks>
         StereoAngles = 4144,
         /// <remarks>[originally: AL_UNDETERMINED]</remarks>
         Undetermined = 4144,
+        /// <summary>
+        /// <b>[property on: source][range: [0.0, ) ]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_BYTE_RW_OFFSETS_SOFT]</remarks>
         ByteRwOffsetsSoft = 4145,
+        /// <summary>
+        /// <b>[property on: source]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_SOURCE_RADIUS]</remarks>
         SourceRadius = 4145,
+        /// <summary>
+        /// <b>[property on: source][range: [0.0, ) ]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_SAMPLE_RW_OFFSETS_SOFT]</remarks>
         SampleRwOffsetsSoft = 4146,
+        /// <summary>
+        /// <b>[property on: source][default value: AL_FALSE]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_DIRECT_CHANNELS_SOFT]</remarks>
         DirectChannelsSoft = 4147,
+        /// <summary>
+        /// Unsigned 8-bit mono buffer format.
+        /// </summary>
         /// <remarks>[originally: AL_FORMAT_MONO8]</remarks>
         Mono8 = 4352,
         /// <remarks>[originally: AL_MONO8_SOFT]</remarks>
         Mono8Soft = 4352,
+        /// <summary>
+        /// Signed 16-bit mono buffer format.
+        /// </summary>
         /// <remarks>[originally: AL_FORMAT_MONO16]</remarks>
         Mono16 = 4353,
         /// <remarks>[originally: AL_MONO16_SOFT]</remarks>
         Mono16Soft = 4353,
+        /// <summary>
+        /// Unsigned 8-bit stereo buffer format.
+        /// </summary>
         /// <remarks>[originally: AL_FORMAT_STEREO8]</remarks>
         Stereo8 = 4354,
         /// <remarks>[originally: AL_STEREO8_SOFT]</remarks>
         Stereo8Soft = 4354,
+        /// <summary>
+        /// Signed 16-bit stereo buffer format.
+        /// </summary>
         /// <remarks>[originally: AL_FORMAT_STEREO16]</remarks>
         Stereo16 = 4355,
         /// <remarks>[originally: AL_STEREO16_SOFT]</remarks>
         Stereo16Soft = 4355,
+        /// <summary>
+        /// <b>[property on: source]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_SAMPLE_OFFSET_LATENCY_SOFT]</remarks>
         SampleOffsetLatencySoft = 4608,
+        /// <summary>
+        /// <b>[property on: source]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_SEC_OFFSET_LATENCY_SOFT]</remarks>
         SecOffsetLatencySoft = 4609,
+        /// <summary>
+        /// <b>[property on: source]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_SAMPLE_OFFSET_CLOCK_SOFT]</remarks>
         SampleOffsetClockSoft = 4610,
+        /// <summary>
+        /// <b>[property on: source]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_SEC_OFFSET_CLOCK_SOFT]</remarks>
         SecOffsetClockSoft = 4611,
         /// <remarks>[originally: AL_FORMAT_QUAD8]</remarks>
@@ -448,10 +987,16 @@ namespace OpenTK.Audio.OpenAL
         _71chn32 = 4626,
         /// <remarks>[originally: AL_7POINT1_32F_SOFT]</remarks>
         _7point132fSoft = 4626,
+        /// <summary>
+        /// <b>[property on: source]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_SOURCE_RESAMPLER_SOFT]</remarks>
         SourceResamplerSoft = 4626,
         /// <remarks>[originally: AL_RESAMPLER_NAME_SOFT]</remarks>
         ResamplerNameSoft = 4627,
+        /// <summary>
+        /// <b>[property on: source][default value: AL_AUTO_SOFT]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_SOURCE_SPATIALIZE_SOFT]</remarks>
         SourceSpatializeSoft = 4628,
         /// <remarks>[originally: AL_FORMAT_MONO_IMA4]</remarks>
@@ -496,16 +1041,34 @@ namespace OpenTK.Audio.OpenAL
         _6point1Soft = 5381,
         /// <remarks>[originally: AL_7POINT1_SOFT]</remarks>
         _7point1Soft = 5382,
+        /// <summary>
+        /// <b>[property on: buffer][default value: AL_FUMA_SOFT]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_AMBISONIC_LAYOUT_SOFT]</remarks>
         AmbisonicLayoutSoft = 6551,
+        /// <summary>
+        /// <b>[property on: buffer][default value: AL_FUMA_SOFT]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_AMBISONIC_SCALING_SOFT]</remarks>
         AmbisonicScalingSoft = 6552,
+        /// <summary>
+        /// <b>[property on: auxiliary effect slot][default value: AL_EFFECTSLOT_NULL]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_EFFECTSLOT_TARGET_SOFT]</remarks>
         EffectslotTargetSoft = 6556,
+        /// <summary>
+        /// <b>[property on: buffer][range: [1, 14] ][default value: 1]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_UNPACK_AMBISONIC_ORDER_SOFT]</remarks>
         UnpackAmbisonicOrderSoft = 6557,
+        /// <summary>
+        /// <b>[property on: buffer][default value: NULL]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_BUFFER_CALLBACK_FUNCTION_SOFT]</remarks>
         BufferCallbackFunctionSoft = 6560,
+        /// <summary>
+        /// <b>[property on: buffer][default value: NULL]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_BUFFER_CALLBACK_USER_PARAM_SOFT]</remarks>
         BufferCallbackUserParamSoft = 6561,
         /// <remarks>[originally: AL_EVENT_CALLBACK_FUNCTION_SOFT]</remarks>
@@ -536,8 +1099,14 @@ namespace OpenTK.Audio.OpenAL
         UHJ4chn16Soft = 6569,
         /// <remarks>[originally: AL_FORMAT_UHJ4CHN_FLOAT32_SOFT]</remarks>
         UHJ4chnFloat32Soft = 6570,
+        /// <summary>
+        /// <b>[property on: source][default value: AL_NORMAL_SOFT]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_STEREO_MODE_SOFT]</remarks>
         StereoModeSoft = 6576,
+        /// <summary>
+        /// <b>[property on: source][range: [0.0, 1.0] ]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_SUPER_STEREO_WIDTH_SOFT]</remarks>
         SuperStereoWidthSoft = 6577,
         /// <remarks>[originally: AL_DEBUG_OUTPUT_EXT]</remarks>
@@ -624,30 +1193,67 @@ namespace OpenTK.Audio.OpenAL
         EffectExt = 6610,
         /// <remarks>[originally: AL_AUXILIARY_EFFECT_SLOT_EXT]</remarks>
         AuxiliaryEffectSlotExt = 6611,
+        /// <summary>
+        /// <b>[property on: buffer]</b><br/>
+        /// Buffer frequency/sample rate (query only).
+        /// </summary>
         /// <remarks>[originally: AL_FREQUENCY]</remarks>
         Frequency = 8193,
+        /// <summary>
+        /// <b>[property on: buffer]</b><br/>
+        /// Buffer bits per sample (query only).
+        /// </summary>
         /// <remarks>[originally: AL_BITS]</remarks>
         Bits = 8194,
+        /// <summary>
+        /// <b>[property on: buffer]</b><br/>
+        /// Buffer channel count (query only).
+        /// </summary>
         /// <remarks>[originally: AL_CHANNELS]</remarks>
         Channels = 8195,
+        /// <summary>
+        /// <b>[property on: buffer]</b><br/>
+        /// Buffer data size in bytes (query only).
+        /// </summary>
         /// <remarks>[originally: AL_SIZE]</remarks>
         Size = 8196,
+        /// <summary>
+        /// <b>[property on: buffer]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_INTERNAL_FORMAT_SOFT]</remarks>
         InternalFormatSoft = 8200,
+        /// <summary>
+        /// <b>[property on: buffer]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_BYTE_LENGTH_SOFT]</remarks>
         ByteLengthSoft = 8201,
+        /// <summary>
+        /// <b>[property on: buffer]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_SAMPLE_LENGTH_SOFT]</remarks>
         SampleLengthSoft = 8202,
+        /// <summary>
+        /// <b>[property on: buffer]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_SEC_LENGTH_SOFT]</remarks>
         SecLengthSoft = 8203,
+        /// <summary>
+        /// <b>[property on: buffer][range: [0, ) ][default value: 0]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_UNPACK_BLOCK_ALIGNMENT_SOFT]</remarks>
         UnpackBlockAlignmentSoft = 8204,
+        /// <summary>
+        /// <b>[property on: buffer][range: [0, ) ][default value: 0]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_PACK_BLOCK_ALIGNMENT_SOFT]</remarks>
         PackBlockAlignmentSoft = 8205,
         /// <remarks>[originally: AL_GAIN_LIMIT_SOFT]</remarks>
         GainLimitSoft = 8206,
         /// <remarks>[originally: AL_LOOP_POINTS_EXT]</remarks>
         LoopPointsExt = 8213,
+        /// <summary>
+        /// <b>[property on: buffer][default value: 0,0]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_LOOP_POINTS_SOFT]</remarks>
         LoopPointsSoft = 8213,
         /// <remarks>[originally: AL_FOLDBACK_MODE_MONO]</remarks>
@@ -666,8 +1272,14 @@ namespace OpenTK.Audio.OpenAL
         EffectLastParameter = 32768,
         /// <remarks>[originally: AL_FILTER_LAST_PARAMETER]</remarks>
         FilterLastParameter = 32768,
+        /// <summary>
+        /// <b>[property on: effect][default value: AL_EFFECT_NULL]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_EFFECT_TYPE]</remarks>
         EffectType = 32769,
+        /// <summary>
+        /// <b>[property on: filter][default value: AL_FILTER_NULL]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_FILTER_TYPE]</remarks>
         FilterType = 32769,
         /// <remarks>[originally: AL_EFFECT_DEDICATED_LOW_FREQUENCY_EFFECT]</remarks>
@@ -676,32 +1288,96 @@ namespace OpenTK.Audio.OpenAL
         QueueHasLooped = 36864,
         /// <remarks>[originally: AL_EFFECT_DEDICATED_DIALOGUE]</remarks>
         EffectDedicatedDialogue = 36865,
+        /// <summary>
+        /// Invalid name (ID) passed to an AL call.
+        /// </summary>
         /// <remarks>[originally: AL_INVALID_NAME]</remarks>
         InvalidName = 40961,
+        /// <summary>
+        /// Invalid enumeration passed to AL call.
+        /// </summary>
         /// <remarks>[originally: AL_INVALID_ENUM]</remarks>
         InvalidEnum = 40962,
+        /// <summary>
+        /// Invalid value passed to AL call.
+        /// </summary>
         /// <remarks>[originally: AL_INVALID_VALUE]</remarks>
         InvalidValue = 40963,
+        /// <summary>
+        /// Illegal AL call.
+        /// </summary>
         /// <remarks>[originally: AL_INVALID_OPERATION]</remarks>
         InvalidOperation = 40964,
+        /// <summary>
+        /// Not enough memory to execute the AL call.
+        /// </summary>
         /// <remarks>[originally: AL_OUT_OF_MEMORY]</remarks>
         OutOfMemory = 40965,
+        /// <summary>
+        /// <b>[property on: context]</b><br/>
+        /// Context string: Vendor name.
+        /// </summary>
         /// <remarks>[originally: AL_VENDOR]</remarks>
         Vendor = 45057,
+        /// <summary>
+        /// <b>[property on: context]</b><br/>
+        /// Context string: Version.
+        /// </summary>
         /// <remarks>[originally: AL_VERSION]</remarks>
         Version = 45058,
+        /// <summary>
+        /// <b>[property on: context]</b><br/>
+        /// Context string: Renderer name.
+        /// </summary>
         /// <remarks>[originally: AL_RENDERER]</remarks>
         Renderer = 45059,
+        /// <summary>
+        /// <b>[property on: context]</b><br/>
+        /// Context string: Space-separated extension list.
+        /// </summary>
         /// <remarks>[originally: AL_EXTENSIONS]</remarks>
         Extensions = 45060,
+        /// <summary>
+        /// <b>[property on: context][range: [0.0, ) ][default value: 1.0]</b><br/>
+        /// Doppler scale.
+        /// Scale for source and listener velocities.
+        /// </summary>
         /// <remarks>[originally: AL_DOPPLER_FACTOR]</remarks>
         DopplerFactor = 49152,
+        /// <summary>
+        /// <b>[property on: context]</b><br/>
+        /// Doppler velocity (deprecated).
+        /// A multiplier applied to the Speed of Sound.
+        /// </summary>
         /// <remarks>[originally: AL_DOPPLER_VELOCITY]</remarks>
         DopplerVelocity = 49153,
         /// <remarks>[originally: AL_DEFERRED_UPDATES_SOFT]</remarks>
         DeferredUpdatesSoft = 49154,
+        /// <summary>
+        /// <b>[property on: context][range: [0.0001, ) ][default value: 343.3]</b><br/>
+        /// Speed of Sound, in units per second.
+        /// 
+        ///                 The speed at which sound waves are assumed to travel, when calculating the
+        ///                 doppler effect from source and listener velocities.
+        /// 
+        /// </summary>
         /// <remarks>[originally: AL_SPEED_OF_SOUND]</remarks>
         SpeedOfSound = 49155,
+        /// <summary>
+        /// <b>[property on: context][default value: AL_INVERSE_DISTANCE_CLAMPED]</b><br/>
+        /// Distance attenuation model.
+        /// 
+        ///                 The model by which sources attenuate with distance.
+        /// 
+        ///                 None     - No distance attenuation.
+        ///                 Inverse  - Doubling the distance halves the source gain.
+        ///                 Linear   - Linear gain scaling between the reference and max distances.
+        ///                 Exponent - Exponential gain dropoff.
+        /// 
+        ///                 Clamped variations work like the non-clamped counterparts, except the
+        ///                 distance calculated is clamped between the reference and max distances.
+        /// 
+        /// </summary>
         /// <remarks>[originally: AL_DISTANCE_MODEL]</remarks>
         DistanceModel = 53248,
         /// <remarks>[originally: AL_INVERSE_DISTANCE]</remarks>
@@ -770,22 +1446,49 @@ namespace OpenTK.Audio.OpenAL
         Bformat2DMULAW = 65585,
         /// <remarks>[originally: AL_FORMAT_BFORMAT3D_MULAW]</remarks>
         Bformat3DMULAW = 65586,
+        /// <summary>
+        /// <b>[property on: listener][range: [0, ) ][default value: 1.0]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_METERS_PER_UNIT]</remarks>
         MetersPerUnit = 131076,
+        /// <summary>
+        /// <b>[property on: source][default value: AL_FILTER_NULL]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_DIRECT_FILTER]</remarks>
         DirectFilter = 131077,
+        /// <summary>
+        /// <b>[property on: source][default value: AL_FILTER_NULL]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_AUXILIARY_SEND_FILTER]</remarks>
         AuxiliarySendFilter = 131078,
+        /// <summary>
+        /// <b>[property on: source][range: [0, 10] ][default value: 0]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_AIR_ABSORPTION_FACTOR]</remarks>
         AirAbsorptionFactor = 131079,
+        /// <summary>
+        /// <b>[property on: source][range: [0, 10] ][default value: 0]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_ROOM_ROLLOFF_FACTOR]</remarks>
         RoomRolloffFactor = 131080,
+        /// <summary>
+        /// <b>[property on: source][range: [0.0, 1.0] ][default value: 1.0]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_CONE_OUTER_GAINHF]</remarks>
         ConeOuterGainhf = 131081,
+        /// <summary>
+        /// <b>[property on: source][default value: AL_TRUE]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_DIRECT_FILTER_GAINHF_AUTO]</remarks>
         DirectFilterGainhfAuto = 131082,
+        /// <summary>
+        /// <b>[property on: source][default value: AL_TRUE]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_AUXILIARY_SEND_FILTER_GAIN_AUTO]</remarks>
         AuxiliarySendFilterGainAuto = 131083,
+        /// <summary>
+        /// <b>[property on: source][default value: AL_TRUE]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_AUXILIARY_SEND_FILTER_GAINHF_AUTO]</remarks>
         AuxiliarySendFilterGainhfAuto = 131084,
         /// <remarks>[originally: AL_FORMAT_BFORMAT2D_8]</remarks>
@@ -863,93 +1566,156 @@ namespace OpenTK.Audio.OpenAL
     }
     public enum AutoWahParameterName : uint
     {
+        /// <summary>
+        /// <b>[property on: effect][range: [0.0001, 1.0] ][default value: 0.06]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_AUTOWAH_ATTACK_TIME]</remarks>
         AutowahAttackTime = 1,
+        /// <summary>
+        /// <b>[property on: effect][range: [0.0001, 1.0] ][default value: 0.06]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_AUTOWAH_RELEASE_TIME]</remarks>
         AutowahReleaseTime = 2,
+        /// <summary>
+        /// <b>[property on: effect][range: [2.0, 1000.0] ][default value: 1000.0]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_AUTOWAH_RESONANCE]</remarks>
         AutowahResonance = 3,
+        /// <summary>
+        /// <b>[property on: effect][range: [0.00003, 31621.0] ][default value: 11.22]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_AUTOWAH_PEAK_GAIN]</remarks>
         AutowahPeakGain = 4,
     }
     public enum AuxEffectSlotGetPNameB : uint
     {
+        /// <summary>
+        /// <b>[property on: auxiliary effect slot][default value: AL_TRUE]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_EFFECTSLOT_AUXILIARY_SEND_AUTO]</remarks>
         EffectslotAuxiliarySendAuto = 3,
     }
     public enum AuxEffectSlotGetPNameBV : uint
     {
+        /// <summary>
+        /// <b>[property on: auxiliary effect slot][default value: AL_TRUE]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_EFFECTSLOT_AUXILIARY_SEND_AUTO]</remarks>
         EffectslotAuxiliarySendAuto = 3,
     }
     ///<summary>Used in <see cref="AL.EXT.GetAuxiliaryEffectSlotf" />, <see cref="AL.EXT.GetAuxiliaryEffectSlotfDirect" /></summary>
     public enum AuxEffectSlotGetPNameF : uint
     {
+        /// <summary>
+        /// <b>[property on: auxiliary effect slot][range: [0.0, 1.0] ][default value: 1.0]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_EFFECTSLOT_GAIN]</remarks>
         EffectslotGain = 2,
     }
     ///<summary>Used in <see cref="AL.EXT.GetAuxiliaryEffectSlotfv" />, <see cref="AL.EXT.GetAuxiliaryEffectSlotfvDirect" /></summary>
     public enum AuxEffectSlotGetPNameFV : uint
     {
+        /// <summary>
+        /// <b>[property on: auxiliary effect slot][range: [0.0, 1.0] ][default value: 1.0]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_EFFECTSLOT_GAIN]</remarks>
         EffectslotGain = 2,
     }
     ///<summary>Used in <see cref="AL.EXT.GetAuxiliaryEffectSloti" />, <see cref="AL.EXT.GetAuxiliaryEffectSlotiDirect" /></summary>
     public enum AuxEffectSlotGetPNameI : uint
     {
+        /// <summary>
+        /// <b>[property on: auxiliary effect slot][default value: AL_EFFECT_NULL]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_EFFECTSLOT_EFFECT]</remarks>
         EffectslotEffect = 1,
+        /// <summary>
+        /// <b>[property on: auxiliary effect slot][default value: AL_EFFECTSLOT_NULL]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_EFFECTSLOT_TARGET_SOFT]</remarks>
         EffectslotTargetSoft = 6556,
     }
     ///<summary>Used in <see cref="AL.EXT.GetAuxiliaryEffectSlotiv" />, <see cref="AL.EXT.GetAuxiliaryEffectSlotivDirect" /></summary>
     public enum AuxEffectSlotGetPNameIV : uint
     {
+        /// <summary>
+        /// <b>[property on: auxiliary effect slot][default value: AL_EFFECT_NULL]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_EFFECTSLOT_EFFECT]</remarks>
         EffectslotEffect = 1,
     }
     public enum AuxEffectSlotPNameB : uint
     {
+        /// <summary>
+        /// <b>[property on: auxiliary effect slot][default value: AL_TRUE]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_EFFECTSLOT_AUXILIARY_SEND_AUTO]</remarks>
         EffectslotAuxiliarySendAuto = 3,
     }
     public enum AuxEffectSlotPNameBV : uint
     {
+        /// <summary>
+        /// <b>[property on: auxiliary effect slot][default value: AL_TRUE]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_EFFECTSLOT_AUXILIARY_SEND_AUTO]</remarks>
         EffectslotAuxiliarySendAuto = 3,
     }
     ///<summary>Used in <see cref="AL.EXT.AuxiliaryEffectSlotf" />, <see cref="AL.EXT.AuxiliaryEffectSlotfDirect" /></summary>
     public enum AuxEffectSlotPNameF : uint
     {
+        /// <summary>
+        /// <b>[property on: auxiliary effect slot][range: [0.0, 1.0] ][default value: 1.0]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_EFFECTSLOT_GAIN]</remarks>
         EffectslotGain = 2,
     }
     ///<summary>Used in <see cref="AL.EXT.AuxiliaryEffectSlotfv" />, <see cref="AL.EXT.AuxiliaryEffectSlotfvDirect" /></summary>
     public enum AuxEffectSlotPNameFV : uint
     {
+        /// <summary>
+        /// <b>[property on: auxiliary effect slot][range: [0.0, 1.0] ][default value: 1.0]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_EFFECTSLOT_GAIN]</remarks>
         EffectslotGain = 2,
     }
     ///<summary>Used in <see cref="AL.EXT.AuxiliaryEffectSloti" />, <see cref="AL.EXT.AuxiliaryEffectSlotiDirect" /></summary>
     public enum AuxEffectSlotPNameI : uint
     {
+        /// <summary>
+        /// <b>[property on: auxiliary effect slot][default value: AL_EFFECT_NULL]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_EFFECTSLOT_EFFECT]</remarks>
         EffectslotEffect = 1,
+        /// <summary>
+        /// <b>[property on: auxiliary effect slot][default value: AL_EFFECTSLOT_NULL]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_EFFECTSLOT_TARGET_SOFT]</remarks>
         EffectslotTargetSoft = 6556,
     }
     ///<summary>Used in <see cref="AL.EXT.AuxiliaryEffectSlotiv" />, <see cref="AL.EXT.AuxiliaryEffectSlotivDirect" /></summary>
     public enum AuxEffectSlotPNameIV : uint
     {
+        /// <summary>
+        /// <b>[property on: auxiliary effect slot][default value: AL_EFFECT_NULL]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_EFFECTSLOT_EFFECT]</remarks>
         EffectslotEffect = 1,
     }
     public enum BandpassParameterName : uint
     {
+        /// <summary>
+        /// <b>[property on: filter][range: [0.0, 1.0] ][default value: 1.0]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_BANDPASS_GAIN]</remarks>
         BandpassGain = 1,
+        /// <summary>
+        /// <b>[property on: filter][range: [0.0, 1.0] ][default value: 1.0]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_BANDPASS_GAINLF]</remarks>
         BandpassGainlf = 2,
+        /// <summary>
+        /// <b>[property on: filter][range: [0.0, 1.0] ][default value: 1.0]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_BANDPASS_GAINHF]</remarks>
         BandpassGainhf = 3,
     }
@@ -968,10 +1734,19 @@ namespace OpenTK.Audio.OpenAL
     ///<summary>Used in <see cref="AL.GetBufferf" />, <see cref="AL.EXT.GetBufferfDirect" /></summary>
     public enum BufferGetPNameF : uint
     {
+        /// <summary>
+        /// <b>[property on: source][range: [0.0, ) ]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_BYTE_RW_OFFSETS_SOFT]</remarks>
         ByteRwOffsetsSoft = 4145,
+        /// <summary>
+        /// <b>[property on: source][range: [0.0, ) ]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_SAMPLE_RW_OFFSETS_SOFT]</remarks>
         SampleRwOffsetsSoft = 4146,
+        /// <summary>
+        /// <b>[property on: buffer]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_SEC_LENGTH_SOFT]</remarks>
         SecLengthSoft = 8203,
     }
@@ -982,26 +1757,63 @@ namespace OpenTK.Audio.OpenAL
     ///<summary>Used in <see cref="AL.GetBufferi" />, <see cref="AL.EXT.GetBufferiDirect" /></summary>
     public enum BufferGetPNameI : uint
     {
+        /// <summary>
+        /// <b>[property on: buffer][default value: AL_FUMA_SOFT]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_AMBISONIC_LAYOUT_SOFT]</remarks>
         AmbisonicLayoutSoft = 6551,
+        /// <summary>
+        /// <b>[property on: buffer][default value: AL_FUMA_SOFT]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_AMBISONIC_SCALING_SOFT]</remarks>
         AmbisonicScalingSoft = 6552,
+        /// <summary>
+        /// <b>[property on: buffer]</b><br/>
+        /// Buffer frequency/sample rate (query only).
+        /// </summary>
         /// <remarks>[originally: AL_FREQUENCY]</remarks>
         Frequency = 8193,
+        /// <summary>
+        /// <b>[property on: buffer]</b><br/>
+        /// Buffer bits per sample (query only).
+        /// </summary>
         /// <remarks>[originally: AL_BITS]</remarks>
         Bits = 8194,
+        /// <summary>
+        /// <b>[property on: buffer]</b><br/>
+        /// Buffer channel count (query only).
+        /// </summary>
         /// <remarks>[originally: AL_CHANNELS]</remarks>
         Channels = 8195,
+        /// <summary>
+        /// <b>[property on: buffer]</b><br/>
+        /// Buffer data size in bytes (query only).
+        /// </summary>
         /// <remarks>[originally: AL_SIZE]</remarks>
         Size = 8196,
+        /// <summary>
+        /// <b>[property on: buffer]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_INTERNAL_FORMAT_SOFT]</remarks>
         InternalFormatSoft = 8200,
+        /// <summary>
+        /// <b>[property on: buffer]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_BYTE_LENGTH_SOFT]</remarks>
         ByteLengthSoft = 8201,
+        /// <summary>
+        /// <b>[property on: buffer]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_SAMPLE_LENGTH_SOFT]</remarks>
         SampleLengthSoft = 8202,
+        /// <summary>
+        /// <b>[property on: buffer][range: [0, ) ][default value: 0]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_UNPACK_BLOCK_ALIGNMENT_SOFT]</remarks>
         UnpackBlockAlignmentSoft = 8204,
+        /// <summary>
+        /// <b>[property on: buffer][range: [0, ) ][default value: 0]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_PACK_BLOCK_ALIGNMENT_SOFT]</remarks>
         PackBlockAlignmentSoft = 8205,
         /// <remarks>[originally: AL_LOOP_POINTS_EXT]</remarks>
@@ -1010,22 +1822,47 @@ namespace OpenTK.Audio.OpenAL
     ///<summary>Used in <see cref="AL.GetBufferiv" />, <see cref="AL.EXT.GetBufferivDirect" /></summary>
     public enum BufferGetPNameIV : uint
     {
+        /// <summary>
+        /// <b>[property on: buffer]</b><br/>
+        /// Buffer frequency/sample rate (query only).
+        /// </summary>
         /// <remarks>[originally: AL_FREQUENCY]</remarks>
         Frequency = 8193,
+        /// <summary>
+        /// <b>[property on: buffer]</b><br/>
+        /// Buffer bits per sample (query only).
+        /// </summary>
         /// <remarks>[originally: AL_BITS]</remarks>
         Bits = 8194,
+        /// <summary>
+        /// <b>[property on: buffer]</b><br/>
+        /// Buffer channel count (query only).
+        /// </summary>
         /// <remarks>[originally: AL_CHANNELS]</remarks>
         Channels = 8195,
+        /// <summary>
+        /// <b>[property on: buffer]</b><br/>
+        /// Buffer data size in bytes (query only).
+        /// </summary>
         /// <remarks>[originally: AL_SIZE]</remarks>
         Size = 8196,
+        /// <summary>
+        /// <b>[property on: buffer][default value: 0,0]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_LOOP_POINTS_SOFT]</remarks>
         LoopPointsSoft = 8213,
     }
     ///<summary>Used in <see cref="AL.EXT.GetBufferPtrDirectSOFT" />, <see cref="AL.SOFT.GetBufferPtrSOFT" /></summary>
     public enum BufferGetPNamePtr : uint
     {
+        /// <summary>
+        /// <b>[property on: buffer][default value: NULL]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_BUFFER_CALLBACK_FUNCTION_SOFT]</remarks>
         BufferCallbackFunctionSoft = 6560,
+        /// <summary>
+        /// <b>[property on: buffer][default value: NULL]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_BUFFER_CALLBACK_USER_PARAM_SOFT]</remarks>
         BufferCallbackUserParamSoft = 6561,
     }
@@ -1052,14 +1889,29 @@ namespace OpenTK.Audio.OpenAL
     ///<summary>Used in <see cref="AL.Bufferi" />, <see cref="AL.EXT.BufferiDirect" /></summary>
     public enum BufferPNameI : uint
     {
+        /// <summary>
+        /// <b>[property on: buffer][default value: AL_FUMA_SOFT]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_AMBISONIC_LAYOUT_SOFT]</remarks>
         AmbisonicLayoutSoft = 6551,
+        /// <summary>
+        /// <b>[property on: buffer][default value: AL_FUMA_SOFT]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_AMBISONIC_SCALING_SOFT]</remarks>
         AmbisonicScalingSoft = 6552,
+        /// <summary>
+        /// <b>[property on: buffer][range: [1, 14] ][default value: 1]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_UNPACK_AMBISONIC_ORDER_SOFT]</remarks>
         UnpackAmbisonicOrderSoft = 6557,
+        /// <summary>
+        /// <b>[property on: buffer][range: [0, ) ][default value: 0]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_UNPACK_BLOCK_ALIGNMENT_SOFT]</remarks>
         UnpackBlockAlignmentSoft = 8204,
+        /// <summary>
+        /// <b>[property on: buffer][range: [0, ) ][default value: 0]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_PACK_BLOCK_ALIGNMENT_SOFT]</remarks>
         PackBlockAlignmentSoft = 8205,
         /// <remarks>[originally: AL_LOOP_POINTS_EXT]</remarks>
@@ -1068,6 +1920,9 @@ namespace OpenTK.Audio.OpenAL
     ///<summary>Used in <see cref="AL.Bufferiv" />, <see cref="AL.EXT.BufferivDirect" /></summary>
     public enum BufferPNameIV : uint
     {
+        /// <summary>
+        /// <b>[property on: buffer][default value: 0,0]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_LOOP_POINTS_SOFT]</remarks>
         LoopPointsSoft = 8213,
     }
@@ -1091,21 +1946,42 @@ namespace OpenTK.Audio.OpenAL
     }
     public enum ChorusParameterName : uint
     {
+        /// <summary>
+        /// <b>[property on: effect][default value: AL_CHORUS_WAVEFORM_TRIANGLE]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_CHORUS_WAVEFORM]</remarks>
         ChorusWaveform = 1,
+        /// <summary>
+        /// <b>[property on: effect][range: [-180, 180] ][default value: 90]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_CHORUS_PHASE]</remarks>
         ChorusPhase = 2,
+        /// <summary>
+        /// <b>[property on: effect][range: [0.0, 10.0] ][default value: 1.1]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_CHORUS_RATE]</remarks>
         ChorusRate = 3,
+        /// <summary>
+        /// <b>[property on: effect][range: [0.0, 1.0] ][default value: 0.1]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_CHORUS_DEPTH]</remarks>
         ChorusDepth = 4,
+        /// <summary>
+        /// <b>[property on: effect][range: [-1.0, 1.0] ][default value: 0.25]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_CHORUS_FEEDBACK]</remarks>
         ChorusFeedback = 5,
+        /// <summary>
+        /// <b>[property on: effect][range: [0.0, 0.016] ][default value: 0.016]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_CHORUS_DELAY]</remarks>
         ChorusDelay = 6,
     }
     public enum CompressorParameterName : uint
     {
+        /// <summary>
+        /// <b>[property on: effect][default value: AL_TRUE]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_COMPRESSOR_ONOFF]</remarks>
         CompressorOnoff = 1,
     }
@@ -1175,20 +2051,32 @@ namespace OpenTK.Audio.OpenAL
     }
     public enum DedicatedDialogueParameterName : uint
     {
+        /// <summary>
+        /// <b>[property on: effect][default value: 1]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_DEDICATED_GAIN]</remarks>
         DedicatedGain = 1,
     }
     public enum DedicatedLowFrequencyParameterName : uint
     {
+        /// <summary>
+        /// <b>[property on: effect][default value: 1]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_DEDICATED_GAIN]</remarks>
         DedicatedGain = 1,
     }
     public enum DirectChannelMode : uint
     {
+        /// <summary>
+        /// Boolean False.
+        /// </summary>
         /// <remarks>[originally: AL_FALSE]</remarks>
         False = 0,
         /// <remarks>[originally: AL_DROP_UNMATCHED_SOFT]</remarks>
         DropUnmatchedSoft = 1,
+        /// <summary>
+        /// Boolean True.
+        /// </summary>
         /// <remarks>[originally: AL_TRUE]</remarks>
         True = 1,
         /// <remarks>[originally: AL_REMIX_UNMATCHED_SOFT]</remarks>
@@ -1197,6 +2085,9 @@ namespace OpenTK.Audio.OpenAL
     ///<summary>Used in <see cref="AL.DistanceModel" />, <see cref="AL.EXT.DistanceModelDirect" /></summary>
     public enum DistanceModel : uint
     {
+        /// <summary>
+        /// No distance model or no buffer
+        /// </summary>
         /// <remarks>[originally: AL_NONE]</remarks>
         None = 0,
         /// <remarks>[originally: AL_INVERSE_DISTANCE]</remarks>
@@ -1226,14 +2117,29 @@ namespace OpenTK.Audio.OpenAL
     }
     public enum DistortionParameterName : uint
     {
+        /// <summary>
+        /// <b>[property on: effect][range: [0.0, 1.0] ][default value: 0.2]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_DISTORTION_EDGE]</remarks>
         DistortionEdge = 1,
+        /// <summary>
+        /// <b>[property on: effect][range: [0.01, 1.0] ][default value: 0.05]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_DISTORTION_GAIN]</remarks>
         DistortionGain = 2,
+        /// <summary>
+        /// <b>[property on: effect][range: [80.0, 24000] ][default value: 8000]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_DISTORTION_LOWPASS_CUTOFF]</remarks>
         DistortionLowpassCutoff = 3,
+        /// <summary>
+        /// <b>[property on: effect][range: [80.0, 24000] ][default value: 3600]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_DISTORTION_EQCENTER]</remarks>
         DistortionEqcenter = 4,
+        /// <summary>
+        /// <b>[property on: effect][range: [80.0, 24000] ][default value: 3600]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_DISTORTION_EQBANDWIDTH]</remarks>
         DistortionEqbandwidth = 5,
     }
@@ -1249,277 +2155,634 @@ namespace OpenTK.Audio.OpenAL
     }
     public enum EAXReverbParameterName : uint
     {
+        /// <summary>
+        /// <b>[property on: effect][range: [0.0, 1.0] ][default value: 1.0]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_EAXREVERB_DENSITY]</remarks>
         EaxreverbDensity = 1,
+        /// <summary>
+        /// <b>[property on: effect][range: [0.0, 1.0] ][default value: 1.0]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_EAXREVERB_DIFFUSION]</remarks>
         EaxreverbDiffusion = 2,
+        /// <summary>
+        /// <b>[property on: effect][range: [0.0, 1.0] ][default value: 0.32]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_EAXREVERB_GAIN]</remarks>
         EaxreverbGain = 3,
+        /// <summary>
+        /// <b>[property on: effect][range: [0.0, 1.0] ][default value: 0.89]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_EAXREVERB_GAINHF]</remarks>
         EaxreverbGainhf = 4,
+        /// <summary>
+        /// <b>[property on: effect][range: [0.0, 1.0] ][default value: 0.0]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_EAXREVERB_GAINLF]</remarks>
         EaxreverbGainlf = 5,
+        /// <summary>
+        /// <b>[property on: effect][range: [0.1, 20] ][default value: 1.49]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_EAXREVERB_DECAY_TIME]</remarks>
         EaxreverbDecayTime = 6,
+        /// <summary>
+        /// <b>[property on: effect][range: [0.1, 2.0] ][default value: 0.83]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_EAXREVERB_DECAY_HFRATIO]</remarks>
         EaxreverbDecayHfratio = 7,
+        /// <summary>
+        /// <b>[property on: effect][range: [0.1, 2.0] ][default value: 1.0]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_EAXREVERB_DECAY_LFRATIO]</remarks>
         EaxreverbDecayLfratio = 8,
+        /// <summary>
+        /// <b>[property on: effect][range: [0.0, 3.16] ][default value: 0.05]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_EAXREVERB_REFLECTIONS_GAIN]</remarks>
         EaxreverbReflectionsGain = 9,
+        /// <summary>
+        /// <b>[property on: effect][range: [0.0, 0.3] ][default value: 0.007]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_EAXREVERB_REFLECTIONS_DELAY]</remarks>
         EaxreverbReflectionsDelay = 10,
+        /// <summary>
+        /// <b>[property on: effect][default value: 0.0,0.0,0.0]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_EAXREVERB_REFLECTIONS_PAN]</remarks>
         EaxreverbReflectionsPan = 11,
+        /// <summary>
+        /// <b>[property on: effect][range: [0.0, 10.0] ][default value: 1.26]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_EAXREVERB_LATE_REVERB_GAIN]</remarks>
         EaxreverbLateReverbGain = 12,
+        /// <summary>
+        /// <b>[property on: effect][range: [0.0, 0.1] ][default value: 0.011]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_EAXREVERB_LATE_REVERB_DELAY]</remarks>
         EaxreverbLateReverbDelay = 13,
+        /// <summary>
+        /// <b>[property on: effect][default value: 0.0,0.0,0.0]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_EAXREVERB_LATE_REVERB_PAN]</remarks>
         EaxreverbLateReverbPan = 14,
+        /// <summary>
+        /// <b>[property on: effect][range: [0.075, 0.25] ][default value: 0.25]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_EAXREVERB_ECHO_TIME]</remarks>
         EaxreverbEchoTime = 15,
+        /// <summary>
+        /// <b>[property on: effect][range: [0.0, 1.0] ][default value: 0.0]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_EAXREVERB_ECHO_DEPTH]</remarks>
         EaxreverbEchoDepth = 16,
+        /// <summary>
+        /// <b>[property on: effect][range: [0.04, 4.0] ][default value: 0.25]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_EAXREVERB_MODULATION_TIME]</remarks>
         EaxreverbModulationTime = 17,
+        /// <summary>
+        /// <b>[property on: effect][range: [0.0, 1.0] ][default value: 0.0]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_EAXREVERB_MODULATION_DEPTH]</remarks>
         EaxreverbModulationDepth = 18,
+        /// <summary>
+        /// <b>[property on: effect][range: [0.892, 1.0] ][default value: 0.994]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_EAXREVERB_AIR_ABSORPTION_GAINHF]</remarks>
         EaxreverbAirAbsorptionGainhf = 19,
+        /// <summary>
+        /// <b>[property on: effect][range: [1000.0, 20000.0] ][default value: 5000.0]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_EAXREVERB_HFREFERENCE]</remarks>
         EaxreverbHfreference = 20,
+        /// <summary>
+        /// <b>[property on: effect][range: [20.0, 1000.0] ][default value: 250.0]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_EAXREVERB_LFREFERENCE]</remarks>
         EaxreverbLfreference = 21,
+        /// <summary>
+        /// <b>[property on: effect][range: [0.0, 10.0] ][default value: 0.0]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_EAXREVERB_ROOM_ROLLOFF_FACTOR]</remarks>
         EaxreverbRoomRolloffFactor = 22,
+        /// <summary>
+        /// <b>[property on: effect][default value: AL_TRUE]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_EAXREVERB_DECAY_HFLIMIT]</remarks>
         EaxreverbDecayHflimit = 23,
     }
     public enum EchoParameterName : uint
     {
+        /// <summary>
+        /// <b>[property on: effect][range: [0.0, 0.207] ][default value: 0.1]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_ECHO_DELAY]</remarks>
         EchoDelay = 1,
+        /// <summary>
+        /// <b>[property on: effect][range: [0.0, 0.404] ][default value: 0.1]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_ECHO_LRDELAY]</remarks>
         EchoLrdelay = 2,
+        /// <summary>
+        /// <b>[property on: effect][range: [0.0, 0.99] ][default value: 0.5]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_ECHO_DAMPING]</remarks>
         EchoDamping = 3,
+        /// <summary>
+        /// <b>[property on: effect][range: [0.0, 1.0] ][default value: 0.5]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_ECHO_FEEDBACK]</remarks>
         EchoFeedback = 4,
+        /// <summary>
+        /// <b>[property on: effect][range: [-1.0, 1.0] ][default value: -1.0]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_ECHO_SPREAD]</remarks>
         EchoSpread = 5,
     }
-    ///<summary>Used in <see cref="AL.EXT.GetEffectfDirect" />, <see cref="AL.EXT.GetEffectf" /></summary>
+    ///<summary>Used in <see cref="AL.EXT.GetEffectf" />, <see cref="AL.EXT.GetEffectfDirect" /></summary>
     public enum EffectGetPNameF : uint
     {
     }
-    ///<summary>Used in <see cref="AL.EXT.GetEffectfvDirect" />, <see cref="AL.EXT.GetEffectfv" /></summary>
+    ///<summary>Used in <see cref="AL.EXT.GetEffectfv" />, <see cref="AL.EXT.GetEffectfvDirect" /></summary>
     public enum EffectGetPNameFV : uint
     {
     }
     ///<summary>Used in <see cref="AL.EXT.GetEffecti" />, <see cref="AL.EXT.GetEffectiDirect" /></summary>
     public enum EffectGetPNameI : uint
     {
+        /// <summary>
+        /// <b>[property on: effect][default value: AL_EFFECT_NULL]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_EFFECT_TYPE]</remarks>
         EffectType = 32769,
     }
     ///<summary>Used in <see cref="AL.EXT.GetEffectiv" />, <see cref="AL.EXT.GetEffectivDirect" /></summary>
     public enum EffectGetPNameIV : uint
     {
+        /// <summary>
+        /// <b>[property on: effect][default value: AL_EFFECT_NULL]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_EFFECT_TYPE]</remarks>
         EffectType = 32769,
     }
     ///<summary>Used in <see cref="AL.EXT.Effectf" />, <see cref="AL.EXT.EffectfDirect" /></summary>
     public enum EffectPNameF : uint
     {
+        /// <summary>
+        /// <b>[property on: effect][range: [0.0001, 1.0] ][default value: 0.06]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_AUTOWAH_ATTACK_TIME]</remarks>
         AutowahAttackTime = 1,
+        /// <summary>
+        /// <b>[property on: effect][range: [0.0, 1.0] ][default value: 0.2]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_DISTORTION_EDGE]</remarks>
         DistortionEdge = 1,
+        /// <summary>
+        /// <b>[property on: effect][range: [0.0, 1.0] ][default value: 1.0]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_EAXREVERB_DENSITY]</remarks>
         EaxreverbDensity = 1,
+        /// <summary>
+        /// <b>[property on: effect][range: [0.0, 0.207] ][default value: 0.1]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_ECHO_DELAY]</remarks>
         EchoDelay = 1,
+        /// <summary>
+        /// <b>[property on: effect][range: [0.126, 7.943] ][default value: 1.0]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_EQUALIZER_LOW_GAIN]</remarks>
         EqualizerLowGain = 1,
+        /// <summary>
+        /// <b>[property on: effect][range: [0.0, 24000.0] ][default value: 0.0]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_FREQUENCY_SHIFTER_FREQUENCY]</remarks>
         FrequencyShifterFrequency = 1,
+        /// <summary>
+        /// <b>[property on: effect][range: [0.0, 1.0] ][default value: 1.0]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_REVERB_DENSITY]</remarks>
         ReverbDensity = 1,
+        /// <summary>
+        /// <b>[property on: effect][range: [0.0, 8000.0] ][default value: 440.0]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_RING_MODULATOR_FREQUENCY]</remarks>
         RingModulatorFrequency = 1,
+        /// <summary>
+        /// <b>[property on: effect][range: [0.0001, 1.0] ][default value: 0.06]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_AUTOWAH_RELEASE_TIME]</remarks>
         AutowahReleaseTime = 2,
+        /// <summary>
+        /// <b>[property on: effect][range: [-180, 180] ][default value: 90]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_CHORUS_PHASE]</remarks>
         ChorusPhase = 2,
+        /// <summary>
+        /// <b>[property on: effect][range: [0.01, 1.0] ][default value: 0.05]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_DISTORTION_GAIN]</remarks>
         DistortionGain = 2,
+        /// <summary>
+        /// <b>[property on: effect][range: [0.0, 1.0] ][default value: 1.0]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_EAXREVERB_DIFFUSION]</remarks>
         EaxreverbDiffusion = 2,
+        /// <summary>
+        /// <b>[property on: effect][range: [0.0, 0.404] ][default value: 0.1]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_ECHO_LRDELAY]</remarks>
         EchoLrdelay = 2,
+        /// <summary>
+        /// <b>[property on: effect][range: [50.0, 800.0] ][default value: 200.0]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_EQUALIZER_LOW_CUTOFF]</remarks>
         EqualizerLowCutoff = 2,
+        /// <summary>
+        /// <b>[property on: effect][range: [-180, 180] ][default value: 0]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_FLANGER_PHASE]</remarks>
         FlangerPhase = 2,
+        /// <summary>
+        /// <b>[property on: effect][range: [0.0, 1.0] ][default value: 1.0]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_REVERB_DIFFUSION]</remarks>
         ReverbDiffusion = 2,
+        /// <summary>
+        /// <b>[property on: effect][range: [0.0, 24000.0] ][default value: 800.0]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_RING_MODULATOR_HIGHPASS_CUTOFF]</remarks>
         RingModulatorHighpassCutoff = 2,
+        /// <summary>
+        /// <b>[property on: effect][range: [2.0, 1000.0] ][default value: 1000.0]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_AUTOWAH_RESONANCE]</remarks>
         AutowahResonance = 3,
+        /// <summary>
+        /// <b>[property on: effect][range: [0.0, 10.0] ][default value: 1.1]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_CHORUS_RATE]</remarks>
         ChorusRate = 3,
+        /// <summary>
+        /// <b>[property on: effect][range: [80.0, 24000] ][default value: 8000]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_DISTORTION_LOWPASS_CUTOFF]</remarks>
         DistortionLowpassCutoff = 3,
+        /// <summary>
+        /// <b>[property on: effect][range: [0.0, 1.0] ][default value: 0.32]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_EAXREVERB_GAIN]</remarks>
         EaxreverbGain = 3,
+        /// <summary>
+        /// <b>[property on: effect][range: [0.0, 0.99] ][default value: 0.5]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_ECHO_DAMPING]</remarks>
         EchoDamping = 3,
+        /// <summary>
+        /// <b>[property on: effect][range: [0.126, 7.943] ][default value: 1.0]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_EQUALIZER_MID1_GAIN]</remarks>
         EqualizerMid1Gain = 3,
+        /// <summary>
+        /// <b>[property on: effect][range: [0.0, 10.0] ][default value: 0.27]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_FLANGER_RATE]</remarks>
         FlangerRate = 3,
+        /// <summary>
+        /// <b>[property on: effect][range: [0.0, 1.0] ][default value: 0.32]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_REVERB_GAIN]</remarks>
         ReverbGain = 3,
+        /// <summary>
+        /// <b>[property on: effect][range: [0.00003, 31621.0] ][default value: 11.22]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_AUTOWAH_PEAK_GAIN]</remarks>
         AutowahPeakGain = 4,
+        /// <summary>
+        /// <b>[property on: effect][range: [0.0, 1.0] ][default value: 0.1]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_CHORUS_DEPTH]</remarks>
         ChorusDepth = 4,
+        /// <summary>
+        /// <b>[property on: effect][range: [80.0, 24000] ][default value: 3600]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_DISTORTION_EQCENTER]</remarks>
         DistortionEqcenter = 4,
+        /// <summary>
+        /// <b>[property on: effect][range: [0.0, 1.0] ][default value: 0.89]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_EAXREVERB_GAINHF]</remarks>
         EaxreverbGainhf = 4,
+        /// <summary>
+        /// <b>[property on: effect][range: [0.0, 1.0] ][default value: 0.5]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_ECHO_FEEDBACK]</remarks>
         EchoFeedback = 4,
+        /// <summary>
+        /// <b>[property on: effect][range: [200.0, 3000.0] ][default value: 500.0]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_EQUALIZER_MID1_CENTER]</remarks>
         EqualizerMid1Center = 4,
+        /// <summary>
+        /// <b>[property on: effect][range: [0.0, 1.0] ][default value: 1.0]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_FLANGER_DEPTH]</remarks>
         FlangerDepth = 4,
+        /// <summary>
+        /// <b>[property on: effect][range: [0.0, 1.0] ][default value: 0.89]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_REVERB_GAINHF]</remarks>
         ReverbGainhf = 4,
+        /// <summary>
+        /// <b>[property on: effect][range: [-1.0, 1.0] ][default value: 0.25]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_CHORUS_FEEDBACK]</remarks>
         ChorusFeedback = 5,
+        /// <summary>
+        /// <b>[property on: effect][range: [80.0, 24000] ][default value: 3600]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_DISTORTION_EQBANDWIDTH]</remarks>
         DistortionEqbandwidth = 5,
+        /// <summary>
+        /// <b>[property on: effect][range: [0.0, 1.0] ][default value: 0.0]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_EAXREVERB_GAINLF]</remarks>
         EaxreverbGainlf = 5,
+        /// <summary>
+        /// <b>[property on: effect][range: [-1.0, 1.0] ][default value: -1.0]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_ECHO_SPREAD]</remarks>
         EchoSpread = 5,
+        /// <summary>
+        /// <b>[property on: effect][range: [0.01, 1.0] ][default value: 1.0]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_EQUALIZER_MID1_WIDTH]</remarks>
         EqualizerMid1Width = 5,
+        /// <summary>
+        /// <b>[property on: effect][range: [-1.0, 1.0] ][default value: -0.5]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_FLANGER_FEEDBACK]</remarks>
         FlangerFeedback = 5,
+        /// <summary>
+        /// <b>[property on: effect][range: [0.1, 20] ][default value: 1.49]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_REVERB_DECAY_TIME]</remarks>
         ReverbDecayTime = 5,
+        /// <summary>
+        /// <b>[property on: effect][range: [0.0, 0.016] ][default value: 0.016]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_CHORUS_DELAY]</remarks>
         ChorusDelay = 6,
+        /// <summary>
+        /// <b>[property on: effect][range: [0.1, 20] ][default value: 1.49]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_EAXREVERB_DECAY_TIME]</remarks>
         EaxreverbDecayTime = 6,
+        /// <summary>
+        /// <b>[property on: effect][range: [0.126, 7.943] ][default value: 1.0]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_EQUALIZER_MID2_GAIN]</remarks>
         EqualizerMid2Gain = 6,
+        /// <summary>
+        /// <b>[property on: effect][range: [0.0, 0.004] ][default value: 0.002]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_FLANGER_DELAY]</remarks>
         FlangerDelay = 6,
+        /// <summary>
+        /// <b>[property on: effect][range: [0.1, 2.0] ][default value: 0.83]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_REVERB_DECAY_HFRATIO]</remarks>
         ReverbDecayHfratio = 6,
+        /// <summary>
+        /// <b>[property on: effect][range: [0.0, 10.0] ][default value: 1.41]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_VOCAL_MORPHER_RATE]</remarks>
         VocalMorpherRate = 6,
+        /// <summary>
+        /// <b>[property on: effect][range: [0.1, 2.0] ][default value: 0.83]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_EAXREVERB_DECAY_HFRATIO]</remarks>
         EaxreverbDecayHfratio = 7,
+        /// <summary>
+        /// <b>[property on: effect][range: [1000.0, 8000.0] ][default value: 3000.0]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_EQUALIZER_MID2_CENTER]</remarks>
         EqualizerMid2Center = 7,
+        /// <summary>
+        /// <b>[property on: effect][range: [0.0, 3.16] ][default value: 0.05]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_REVERB_REFLECTIONS_GAIN]</remarks>
         ReverbReflectionsGain = 7,
+        /// <summary>
+        /// <b>[property on: effect][range: [0.1, 2.0] ][default value: 1.0]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_EAXREVERB_DECAY_LFRATIO]</remarks>
         EaxreverbDecayLfratio = 8,
+        /// <summary>
+        /// <b>[property on: effect][range: [0.01, 1.0] ][default value: 1.0]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_EQUALIZER_MID2_WIDTH]</remarks>
         EqualizerMid2Width = 8,
+        /// <summary>
+        /// <b>[property on: effect][range: [0.0, 0.3] ][default value: 0.007]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_REVERB_REFLECTIONS_DELAY]</remarks>
         ReverbReflectionsDelay = 8,
+        /// <summary>
+        /// <b>[property on: effect][range: [0.0, 3.16] ][default value: 0.05]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_EAXREVERB_REFLECTIONS_GAIN]</remarks>
         EaxreverbReflectionsGain = 9,
+        /// <summary>
+        /// <b>[property on: effect][range: [0.126, 7.943] ][default value: 1.0]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_EQUALIZER_HIGH_GAIN]</remarks>
         EqualizerHighGain = 9,
+        /// <summary>
+        /// <b>[property on: effect][range: [0.0, 10.0] ][default value: 1.26]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_REVERB_LATE_REVERB_GAIN]</remarks>
         ReverbLateReverbGain = 9,
+        /// <summary>
+        /// <b>[property on: effect][range: [0.0, 0.3] ][default value: 0.007]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_EAXREVERB_REFLECTIONS_DELAY]</remarks>
         EaxreverbReflectionsDelay = 10,
+        /// <summary>
+        /// <b>[property on: effect][range: [4000.0, 16000.0] ][default value: 6000.0]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_EQUALIZER_HIGH_CUTOFF]</remarks>
         EqualizerHighCutoff = 10,
+        /// <summary>
+        /// <b>[property on: effect][range: [0.0, 0.1] ][default value: 0.011]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_REVERB_LATE_REVERB_DELAY]</remarks>
         ReverbLateReverbDelay = 10,
+        /// <summary>
+        /// <b>[property on: effect][range: [0.892, 1.0] ][default value: 0.994]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_REVERB_AIR_ABSORPTION_GAINHF]</remarks>
         ReverbAirAbsorptionGainhf = 11,
+        /// <summary>
+        /// <b>[property on: effect][range: [0.0, 10.0] ][default value: 1.26]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_EAXREVERB_LATE_REVERB_GAIN]</remarks>
         EaxreverbLateReverbGain = 12,
+        /// <summary>
+        /// <b>[property on: effect][range: [0.0, 10.0] ][default value: 0.0]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_REVERB_ROOM_ROLLOFF_FACTOR]</remarks>
         ReverbRoomRolloffFactor = 12,
+        /// <summary>
+        /// <b>[property on: effect][range: [0.0, 0.1] ][default value: 0.011]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_EAXREVERB_LATE_REVERB_DELAY]</remarks>
         EaxreverbLateReverbDelay = 13,
+        /// <summary>
+        /// <b>[property on: effect][range: [0.075, 0.25] ][default value: 0.25]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_EAXREVERB_ECHO_TIME]</remarks>
         EaxreverbEchoTime = 15,
+        /// <summary>
+        /// <b>[property on: effect][range: [0.0, 1.0] ][default value: 0.0]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_EAXREVERB_ECHO_DEPTH]</remarks>
         EaxreverbEchoDepth = 16,
+        /// <summary>
+        /// <b>[property on: effect][range: [0.04, 4.0] ][default value: 0.25]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_EAXREVERB_MODULATION_TIME]</remarks>
         EaxreverbModulationTime = 17,
+        /// <summary>
+        /// <b>[property on: effect][range: [0.0, 1.0] ][default value: 0.0]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_EAXREVERB_MODULATION_DEPTH]</remarks>
         EaxreverbModulationDepth = 18,
+        /// <summary>
+        /// <b>[property on: effect][range: [0.892, 1.0] ][default value: 0.994]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_EAXREVERB_AIR_ABSORPTION_GAINHF]</remarks>
         EaxreverbAirAbsorptionGainhf = 19,
+        /// <summary>
+        /// <b>[property on: effect][range: [1000.0, 20000.0] ][default value: 5000.0]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_EAXREVERB_HFREFERENCE]</remarks>
         EaxreverbHfreference = 20,
+        /// <summary>
+        /// <b>[property on: effect][range: [20.0, 1000.0] ][default value: 250.0]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_EAXREVERB_LFREFERENCE]</remarks>
         EaxreverbLfreference = 21,
+        /// <summary>
+        /// <b>[property on: effect][range: [0.0, 10.0] ][default value: 0.0]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_EAXREVERB_ROOM_ROLLOFF_FACTOR]</remarks>
         EaxreverbRoomRolloffFactor = 22,
     }
     ///<summary>Used in <see cref="AL.EXT.Effectfv" />, <see cref="AL.EXT.EffectfvDirect" /></summary>
     public enum EffectPNameFV : uint
     {
+        /// <summary>
+        /// <b>[property on: effect][default value: 0.0,0.0,0.0]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_EAXREVERB_REFLECTIONS_PAN]</remarks>
         EaxreverbReflectionsPan = 11,
+        /// <summary>
+        /// <b>[property on: effect][default value: 0.0,0.0,0.0]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_EAXREVERB_LATE_REVERB_PAN]</remarks>
         EaxreverbLateReverbPan = 14,
     }
     ///<summary>Used in <see cref="AL.EXT.Effecti" />, <see cref="AL.EXT.EffectiDirect" /></summary>
     public enum EffectPNameI : uint
     {
+        /// <summary>
+        /// <b>[property on: effect][default value: AL_CHORUS_WAVEFORM_TRIANGLE]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_CHORUS_WAVEFORM]</remarks>
         ChorusWaveform = 1,
+        /// <summary>
+        /// <b>[property on: effect][default value: AL_TRUE]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_COMPRESSOR_ONOFF]</remarks>
         CompressorOnoff = 1,
+        /// <summary>
+        /// <b>[property on: effect][default value: AL_FLANGER_WAVEFORM_TRIANGLE]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_FLANGER_WAVEFORM]</remarks>
         FlangerWaveform = 1,
+        /// <summary>
+        /// <b>[property on: effect][range: [-12, 12] ][default value: 12]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_PITCH_SHIFTER_COARSE_TUNE]</remarks>
         PitchShifterCoarseTune = 1,
+        /// <summary>
+        /// <b>[property on: effect][default value: AL_VOCAL_MOPRHER_PHONEME_A]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_VOCAL_MORPHER_PHONEMEA]</remarks>
         VocalMorpherPhonemea = 1,
+        /// <summary>
+        /// <b>[property on: effect][default value: AL_FREQUENCY_SHIFTER_DIRECTION_DOWN]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_FREQUENCY_SHIFTER_LEFT_DIRECTION]</remarks>
         FrequencyShifterLeftDirection = 2,
+        /// <summary>
+        /// <b>[property on: effect][range: [-150, 50] ][default value: 0]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_PITCH_SHIFTER_FINE_TUNE]</remarks>
         PitchShifterFineTune = 2,
+        /// <summary>
+        /// <b>[property on: effect][default value: AL_VOCAL_MOPRHER_PHONEME_A]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_VOCAL_MORPHER_PHONEMEA_COARSE_TUNING]</remarks>
         VocalMorpherPhonemeaCoarseTuning = 2,
+        /// <summary>
+        /// <b>[property on: effect][default value: AL_FREQUENCY_SHIFTER_DIRECTION_DOWN]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_FREQUENCY_SHIFTER_RIGHT_DIRECTION]</remarks>
         FrequencyShifterRightDirection = 3,
+        /// <summary>
+        /// <b>[property on: effect][default value: AL_RING_MODULATOR_SINUSOID]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_RING_MODULATOR_WAVEFORM]</remarks>
         RingModulatorWaveform = 3,
+        /// <summary>
+        /// <b>[property on: effect][default value: AL_VOCAL_MOPRHER_PHONEME_ER]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_VOCAL_MORPHER_PHONEMEB]</remarks>
         VocalMorpherPhonemeb = 3,
+        /// <summary>
+        /// <b>[property on: effect][default value: AL_VOCAL_MOPRHER_PHONEME_A]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_VOCAL_MORPHER_PHONEMEB_COARSE_TUNING]</remarks>
         VocalMorpherPhonemebCoarseTuning = 4,
+        /// <summary>
+        /// <b>[property on: effect][default value: AL_VOCAL_MORPHER_WAVEFORM_SINUSOID]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_VOCAL_MORPHER_WAVEFORM]</remarks>
         VocalMorpherWaveform = 5,
+        /// <summary>
+        /// <b>[property on: effect][default value: AL_TRUE]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_REVERB_DECAY_HFLIMIT]</remarks>
         ReverbDecayHflimit = 13,
+        /// <summary>
+        /// <b>[property on: effect][default value: AL_TRUE]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_EAXREVERB_DECAY_HFLIMIT]</remarks>
         EaxreverbDecayHflimit = 23,
+        /// <summary>
+        /// <b>[property on: effect][default value: AL_EFFECT_NULL]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_EFFECT_TYPE]</remarks>
         EffectType = 32769,
     }
     ///<summary>Used in <see cref="AL.EXT.Effectiv" />, <see cref="AL.EXT.EffectivDirect" /></summary>
     public enum EffectPNameIV : uint
     {
+        /// <summary>
+        /// <b>[property on: effect][default value: AL_EFFECT_NULL]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_EFFECT_TYPE]</remarks>
         EffectType = 32769,
     }
@@ -1572,44 +2835,92 @@ namespace OpenTK.Audio.OpenAL
     }
     public enum EqualizerParameterName : uint
     {
+        /// <summary>
+        /// <b>[property on: effect][range: [0.126, 7.943] ][default value: 1.0]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_EQUALIZER_LOW_GAIN]</remarks>
         EqualizerLowGain = 1,
+        /// <summary>
+        /// <b>[property on: effect][range: [50.0, 800.0] ][default value: 200.0]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_EQUALIZER_LOW_CUTOFF]</remarks>
         EqualizerLowCutoff = 2,
+        /// <summary>
+        /// <b>[property on: effect][range: [0.126, 7.943] ][default value: 1.0]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_EQUALIZER_MID1_GAIN]</remarks>
         EqualizerMid1Gain = 3,
+        /// <summary>
+        /// <b>[property on: effect][range: [200.0, 3000.0] ][default value: 500.0]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_EQUALIZER_MID1_CENTER]</remarks>
         EqualizerMid1Center = 4,
+        /// <summary>
+        /// <b>[property on: effect][range: [0.01, 1.0] ][default value: 1.0]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_EQUALIZER_MID1_WIDTH]</remarks>
         EqualizerMid1Width = 5,
+        /// <summary>
+        /// <b>[property on: effect][range: [0.126, 7.943] ][default value: 1.0]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_EQUALIZER_MID2_GAIN]</remarks>
         EqualizerMid2Gain = 6,
+        /// <summary>
+        /// <b>[property on: effect][range: [1000.0, 8000.0] ][default value: 3000.0]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_EQUALIZER_MID2_CENTER]</remarks>
         EqualizerMid2Center = 7,
+        /// <summary>
+        /// <b>[property on: effect][range: [0.01, 1.0] ][default value: 1.0]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_EQUALIZER_MID2_WIDTH]</remarks>
         EqualizerMid2Width = 8,
+        /// <summary>
+        /// <b>[property on: effect][range: [0.126, 7.943] ][default value: 1.0]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_EQUALIZER_HIGH_GAIN]</remarks>
         EqualizerHighGain = 9,
+        /// <summary>
+        /// <b>[property on: effect][range: [4000.0, 16000.0] ][default value: 6000.0]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_EQUALIZER_HIGH_CUTOFF]</remarks>
         EqualizerHighCutoff = 10,
     }
     ///<summary>Used in <see cref="AL.GetError" />, <see cref="AL.EXT.GetErrorDirect" />, <see cref="AL.EXT.SourceAddNotification" />, ...</summary>
     public enum ErrorCode : uint
     {
+        /// <summary>
+        /// No error.
+        /// </summary>
         /// <remarks>[originally: AL_NO_ERROR]</remarks>
         NoError = 0,
         /// <remarks>[originally: AL_STACK_OVERFLOW_EXT]</remarks>
         StackOverflowExt = 6605,
         /// <remarks>[originally: AL_STACK_UNDERFLOW_EXT]</remarks>
         StackUnderflowExt = 6606,
+        /// <summary>
+        /// Invalid name (ID) passed to an AL call.
+        /// </summary>
         /// <remarks>[originally: AL_INVALID_NAME]</remarks>
         InvalidName = 40961,
+        /// <summary>
+        /// Invalid enumeration passed to AL call.
+        /// </summary>
         /// <remarks>[originally: AL_INVALID_ENUM]</remarks>
         InvalidEnum = 40962,
+        /// <summary>
+        /// Invalid value passed to AL call.
+        /// </summary>
         /// <remarks>[originally: AL_INVALID_VALUE]</remarks>
         InvalidValue = 40963,
+        /// <summary>
+        /// Illegal AL call.
+        /// </summary>
         /// <remarks>[originally: AL_INVALID_OPERATION]</remarks>
         InvalidOperation = 40964,
+        /// <summary>
+        /// Not enough memory to execute the AL call.
+        /// </summary>
         /// <remarks>[originally: AL_OUT_OF_MEMORY]</remarks>
         OutOfMemory = 40965,
     }
@@ -1623,43 +2934,55 @@ namespace OpenTK.Audio.OpenAL
         /// <remarks>[originally: AL_EVENT_TYPE_DISCONNECTED_SOFT]</remarks>
         EventTypeDisconnectedSoft = 6566,
     }
-    ///<summary>Used in <see cref="AL.EXT.GetFilterfDirect" />, <see cref="AL.EXT.GetFilterf" /></summary>
+    ///<summary>Used in <see cref="AL.EXT.GetFilterf" />, <see cref="AL.EXT.GetFilterfDirect" /></summary>
     public enum FilterGetPNameF : uint
     {
     }
-    ///<summary>Used in <see cref="AL.EXT.GetFilterfvDirect" />, <see cref="AL.EXT.GetFilterfv" /></summary>
+    ///<summary>Used in <see cref="AL.EXT.GetFilterfv" />, <see cref="AL.EXT.GetFilterfvDirect" /></summary>
     public enum FilterGetPNameFV : uint
     {
     }
     ///<summary>Used in <see cref="AL.EXT.GetFilteri" />, <see cref="AL.EXT.GetFilteriDirect" /></summary>
     public enum FilterGetPNameI : uint
     {
+        /// <summary>
+        /// <b>[property on: filter][default value: AL_FILTER_NULL]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_FILTER_TYPE]</remarks>
         FilterType = 32769,
     }
     ///<summary>Used in <see cref="AL.EXT.GetFilteriv" />, <see cref="AL.EXT.GetFilterivDirect" /></summary>
     public enum FilterGetPNameIV : uint
     {
+        /// <summary>
+        /// <b>[property on: filter][default value: AL_FILTER_NULL]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_FILTER_TYPE]</remarks>
         FilterType = 32769,
     }
-    ///<summary>Used in <see cref="AL.EXT.FilterfDirect" />, <see cref="AL.EXT.Filterf" /></summary>
+    ///<summary>Used in <see cref="AL.EXT.Filterf" />, <see cref="AL.EXT.FilterfDirect" /></summary>
     public enum FilterPNameF : uint
     {
     }
-    ///<summary>Used in <see cref="AL.EXT.FilterfvDirect" />, <see cref="AL.EXT.Filterfv" /></summary>
+    ///<summary>Used in <see cref="AL.EXT.Filterfv" />, <see cref="AL.EXT.FilterfvDirect" /></summary>
     public enum FilterPNameFV : uint
     {
     }
     ///<summary>Used in <see cref="AL.EXT.Filteri" />, <see cref="AL.EXT.FilteriDirect" /></summary>
     public enum FilterPNameI : uint
     {
+        /// <summary>
+        /// <b>[property on: filter][default value: AL_FILTER_NULL]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_FILTER_TYPE]</remarks>
         FilterType = 32769,
     }
     ///<summary>Used in <see cref="AL.EXT.Filteriv" />, <see cref="AL.EXT.FilterivDirect" /></summary>
     public enum FilterPNameIV : uint
     {
+        /// <summary>
+        /// <b>[property on: filter][default value: AL_FILTER_NULL]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_FILTER_TYPE]</remarks>
         FilterType = 32769,
     }
@@ -1676,16 +2999,34 @@ namespace OpenTK.Audio.OpenAL
     }
     public enum FlangerParameterName : uint
     {
+        /// <summary>
+        /// <b>[property on: effect][default value: AL_FLANGER_WAVEFORM_TRIANGLE]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_FLANGER_WAVEFORM]</remarks>
         FlangerWaveform = 1,
+        /// <summary>
+        /// <b>[property on: effect][range: [-180, 180] ][default value: 0]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_FLANGER_PHASE]</remarks>
         FlangerPhase = 2,
+        /// <summary>
+        /// <b>[property on: effect][range: [0.0, 10.0] ][default value: 0.27]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_FLANGER_RATE]</remarks>
         FlangerRate = 3,
+        /// <summary>
+        /// <b>[property on: effect][range: [0.0, 1.0] ][default value: 1.0]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_FLANGER_DEPTH]</remarks>
         FlangerDepth = 4,
+        /// <summary>
+        /// <b>[property on: effect][range: [-1.0, 1.0] ][default value: -0.5]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_FLANGER_FEEDBACK]</remarks>
         FlangerFeedback = 5,
+        /// <summary>
+        /// <b>[property on: effect][range: [0.0, 0.004] ][default value: 0.002]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_FLANGER_DELAY]</remarks>
         FlangerDelay = 6,
     }
@@ -1709,12 +3050,24 @@ namespace OpenTK.Audio.OpenAL
     ///<summary>Used in <see cref="AL.BufferData" />, <see cref="AL.EXT.BufferCallbackDirectSOFT" />, <see cref="AL.SOFT.BufferCallbackSOFT" />, ...</summary>
     public enum Format : uint
     {
+        /// <summary>
+        /// Unsigned 8-bit mono buffer format.
+        /// </summary>
         /// <remarks>[originally: AL_FORMAT_MONO8]</remarks>
         Mono8 = 4352,
+        /// <summary>
+        /// Signed 16-bit mono buffer format.
+        /// </summary>
         /// <remarks>[originally: AL_FORMAT_MONO16]</remarks>
         Mono16 = 4353,
+        /// <summary>
+        /// Unsigned 8-bit stereo buffer format.
+        /// </summary>
         /// <remarks>[originally: AL_FORMAT_STEREO8]</remarks>
         Stereo8 = 4354,
+        /// <summary>
+        /// Signed 16-bit stereo buffer format.
+        /// </summary>
         /// <remarks>[originally: AL_FORMAT_STEREO16]</remarks>
         Stereo16 = 4355,
         /// <remarks>[originally: AL_FORMAT_QUAD8]</remarks>
@@ -1852,10 +3205,19 @@ namespace OpenTK.Audio.OpenAL
     }
     public enum FrequencyShifterParameterName : uint
     {
+        /// <summary>
+        /// <b>[property on: effect][range: [0.0, 24000.0] ][default value: 0.0]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_FREQUENCY_SHIFTER_FREQUENCY]</remarks>
         FrequencyShifterFrequency = 1,
+        /// <summary>
+        /// <b>[property on: effect][default value: AL_FREQUENCY_SHIFTER_DIRECTION_DOWN]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_FREQUENCY_SHIFTER_LEFT_DIRECTION]</remarks>
         FrequencyShifterLeftDirection = 2,
+        /// <summary>
+        /// <b>[property on: effect][default value: AL_FREQUENCY_SHIFTER_DIRECTION_DOWN]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_FREQUENCY_SHIFTER_RIGHT_DIRECTION]</remarks>
         FrequencyShifterRightDirection = 3,
     }
@@ -1989,8 +3351,14 @@ namespace OpenTK.Audio.OpenAL
     }
     public enum HighpassParameterName : uint
     {
+        /// <summary>
+        /// <b>[property on: filter][range: [0.0, 1.0] ][default value: 1.0]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_HIGHPASS_GAIN]</remarks>
         HighpassGain = 1,
+        /// <summary>
+        /// <b>[property on: filter][range: [0.0, 1.0] ][default value: 1.0]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_HIGHPASS_GAINLF]</remarks>
         HighpassGainlf = 2,
     }
@@ -2049,38 +3417,152 @@ namespace OpenTK.Audio.OpenAL
     ///<summary>Used in <see cref="AL.GetListener3f" />, <see cref="AL.EXT.GetListener3fDirect" /></summary>
     public enum ListenerGetPName3F : uint
     {
+        /// <summary>
+        /// <b>[property on: source, listener][default value: 0,0,0]</b><br/>
+        /// Source or listener position.
+        /// 
+        ///                 The source or listener location in three dimensional space.
+        /// 
+        ///                 OpenAL uses a right handed coordinate system, like OpenGL, where with a
+        ///                 default view, X points right (thumb), Y points up (index finger), and Z
+        ///                 points towards the viewer/camera (middle finger).
+        /// 
+        ///                 To change from or to a left handed coordinate system, negate the Z
+        ///                 component.
+        /// 
+        /// </summary>
         /// <remarks>[originally: AL_POSITION]</remarks>
         Position = 4100,
+        /// <summary>
+        /// <b>[property on: source, listener][default value: 0,0,0]</b><br/>
+        /// Source or listener velocity.
+        /// 
+        ///                 Specifies the current velocity, relative to the position.
+        /// 
+        ///                 To change from or to a left handed coordinate system, negate the Z
+        ///                 component.
+        /// 
+        /// </summary>
         /// <remarks>[originally: AL_VELOCITY]</remarks>
         Velocity = 4102,
     }
     ///<summary>Used in <see cref="AL.GetListener3i" />, <see cref="AL.EXT.GetListener3iDirect" /></summary>
     public enum ListenerGetPName3I : uint
     {
+        /// <summary>
+        /// <b>[property on: source, listener][default value: 0,0,0]</b><br/>
+        /// Source or listener position.
+        /// 
+        ///                 The source or listener location in three dimensional space.
+        /// 
+        ///                 OpenAL uses a right handed coordinate system, like OpenGL, where with a
+        ///                 default view, X points right (thumb), Y points up (index finger), and Z
+        ///                 points towards the viewer/camera (middle finger).
+        /// 
+        ///                 To change from or to a left handed coordinate system, negate the Z
+        ///                 component.
+        /// 
+        /// </summary>
         /// <remarks>[originally: AL_POSITION]</remarks>
         Position = 4100,
+        /// <summary>
+        /// <b>[property on: source, listener][default value: 0,0,0]</b><br/>
+        /// Source or listener velocity.
+        /// 
+        ///                 Specifies the current velocity, relative to the position.
+        /// 
+        ///                 To change from or to a left handed coordinate system, negate the Z
+        ///                 component.
+        /// 
+        /// </summary>
         /// <remarks>[originally: AL_VELOCITY]</remarks>
         Velocity = 4102,
     }
     ///<summary>Used in <see cref="AL.GetListenerf" />, <see cref="AL.EXT.GetListenerfDirect" /></summary>
     public enum ListenerGetPNameF : uint
     {
+        /// <summary>
+        /// <b>[property on: source, listener][range: [0.0, ) ]</b><br/>
+        /// Source or listener gain.
+        /// 
+        ///                 For sources, an initial linear gain value (before attenuation is applied).
+        ///                 For the listener, an output linear gain adjustment.
+        /// 
+        ///                 A value of 1.0 means unattenuated. Each division by 2 equals an attenuation
+        ///                 of about -6dB. Each multiplication by 2 equals an amplification of about
+        ///                 +6dB.
+        /// 
+        /// </summary>
         /// <remarks>[originally: AL_GAIN]</remarks>
         Gain = 4106,
+        /// <summary>
+        /// <b>[property on: listener][range: [0, ) ][default value: 1.0]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_METERS_PER_UNIT]</remarks>
         MetersPerUnit = 131076,
     }
     ///<summary>Used in <see cref="AL.GetListenerfv" />, <see cref="AL.EXT.GetListenerfvDirect" /></summary>
     public enum ListenerGetPNameFV : uint
     {
+        /// <summary>
+        /// <b>[property on: source, listener][default value: 0,0,0]</b><br/>
+        /// Source or listener position.
+        /// 
+        ///                 The source or listener location in three dimensional space.
+        /// 
+        ///                 OpenAL uses a right handed coordinate system, like OpenGL, where with a
+        ///                 default view, X points right (thumb), Y points up (index finger), and Z
+        ///                 points towards the viewer/camera (middle finger).
+        /// 
+        ///                 To change from or to a left handed coordinate system, negate the Z
+        ///                 component.
+        /// 
+        /// </summary>
         /// <remarks>[originally: AL_POSITION]</remarks>
         Position = 4100,
+        /// <summary>
+        /// <b>[property on: source, listener][default value: 0,0,0]</b><br/>
+        /// Source or listener velocity.
+        /// 
+        ///                 Specifies the current velocity, relative to the position.
+        /// 
+        ///                 To change from or to a left handed coordinate system, negate the Z
+        ///                 component.
+        /// 
+        /// </summary>
         /// <remarks>[originally: AL_VELOCITY]</remarks>
         Velocity = 4102,
+        /// <summary>
+        /// <b>[property on: source, listener][range: [0.0, ) ]</b><br/>
+        /// Source or listener gain.
+        /// 
+        ///                 For sources, an initial linear gain value (before attenuation is applied).
+        ///                 For the listener, an output linear gain adjustment.
+        /// 
+        ///                 A value of 1.0 means unattenuated. Each division by 2 equals an attenuation
+        ///                 of about -6dB. Each multiplication by 2 equals an amplification of about
+        ///                 +6dB.
+        /// 
+        /// </summary>
         /// <remarks>[originally: AL_GAIN]</remarks>
         Gain = 4106,
+        /// <summary>
+        /// <b>[property on: listener][default value: 0.0,0.0,-1.0,0.0,1.0,0.0]</b><br/>
+        /// Listener orientation.
+        /// 
+        ///                 Effectively two three dimensional vectors. The first vector is the front (or
+        ///                 "at") and the second is the top (or "up"). Both vectors are relative to the
+        ///                 listener position.
+        /// 
+        ///                 To change from or to a left handed coordinate system, negate the Z
+        ///                 component of both vectors.
+        /// 
+        /// </summary>
         /// <remarks>[originally: AL_ORIENTATION]</remarks>
         Orientation = 4111,
+        /// <summary>
+        /// <b>[property on: listener][range: [0, ) ][default value: 1.0]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_METERS_PER_UNIT]</remarks>
         MetersPerUnit = 131076,
     }
@@ -2091,48 +3573,198 @@ namespace OpenTK.Audio.OpenAL
     ///<summary>Used in <see cref="AL.GetListeneriv" />, <see cref="AL.EXT.GetListenerivDirect" /></summary>
     public enum ListenerGetPNameIV : uint
     {
+        /// <summary>
+        /// <b>[property on: source, listener][default value: 0,0,0]</b><br/>
+        /// Source or listener position.
+        /// 
+        ///                 The source or listener location in three dimensional space.
+        /// 
+        ///                 OpenAL uses a right handed coordinate system, like OpenGL, where with a
+        ///                 default view, X points right (thumb), Y points up (index finger), and Z
+        ///                 points towards the viewer/camera (middle finger).
+        /// 
+        ///                 To change from or to a left handed coordinate system, negate the Z
+        ///                 component.
+        /// 
+        /// </summary>
         /// <remarks>[originally: AL_POSITION]</remarks>
         Position = 4100,
+        /// <summary>
+        /// <b>[property on: source, listener][default value: 0,0,0]</b><br/>
+        /// Source or listener velocity.
+        /// 
+        ///                 Specifies the current velocity, relative to the position.
+        /// 
+        ///                 To change from or to a left handed coordinate system, negate the Z
+        ///                 component.
+        /// 
+        /// </summary>
         /// <remarks>[originally: AL_VELOCITY]</remarks>
         Velocity = 4102,
+        /// <summary>
+        /// <b>[property on: listener][default value: 0.0,0.0,-1.0,0.0,1.0,0.0]</b><br/>
+        /// Listener orientation.
+        /// 
+        ///                 Effectively two three dimensional vectors. The first vector is the front (or
+        ///                 "at") and the second is the top (or "up"). Both vectors are relative to the
+        ///                 listener position.
+        /// 
+        ///                 To change from or to a left handed coordinate system, negate the Z
+        ///                 component of both vectors.
+        /// 
+        /// </summary>
         /// <remarks>[originally: AL_ORIENTATION]</remarks>
         Orientation = 4111,
     }
     ///<summary>Used in <see cref="AL.Listener3f" />, <see cref="AL.EXT.Listener3fDirect" /></summary>
     public enum ListenerPName3F : uint
     {
+        /// <summary>
+        /// <b>[property on: source, listener][default value: 0,0,0]</b><br/>
+        /// Source or listener position.
+        /// 
+        ///                 The source or listener location in three dimensional space.
+        /// 
+        ///                 OpenAL uses a right handed coordinate system, like OpenGL, where with a
+        ///                 default view, X points right (thumb), Y points up (index finger), and Z
+        ///                 points towards the viewer/camera (middle finger).
+        /// 
+        ///                 To change from or to a left handed coordinate system, negate the Z
+        ///                 component.
+        /// 
+        /// </summary>
         /// <remarks>[originally: AL_POSITION]</remarks>
         Position = 4100,
+        /// <summary>
+        /// <b>[property on: source, listener][default value: 0,0,0]</b><br/>
+        /// Source or listener velocity.
+        /// 
+        ///                 Specifies the current velocity, relative to the position.
+        /// 
+        ///                 To change from or to a left handed coordinate system, negate the Z
+        ///                 component.
+        /// 
+        /// </summary>
         /// <remarks>[originally: AL_VELOCITY]</remarks>
         Velocity = 4102,
     }
     ///<summary>Used in <see cref="AL.Listener3i" />, <see cref="AL.EXT.Listener3iDirect" /></summary>
     public enum ListenerPName3I : uint
     {
+        /// <summary>
+        /// <b>[property on: source, listener][default value: 0,0,0]</b><br/>
+        /// Source or listener position.
+        /// 
+        ///                 The source or listener location in three dimensional space.
+        /// 
+        ///                 OpenAL uses a right handed coordinate system, like OpenGL, where with a
+        ///                 default view, X points right (thumb), Y points up (index finger), and Z
+        ///                 points towards the viewer/camera (middle finger).
+        /// 
+        ///                 To change from or to a left handed coordinate system, negate the Z
+        ///                 component.
+        /// 
+        /// </summary>
         /// <remarks>[originally: AL_POSITION]</remarks>
         Position = 4100,
+        /// <summary>
+        /// <b>[property on: source, listener][default value: 0,0,0]</b><br/>
+        /// Source or listener velocity.
+        /// 
+        ///                 Specifies the current velocity, relative to the position.
+        /// 
+        ///                 To change from or to a left handed coordinate system, negate the Z
+        ///                 component.
+        /// 
+        /// </summary>
         /// <remarks>[originally: AL_VELOCITY]</remarks>
         Velocity = 4102,
     }
     ///<summary>Used in <see cref="AL.Listenerf" />, <see cref="AL.EXT.ListenerfDirect" /></summary>
     public enum ListenerPNameF : uint
     {
+        /// <summary>
+        /// <b>[property on: source, listener][range: [0.0, ) ]</b><br/>
+        /// Source or listener gain.
+        /// 
+        ///                 For sources, an initial linear gain value (before attenuation is applied).
+        ///                 For the listener, an output linear gain adjustment.
+        /// 
+        ///                 A value of 1.0 means unattenuated. Each division by 2 equals an attenuation
+        ///                 of about -6dB. Each multiplication by 2 equals an amplification of about
+        ///                 +6dB.
+        /// 
+        /// </summary>
         /// <remarks>[originally: AL_GAIN]</remarks>
         Gain = 4106,
+        /// <summary>
+        /// <b>[property on: listener][range: [0, ) ][default value: 1.0]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_METERS_PER_UNIT]</remarks>
         MetersPerUnit = 131076,
     }
     ///<summary>Used in <see cref="AL.Listenerfv" />, <see cref="AL.EXT.ListenerfvDirect" /></summary>
     public enum ListenerPNameFV : uint
     {
+        /// <summary>
+        /// <b>[property on: source, listener][default value: 0,0,0]</b><br/>
+        /// Source or listener position.
+        /// 
+        ///                 The source or listener location in three dimensional space.
+        /// 
+        ///                 OpenAL uses a right handed coordinate system, like OpenGL, where with a
+        ///                 default view, X points right (thumb), Y points up (index finger), and Z
+        ///                 points towards the viewer/camera (middle finger).
+        /// 
+        ///                 To change from or to a left handed coordinate system, negate the Z
+        ///                 component.
+        /// 
+        /// </summary>
         /// <remarks>[originally: AL_POSITION]</remarks>
         Position = 4100,
+        /// <summary>
+        /// <b>[property on: source, listener][default value: 0,0,0]</b><br/>
+        /// Source or listener velocity.
+        /// 
+        ///                 Specifies the current velocity, relative to the position.
+        /// 
+        ///                 To change from or to a left handed coordinate system, negate the Z
+        ///                 component.
+        /// 
+        /// </summary>
         /// <remarks>[originally: AL_VELOCITY]</remarks>
         Velocity = 4102,
+        /// <summary>
+        /// <b>[property on: source, listener][range: [0.0, ) ]</b><br/>
+        /// Source or listener gain.
+        /// 
+        ///                 For sources, an initial linear gain value (before attenuation is applied).
+        ///                 For the listener, an output linear gain adjustment.
+        /// 
+        ///                 A value of 1.0 means unattenuated. Each division by 2 equals an attenuation
+        ///                 of about -6dB. Each multiplication by 2 equals an amplification of about
+        ///                 +6dB.
+        /// 
+        /// </summary>
         /// <remarks>[originally: AL_GAIN]</remarks>
         Gain = 4106,
+        /// <summary>
+        /// <b>[property on: listener][default value: 0.0,0.0,-1.0,0.0,1.0,0.0]</b><br/>
+        /// Listener orientation.
+        /// 
+        ///                 Effectively two three dimensional vectors. The first vector is the front (or
+        ///                 "at") and the second is the top (or "up"). Both vectors are relative to the
+        ///                 listener position.
+        /// 
+        ///                 To change from or to a left handed coordinate system, negate the Z
+        ///                 component of both vectors.
+        /// 
+        /// </summary>
         /// <remarks>[originally: AL_ORIENTATION]</remarks>
         Orientation = 4111,
+        /// <summary>
+        /// <b>[property on: listener][range: [0, ) ][default value: 1.0]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_METERS_PER_UNIT]</remarks>
         MetersPerUnit = 131076,
     }
@@ -2143,17 +3775,59 @@ namespace OpenTK.Audio.OpenAL
     ///<summary>Used in <see cref="AL.Listeneriv" />, <see cref="AL.EXT.ListenerivDirect" /></summary>
     public enum ListenerPNameIV : uint
     {
+        /// <summary>
+        /// <b>[property on: source, listener][default value: 0,0,0]</b><br/>
+        /// Source or listener position.
+        /// 
+        ///                 The source or listener location in three dimensional space.
+        /// 
+        ///                 OpenAL uses a right handed coordinate system, like OpenGL, where with a
+        ///                 default view, X points right (thumb), Y points up (index finger), and Z
+        ///                 points towards the viewer/camera (middle finger).
+        /// 
+        ///                 To change from or to a left handed coordinate system, negate the Z
+        ///                 component.
+        /// 
+        /// </summary>
         /// <remarks>[originally: AL_POSITION]</remarks>
         Position = 4100,
+        /// <summary>
+        /// <b>[property on: source, listener][default value: 0,0,0]</b><br/>
+        /// Source or listener velocity.
+        /// 
+        ///                 Specifies the current velocity, relative to the position.
+        /// 
+        ///                 To change from or to a left handed coordinate system, negate the Z
+        ///                 component.
+        /// 
+        /// </summary>
         /// <remarks>[originally: AL_VELOCITY]</remarks>
         Velocity = 4102,
+        /// <summary>
+        /// <b>[property on: listener][default value: 0.0,0.0,-1.0,0.0,1.0,0.0]</b><br/>
+        /// Listener orientation.
+        /// 
+        ///                 Effectively two three dimensional vectors. The first vector is the front (or
+        ///                 "at") and the second is the top (or "up"). Both vectors are relative to the
+        ///                 listener position.
+        /// 
+        ///                 To change from or to a left handed coordinate system, negate the Z
+        ///                 component of both vectors.
+        /// 
+        /// </summary>
         /// <remarks>[originally: AL_ORIENTATION]</remarks>
         Orientation = 4111,
     }
     public enum LowpassParameterName : uint
     {
+        /// <summary>
+        /// <b>[property on: filter][range: [0.0, 1.0] ][default value: 1.0]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_LOWPASS_GAIN]</remarks>
         LowpassGain = 1,
+        /// <summary>
+        /// <b>[property on: filter][range: [0.0, 1.0] ][default value: 1.0]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_LOWPASS_GAINHF]</remarks>
         LowpassGainhf = 2,
     }
@@ -2189,46 +3863,100 @@ namespace OpenTK.Audio.OpenAL
     }
     public enum PitchShifterParameterName : uint
     {
+        /// <summary>
+        /// <b>[property on: effect][range: [-12, 12] ][default value: 12]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_PITCH_SHIFTER_COARSE_TUNE]</remarks>
         PitchShifterCoarseTune = 1,
+        /// <summary>
+        /// <b>[property on: effect][range: [-150, 50] ][default value: 0]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_PITCH_SHIFTER_FINE_TUNE]</remarks>
         PitchShifterFineTune = 2,
     }
     public enum ReverbParameterName : uint
     {
+        /// <summary>
+        /// <b>[property on: effect][range: [0.0, 1.0] ][default value: 1.0]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_REVERB_DENSITY]</remarks>
         ReverbDensity = 1,
+        /// <summary>
+        /// <b>[property on: effect][range: [0.0, 1.0] ][default value: 1.0]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_REVERB_DIFFUSION]</remarks>
         ReverbDiffusion = 2,
+        /// <summary>
+        /// <b>[property on: effect][range: [0.0, 1.0] ][default value: 0.32]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_REVERB_GAIN]</remarks>
         ReverbGain = 3,
+        /// <summary>
+        /// <b>[property on: effect][range: [0.0, 1.0] ][default value: 0.89]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_REVERB_GAINHF]</remarks>
         ReverbGainhf = 4,
+        /// <summary>
+        /// <b>[property on: effect][range: [0.1, 20] ][default value: 1.49]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_REVERB_DECAY_TIME]</remarks>
         ReverbDecayTime = 5,
+        /// <summary>
+        /// <b>[property on: effect][range: [0.1, 2.0] ][default value: 0.83]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_REVERB_DECAY_HFRATIO]</remarks>
         ReverbDecayHfratio = 6,
+        /// <summary>
+        /// <b>[property on: effect][range: [0.0, 3.16] ][default value: 0.05]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_REVERB_REFLECTIONS_GAIN]</remarks>
         ReverbReflectionsGain = 7,
+        /// <summary>
+        /// <b>[property on: effect][range: [0.0, 0.3] ][default value: 0.007]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_REVERB_REFLECTIONS_DELAY]</remarks>
         ReverbReflectionsDelay = 8,
+        /// <summary>
+        /// <b>[property on: effect][range: [0.0, 10.0] ][default value: 1.26]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_REVERB_LATE_REVERB_GAIN]</remarks>
         ReverbLateReverbGain = 9,
+        /// <summary>
+        /// <b>[property on: effect][range: [0.0, 0.1] ][default value: 0.011]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_REVERB_LATE_REVERB_DELAY]</remarks>
         ReverbLateReverbDelay = 10,
+        /// <summary>
+        /// <b>[property on: effect][range: [0.892, 1.0] ][default value: 0.994]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_REVERB_AIR_ABSORPTION_GAINHF]</remarks>
         ReverbAirAbsorptionGainhf = 11,
+        /// <summary>
+        /// <b>[property on: effect][range: [0.0, 10.0] ][default value: 0.0]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_REVERB_ROOM_ROLLOFF_FACTOR]</remarks>
         ReverbRoomRolloffFactor = 12,
+        /// <summary>
+        /// <b>[property on: effect][default value: AL_TRUE]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_REVERB_DECAY_HFLIMIT]</remarks>
         ReverbDecayHflimit = 13,
     }
     public enum RingModulatorParameterName : uint
     {
+        /// <summary>
+        /// <b>[property on: effect][range: [0.0, 8000.0] ][default value: 440.0]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_RING_MODULATOR_FREQUENCY]</remarks>
         RingModulatorFrequency = 1,
+        /// <summary>
+        /// <b>[property on: effect][range: [0.0, 24000.0] ][default value: 800.0]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_RING_MODULATOR_HIGHPASS_CUTOFF]</remarks>
         RingModulatorHighpassCutoff = 2,
+        /// <summary>
+        /// <b>[property on: effect][default value: AL_RING_MODULATOR_SINUSOID]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_RING_MODULATOR_WAVEFORM]</remarks>
         RingModulatorWaveform = 3,
     }
@@ -2258,8 +3986,24 @@ namespace OpenTK.Audio.OpenAL
     }
     public enum SourceGetPameIV : uint
     {
+        /// <summary>
+        /// <b>[property on: source][range: [0, 360] ][default value: 360]</b><br/>
+        /// Inner cone angle, in degrees.
+        /// 
+        ///                 The angle covered by the inner cone, the area within which the source will
+        ///                 not be attenuated by direction.
+        /// 
+        /// </summary>
         /// <remarks>[originally: AL_CONE_INNER_ANGLE]</remarks>
         ConeInnerAngle = 4097,
+        /// <summary>
+        /// <b>[property on: source][range: [0, 360] ][default value: 360]</b><br/>
+        /// Outer cone angle, in degrees.
+        /// 
+        ///                 The angle covered by the outer cone, the area outside of which the source
+        ///                 will be fully attenuated by direction.
+        /// 
+        /// </summary>
         /// <remarks>[originally: AL_CONE_OUTER_ANGLE]</remarks>
         ConeOuterAngle = 4098,
     }
@@ -2270,22 +4014,95 @@ namespace OpenTK.Audio.OpenAL
     ///<summary>Used in <see cref="AL.GetSource3f" />, <see cref="AL.EXT.GetSource3fDirect" /></summary>
     public enum SourceGetPName3F : uint
     {
+        /// <summary>
+        /// <b>[property on: source, listener][default value: 0,0,0]</b><br/>
+        /// Source or listener position.
+        /// 
+        ///                 The source or listener location in three dimensional space.
+        /// 
+        ///                 OpenAL uses a right handed coordinate system, like OpenGL, where with a
+        ///                 default view, X points right (thumb), Y points up (index finger), and Z
+        ///                 points towards the viewer/camera (middle finger).
+        /// 
+        ///                 To change from or to a left handed coordinate system, negate the Z
+        ///                 component.
+        /// 
+        /// </summary>
         /// <remarks>[originally: AL_POSITION]</remarks>
         Position = 4100,
+        /// <summary>
+        /// <b>[property on: source, listener][default value: 0,0,0]</b><br/>
+        /// Source direction.
+        /// 
+        ///                 Specifies the current direction in local space. A zero-length vector
+        ///                 specifies an omni-directional source (cone is ignored).
+        /// 
+        ///                 To change from or to a left handed coordinate system, negate the Z
+        ///                 component.
+        /// 
+        /// </summary>
         /// <remarks>[originally: AL_DIRECTION]</remarks>
         Direction = 4101,
+        /// <summary>
+        /// <b>[property on: source, listener][default value: 0,0,0]</b><br/>
+        /// Source or listener velocity.
+        /// 
+        ///                 Specifies the current velocity, relative to the position.
+        /// 
+        ///                 To change from or to a left handed coordinate system, negate the Z
+        ///                 component.
+        /// 
+        /// </summary>
         /// <remarks>[originally: AL_VELOCITY]</remarks>
         Velocity = 4102,
     }
     ///<summary>Used in <see cref="AL.GetSource3i" />, <see cref="AL.EXT.GetSource3iDirect" /></summary>
     public enum SourceGetPName3I : uint
     {
+        /// <summary>
+        /// <b>[property on: source, listener][default value: 0,0,0]</b><br/>
+        /// Source or listener position.
+        /// 
+        ///                 The source or listener location in three dimensional space.
+        /// 
+        ///                 OpenAL uses a right handed coordinate system, like OpenGL, where with a
+        ///                 default view, X points right (thumb), Y points up (index finger), and Z
+        ///                 points towards the viewer/camera (middle finger).
+        /// 
+        ///                 To change from or to a left handed coordinate system, negate the Z
+        ///                 component.
+        /// 
+        /// </summary>
         /// <remarks>[originally: AL_POSITION]</remarks>
         Position = 4100,
+        /// <summary>
+        /// <b>[property on: source, listener][default value: 0,0,0]</b><br/>
+        /// Source direction.
+        /// 
+        ///                 Specifies the current direction in local space. A zero-length vector
+        ///                 specifies an omni-directional source (cone is ignored).
+        /// 
+        ///                 To change from or to a left handed coordinate system, negate the Z
+        ///                 component.
+        /// 
+        /// </summary>
         /// <remarks>[originally: AL_DIRECTION]</remarks>
         Direction = 4101,
+        /// <summary>
+        /// <b>[property on: source, listener][default value: 0,0,0]</b><br/>
+        /// Source or listener velocity.
+        /// 
+        ///                 Specifies the current velocity, relative to the position.
+        /// 
+        ///                 To change from or to a left handed coordinate system, negate the Z
+        ///                 component.
+        /// 
+        /// </summary>
         /// <remarks>[originally: AL_VELOCITY]</remarks>
         Velocity = 4102,
+        /// <summary>
+        /// <b>[property on: source][default value: AL_FILTER_NULL]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_AUXILIARY_SEND_FILTER]</remarks>
         AuxiliarySendFilter = 131078,
     }
@@ -2295,21 +4112,44 @@ namespace OpenTK.Audio.OpenAL
     }
     public enum SourceGetPNameB : uint
     {
+        /// <summary>
+        /// <b>[property on: source][default value: AL_FALSE]</b><br/>
+        /// Relative source.
+        /// Specifies if the source uses relative coordinates.
+        /// </summary>
         /// <remarks>[originally: AL_SOURCE_RELATIVE]</remarks>
         SourceRelative = 514,
+        /// <summary>
+        /// <b>[property on: source][default value: AL_TRUE]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_DIRECT_FILTER_GAINHF_AUTO]</remarks>
         DirectFilterGainhfAuto = 131082,
+        /// <summary>
+        /// <b>[property on: source][default value: AL_TRUE]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_AUXILIARY_SEND_FILTER_GAIN_AUTO]</remarks>
         AuxiliarySendFilterGainAuto = 131083,
+        /// <summary>
+        /// <b>[property on: source][default value: AL_TRUE]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_AUXILIARY_SEND_FILTER_GAINHF_AUTO]</remarks>
         AuxiliarySendFilterGainhfAuto = 131084,
     }
     public enum SourceGetPNameBV : uint
     {
+        /// <summary>
+        /// <b>[property on: source][default value: AL_TRUE]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_DIRECT_FILTER_GAINHF_AUTO]</remarks>
         DirectFilterGainhfAuto = 131082,
+        /// <summary>
+        /// <b>[property on: source][default value: AL_TRUE]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_AUXILIARY_SEND_FILTER_GAIN_AUTO]</remarks>
         AuxiliarySendFilterGainAuto = 131083,
+        /// <summary>
+        /// <b>[property on: source][default value: AL_TRUE]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_AUXILIARY_SEND_FILTER_GAINHF_AUTO]</remarks>
         AuxiliarySendFilterGainhfAuto = 131084,
     }
@@ -2320,92 +4160,346 @@ namespace OpenTK.Audio.OpenAL
     ///<summary>Used in <see cref="AL.EXT.GetSourcedvDirectSOFT" />, <see cref="AL.SOFT.GetSourcedvSOFT" /></summary>
     public enum SourceGetPNameDV : uint
     {
+        /// <summary>
+        /// <b>[property on: source]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_SEC_OFFSET_LATENCY_SOFT]</remarks>
         SecOffsetLatencySoft = 4609,
+        /// <summary>
+        /// <b>[property on: source]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_SEC_OFFSET_CLOCK_SOFT]</remarks>
         SecOffsetClockSoft = 4611,
     }
     ///<summary>Used in <see cref="AL.GetSourcef" />, <see cref="AL.EXT.GetSourcefDirect" /></summary>
     public enum SourceGetPNameF : uint
     {
+        /// <summary>
+        /// <b>[property on: source][range: [0, 360] ][default value: 360]</b><br/>
+        /// Inner cone angle, in degrees.
+        /// 
+        ///                 The angle covered by the inner cone, the area within which the source will
+        ///                 not be attenuated by direction.
+        /// 
+        /// </summary>
         /// <remarks>[originally: AL_CONE_INNER_ANGLE]</remarks>
         ConeInnerAngle = 4097,
+        /// <summary>
+        /// <b>[property on: source][range: [0, 360] ][default value: 360]</b><br/>
+        /// Outer cone angle, in degrees.
+        /// 
+        ///                 The angle covered by the outer cone, the area outside of which the source
+        ///                 will be fully attenuated by direction.
+        /// 
+        /// </summary>
         /// <remarks>[originally: AL_CONE_OUTER_ANGLE]</remarks>
         ConeOuterAngle = 4098,
+        /// <summary>
+        /// <b>[property on: source][range: [0.5, 2.0] ][default value: 1.0]</b><br/>
+        /// Source pitch.
+        /// A multiplier for the sample rate of the source's buffer.
+        /// </summary>
         /// <remarks>[originally: AL_PITCH]</remarks>
         Pitch = 4099,
+        /// <summary>
+        /// <b>[property on: source, listener][range: [0.0, ) ]</b><br/>
+        /// Source or listener gain.
+        /// 
+        ///                 For sources, an initial linear gain value (before attenuation is applied).
+        ///                 For the listener, an output linear gain adjustment.
+        /// 
+        ///                 A value of 1.0 means unattenuated. Each division by 2 equals an attenuation
+        ///                 of about -6dB. Each multiplication by 2 equals an amplification of about
+        ///                 +6dB.
+        /// 
+        /// </summary>
         /// <remarks>[originally: AL_GAIN]</remarks>
         Gain = 4106,
+        /// <summary>
+        /// <b>[property on: source][range: [0.0, 1.0] ]</b><br/>
+        /// Minimum source gain.
+        /// 
+        ///                 The minimum gain allowed for a source, after distance and cone attenuation
+        ///                 are applied (if applicable).
+        /// 
+        /// </summary>
         /// <remarks>[originally: AL_MIN_GAIN]</remarks>
         MinGain = 4109,
+        /// <summary>
+        /// <b>[property on: source][range: [0.0, 1.0] ]</b><br/>
+        /// Maximum source gain.
+        /// 
+        ///                 The maximum gain allowed for a source, after distance and cone attenuation
+        ///                 are applied (if applicable).
+        /// 
+        /// </summary>
         /// <remarks>[originally: AL_MAX_GAIN]</remarks>
         MaxGain = 4110,
+        /// <summary>
+        /// <b>[property on: source][range: [0.0, ) ][default value: 1.0]</b><br/>
+        /// Source reference distance.
+        /// 
+        ///                 The distance in units that no distance attenuation occurs.
+        /// 
+        ///                 At 0.0, no distance attenuation occurs with non-linear attenuation models.
+        /// 
+        /// </summary>
         /// <remarks>[originally: AL_REFERENCE_DISTANCE]</remarks>
         ReferenceDistance = 4128,
+        /// <summary>
+        /// <b>[property on: source][range: [0.0, ) ][default value: 1.0]</b><br/>
+        /// Source rolloff factor.
+        /// 
+        ///                 Multiplier to exaggerate or diminish distance attenuation.
+        /// 
+        ///                 At 0.0, no distance attenuation ever occurs.
+        /// 
+        /// </summary>
         /// <remarks>[originally: AL_ROLLOFF_FACTOR]</remarks>
         RolloffFactor = 4129,
+        /// <summary>
+        /// <b>[property on: listener][range: [0.0, 1.0] ][default value: 0.0]</b><br/>
+        /// Outer cone gain.
+        /// 
+        ///                 The gain attenuation applied when the listener is outside of the source's
+        ///                 outer cone angle.
+        /// 
+        /// </summary>
         /// <remarks>[originally: AL_CONE_OUTER_GAIN]</remarks>
         ConeOuterGain = 4130,
+        /// <summary>
+        /// <b>[property on: source][range: [0.0, ) ][default value: FLT_MAX]</b><br/>
+        /// Source maximum distance.
+        /// 
+        ///                 The distance above which the source is not attenuated any further with a
+        ///                 clamped distance model, or where attenuation reaches 0.0 gain for linear
+        ///                 distance models with a default rolloff factor.
+        /// 
+        /// </summary>
         /// <remarks>[originally: AL_MAX_DISTANCE]</remarks>
         MaxDistance = 4131,
+        /// <summary>
+        /// <b>[property on: source][range: [0, ) ]</b><br/>
+        /// Source buffer offset, in seconds.
+        /// </summary>
         /// <remarks>[originally: AL_SEC_OFFSET]</remarks>
         SecOffset = 4132,
+        /// <summary>
+        /// <b>[property on: source][range: [0, ) ]</b><br/>
+        /// Source buffer offset, in sample frames.
+        /// </summary>
         /// <remarks>[originally: AL_SAMPLE_OFFSET]</remarks>
         SampleOffset = 4133,
+        /// <summary>
+        /// <b>[property on: source][range: [0, ) ]</b><br/>
+        /// Source buffer offset, in bytes.
+        /// </summary>
         /// <remarks>[originally: AL_BYTE_OFFSET]</remarks>
         ByteOffset = 4134,
+        /// <summary>
+        /// <b>[property on: source]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_STEREO_ANGLES]</remarks>
         StereoAngles = 4144,
+        /// <summary>
+        /// <b>[property on: source]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_SOURCE_RADIUS]</remarks>
         SourceRadius = 4145,
+        /// <summary>
+        /// <b>[property on: source][range: [0.0, 1.0] ]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_SUPER_STEREO_WIDTH_SOFT]</remarks>
         SuperStereoWidthSoft = 6577,
+        /// <summary>
+        /// <b>[property on: source][range: [0, 10] ][default value: 0]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_AIR_ABSORPTION_FACTOR]</remarks>
         AirAbsorptionFactor = 131079,
+        /// <summary>
+        /// <b>[property on: source][range: [0, 10] ][default value: 0]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_ROOM_ROLLOFF_FACTOR]</remarks>
         RoomRolloffFactor = 131080,
+        /// <summary>
+        /// <b>[property on: source][range: [0.0, 1.0] ][default value: 1.0]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_CONE_OUTER_GAINHF]</remarks>
         ConeOuterGainhf = 131081,
     }
     ///<summary>Used in <see cref="AL.GetSourcefv" />, <see cref="AL.EXT.GetSourcefvDirect" /></summary>
     public enum SourceGetPNameFV : uint
     {
+        /// <summary>
+        /// <b>[property on: source][range: [0, 360] ][default value: 360]</b><br/>
+        /// Inner cone angle, in degrees.
+        /// 
+        ///                 The angle covered by the inner cone, the area within which the source will
+        ///                 not be attenuated by direction.
+        /// 
+        /// </summary>
         /// <remarks>[originally: AL_CONE_INNER_ANGLE]</remarks>
         ConeInnerAngle = 4097,
+        /// <summary>
+        /// <b>[property on: source][range: [0, 360] ][default value: 360]</b><br/>
+        /// Outer cone angle, in degrees.
+        /// 
+        ///                 The angle covered by the outer cone, the area outside of which the source
+        ///                 will be fully attenuated by direction.
+        /// 
+        /// </summary>
         /// <remarks>[originally: AL_CONE_OUTER_ANGLE]</remarks>
         ConeOuterAngle = 4098,
+        /// <summary>
+        /// <b>[property on: source][range: [0.5, 2.0] ][default value: 1.0]</b><br/>
+        /// Source pitch.
+        /// A multiplier for the sample rate of the source's buffer.
+        /// </summary>
         /// <remarks>[originally: AL_PITCH]</remarks>
         Pitch = 4099,
+        /// <summary>
+        /// <b>[property on: source, listener][default value: 0,0,0]</b><br/>
+        /// Source or listener position.
+        /// 
+        ///                 The source or listener location in three dimensional space.
+        /// 
+        ///                 OpenAL uses a right handed coordinate system, like OpenGL, where with a
+        ///                 default view, X points right (thumb), Y points up (index finger), and Z
+        ///                 points towards the viewer/camera (middle finger).
+        /// 
+        ///                 To change from or to a left handed coordinate system, negate the Z
+        ///                 component.
+        /// 
+        /// </summary>
         /// <remarks>[originally: AL_POSITION]</remarks>
         Position = 4100,
+        /// <summary>
+        /// <b>[property on: source, listener][default value: 0,0,0]</b><br/>
+        /// Source direction.
+        /// 
+        ///                 Specifies the current direction in local space. A zero-length vector
+        ///                 specifies an omni-directional source (cone is ignored).
+        /// 
+        ///                 To change from or to a left handed coordinate system, negate the Z
+        ///                 component.
+        /// 
+        /// </summary>
         /// <remarks>[originally: AL_DIRECTION]</remarks>
         Direction = 4101,
+        /// <summary>
+        /// <b>[property on: source, listener][default value: 0,0,0]</b><br/>
+        /// Source or listener velocity.
+        /// 
+        ///                 Specifies the current velocity, relative to the position.
+        /// 
+        ///                 To change from or to a left handed coordinate system, negate the Z
+        ///                 component.
+        /// 
+        /// </summary>
         /// <remarks>[originally: AL_VELOCITY]</remarks>
         Velocity = 4102,
+        /// <summary>
+        /// <b>[property on: source, listener][range: [0.0, ) ]</b><br/>
+        /// Source or listener gain.
+        /// 
+        ///                 For sources, an initial linear gain value (before attenuation is applied).
+        ///                 For the listener, an output linear gain adjustment.
+        /// 
+        ///                 A value of 1.0 means unattenuated. Each division by 2 equals an attenuation
+        ///                 of about -6dB. Each multiplication by 2 equals an amplification of about
+        ///                 +6dB.
+        /// 
+        /// </summary>
         /// <remarks>[originally: AL_GAIN]</remarks>
         Gain = 4106,
+        /// <summary>
+        /// <b>[property on: source][range: [0.0, 1.0] ]</b><br/>
+        /// Minimum source gain.
+        /// 
+        ///                 The minimum gain allowed for a source, after distance and cone attenuation
+        ///                 are applied (if applicable).
+        /// 
+        /// </summary>
         /// <remarks>[originally: AL_MIN_GAIN]</remarks>
         MinGain = 4109,
+        /// <summary>
+        /// <b>[property on: source][range: [0.0, 1.0] ]</b><br/>
+        /// Maximum source gain.
+        /// 
+        ///                 The maximum gain allowed for a source, after distance and cone attenuation
+        ///                 are applied (if applicable).
+        /// 
+        /// </summary>
         /// <remarks>[originally: AL_MAX_GAIN]</remarks>
         MaxGain = 4110,
+        /// <summary>
+        /// <b>[property on: source][range: [0.0, ) ][default value: 1.0]</b><br/>
+        /// Source reference distance.
+        /// 
+        ///                 The distance in units that no distance attenuation occurs.
+        /// 
+        ///                 At 0.0, no distance attenuation occurs with non-linear attenuation models.
+        /// 
+        /// </summary>
         /// <remarks>[originally: AL_REFERENCE_DISTANCE]</remarks>
         ReferenceDistance = 4128,
+        /// <summary>
+        /// <b>[property on: source][range: [0.0, ) ][default value: 1.0]</b><br/>
+        /// Source rolloff factor.
+        /// 
+        ///                 Multiplier to exaggerate or diminish distance attenuation.
+        /// 
+        ///                 At 0.0, no distance attenuation ever occurs.
+        /// 
+        /// </summary>
         /// <remarks>[originally: AL_ROLLOFF_FACTOR]</remarks>
         RolloffFactor = 4129,
+        /// <summary>
+        /// <b>[property on: listener][range: [0.0, 1.0] ][default value: 0.0]</b><br/>
+        /// Outer cone gain.
+        /// 
+        ///                 The gain attenuation applied when the listener is outside of the source's
+        ///                 outer cone angle.
+        /// 
+        /// </summary>
         /// <remarks>[originally: AL_CONE_OUTER_GAIN]</remarks>
         ConeOuterGain = 4130,
+        /// <summary>
+        /// <b>[property on: source][range: [0, ) ]</b><br/>
+        /// Source buffer offset, in seconds.
+        /// </summary>
         /// <remarks>[originally: AL_SEC_OFFSET]</remarks>
         SecOffset = 4132,
+        /// <summary>
+        /// <b>[property on: source][range: [0, ) ]</b><br/>
+        /// Source buffer offset, in sample frames.
+        /// </summary>
         /// <remarks>[originally: AL_SAMPLE_OFFSET]</remarks>
         SampleOffset = 4133,
+        /// <summary>
+        /// <b>[property on: source][range: [0, ) ]</b><br/>
+        /// Source buffer offset, in bytes.
+        /// </summary>
         /// <remarks>[originally: AL_BYTE_OFFSET]</remarks>
         ByteOffset = 4134,
+        /// <summary>
+        /// <b>[property on: source][range: [0.0, 1.0] ]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_SUPER_STEREO_WIDTH_SOFT]</remarks>
         SuperStereoWidthSoft = 6577,
+        /// <summary>
+        /// <b>[property on: source][range: [0, 10] ][default value: 0]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_AIR_ABSORPTION_FACTOR]</remarks>
         AirAbsorptionFactor = 131079,
+        /// <summary>
+        /// <b>[property on: source][range: [0, 10] ][default value: 0]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_ROOM_ROLLOFF_FACTOR]</remarks>
         RoomRolloffFactor = 131080,
+        /// <summary>
+        /// <b>[property on: source][range: [0.0, 1.0] ][default value: 1.0]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_CONE_OUTER_GAINHF]</remarks>
         ConeOuterGainhf = 131081,
     }
@@ -2414,48 +4508,172 @@ namespace OpenTK.Audio.OpenAL
     {
         /// <remarks>[originally: AL_SOURCE_DISTANCE_MODEL]</remarks>
         SourceDistanceModel = 512,
+        /// <summary>
+        /// <b>[property on: source][range: [0, 360] ][default value: 360]</b><br/>
+        /// Inner cone angle, in degrees.
+        /// 
+        ///                 The angle covered by the inner cone, the area within which the source will
+        ///                 not be attenuated by direction.
+        /// 
+        /// </summary>
         /// <remarks>[originally: AL_CONE_INNER_ANGLE]</remarks>
         ConeInnerAngle = 4097,
+        /// <summary>
+        /// <b>[property on: source][range: [0, 360] ][default value: 360]</b><br/>
+        /// Outer cone angle, in degrees.
+        /// 
+        ///                 The angle covered by the outer cone, the area outside of which the source
+        ///                 will be fully attenuated by direction.
+        /// 
+        /// </summary>
         /// <remarks>[originally: AL_CONE_OUTER_ANGLE]</remarks>
         ConeOuterAngle = 4098,
+        /// <summary>
+        /// <b>[property on: source][default value: AL_FALSE]</b><br/>
+        /// Source looping.
+        /// Specifies whether source playback loops.
+        /// </summary>
         /// <remarks>[originally: AL_LOOPING]</remarks>
         Looping = 4103,
+        /// <summary>
+        /// <b>[property on: source][default value: AL_NONE]</b><br/>
+        /// Source buffer.
+        /// Specifies the buffer to provide sound samples for a source.
+        /// </summary>
         /// <remarks>[originally: AL_BUFFER]</remarks>
         Buffer = 4105,
         /// <remarks>[originally: AL_BYTE_LOKI]</remarks>
         ByteLoki = 4108,
+        /// <summary>
+        /// <b>[property on: source]</b><br/>
+        /// Source state (query only).
+        /// </summary>
         /// <remarks>[originally: AL_SOURCE_STATE]</remarks>
         SourceState = 4112,
+        /// <summary>
+        /// <b>[property on: source]</b><br/>
+        /// Source Buffer Queue size (query only).
+        /// 
+        ///                 The number of buffers queued using alSourceQueueBuffers, minus the buffers
+        ///                 removed with alSourceUnqueueBuffers.
+        /// 
+        /// </summary>
         /// <remarks>[originally: AL_BUFFERS_QUEUED]</remarks>
         BuffersQueued = 4117,
+        /// <summary>
+        /// <b>[property on: source]</b><br/>
+        /// Source Buffer Queue processed count (query only).
+        /// 
+        ///                 The number of queued buffers that have been fully processed, and can be
+        ///                 removed with alSourceUnqueueBuffers.
+        /// 
+        ///                 Looping sources will never fully process buffers because they will be set to
+        ///                 play again for when the source loops.
+        /// 
+        /// </summary>
         /// <remarks>[originally: AL_BUFFERS_PROCESSED]</remarks>
         BuffersProcessed = 4118,
+        /// <summary>
+        /// <b>[property on: source][range: [0.0, ) ][default value: 1.0]</b><br/>
+        /// Source reference distance.
+        /// 
+        ///                 The distance in units that no distance attenuation occurs.
+        /// 
+        ///                 At 0.0, no distance attenuation occurs with non-linear attenuation models.
+        /// 
+        /// </summary>
         /// <remarks>[originally: AL_REFERENCE_DISTANCE]</remarks>
         ReferenceDistance = 4128,
+        /// <summary>
+        /// <b>[property on: source][range: [0.0, ) ][default value: 1.0]</b><br/>
+        /// Source rolloff factor.
+        /// 
+        ///                 Multiplier to exaggerate or diminish distance attenuation.
+        /// 
+        ///                 At 0.0, no distance attenuation ever occurs.
+        /// 
+        /// </summary>
         /// <remarks>[originally: AL_ROLLOFF_FACTOR]</remarks>
         RolloffFactor = 4129,
+        /// <summary>
+        /// <b>[property on: listener][range: [0.0, 1.0] ][default value: 0.0]</b><br/>
+        /// Outer cone gain.
+        /// 
+        ///                 The gain attenuation applied when the listener is outside of the source's
+        ///                 outer cone angle.
+        /// 
+        /// </summary>
         /// <remarks>[originally: AL_CONE_OUTER_GAIN]</remarks>
         ConeOuterGain = 4130,
+        /// <summary>
+        /// <b>[property on: source][range: [0.0, ) ][default value: FLT_MAX]</b><br/>
+        /// Source maximum distance.
+        /// 
+        ///                 The distance above which the source is not attenuated any further with a
+        ///                 clamped distance model, or where attenuation reaches 0.0 gain for linear
+        ///                 distance models with a default rolloff factor.
+        /// 
+        /// </summary>
         /// <remarks>[originally: AL_MAX_DISTANCE]</remarks>
         MaxDistance = 4131,
+        /// <summary>
+        /// <b>[property on: source][range: [0, ) ]</b><br/>
+        /// Source buffer offset, in seconds.
+        /// </summary>
         /// <remarks>[originally: AL_SEC_OFFSET]</remarks>
         SecOffset = 4132,
+        /// <summary>
+        /// <b>[property on: source][range: [0, ) ]</b><br/>
+        /// Source buffer offset, in sample frames.
+        /// </summary>
         /// <remarks>[originally: AL_SAMPLE_OFFSET]</remarks>
         SampleOffset = 4133,
+        /// <summary>
+        /// <b>[property on: source][range: [0, ) ]</b><br/>
+        /// Source buffer offset, in bytes.
+        /// </summary>
         /// <remarks>[originally: AL_BYTE_OFFSET]</remarks>
         ByteOffset = 4134,
+        /// <summary>
+        /// <b>[property on: source]</b><br/>
+        /// Source type (query only).
+        /// 
+        ///                 A Source is Static if a Buffer has been attached using AL_BUFFER.
+        /// 
+        ///                 A Source is Streaming if one or more Buffers have been attached using
+        ///                 alSourceQueueBuffers.
+        /// 
+        ///                 A Source is Undetermined when it has the NULL buffer attached using
+        ///                 AL_BUFFER.
+        /// 
+        /// </summary>
         /// <remarks>[originally: AL_SOURCE_TYPE]</remarks>
         SourceType = 4135,
+        /// <summary>
+        /// <b>[property on: source][default value: AL_FALSE]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_DIRECT_CHANNELS_SOFT]</remarks>
         DirectChannelsSoft = 4147,
         /// <remarks>[originally: AL_DEFAULT_RESAMPLER_SOFT]</remarks>
         DefaultResamplerSoft = 4625,
+        /// <summary>
+        /// <b>[property on: source]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_SOURCE_RESAMPLER_SOFT]</remarks>
         SourceResamplerSoft = 4626,
+        /// <summary>
+        /// <b>[property on: source][default value: AL_AUTO_SOFT]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_SOURCE_SPATIALIZE_SOFT]</remarks>
         SourceSpatializeSoft = 4628,
+        /// <summary>
+        /// <b>[property on: source][default value: AL_NORMAL_SOFT]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_STEREO_MODE_SOFT]</remarks>
         StereoModeSoft = 6576,
+        /// <summary>
+        /// <b>[property on: source][default value: AL_FILTER_NULL]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_DIRECT_FILTER]</remarks>
         DirectFilter = 131077,
     }
@@ -2466,52 +4684,188 @@ namespace OpenTK.Audio.OpenAL
     ///<summary>Used in <see cref="AL.EXT.GetSourcei64vDirectSOFT" />, <see cref="AL.SOFT.GetSourcei64vSOFT" /></summary>
     public enum SourceGetPNameI64V : uint
     {
+        /// <summary>
+        /// <b>[property on: source]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_SAMPLE_OFFSET_LATENCY_SOFT]</remarks>
         SampleOffsetLatencySoft = 4608,
+        /// <summary>
+        /// <b>[property on: source]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_SAMPLE_OFFSET_CLOCK_SOFT]</remarks>
         SampleOffsetClockSoft = 4610,
     }
     ///<summary>Used in <see cref="AL.GetSourceiv" />, <see cref="AL.EXT.GetSourceivDirect" /></summary>
     public enum SourceGetPNameIV : uint
     {
+        /// <summary>
+        /// <b>[property on: source, listener][default value: 0,0,0]</b><br/>
+        /// Source or listener position.
+        /// 
+        ///                 The source or listener location in three dimensional space.
+        /// 
+        ///                 OpenAL uses a right handed coordinate system, like OpenGL, where with a
+        ///                 default view, X points right (thumb), Y points up (index finger), and Z
+        ///                 points towards the viewer/camera (middle finger).
+        /// 
+        ///                 To change from or to a left handed coordinate system, negate the Z
+        ///                 component.
+        /// 
+        /// </summary>
         /// <remarks>[originally: AL_POSITION]</remarks>
         Position = 4100,
+        /// <summary>
+        /// <b>[property on: source, listener][default value: 0,0,0]</b><br/>
+        /// Source direction.
+        /// 
+        ///                 Specifies the current direction in local space. A zero-length vector
+        ///                 specifies an omni-directional source (cone is ignored).
+        /// 
+        ///                 To change from or to a left handed coordinate system, negate the Z
+        ///                 component.
+        /// 
+        /// </summary>
         /// <remarks>[originally: AL_DIRECTION]</remarks>
         Direction = 4101,
+        /// <summary>
+        /// <b>[property on: source, listener][default value: 0,0,0]</b><br/>
+        /// Source or listener velocity.
+        /// 
+        ///                 Specifies the current velocity, relative to the position.
+        /// 
+        ///                 To change from or to a left handed coordinate system, negate the Z
+        ///                 component.
+        /// 
+        /// </summary>
         /// <remarks>[originally: AL_VELOCITY]</remarks>
         Velocity = 4102,
+        /// <summary>
+        /// <b>[property on: source][default value: AL_FALSE]</b><br/>
+        /// Source looping.
+        /// Specifies whether source playback loops.
+        /// </summary>
         /// <remarks>[originally: AL_LOOPING]</remarks>
         Looping = 4103,
+        /// <summary>
+        /// <b>[property on: source][default value: AL_NONE]</b><br/>
+        /// Source buffer.
+        /// Specifies the buffer to provide sound samples for a source.
+        /// </summary>
         /// <remarks>[originally: AL_BUFFER]</remarks>
         Buffer = 4105,
+        /// <summary>
+        /// <b>[property on: source]</b><br/>
+        /// Source Buffer Queue size (query only).
+        /// 
+        ///                 The number of buffers queued using alSourceQueueBuffers, minus the buffers
+        ///                 removed with alSourceUnqueueBuffers.
+        /// 
+        /// </summary>
         /// <remarks>[originally: AL_BUFFERS_QUEUED]</remarks>
         BuffersQueued = 4117,
+        /// <summary>
+        /// <b>[property on: source]</b><br/>
+        /// Source Buffer Queue processed count (query only).
+        /// 
+        ///                 The number of queued buffers that have been fully processed, and can be
+        ///                 removed with alSourceUnqueueBuffers.
+        /// 
+        ///                 Looping sources will never fully process buffers because they will be set to
+        ///                 play again for when the source loops.
+        /// 
+        /// </summary>
         /// <remarks>[originally: AL_BUFFERS_PROCESSED]</remarks>
         BuffersProcessed = 4118,
+        /// <summary>
+        /// <b>[property on: source][range: [0.0, ) ][default value: 1.0]</b><br/>
+        /// Source reference distance.
+        /// 
+        ///                 The distance in units that no distance attenuation occurs.
+        /// 
+        ///                 At 0.0, no distance attenuation occurs with non-linear attenuation models.
+        /// 
+        /// </summary>
         /// <remarks>[originally: AL_REFERENCE_DISTANCE]</remarks>
         ReferenceDistance = 4128,
+        /// <summary>
+        /// <b>[property on: source][range: [0.0, ) ][default value: 1.0]</b><br/>
+        /// Source rolloff factor.
+        /// 
+        ///                 Multiplier to exaggerate or diminish distance attenuation.
+        /// 
+        ///                 At 0.0, no distance attenuation ever occurs.
+        /// 
+        /// </summary>
         /// <remarks>[originally: AL_ROLLOFF_FACTOR]</remarks>
         RolloffFactor = 4129,
+        /// <summary>
+        /// <b>[property on: listener][range: [0.0, 1.0] ][default value: 0.0]</b><br/>
+        /// Outer cone gain.
+        /// 
+        ///                 The gain attenuation applied when the listener is outside of the source's
+        ///                 outer cone angle.
+        /// 
+        /// </summary>
         /// <remarks>[originally: AL_CONE_OUTER_GAIN]</remarks>
         ConeOuterGain = 4130,
+        /// <summary>
+        /// <b>[property on: source][range: [0, ) ]</b><br/>
+        /// Source buffer offset, in seconds.
+        /// </summary>
         /// <remarks>[originally: AL_SEC_OFFSET]</remarks>
         SecOffset = 4132,
+        /// <summary>
+        /// <b>[property on: source][range: [0, ) ]</b><br/>
+        /// Source buffer offset, in sample frames.
+        /// </summary>
         /// <remarks>[originally: AL_SAMPLE_OFFSET]</remarks>
         SampleOffset = 4133,
+        /// <summary>
+        /// <b>[property on: source][range: [0, ) ]</b><br/>
+        /// Source buffer offset, in bytes.
+        /// </summary>
         /// <remarks>[originally: AL_BYTE_OFFSET]</remarks>
         ByteOffset = 4134,
+        /// <summary>
+        /// <b>[property on: source]</b><br/>
+        /// Source type (query only).
+        /// 
+        ///                 A Source is Static if a Buffer has been attached using AL_BUFFER.
+        /// 
+        ///                 A Source is Streaming if one or more Buffers have been attached using
+        ///                 alSourceQueueBuffers.
+        /// 
+        ///                 A Source is Undetermined when it has the NULL buffer attached using
+        ///                 AL_BUFFER.
+        /// 
+        /// </summary>
         /// <remarks>[originally: AL_SOURCE_TYPE]</remarks>
         SourceType = 4135,
         /// <remarks>[originally: AL_DEFAULT_RESAMPLER_SOFT]</remarks>
         DefaultResamplerSoft = 4625,
+        /// <summary>
+        /// <b>[property on: source]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_SOURCE_RESAMPLER_SOFT]</remarks>
         SourceResamplerSoft = 4626,
+        /// <summary>
+        /// <b>[property on: source][default value: AL_AUTO_SOFT]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_SOURCE_SPATIALIZE_SOFT]</remarks>
         SourceSpatializeSoft = 4628,
+        /// <summary>
+        /// <b>[property on: source][default value: AL_NORMAL_SOFT]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_STEREO_MODE_SOFT]</remarks>
         StereoModeSoft = 6576,
+        /// <summary>
+        /// <b>[property on: source][default value: AL_FILTER_NULL]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_DIRECT_FILTER]</remarks>
         DirectFilter = 131077,
+        /// <summary>
+        /// <b>[property on: source][default value: AL_FILTER_NULL]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_AUXILIARY_SEND_FILTER]</remarks>
         AuxiliarySendFilter = 131078,
     }
@@ -2527,22 +4881,95 @@ namespace OpenTK.Audio.OpenAL
     ///<summary>Used in <see cref="AL.Source3f" />, <see cref="AL.EXT.Source3fDirect" /></summary>
     public enum SourcePName3F : uint
     {
+        /// <summary>
+        /// <b>[property on: source, listener][default value: 0,0,0]</b><br/>
+        /// Source or listener position.
+        /// 
+        ///                 The source or listener location in three dimensional space.
+        /// 
+        ///                 OpenAL uses a right handed coordinate system, like OpenGL, where with a
+        ///                 default view, X points right (thumb), Y points up (index finger), and Z
+        ///                 points towards the viewer/camera (middle finger).
+        /// 
+        ///                 To change from or to a left handed coordinate system, negate the Z
+        ///                 component.
+        /// 
+        /// </summary>
         /// <remarks>[originally: AL_POSITION]</remarks>
         Position = 4100,
+        /// <summary>
+        /// <b>[property on: source, listener][default value: 0,0,0]</b><br/>
+        /// Source direction.
+        /// 
+        ///                 Specifies the current direction in local space. A zero-length vector
+        ///                 specifies an omni-directional source (cone is ignored).
+        /// 
+        ///                 To change from or to a left handed coordinate system, negate the Z
+        ///                 component.
+        /// 
+        /// </summary>
         /// <remarks>[originally: AL_DIRECTION]</remarks>
         Direction = 4101,
+        /// <summary>
+        /// <b>[property on: source, listener][default value: 0,0,0]</b><br/>
+        /// Source or listener velocity.
+        /// 
+        ///                 Specifies the current velocity, relative to the position.
+        /// 
+        ///                 To change from or to a left handed coordinate system, negate the Z
+        ///                 component.
+        /// 
+        /// </summary>
         /// <remarks>[originally: AL_VELOCITY]</remarks>
         Velocity = 4102,
     }
     ///<summary>Used in <see cref="AL.Source3i" />, <see cref="AL.EXT.Source3iDirect" /></summary>
     public enum SourcePName3I : uint
     {
+        /// <summary>
+        /// <b>[property on: source, listener][default value: 0,0,0]</b><br/>
+        /// Source or listener position.
+        /// 
+        ///                 The source or listener location in three dimensional space.
+        /// 
+        ///                 OpenAL uses a right handed coordinate system, like OpenGL, where with a
+        ///                 default view, X points right (thumb), Y points up (index finger), and Z
+        ///                 points towards the viewer/camera (middle finger).
+        /// 
+        ///                 To change from or to a left handed coordinate system, negate the Z
+        ///                 component.
+        /// 
+        /// </summary>
         /// <remarks>[originally: AL_POSITION]</remarks>
         Position = 4100,
+        /// <summary>
+        /// <b>[property on: source, listener][default value: 0,0,0]</b><br/>
+        /// Source direction.
+        /// 
+        ///                 Specifies the current direction in local space. A zero-length vector
+        ///                 specifies an omni-directional source (cone is ignored).
+        /// 
+        ///                 To change from or to a left handed coordinate system, negate the Z
+        ///                 component.
+        /// 
+        /// </summary>
         /// <remarks>[originally: AL_DIRECTION]</remarks>
         Direction = 4101,
+        /// <summary>
+        /// <b>[property on: source, listener][default value: 0,0,0]</b><br/>
+        /// Source or listener velocity.
+        /// 
+        ///                 Specifies the current velocity, relative to the position.
+        /// 
+        ///                 To change from or to a left handed coordinate system, negate the Z
+        ///                 component.
+        /// 
+        /// </summary>
         /// <remarks>[originally: AL_VELOCITY]</remarks>
         Velocity = 4102,
+        /// <summary>
+        /// <b>[property on: source][default value: AL_FILTER_NULL]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_AUXILIARY_SEND_FILTER]</remarks>
         AuxiliarySendFilter = 131078,
     }
@@ -2552,21 +4979,44 @@ namespace OpenTK.Audio.OpenAL
     }
     public enum SourcePNameB : uint
     {
+        /// <summary>
+        /// <b>[property on: source][default value: AL_FALSE]</b><br/>
+        /// Relative source.
+        /// Specifies if the source uses relative coordinates.
+        /// </summary>
         /// <remarks>[originally: AL_SOURCE_RELATIVE]</remarks>
         SourceRelative = 514,
+        /// <summary>
+        /// <b>[property on: source][default value: AL_TRUE]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_DIRECT_FILTER_GAINHF_AUTO]</remarks>
         DirectFilterGainhfAuto = 131082,
+        /// <summary>
+        /// <b>[property on: source][default value: AL_TRUE]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_AUXILIARY_SEND_FILTER_GAIN_AUTO]</remarks>
         AuxiliarySendFilterGainAuto = 131083,
+        /// <summary>
+        /// <b>[property on: source][default value: AL_TRUE]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_AUXILIARY_SEND_FILTER_GAINHF_AUTO]</remarks>
         AuxiliarySendFilterGainhfAuto = 131084,
     }
     public enum SourcePNameBV : uint
     {
+        /// <summary>
+        /// <b>[property on: source][default value: AL_TRUE]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_DIRECT_FILTER_GAINHF_AUTO]</remarks>
         DirectFilterGainhfAuto = 131082,
+        /// <summary>
+        /// <b>[property on: source][default value: AL_TRUE]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_AUXILIARY_SEND_FILTER_GAIN_AUTO]</remarks>
         AuxiliarySendFilterGainAuto = 131083,
+        /// <summary>
+        /// <b>[property on: source][default value: AL_TRUE]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_AUXILIARY_SEND_FILTER_GAINHF_AUTO]</remarks>
         AuxiliarySendFilterGainhfAuto = 131084,
     }
@@ -2577,90 +5027,341 @@ namespace OpenTK.Audio.OpenAL
     ///<summary>Used in <see cref="AL.EXT.SourcedvDirectSOFT" />, <see cref="AL.SOFT.SourcedvSOFT" /></summary>
     public enum SourcePNameDV : uint
     {
+        /// <summary>
+        /// <b>[property on: source]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_SEC_OFFSET_LATENCY_SOFT]</remarks>
         SecOffsetLatencySoft = 4609,
     }
     ///<summary>Used in <see cref="AL.Sourcef" />, <see cref="AL.EXT.SourcefDirect" /></summary>
     public enum SourcePNameF : uint
     {
+        /// <summary>
+        /// <b>[property on: source][range: [0, 360] ][default value: 360]</b><br/>
+        /// Inner cone angle, in degrees.
+        /// 
+        ///                 The angle covered by the inner cone, the area within which the source will
+        ///                 not be attenuated by direction.
+        /// 
+        /// </summary>
         /// <remarks>[originally: AL_CONE_INNER_ANGLE]</remarks>
         ConeInnerAngle = 4097,
+        /// <summary>
+        /// <b>[property on: source][range: [0, 360] ][default value: 360]</b><br/>
+        /// Outer cone angle, in degrees.
+        /// 
+        ///                 The angle covered by the outer cone, the area outside of which the source
+        ///                 will be fully attenuated by direction.
+        /// 
+        /// </summary>
         /// <remarks>[originally: AL_CONE_OUTER_ANGLE]</remarks>
         ConeOuterAngle = 4098,
+        /// <summary>
+        /// <b>[property on: source][range: [0.5, 2.0] ][default value: 1.0]</b><br/>
+        /// Source pitch.
+        /// A multiplier for the sample rate of the source's buffer.
+        /// </summary>
         /// <remarks>[originally: AL_PITCH]</remarks>
         Pitch = 4099,
+        /// <summary>
+        /// <b>[property on: source, listener][range: [0.0, ) ]</b><br/>
+        /// Source or listener gain.
+        /// 
+        ///                 For sources, an initial linear gain value (before attenuation is applied).
+        ///                 For the listener, an output linear gain adjustment.
+        /// 
+        ///                 A value of 1.0 means unattenuated. Each division by 2 equals an attenuation
+        ///                 of about -6dB. Each multiplication by 2 equals an amplification of about
+        ///                 +6dB.
+        /// 
+        /// </summary>
         /// <remarks>[originally: AL_GAIN]</remarks>
         Gain = 4106,
+        /// <summary>
+        /// <b>[property on: source][range: [0.0, 1.0] ]</b><br/>
+        /// Minimum source gain.
+        /// 
+        ///                 The minimum gain allowed for a source, after distance and cone attenuation
+        ///                 are applied (if applicable).
+        /// 
+        /// </summary>
         /// <remarks>[originally: AL_MIN_GAIN]</remarks>
         MinGain = 4109,
+        /// <summary>
+        /// <b>[property on: source][range: [0.0, 1.0] ]</b><br/>
+        /// Maximum source gain.
+        /// 
+        ///                 The maximum gain allowed for a source, after distance and cone attenuation
+        ///                 are applied (if applicable).
+        /// 
+        /// </summary>
         /// <remarks>[originally: AL_MAX_GAIN]</remarks>
         MaxGain = 4110,
+        /// <summary>
+        /// <b>[property on: source][range: [0.0, ) ][default value: 1.0]</b><br/>
+        /// Source reference distance.
+        /// 
+        ///                 The distance in units that no distance attenuation occurs.
+        /// 
+        ///                 At 0.0, no distance attenuation occurs with non-linear attenuation models.
+        /// 
+        /// </summary>
         /// <remarks>[originally: AL_REFERENCE_DISTANCE]</remarks>
         ReferenceDistance = 4128,
+        /// <summary>
+        /// <b>[property on: source][range: [0.0, ) ][default value: 1.0]</b><br/>
+        /// Source rolloff factor.
+        /// 
+        ///                 Multiplier to exaggerate or diminish distance attenuation.
+        /// 
+        ///                 At 0.0, no distance attenuation ever occurs.
+        /// 
+        /// </summary>
         /// <remarks>[originally: AL_ROLLOFF_FACTOR]</remarks>
         RolloffFactor = 4129,
+        /// <summary>
+        /// <b>[property on: listener][range: [0.0, 1.0] ][default value: 0.0]</b><br/>
+        /// Outer cone gain.
+        /// 
+        ///                 The gain attenuation applied when the listener is outside of the source's
+        ///                 outer cone angle.
+        /// 
+        /// </summary>
         /// <remarks>[originally: AL_CONE_OUTER_GAIN]</remarks>
         ConeOuterGain = 4130,
+        /// <summary>
+        /// <b>[property on: source][range: [0.0, ) ][default value: FLT_MAX]</b><br/>
+        /// Source maximum distance.
+        /// 
+        ///                 The distance above which the source is not attenuated any further with a
+        ///                 clamped distance model, or where attenuation reaches 0.0 gain for linear
+        ///                 distance models with a default rolloff factor.
+        /// 
+        /// </summary>
         /// <remarks>[originally: AL_MAX_DISTANCE]</remarks>
         MaxDistance = 4131,
+        /// <summary>
+        /// <b>[property on: source][range: [0, ) ]</b><br/>
+        /// Source buffer offset, in seconds.
+        /// </summary>
         /// <remarks>[originally: AL_SEC_OFFSET]</remarks>
         SecOffset = 4132,
+        /// <summary>
+        /// <b>[property on: source][range: [0, ) ]</b><br/>
+        /// Source buffer offset, in sample frames.
+        /// </summary>
         /// <remarks>[originally: AL_SAMPLE_OFFSET]</remarks>
         SampleOffset = 4133,
+        /// <summary>
+        /// <b>[property on: source][range: [0, ) ]</b><br/>
+        /// Source buffer offset, in bytes.
+        /// </summary>
         /// <remarks>[originally: AL_BYTE_OFFSET]</remarks>
         ByteOffset = 4134,
+        /// <summary>
+        /// <b>[property on: source]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_STEREO_ANGLES]</remarks>
         StereoAngles = 4144,
+        /// <summary>
+        /// <b>[property on: source]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_SOURCE_RADIUS]</remarks>
         SourceRadius = 4145,
+        /// <summary>
+        /// <b>[property on: source][range: [0.0, 1.0] ]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_SUPER_STEREO_WIDTH_SOFT]</remarks>
         SuperStereoWidthSoft = 6577,
+        /// <summary>
+        /// <b>[property on: source][range: [0, 10] ][default value: 0]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_AIR_ABSORPTION_FACTOR]</remarks>
         AirAbsorptionFactor = 131079,
+        /// <summary>
+        /// <b>[property on: source][range: [0, 10] ][default value: 0]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_ROOM_ROLLOFF_FACTOR]</remarks>
         RoomRolloffFactor = 131080,
+        /// <summary>
+        /// <b>[property on: source][range: [0.0, 1.0] ][default value: 1.0]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_CONE_OUTER_GAINHF]</remarks>
         ConeOuterGainhf = 131081,
     }
     ///<summary>Used in <see cref="AL.Sourcefv" />, <see cref="AL.EXT.SourcefvDirect" /></summary>
     public enum SourcePNameFV : uint
     {
+        /// <summary>
+        /// <b>[property on: source][range: [0, 360] ][default value: 360]</b><br/>
+        /// Inner cone angle, in degrees.
+        /// 
+        ///                 The angle covered by the inner cone, the area within which the source will
+        ///                 not be attenuated by direction.
+        /// 
+        /// </summary>
         /// <remarks>[originally: AL_CONE_INNER_ANGLE]</remarks>
         ConeInnerAngle = 4097,
+        /// <summary>
+        /// <b>[property on: source][range: [0, 360] ][default value: 360]</b><br/>
+        /// Outer cone angle, in degrees.
+        /// 
+        ///                 The angle covered by the outer cone, the area outside of which the source
+        ///                 will be fully attenuated by direction.
+        /// 
+        /// </summary>
         /// <remarks>[originally: AL_CONE_OUTER_ANGLE]</remarks>
         ConeOuterAngle = 4098,
+        /// <summary>
+        /// <b>[property on: source][range: [0.5, 2.0] ][default value: 1.0]</b><br/>
+        /// Source pitch.
+        /// A multiplier for the sample rate of the source's buffer.
+        /// </summary>
         /// <remarks>[originally: AL_PITCH]</remarks>
         Pitch = 4099,
+        /// <summary>
+        /// <b>[property on: source, listener][default value: 0,0,0]</b><br/>
+        /// Source or listener position.
+        /// 
+        ///                 The source or listener location in three dimensional space.
+        /// 
+        ///                 OpenAL uses a right handed coordinate system, like OpenGL, where with a
+        ///                 default view, X points right (thumb), Y points up (index finger), and Z
+        ///                 points towards the viewer/camera (middle finger).
+        /// 
+        ///                 To change from or to a left handed coordinate system, negate the Z
+        ///                 component.
+        /// 
+        /// </summary>
         /// <remarks>[originally: AL_POSITION]</remarks>
         Position = 4100,
+        /// <summary>
+        /// <b>[property on: source, listener][default value: 0,0,0]</b><br/>
+        /// Source direction.
+        /// 
+        ///                 Specifies the current direction in local space. A zero-length vector
+        ///                 specifies an omni-directional source (cone is ignored).
+        /// 
+        ///                 To change from or to a left handed coordinate system, negate the Z
+        ///                 component.
+        /// 
+        /// </summary>
         /// <remarks>[originally: AL_DIRECTION]</remarks>
         Direction = 4101,
+        /// <summary>
+        /// <b>[property on: source, listener][default value: 0,0,0]</b><br/>
+        /// Source or listener velocity.
+        /// 
+        ///                 Specifies the current velocity, relative to the position.
+        /// 
+        ///                 To change from or to a left handed coordinate system, negate the Z
+        ///                 component.
+        /// 
+        /// </summary>
         /// <remarks>[originally: AL_VELOCITY]</remarks>
         Velocity = 4102,
+        /// <summary>
+        /// <b>[property on: source, listener][range: [0.0, ) ]</b><br/>
+        /// Source or listener gain.
+        /// 
+        ///                 For sources, an initial linear gain value (before attenuation is applied).
+        ///                 For the listener, an output linear gain adjustment.
+        /// 
+        ///                 A value of 1.0 means unattenuated. Each division by 2 equals an attenuation
+        ///                 of about -6dB. Each multiplication by 2 equals an amplification of about
+        ///                 +6dB.
+        /// 
+        /// </summary>
         /// <remarks>[originally: AL_GAIN]</remarks>
         Gain = 4106,
+        /// <summary>
+        /// <b>[property on: source][range: [0.0, 1.0] ]</b><br/>
+        /// Minimum source gain.
+        /// 
+        ///                 The minimum gain allowed for a source, after distance and cone attenuation
+        ///                 are applied (if applicable).
+        /// 
+        /// </summary>
         /// <remarks>[originally: AL_MIN_GAIN]</remarks>
         MinGain = 4109,
+        /// <summary>
+        /// <b>[property on: source][range: [0.0, 1.0] ]</b><br/>
+        /// Maximum source gain.
+        /// 
+        ///                 The maximum gain allowed for a source, after distance and cone attenuation
+        ///                 are applied (if applicable).
+        /// 
+        /// </summary>
         /// <remarks>[originally: AL_MAX_GAIN]</remarks>
         MaxGain = 4110,
+        /// <summary>
+        /// <b>[property on: source][range: [0.0, ) ][default value: 1.0]</b><br/>
+        /// Source reference distance.
+        /// 
+        ///                 The distance in units that no distance attenuation occurs.
+        /// 
+        ///                 At 0.0, no distance attenuation occurs with non-linear attenuation models.
+        /// 
+        /// </summary>
         /// <remarks>[originally: AL_REFERENCE_DISTANCE]</remarks>
         ReferenceDistance = 4128,
+        /// <summary>
+        /// <b>[property on: source][range: [0.0, ) ][default value: 1.0]</b><br/>
+        /// Source rolloff factor.
+        /// 
+        ///                 Multiplier to exaggerate or diminish distance attenuation.
+        /// 
+        ///                 At 0.0, no distance attenuation ever occurs.
+        /// 
+        /// </summary>
         /// <remarks>[originally: AL_ROLLOFF_FACTOR]</remarks>
         RolloffFactor = 4129,
+        /// <summary>
+        /// <b>[property on: listener][range: [0.0, 1.0] ][default value: 0.0]</b><br/>
+        /// Outer cone gain.
+        /// 
+        ///                 The gain attenuation applied when the listener is outside of the source's
+        ///                 outer cone angle.
+        /// 
+        /// </summary>
         /// <remarks>[originally: AL_CONE_OUTER_GAIN]</remarks>
         ConeOuterGain = 4130,
+        /// <summary>
+        /// <b>[property on: source][range: [0, ) ]</b><br/>
+        /// Source buffer offset, in seconds.
+        /// </summary>
         /// <remarks>[originally: AL_SEC_OFFSET]</remarks>
         SecOffset = 4132,
+        /// <summary>
+        /// <b>[property on: source][range: [0, ) ]</b><br/>
+        /// Source buffer offset, in sample frames.
+        /// </summary>
         /// <remarks>[originally: AL_SAMPLE_OFFSET]</remarks>
         SampleOffset = 4133,
+        /// <summary>
+        /// <b>[property on: source][range: [0, ) ]</b><br/>
+        /// Source buffer offset, in bytes.
+        /// </summary>
         /// <remarks>[originally: AL_BYTE_OFFSET]</remarks>
         ByteOffset = 4134,
+        /// <summary>
+        /// <b>[property on: source][range: [0.0, 1.0] ]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_SUPER_STEREO_WIDTH_SOFT]</remarks>
         SuperStereoWidthSoft = 6577,
+        /// <summary>
+        /// <b>[property on: source][range: [0, 10] ][default value: 0]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_AIR_ABSORPTION_FACTOR]</remarks>
         AirAbsorptionFactor = 131079,
+        /// <summary>
+        /// <b>[property on: source][range: [0, 10] ][default value: 0]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_ROOM_ROLLOFF_FACTOR]</remarks>
         RoomRolloffFactor = 131080,
+        /// <summary>
+        /// <b>[property on: source][range: [0.0, 1.0] ][default value: 1.0]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_CONE_OUTER_GAINHF]</remarks>
         ConeOuterGainhf = 131081,
     }
@@ -2669,44 +5370,164 @@ namespace OpenTK.Audio.OpenAL
     {
         /// <remarks>[originally: AL_SOURCE_DISTANCE_MODEL]</remarks>
         SourceDistanceModel = 512,
+        /// <summary>
+        /// <b>[property on: source][range: [0, 360] ][default value: 360]</b><br/>
+        /// Inner cone angle, in degrees.
+        /// 
+        ///                 The angle covered by the inner cone, the area within which the source will
+        ///                 not be attenuated by direction.
+        /// 
+        /// </summary>
         /// <remarks>[originally: AL_CONE_INNER_ANGLE]</remarks>
         ConeInnerAngle = 4097,
+        /// <summary>
+        /// <b>[property on: source][range: [0, 360] ][default value: 360]</b><br/>
+        /// Outer cone angle, in degrees.
+        /// 
+        ///                 The angle covered by the outer cone, the area outside of which the source
+        ///                 will be fully attenuated by direction.
+        /// 
+        /// </summary>
         /// <remarks>[originally: AL_CONE_OUTER_ANGLE]</remarks>
         ConeOuterAngle = 4098,
+        /// <summary>
+        /// <b>[property on: source][default value: AL_FALSE]</b><br/>
+        /// Source looping.
+        /// Specifies whether source playback loops.
+        /// </summary>
         /// <remarks>[originally: AL_LOOPING]</remarks>
         Looping = 4103,
+        /// <summary>
+        /// <b>[property on: source][default value: AL_NONE]</b><br/>
+        /// Source buffer.
+        /// Specifies the buffer to provide sound samples for a source.
+        /// </summary>
         /// <remarks>[originally: AL_BUFFER]</remarks>
         Buffer = 4105,
+        /// <summary>
+        /// <b>[property on: source]</b><br/>
+        /// Source Buffer Queue size (query only).
+        /// 
+        ///                 The number of buffers queued using alSourceQueueBuffers, minus the buffers
+        ///                 removed with alSourceUnqueueBuffers.
+        /// 
+        /// </summary>
         /// <remarks>[originally: AL_BUFFERS_QUEUED]</remarks>
         BuffersQueued = 4117,
+        /// <summary>
+        /// <b>[property on: source]</b><br/>
+        /// Source Buffer Queue processed count (query only).
+        /// 
+        ///                 The number of queued buffers that have been fully processed, and can be
+        ///                 removed with alSourceUnqueueBuffers.
+        /// 
+        ///                 Looping sources will never fully process buffers because they will be set to
+        ///                 play again for when the source loops.
+        /// 
+        /// </summary>
         /// <remarks>[originally: AL_BUFFERS_PROCESSED]</remarks>
         BuffersProcessed = 4118,
+        /// <summary>
+        /// <b>[property on: source][range: [0.0, ) ][default value: 1.0]</b><br/>
+        /// Source reference distance.
+        /// 
+        ///                 The distance in units that no distance attenuation occurs.
+        /// 
+        ///                 At 0.0, no distance attenuation occurs with non-linear attenuation models.
+        /// 
+        /// </summary>
         /// <remarks>[originally: AL_REFERENCE_DISTANCE]</remarks>
         ReferenceDistance = 4128,
+        /// <summary>
+        /// <b>[property on: source][range: [0.0, ) ][default value: 1.0]</b><br/>
+        /// Source rolloff factor.
+        /// 
+        ///                 Multiplier to exaggerate or diminish distance attenuation.
+        /// 
+        ///                 At 0.0, no distance attenuation ever occurs.
+        /// 
+        /// </summary>
         /// <remarks>[originally: AL_ROLLOFF_FACTOR]</remarks>
         RolloffFactor = 4129,
+        /// <summary>
+        /// <b>[property on: listener][range: [0.0, 1.0] ][default value: 0.0]</b><br/>
+        /// Outer cone gain.
+        /// 
+        ///                 The gain attenuation applied when the listener is outside of the source's
+        ///                 outer cone angle.
+        /// 
+        /// </summary>
         /// <remarks>[originally: AL_CONE_OUTER_GAIN]</remarks>
         ConeOuterGain = 4130,
+        /// <summary>
+        /// <b>[property on: source][range: [0.0, ) ][default value: FLT_MAX]</b><br/>
+        /// Source maximum distance.
+        /// 
+        ///                 The distance above which the source is not attenuated any further with a
+        ///                 clamped distance model, or where attenuation reaches 0.0 gain for linear
+        ///                 distance models with a default rolloff factor.
+        /// 
+        /// </summary>
         /// <remarks>[originally: AL_MAX_DISTANCE]</remarks>
         MaxDistance = 4131,
+        /// <summary>
+        /// <b>[property on: source][range: [0, ) ]</b><br/>
+        /// Source buffer offset, in seconds.
+        /// </summary>
         /// <remarks>[originally: AL_SEC_OFFSET]</remarks>
         SecOffset = 4132,
+        /// <summary>
+        /// <b>[property on: source][range: [0, ) ]</b><br/>
+        /// Source buffer offset, in sample frames.
+        /// </summary>
         /// <remarks>[originally: AL_SAMPLE_OFFSET]</remarks>
         SampleOffset = 4133,
+        /// <summary>
+        /// <b>[property on: source][range: [0, ) ]</b><br/>
+        /// Source buffer offset, in bytes.
+        /// </summary>
         /// <remarks>[originally: AL_BYTE_OFFSET]</remarks>
         ByteOffset = 4134,
+        /// <summary>
+        /// <b>[property on: source]</b><br/>
+        /// Source type (query only).
+        /// 
+        ///                 A Source is Static if a Buffer has been attached using AL_BUFFER.
+        /// 
+        ///                 A Source is Streaming if one or more Buffers have been attached using
+        ///                 alSourceQueueBuffers.
+        /// 
+        ///                 A Source is Undetermined when it has the NULL buffer attached using
+        ///                 AL_BUFFER.
+        /// 
+        /// </summary>
         /// <remarks>[originally: AL_SOURCE_TYPE]</remarks>
         SourceType = 4135,
+        /// <summary>
+        /// <b>[property on: source][default value: AL_FALSE]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_DIRECT_CHANNELS_SOFT]</remarks>
         DirectChannelsSoft = 4147,
         /// <remarks>[originally: AL_DEFAULT_RESAMPLER_SOFT]</remarks>
         DefaultResamplerSoft = 4625,
+        /// <summary>
+        /// <b>[property on: source]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_SOURCE_RESAMPLER_SOFT]</remarks>
         SourceResamplerSoft = 4626,
+        /// <summary>
+        /// <b>[property on: source][default value: AL_AUTO_SOFT]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_SOURCE_SPATIALIZE_SOFT]</remarks>
         SourceSpatializeSoft = 4628,
+        /// <summary>
+        /// <b>[property on: source][default value: AL_NORMAL_SOFT]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_STEREO_MODE_SOFT]</remarks>
         StereoModeSoft = 6576,
+        /// <summary>
+        /// <b>[property on: source][default value: AL_FILTER_NULL]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_DIRECT_FILTER]</remarks>
         DirectFilter = 131077,
     }
@@ -2717,61 +5538,216 @@ namespace OpenTK.Audio.OpenAL
     ///<summary>Used in <see cref="AL.EXT.Sourcei64vDirectSOFT" />, <see cref="AL.SOFT.Sourcei64vSOFT" /></summary>
     public enum SourcePNameI64V : uint
     {
+        /// <summary>
+        /// <b>[property on: source]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_SAMPLE_OFFSET_LATENCY_SOFT]</remarks>
         SampleOffsetLatencySoft = 4608,
     }
     ///<summary>Used in <see cref="AL.Sourceiv" />, <see cref="AL.EXT.SourceivDirect" /></summary>
     public enum SourcePNameIV : uint
     {
+        /// <summary>
+        /// <b>[property on: source][range: [0, 360] ][default value: 360]</b><br/>
+        /// Inner cone angle, in degrees.
+        /// 
+        ///                 The angle covered by the inner cone, the area within which the source will
+        ///                 not be attenuated by direction.
+        /// 
+        /// </summary>
         /// <remarks>[originally: AL_CONE_INNER_ANGLE]</remarks>
         ConeInnerAngle = 4097,
+        /// <summary>
+        /// <b>[property on: source][range: [0, 360] ][default value: 360]</b><br/>
+        /// Outer cone angle, in degrees.
+        /// 
+        ///                 The angle covered by the outer cone, the area outside of which the source
+        ///                 will be fully attenuated by direction.
+        /// 
+        /// </summary>
         /// <remarks>[originally: AL_CONE_OUTER_ANGLE]</remarks>
         ConeOuterAngle = 4098,
+        /// <summary>
+        /// <b>[property on: source, listener][default value: 0,0,0]</b><br/>
+        /// Source or listener position.
+        /// 
+        ///                 The source or listener location in three dimensional space.
+        /// 
+        ///                 OpenAL uses a right handed coordinate system, like OpenGL, where with a
+        ///                 default view, X points right (thumb), Y points up (index finger), and Z
+        ///                 points towards the viewer/camera (middle finger).
+        /// 
+        ///                 To change from or to a left handed coordinate system, negate the Z
+        ///                 component.
+        /// 
+        /// </summary>
         /// <remarks>[originally: AL_POSITION]</remarks>
         Position = 4100,
+        /// <summary>
+        /// <b>[property on: source, listener][default value: 0,0,0]</b><br/>
+        /// Source direction.
+        /// 
+        ///                 Specifies the current direction in local space. A zero-length vector
+        ///                 specifies an omni-directional source (cone is ignored).
+        /// 
+        ///                 To change from or to a left handed coordinate system, negate the Z
+        ///                 component.
+        /// 
+        /// </summary>
         /// <remarks>[originally: AL_DIRECTION]</remarks>
         Direction = 4101,
+        /// <summary>
+        /// <b>[property on: source, listener][default value: 0,0,0]</b><br/>
+        /// Source or listener velocity.
+        /// 
+        ///                 Specifies the current velocity, relative to the position.
+        /// 
+        ///                 To change from or to a left handed coordinate system, negate the Z
+        ///                 component.
+        /// 
+        /// </summary>
         /// <remarks>[originally: AL_VELOCITY]</remarks>
         Velocity = 4102,
+        /// <summary>
+        /// <b>[property on: source][default value: AL_FALSE]</b><br/>
+        /// Source looping.
+        /// Specifies whether source playback loops.
+        /// </summary>
         /// <remarks>[originally: AL_LOOPING]</remarks>
         Looping = 4103,
+        /// <summary>
+        /// <b>[property on: source][default value: AL_NONE]</b><br/>
+        /// Source buffer.
+        /// Specifies the buffer to provide sound samples for a source.
+        /// </summary>
         /// <remarks>[originally: AL_BUFFER]</remarks>
         Buffer = 4105,
+        /// <summary>
+        /// <b>[property on: source]</b><br/>
+        /// Source Buffer Queue size (query only).
+        /// 
+        ///                 The number of buffers queued using alSourceQueueBuffers, minus the buffers
+        ///                 removed with alSourceUnqueueBuffers.
+        /// 
+        /// </summary>
         /// <remarks>[originally: AL_BUFFERS_QUEUED]</remarks>
         BuffersQueued = 4117,
+        /// <summary>
+        /// <b>[property on: source]</b><br/>
+        /// Source Buffer Queue processed count (query only).
+        /// 
+        ///                 The number of queued buffers that have been fully processed, and can be
+        ///                 removed with alSourceUnqueueBuffers.
+        /// 
+        ///                 Looping sources will never fully process buffers because they will be set to
+        ///                 play again for when the source loops.
+        /// 
+        /// </summary>
         /// <remarks>[originally: AL_BUFFERS_PROCESSED]</remarks>
         BuffersProcessed = 4118,
+        /// <summary>
+        /// <b>[property on: source][range: [0.0, ) ][default value: 1.0]</b><br/>
+        /// Source reference distance.
+        /// 
+        ///                 The distance in units that no distance attenuation occurs.
+        /// 
+        ///                 At 0.0, no distance attenuation occurs with non-linear attenuation models.
+        /// 
+        /// </summary>
         /// <remarks>[originally: AL_REFERENCE_DISTANCE]</remarks>
         ReferenceDistance = 4128,
+        /// <summary>
+        /// <b>[property on: source][range: [0.0, ) ][default value: 1.0]</b><br/>
+        /// Source rolloff factor.
+        /// 
+        ///                 Multiplier to exaggerate or diminish distance attenuation.
+        /// 
+        ///                 At 0.0, no distance attenuation ever occurs.
+        /// 
+        /// </summary>
         /// <remarks>[originally: AL_ROLLOFF_FACTOR]</remarks>
         RolloffFactor = 4129,
+        /// <summary>
+        /// <b>[property on: listener][range: [0.0, 1.0] ][default value: 0.0]</b><br/>
+        /// Outer cone gain.
+        /// 
+        ///                 The gain attenuation applied when the listener is outside of the source's
+        ///                 outer cone angle.
+        /// 
+        /// </summary>
         /// <remarks>[originally: AL_CONE_OUTER_GAIN]</remarks>
         ConeOuterGain = 4130,
+        /// <summary>
+        /// <b>[property on: source][range: [0, ) ]</b><br/>
+        /// Source buffer offset, in seconds.
+        /// </summary>
         /// <remarks>[originally: AL_SEC_OFFSET]</remarks>
         SecOffset = 4132,
+        /// <summary>
+        /// <b>[property on: source][range: [0, ) ]</b><br/>
+        /// Source buffer offset, in sample frames.
+        /// </summary>
         /// <remarks>[originally: AL_SAMPLE_OFFSET]</remarks>
         SampleOffset = 4133,
+        /// <summary>
+        /// <b>[property on: source][range: [0, ) ]</b><br/>
+        /// Source buffer offset, in bytes.
+        /// </summary>
         /// <remarks>[originally: AL_BYTE_OFFSET]</remarks>
         ByteOffset = 4134,
+        /// <summary>
+        /// <b>[property on: source]</b><br/>
+        /// Source type (query only).
+        /// 
+        ///                 A Source is Static if a Buffer has been attached using AL_BUFFER.
+        /// 
+        ///                 A Source is Streaming if one or more Buffers have been attached using
+        ///                 alSourceQueueBuffers.
+        /// 
+        ///                 A Source is Undetermined when it has the NULL buffer attached using
+        ///                 AL_BUFFER.
+        /// 
+        /// </summary>
         /// <remarks>[originally: AL_SOURCE_TYPE]</remarks>
         SourceType = 4135,
         /// <remarks>[originally: AL_DEFAULT_RESAMPLER_SOFT]</remarks>
         DefaultResamplerSoft = 4625,
+        /// <summary>
+        /// <b>[property on: source]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_SOURCE_RESAMPLER_SOFT]</remarks>
         SourceResamplerSoft = 4626,
+        /// <summary>
+        /// <b>[property on: source][default value: AL_AUTO_SOFT]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_SOURCE_SPATIALIZE_SOFT]</remarks>
         SourceSpatializeSoft = 4628,
+        /// <summary>
+        /// <b>[property on: source][default value: AL_NORMAL_SOFT]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_STEREO_MODE_SOFT]</remarks>
         StereoModeSoft = 6576,
+        /// <summary>
+        /// <b>[property on: source][default value: AL_FILTER_NULL]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_DIRECT_FILTER]</remarks>
         DirectFilter = 131077,
+        /// <summary>
+        /// <b>[property on: source][default value: AL_FILTER_NULL]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_AUXILIARY_SEND_FILTER]</remarks>
         AuxiliarySendFilter = 131078,
     }
     public enum SourceSpatializeMode : uint
     {
+        /// <summary>
+        /// Boolean False.
+        /// </summary>
         /// <remarks>[originally: AL_FALSE]</remarks>
         False = 0,
+        /// <summary>
+        /// Boolean True.
+        /// </summary>
         /// <remarks>[originally: AL_TRUE]</remarks>
         True = 1,
         /// <remarks>[originally: AL_AUTO_SOFT]</remarks>
@@ -2807,27 +5783,61 @@ namespace OpenTK.Audio.OpenAL
     ///<summary>Used in <see cref="AL.GetString" />, <see cref="AL.EXT.GetStringDirect" /></summary>
     public enum StringName : uint
     {
+        /// <summary>
+        /// <b>[property on: context]</b><br/>
+        /// Context string: Vendor name.
+        /// </summary>
         /// <remarks>[originally: AL_VENDOR]</remarks>
         Vendor = 45057,
+        /// <summary>
+        /// <b>[property on: context]</b><br/>
+        /// Context string: Version.
+        /// </summary>
         /// <remarks>[originally: AL_VERSION]</remarks>
         Version = 45058,
+        /// <summary>
+        /// <b>[property on: context]</b><br/>
+        /// Context string: Renderer name.
+        /// </summary>
         /// <remarks>[originally: AL_RENDERER]</remarks>
         Renderer = 45059,
+        /// <summary>
+        /// <b>[property on: context]</b><br/>
+        /// Context string: Space-separated extension list.
+        /// </summary>
         /// <remarks>[originally: AL_EXTENSIONS]</remarks>
         Extensions = 45060,
     }
     public enum VocalMorpherParameterName : uint
     {
+        /// <summary>
+        /// <b>[property on: effect][default value: AL_VOCAL_MOPRHER_PHONEME_A]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_VOCAL_MORPHER_PHONEMEA]</remarks>
         VocalMorpherPhonemea = 1,
+        /// <summary>
+        /// <b>[property on: effect][default value: AL_VOCAL_MOPRHER_PHONEME_A]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_VOCAL_MORPHER_PHONEMEA_COARSE_TUNING]</remarks>
         VocalMorpherPhonemeaCoarseTuning = 2,
+        /// <summary>
+        /// <b>[property on: effect][default value: AL_VOCAL_MOPRHER_PHONEME_ER]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_VOCAL_MORPHER_PHONEMEB]</remarks>
         VocalMorpherPhonemeb = 3,
+        /// <summary>
+        /// <b>[property on: effect][default value: AL_VOCAL_MOPRHER_PHONEME_A]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_VOCAL_MORPHER_PHONEMEB_COARSE_TUNING]</remarks>
         VocalMorpherPhonemebCoarseTuning = 4,
+        /// <summary>
+        /// <b>[property on: effect][default value: AL_VOCAL_MORPHER_WAVEFORM_SINUSOID]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_VOCAL_MORPHER_WAVEFORM]</remarks>
         VocalMorpherWaveform = 5,
+        /// <summary>
+        /// <b>[property on: effect][range: [0.0, 10.0] ][default value: 1.41]</b><br/>
+        /// </summary>
         /// <remarks>[originally: AL_VOCAL_MORPHER_RATE]</remarks>
         VocalMorpherRate = 6,
     }

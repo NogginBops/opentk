@@ -549,6 +549,16 @@ namespace OpenTK.Graphics.Egl
             return _eglDestroySyncNV_fnptr(sync);
         }
         
+        /// <summary><b>[entry point: <c>eglDisplayAttribANGLE</c>]</b></summary>
+        public static delegate* unmanaged<IntPtr, int, IntPtr*, int> _eglDisplayAttribANGLE_fnptr;
+        [MethodImpl(MethodImplOptions.NoInlining)]
+        internal static int eglDisplayAttribANGLE_Lazy(IntPtr dpy, int attribute, IntPtr* value)
+        {
+            if (_eglDisplayAttribANGLE_fnptr == null)
+                _eglDisplayAttribANGLE_fnptr = (delegate* unmanaged<IntPtr, int, IntPtr*, int>)EGLLoader.BindingsContext.GetProcAddress("eglDisplayAttribANGLE");
+            return _eglDisplayAttribANGLE_fnptr(dpy, attribute, value);
+        }
+        
         /// <summary><b>[entry point: <c>eglDupNativeFenceFDANDROID</c>]</b></summary>
         public static delegate* unmanaged<IntPtr, IntPtr, int> _eglDupNativeFenceFDANDROID_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
@@ -922,11 +932,11 @@ namespace OpenTK.Graphics.Egl
         /// <summary><b>[entry point: <c>eglLabelObjectKHR</c>]</b></summary>
         public static delegate* unmanaged<IntPtr, uint, IntPtr, IntPtr, int> _eglLabelObjectKHR_fnptr;
         [MethodImpl(MethodImplOptions.NoInlining)]
-        internal static int eglLabelObjectKHR_Lazy(IntPtr display, uint objectType, IntPtr obj, IntPtr label)
+        internal static int eglLabelObjectKHR_Lazy(IntPtr display, uint objectType, IntPtr @object, IntPtr label)
         {
             if (_eglLabelObjectKHR_fnptr == null)
                 _eglLabelObjectKHR_fnptr = (delegate* unmanaged<IntPtr, uint, IntPtr, IntPtr, int>)EGLLoader.BindingsContext.GetProcAddress("eglLabelObjectKHR");
-            return _eglLabelObjectKHR_fnptr(display, objectType, obj, label);
+            return _eglLabelObjectKHR_fnptr(display, objectType, @object, label);
         }
         
         /// <summary><b>[entry point: <c>eglLockSurfaceKHR</c>]</b></summary>
