@@ -313,31 +313,61 @@ namespace OpenTK.Mathematics
         }
 
         /// <summary>
-        /// Returns the euclidian distance between the nearest point on an edge and the specified point.
+        /// Returns the euclidian distance between the nearest point inside the box and the specified point.
         /// </summary>
         /// <remarks>
         /// The distance to points inside the box is zero.
         /// </remarks>
         /// <param name="point">The point to find distance for.</param>
         /// <returns>The distance between the specified point and the nearest edge.</returns>
-        public readonly float EuclidianDistanceToNearestEdge(Vector3i point)
+        public readonly float EuclidianDistanceToNearestPointInBox(Vector3i point)
         {
             Vector3i dist = Vector3i.ComponentMax(Vector3i.Zero, Vector3i.ComponentMax(Min - point, point - Max));
             return dist.EuclideanLength;
         }
 
         /// <summary>
-        /// Returns the manhattan distance between the nearest point on an edge and the specified point.
+        /// Returns the manhattan distance between the nearest point in the box and the specified point.
         /// </summary>
         /// <remarks>
         /// The distance to points inside the box is zero.
         /// </remarks>
         /// <param name="point">The point to find distance for.</param>
         /// <returns>The distance between the specified point and the nearest edge.</returns>
-        public readonly int ManhattanDistanceToNearestEdge(Vector3i point)
+        public readonly int ManhattanDistanceToNearestPointInBox(Vector3i point)
         {
             Vector3i dist = Vector3i.ComponentMax(Vector3i.Zero, Vector3i.ComponentMax(Min - point, point - Max));
             return dist.ManhattanLength;
+        }
+
+        /// <summary>
+        /// Returns the euclidian distance between the nearest point on an edge and the specified point.
+        /// </summary>
+        /// <param name="point">The point to find distance for.</param>
+        /// <returns>The distance between the specified point and the nearest edge.</returns>
+        public readonly float EuclidianDistanceToNearestEdge(Vector3i point)
+        {
+            return float.Abs(SignedEuclidianDistanceToNearestEdge(point));
+        }
+
+        /// <summary>
+        /// Returns the manhattan distance between the nearest point on an edge and the specified point.
+        /// </summary>
+        /// <param name="point">The point to find distance for.</param>
+        /// <returns>The distance between the specified point and the nearest edge.</returns>
+        public readonly int ManhattanDistanceToNearestEdge(Vector3i point)
+        {
+            return int.Abs(SignedManhattanDistanceToNearestEdge(point));
+        }
+
+        /// <summary>
+        /// Returns the manhattan distance between the nearest point on an edge and the specified point.
+        /// </summary>
+        /// <param name="point">The point to find distance for.</param>
+        /// <returns>The distance between the specified point and the nearest edge.</returns>
+        public readonly float ManhattanDistanceToNearestEdge(Vector3 point)
+        {
+            return float.Abs(SignedManhattanDistanceToNearestEdge(point));
         }
 
         /// <summary>
@@ -345,10 +375,32 @@ namespace OpenTK.Mathematics
         /// </summary>
         /// <param name="point">The point to find distance for.</param>
         /// <returns>The distance between the specified point and the nearest edge.</returns>
-        public readonly float SignedEuclidianDistanceToNearestEdge(Vector3 point)
+        public readonly float SignedEuclidianDistanceToNearestEdge(Vector3i point)
         {
             Vector3 d = Vector3.Abs(point - Center) - HalfSize;
-            return Vector3.ComponentMax(Vector3.Zero, d).Length + MathF.Min(MathF.Max(d.X, MathF.Max(d.Y, d.Z)), 0.0f);
+            return Vector3.ComponentMax(Vector3.Zero, d).Length + float.Min(float.Max(d.X, float.Max(d.Y, d.Z)), 0.0f);
+        }
+
+        /// <summary>
+        /// Returns the signed manhattan distance between the nearest edge and the specified point.
+        /// </summary>
+        /// <param name="point">The point to find distance for.</param>
+        /// <returns>The distance between the specified point and the nearest edge.</returns>
+        public readonly int SignedManhattanDistanceToNearestEdge(Vector3i point)
+        {
+            Vector3i dist = Vector3i.ComponentMax(Min - point, point - Max);
+            return int.Max(dist.X, int.Max(dist.Y, dist.Z));
+        }
+
+        /// <summary>
+        /// Returns the signed manhattan distance between the nearest edge and the specified point.
+        /// </summary>
+        /// <param name="point">The point to find distance for.</param>
+        /// <returns>The distance between the specified point and the nearest edge.</returns>
+        public readonly float SignedManhattanDistanceToNearestEdge(Vector3 point)
+        {
+            Vector3 dist = Vector3.ComponentMax(Min - point, point - Max);
+            return float.Max(dist.X, float.Max(dist.Y, dist.Z));
         }
 
         /// <summary>
@@ -359,6 +411,44 @@ namespace OpenTK.Mathematics
         public readonly Vector3i NearestPointInBox(Vector3i point)
         {
             return Vector3i.ComponentMin(Max, Vector3i.ComponentMax(Min, point));
+        }
+
+        /// <summary>
+        /// Returns the nearest point that is on the edge of the box.
+        /// </summary>
+        /// <param name="point">The point for which the nearest point on the edge of the box should be found.</param>
+        /// <returns>The nearest point on the edge of the box to the point, <paramref name="point"/>.</returns>
+        public readonly Vector3i NearestPointOnEdge(Vector3i point)
+        {
+            Vector3i nearestInBox = Vector3i.ComponentMin(Max, Vector3i.ComponentMax(Min, point));
+            Vector3i minToP = nearestInBox - Min;
+            Vector3i pToMax = Max - nearestInBox;
+            Vector3i axisMinDistance = Vector3i.ComponentMin(minToP, pToMax);
+            int minDistance = int.Min(int.Min(axisMinDistance.X, axisMinDistance.Y), axisMinDistance.Z);
+            if (minDistance == minToP.X)
+            {
+                return new Vector3i(Min.X, nearestInBox.Y, nearestInBox.Z);
+            }
+            else if (minDistance == pToMax.X)
+            {
+                return new Vector3i(Max.X, nearestInBox.Y, nearestInBox.Z);
+            }
+            else if (minDistance == minToP.Y)
+            {
+                return new Vector3i(nearestInBox.X, Min.Y, nearestInBox.Z);
+            }
+            else if (minDistance == pToMax.Y)
+            {
+                return new Vector3i(nearestInBox.X, Max.Y, nearestInBox.Z);
+            }
+            else if (minDistance == minToP.Z)
+            {
+                return new Vector3i(nearestInBox.X, nearestInBox.Y, Min.Z);
+            }
+            else // if (minDistance == maxToP.Z)
+            {
+                return new Vector3i(nearestInBox.X, nearestInBox.Y, Max.Z);
+            }
         }
 
         /// <summary>

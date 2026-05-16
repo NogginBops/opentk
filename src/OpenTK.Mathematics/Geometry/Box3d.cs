@@ -336,6 +336,20 @@ namespace OpenTK.Mathematics
         }
 
         /// <summary>
+        /// Returns the distance between the nearest point inside the box and the specified point.
+        /// </summary>
+        /// <remarks>
+        /// The distance to points inside the box is zero.
+        /// </remarks>
+        /// <param name="point">The point to find distance for.</param>
+        /// <returns>The distance between the specified point and the nearest edge.</returns>
+        public readonly double DistanceToNearestPointInBox(Vector3d point)
+        {
+            Vector3d dist = Vector3d.ComponentMax(Vector3d.Zero, Vector3d.ComponentMax(Min - point, point - Max));
+            return dist.Length;
+        }
+
+        /// <summary>
         /// Returns the distance between the nearest edge and the specified point.
         /// </summary>
         /// <param name="point">The point to find distance for.</param>

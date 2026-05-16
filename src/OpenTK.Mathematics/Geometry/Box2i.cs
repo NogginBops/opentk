@@ -298,17 +298,27 @@ namespace OpenTK.Mathematics
         }
 
         /// <summary>
-        /// Returns the euclidian distance between the nearest point on an edge and the specified point.
+        /// Returns the euclidian distance between the nearest point inside the box and the specified point.
         /// </summary>
         /// <remarks>
         /// The distance to points inside the box is zero.
         /// </remarks>
         /// <param name="point">The point to find distance for.</param>
         /// <returns>The distance between the specified point and the nearest edge.</returns>
-        public readonly float EuclidianDistanceToNearestEdge(Vector2i point)
+        public readonly float EuclidianDistanceToNearestPointInBox(Vector2i point)
         {
             Vector2i dist = Vector2i.ComponentMax(Vector2i.Zero, Vector2i.ComponentMax(Min - point, point - Max));
             return dist.EuclideanLength;
+        }
+
+        /// <summary>
+        /// Returns the euclidian distance between the nearest point on an edge and the specified point.
+        /// </summary>
+        /// <param name="point">The point to find distance for.</param>
+        /// <returns>The distance between the specified point and the nearest edge.</returns>
+        public readonly float EuclidianDistanceToNearestEdge(Vector2i point)
+        {
+            return float.Abs(SignedEuclidianDistanceToNearestEdge(point));
         }
 
         /// <summary>
@@ -326,6 +336,16 @@ namespace OpenTK.Mathematics
         }
 
         /// <summary>
+        /// Returns the manhattan distance between the nearest point on an edge and the specified point.
+        /// </summary>
+        /// <param name="point">The point to find distance for.</param>
+        /// <returns>The distance between the specified point and the nearest edge.</returns>
+        public readonly float ManhattanDistanceToNearestEdge(Vector2 point)
+        {
+            return float.Abs(SignedManhattanDistanceToNearestEdge(point));
+        }
+
+        /// <summary>
         /// Returns the signed distance between the nearest edge and the specified point.
         /// </summary>
         /// <param name="point">The point to find distance for.</param>
@@ -333,7 +353,29 @@ namespace OpenTK.Mathematics
         public readonly float SignedEuclidianDistanceToNearestEdge(Vector2 point)
         {
             Vector2 d = Vector2.Abs(point - Center) - HalfSize;
-            return Vector2.ComponentMax(Vector2.Zero, d).Length + MathF.Min(MathF.Max(d.X, d.Y), 0.0f);
+            return Vector2.ComponentMax(Vector2.Zero, d).Length + float.Min(float.Max(d.X, d.Y), 0.0f);
+        }
+
+        /// <summary>
+        /// Returns the signed manhattan distance between the nearest edge and the specified point.
+        /// </summary>
+        /// <param name="point">The point to find distance for.</param>
+        /// <returns>The distance between the specified point and the nearest edge.</returns>
+        public readonly int SignedManhattanDistanceToNearestEdge(Vector2i point)
+        {
+            Vector2i dist = Vector2i.ComponentMax(Min - point, point - Max);
+            return int.Max(dist.X, dist.Y);
+        }
+
+        /// <summary>
+        /// Returns the signed manhattan distance between the nearest edge and the specified point.
+        /// </summary>
+        /// <param name="point">The point to find distance for.</param>
+        /// <returns>The distance between the specified point and the nearest edge.</returns>
+        public readonly float SignedManhattanDistanceToNearestEdge(Vector2 point)
+        {
+            Vector2 dist = Vector2.ComponentMax(Min - point, point - Max);
+            return float.Max(dist.X, dist.Y);
         }
 
         /// <summary>
@@ -344,6 +386,35 @@ namespace OpenTK.Mathematics
         public readonly Vector2i NearestPointInBox(Vector2i point)
         {
             return Vector2i.ComponentMin(Max, Vector2i.ComponentMax(Min, point));
+        }
+
+        /// <summary>
+        /// Returns the nearest point that is on the edge of the box.
+        /// </summary>
+        /// <param name="point">The point for which the nearest point on the edge of the box should be found.</param>
+        /// <returns>The nearest point on the edge of the box to the point, <paramref name="point"/>.</returns>
+        public readonly Vector2i NearestPointOnEdge(Vector2i point)
+        {
+            Vector2i nearestInBox = Vector2i.ComponentMin(Max, Vector2i.ComponentMax(Min, point));
+            Vector2i minToP = nearestInBox - Min;
+            Vector2i pToMax = Max - nearestInBox;
+            int minDistance = int.Min(int.Min(minToP.X, pToMax.X), int.Min(minToP.Y, pToMax.Y));
+            if (minDistance == minToP.X)
+            {
+                return new Vector2i(Min.X, nearestInBox.Y);
+            }
+            else if (minDistance == pToMax.X)
+            {
+                return new Vector2i(Max.X, nearestInBox.Y);
+            }
+            else if (minDistance == minToP.Y)
+            {
+                return new Vector2i(nearestInBox.X, Min.Y);
+            }
+            else // if (minDistance == maxToP.Y)
+            {
+                return new Vector2i(nearestInBox.X, Max.Y);
+            }
         }
 
         /// <summary>
