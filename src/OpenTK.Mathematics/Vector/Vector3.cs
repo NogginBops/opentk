@@ -488,58 +488,194 @@ namespace OpenTK.Mathematics
 
         /// <summary>
         /// Returns a vector created from the smallest of the corresponding components of the given vectors.
+        /// Any NaN inputs are propagated.
         /// </summary>
         /// <param name="a">First operand.</param>
         /// <param name="b">Second operand.</param>
         /// <returns>The component-wise minimum.</returns>
         [Pure]
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static Vector3 ComponentMin(Vector3 a, Vector3 b)
         {
-            a.X = a.X < b.X ? a.X : b.X;
-            a.Y = a.Y < b.Y ? a.Y : b.Y;
-            a.Z = a.Z < b.Z ? a.Z : b.Z;
-            return a;
+            return new Vector3(
+                float.Min(a.X, b.X),
+                float.Min(a.Y, b.Y),
+                float.Min(a.Z, b.Z));
         }
 
         /// <summary>
         /// Returns a vector created from the smallest of the corresponding components of the given vectors.
+        /// Any NaN inputs are propagated.
         /// </summary>
         /// <param name="a">First operand.</param>
         /// <param name="b">Second operand.</param>
         /// <param name="result">The component-wise minimum.</param>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static void ComponentMin(in Vector3 a, in Vector3 b, out Vector3 result)
         {
-            result.X = a.X < b.X ? a.X : b.X;
-            result.Y = a.Y < b.Y ? a.Y : b.Y;
-            result.Z = a.Z < b.Z ? a.Z : b.Z;
+            result.X = float.Min(a.X, b.X);
+            result.Y = float.Min(a.Y, b.Y);
+            result.Z = float.Min(a.Z, b.Z);
+        }
+
+        /// <summary>
+        /// Returns a vector created from the smallest of the corresponding components of the given vectors.
+        /// If one of the two components are NaN the other component is returned.
+        /// </summary>
+        /// <param name="a">First operand.</param>
+        /// <param name="b">Second operand.</param>
+        /// <returns>The component-wise minimum.</returns>
+        [Pure]
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static Vector3 ComponentMinNumber(Vector3 a, Vector3 b)
+        {
+            return new Vector3(
+                float.MinNumber(a.X, b.X),
+                float.MinNumber(a.Y, b.Y),
+                float.MinNumber(a.Z, b.Z));
+        }
+
+        /// <summary>
+        /// Returns a vector created from the smallest of the corresponding components of the given vectors.
+        /// If one of the two components are NaN the other component is returned.
+        /// </summary>
+        /// <param name="a">First operand.</param>
+        /// <param name="b">Second operand.</param>
+        /// <param name="result">The component-wise minimum.</param>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static void ComponentMinNumber(in Vector3 a, in Vector3 b, out Vector3 result)
+        {
+            result.X = float.MinNumber(a.X, b.X);
+            result.Y = float.MinNumber(a.Y, b.Y);
+            result.Z = float.MinNumber(a.Z, b.Z);
+        }
+
+        /// <summary>
+        /// Returns a vector created from the smallest of the corresponding components of the given vectors.
+        /// What happens when the input component is NaN or -0 is platform dependent.
+        /// </summary>
+        /// <param name="a">First operand.</param>
+        /// <param name="b">Second operand.</param>
+        /// <returns>The component-wise minimum.</returns>
+        [Pure]
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static Vector3 ComponentMinNative(Vector3 a, Vector3 b)
+        {
+            return new Vector3(
+                float.MinNative(a.X, b.X),
+                float.MinNative(a.Y, b.Y),
+                float.MinNative(a.Z, b.Z));
+        }
+
+        /// <summary>
+        /// Returns a vector created from the smallest of the corresponding components of the given vectors.
+        /// What happens when the input component is NaN or -0 is platform dependent.
+        /// </summary>
+        /// <param name="a">First operand.</param>
+        /// <param name="b">Second operand.</param>
+        /// <param name="result">The component-wise minimum.</param>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static void ComponentMinNative(in Vector3 a, in Vector3 b, out Vector3 result)
+        {
+            result.X = float.MinNative(a.X, b.X);
+            result.Y = float.MinNative(a.Y, b.Y);
+            result.Z = float.MinNative(a.Z, b.Z);
         }
 
         /// <summary>
         /// Returns a vector created from the largest of the corresponding components of the given vectors.
+        /// Any NaN inputs are propagated.
         /// </summary>
         /// <param name="a">First operand.</param>
         /// <param name="b">Second operand.</param>
-        /// <returns>The component-wise maximum.</returns>
+        /// <returns>The component-wise minimum.</returns>
         [Pure]
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static Vector3 ComponentMax(Vector3 a, Vector3 b)
         {
-            a.X = a.X > b.X ? a.X : b.X;
-            a.Y = a.Y > b.Y ? a.Y : b.Y;
-            a.Z = a.Z > b.Z ? a.Z : b.Z;
-            return a;
+            return new Vector3(
+                float.Max(a.X, b.X),
+                float.Max(a.Y, b.Y),
+                float.Max(a.Z, b.Z));
         }
 
         /// <summary>
         /// Returns a vector created from the largest of the corresponding components of the given vectors.
+        /// Any NaN inputs are propagated.
         /// </summary>
         /// <param name="a">First operand.</param>
         /// <param name="b">Second operand.</param>
-        /// <param name="result">The component-wise maximum.</param>
+        /// <param name="result">The component-wise minimum.</param>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static void ComponentMax(in Vector3 a, in Vector3 b, out Vector3 result)
         {
-            result.X = a.X > b.X ? a.X : b.X;
-            result.Y = a.Y > b.Y ? a.Y : b.Y;
-            result.Z = a.Z > b.Z ? a.Z : b.Z;
+            result.X = float.Max(a.X, b.X);
+            result.Y = float.Max(a.Y, b.Y);
+            result.Z = float.Max(a.Z, b.Z);
+        }
+
+        /// <summary>
+        /// Returns a vector created from the largest of the corresponding components of the given vectors.
+        /// If one of the two components are NaN the other component is returned.
+        /// </summary>
+        /// <param name="a">First operand.</param>
+        /// <param name="b">Second operand.</param>
+        /// <returns>The component-wise minimum.</returns>
+        [Pure]
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static Vector3 ComponentMaxNumber(Vector3 a, Vector3 b)
+        {
+            return new Vector3(
+                float.MaxNumber(a.X, b.X),
+                float.MaxNumber(a.Y, b.Y),
+                float.MaxNumber(a.Z, b.Z));
+        }
+
+        /// <summary>
+        /// Returns a vector created from the largest of the corresponding components of the given vectors.
+        /// If one of the two components are NaN the other component is returned.
+        /// </summary>
+        /// <param name="a">First operand.</param>
+        /// <param name="b">Second operand.</param>
+        /// <param name="result">The component-wise minimum.</param>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static void ComponentMaxNumber(in Vector3 a, in Vector3 b, out Vector3 result)
+        {
+            result.X = float.MaxNumber(a.X, b.X);
+            result.Y = float.MaxNumber(a.Y, b.Y);
+            result.Z = float.MaxNumber(a.Z, b.Z);
+        }
+
+        /// <summary>
+        /// Returns a vector created from the largest of the corresponding components of the given vectors.
+        /// What happens when the input component is NaN or -0 is platform dependent.
+        /// </summary>
+        /// <param name="a">First operand.</param>
+        /// <param name="b">Second operand.</param>
+        /// <returns>The component-wise minimum.</returns>
+        [Pure]
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static Vector3 ComponentMaxNative(Vector3 a, Vector3 b)
+        {
+            return new Vector3(
+                float.MaxNative(a.X, b.X),
+                float.MaxNative(a.Y, b.Y),
+                float.MaxNative(a.Z, b.Z));
+        }
+
+        /// <summary>
+        /// Returns a vector created from the largest of the corresponding components of the given vectors.
+        /// What happens when the input component is NaN or -0 is platform dependent.
+        /// </summary>
+        /// <param name="a">First operand.</param>
+        /// <param name="b">Second operand.</param>
+        /// <param name="result">The component-wise minimum.</param>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static void ComponentMaxNative(in Vector3 a, in Vector3 b, out Vector3 result)
+        {
+            result.X = float.MaxNative(a.X, b.X);
+            result.Y = float.MaxNative(a.Y, b.Y);
+            result.Z = float.MaxNative(a.Z, b.Z);
         }
 
         /// <summary>

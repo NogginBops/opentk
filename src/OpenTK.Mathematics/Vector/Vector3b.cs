@@ -1,11 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
+﻿//
+// Vector3b.cs
+//
+// Copyright (C) 2026 OpenTK
+//
+// This software may be modified and distributed under the terms
+// of the MIT license. See the LICENSE file for details.
+//
+
+using System;
 using System.Diagnostics.Contracts;
-using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading.Tasks;
 using System.Xml.Serialization;
 
 namespace OpenTK.Mathematics
