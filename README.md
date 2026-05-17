@@ -144,12 +144,12 @@ https://www.nuget.org/packages/OpenTK.GLControl/3.0.0
 Building from source
 ============
 
-To build OpenTK from source you just need to clone the git repo and open `OpenTK.sln` in Visual Studio 2019 or later.
+To build OpenTK from source you just need to clone the git repo and open `OpenTK.slnx` in Visual Studio 2026 or later.
 
 ```
 git clone https://github.com/opentk/opentk   # Download source code from git
 cd opentk                                    # Enter the source directory
-# open OpenTK.sln
+# open OpenTK.slnx
 ```
 
 Alternatively if you want to build using our buildscript you can use `build.cmd / build.sh` which require .net 6 to be installed. 
