@@ -6,6 +6,7 @@ using GeneratorBase.Utility.Extensions;
 using System;
 using System.CodeDom.Compiler;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Reflection;
@@ -473,14 +474,17 @@ namespace ALGenerator
 
         private static void WriteEnumMemberDocumentation(IndentedTextWriter writer, EnumMember member, EnumMemberDocumentation? documentation)
         {
+            writer.Write($"/// <summary>");
+            writer.WriteVersionInfo(member.VersionInfo!);
+
+            bool endSummaryOnNewLine = false;
             if (documentation != null)
             {
                 if (documentation.PropertyInfo != null || documentation.Comment != null)
                 {
-                    writer.WriteLine($"/// <summary>");
                     if (documentation.PropertyInfo != null)
                     {
-                        writer.Write($"/// <b>[property on: {string.Join(", ", documentation.PropertyInfo.PropertyOn)}]");
+                        writer.Write($"<b>[property on: {string.Join(", ", documentation.PropertyInfo.PropertyOn)}]");
                         // FIXME: Our own range syntax.
                         if (documentation.PropertyInfo.Range != null)
                             writer.Write($"[range: {documentation.PropertyInfo.Range} ]");
@@ -488,20 +492,38 @@ namespace ALGenerator
                         // FIXME: AL_TRUE -> true, AL_FALSE -> false
                         if (documentation.PropertyInfo.Default != null)
                             writer.Write($"[default value: {documentation.PropertyInfo.Default}]");
-                        writer.WriteLine($"</b><br/>");
+                        writer.Write($"</b><br/>");
                     }
 
-                    foreach (var line in documentation.Comment?.Split("\n").Select(s => s.TrimEnd()) ?? [])
+                    int lines = documentation.Comment.Count('\n') + 1;
+                    if (lines == 1)
                     {
-                        writer.WriteLine($"/// {line}");
+                        writer.Write(documentation.Comment);
                     }
+                    else
+                    {
+                        writer.WriteLine();
+                        foreach (var line in documentation.Comment?.Split("\n").Select(s => s.TrimEnd()) ?? [])
+                        {
+                            writer.WriteLine($"/// {line}");
+                        }
 
-                    writer.WriteLine("/// </summary>");
+                        endSummaryOnNewLine = true;
+                    }
                 }
                 else
                 {
 
                 }
+            }
+
+            if (endSummaryOnNewLine)
+            {
+                writer.WriteLine("/// </summary>");
+            }
+            else
+            {
+                writer.WriteLine("</summary>"); 
             }
 
             writer.WriteLine($"/// <remarks>[originally: {member.OriginalName}]</remarks>");
