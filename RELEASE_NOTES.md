@@ -1,3 +1,97 @@
+## 5.0-pre.16
+
+* Update to .NET 10. (@NogginBops)
+* Migrate to `slnx` solution. (@NogginBops)
+* Remove paket from the build system and use `dotnet pack` instead. (@NogginBops)
+* Update descriptions and READMEs of packages to be consistent. (@NogginBops)
+* Removed `OpenTK.Input` package and namespace. (@NogginBops)
+* Enable source link for OpenTK packages. (@NogginBops)
+* Unified the OpenAL and OpenGL bindings generator code and simplified it significantly. (@NogginBops)
+* Make `VectorN.ComponentMin` and `VectorN.ComponentMax` properly NaN propagating. (@NogginBops)
+* Add `VectorN.ComponentMinNumber`, `VectorN.ComponentMinNative`, `VectorN.ComponentMaxNumber`, and `VectorN.ComponentMaxNative`. (@NogginBops)
+* Reworked `Box2/i/d` and `Box3/i/d` structs significantly. (@NogginBops)
+  * Made `Min` and `Max` raw fields.
+  * Changed `BoxN.Contains` to actually test if the box is completely contained. For the old behavior use `BoxN.IntersectsWith` or `BoxN.Touches`.
+  * Add `BoxN.Empty` to represent empty boxes for use in bounding box calculations.
+  * Add `BoxN.Zero` to represent point at (0, 0).
+  * Add `BoxN.IsEmpty`, `BoxN.IsPoint`, and `BoxN.HasZeroArea`, `Box2.Area`, and `Box3.Volume` properties.
+  * Removed `BoxN.Top`, `BoxN.Right`, `BoxN.Bottom`, `BoxN.Left`, `BoxN.X`, `BoxN.Y`, `BoxN.SizeX`, `BoxN.SizeY`, `BoxN.CenteredSize`, `BoxN.IsZero` properties.
+  * Removed setters for `BoxN.Width`, `BoxN.Height`, `BoxN.Size`, `BoxN.Location` properties.
+  * Added `BoxN.DistanceToNearestPointInBox`, `BoxN.DistanceToNearestEdge`,  `BoxN.SignedDistanceToNearestEdge`, `BoxN.NearestPointInBox`, and `BoxN.NearestPointOnEdge`.
+  * Added `BoxNi.EuclidianDistanceToNearestPointInBox`, `BoxNi.EuclidianDistanceToNearestEdge`, `BoxNi.ManhattanDistanceToNearestEdge`, `BoxNi.SignedEuclidianDistanceToNearestEdge`, and `BoxNi.SignedManhattanDistanceToNearestEdge`.
+  * Changed `BoxN.Round`, `BoxN.Floor`, and `BoxN.Ceiling` to return `BoxN` instead of `BoxNi`.
+  * Added `BoxN.FloorCeiling` that floors min point and ceilings the max point.
+
+**OpenAL bindings changes**:
+
+* Add documentation to ALC and AL enums. (@NogginBops)
+* Add OpenAL specification and extension specificiation links to OpenAL function documentation. (@NogginBops)
+* Fix typo `AL.DopperFactor` -> `AL.DopplerFactor`. (@NogginBops)
+* Capitalization of "1D", "2D", and "3D" is now correct. (@NogginBops)
+* Add version info to enum members. (@NogginBops)
+* Add back `ALC.GetContextAttributes` and `ALC.GetStringList` (@NogginBops)
+* Change `AL.SourceQueueBuffers`  and `AL.SourceUnqueueBuffers` to take `int` instead of `uint`. (@NogginBops)
+* Fixed capitalization of many acronyms in the OpenAL bindings. (@NogginBops)
+* Document original enum name in inline enum documentation. (@NogginBops)
+
+**Vulkan bindings changes**:
+
+* Updates vulkan bindings to 1.4.352. (@NogginBops)
+* Capitalization of "1D", "2D", and "3D" is now correct. (@NogginBops)
+* Fix underlying type for dispatchable handles on 32-bit platforms. (@NogginBops)
+* Added inline documentation annotations for optional and extern sync parameters. (@NogginBops)
+* Fix 64-bit enums with values larger than `int.MaxValue` having the wrong values. (@NogginBops)
+* Properly XML escape documentation comments for struct members. (@NogginBops)
+
+**OpenGL bindings changes**:
+
+* Capitalization of "1D", "2D", and "3D" is now correct. (@NogginBops)
+* Fix inline documentation now working correctly being included in the nuget package. (@NogginBops)
+* Fix extension documentation links sometimes being broken. (@NogginBops)
+* Remove GLES2 functions from OpenGL namespace that had snuck in and vice versa. (@NogginBops)
+* Make `GL.ObjectLabel` and `GL.ObjectPtrLabel` take an `int` parameter instead of `uint` for the OpenGL object. (@NogginBops)
+* Make `GL.ObjectPtrLabel` correctly take a `GLSync` parameter. (@NogginBops)
+* Add `GL.GetShaderInfoLog` and `GL.GetProgramInfoLog` overloads returning a `string`. (@NogginBops)
+* Capitalization of "1D" is now correct. (@NogginBops)
+* Add `ClipOrigin` and `ClipDepthMode` to the `GetPName` enum. (@NogginBops)
+* Removed extension functions marked for compatibility profile from `OpenTK.Graphics.OpenGL`. (@NogginBops)
+* Updated to latest OpenGL 4 documentation. Notably `GL.DrawElements` now correctly documents `indices` as being an offset and not a pointer to the index data itself. (@NogginBops)
+* Add version info to enum members. (@NogginBops)
+* Document original enum name in inline enum documentation. (@NogginBops)
+
+**PAL2 changes**:
+
+* Added `Toolkit.Window.GetOpenGLContext` to get OpenGL context from a window handle if one has been created. (@NogginBops)
+* Added `Toolkit.OpenGL.GetWindow` to get the window that was used to create a OpenGL context. (@NogginBops)
+* Rework `Toolkit.Joystick` to handle arbitrary number of buttons and axes. (@NogginBops)
+  * `Toolkit.Joystick` is only implemented in the Win32 and SDL backends so far.
+* Add `Toolkit.Gamepad` for xbox style gamepad support. (@NogginBops)
+  * `Toolkit.Gamepad` only works *partially* in the Win32 backend so far.
+* Changed `Toolkit.Keyboard.GetActiveKeyboardLayout` to `Toolkit.Keyboard.GetActiveInputLanguage`. (@NogginBops)
+* Changed `Toolkit.Keyboard.GetAvailableKeyboardLayouts` to `Toolkit.Keyboard.GetInstalledInputLanguages`. (@NogginBops)
+* Add `DisplayValuesChangedEvent` which is sent when various properties of displays change. (@NogginBops) 
+* Add `ClientPosition` property to `MouseButtonDownEventArgs` and `MouseButtonUpEventArgs`. (@NogginBops)
+* Add `Clicks` property to `MouseButtonDownEventArgs` and `MouseButtonUpEventArgs` for detecting double-clicks. (@NogginBops)
+* Replaced `EventQueue` with `Toolkit.Event` and remove some unused apis from `EventQueue`. (@NogginBops)
+
+win32: 
+
+* Fix issue where non-integer refresh rates would cause `ExclusiveFullscreen` to fail. (@NogginBops)
+* Partial fix to high polling rate mice having large impact on framerate. (@JoeTwizzle, @NogginBops)
+* Added `ToolkitOptions.Windows.MaxWindowMessagesPerFrame` to limit the number of events processed in a frame, can help with high polling rate mice performance. (@JoeTwizzle, @NogginBops)
+* Fix bug where changing the window border mode would give the window focus. (@NogginBops)
+
+macOS:
+
+* Fix issue with missing entry point `objc_msgSend_stret` on apple silicon. (@NogginBops)
+
+x11:
+
+* Read `Xft.dpi` setting for `Toolkit.Display.GetDisplayScale` and `Toolkit.Window.GetContentScale`. (@NogginBops)
+* Made `Toolkit.Shell.AllowScreenSaver(false, ...)` a little more likely to work. (@NogginBops)
+* Use freedesktop UPower dbus service, if available, for more reliable battery information. (@NogginBops)
+* Use gsettings, if available, to get more accurate keyboard layout information. (@NogginBops)
+
 ## 5.0-pre.15
 
 * Optimize vector and matrix indexers so they are actually inlined correctly. (@BoyBaykiller)
