@@ -488,6 +488,14 @@ namespace GLGenerator
             }
         }
 
+        private static void WriteEnumMemberDocumentation(IndentedTextWriter writer, EnumMember member)
+        {
+            writer.Write($"/// <summary>");
+            writer.WriteVersionInfo(member.VersionInfo!);
+            writer.WriteLine("</summary>");
+            writer.WriteLine($"/// <remarks>[originally: {member.OriginalName}]</remarks>");
+        }
+
         private static void WriteEnums(string directoryPath, FileStrings strings, List<EnumType> enumGroups)
         {
             using StreamWriter stream = File.CreateText(Path.Combine(directoryPath, "Enums.cs"));
@@ -516,6 +524,7 @@ namespace GLGenerator
             {
                 if (group.FunctionsUsingEnumGroup.Count > 0)
                 {
+                    Logger.Info($"references: {group.FunctionsUsingEnumGroup.Count}");
                     if (group.FunctionsUsingEnumGroup.Count > 3)
                     {
                         writer.WriteLine($"///<summary>Used in {string.Join(", ", group.FunctionsUsingEnumGroup.Take(3).Select(f => $"<see cref=\"{apiName}.{(f.Vendor != "" ? $"{f.Vendor}." : "")}{f.Function.Name}\" />"))}, ...</summary>");
@@ -532,6 +541,8 @@ namespace GLGenerator
                 {
                     foreach (var member in group.Members)
                     {
+                        WriteEnumMemberDocumentation(writer, member);
+
                         // HACK: Some enums have a value of -1, and because
                         // we don't know the bitwidth of the enum here we can't cast
                         // the value correctly. This hack fixes this for -1 but doesn't
