@@ -47,7 +47,7 @@ let tags = "OpenTK OpenGL OpenGLES GLES OpenAL OpenCL C# F# .NET Mono Vector Mat
 
 let copyright = "Copyright (c) 2006 - 2020 Stefanos Apostolopoulos <stapostol@gmail.com> for the Open Toolkit library."
 
-let solutionFile = rootDir </> "OpenTK.sln"
+let solutionFile = rootDir </> "OpenTK.slnx"
 
 let gitOwner = "opentk"
 
