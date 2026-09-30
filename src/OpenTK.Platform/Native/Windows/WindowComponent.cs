@@ -927,10 +927,8 @@ namespace OpenTK.Platform.Native.Windows
                         }
 
                         Win32.RECT insets = default;
-                        // We need ToInt64 here as Style is a uint which means that 0x00000000_ffffffff could be returned,
-                        // and ToInt32 is going to throw in that case
-                        WindowStyles style = (WindowStyles)Win32.GetWindowLongPtr(h.HWnd, GetGWLPIndex.Style).ToInt64();
-                        WindowStylesEx exStyle = (WindowStylesEx)Win32.GetWindowLongPtr(h.HWnd, GetGWLPIndex.ExStyle).ToInt64();
+                        WindowStyles style = (WindowStyles)Win32.GetWindowLongPtr(h.HWnd, GetGWLPIndex.Style);
+                        WindowStylesEx exStyle = (WindowStylesEx)Win32.GetWindowLongPtr(h.HWnd, GetGWLPIndex.ExStyle);
 
                         // FIXME: Maybe we should be calling AdjustWindowRectExForDpi if it is available?
                         Win32.AdjustWindowRectEx(ref insets, style, false, exStyle);
@@ -1801,7 +1799,7 @@ namespace OpenTK.Platform.Native.Windows
             HWND hwnd = handle.As<HWND>(this);
 
             Win32.RECT rect = new Win32.RECT(newClientPosition.X, newClientPosition.Y, 0, 0);
-            WindowStyles currentStyle = (WindowStyles)Win32.GetWindowLongPtr(hwnd.HWnd, GetGWLPIndex.Style).ToInt64();
+            WindowStyles currentStyle = (WindowStyles)Win32.GetWindowLongPtr(hwnd.HWnd, GetGWLPIndex.Style);
 
             // This assumes the window doesn't have a menu bar or scroll bars. For now our windows don't have those, but it's possible that could change.
             // A user could also modify the window manually so that it has a menubar or scrollbar.
@@ -1836,7 +1834,7 @@ namespace OpenTK.Platform.Native.Windows
 
             Win32.RECT rect = new Win32.RECT(0, 0, newClientSize.X, newClientSize.Y);
 
-            WindowStyles currentStyle = (WindowStyles)Win32.GetWindowLongPtr(hwnd.HWnd, GetGWLPIndex.Style).ToInt64();
+            WindowStyles currentStyle = (WindowStyles)Win32.GetWindowLongPtr(hwnd.HWnd, GetGWLPIndex.Style);
 
             // This assumes the window doesn't have a menu bar or scroll bars. For now our windows don't have those, but it's possible that could change.
             // A user could also modify the window manually so that it has a menubar or scrollbar.
@@ -1880,7 +1878,7 @@ namespace OpenTK.Platform.Native.Windows
 
             Win32.RECT rect = new Win32.RECT(x, y, x + width, y + height);
 
-            WindowStyles currentStyle = (WindowStyles)Win32.GetWindowLongPtr(hwnd.HWnd, GetGWLPIndex.Style).ToInt64();
+            WindowStyles currentStyle = (WindowStyles)Win32.GetWindowLongPtr(hwnd.HWnd, GetGWLPIndex.Style);
 
             // This assumes the window doesn't have a menu bar or scroll bars. For now our windows don't have those, but it's possible that could change.
             // A user could also modify the window manually so that it has a menubar or scrollbar.
@@ -1976,13 +1974,49 @@ namespace OpenTK.Platform.Native.Windows
         }
 
         /// <inheritdoc/>
+        public WindowType GetWindowType(WindowHandle handle)
+        {
+            HWND hwnd = handle.As<HWND>(this);
+
+            WindowStylesEx windowStyleEx = (WindowStylesEx)Win32.GetWindowLongPtr(hwnd.HWnd, GetGWLPIndex.ExStyle);
+            if (windowStyleEx.HasFlag(WindowStylesEx.ToolWindow))
+            {
+                return WindowType.ToolBox;
+            }
+            else
+            {
+                return WindowType.Normal;
+            }
+        }
+
+        /// <inheritdoc/>
+        public void SetWindowType(WindowHandle handle, WindowType type)
+        {
+            HWND hwnd = handle.As<HWND>(this);
+
+            WindowStylesEx windowStyleEx = (WindowStylesEx)Win32.GetWindowLongPtr(hwnd.HWnd, GetGWLPIndex.ExStyle);
+
+            switch (type)
+            {
+                case WindowType.Normal:
+                    windowStyleEx &= ~WindowStylesEx.ToolWindow;
+                    break;
+                case WindowType.ToolBox:
+                    windowStyleEx |= WindowStylesEx.ToolWindow;
+                    break;
+                default:
+                    throw new InvalidEnumArgumentException(nameof(type), (int)type, type.GetType());
+            }
+
+            Win32.SetWindowLongPtr(hwnd.HWnd, SetGWLPIndex.ExStyle, new IntPtr((uint)windowStyleEx));
+        }
+
+        /// <inheritdoc/>
         public WindowMode GetMode(WindowHandle handle)
         {
             HWND hwnd = handle.As<HWND>(this);
 
-            // We need ToInt64 here as Style is a uint which means that 0x00000000_ffffffff could be returned,
-            // and ToInt32 is going to throw in that case
-            WindowStyles style = (WindowStyles)Win32.GetWindowLongPtr(hwnd.HWnd, GetGWLPIndex.Style).ToInt64();
+            WindowStyles style = (WindowStyles)Win32.GetWindowLongPtr(hwnd.HWnd, GetGWLPIndex.Style);
 
             if (hwnd.FullscreenMonitor != null)
             {
@@ -2053,7 +2087,7 @@ namespace OpenTK.Platform.Native.Windows
             // - Noggin_bops 2025-02-18
             if (mode == WindowMode.WindowedFullscreen || mode == WindowMode.ExclusiveFullscreen)
             {
-                WindowStyles style = (WindowStyles)Win32.GetWindowLongPtr(hwnd.HWnd, GetGWLPIndex.Style).ToInt64();
+                WindowStyles style = (WindowStyles)Win32.GetWindowLongPtr(hwnd.HWnd, GetGWLPIndex.Style);
                 if (style.HasFlag(WindowStyles.Visible) == false)
                 {
                     Win32.ShowWindow(hwnd.HWnd, ShowWindowCommands.ShowNA);
@@ -2223,18 +2257,8 @@ namespace OpenTK.Platform.Native.Windows
                 return hwnd.PreviousBorderStyle;
             }
 
-            // We need ToInt64 here as Style is a uint which means that 0x00000000_ffffffff could be returned,
-            // and ToInt32 is going to throw in that case
-            WindowStyles style = (WindowStyles)Win32.GetWindowLongPtr(hwnd.HWnd, GetGWLPIndex.Style).ToInt64();
-
-            // We need ToInt64 here as Style is a uint which means that 0x00000000_ffffffff could be returned,
-            // and ToInt32 is going to throw in that case
-            WindowStylesEx styleEx = (WindowStylesEx)Win32.GetWindowLongPtr(hwnd.HWnd, GetGWLPIndex.ExStyle).ToInt64();
-
-            if (styleEx.HasFlag(WindowStylesEx.ToolWindow))
-            {
-                return WindowBorderStyle.ToolBox;
-            }
+            WindowStyles style = (WindowStyles)Win32.GetWindowLongPtr(hwnd.HWnd, GetGWLPIndex.Style);
+            WindowStylesEx styleEx = (WindowStylesEx)Win32.GetWindowLongPtr(hwnd.HWnd, GetGWLPIndex.ExStyle);
 
             // FIXME: Better way of checking these!!
             if (style.HasFlag(WindowStyles.OverlappedWindow & ~(WindowStyles.ThickFrame | WindowStyles.MaximizeBox)) &&
@@ -2265,7 +2289,6 @@ namespace OpenTK.Platform.Native.Windows
             WindowBorderStyle.Borderless,
             WindowBorderStyle.FixedBorder,
             WindowBorderStyle.ResizableBorder,
-            WindowBorderStyle.ToolBox,
         };
 
         /// <inheritdoc/>
@@ -2273,17 +2296,14 @@ namespace OpenTK.Platform.Native.Windows
         {
             HWND hwnd = handle.As<HWND>(this);
 
-            // We need ToInt64 here as Style is a uint which means that 0x00000000_ffffffff could be returned,
-            // and ToInt32 is going to throw in that case
-            WindowStyles windowStyle = (WindowStyles)Win32.GetWindowLongPtr(hwnd.HWnd, GetGWLPIndex.Style).ToInt64();
+            WindowStyles windowStyle = (WindowStyles)Win32.GetWindowLongPtr(hwnd.HWnd, GetGWLPIndex.Style);
 
-            // We need ToInt64 here as Style is a uint which means that 0x00000000_ffffffff could be returned,
-            // and ToInt32 is going to throw in that case
-            WindowStylesEx windowStyleEx = (WindowStylesEx)Win32.GetWindowLongPtr(hwnd.HWnd, GetGWLPIndex.ExStyle).ToInt64();
+            WindowStylesEx windowStyleEx = (WindowStylesEx)Win32.GetWindowLongPtr(hwnd.HWnd, GetGWLPIndex.ExStyle);
 
+            // FIXME? Setting overlapped window here is going to mess with fullscreen windows, do we want that to happen?
+            // - Noggin_bops 2026-09-30
             // Reset the window style, we are going to set the flags for the specific mode later.
             windowStyle &= ~WindowStyles.OverlappedWindow;
-            windowStyleEx &= ~WindowStylesEx.ToolWindow;
 
             switch (style)
             {
@@ -2307,12 +2327,6 @@ namespace OpenTK.Platform.Native.Windows
                     Win32.SetWindowLongPtr(hwnd.HWnd, SetGWLPIndex.Style, new IntPtr((uint)windowStyle));
                     Win32.SetWindowLongPtr(hwnd.HWnd, SetGWLPIndex.ExStyle, new IntPtr((uint)windowStyleEx));
                     break;
-                case WindowBorderStyle.ToolBox:
-                    windowStyle |= WindowStyles.OverlappedWindow;
-                    windowStyleEx |= WindowStylesEx.ToolWindow;
-                    Win32.SetWindowLongPtr(hwnd.HWnd, SetGWLPIndex.Style, new IntPtr((uint)windowStyle));
-                    Win32.SetWindowLongPtr(hwnd.HWnd, SetGWLPIndex.ExStyle, new IntPtr((uint)windowStyleEx));
-                    break;
                 default:
                     throw new InvalidEnumArgumentException(nameof(style), (int)style, style.GetType());
             }
@@ -2332,7 +2346,7 @@ namespace OpenTK.Platform.Native.Windows
         {
             HWND hwnd = handle.As<HWND>(this);
 
-            WindowStylesEx exStyle = (WindowStylesEx)Win32.GetWindowLongPtr(hwnd.HWnd, GetGWLPIndex.ExStyle).ToInt64();
+            WindowStylesEx exStyle = (WindowStylesEx)Win32.GetWindowLongPtr(hwnd.HWnd, GetGWLPIndex.ExStyle);
             if (transparencyMode != WindowTransparencyMode.TransparentWindow && exStyle.HasFlag(WindowStylesEx.Layered))
             {
                 // Disable opacity
@@ -2412,7 +2426,7 @@ namespace OpenTK.Platform.Native.Windows
         {
             HWND hwnd = handle.As<HWND>(this);
 
-            WindowStylesEx exStyle = (WindowStylesEx)Win32.GetWindowLongPtr(hwnd.HWnd, GetGWLPIndex.ExStyle).ToInt64();
+            WindowStylesEx exStyle = (WindowStylesEx)Win32.GetWindowLongPtr(hwnd.HWnd, GetGWLPIndex.ExStyle);
             if (exStyle.HasFlag(WindowStylesEx.Layered))
             {
                 // FIXME: Maybe check the LWA to see if we are actually applying alpha?
@@ -2435,11 +2449,19 @@ namespace OpenTK.Platform.Native.Windows
         }
 
         /// <inheritdoc/>
+        public bool GetMousePassthrough(WindowHandle handle)
+        {
+            HWND hwnd = handle.As<HWND>(this);
+            WindowStylesEx exStyle = (WindowStylesEx)Win32.GetWindowLongPtr(hwnd.HWnd, GetGWLPIndex.ExStyle);
+            return (exStyle & (WindowStylesEx.Layered | WindowStylesEx.Transparent)) == (WindowStylesEx.Layered | WindowStylesEx.Transparent);
+        }
+
+        /// <inheritdoc/>
         public void SetMousePassthrough(WindowHandle handle, bool transparent)
         {
             HWND hwnd = handle.As<HWND>(this);
 
-            WindowStylesEx exStyle = (WindowStylesEx)Win32.GetWindowLongPtr(hwnd.HWnd, GetGWLPIndex.ExStyle).ToInt64();
+            WindowStylesEx exStyle = (WindowStylesEx)Win32.GetWindowLongPtr(hwnd.HWnd, GetGWLPIndex.ExStyle);
             Win32.GetLayeredWindowAttributes(hwnd.HWnd, out uint key, out byte alpha, out LWA flags);
 
             if (transparent)
@@ -2465,14 +2487,6 @@ namespace OpenTK.Platform.Native.Windows
         }
 
         /// <inheritdoc/>
-        public bool GetMousePassthrough(WindowHandle handle)
-        {
-            HWND hwnd = handle.As<HWND>(this);
-            WindowStylesEx exStyle = (WindowStylesEx)Win32.GetWindowLongPtr(hwnd.HWnd, GetGWLPIndex.ExStyle).ToInt64();
-            return (exStyle & (WindowStylesEx.Layered | WindowStylesEx.Transparent)) == (WindowStylesEx.Layered | WindowStylesEx.Transparent);
-        }
-
-        /// <inheritdoc/>
         public void SetAlwaysOnTop(WindowHandle handle, bool floating)
         {
             HWND hwnd = handle.As<HWND>(this);
@@ -2494,9 +2508,7 @@ namespace OpenTK.Platform.Native.Windows
         {
             HWND hwnd = handle.As<HWND>(this);
 
-            // We need ToInt64 here as Style is a uint which means that 0x00000000_ffffffff could be returned,
-            // and ToInt32 is going to throw in that case
-            WindowStylesEx windowStyleEx = (WindowStylesEx)Win32.GetWindowLongPtr(hwnd.HWnd, GetGWLPIndex.ExStyle).ToInt64();
+            WindowStylesEx windowStyleEx = (WindowStylesEx)Win32.GetWindowLongPtr(hwnd.HWnd, GetGWLPIndex.ExStyle);
 
             Logger?.LogDebug($"StyleEx: {windowStyleEx}");
 

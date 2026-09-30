@@ -57,6 +57,7 @@ namespace OpenTK.Backends.Tests
 
         string titleString = "";
         string iconTitleString = "";
+        int windowTypeIndex = 0;
         int modeIndex = 0;
         int borderStyleIndex = 0;
         int transparencyModeIndex = 0;
@@ -65,7 +66,10 @@ namespace OpenTK.Backends.Tests
         Vector2i windowPosition;
         Vector2i clientPosition;
 
+        readonly static WindowType[] WindowTypes = Enum.GetValues<WindowType>();
+        readonly static string[] WindowTypeNames = Enum.GetNames<WindowType>();
         readonly static WindowMode[] WindowModes = Enum.GetValues<WindowMode>();
+        
         readonly static string[] WindowModeNames = Enum.GetNames<WindowMode>();
 
         readonly static WindowBorderStyle[] WindowBorderStyles = Enum.GetValues<WindowBorderStyle>();
@@ -190,7 +194,7 @@ namespace OpenTK.Backends.Tests
                 if (ImGui.Button("Apply##tile"))
                 {
                     Toolkit.Window.SetTitle(window, titleString);
-                    Program.Logger.LogInfo($"WindowComponent.SetTitle(\"{titleString}\")");
+                    Program.Logger.LogInfo($"Toolkit.Window.SetTitle(\"{titleString}\")");
                 }
 
                 if (Toolkit.Window is Platform.Native.X11.X11WindowComponent x11Win)
@@ -201,10 +205,19 @@ namespace OpenTK.Backends.Tests
                     if (ImGui.Button("Apply##icon_tile"))
                     {
                         x11Win.SetIconifiedTitle(window, iconTitleString);
-                        Program.Logger.LogInfo($"WindowComponent.SetIconTitle(\"{iconTitleString}\")");
+                        Program.Logger.LogInfo($"Toolkit.Window.SetIconTitle(\"{iconTitleString}\")");
                     }
 
                     string iconTitle = x11Win.GetIconifiedTitle(window);
+                }
+
+                ImGui.AlignTextToFramePadding();
+                ImGui.TextUnformatted("Type"); ImGui.SameLine();
+                ImGui.Combo("##type", ref windowTypeIndex, WindowTypeNames, WindowTypeNames.Length); ImGui.SameLine();
+                if (ImGui.Button("Apply##type"))
+                {
+                    Toolkit.Window.SetWindowType(window, WindowTypes[windowTypeIndex]);
+                    Program.Logger.LogInfo($"Toolkit.Window.SetWindowType({WindowTypeNames[windowTypeIndex]})");
                 }
 
                 ImGui.AlignTextToFramePadding();
@@ -213,7 +226,7 @@ namespace OpenTK.Backends.Tests
                 if (ImGui.Button("Apply##mode"))
                 {
                     Toolkit.Window.SetMode(window, WindowModes[modeIndex]);
-                    Program.Logger.LogInfo($"WindowComponent.SetMode({WindowModeNames[modeIndex]})");
+                    Program.Logger.LogInfo($"Toolkit.Window.SetMode({WindowModeNames[modeIndex]})");
                 }
 
                 // FIXME: change to toggle!
@@ -246,7 +259,7 @@ namespace OpenTK.Backends.Tests
                 if (ImGui.Button("Apply##border_style"))
                 {
                     Toolkit.Window.SetBorderStyle(window, WindowBorderStyles[borderStyleIndex]);
-                    Program.Logger.LogInfo($"WindowComponent.SetBorderStyle({WindowBorderStyleNames[borderStyleIndex]})");
+                    Program.Logger.LogInfo($"Toolkit.Window.SetBorderStyle({WindowBorderStyleNames[borderStyleIndex]})");
 
                     var style = Toolkit.Window.GetBorderStyle(window);
                     Program.Logger.LogInfo($"Border style: {style}");
@@ -286,7 +299,7 @@ namespace OpenTK.Backends.Tests
                 if (ImGui.Button("Apply##transparency_mode"))
                 {
                     Toolkit.Window.SetTransparencyMode(window, TransparencyModes[transparencyModeIndex], windowOpacity);
-                    Program.Logger.LogInfo($"WindowComponent.SetTransparencyMode({TransparencyModeNames[transparencyModeIndex]})");
+                    Program.Logger.LogInfo($"Toolkit.Window.SetTransparencyMode({TransparencyModeNames[transparencyModeIndex]})");
 
                     var mode = Toolkit.Window.GetTransparencyMode(window, out float opacity);
                     Program.Logger.LogInfo($"Transparency mode: {mode}");
@@ -339,7 +352,7 @@ namespace OpenTK.Backends.Tests
                 if (ImGui.Button("Set##Position"))
                 {
                     Toolkit.Window.SetPosition(window, windowPosition);
-                    Program.Logger.LogInfo($"WindowComponent.SetPosition({windowPosition})");
+                    Program.Logger.LogInfo($"Toolkit.Window.SetPosition({windowPosition})");
 
                     Toolkit.Window.GetPosition(window, out Vector2i position);
                     Program.Logger.LogInfo($"Window position: ({position.X}, {position.Y})");
@@ -349,7 +362,7 @@ namespace OpenTK.Backends.Tests
                 if (ImGui.Button("Set##ClientPosition"))
                 {
                     Toolkit.Window.SetClientPosition(window, clientPosition);
-                    Program.Logger.LogInfo($"WindowComponent.SetClientPosition({clientPosition})");
+                    Program.Logger.LogInfo($"Toolkit.Window.SetClientPosition({clientPosition})");
 
                     Toolkit.Window.GetClientPosition(window, out Vector2i cPos);
                     Program.Logger.LogInfo($"Client position: ({cPos.X}, {cPos.Y})");

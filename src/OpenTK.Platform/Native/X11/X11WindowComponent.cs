@@ -2884,6 +2884,80 @@ namespace OpenTK.Platform.Native.X11
         }
 
         /// <inheritdoc/>
+        public WindowType GetWindowType(WindowHandle handle)
+        {
+            XWindowHandle xwindow = handle.As<XWindowHandle>(this);
+
+            // Check for ToolBox
+            {
+                int result = XGetWindowProperty(
+                    X11.Display,
+                    xwindow.Window,
+                    X11.Atoms[KnownAtoms._NET_WM_WINDOW_TYPE],
+                    0, 1, false,
+                    X11.Atoms[KnownAtoms.ATOM],
+                    out _,
+                    out _,
+                    out _,
+                    out _,
+                    out IntPtr content);
+
+                if (result != Success)
+                {
+                    if (content != IntPtr.Zero)
+                    {
+                        XFree(content);
+                    }
+                }
+                else
+                {
+                    // If window type is UTILITY, assume toolbox.
+                    unsafe
+                    {
+                        XAtom windowType = *(XAtom*)content;
+                        XFree(content);
+                        if (windowType == X11.Atoms[KnownAtoms._NET_WM_WINDOW_TYPE_UTILITY])
+                        {
+                            return WindowType.ToolBox;
+                        }
+                    }
+                }
+            }
+
+            return WindowType.Normal;
+        }
+
+        /// <inheritdoc/>
+        public void SetWindowType(WindowHandle handle, WindowType type)
+        {
+            XWindowHandle xwindow = handle.As<XWindowHandle>(this);
+
+            switch (type)
+            {
+                case WindowType.Normal:
+                    SetNetWMWindowType(xwindow.Window, X11.Atoms[KnownAtoms._NET_WM_WINDOW_TYPE_NORMAL]);
+                    break;
+                case WindowType.ToolBox:
+                    SetNetWMWindowType(xwindow.Window, X11.Atoms[KnownAtoms._NET_WM_WINDOW_TYPE_UTILITY]);
+                    break;
+                default:
+                    throw new InvalidEnumArgumentException(nameof(type), (int)type, type.GetType());
+            }
+
+            static unsafe int SetNetWMWindowType(XWindow window, XAtom type)
+            {
+                return XChangeProperty(
+                        X11.Display,
+                        window,
+                        X11.Atoms[KnownAtoms._NET_WM_WINDOW_TYPE],
+                        X11.Atoms[KnownAtoms.ATOM], 32,
+                        XPropertyMode.Replace,
+                        (IntPtr)(void*)&type,
+                        1);
+            }
+        }
+
+        /// <inheritdoc/>
         /// <remarks>
         /// Calling this in rapid succession after <see cref="SetMode" /> will likely report the wrong mode as the X server hasn't updated the state of the window yet.
         /// We could add a delay where we wait for the server to change the window, but for now we leave it as it is.
@@ -3348,41 +3422,6 @@ namespace OpenTK.Platform.Native.X11
         {
             XWindowHandle xwindow = handle.As<XWindowHandle>(this);
 
-            // Check for ToolBox
-            {
-                int result = XGetWindowProperty(
-                    X11.Display, 
-                    xwindow.Window, 
-                    X11.Atoms[KnownAtoms._NET_WM_WINDOW_TYPE], 
-                    0, 1, false, 
-                    X11.Atoms[KnownAtoms.ATOM], 
-                    out _,
-                    out _,
-                    out _,
-                    out _,
-                    out IntPtr content);
-
-                if (result != Success)
-                {
-                    if (content != IntPtr.Zero)
-                    {
-                        XFree(content);
-                    }
-                }
-                else
-                {
-                    // If window type is UTILITY, assume toolbox.
-                    unsafe {
-                        XAtom windowType = *(XAtom*)content;
-                        XFree(content);
-                        if (windowType == X11.Atoms[KnownAtoms._NET_WM_WINDOW_TYPE_UTILITY])
-                        {
-                            return WindowBorderStyle.ToolBox;
-                        }
-                    }
-                }
-            }
-
             // Check for borderless
             {
                 int result = XGetWindowProperty(
@@ -3435,9 +3474,7 @@ namespace OpenTK.Platform.Native.X11
             switch (style)
             {
                 case WindowBorderStyle.ResizableBorder:
-                unsafe {
-                    SetNetWMWindowType(xwindow.Window, X11.Atoms[KnownAtoms._NET_WM_WINDOW_TYPE_NORMAL]);
-
+                {
                     SetDecorations(xwindow, true);
 
                     SetFixedSize(xwindow, false, -1, -1);
@@ -3445,9 +3482,8 @@ namespace OpenTK.Platform.Native.X11
                     break;
                 }
                 case WindowBorderStyle.Borderless:
-                unsafe {
+                {
                     // FIXME: Should the client size and location be retained when going borderless?
-                    SetNetWMWindowType(xwindow.Window, X11.Atoms[KnownAtoms._NET_WM_WINDOW_TYPE_NORMAL]);
 
                     SetDecorations(xwindow, false);
                     
@@ -3456,8 +3492,7 @@ namespace OpenTK.Platform.Native.X11
                     break;
                 }
                 case WindowBorderStyle.FixedBorder:
-                unsafe {
-                    SetNetWMWindowType(xwindow.Window, X11.Atoms[KnownAtoms._NET_WM_WINDOW_TYPE_NORMAL]);
+                {
                     // FIXME: Figure out if you can still resize the window programatically.
                     SetDecorations(xwindow, true);
 
@@ -3466,17 +3501,6 @@ namespace OpenTK.Platform.Native.X11
                     SetFixedSize(xwindow, true, clientSize.X, clientSize.Y);
                     xwindow.FixedSize = clientSize;
 
-                    break;
-                }
-                case WindowBorderStyle.ToolBox:
-                {
-                    // FIXME: Check that the window type atoms are available?
-                    SetNetWMWindowType(xwindow.Window, X11.Atoms[KnownAtoms._NET_WM_WINDOW_TYPE_UTILITY]);
-
-                    SetDecorations(xwindow, true);
-
-                    SetFixedSize(xwindow, false, -1, -1);
-                    xwindow.FixedSize = (-1, -1);
                     break;
                 }
                 default:
@@ -3546,18 +3570,6 @@ namespace OpenTK.Platform.Native.X11
                         XPropertyMode.Replace, 
                         (IntPtr)(void*)&hints, 
                         sizeof(MotifWmHints) / sizeof(long));
-            }
-        
-            static unsafe int SetNetWMWindowType(XWindow window, XAtom type)
-            {
-                return XChangeProperty(
-                        X11.Display, 
-                        window, 
-                        X11.Atoms[KnownAtoms._NET_WM_WINDOW_TYPE],
-                        X11.Atoms[KnownAtoms.ATOM], 32, 
-                        XPropertyMode.Replace,
-                        (IntPtr)(void*)&type,
-                        1);
             }
         }
 
@@ -3717,26 +3729,6 @@ namespace OpenTK.Platform.Native.X11
         }
 
         /// <inheritdoc/>
-        public void SetMousePassthrough(WindowHandle handle, bool transparent)
-        {
-            XWindowHandle xwindow = handle.As<XWindowHandle>(this);
-
-            if (HasShapeExtension)
-            {
-                if (transparent)
-                {
-                    XRegion region = XCreateRegion();
-                    XShape.XShapeCombineRegion(X11.Display, xwindow.Window, XShape.ShapeKind.ShapeInput, 0, 0, region, XShape.Operation.ShapeSet);
-                    XDestroyRegion(region);
-                }
-                else
-                {
-                    XShape.XShapeCombineMask(X11.Display, xwindow.Window, XShape.ShapeKind.ShapeInput, 0, 0, XPixmap.None, XShape.Operation.ShapeSet);
-                }
-            }
-        }
-
-        /// <inheritdoc/>
         public unsafe bool GetMousePassthrough(WindowHandle handle)
         {
             XWindowHandle xwindow = handle.As<XWindowHandle>(this);
@@ -3758,6 +3750,26 @@ namespace OpenTK.Platform.Native.X11
             else
             {
                 return false;
+            }
+        }
+
+        /// <inheritdoc/>
+        public void SetMousePassthrough(WindowHandle handle, bool transparent)
+        {
+            XWindowHandle xwindow = handle.As<XWindowHandle>(this);
+
+            if (HasShapeExtension)
+            {
+                if (transparent)
+                {
+                    XRegion region = XCreateRegion();
+                    XShape.XShapeCombineRegion(X11.Display, xwindow.Window, XShape.ShapeKind.ShapeInput, 0, 0, region, XShape.Operation.ShapeSet);
+                    XDestroyRegion(region);
+                }
+                else
+                {
+                    XShape.XShapeCombineMask(X11.Display, xwindow.Window, XShape.ShapeKind.ShapeInput, 0, 0, XPixmap.None, XShape.Operation.ShapeSet);
+                }
             }
         }
 

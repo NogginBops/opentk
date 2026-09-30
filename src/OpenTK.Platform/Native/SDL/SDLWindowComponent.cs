@@ -850,6 +850,18 @@ namespace OpenTK.Platform.Native.SDL
         }
 
         /// <inheritdoc/>
+        public WindowType GetWindowType(WindowHandle handle)
+        {
+            throw new NotImplementedException();
+        }
+
+        /// <inheritdoc/>
+        public void SetWindowType(WindowHandle handle, WindowType type)
+        {
+            throw new NotImplementedException();
+        }
+
+        /// <inheritdoc/>
         public WindowMode GetMode(WindowHandle handle)
         {
             SDLWindow window = handle.As<SDLWindow>(this);
@@ -1077,8 +1089,6 @@ namespace OpenTK.Platform.Native.SDL
                     SDL_SetWindowBordered(window.Window, 1);
                     SDL_SetWindowResizable(window.Window, 1);
                     break;
-                case WindowBorderStyle.ToolBox:
-                    throw new NotImplementedException();
                 default:
                     throw new InvalidEnumArgumentException(nameof(style), (int)style, typeof(WindowBorderStyle));
             }
@@ -1103,13 +1113,13 @@ namespace OpenTK.Platform.Native.SDL
         }
 
         /// <inheritdoc/>
-        public void SetMousePassthrough(WindowHandle handle, bool transparent)
+        public bool GetMousePassthrough(WindowHandle handle)
         {
             throw new NotImplementedException();
         }
 
         /// <inheritdoc/>
-        public bool GetMousePassthrough(WindowHandle handle)
+        public void SetMousePassthrough(WindowHandle handle, bool transparent)
         {
             throw new NotImplementedException();
         }
