@@ -224,7 +224,7 @@
         <enum value="0xD004" name="AL_LINEAR_DISTANCE_CLAMPED" />
     </enums>
     <enums comment="From AL_EXT_loop_points">
-        <enum value="0x2015" name="AL_LOOP_POINTS_EXT" group="BufferPNameI,BufferGetPNameI" />
+        <enum value="0x2015" name="AL_LOOP_POINTS_EXT" group="BufferPNameIV,BufferGetPNameIV" />
     </enums>
     <enums group="Format" comment="From AL_EXT_MCFORMATS">
         <enum value="0x1204" name="AL_FORMAT_QUAD8" />

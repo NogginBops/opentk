@@ -1625,9 +1625,6 @@ namespace OpenTK.Audio.OpenAL
         /// <summary><b>[requires: AL_SOFT_block_alignment]</b> <b>[property on: buffer][range: [0, ) ][default value: 0]</b><br/></summary>
         /// <remarks>[originally: AL_PACK_BLOCK_ALIGNMENT_SOFT]</remarks>
         PackBlockAlignmentSoft = 8205,
-        /// <summary><b>[requires: AL_EXT_loop_points]</b> </summary>
-        /// <remarks>[originally: AL_LOOP_POINTS_EXT]</remarks>
-        LoopPointsExt = 8213,
     }
     ///<summary>Used in <see cref="AL.GetBufferiv" />, <see cref="AL.EXT.GetBufferivDirect" /></summary>
     public enum BufferGetPNameIV : uint
@@ -1644,6 +1641,9 @@ namespace OpenTK.Audio.OpenAL
         /// <summary><b>[requires: v1.0]</b> <b>[property on: buffer]</b><br/>Buffer data size in bytes (query only).</summary>
         /// <remarks>[originally: AL_SIZE]</remarks>
         Size = 8196,
+        /// <summary><b>[requires: AL_EXT_loop_points]</b> </summary>
+        /// <remarks>[originally: AL_LOOP_POINTS_EXT]</remarks>
+        LoopPointsExt = 8213,
         /// <summary><b>[requires: AL_SOFT_loop_points]</b> <b>[property on: buffer][default value: 0,0]</b><br/></summary>
         /// <remarks>[originally: AL_LOOP_POINTS_SOFT]</remarks>
         LoopPointsSoft = 8213,
@@ -1696,13 +1696,13 @@ namespace OpenTK.Audio.OpenAL
         /// <summary><b>[requires: AL_SOFT_block_alignment]</b> <b>[property on: buffer][range: [0, ) ][default value: 0]</b><br/></summary>
         /// <remarks>[originally: AL_PACK_BLOCK_ALIGNMENT_SOFT]</remarks>
         PackBlockAlignmentSoft = 8205,
-        /// <summary><b>[requires: AL_EXT_loop_points]</b> </summary>
-        /// <remarks>[originally: AL_LOOP_POINTS_EXT]</remarks>
-        LoopPointsExt = 8213,
     }
     ///<summary>Used in <see cref="AL.Bufferiv" />, <see cref="AL.EXT.BufferivDirect" /></summary>
     public enum BufferPNameIV : uint
     {
+        /// <summary><b>[requires: AL_EXT_loop_points]</b> </summary>
+        /// <remarks>[originally: AL_LOOP_POINTS_EXT]</remarks>
+        LoopPointsExt = 8213,
         /// <summary><b>[requires: AL_SOFT_loop_points]</b> <b>[property on: buffer][default value: 0,0]</b><br/></summary>
         /// <remarks>[originally: AL_LOOP_POINTS_SOFT]</remarks>
         LoopPointsSoft = 8213,
