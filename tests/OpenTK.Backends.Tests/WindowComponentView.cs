@@ -169,6 +169,7 @@ namespace OpenTK.Backends.Tests
                 Vector2i pos = default, cPos = default;
                 Vector2i size = default, cSize = default, fbSize = default;
                 float scaleX = 1, scaleY = 1;
+                bool? hasFocus = null;
 
                 if (selectedWindow != -1)
                 {
@@ -182,6 +183,7 @@ namespace OpenTK.Backends.Tests
                     Toolkit.Window.GetSize(window, out size);
                     Toolkit.Window.GetFramebufferSize(window, out fbSize);
                     Toolkit.Window.GetScaleFactor(window, out scaleX, out scaleY);
+                    hasFocus = Toolkit.Window.IsFocused(window);
                 }
 
                 ImGui.Text($"Position: ({pos.X}, {pos.Y})");
@@ -190,6 +192,7 @@ namespace OpenTK.Backends.Tests
                 ImGui.Text($"Client Size: ({cSize.X}, {cSize.Y})");
                 ImGui.Text($"Framebuffer Size: ({fbSize.X}, {fbSize.Y})");
                 ImGui.Text($"Scale: ({scaleX}, {scaleY})");
+                ImGui.Text($"Has focus: {hasFocus}");
             }
             ImGui.Columns(1);
             

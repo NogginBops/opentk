@@ -10,6 +10,7 @@ using OpenTK.Platform;
 using OpenTK.Core.Utility;
 using OpenTK.Mathematics;
 using static OpenTK.Platform.Native.macOS.ObjC;
+using OpenTK.Core;
 
 namespace OpenTK.Platform.Native.macOS
 {
@@ -296,7 +297,7 @@ namespace OpenTK.Platform.Native.macOS
             class_addIvar(NSOpenTKWindowClass, OtkCompoenntFieldName, (nuint)nuint.Size, (nuint)int.Log2(nuint.Size), "^v"u8);
 
             // NSWindow methods.
-            class_addMethod(NSOpenTKWindowClass, sel_registerName("windowShouldClose:"u8), (IntPtr)NSOtkWindow_WindowShouldCloseInst, "b@:@"u8);
+            class_addMethod(NSOpenTKWindowClass, sel_registerName("windowShouldClose:"u8), (IntPtr)NSOtkWindow_WindowShouldCloseInst, "b@:@"u8); // BOOL is encoded as 'c' on 64-bit...
             class_addMethod(NSOpenTKWindowClass, sel_registerName("zoom:"u8), (IntPtr)NSOtkWindow_ZoomInst, "v@:@"u8);
             //class_addMethod(opentkWindowClass, sel_registerName("keyDown:"u8), (KeyDownDelegate)keyDown, "v@:@"u8);
 
@@ -311,6 +312,9 @@ namespace OpenTK.Platform.Native.macOS
             class_addMethod(NSOpenTKWindowClass, sel_registerName("windowDidExitFullScreen:"u8), (IntPtr)NSOtkWindowDelegate_WindowDidExitFullScreenInst, "v@:@"u8);
             class_addMethod(NSOpenTKWindowClass, sel_registerName("didChangeScreenParameters:"u8), (IntPtr)NSOtkWindowDelegate_DidChangeScreenParametersInst, "v@:@"u8);
             class_addMethod(NSOpenTKWindowClass, sel_registerName("windowDidChangeBackingProperties:"u8), (IntPtr)NSOtkWindowDelegate_WindowDidChangeBackingPropertiesInst, "v@:@"u8);
+
+            class_addMethod(NSOpenTKWindowClass, sel_registerName("canBecomeKeyWindow"u8), (IntPtr)NSOtkWindow_CanBecomeKeyWindowInst, "b@:"u8);  // BOOL is encoded as 'c' on 64-bit...
+            class_addMethod(NSOpenTKWindowClass, sel_registerName("canBecomeMainWindow"u8), (IntPtr)NSOtkWindow_CanBecomeMainWindowInst, "b@:"u8);  // BOOL is encoded as 'c' on 64-bit...
 
             objc_registerClassPair(NSOpenTKWindowClass);
 
@@ -701,7 +705,43 @@ namespace OpenTK.Platform.Native.macOS
             }
             else
             {
-                GetComponentFromWindow(@delegate).Logger?.LogDebug("Got windowDidChangeBackingProperties for unknown window.");
+                GetComponentFromWindow(@delegate).Logger?.LogDebug($"Got windowDidChangeBackingProperties for unknown window {wnd}.");
+            }
+        }
+
+        private static unsafe readonly delegate* unmanaged[Cdecl]<IntPtr, SEL, sbyte> NSOtkWindow_CanBecomeKeyWindowInst = &NSOtkWindow_CanBecomeKeyWindow;
+        // FIXME: BOOL?
+        [UnmanagedCallersOnly(CallConvs = new Type[] { typeof(CallConvCdecl) })]
+        private static sbyte /* BOOL */ NSOtkWindow_CanBecomeKeyWindow(IntPtr window, SEL selector)
+        {
+            if (NSWindowDict.TryGetValue(window, out NSWindowHandle? nswindow))
+            {
+                GetComponentFromWindow(window).Logger?.LogDebug($"Got canBecomeKeyWindow called on window '{GetComponentFromWindow(window).GetTitle(nswindow)}'");
+
+                return nswindow.Focusable ? (sbyte)YES : (sbyte)NO;
+            }
+            else
+            {
+                GetComponentFromWindow(window).Logger?.LogDebug($"Got canBecomeKeyWindow called on unknown window {window}");
+                return (sbyte)YES;
+            }
+        }
+
+        private static unsafe readonly delegate* unmanaged[Cdecl]<IntPtr, SEL, sbyte> NSOtkWindow_CanBecomeMainWindowInst = &NSOtkWindow_CanBecomeMainWindow;
+        // FIXME: BOOL?
+        [UnmanagedCallersOnly(CallConvs = new Type[] { typeof(CallConvCdecl) })]
+        private static sbyte /* BOOL */ NSOtkWindow_CanBecomeMainWindow(IntPtr window, SEL selector)
+        {
+            if (NSWindowDict.TryGetValue(window, out NSWindowHandle? nswindow))
+            {
+                GetComponentFromWindow(window).Logger?.LogDebug($"Got canBecomeMainWindow called on window '{GetComponentFromWindow(window).GetTitle(nswindow)}'");
+
+                return nswindow.Focusable ? (sbyte)YES : (sbyte)NO;
+            }
+            else
+            {
+                GetComponentFromWindow(window).Logger?.LogDebug($"Got canBecomeMainWindow called on unknown window {window}");
+                return (sbyte)YES;
             }
         }
 
@@ -2299,7 +2339,6 @@ namespace OpenTK.Platform.Native.macOS
                 return WindowBorderStyle.Borderless;
             }
 
-
             if (style.HasFlag(NSWindowStyleMask.Resizable))
             {
                 return WindowBorderStyle.ResizableBorder;
@@ -2312,9 +2351,6 @@ namespace OpenTK.Platform.Native.macOS
         public void SetBorderStyle(WindowHandle handle, WindowBorderStyle style)
         {
             NSWindowHandle nswindow = handle.As<NSWindowHandle>(this);
-
-            // FIXME: Don't replace the window style mask completely, we want to modify the existing mask.
-            // With SetWindowType we want to be able to set NSWindowStyleMask.UtilityWindow without border stuff messing with it.
 
             switch (style)
             {
@@ -2617,13 +2653,17 @@ namespace OpenTK.Platform.Native.macOS
         /// <inheritdoc/>
         public bool GetFocusable(WindowHandle handle)
         {
-            throw new NotImplementedException();
+            NSWindowHandle nswindow = handle.As<NSWindowHandle>(this);
+
+            return nswindow.Focusable;
         }
 
         /// <inheritdoc/>
         public void SetFocusable(WindowHandle handle, bool focusable)
         {
-            throw new NotImplementedException();
+            NSWindowHandle nswindow = handle.As<NSWindowHandle>(this);
+
+            nswindow.Focusable = focusable;
         }
 
         /// <inheritdoc/>
